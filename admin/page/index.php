@@ -2,11 +2,12 @@
 
 class page_index extends Page {
 
-    public $title='Dashboard';
+    public $title='DashboardXX';
 
     function init() {
         parent::init();
 
+        // $this->add('View')->set("Oops");
 
     }
 

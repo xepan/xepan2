@@ -1,26 +1,26 @@
 <?php
 
-class Admin extends App_Admin {
+class Admin extends App_Frontend {
+
+    public $layout_class='Layout_Cube';
 
     function init() {
         parent::init();
 
-        //DB Connect not default
-        $this->dbConnect();
+        // $this->dbConnect();
 
-        // Might come handy when multi-timezone base networks integrates
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
         $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
 
+        $this->add($this->layout_class,null,'Layout');
 
-        $superadmin = $this->add('Model_User');
-                        // ->addCondition('type','Backend');
+        $m = $this->layout->add('View',null,'Main_Menu',['html','Main_Menu']);
+        $x=$m->add('View',null,'Menu',['html','Menu'])->set('HAHAH 1');
+        $x->add('View',null,'SubMenu',['html','Item'])->set('Ooops 1');
 
-        // print_r($superadmin->getRows());
-
-        $auth = $this->add('BasicAuth');
-        $auth->setModel($superadmin,'email','password');
-        $auth->check();
+        $m = $this->layout->add('View',null,'Main_Menu',['html','Main_Menu']);
+        $x=$m->add('View',null,'Menu',['html','Menu'])->set('HAHAH 2');
+        $x->add('View',null,'SubMenu',['html','Item'])->set('Ooops 2');
 
         $this->api->pathfinder
             ->addLocation(array(
@@ -29,35 +29,4 @@ class Admin extends App_Admin {
             ->setBasePath($this->pathfinder->base_location->getPath() . '/..')
         ;
     }
-
-
-
-    function initTopMenu() {
-        $this->api->menu->destroy();
-        $m=$this->layout->add('Menu_Horizontal',null,'Top_Menu');
-        
-
-        // $m->addMenuItem('/', 'Home');
-         
-        //Setting Menu
-        // $setting_menu = $m->addMenu('Setting');
-        // $setting_menu->addMenuItem($this->api->url('setting/lamptype',array('client_id'=>$_GET['client_id'])),'Lamp Types');
-        // $setting_menu->addMenuItem($this->api->url('setting/programControl',array('client_id'=>$_GET['client_id'])),'Program Control');
-        // $setting_menu->addMenuItem($this->api->url('setting/calendarManagement',array('client_id'=>$_GET['client_id'])),'Calendar Management');
-        // $setting_menu->addMenuItem($this->api->url('setting/locationManagement',array('client_id'=>$_GET['client_id'])),'Location Management');
-        // $setting_menu->addMenuItem($this->api->url('setting/logManagement',array('client_id'=>$_GET['client_id'])),'Log Management');
-
-        //Logout
-        $m->addMenuItem('blogs','Blogs');
-        $m->addMenuItem('logout','Logout');
-
-    }
 }
-
-
-
-        // For improved compatibility with Older Toolkit. See Documentation.
-        // $this->add('Controller_Compat42')
-        //     ->useOldTemplateTags()
-        //     ->useOldStyle()
-        //     ->useSMLite();
