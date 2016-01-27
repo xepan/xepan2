@@ -31,6 +31,23 @@ class Admin extends App_Frontend {
         // $m = $this->top_menu->addMenu('HAHAHAH 2');
         // $m->addItem("Menu 2", 'Index.html');
 
+        /**
+            What sandbox could do here I guess as a PlugAndPlay Supporter
+            - Check for well installed
+                - Run Installer if not
+            - Check License for xEpan
+                -  ...
+            - Check permission for required Component's page
+                - Prompt to purchase/upgrate etc
+            - Initiate some global event holder
+                (
+                    This is important as if this is in sandbox, you cannot remove sandbox, otherwise
+                    Your Components won't listen global events and xEpan collapse
+                )
+            - Load Hooks for all Installed Applications From Cache
+                - Update Cache if not updated for future calls
+         */
+
         $this->api->pathfinder
             ->addLocation(array(
                 'addons' => array('addons', 'vendor','shared/addons2'),
