@@ -2,17 +2,22 @@
 
 
 class Menu extends View {
+
 	function defaultTemplate(){
-		return ['html','Menu'];
+		return ['html','Main_Menu'];
+	}
+	
+	function addMenu($title){
+		$m = $this->add('Menu');
+        $m=$m->add('Menu',null,'Menu',['html','Menu']);
+        $m->set($title);
+        return $m;
 	}
 
 	function addItem($title,$url="#"){
-		$v = $this->add('View',null,'SubMenu',['html','Item']);
-		if(is_array($title)){
-			$v->set($title[0]);
-			if(isset($title['icon'])) $v->template->set('icon',$title['icon']);
-		}else{
-			$v->set($title);
-		}
+		$i = $this->add('View',null,'SubMenu',['html','Item']);
+		$i->set($title);
+		$i->template->set('url',$url);
+		return $this;
 	}
 }
