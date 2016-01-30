@@ -16,6 +16,7 @@ VERSION
 /index.php
 .idea
 .composer
+composer
 composer.lock
 addons/
 /db/*
