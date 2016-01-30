@@ -69,14 +69,39 @@
                             right for Marsellus to throw...</span></span><span class="time"><i class="fa fa-clock-o"></i>13 min.</span></a></li>
                     <li class="item-footer"><a href="#">View all messages</a></li>
                   </ul>
-                </li>{Main_Menu}{Menu}
-                <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle {$class}">{Content}New Item{/} <span>{$Badge}</span><i class="fa fa-caret-down"></i></a>
+                </li>
+                <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle {$class}">HR<span> </span><i class="fa fa-caret-down"></i></a>
                   <ul class="dropdown-menu">
-                    {$SubMenu}
-                    {Item}
-                    <li class="item"><a href="{url}#{/}"><i class="fa fa-{icon}shopping-cart{/}"></i>{Content}New Order{/}</a></li>{/Item}{/Menu}
+                    <li class="item"><a href="{url}?page=xhr_department{/}"><i class="fa fa-{icon}shopping-cart{/}"></i>Departments</a></li>
+                    <li class="item"><a href="{url}?page=xhr_post{/}"><i class="fa fa-{icon}shopping-cart{/}"></i>Post</a></li>
+                    <li class="item"><a href="{url}?page=xhr_employee{/}"><i class="fa fa-{icon}shopping-cart{/}"></i>Employees</a></li>
                   </ul>
-                </li>{/Main_Menu}
+                </li>
+                <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle {$class}">Marketing<span> </span><i class="fa fa-caret-down"></i></a>
+                  <ul class="dropdown-menu">
+                    <li class="item"><a href="{url}?page=xhr_lead{/}"><i class="fa fa-{icon}shopping-cart{/}"></i>Leads</a></li>
+                    <li class="item"><a href="{url}?page=xhr_telecalling{/}"><i class="fa fa-{icon}shopping-cart{/}"></i>Tele Calling</a></li>
+                    <li class="item"><a href="{url}?page=xhr_newsletter{/}"><i class="fa fa-{icon}shopping-cart{/}"></i>NewsLetter</a></li>
+                    <li class="item"><a href="{url}?page=xhr_lead{/}"><i class="fa fa-{icon}shopping-cart{/}"></i>Leads</a></li>
+                    <li class="item"><a href="{url}?page=xhr_telecalling{/}"><i class="fa fa-{icon}shopping-cart{/}"></i>Tele Calling</a></li>
+                    <li class="item"><a href="{url}?page=xhr_newsletter{/}"><i class="fa fa-{icon}shopping-cart{/}"></i>NewsLetter</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle {$class}">Commerce<span> </span><i class="fa fa-caret-down"></i></a>
+                  <ul class="dropdown-menu"></ul>
+                </li>
+                <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle {$class}">Production<span> </span><i class="fa fa-caret-down"></i></a>
+                  <ul class="dropdown-menu"></ul>
+                </li>
+                <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle {$class}">CRM<span> </span><i class="fa fa-caret-down"></i></a>
+                  <ul class="dropdown-menu"></ul>
+                </li>
+                <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle {$class}">Inventory<span> </span><i class="fa fa-caret-down"></i></a>
+                  <ul class="dropdown-menu"></ul>
+                </li>
+                <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle {$class}">Project Managment<span> </span><i class="fa fa-caret-down"></i></a>
+                  <ul class="dropdown-menu">                   </ul>
+                </li>
               </ul>
             </div>
             <div id="header-nav" class="nav-no-collapse pull-right">
@@ -89,14 +114,6 @@
                       </div>
                     </form>
                   </div>
-                </li>
-                <li class="dropdown profile-dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><img src="img/samples/scarlet-159.png" alt=""><span class="hidden-xs">Scarlett Johansson</span><b class="caret"></b></a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="user-profile.html"><i class="fa fa-user"></i>Profile</a></li>
-                    <li><a href="#"><i class="fa fa-cog"></i>Settings</a></li>
-                    <li><a href="#"><i class="fa fa-envelope-o"></i>Messages</a></li>
-                    <li><a href="#"><i class="fa fa-power-off"></i>Logout</a></li>
-                  </ul>
                 </li>
                 <li class="hidden-xxs"><a class="btn"><i class="fa fa-power-off"></i></a></li>
               </ul>
@@ -122,6 +139,7 @@
                   <ul class="nav nav-pills nav-stacked">
                     <li class="nav-header nav-header-first hidden-sm hidden-xs">Navigation</li>
                     <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span><span class="label label-primary label-circle pull-right">28</span></a></li>
+                    <li class="active"><a href="?page=contact"><i class="fa fa-dashboard"></i><span>Contacts</span><span class="label label-primary label-circle pull-right">28</span></a></li>
                     <li><a href="#" class="dropdown-toggle"><i class="fa fa-table"></i><span>Tables</span><i class="fa fa-angle-right drop-icon"></i></a>
                       <ul class="submenu">
                         <li><a href="tables.html">Simple</a></li>
@@ -132,9 +150,9 @@
                     </li>
                     <li><a href="#" class="dropdown-toggle"><i class="fa fa-envelope"></i><span>Email</span><i class="fa fa-angle-right drop-icon"></i></a>
                       <ul class="submenu">
-                        <li><a href="email-inbox.html">Inbox</a></li>
-                        <li><a href="email-detail.html">Detail</a></li>
-                        <li><a href="email-compose.html">Compose</a></li>
+                        <li><a href="{url}?page=email_email-inbox{/}">Inbox</a></li>
+                        <li><a href="{url}?page=email_email-detail{/}">Detail</a></li>
+                        <li><a href="{url}?page=email_email-compose{/}">Compose</a></li>
                       </ul>
                     </li>
                     <li><a href="#" class="dropdown-toggle"><i class="fa fa-bar-chart-o"></i><span>Graphs</span><i class="fa fa-angle-right drop-icon"></i></a>

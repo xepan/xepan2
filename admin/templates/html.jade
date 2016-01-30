@@ -136,20 +136,84 @@ html(lang="{lang}en{/}")
                     li.item-footer
                       a(href='#')
                         | View all messages
-                {Main_Menu}{Menu}
                 li.dropdown.hidden-xs
                   a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
-                    | {Content}New Item{/} 
-                    span {$Badge}
+                    | HR
+                    span 
                     i.fa.fa-caret-down
-                  ul.dropdown-menu{$SubMenu}
-                    {Item}
+                  ul.dropdown-menu
                     li.item
-                      a(href='{url}#{/}')
+                      a(href='{url}?page=xhr_department{/}')
                         i(class="fa fa-{icon}shopping-cart{/}")
-                        | {Content}New Order{/}
-                    {/Item}{/Menu}
-                {/Main_Menu}
+                        | Departments
+                    li.item
+                      a(href='{url}?page=xhr_post{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Post
+                    li.item
+                      a(href='{url}?page=xhr_employee{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Employees
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | Marketing
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu
+                    li.item
+                      a(href='{url}?page=xhr_lead{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Leads
+                    li.item
+                      a(href='{url}?page=xhr_telecalling{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Tele Calling
+                    li.item
+                      a(href='{url}?page=xhr_newsletter{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | NewsLetter
+                    li.item
+                      a(href='{url}?page=xhr_lead{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Leads
+                    li.item
+                      a(href='{url}?page=xhr_telecalling{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Tele Calling
+                    li.item
+                      a(href='{url}?page=xhr_newsletter{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | NewsLetter
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | Commerce
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | Production
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | CRM
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | Inventory
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | Project Managment
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu                    
             #header-nav.nav-no-collapse.pull-right
               ul.nav.navbar-nav.pull-right
                 li.mobile-search
@@ -226,6 +290,11 @@ html(lang="{lang}en{/}")
                         i.fa.fa-dashboard
                         span Dashboard
                         span.label.label-primary.label-circle.pull-right 28
+                    li.active
+                      a(href='?page=contact')
+                        i.fa.fa-dashboard
+                        span Contacts
+                        span.label.label-primary.label-circle.pull-right 28
                     li
                       a.dropdown-toggle(href='#')
                         i.fa.fa-table
@@ -251,13 +320,13 @@ html(lang="{lang}en{/}")
                         i.fa.fa-angle-right.drop-icon
                       ul.submenu
                         li
-                          a(href='email-inbox.html')
+                          a(href='{url}?page=email_email-inbox{/}')
                             | Inbox
                         li
-                          a(href='email-detail.html')
+                          a(href='{url}?page=email_email-detail{/}')
                             | Detail
                         li
-                          a(href='email-compose.html')
+                          a(href='{url}?page=email_email-compose{/}')
                             | Compose
                     li
                       a.dropdown-toggle(href='#')
