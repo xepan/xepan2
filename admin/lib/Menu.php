@@ -3,8 +3,11 @@
 
 class Menu extends View {
 
+	public $caption="Menu Caption";
+	public $icon=null;
+
 	function defaultTemplate(){
-		return ['html','Main_Menu'];
+		return ['menu/menu'];
 	}
 	
 	function addMenu($title){

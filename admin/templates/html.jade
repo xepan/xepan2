@@ -136,20 +136,16 @@ html(lang="{lang}en{/}")
                     li.item-footer
                       a(href='#')
                         | View all messages
-                {Main_Menu}{Menu}
                 li.dropdown.hidden-xs
                   a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
-                    | {Content}New Item{/} 
-                    span {$Badge}
+                    | HR
+                    span 
                     i.fa.fa-caret-down
-                  ul.dropdown-menu{$SubMenu}
-                    {Item}
+                  ul.dropdown-menu
                     li.item
-                      a(href='{url}#{/}')
+                      a(href='{url}index.php?page=hr_departments{/}')
                         i(class="fa fa-{icon}shopping-cart{/}")
-                        | {Content}New Order{/}
-                    {/Item}{/Menu}
-                {/Main_Menu}
+                        | Departments
             #header-nav.nav-no-collapse.pull-right
               ul.nav.navbar-nav.pull-right
                 li.mobile-search
