@@ -1,0 +1,129 @@
+.col-lg-12
+  .main-box.clearfix
+    header.main-box-header.clearfix
+      h2 Table with JS pagination, search, ordering, export to pdf and lots more.
+    .main-box-body.clearfix
+      .table-responsive
+        .DTTT.btn-group
+          a#ToolTables_table-example_10.btn.btn-primary.DTTT_button_print(title='View print view')
+            span Print
+        #table-example_wrapper.dataTables_wrapper.form-inline.dt-bootstrap.no-footer
+          #table-example_length.dataTables_length
+            label
+              | Show 
+              select.form-control.input-sm(name='table-example_length', aria-controls='table-example')
+                option(value='10') 10
+                option(value='25') 25
+                option(value='50') 50
+                option(value='100') 100
+              |  entries
+          .DTTT.btn-group
+            a#ToolTables_table-example_0.btn.btn-primary.DTTT_button_collection
+              span
+                i.fa.fa-cloud-download
+                i.fa.fa-caret-down
+          #table-example_filter.dataTables_filter
+            label
+              | Search:
+              input.form-control.input-sm(type='search', placeholder='', aria-controls='table-example')
+          .clearfix
+          table#table-example.table.table-hover.dataTable.no-footer(role='grid')
+            thead
+              tr(role='row')
+                th.sorting_asc(tabindex='0', aria-controls='table-example', rowspan='1', colspan='1', style='width: 218px;', aria-sort='ascending', aria-label='Name: activate to sort column descending') Name
+                th.sorting(tabindex='0', aria-controls='table-example', rowspan='1', colspan='1', style='width: 291px;', aria-label='Position: activate to sort column ascending') Position
+                th.sorting(tabindex='0', aria-controls='table-example', rowspan='1', colspan='1', style='width: 138px;', aria-label='Office: activate to sort column ascending') Office
+                th.sorting(tabindex='0', aria-controls='table-example', rowspan='1', colspan='1', style='width: 65px;', aria-label='Age: activate to sort column ascending') Age
+                th.sorting(tabindex='0', aria-controls='table-example', rowspan='1', colspan='1', style='width: 141px;', aria-label='Start date: activate to sort column ascending') Start date
+                th.sorting(tabindex='0', aria-controls='table-example', rowspan='1', colspan='1', style='width: 111px;', aria-label='Salary: activate to sort column ascending') Salary
+            tbody
+              tr.odd(role='row')
+                td.sorting_1 Rahul
+                td Accountant
+                td Udaipur
+                td 33
+                td 2008/11/28
+                td $162,700
+              tr.even(role='row')
+                td.sorting_1 Preeti Vishwkarma
+                td Chief Executive Officer (CEO)
+                td Udaipur
+                td 47
+                td 2009/10/09
+                td $1,200,000
+              tr.odd(role='row')
+                td.sorting_1 Vijay Mali
+                td Junior Technical Author
+                td Udaipur
+                td 66
+                td 2009/01/12
+                td $86,000
+              tr.even(role='row')
+                td.sorting_1 Rakesh Sinha
+                td Software Engineer
+                td Udaipur
+                td 41
+                td 2012/10/13
+                td $132,000
+              tr.odd(role='row')
+                td.sorting_1 Neelam Joshi
+                td Software Engineer
+                td Amba Ji
+                td 28
+                td 2011/06/07
+                td $206,850
+              tr.even(role='row')
+                td.sorting_1 Sushil Milky
+                td Integration Specialist
+                td Ranthambhor
+                td 61
+                td 2012/12/02
+                td $372,000
+              tr.odd(role='row')
+                td.sorting_1 VIjay sir
+                td Software Engineer
+                td Mount abu
+                td 38
+                td 2011/05/03
+                td $163,500
+              tr.even(role='row')
+                td.sorting_1 Silky Monga
+                td Pre-Sales Support
+                td Udaipur
+                td 21
+                td 2011/12/12
+                td $106,450
+              tr.odd(role='row')
+                td.sorting_1 Sushil Milky
+                td Sales Assistant
+                td Karauli
+                td 46
+                td 2011/12/06
+                td $145,600
+              tr.even(role='row')
+                td.sorting_1 Gowrav vishwakarma
+                td Senior Javascript Developer
+                td Udaipur
+                td 22
+                td 2012/03/29
+                td $433,060
+          #table-example_paginate.dataTables_paginate.paging_simple_numbers
+            ul.pagination.pull-right
+              li#table-example_previous.paginate_button.previous.disabled(aria-controls='table-example', tabindex='0')
+                a(href='#')
+                  i.fa.fa-chevron-left
+              li.paginate_button.active(aria-controls='table-example', tabindex='0')
+                a(href='#') 1
+              li.paginate_button(aria-controls='table-example', tabindex='0')
+                a(href='#') 2
+              li.paginate_button(aria-controls='table-example', tabindex='0')
+                a(href='#') 3
+              li.paginate_button(aria-controls='table-example', tabindex='0')
+                a(href='#') 4
+              li.paginate_button(aria-controls='table-example', tabindex='0')
+                a(href='#') 5
+              li.paginate_button(aria-controls='table-example', tabindex='0')
+                a(href='#') 6
+              li#table-example_next.paginate_button.next(aria-controls='table-example', tabindex='0')
+                a(href='#')
+                  i.fa.fa-chevron-right
