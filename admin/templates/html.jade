@@ -143,9 +143,77 @@ html(lang="{lang}en{/}")
                     i.fa.fa-caret-down
                   ul.dropdown-menu
                     li.item
-                      a(href='{url}index.php?page=hr_departments{/}')
+                      a(href='{url}?page=xhr_department{/}')
                         i(class="fa fa-{icon}shopping-cart{/}")
                         | Departments
+                    li.item
+                      a(href='{url}?page=xhr_post{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Post
+                    li.item
+                      a(href='{url}?page=xhr_employee{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Employees
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | Marketing
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu
+                    li.item
+                      a(href='{url}?page=xhr_lead{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Leads
+                    li.item
+                      a(href='{url}?page=xhr_telecalling{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Tele Calling
+                    li.item
+                      a(href='{url}?page=xhr_newsletter{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | NewsLetter
+                    li.item
+                      a(href='{url}?page=xhr_lead{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Leads
+                    li.item
+                      a(href='{url}?page=xhr_telecalling{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Tele Calling
+                    li.item
+                      a(href='{url}?page=xhr_newsletter{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | NewsLetter
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | Commerce
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | Production
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | CRM
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | Inventory
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu
+                li.dropdown.hidden-xs
+                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
+                    | Project Managment
+                    span 
+                    i.fa.fa-caret-down
+                  ul.dropdown-menu                    
             #header-nav.nav-no-collapse.pull-right
               ul.nav.navbar-nav.pull-right
                 li.mobile-search
@@ -221,6 +289,11 @@ html(lang="{lang}en{/}")
                       a(href='index.html')
                         i.fa.fa-dashboard
                         span Dashboard
+                        span.label.label-primary.label-circle.pull-right 28
+                    li.active
+                      a(href='?page=contact')
+                        i.fa.fa-dashboard
+                        span Contacts
                         span.label.label-primary.label-circle.pull-right 28
                     li
                       a.dropdown-toggle(href='#')
