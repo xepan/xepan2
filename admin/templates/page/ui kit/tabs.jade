@@ -1,0 +1,43 @@
+.col-lg-12
+  .main-box.clearfix
+    header.main-box-header.clearfix
+      h2 Tabs
+    .main-box-body.clearfix
+      .tabs-wrapper
+        ul.nav.nav-tabs
+          li
+            a(data-toggle='tab', href='#tab-home') Home
+          li
+            a(data-toggle='tab', href='#tab-help') Help
+          li.dropdown.active
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              | Dropdown 
+              span.caret
+            ul.dropdown-menu(role='menu')
+              li
+                a(data-toggle='tab', href='#tab-action') Action
+              li
+                a(data-toggle='tab', href='#tab-another-action') Another action
+              li
+                a(data-toggle='tab', href='#tab-something-else-here') Something else here
+              li.divider
+              li.active
+                a(data-toggle='tab', href='#tab-separated-link') Separated link
+        .tab-content
+          #tab-home.tab-pane.fade
+            p
+              | Normally, both your asses would be dead as fucking fried chicken, but you happen
+              | to pull this shit while I'm in a transitional period so I don't wanna kill you,
+              | I wanna help you. But I can't give you this case, it don't belong to me.
+          #tab-help.tab-pane.fade
+            | Besides, I've already been through too much shit this morning over this case to hand
+            | it over to your dumb ass.
+          #tab-action.tab-pane.fade
+            | Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense!
+          #tab-another-action.tab-pane.fade
+            | In a comic, you know how you can tell who the arch-villain's going to be?
+          #tab-something-else-here.tab-pane.fade
+            | He's the exact opposite of the hero. And most times they're friends, like you and me!
+          #tab-separated-link.tab-pane.fade.active.in
+            | I should've known way back when... You know why, David? Because of the kids.
+            | They called me Mr Glass.

@@ -1,0 +1,398 @@
+.col-lg-12
+  .main-box.clearfix
+    header.main-box-header.clearfix
+      h2 Long table with fixed header
+    .main-box-body.clearfix
+      .table-responsive
+        #table-example-fixed_wrapper.dataTables_wrapper.form-inline.dt-bootstrap.no-footer(style='position: relative;')
+          .row
+            .col-xs-6
+              #table-example-fixed_length.dataTables_length
+                label
+                  | Show 
+                  select.form-control.input-sm(name='table-example-fixed_length', aria-controls='table-example-fixed')
+                    option(value='10') 10
+                    option(value='25') 25
+                    option(value='50') 50
+                    option(value='100') 100
+                  |  entries
+            .col-xs-6
+              #table-example-fixed_filter.dataTables_filter
+                label
+                  | Search:
+                  input.form-control.input-sm(type='search', placeholder='', aria-controls='table-example-fixed')
+          table#table-example-fixed.table.table-hover.dataTable.no-footer(role='grid')
+            thead
+              tr(role='row')
+                th.sorting_asc(tabindex='0', aria-controls='table-example-fixed', rowspan='1', colspan='1', style='width: 239px;', aria-sort='ascending', aria-label='Name: activate to sort column descending') Name
+                th.sorting(tabindex='0', aria-controls='table-example-fixed', rowspan='1', colspan='1', style='width: 320px;', aria-label='Position: activate to sort column ascending') Position
+                th.sorting(tabindex='0', aria-controls='table-example-fixed', rowspan='1', colspan='1', style='width: 152px;', aria-label='Office: activate to sort column ascending') Office
+                th.sorting(tabindex='0', aria-controls='table-example-fixed', rowspan='1', colspan='1', style='width: 71px;', aria-label='Age: activate to sort column ascending') Age
+                th.sorting(tabindex='0', aria-controls='table-example-fixed', rowspan='1', colspan='1', style='width: 155px;', aria-label='Start date: activate to sort column ascending') Start date
+                th.sorting(tabindex='0', aria-controls='table-example-fixed', rowspan='1', colspan='1', style='width: 122px;', aria-label='Salary: activate to sort column ascending') Salary
+            tbody
+              tr.odd(role='row')
+                td.sorting_1 Rahul
+                td Accountant
+                td Udaipur
+                td 33
+                td 2008/11/28
+                td $162,700
+              tr.even(role='row')
+                td.sorting_1 Preeti vishwkarm
+                td Chief Executive Officer (CEO)
+                td Udaipur
+                td 47
+                td 2009/10/09
+                td $1,200,000
+              tr.odd(role='row')
+                td.sorting_1 Vijay Mali
+                td Junior Technical Author
+                td maunt abu
+                td 66
+                td 2009/01/12
+                td $86,000
+              tr.even(role='row')
+                td.sorting_1 Rakesh Sinha
+                td Software Engineer
+                td Udaipur
+                td 41
+                td 2012/10/13
+                td $132,000
+              tr.odd(role='row')
+                td.sorting_1 SushilMilky
+                td Software Engineer
+                td Ranthombhaor
+                td 28
+                td 2011/06/07
+                td $206,850
+              tr.even(role='row')
+                td.sorting_1   Gowrav Vishwkarma
+                td Integration Specialist
+                td New York
+                td 61
+                td 2012/12/02
+                td $372,000
+              tr.odd(role='row')
+                td.sorting_1 Neelam Joshi
+                td Software Engineer
+                td London
+                td 38
+                td 2011/05/03
+                td $163,500
+              tr.even(role='row')
+                td.sorting_1 Silky monga
+                td Pre-Sales Support
+                td udaipur
+                td 21
+                td 2011/12/12
+                td $106,450
+              tr.odd(role='row')
+                td.sorting_1 Sushil Milky
+                td Sales Assistant
+                td karauli
+                td 46
+                td 2011/12/06
+                td $145,600
+              tr.even(role='row')
+                td.sorting_1 Rakesh Sinha
+                td Senior Javascript Developer
+                td Udaipur
+                td 22
+                td 2012/03/29
+                td $433,060
+              tr.odd(role='row')
+                td.sorting_1 Silky Monga
+                td Regional Director
+                td Udaipur
+                td 36
+                td 2008/10/16
+                td $470,600
+              tr.even(role='row')
+                td.sorting_1 Vijay Mali
+                td Javascript Developer
+                td Maunt abu
+                td 39
+                td 2009/09/15
+                td $205,500
+              tr.odd(role='row')
+                td.sorting_1 Puja
+                td Personnel Lead
+                td bikaner
+                td 35
+                td 2012/09/26
+                td $217,500
+              tr.even(role='row')
+                td.sorting_1 Guru
+                td Customer Support
+                td Sawai madhopur
+                td 27
+                td 2011/01/25
+                td $112,000
+              tr.odd(role='row')
+                td.sorting_1 Sushil Milky
+                td Sales Assistant
+                td Udaipur
+                td 23
+                td 2010/09/20
+                td $85,600
+              tr.even(role='row')
+                td.sorting_1 Vijay Mali
+                td Support Engineer
+                td Udaipur
+                td 47
+                td 2009/07/07
+                td $87,500
+              tr.odd(role='row')
+                td.sorting_1 Rakesh Sinha
+                td Chief Operating Officer (COO)
+                td Udaipur
+                td 48
+                td 2010/03/11
+                td $850,000
+              tr.even(role='row')
+                td.sorting_1 Rahul
+                td Accountant
+                td Udaipur
+                td 63
+                td 2011/07/25
+                td $170,750
+              tr.odd(role='row')
+                td.sorting_1 Guru
+                td Team Leader
+                td karauli
+                td 22
+                td 2008/10/26
+                td $235,500
+              tr.even(role='row')
+                td.sorting_1 vaibhav sharma
+                td Developer
+                td Jaipur
+                td 42
+                td 2010/12/22
+                td $92,575
+              tr.odd(role='row')
+                td.sorting_1 monga
+                td Systems Administrator
+                td udiapur
+                td 59
+                td 2009/04/10
+                td $237,500
+              tr.even(role='row')
+                td.sorting_1 sushil
+                td Senior Marketing Designer
+                td ahemdhabad
+                td 43
+                td 2012/12/18
+                td $313,500
+              tr.odd(role='row')
+                td.sorting_1 Radha
+                td Regional Director
+                td gujrat
+                td 47
+                td 2011/03/21
+                td $356,250
+              tr.even(role='row')
+                td.sorting_1 guru
+                td Sales Assistant
+                td udaipur
+                td 59
+                td 2012/08/06
+                td $137,500
+              tr.odd(role='row')
+                td.sorting_1 neel
+                td Secretary
+                td ganagpur city
+                td 41
+                td 2010/02/12
+                td $109,850
+              tr.even(role='row')
+                td.sorting_1 sushil
+                td Office Manager
+                td jaipur
+                td 51
+                td 2008/12/16
+                td $164,500
+              tr.odd(role='row')
+                td.sorting_1 guru
+                td Director
+                td jaipur
+                td 65
+                td 2008/09/26
+                td $645,750
+              tr.even(role='row')
+                td.sorting_1 gowrav sir
+                td Office Manager
+                td udaipur
+                td 30
+                td 2008/12/19
+                td $90,560
+              tr.odd(role='row')
+                td.sorting_1 sinha
+                td Development Lead
+                td udp
+                td 30
+                td 2011/09/03
+                td $345,000
+              tr.even(role='row')
+                td.sorting_1 rakesh
+                td Junior Javascript Developer
+                td jpr
+                td 43
+                td 2013/02/01
+                td $75,650
+              tr.odd(role='row')
+                td.sorting_1 Jennifer Chang
+                td Regional Director
+                td Singapore
+                td 28
+                td 2010/11/14
+                td $357,650
+              tr.even(role='row')
+                td.sorting_1 Jonas Alexander
+                td Developer
+                td San Francisco
+                td 30
+                td 2010/07/14
+                td $86,500
+              tr.odd(role='row')
+                td.sorting_1 Lael Greer
+                td Systems Administrator
+                td London
+                td 21
+                td 2009/02/27
+                td $103,500
+              tr.even(role='row')
+                td.sorting_1 Martena Mccray
+                td Post-Sales support
+                td Edinburgh
+                td 46
+                td 2011/03/09
+                td $324,050
+              tr.odd(role='row')
+                td.sorting_1 Michael Bruce
+                td Javascript Developer
+                td Singapore
+                td 29
+                td 2011/06/27
+                td $183,000
+              tr.even(role='row')
+                td.sorting_1 Michael Silva
+                td Marketing Designer
+                td London
+                td 66
+                td 2012/11/27
+                td $198,500
+              tr.odd(role='row')
+                td.sorting_1 Michelle House
+                td Integration Specialist
+                td Sidney
+                td 37
+                td 2011/06/02
+                td $95,400
+              tr.even(role='row')
+                td.sorting_1 Olivia Liang
+                td Support Engineer
+                td Singapore
+                td 64
+                td 2011/02/03
+                td $234,500
+              tr.odd(role='row')
+                td.sorting_1 Paul Byrd
+                td Chief Financial Officer (CFO)
+                td New York
+                td 64
+                td 2010/06/09
+                td $725,000
+              tr.even(role='row')
+                td.sorting_1 Prescott Bartlett
+                td Technical Author
+                td London
+                td 27
+                td 2011/05/07
+                td $145,000
+              tr.odd(role='row')
+                td.sorting_1 Quinn Flynn
+                td Support Lead
+                td Edinburgh
+                td 22
+                td 2013/03/03
+                td $342,000
+              tr.even(role='row')
+                td.sorting_1 Rhona Davidson
+                td Integration Specialist
+                td Tokyo
+                td 55
+                td 2010/10/14
+                td $327,900
+              tr.odd(role='row')
+                td.sorting_1 Sakura Yamamoto
+                td Support Engineer
+                td Tokyo
+                td 37
+                td 2009/08/19
+                td $139,575
+              tr.even(role='row')
+                td.sorting_1 Serge Baldwin
+                td Data Coordinator
+                td Singapore
+                td 64
+                td 2012/04/09
+                td $138,575
+              tr.odd(role='row')
+                td.sorting_1 Shad Decker
+                td Regional Director
+                td Edinburgh
+                td 51
+                td 2008/11/13
+                td $183,000
+              tr.even(role='row')
+                td.sorting_1 Shou Itou
+                td Regional Marketing
+                td Tokyo
+                td 20
+                td 2011/08/14
+                td $163,000
+              tr.odd(role='row')
+                td.sorting_1 Sonya Frost
+                td Software Engineer
+                td Edinburgh
+                td 23
+                td 2008/12/13
+                td $103,600
+              tr.even(role='row')
+                td.sorting_1 Suki Burks
+                td Developer
+                td London
+                td 53
+                td 2009/10/22
+                td $114,500
+              tr.odd(role='row')
+                td.sorting_1 Tatyana Fitzpatrick
+                td Regional Director
+                td London
+                td 19
+                td 2010/03/17
+                td $385,750
+              tr.even(role='row')
+                td.sorting_1 Thor Walton
+                td Developer
+                td New York
+                td 61
+                td 2013/08/11
+                td $98,540
+          .row
+            .col-xs-6
+            .col-xs-6
+              #table-example-fixed_paginate.dataTables_paginate.paging_simple_numbers
+                ul.pagination.pull-right
+                  li#table-example-fixed_previous.paginate_button.previous.disabled(aria-controls='table-example-fixed', tabindex='0')
+                    a(href='#')
+                      i.fa.fa-chevron-left
+                  li.paginate_button.active(aria-controls='table-example-fixed', tabindex='0')
+                    a(href='#') 1
+                  li.paginate_button(aria-controls='table-example-fixed', tabindex='0')
+                    a(href='#') 2
+                  li#table-example-fixed_next.paginate_button.next(aria-controls='table-example-fixed', tabindex='0')
+                    a(href='#')
+                      i.fa.fa-chevron-right

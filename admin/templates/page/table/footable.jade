@@ -1,0 +1,400 @@
+.col-lg-12
+  .main-box.clearfix
+    header.main-box-header.clearfix
+      h2.pull-left Orders (click on a table row)
+      .filter-block.pull-right
+        .form-group.pull-left
+          input#filter.form-control(type='text', placeholder='Search...')
+          i.fa.fa-search.search-icon
+    .main-box-body.clearfix
+      table.table.footable.toggle-circle-filled.default.breakpoint.footable-loaded(data-filter-text-only='true', data-filter='#filter', data-page-size='6')
+        thead
+          tr
+            th.footable-visible.footable-first-column.footable-sortable
+              | Order ID
+              span.footable-sort-indicator
+            th.footable-visible.footable-sortable
+              | Date
+              span.footable-sort-indicator
+            th.footable-visible.footable-sortable(data-hide='phone')
+              | Customer
+              span.footable-sort-indicator
+            th.text-center.footable-visible.footable-last-column.footable-sortable(data-hide='phone,tablet')
+              | Status
+              span.footable-sort-indicator
+            th.text-right.footable-sortable(data-hide='all', style='display: none;')
+              | Price
+              span.footable-sort-indicator
+            th.text-right.footable-sortable(data-hide='all', style='display: none;')
+              | Type
+              span.footable-sort-indicator
+        tbody
+          tr(style='display: table-row;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #8002
+            td.footable-visible
+              | 2016/01/01
+            td.footable-visible
+              a(href='#') Sushil Milky
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-success Completed
+            td.text-right(style='display: none;')
+              | $ 825.50
+            td(style='display: none;')
+              | Website
+          tr(style='display: table-row;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #5832
+            td.footable-visible
+              | 2015/01/22
+            td.footable-visible
+              a(href='#') Silky Monga
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-warning On hold
+            td.text-right(style='display: none;')
+              | $ 923.93
+            td(style='display: none;')
+              | Website
+          tr(style='display: table-row;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #2547
+            td.footable-visible
+              | 2016/01/28
+            td.footable-visible
+              a(href='#') Gowrav Vishwakarma
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-primary Pending
+            td.text-right(style='display: none;')
+              | $ 1.625.50
+            td(style='display: none;')
+              | Tablet
+          tr(style='display: table-row;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #9274
+            td.footable-visible
+              | 2015/10/15
+            td.footable-visible
+              a(href='#') Rakesh Sinha
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-danger Cancelled
+            td.text-right(style='display: none;')
+              | $ 35.34
+            td(style='display: none;')
+              | Mobile
+          tr(style='display: table-row;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #8463
+            td.footable-visible
+              | 2015/08/11
+            td.footable-visible
+              a(href='#') Vijay Mali
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-success Completed
+            td.text-right(style='display: none;')
+              | $ 34.199.99
+            td(style='display: none;')
+              | Website
+          tr(style='display: table-row;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #8002
+            td.footable-visible
+              | 2015/07/16
+            td.footable-visible
+              a(href='#') Radha 
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-success Completed
+            td.text-right(style='display: none;')
+              | $ 825.50
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #5832
+            td.footable-visible
+              | 2015/07/29
+            td.footable-visible
+              a(href='#') krishna
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-warning On hold
+            td.text-right(style='display: none;')
+              | $ 923.93
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #2547
+            td.footable-visible
+              | 2015/08/08
+            td.footable-visible
+              a(href='#') Milky
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-primary Pending
+            td.text-right(style='display: none;')
+              | $ 1.625.50
+            td(style='display: none;')
+              | Tablet
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #9274
+            td.footable-visible
+              | 2015/11/08
+            td.footable-visible
+              a(href='#') Guru
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-danger Cancelled
+            td.text-right(style='display: none;')
+              | $ 35.34
+            td(style='display: none;')
+              | Mobile
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #8463
+            td.footable-visible
+              | 2015/08/14
+            td.footable-visible
+              a(href='#') pratap
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-success Completed
+            td.text-right(style='display: none;')
+              | $ 34.199.99
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #8002
+            td.footable-visible
+              | 2015/08/22
+            td.footable-visible
+              a(href='#') hero
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-success Completed
+            td.text-right(style='display: none;')
+              | $ 825.50
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #5832
+            td.footable-visible
+              | 2015/08/12
+            td.footable-visible
+              a(href='#') Msushil
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-warning On hold
+            td.text-right(style='display: none;')
+              | $ 923.93
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #2547
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Anthony Hopkins
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-primary Pending
+            td.text-right(style='display: none;')
+              | $ 1.625.50
+            td(style='display: none;')
+              | Tablet
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #9274
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Charles Chaplin
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-danger Cancelled
+            td.text-right(style='display: none;')
+              | $ 35.34
+            td(style='display: none;')
+              | Mobile
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #8463
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Gary Cooper
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-success Completed
+            td.text-right(style='display: none;')
+              | $ 34.199.99
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #8002
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Robert De Niro
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-success Completed
+            td.text-right(style='display: none;')
+              | $ 825.50
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #5832
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') John Wayne
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-warning On hold
+            td.text-right(style='display: none;')
+              | $ 923.93
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #2547
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Anthony Hopkins
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-primary Pending
+            td.text-right(style='display: none;')
+              | $ 1.625.50
+            td(style='display: none;')
+              | Tablet
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #9274
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Charles Chaplin
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-danger Cancelled
+            td.text-right(style='display: none;')
+              | $ 35.34
+            td(style='display: none;')
+              | Mobile
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #8463
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Gary Cooper
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-success Completed
+            td.text-right(style='display: none;')
+              | $ 34.199.99
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #8002
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Robert De Niro
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-success Completed
+            td.text-right(style='display: none;')
+              | $ 825.50
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #5832
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') John Wayne
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-warning On hold
+            td.text-right(style='display: none;')
+              | $ 923.93
+            td(style='display: none;')
+              | Website
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #2547
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Anthony Hopkins
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-primary Pending
+            td.text-right(style='display: none;')
+              | $ 1.625.50
+            td(style='display: none;')
+              | Tablet
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #9274
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Charles Chaplin
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-danger Cancelled
+            td.text-right(style='display: none;')
+              | $ 35.34
+            td(style='display: none;')
+              | Mobile
+          tr(style='display: none;')
+            td.footable-visible.footable-first-column
+              span.footable-toggle
+              a(href='#') #8463
+            td.footable-visible
+              | 2013/08/08
+            td.footable-visible
+              a(href='#') Gary Cooper
+            td.text-center.footable-visible.footable-last-column
+              span.label.label-success Completed
+            td.text-right(style='display: none;')
+              | $ 34.199.99
+            td(style='display: none;')
+              | Website
+      ul.pagination.pull-right.hide-if-no-paging
+        li.footable-page-arrow.disabled
+          a(href='#first', data-page='first') «
+        li.footable-page-arrow.disabled
+          a(href='#prev', data-page='prev') ‹
+        li.footable-page.active
+          a(href='#', data-page='0') 1
+        li.footable-page
+          a(href='#', data-page='1') 2
+        li.footable-page
+          a(href='#', data-page='2') 3
+        li.footable-page
+          a(href='#', data-page='3') 4
+        li.footable-page
+          a(href='#', data-page='4') 5
+        li.footable-page-arrow
+          a(href='#next', data-page='next') ›
+        li.footable-page-arrow
+          a(href='#last', data-page='last') »

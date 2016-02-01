@@ -1,0 +1,138 @@
+
+<div class="col-lg-12">
+  <div class="main-box clearfix">
+    <header class="main-box-header clearfix">
+      <h2>Table with JS pagination, search, ordering, export to pdf and lots more.</h2>
+    </header>
+    <div class="main-box-body clearfix">
+      <div class="table-responsive">
+        <div class="DTTT btn-group"><a id="ToolTables_table-example_10" title="View print view" class="btn btn-primary DTTT_button_print"><span>Print</span></a></div>
+        <div id="table-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+          <div id="table-example_length" class="dataTables_length">
+            <label>Show 
+              <select name="table-example_length" aria-controls="table-example" class="form-control input-sm">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select> entries
+            </label>
+          </div>
+          <div class="DTTT btn-group"><a id="ToolTables_table-example_0" class="btn btn-primary DTTT_button_collection"><span><i class="fa fa-cloud-download"></i><i class="fa fa-caret-down"></i></span></a></div>
+          <div id="table-example_filter" class="dataTables_filter">
+            <label>Search:
+              <input type="search" placeholder="" aria-controls="table-example" class="form-control input-sm"/>
+            </label>
+          </div>
+          <div class="clearfix"></div>
+          <table id="table-example" role="grid" class="table table-hover dataTable no-footer">
+            <thead>
+              <tr role="row">
+                <th tabindex="0" aria-controls="table-example" rowspan="1" colspan="1" style="width: 218px;" aria-sort="ascending" aria-label="Name: activate to sort column descending" class="sorting_asc">Name</th>
+                <th tabindex="0" aria-controls="table-example" rowspan="1" colspan="1" style="width: 291px;" aria-label="Position: activate to sort column ascending" class="sorting">Position</th>
+                <th tabindex="0" aria-controls="table-example" rowspan="1" colspan="1" style="width: 138px;" aria-label="Office: activate to sort column ascending" class="sorting">Office</th>
+                <th tabindex="0" aria-controls="table-example" rowspan="1" colspan="1" style="width: 65px;" aria-label="Age: activate to sort column ascending" class="sorting">Age</th>
+                <th tabindex="0" aria-controls="table-example" rowspan="1" colspan="1" style="width: 141px;" aria-label="Start date: activate to sort column ascending" class="sorting">Start date</th>
+                <th tabindex="0" aria-controls="table-example" rowspan="1" colspan="1" style="width: 111px;" aria-label="Salary: activate to sort column ascending" class="sorting">Salary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr role="row" class="odd">
+                <td class="sorting_1">Rahul</td>
+                <td>Accountant</td>
+                <td>Udaipur</td>
+                <td>33</td>
+                <td>2008/11/28</td>
+                <td>$162,700</td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="sorting_1">Preeti Vishwkarma</td>
+                <td>Chief Executive Officer (CEO)</td>
+                <td>Udaipur</td>
+                <td>47</td>
+                <td>2009/10/09</td>
+                <td>$1,200,000</td>
+              </tr>
+              <tr role="row" class="odd">
+                <td class="sorting_1">Vijay Mali</td>
+                <td>Junior Technical Author</td>
+                <td>Udaipur</td>
+                <td>66</td>
+                <td>2009/01/12</td>
+                <td>$86,000</td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="sorting_1">Rakesh Sinha</td>
+                <td>Software Engineer</td>
+                <td>Udaipur</td>
+                <td>41</td>
+                <td>2012/10/13</td>
+                <td>$132,000</td>
+              </tr>
+              <tr role="row" class="odd">
+                <td class="sorting_1">Neelam Joshi</td>
+                <td>Software Engineer</td>
+                <td>Amba Ji</td>
+                <td>28</td>
+                <td>2011/06/07</td>
+                <td>$206,850</td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="sorting_1">Sushil Milky</td>
+                <td>Integration Specialist</td>
+                <td>Ranthambhor</td>
+                <td>61</td>
+                <td>2012/12/02</td>
+                <td>$372,000</td>
+              </tr>
+              <tr role="row" class="odd">
+                <td class="sorting_1">VIjay sir</td>
+                <td>Software Engineer</td>
+                <td>Mount abu</td>
+                <td>38</td>
+                <td>2011/05/03</td>
+                <td>$163,500</td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="sorting_1">Silky Monga</td>
+                <td>Pre-Sales Support</td>
+                <td>Udaipur</td>
+                <td>21</td>
+                <td>2011/12/12</td>
+                <td>$106,450</td>
+              </tr>
+              <tr role="row" class="odd">
+                <td class="sorting_1">Sushil Milky</td>
+                <td>Sales Assistant</td>
+                <td>Karauli</td>
+                <td>46</td>
+                <td>2011/12/06</td>
+                <td>$145,600</td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="sorting_1">Gowrav vishwakarma</td>
+                <td>Senior Javascript Developer</td>
+                <td>Udaipur</td>
+                <td>22</td>
+                <td>2012/03/29</td>
+                <td>$433,060</td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="table-example_paginate" class="dataTables_paginate paging_simple_numbers">
+            <ul class="pagination pull-right">
+              <li id="table-example_previous" aria-controls="table-example" tabindex="0" class="paginate_button previous disabled"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+              <li aria-controls="table-example" tabindex="0" class="paginate_button active"><a href="#">1</a></li>
+              <li aria-controls="table-example" tabindex="0" class="paginate_button"><a href="#">2</a></li>
+              <li aria-controls="table-example" tabindex="0" class="paginate_button"><a href="#">3</a></li>
+              <li aria-controls="table-example" tabindex="0" class="paginate_button"><a href="#">4</a></li>
+              <li aria-controls="table-example" tabindex="0" class="paginate_button"><a href="#">5</a></li>
+              <li aria-controls="table-example" tabindex="0" class="paginate_button"><a href="#">6</a></li>
+              <li id="table-example_next" aria-controls="table-example" tabindex="0" class="paginate_button next"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

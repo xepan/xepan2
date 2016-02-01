@@ -1,0 +1,36 @@
+.col-lg-4
+  .main-box.clearfix
+    header.main-box-header.clearfix
+      h2 Modal windows
+    .main-box-body.clearfix
+      a.btn.btn-primary.btn-lg(href='#myModal', data-toggle='modal') Launch demo modal
+      #myModal.modal.fade(aria-hidden='true', aria-labelledby='myModalLabel', role='dialog', tabindex='-1', style='display: none;')
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(aria-hidden='true', data-dismiss='modal', type='button') ×
+              h4.modal-title Modal title
+            .modal-body
+              form(role='form')
+                .form-group
+                  label(for='exampleInputEmail1') Email address
+                  input#exampleInputEmail1.form-control(type='email', placeholder='Enter email')
+                .form-group
+                  label(for='exampleInputPassword1') Password
+                  input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+                .form-group
+                  label(for='exampleTextarea') Textarea
+                  textarea#exampleTextarea.form-control(rows='3')
+                .form-inline.form-inline-box
+                  .form-group
+                    input#exampleInputEmail1.form-control(type='email', placeholder='Enter email')
+                  .form-group
+                    select.form-control
+                      option Active
+                      option Inactive
+                  button.btn.btn-link(type='submit')
+                    i.fa.fa-eye
+                    |  Preview
+            .modal-footer
+              button.btn.btn-default(data-dismiss='modal', type='button') Close
+              button.btn.btn-primary(type='button') Save changes
