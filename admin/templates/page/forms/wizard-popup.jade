@@ -1,0 +1,22 @@
+.row(style='opacity: 1;')
+  .col-lg-12
+    .row
+      .col-lg-12
+        ol.breadcrumb
+          li
+            a(href='#') Home
+          li.active
+            span Form wizard
+        h1 Form wizard
+    .row
+      .col-lg-12
+        .main-box.clearfix(style='min-height: 820px;')
+          header.main-box-header.clearfix
+            h2 Click on the button bellow to open the wizard
+          .main-box-body.clearfix
+            button#open-wizard.btn.btn-primary Open wizard
+            #wizard-demo.wizard
+              h1 Create Server
+footer#footer-bar.row(style='opacity: 1;')
+  p#footer-copyright.col-xs-12
+    | Powered by Cube Theme.

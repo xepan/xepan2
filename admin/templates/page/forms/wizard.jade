@@ -1,0 +1,123 @@
+.row(style='opacity: 1;')
+  .col-lg-12
+    .row
+      .col-lg-12
+        ol.breadcrumb
+          li
+            a(href='#') Home
+          li.active
+            span Form wizard
+        h1 Form wizard
+    .row
+      .col-lg-12
+        .main-box.clearfix(style='min-height: 820px;')
+          header.main-box-header.clearfix
+            h2 Try the demo wizard bellow
+          .main-box-body.clearfix
+            #myWizard.wizard
+              .wizard-inner
+                ul.steps
+                  li.active(data-target='#step1')
+                    span.badge.badge-primary 1
+                    | Step 1
+                    span.chevron
+                  li(data-target='#step2')
+                    span.badge 2
+                    | Step 2
+                    span.chevron
+                  li(data-target='#step3')
+                    span.badge 3
+                    | Step 3
+                    span.chevron
+                  li(data-target='#step4')
+                    span.badge 4
+                    | Step 4
+                    span.chevron
+                .actions
+                  button.btn.btn-default.btn-mini.btn-prev(type='button')
+                    i.icon-arrow-left
+                    | Prev
+                  button.btn.btn-success.btn-mini.btn-next(data-last='Finish', type='button')
+                    | Next
+                    i.icon-arrow-right
+              .step-content
+                #step1.step-pane.active
+                  br
+                  h4 This is step 1
+                  .form-group.has-success
+                    label.control-label(for='inputSuccess') Input with success
+                    input#inputSuccess.form-control(type='text')
+                    span.help-block
+                      i.icon-ok-sign
+                      |  Success message
+                  .form-group.has-warning
+                    label.control-label(for='inputWarning') Input with warning
+                    input#inputWarning.form-control(type='text')
+                    span.help-block
+                      i.icon-warning-sign
+                      |  Warning message
+                  .form-group.has-error
+                    label.control-label(for='inputError') Input with error
+                    input#inputError.form-control(type='text')
+                    span.help-block
+                      i.icon-remove-sign
+                      |  Error message
+                #step2.step-pane
+                  br
+                  h4 This is step 2
+                  .alert.alert-success.fade.in
+                    button.close(aria-hidden='true', data-dismiss='alert', type='button') ×
+                    i.fa.fa-check-circle.fa-fw.fa-lg
+                    strong Well done!
+                    |  You successfully read this important alert message.
+                  .alert.alert-info.fade.in
+                    button.close(aria-hidden='true', data-dismiss='alert', type='button') ×
+                    i.fa.fa-info-circle.fa-fw.fa-lg
+                    strong Heads up!
+                    |  This alert needs your attention, but it's not super important.
+                  .alert.alert-warning.fade.in
+                    button.close(aria-hidden='true', data-dismiss='alert', type='button') ×
+                    i.fa.fa-warning.fa-fw.fa-lg
+                    strong Warning!
+                    |  Best check yo self, you're not looking too good.
+                  .alert.alert-danger.fade.in
+                    button.close(aria-hidden='true', data-dismiss='alert', type='button') ×
+                    i.fa.fa-times-circle.fa-fw.fa-lg
+                    strong Oh snap!
+                    |  Change a few things up and 
+                    a.alert-link(href='#') try submitting again
+                    | .
+                #step3.step-pane
+                  br
+                  h4 This is step 3
+                  .form-group
+                    label(for='maskedDate') Date
+                    .input-group
+                      span.input-group-addon
+                        i.fa.fa-calendar
+                      input#maskedDate.form-control(type='text')
+                    span.help-block ex. 99/99/9999
+                  .form-group
+                    label(for='maskedPhone') Phone
+                    .input-group
+                      span.input-group-addon
+                        i.fa.fa-phone
+                      input#maskedPhone.form-control(type='text')
+                    span.help-block ex. (999) 999-9999
+                  .form-group
+                    label(for='maskedPhoneExt') Phone + Ext
+                    .input-group
+                      span.input-group-addon
+                        i.fa.fa-mobile-phone
+                      input#maskedPhoneExt.form-control(type='text')
+                    span.help-block ex. (999) 999-9999? x99999
+                #step4.step-pane
+                  br
+                  h4 This is step 4
+                  .alert.alert-success.fade.in(style='margin: 100px 0;')
+                    i.fa.fa-check-circle.fa-fw.fa-lg
+                    strong Congratulation!
+                    |  You have successfully finished our nice wizard.
+footer#footer-bar.row(style='opacity: 1;')
+  p#footer-copyright.col-xs-12
+    | Powered by Cube Theme.

@@ -1,0 +1,23 @@
+.row(style='opacity: 1;')
+  .col-lg-12
+    .row
+      .col-lg-12
+        ol.breadcrumb
+          li
+            a(href='#') Home
+          li.active
+            span Drop File Zone
+        h1 Drop File Zone
+    .row
+      .col-lg-12
+        .main-box.clearfix(style='min-height: 820px;')
+          header.main-box-header.clearfix
+            h2 Drag & Drop file upload
+          .main-box-body.clearfix
+            #dropzone
+              form#demo-upload.dropzone.dz-clickable(action='#')
+                .dz-default.dz-message
+                  span Drop files here to upload
+footer#footer-bar.row(style='opacity: 1;')
+  p#footer-copyright.col-xs-12
+    | Powered by Cube Theme.
