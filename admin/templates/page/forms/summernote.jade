@@ -1,0 +1,540 @@
+.row(style='opacity: 1;')
+  .col-lg-12
+    .row
+      .col-lg-12
+        ol.breadcrumb
+          li
+            a(href='#') Home
+          li.active
+            span WYSIWYG Summernote
+        h1 WYSIWYG Summernote
+    .row
+      .col-lg-12
+        .main-box.clearfix(style='min-height: 820px;')
+          header.main-box-header.clearfix
+            h2 Summernote WYSIWYG Editor
+          .main-box-body.clearfix
+            .summernote(style='display: none;')
+              p
+                | Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with
+                | my name printed on it? Do you see a little Asian child with a blank expression on his face
+                | sitting outside on a mechanical helicopter that shakes when you put quarters in it? No?
+                | Well, that's what you see at a toy store. And you must think you're in a toy store, because
+                | you're here shopping for an infant named Jeb.
+              p
+                | Do you see a little Asian child with a blank expression on his face
+                | sitting outside on a mechanical helicopter that shakes when you put quarters in it? No?
+                | Well, that's what you see at a toy store. And you must think you're in a toy store, because
+                | you're here shopping for an infant named Jeb.
+              p
+                | Well, that's what you see at a toy store. And you must think you're in a toy store, because
+                | you're here shopping for an infant named Jeb. Do you see a slender plastic tag clipped to my
+                | shirt with my name printed on it? Do you see a little Asian child with a blank expression on
+                | his face sitting outside on a mechanical helicopter that shakes when you put quarters in it?
+            .note-editor
+              .note-dropzone
+                .note-dropzone-message
+              .note-dialog
+                .note-image-dialog.modal(aria-hidden='false')
+                  .modal-dialog
+                    .modal-content
+                      .modal-header
+                        button.close(tabindex='-1', aria-hidden='true', type='button') ×
+                        h4.modal-title Insert Image
+                      form.note-modal-form
+                        .modal-body
+                          .form-group.row-fluid.note-group-select-from-files
+                            label Select from files
+                            input.note-image-input(type='file', multiple='multiple', accept='image/*', name='files')
+                          .form-group.row-fluid
+                            label Image URL
+                            input.note-image-url.form-control.span12(type='text')
+                        .modal-footer
+                          button.btn.btn-primary.note-image-btn.disabled(disabled='', href='#') Insert Image
+                .note-link-dialog.modal(aria-hidden='false')
+                  .modal-dialog
+                    .modal-content
+                      .modal-header
+                        button.close(tabindex='-1', aria-hidden='true', type='button') ×
+                        h4.modal-title Insert Link
+                      form.note-modal-form
+                        .modal-body
+                          .form-group.row-fluid
+                            label Text to display
+                            input.note-link-text.form-control.span12(type='text')
+                          .form-group.row-fluid
+                            label To what URL should this link go?
+                            input.note-link-url.form-control.span12(type='text')
+                          .checkbox
+                            label
+                              input(type='checkbox', checked='')
+                              |  Open in new window
+                        .modal-footer
+                          button.btn.btn-primary.note-link-btn.disabled(disabled='', href='#') Insert Link
+                .note-help-dialog.modal(aria-hidden='false')
+                  .modal-dialog
+                    .modal-content
+                      form.note-modal-form
+                        .modal-body
+                          a.modal-close.pull-right(tabindex='-1', aria-hidden='true') Close
+                          .title Keyboard shortcuts
+                          .note-shortcut-row.row
+                            .note-shortcut.note-shortcut-col.col-sm-6.col-xs-12
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-title.col-xs-offset-6 Action
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + Z
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Undo
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + Shift + Z
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Redo
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + ]
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Indent
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + [
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Outdent
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + ENTER
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Insert Horizontal Rule
+                            .note-shortcut.note-shortcut-col.col-sm-6.col-xs-12
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-title.col-xs-offset-6 Text formatting
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + B
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Bold
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + I
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Italic
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + U
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Underline
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + \
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Remove Font Style
+                          .note-shortcut-row.row
+                            .note-shortcut.note-shortcut-col.col-sm-6.col-xs-12
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-title.col-xs-offset-6 Document Style
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + NUM0
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Normal
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + NUM1
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Header 1
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + NUM2
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Header 2
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + NUM3
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Header 3
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + NUM4
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Header 4
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + NUM5
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Header 5
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + NUM6
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Header 6
+                            .note-shortcut.note-shortcut-col.col-sm-6.col-xs-12
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-title.col-xs-offset-6 Paragraph formatting
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + Shift + L
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Align left
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + Shift + E
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Align center
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + Shift + R
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Align right
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + Shift + J
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Justify full
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + Shift + NUM7
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Ordered list
+                              .note-shortcut-row.row
+                                .note-shortcut-col.col-xs-6.note-shortcut-key Ctrl + Shift + NUM8
+                                .note-shortcut-col.col-xs-6.note-shortcut-name Unordered list
+                          p.text-center
+                            a(target='_blank', href='//hackerwins.github.io/summernote/') Summernote 0.6.0
+                            |  · 
+                            a(target='_blank', href='//github.com/HackerWins/summernote') Project
+                            |  · 
+                            a(target='_blank', href='//github.com/HackerWins/summernote/issues') Issues
+              .note-handle
+                .note-control-selection(style='display: none;')
+                  .note-control-selection-bg
+                  .note-control-holder.note-control-nw
+                  .note-control-holder.note-control-ne
+                  .note-control-holder.note-control-sw
+                  .note-control-sizing.note-control-se
+                  .note-control-selection-info
+              .note-popover
+                .note-link-popover.popover.bottom.in(style='display: none;')
+                  .arrow
+                  .popover-content
+                    a(target='_blank', href='http://www.google.com') www.google.com
+                    .note-insert.btn-group
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-hide='true', data-event='showLinkDialog', title='', type='button', data-original-title='Edit (CTRL+K)')
+                        i.fa.fa-edit
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='unlink', title='', type='button', data-original-title='Unlink')
+                        i.fa.fa-unlink
+                .note-image-popover.popover.bottom.in(style='display: none;')
+                  .arrow
+                  .popover-content
+                    .btn-group
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-value='1', data-event='resize', title='', type='button', data-original-title='Resize Full')
+                        span.note-fontsize-10 100%
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-value='0.5', data-event='resize', title='', type='button', data-original-title='Resize Half')
+                        span.note-fontsize-10 50%
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-value='0.25', data-event='resize', title='', type='button', data-original-title='Resize Quarter')
+                        span.note-fontsize-10 25%
+                    .btn-group
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-value='left', data-event='floatMe', title='', type='button', data-original-title='Float Left')
+                        i.fa.fa-align-left
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-value='right', data-event='floatMe', title='', type='button', data-original-title='Float Right')
+                        i.fa.fa-align-right
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-value='none', data-event='floatMe', title='', type='button', data-original-title='Float None')
+                        i.fa.fa-align-justify
+                    .btn-group
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-value='img-rounded', data-event='imageShape', title='', type='button', data-original-title='Shape: Rounded')
+                        i.fa.fa-square
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-value='img-circle', data-event='imageShape', title='', type='button', data-original-title='Shape: Circle')
+                        i.fa.fa-circle-o
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-value='img-thumbnail', data-event='imageShape', title='', type='button', data-original-title='Shape: Thumbnail')
+                        i.fa.fa-picture-o
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='imageShape', title='', type='button', data-original-title='Shape: None')
+                        i.fa.fa-times
+                    .btn-group
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-value='none', data-event='removeMedia', title='', type='button', data-original-title='Remove Image')
+                        i.fa.fa-trash-o
+              .note-toolbar.btn-toolbar
+                .note-style.btn-group
+                  button.btn.btn-default.btn-sm.btn-small.dropdown-toggle(tabindex='-1', title='', data-toggle='dropdown', type='button', data-original-title='Style')
+                    i.fa.fa-magic
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(data-value='p', href='#', data-event='formatBlock') Normal
+                    li
+                      a(data-value='blockquote', href='#', data-event='formatBlock')
+                        blockquote Quote
+                    li
+                      a(data-value='pre', href='#', data-event='formatBlock') Code
+                    li
+                      a(data-value='h1', href='#', data-event='formatBlock')
+                        h1 Header 1
+                    li
+                      a(data-value='h2', href='#', data-event='formatBlock')
+                        h2 Header 2
+                    li
+                      a(data-value='h3', href='#', data-event='formatBlock')
+                        h3 Header 3
+                    li
+                      a(data-value='h4', href='#', data-event='formatBlock')
+                        h4 Header 4
+                    li
+                      a(data-value='h5', href='#', data-event='formatBlock')
+                        h5 Header 5
+                    li
+                      a(data-value='h6', href='#', data-event='formatBlock')
+                        h6 Header 6
+                .note-font.btn-group
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='bold', title='', type='button', data-original-title='Bold (CTRL+B)')
+                    i.fa.fa-bold
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='italic', title='', type='button', data-original-title='Italic (CTRL+I)')
+                    i.fa.fa-italic
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='underline', title='', type='button', data-original-title='Underline (CTRL+U)')
+                    i.fa.fa-underline
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='removeFormat', title='', type='button', data-original-title='Remove Font Style (CTRL+\)')
+                    i.fa.fa-eraser
+                .note-fontname.btn-group
+                  button.btn.btn-default.btn-sm.btn-small.dropdown-toggle(tabindex='-1', title='', data-toggle='dropdown', type='button', data-original-title='Font Family')
+                    span.note-current-fontname "Open Sans"
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(data-value='Arial', href='#', data-event='fontName')
+                        i.fa.fa-check
+                        |  Arial
+                    li
+                      a(data-value='Courier New', href='#', data-event='fontName')
+                        i.fa.fa-check
+                        |  Courier New
+                    li
+                      a(data-value='Times New Roman', href='#', data-event='fontName')
+                        i.fa.fa-check
+                        |  Times New Roman
+                .note-color.btn-group
+                  button.btn.btn-default.btn-sm.btn-small.note-recent-color(tabindex='-1', data-value='{"backColor":"yellow"}', data-event='color', title='', type='button', data-original-title='Recent Color')
+                    i.fa.fa-font(style='color:black;background-color:yellow;')
+                  button.btn.btn-default.btn-sm.btn-small.dropdown-toggle(tabindex='-1', title='', data-toggle='dropdown', type='button', data-original-title='More Color')
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      .btn-group
+                        .note-palette-title Background Color
+                        .note-color-reset(title='Transparent', data-value='inherit', data-event='backColor') Set transparent
+                        .note-color-palette(data-target-event='backColor')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#000000', data-event='backColor', style='background-color:#000000;', type='button', data-original-title='#000000')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#424242', data-event='backColor', style='background-color:#424242;', type='button', data-original-title='#424242')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#636363', data-event='backColor', style='background-color:#636363;', type='button', data-original-title='#636363')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#9C9C94', data-event='backColor', style='background-color:#9C9C94;', type='button', data-original-title='#9C9C94')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#CEC6CE', data-event='backColor', style='background-color:#CEC6CE;', type='button', data-original-title='#CEC6CE')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#EFEFEF', data-event='backColor', style='background-color:#EFEFEF;', type='button', data-original-title='#EFEFEF')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#F7F7F7', data-event='backColor', style='background-color:#F7F7F7;', type='button', data-original-title='#F7F7F7')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFFFFF', data-event='backColor', style='background-color:#FFFFFF;', type='button', data-original-title='#FFFFFF')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FF0000', data-event='backColor', style='background-color:#FF0000;', type='button', data-original-title='#FF0000')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FF9C00', data-event='backColor', style='background-color:#FF9C00;', type='button', data-original-title='#FF9C00')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFFF00', data-event='backColor', style='background-color:#FFFF00;', type='button', data-original-title='#FFFF00')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#00FF00', data-event='backColor', style='background-color:#00FF00;', type='button', data-original-title='#00FF00')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#00FFFF', data-event='backColor', style='background-color:#00FFFF;', type='button', data-original-title='#00FFFF')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#0000FF', data-event='backColor', style='background-color:#0000FF;', type='button', data-original-title='#0000FF')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#9C00FF', data-event='backColor', style='background-color:#9C00FF;', type='button', data-original-title='#9C00FF')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FF00FF', data-event='backColor', style='background-color:#FF00FF;', type='button', data-original-title='#FF00FF')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#F7C6CE', data-event='backColor', style='background-color:#F7C6CE;', type='button', data-original-title='#F7C6CE')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFE7CE', data-event='backColor', style='background-color:#FFE7CE;', type='button', data-original-title='#FFE7CE')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFEFC6', data-event='backColor', style='background-color:#FFEFC6;', type='button', data-original-title='#FFEFC6')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#D6EFD6', data-event='backColor', style='background-color:#D6EFD6;', type='button', data-original-title='#D6EFD6')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#CEDEE7', data-event='backColor', style='background-color:#CEDEE7;', type='button', data-original-title='#CEDEE7')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#CEE7F7', data-event='backColor', style='background-color:#CEE7F7;', type='button', data-original-title='#CEE7F7')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#D6D6E7', data-event='backColor', style='background-color:#D6D6E7;', type='button', data-original-title='#D6D6E7')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#E7D6DE', data-event='backColor', style='background-color:#E7D6DE;', type='button', data-original-title='#E7D6DE')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#E79C9C', data-event='backColor', style='background-color:#E79C9C;', type='button', data-original-title='#E79C9C')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFC69C', data-event='backColor', style='background-color:#FFC69C;', type='button', data-original-title='#FFC69C')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFE79C', data-event='backColor', style='background-color:#FFE79C;', type='button', data-original-title='#FFE79C')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#B5D6A5', data-event='backColor', style='background-color:#B5D6A5;', type='button', data-original-title='#B5D6A5')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#A5C6CE', data-event='backColor', style='background-color:#A5C6CE;', type='button', data-original-title='#A5C6CE')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#9CC6EF', data-event='backColor', style='background-color:#9CC6EF;', type='button', data-original-title='#9CC6EF')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#B5A5D6', data-event='backColor', style='background-color:#B5A5D6;', type='button', data-original-title='#B5A5D6')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#D6A5BD', data-event='backColor', style='background-color:#D6A5BD;', type='button', data-original-title='#D6A5BD')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#E76363', data-event='backColor', style='background-color:#E76363;', type='button', data-original-title='#E76363')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#F7AD6B', data-event='backColor', style='background-color:#F7AD6B;', type='button', data-original-title='#F7AD6B')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFD663', data-event='backColor', style='background-color:#FFD663;', type='button', data-original-title='#FFD663')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#94BD7B', data-event='backColor', style='background-color:#94BD7B;', type='button', data-original-title='#94BD7B')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#73A5AD', data-event='backColor', style='background-color:#73A5AD;', type='button', data-original-title='#73A5AD')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#6BADDE', data-event='backColor', style='background-color:#6BADDE;', type='button', data-original-title='#6BADDE')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#8C7BC6', data-event='backColor', style='background-color:#8C7BC6;', type='button', data-original-title='#8C7BC6')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#C67BA5', data-event='backColor', style='background-color:#C67BA5;', type='button', data-original-title='#C67BA5')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#CE0000', data-event='backColor', style='background-color:#CE0000;', type='button', data-original-title='#CE0000')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#E79439', data-event='backColor', style='background-color:#E79439;', type='button', data-original-title='#E79439')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#EFC631', data-event='backColor', style='background-color:#EFC631;', type='button', data-original-title='#EFC631')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#6BA54A', data-event='backColor', style='background-color:#6BA54A;', type='button', data-original-title='#6BA54A')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#4A7B8C', data-event='backColor', style='background-color:#4A7B8C;', type='button', data-original-title='#4A7B8C')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#3984C6', data-event='backColor', style='background-color:#3984C6;', type='button', data-original-title='#3984C6')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#634AA5', data-event='backColor', style='background-color:#634AA5;', type='button', data-original-title='#634AA5')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#A54A7B', data-event='backColor', style='background-color:#A54A7B;', type='button', data-original-title='#A54A7B')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#9C0000', data-event='backColor', style='background-color:#9C0000;', type='button', data-original-title='#9C0000')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#B56308', data-event='backColor', style='background-color:#B56308;', type='button', data-original-title='#B56308')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#BD9400', data-event='backColor', style='background-color:#BD9400;', type='button', data-original-title='#BD9400')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#397B21', data-event='backColor', style='background-color:#397B21;', type='button', data-original-title='#397B21')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#104A5A', data-event='backColor', style='background-color:#104A5A;', type='button', data-original-title='#104A5A')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#085294', data-event='backColor', style='background-color:#085294;', type='button', data-original-title='#085294')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#311873', data-event='backColor', style='background-color:#311873;', type='button', data-original-title='#311873')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#731842', data-event='backColor', style='background-color:#731842;', type='button', data-original-title='#731842')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#630000', data-event='backColor', style='background-color:#630000;', type='button', data-original-title='#630000')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#7B3900', data-event='backColor', style='background-color:#7B3900;', type='button', data-original-title='#7B3900')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#846300', data-event='backColor', style='background-color:#846300;', type='button', data-original-title='#846300')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#295218', data-event='backColor', style='background-color:#295218;', type='button', data-original-title='#295218')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#083139', data-event='backColor', style='background-color:#083139;', type='button', data-original-title='#083139')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#003163', data-event='backColor', style='background-color:#003163;', type='button', data-original-title='#003163')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#21104A', data-event='backColor', style='background-color:#21104A;', type='button', data-original-title='#21104A')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#4A1031', data-event='backColor', style='background-color:#4A1031;', type='button', data-original-title='#4A1031')
+                      .btn-group
+                        .note-palette-title Foreground Color
+                        .note-color-reset(title='Reset', data-value='inherit', data-event='foreColor') Reset to default
+                        .note-color-palette(data-target-event='foreColor')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#000000', data-event='foreColor', style='background-color:#000000;', type='button', data-original-title='#000000')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#424242', data-event='foreColor', style='background-color:#424242;', type='button', data-original-title='#424242')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#636363', data-event='foreColor', style='background-color:#636363;', type='button', data-original-title='#636363')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#9C9C94', data-event='foreColor', style='background-color:#9C9C94;', type='button', data-original-title='#9C9C94')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#CEC6CE', data-event='foreColor', style='background-color:#CEC6CE;', type='button', data-original-title='#CEC6CE')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#EFEFEF', data-event='foreColor', style='background-color:#EFEFEF;', type='button', data-original-title='#EFEFEF')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#F7F7F7', data-event='foreColor', style='background-color:#F7F7F7;', type='button', data-original-title='#F7F7F7')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFFFFF', data-event='foreColor', style='background-color:#FFFFFF;', type='button', data-original-title='#FFFFFF')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FF0000', data-event='foreColor', style='background-color:#FF0000;', type='button', data-original-title='#FF0000')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FF9C00', data-event='foreColor', style='background-color:#FF9C00;', type='button', data-original-title='#FF9C00')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFFF00', data-event='foreColor', style='background-color:#FFFF00;', type='button', data-original-title='#FFFF00')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#00FF00', data-event='foreColor', style='background-color:#00FF00;', type='button', data-original-title='#00FF00')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#00FFFF', data-event='foreColor', style='background-color:#00FFFF;', type='button', data-original-title='#00FFFF')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#0000FF', data-event='foreColor', style='background-color:#0000FF;', type='button', data-original-title='#0000FF')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#9C00FF', data-event='foreColor', style='background-color:#9C00FF;', type='button', data-original-title='#9C00FF')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FF00FF', data-event='foreColor', style='background-color:#FF00FF;', type='button', data-original-title='#FF00FF')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#F7C6CE', data-event='foreColor', style='background-color:#F7C6CE;', type='button', data-original-title='#F7C6CE')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFE7CE', data-event='foreColor', style='background-color:#FFE7CE;', type='button', data-original-title='#FFE7CE')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFEFC6', data-event='foreColor', style='background-color:#FFEFC6;', type='button', data-original-title='#FFEFC6')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#D6EFD6', data-event='foreColor', style='background-color:#D6EFD6;', type='button', data-original-title='#D6EFD6')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#CEDEE7', data-event='foreColor', style='background-color:#CEDEE7;', type='button', data-original-title='#CEDEE7')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#CEE7F7', data-event='foreColor', style='background-color:#CEE7F7;', type='button', data-original-title='#CEE7F7')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#D6D6E7', data-event='foreColor', style='background-color:#D6D6E7;', type='button', data-original-title='#D6D6E7')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#E7D6DE', data-event='foreColor', style='background-color:#E7D6DE;', type='button', data-original-title='#E7D6DE')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#E79C9C', data-event='foreColor', style='background-color:#E79C9C;', type='button', data-original-title='#E79C9C')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFC69C', data-event='foreColor', style='background-color:#FFC69C;', type='button', data-original-title='#FFC69C')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFE79C', data-event='foreColor', style='background-color:#FFE79C;', type='button', data-original-title='#FFE79C')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#B5D6A5', data-event='foreColor', style='background-color:#B5D6A5;', type='button', data-original-title='#B5D6A5')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#A5C6CE', data-event='foreColor', style='background-color:#A5C6CE;', type='button', data-original-title='#A5C6CE')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#9CC6EF', data-event='foreColor', style='background-color:#9CC6EF;', type='button', data-original-title='#9CC6EF')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#B5A5D6', data-event='foreColor', style='background-color:#B5A5D6;', type='button', data-original-title='#B5A5D6')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#D6A5BD', data-event='foreColor', style='background-color:#D6A5BD;', type='button', data-original-title='#D6A5BD')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#E76363', data-event='foreColor', style='background-color:#E76363;', type='button', data-original-title='#E76363')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#F7AD6B', data-event='foreColor', style='background-color:#F7AD6B;', type='button', data-original-title='#F7AD6B')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#FFD663', data-event='foreColor', style='background-color:#FFD663;', type='button', data-original-title='#FFD663')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#94BD7B', data-event='foreColor', style='background-color:#94BD7B;', type='button', data-original-title='#94BD7B')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#73A5AD', data-event='foreColor', style='background-color:#73A5AD;', type='button', data-original-title='#73A5AD')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#6BADDE', data-event='foreColor', style='background-color:#6BADDE;', type='button', data-original-title='#6BADDE')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#8C7BC6', data-event='foreColor', style='background-color:#8C7BC6;', type='button', data-original-title='#8C7BC6')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#C67BA5', data-event='foreColor', style='background-color:#C67BA5;', type='button', data-original-title='#C67BA5')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#CE0000', data-event='foreColor', style='background-color:#CE0000;', type='button', data-original-title='#CE0000')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#E79439', data-event='foreColor', style='background-color:#E79439;', type='button', data-original-title='#E79439')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#EFC631', data-event='foreColor', style='background-color:#EFC631;', type='button', data-original-title='#EFC631')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#6BA54A', data-event='foreColor', style='background-color:#6BA54A;', type='button', data-original-title='#6BA54A')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#4A7B8C', data-event='foreColor', style='background-color:#4A7B8C;', type='button', data-original-title='#4A7B8C')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#3984C6', data-event='foreColor', style='background-color:#3984C6;', type='button', data-original-title='#3984C6')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#634AA5', data-event='foreColor', style='background-color:#634AA5;', type='button', data-original-title='#634AA5')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#A54A7B', data-event='foreColor', style='background-color:#A54A7B;', type='button', data-original-title='#A54A7B')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#9C0000', data-event='foreColor', style='background-color:#9C0000;', type='button', data-original-title='#9C0000')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#B56308', data-event='foreColor', style='background-color:#B56308;', type='button', data-original-title='#B56308')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#BD9400', data-event='foreColor', style='background-color:#BD9400;', type='button', data-original-title='#BD9400')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#397B21', data-event='foreColor', style='background-color:#397B21;', type='button', data-original-title='#397B21')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#104A5A', data-event='foreColor', style='background-color:#104A5A;', type='button', data-original-title='#104A5A')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#085294', data-event='foreColor', style='background-color:#085294;', type='button', data-original-title='#085294')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#311873', data-event='foreColor', style='background-color:#311873;', type='button', data-original-title='#311873')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#731842', data-event='foreColor', style='background-color:#731842;', type='button', data-original-title='#731842')
+                          .note-color-row
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#630000', data-event='foreColor', style='background-color:#630000;', type='button', data-original-title='#630000')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#7B3900', data-event='foreColor', style='background-color:#7B3900;', type='button', data-original-title='#7B3900')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#846300', data-event='foreColor', style='background-color:#846300;', type='button', data-original-title='#846300')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#295218', data-event='foreColor', style='background-color:#295218;', type='button', data-original-title='#295218')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#083139', data-event='foreColor', style='background-color:#083139;', type='button', data-original-title='#083139')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#003163', data-event='foreColor', style='background-color:#003163;', type='button', data-original-title='#003163')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#21104A', data-event='foreColor', style='background-color:#21104A;', type='button', data-original-title='#21104A')
+                            button.note-color-btn(tabindex='-1', data-toggle='button', title='', data-value='#4A1031', data-event='foreColor', style='background-color:#4A1031;', type='button', data-original-title='#4A1031')
+                .note-para.btn-group
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='insertUnorderedList', title='', type='button', data-original-title='Unordered list (CTRL+SHIFT+NUM7)')
+                    i.fa.fa-list-ul
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='insertOrderedList', title='', type='button', data-original-title='Ordered list (CTRL+SHIFT+NUM8)')
+                    i.fa.fa-list-ol
+                  button.btn.btn-default.btn-sm.btn-small.dropdown-toggle(tabindex='-1', title='', data-toggle='dropdown', type='button', data-original-title='Paragraph')
+                    i.fa.fa-align-left
+                    span.caret
+                  .dropdown-menu
+                    .note-align.btn-group
+                      button.btn.btn-default.btn-sm.btn-small.active(tabindex='-1', data-event='justifyLeft', title='', type='button', data-original-title='Align left (CTRL+SHIFT+L)')
+                        i.fa.fa-align-left
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='justifyCenter', title='', type='button', data-original-title='Align center (CTRL+SHIFT+E)')
+                        i.fa.fa-align-center
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='justifyRight', title='', type='button', data-original-title='Align right (CTRL+SHIFT+R)')
+                        i.fa.fa-align-right
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='justifyFull', title='', type='button', data-original-title='Justify full (CTRL+SHIFT+J)')
+                        i.fa.fa-align-justify
+                    .note-list.btn-group
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='indent', title='', type='button', data-original-title='Indent (CTRL+])')
+                        i.fa.fa-indent
+                      button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='outdent', title='', type='button', data-original-title='Outdent (CTRL+[)')
+                        i.fa.fa-outdent
+                .note-height.btn-group
+                  button.btn.btn-default.btn-sm.btn-small.dropdown-toggle(tabindex='-1', title='', data-toggle='dropdown', type='button', data-original-title='Line Height')
+                    i.fa.fa-text-height
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(data-value='1', href='#', data-event='lineHeight')
+                        i.fa.fa-check
+                        |  1.0
+                    li
+                      a(data-value='1.2', href='#', data-event='lineHeight')
+                        i.fa.fa-check
+                        |  1.2
+                    li
+                      a.checked(data-value='1.4', href='#', data-event='lineHeight')
+                        i.fa.fa-check
+                        |  1.4
+                    li
+                      a(data-value='1.5', href='#', data-event='lineHeight')
+                        i.fa.fa-check
+                        |  1.5
+                    li
+                      a(data-value='1.6', href='#', data-event='lineHeight')
+                        i.fa.fa-check
+                        |  1.6
+                    li
+                      a(data-value='1.8', href='#', data-event='lineHeight')
+                        i.fa.fa-check
+                        |  1.8
+                    li
+                      a(data-value='2', href='#', data-event='lineHeight')
+                        i.fa.fa-check
+                        |  2.0
+                    li
+                      a(data-value='3', href='#', data-event='lineHeight')
+                        i.fa.fa-check
+                        |  3.0
+                .note-table.btn-group
+                  button.btn.btn-default.btn-sm.btn-small.dropdown-toggle(tabindex='-1', title='', data-toggle='dropdown', type='button', data-original-title='Table')
+                    i.fa.fa-table
+                    span.caret
+                  ul.note-table.dropdown-menu
+                    .note-dimension-picker
+                      .note-dimension-picker-mousecatcher(data-value='1x1', data-event='insertTable', style='width: 10em; height: 10em;')
+                      .note-dimension-picker-highlighted
+                      .note-dimension-picker-unhighlighted
+                    .note-dimension-display  1 x 1 
+                .note-insert.btn-group
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-hide='true', data-event='showLinkDialog', title='', type='button', data-original-title='Link (CTRL+K)')
+                    i.fa.fa-link
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-hide='true', data-event='showImageDialog', title='', type='button', data-original-title='Picture')
+                    i.fa.fa-picture-o
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='insertHorizontalRule', title='', type='button', data-original-title='Insert Horizontal Rule (CTRL+ENTER)')
+                    i.fa.fa-minus
+                .note-view.btn-group
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='fullscreen', title='', type='button', data-original-title='Full Screen')
+                    i.fa.fa-arrows-alt
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-event='codeview', title='', type='button', data-original-title='Code View')
+                    i.fa.fa-code
+                .note-help.btn-group
+                  button.btn.btn-default.btn-sm.btn-small(tabindex='-1', data-hide='true', data-event='showHelpDialog', title='', type='button', data-original-title='Help')
+                    i.fa.fa-question
+              textarea.note-codable
+              .note-editable(contenteditable='true', style='height: 420px;')
+                p
+                  | Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with
+                  | my name printed on it? Do you see a little Asian child with a blank expression on his face
+                  | sitting outside on a mechanical helicopter that shakes when you put quarters in it? No?
+                  | Well, that's what you see at a toy store. And you must think you're in a toy store, because
+                  | you're here shopping for an infant named Jeb.
+                p
+                  | Do you see a little Asian child with a blank expression on his face
+                  | sitting outside on a mechanical helicopter that shakes when you put quarters in it? No?
+                  | Well, that's what you see at a toy store. And you must think you're in a toy store, because
+                  | you're here shopping for an infant named Jeb.
+                p
+                  | Well, that's what you see at a toy store. And you must think you're in a toy store, because
+                  | you're here shopping for an infant named Jeb. Do you see a slender plastic tag clipped to my
+                  | shirt with my name printed on it? Do you see a little Asian child with a blank expression on
+                  | his face sitting outside on a mechanical helicopter that shakes when you put quarters in it?
+              .note-statusbar
+                .note-resizebar
+                  .note-icon-bar
+                  .note-icon-bar
+                  .note-icon-bar
+footer#footer-bar.row(style='opacity: 1;')
+  p#footer-copyright.col-xs-12
+    | Powered by Cube Theme.

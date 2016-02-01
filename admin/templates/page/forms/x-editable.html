@@ -1,0 +1,88 @@
+
+<div style="opacity: 1;" class="row">
+  <div class="col-lg-12">
+    <div class="row">
+      <div class="col-lg-12">
+        <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li class="active"><span>X-Editable</span></li>
+        </ol>
+        <h1>X-Editable</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="main-box clearfix">
+          <header class="main-box-header clearfix">
+            <h2>Demo table from X-Editable example</h2>
+          </header>
+          <div class="main-box-body clearfix">
+            <div class="table-responsive">
+              <table id="user" style="clear: both" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th><span>Type</span></th>
+                    <th><span>Click to edit</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td width="35%">Simple text field</td>
+                    <td width="65%"><a id="username" data-title="Enter username" data-pk="1" data-type="text" href="#" class="editable editable-click">superuser</a></td>
+                  </tr>
+                  <tr>
+                    <td>Empty text field, required</td>
+                    <td><a id="firstname" data-title="Enter your firstname" data-placeholder="Required" data-placement="right" data-pk="1" data-type="text" href="#" class="editable editable-click">Empty</a></td>
+                  </tr>
+                  <tr>
+                    <td>Select, local array, custom display</td>
+                    <td><a id="sex" style="color: gray;" data-title="Select sex" data-value="" data-pk="1" data-type="select2" href="#" class="editable editable-click">not selected</a></td>
+                  </tr>
+                  <tr>
+                    <td>Select, remote array, no buttons</td>
+                    <td><a id="group" data-title="Select group" data-source="/groups" data-value="5" data-pk="1" data-type="select" href="#" class="editable editable-click">Admin</a></td>
+                  </tr>
+                  <tr>
+                    <td>Select, error while loading</td>
+                    <td><a id="status" data-title="Select status" data-source="/status" data-value="0" data-pk="1" data-type="select" href="#" class="editable editable-click">Active</a></td>
+                  </tr>
+                  <tr>
+                    <td>Datepicker</td>
+                    <td><span class="notready">not implemented for Bootstrap 3 yet</span></td>
+                  </tr>
+                  <tr>
+                    <td>Combodate (date)</td>
+                    <td><a id="dob" data-title="Select Date of birth" data-pk="1" data-template="D / MMM / YYYY" data-viewformat="DD/MM/YYYY" data-format="YYYY-MM-DD" data-value="1984-05-15" data-type="combodate" href="#" class="editable editable-click">15/05/1984</a></td>
+                  </tr>
+                  <tr>
+                    <td>Combodate (datetime)</td>
+                    <td><a id="event" data-title="Setup event date and time" data-pk="1" data-viewformat="MMM D, YYYY, HH:mm" data-format="YYYY-MM-DD HH:mm" data-template="D MMM YYYY  HH:mm" data-type="combodate" href="#" class="editable editable-click">Empty</a></td>
+                  </tr>
+                  <tr>
+                    <td>Textarea, buttons below. Submit by <i>ctrl+enter</i></td>
+                    <td><a id="comments" data-title="Enter comments" data-placeholder="Your comments here..." data-pk="1" data-type="textarea" href="#" class="editable editable-pre-wrapped editable-click">awesome user!</a></td>
+                  </tr>
+                  <tr>
+                    <td>Checklist</td>
+                    <td><a id="fruits" data-title="Select fruits" data-value="2,3" data-type="checklist" href="#" class="editable editable-click">peach<br/>apple</a></td>
+                  </tr>
+                  <tr>
+                    <td>Select2 (tags mode)</td>
+                    <td><a id="tags" data-title="Enter tags" data-pk="1" data-type="select2" href="#" class="editable editable-click">html, javascript</a></td>
+                  </tr>
+                  <tr>
+                    <td>Select2 (dropdown mode)</td>
+                    <td><a id="country" data-title="Select country" data-value="SK" data-pk="1" data-type="select2" href="#" class="editable editable-click">Slovakia</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer id="footer-bar" style="opacity: 1;" class="row">
+  <p id="footer-copyright" class="col-xs-12">Powered by Cube Theme.</p>
+</footer>
