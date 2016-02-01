@@ -1,0 +1,99 @@
+
+<div style="opacity: 1;" class="row">
+  <div class="col-lg-12">
+    <div class="row">
+      <div class="col-lg-12">
+        <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li class="active"><span>Form wizard</span></li>
+        </ol>
+        <h1>Form wizard</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div style="min-height: 820px;" class="main-box clearfix">
+          <header class="main-box-header clearfix">
+            <h2>Try the demo wizard bellow</h2>
+          </header>
+          <div class="main-box-body clearfix">
+            <div id="myWizard" class="wizard">
+              <div class="wizard-inner">
+                <ul class="steps">
+                  <li data-target="#step1" class="active"><span class="badge badge-primary">1</span>Step 1<span class="chevron"></span></li>
+                  <li data-target="#step2"><span class="badge">2</span>Step 2<span class="chevron"></span></li>
+                  <li data-target="#step3"><span class="badge">3</span>Step 3<span class="chevron"></span></li>
+                  <li data-target="#step4"><span class="badge">4</span>Step 4<span class="chevron"></span></li>
+                </ul>
+                <div class="actions">
+                  <button type="button" class="btn btn-default btn-mini btn-prev"><i class="icon-arrow-left"></i>Prev</button>
+                  <button data-last="Finish" type="button" class="btn btn-success btn-mini btn-next">Next<i class="icon-arrow-right"></i></button>
+                </div>
+              </div>
+              <div class="step-content">
+                <div id="step1" class="step-pane active"><br/>
+                  <h4>This is step 1</h4>
+                  <div class="form-group has-success">
+                    <label for="inputSuccess" class="control-label">Input with success</label>
+                    <input id="inputSuccess" type="text" class="form-control"/><span class="help-block"><i class="icon-ok-sign"></i> Success message</span>
+                  </div>
+                  <div class="form-group has-warning">
+                    <label for="inputWarning" class="control-label">Input with warning</label>
+                    <input id="inputWarning" type="text" class="form-control"/><span class="help-block"><i class="icon-warning-sign"></i> Warning message</span>
+                  </div>
+                  <div class="form-group has-error">
+                    <label for="inputError" class="control-label">Input with error</label>
+                    <input id="inputError" type="text" class="form-control"/><span class="help-block"><i class="icon-remove-sign"></i> Error message</span>
+                  </div>
+                </div>
+                <div id="step2" class="step-pane"><br/>
+                  <h4>This is step 2</h4>
+                  <div class="alert alert-success fade in">
+                    <button aria-hidden="true" data-dismiss="alert" type="button" class="close">×</button><i class="fa fa-check-circle fa-fw fa-lg"></i><strong>Well done!</strong> You successfully read this important alert message.
+                  </div>
+                  <div class="alert alert-info fade in">
+                    <button aria-hidden="true" data-dismiss="alert" type="button" class="close">×</button><i class="fa fa-info-circle fa-fw fa-lg"></i><strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                  </div>
+                  <div class="alert alert-warning fade in">
+                    <button aria-hidden="true" data-dismiss="alert" type="button" class="close">×</button><i class="fa fa-warning fa-fw fa-lg"></i><strong>Warning!</strong> Best check yo self, you're not looking too good.
+                  </div>
+                  <div class="alert alert-danger fade in">
+                    <button aria-hidden="true" data-dismiss="alert" type="button" class="close">×</button><i class="fa fa-times-circle fa-fw fa-lg"></i><strong>Oh snap!</strong> Change a few things up and <a href="#" class="alert-link">try submitting again</a>.
+                  </div>
+                </div>
+                <div id="step3" class="step-pane"><br/>
+                  <h4>This is step 3</h4>
+                  <div class="form-group">
+                    <label for="maskedDate">Date</label>
+                    <div class="input-group"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                      <input id="maskedDate" type="text" class="form-control"/>
+                    </div><span class="help-block">ex. 99/99/9999</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="maskedPhone">Phone</label>
+                    <div class="input-group"><span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                      <input id="maskedPhone" type="text" class="form-control"/>
+                    </div><span class="help-block">ex. (999) 999-9999</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="maskedPhoneExt">Phone + Ext</label>
+                    <div class="input-group"><span class="input-group-addon"><i class="fa fa-mobile-phone"></i></span>
+                      <input id="maskedPhoneExt" type="text" class="form-control"/>
+                    </div><span class="help-block">ex. (999) 999-9999? x99999</span>
+                  </div>
+                </div>
+                <div id="step4" class="step-pane"><br/>
+                  <h4>This is step 4</h4>
+                  <div style="margin: 100px 0;" class="alert alert-success fade in"><i class="fa fa-check-circle fa-fw fa-lg"></i><strong>Congratulation!</strong> You have successfully finished our nice wizard.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer id="footer-bar" style="opacity: 1;" class="row">
+  <p id="footer-copyright" class="col-xs-12">Powered by Cube Theme.</p>
+</footer>
