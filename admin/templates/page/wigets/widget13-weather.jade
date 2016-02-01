@@ -1,0 +1,57 @@
+.col-md-4
+  .main-box.weather-box
+    header.main-box-header.clearfix
+      h2.pull-left Weather now
+    .main-box-body.clearfix
+      .current
+        .clearfix.center-block(style='width: 220px;')
+          canvas#current-weather.icon(height='100', width='100')
+          .temp-wrapper
+            .temperature
+              | 25
+              span.sign °
+            .desc
+              i.fa.fa-map-marker
+              |  Udaipur
+      .next
+        ul.clearfix
+          li
+            .day
+              | MON
+            .icon(data-toggle='tooltip', title='', data-original-title='Hot')
+              i.wi.wi-hot
+            .temperature
+              | 45
+              span.sign °
+          li
+            .day
+              | TUE
+            .icon(data-toggle='tooltip', title='', data-original-title='Showers')
+              i.wi.wi-day-showers
+            .temperature
+              | 28
+              span.sign °
+          li
+            .day
+              | WED
+            .icon(data-toggle='tooltip', title='', data-original-title='Cloudy')
+              i.wi.wi-cloudy-windy
+            .temperature
+              | 16
+              span.sign °
+          li
+            .day
+              | THU
+            .icon(data-toggle='tooltip', title='', data-original-title='Thunderstom')
+              i.wi.wi-thunderstorm
+            .temperature
+              | 18
+              span.sign °
+          li
+            .day
+              | FRI
+            .icon(data-toggle='tooltip', title='', data-original-title='Lightning')
+              i.wi.wi-night-alt-lightning
+            .temperature
+              | 22
+              span.sign °
