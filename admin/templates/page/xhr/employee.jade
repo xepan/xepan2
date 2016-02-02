@@ -1,18 +1,15 @@
 .row(style='opacity: 1;')
   .col-lg-12
     .row
-      .col-lg-12
-        ol.breadcrumb
-          li
-            a(href='#') Home
-          li.active
-            span Users
-        .clearfix
-          h1.pull-left Users
-          .pull-right.top-page-ui
-            a.btn.btn-primary.pull-right(href='#')
-              i.fa.fa-plus-circle.fa-lg
-              |  Add user
+      header.main-box-header.clearfix
+        h2.pull-left Employees
+        .filter-block.pull-right
+          .form-group.pull-left
+            input.form-control(type='text', placeholder='Search...')
+            i.fa.fa-search.search-icon
+          a.btn.btn-primary.pull-right(href='#')
+            i.fa.fa-plus-circle.fa-lg
+              |  Add Employees
     .row
       .col-lg-12
         .main-box.no-header.clearfix
@@ -24,7 +21,7 @@
                     th
                       span User
                     th
-                      span Created
+                      span Date Of Joining
                     th.text-center
                       span Status
                     th

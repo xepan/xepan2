@@ -1,0 +1,242 @@
+.row(style='opacity: 1;')
+    .col-lg-12
+      .row
+        .col-lg-12
+          ol.breadcrumb
+            li
+              a(href='#') Home
+            li
+              a(href='#')
+                span Graphs
+            li.active
+              span Flot Charts
+          h1 Flot Charts
+      .row
+        .col-lg-12
+          .main-box
+            header.main-box-header.clearfix
+              h2 Flot Bar chart
+            .main-box-body.clearfix
+              #graph-bar(style='height: 300px; padding: 0px; position: relative;')
+                canvas.flot-base(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 1059px; height: 300px;', width='1059', height='300')
+                .flot-text(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);')
+                  .flot-x-axis.flot-x1-axis.xAxis.x1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 45px; text-align: center;') 0
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 142px; text-align: center;') 1
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 239px; text-align: center;') 2
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 337px; text-align: center;') 3
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 434px; text-align: center;') 4
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 531px; text-align: center;') 5
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 628px; text-align: center;') 6
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 725px; text-align: center;') 7
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 823px; text-align: center;') 8
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 920px; text-align: center;') 9
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 81px; top: 284px; left: 1014px; text-align: center;') 10
+                  .flot-y-axis.flot-y1-axis.yAxis.y1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 271px; left: 6px; text-align: right;') 0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 226px; left: 6px; text-align: right;') 5
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 181px; left: 0px; text-align: right;') 10
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 136px; left: 0px; text-align: right;') 15
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 90px; left: 0px; text-align: right;') 20
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 45px; left: 0px; text-align: right;') 25
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 0px; left: 0px; text-align: right;') 30
+                canvas.flot-overlay(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 1059px; height: 300px;', width='1059', height='300')
+      .row
+        .col-lg-12
+          .main-box
+            header.main-box-header.clearfix
+              h2 Flot Line chart
+            .main-box-body.clearfix
+              #graph-flot-sin(style='height: 300px; padding: 0px; position: relative;')
+                canvas.flot-base(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 1059px; height: 300px;', width='1059', height='300')
+                .flot-text(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);')
+                  .flot-x-axis.flot-x1-axis.xAxis.x1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 21px; text-align: center;') 0
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 97px; text-align: center;') 1
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 173px; text-align: center;') 2
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 249px; text-align: center;') 3
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 325px; text-align: center;') 4
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 401px; text-align: center;') 5
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 477px; text-align: center;') 6
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 554px; text-align: center;') 7
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 630px; text-align: center;') 8
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 706px; text-align: center;') 9
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 779px; text-align: center;') 10
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 855px; text-align: center;') 11
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 931px; text-align: center;') 12
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 70px; top: 284px; left: 1007px; text-align: center;') 13
+                  .flot-y-axis.flot-y1-axis.yAxis.y1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 248px; left: 0px; text-align: right;') -1.0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 192px; left: 0px; text-align: right;') -0.5
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 136px; left: 4px; text-align: right;') 0.0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 79px; left: 4px; text-align: right;') 0.5
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 23px; left: 4px; text-align: right;') 1.0
+                canvas.flot-overlay(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 1059px; height: 300px;', width='1059', height='300')
+                .legend
+                  div(style='position: absolute; width: 48px; height: 31px; top: 13px; right: 13px; background-color: rgb(255, 255, 255); opacity: 0.85;')  
+                  table(style='position:absolute;top:13px;right:13px;;font-size:smaller;color:#545454')
+                    tbody
+                      tr
+                        td.legendColorBox
+                          div(style='border:1px solid #ccc;padding:1px')
+                            div(style='width:4px;height:0;border:5px solid rgb(232,78,64);overflow:hidden')
+                        td.legendLabel sin(x)
+                      tr
+                        td.legendColorBox
+                          div(style='border:1px solid #ccc;padding:1px')
+                            div(style='width:4px;height:0;border:5px solid rgb(139,195,74);overflow:hidden')
+                        td.legendLabel cos(x)
+      .row
+        .col-lg-6
+          .main-box
+            header.main-box-header.clearfix
+              h2.pull-left Stack charts
+              .icon-box.pull-right
+                p.stackControls
+                  button.btn With stacking
+                  button.btn Without stacking
+                p.graphControls
+                  button.btn Bars
+                  button.btn Lines
+                  button.btn Lines with steps
+            .main-box-body.clearfix
+              #graph-flot-stacking(style='height: 400px; padding: 0px; position: relative;')
+                canvas.flot-base(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 501px; height: 400px;', width='501', height='400')
+                .flot-text(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);')
+                  .flot-x-axis.flot-x1-axis.xAxis.x1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 14px; text-align: center;') 0
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 106px; text-align: center;') 2
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 199px; text-align: center;') 4
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 291px; text-align: center;') 6
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 384px; text-align: center;') 8
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 473px; text-align: center;') 10
+                  .flot-y-axis.flot-y1-axis.yAxis.y1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 371px; left: 6px; text-align: right;') 0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 318px; left: 0px; text-align: right;') 10
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 265px; left: 0px; text-align: right;') 20
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 212px; left: 0px; text-align: right;') 30
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 159px; left: 0px; text-align: right;') 40
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 106px; left: 0px; text-align: right;') 50
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 53px; left: 0px; text-align: right;') 60
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 0px; left: 0px; text-align: right;') 70
+                canvas.flot-overlay(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 501px; height: 400px;', width='501', height='400')
+        .col-lg-6
+          .main-box
+            header.main-box-header.clearfix
+              h2 Horizontal bar charts
+            .main-box-body.clearfix
+              #graph-flot-bar-horizontal(style='height: 435px; padding: 0px; position: relative;')
+                canvas.flot-base(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 501px; height: 435px;', width='501', height='435')
+                .flot-text(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);')
+                  .flot-x-axis.flot-x1-axis.xAxis.x1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 419px; left: 21px; text-align: center;') 0
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 419px; left: 108px; text-align: center;') 5
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 419px; left: 192px; text-align: center;') 10
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 419px; left: 279px; text-align: center;') 15
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 419px; left: 365px; text-align: center;') 20
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 419px; left: 452px; text-align: center;') 25
+                  .flot-y-axis.flot-y1-axis.yAxis.y1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 406px; left: 0px; text-align: right;') -1.0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 338px; left: 4px; text-align: right;') 0.0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 271px; left: 4px; text-align: right;') 1.0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 203px; left: 4px; text-align: right;') 2.0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 135px; left: 4px; text-align: right;') 3.0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 68px; left: 4px; text-align: right;') 4.0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 0px; left: 4px; text-align: right;') 5.0
+                canvas.flot-overlay(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 501px; height: 435px;', width='501', height='435')
+      .row
+        .col-lg-12
+          .main-box
+            header.main-box-header.clearfix
+              h2 Realtime example
+            .main-box-body.clearfix
+              #graph-flot-realtime(style='height: 400px; padding: 0px; position: relative;')
+                canvas.flot-base(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 1059px; height: 400px;', width='1059', height='400')
+                .flot-text(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);')
+                  .flot-y-axis.flot-y1-axis.yAxis.y1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 384px; left: 14px; text-align: right;') 0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 307px; left: 8px; text-align: right;') 20
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 230px; left: 8px; text-align: right;') 40
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 154px; left: 8px; text-align: right;') 60
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 77px; left: 8px; text-align: right;') 80
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 0px; left: 2px; text-align: right;') 100
+                canvas.flot-overlay(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 1059px; height: 400px;', width='1059', height='400')
+              br
+              p
+                | You can update a chart periodically to get a real-time effect by using a timer to insert the new
+                | data in the plot and redraw it.
+              p
+                | Time between updates:
+                input#updateInterval.form-control.inline(type='text', style='text-align: right; width:5em; display: inline-block;', value='')
+                | milliseconds
+      .row
+        .col-lg-6
+          .main-box
+            header.main-box-header.clearfix
+              h2 Facebook fans
+            .main-box-body.clearfix
+              #graph-flot-points(style='height: 400px; padding: 0px; position: relative;')
+                canvas.flot-base(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 501px; height: 400px;', width='501', height='400')
+                .flot-text(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);')
+                  .flot-x-axis.flot-x1-axis.xAxis.x1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 85px; text-align: center;') 5
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 163px; text-align: center;') 10
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 244px; text-align: center;') 15
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 325px; text-align: center;') 20
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 406px; text-align: center;') 25
+                    .flot-tick-label.tickLabel(style='position: absolute; max-width: 71px; top: 384px; left: 487px; text-align: center;') 30
+                  .flot-y-axis.flot-y1-axis.yAxis.y1Axis(style='position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;')
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 371px; left: 12px; text-align: right;') 0
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 186px; left: 6px; text-align: right;') 50
+                    .flot-tick-label.tickLabel(style='position: absolute; top: 0px; left: 0px; text-align: right;') 100
+                canvas.flot-overlay(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 501px; height: 400px;', width='501', height='400')
+                .legend
+                  div(style='position: absolute; width: 43px; height: 16px; top: 13px; right: 13px; background-color: rgb(255, 255, 255); opacity: 0.85;')  
+                  table(style='position:absolute;top:13px;right:13px;;font-size:smaller;color:#545454')
+                    tbody
+                      tr
+                        td.legendColorBox
+                          div(style='border:1px solid #ccc;padding:1px')
+                            div(style='width:4px;height:0;border:5px solid rgb(3,169,244);overflow:hidden')
+                        td.legendLabel Fans
+        .col-lg-6
+          .main-box
+            header.main-box-header.clearfix
+              h2 Pie chart
+            .main-box-body.clearfix
+              #graph-flot-donut(style='height: 400px; padding: 0px; position: relative;')
+                canvas.flot-base(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 501px; height: 400px;', width='501', height='400')
+                canvas.flot-overlay(style='direction: ltr; position: absolute; left: 0px; top: 0px; width: 501px; height: 400px;', width='501', height='400')
+                span#pieLabel0.pieLabel(style='position: absolute; top: 3.5px; left: 246px;')
+                  div(style='font-size:x-small;text-align:center;padding:2px;color:rgb(232,78,64);')
+                    | Series1
+                    br
+                    | 3%
+                span#pieLabel1.pieLabel(style='position: absolute; top: 17.5px; left: 302px;')
+                  div(style='font-size:x-small;text-align:center;padding:2px;color:rgb(255,193,7);')
+                    | Series2
+                    br
+                    | 8%
+                span#pieLabel2.pieLabel(style='position: absolute; top: 147.5px; left: 408px;')
+                  div(style='font-size:x-small;text-align:center;padding:2px;color:rgb(139,195,74);')
+                    | Series3
+                    br
+                    | 23%
+                span#pieLabel3.pieLabel(style='position: absolute; top: 343.5px; left: 315px;')
+                  div(style='font-size:x-small;text-align:center;padding:2px;color:rgb(3,169,244);')
+                    | Series4
+                    br
+                    | 18%
+                span#pieLabel4.pieLabel(style='position: absolute; top: 318.5px; left: 111px;')
+                  div(style='font-size:x-small;text-align:center;padding:2px;color:rgb(156,39,176);')
+                    | Series5
+                    br
+                    | 21%
+                span#pieLabel5.pieLabel(style='position: absolute; top: 69.5px; left: 91px;')
+                  div(style='font-size:x-small;text-align:center;padding:2px;color:rgb(144,164,174);')
+                    | Series6
+                    br
+                    | 28%
+  footer#footer-bar.row(style='opacity: 1;')
+    p#footer-copyright.col-xs-12
+      | Powered by Cube Theme.
