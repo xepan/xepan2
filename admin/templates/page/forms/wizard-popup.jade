@@ -1,5 +1,5 @@
-.row(style='opacity: 1;')
-  .col-lg-12
+html-
+  body
     .row
       .col-lg-12
         ol.breadcrumb
@@ -17,6 +17,133 @@
             button#open-wizard.btn.btn-primary Open wizard
             #wizard-demo.wizard
               h1 Create Server
-footer#footer-bar.row(style='opacity: 1;')
-  p#footer-copyright.col-xs-12
-    | Powered by Cube Theme.
+              .wizard-card(data-onvalidated='setServerName', data-cardname='name')
+                h3
+                  span Name & FQDN
+                .wizard-input-section
+                  p
+                    | To begin, please enter the IP of your server or the
+                    | fully-qualified name.
+                  .form-group
+                    label(for='exampleInputEmail1') Email address
+                    input#new-server-fqdn.form-control(type='text', placeholder='FQDN or IP', data-validate='fqdn_or_ip')
+                .wizard-input-section
+                  p Optionally, give this server a label.
+                  .form-group
+                    label(for='exampleInputEmail1') Email address
+                    input#new-server-name.form-control(type='text', placeholder='Server name (optional)', data-validate='')
+              .wizard-card(data-cardname='group')
+                h3
+                  span Server Group
+                .wizard-input-section
+                  p
+                    | Where would you like server 
+                    strong.create-server-name
+                    | to go?
+              .wizard-card(data-cardname='services')
+                h3
+                  span Service Selection
+                .alert.hide
+                  | It's recommended that you select at least one
+                  | service, like ping.
+                .wizard-input-section
+                  p
+                    | Please choose the services you'd like Panopta to
+                    | monitor. Any service you select will be given a default
+                    | check frequency of 1 minute.
+                  .form-group
+                    label(for='exampleInputCountry') Country
+                    input#exampleInputCountry.form-control(type='text')
+              .wizard-card(data-onload='', data-cardname='location')
+                h3
+                  span Monitoring Location
+                .wizard-input-section
+                  p
+                    | We determined 
+                    strong Chicago
+                    |  to be
+                    |                                             the closest location to monitor
+                    strong.create-server-name
+                    | If you would like to change this, or you think this is
+                    |                                             incorrect, please select a different
+                    |                                             monitoring location.
+                  .form-group.form-group-select2.col-md-6
+                    label Enhanced Select
+                    select#sel2(style='width:300px')
+                      option(value='United States') United States
+                      option(value='United Kingdom') United Kingdom
+                      option(value='Afghanistan') Afghanistan
+                      option(value='Albania') Albania
+                      option(value='Algeria') Algeria
+                      option(value='American Samoa') American Samoa
+                      option(value='Andorra') Andorra
+                      option(value='Angola') Angola
+                      option(value='Anguilla') Anguilla
+                      option(value='Antarctica') Antarctica
+                      option(value='Antigua and Barbuda') Antigua and Barbuda
+                      option(value='Argentina') Argentina
+                      option(value='Armenia') Armenia
+                      option(value='Aruba') Aruba
+                      option(value='Australia') Australia
+                      option(value='Austria') Austria
+                      option(value='Azerbaijan') Azerbaijan
+                      option(value='Slovakia') Slovakia
+              .wizard-card
+                h3
+                  span Notification Schedule
+                .wizard-input-section
+                  p Select the notification schedule to be used for outages.
+                  .form-group
+                    input.form-control(type='text', placeholder='Type schedule here')
+                .wizard-ns-detail.hide
+                  | Also using 
+                  strong ALIS Production
+                  | :
+                  ul#wizard-ns-detail-servers
+                    li Corporate sites
+                    li dt01.sat.medtelligent.com
+                    li alisonline.com
+                    li circa-db04.sat.medtelligent.com
+                    li circa-services01.sat.medtelligent.com
+                    li circa-web01.sat.medtelligent.com
+                    li heartbeat.alisonline.com
+                    li medtelligent.com
+                    li dt02.fre.medtelligent.com
+                    li dev03.lin.medtelligent.com
+              .wizard-card
+                h3
+                  span Agent Setup
+                .wizard-input-section
+                  p
+                    | The Agent allows
+                    | you to monitor local resources (disk usage, cpu usage, etc).
+                    | If you would like to set that up now, please download
+                    | and follow the install instructions.
+                .wizard-input-section
+                  p
+                    | You will be given a server key after you install the Agent
+                    | on 
+                    strong.create-server-name
+                    | .
+                    |                                             If you know your server key now, please enter it
+                    |                                             below.
+                  .form-group
+                    input.form-control.create-server-agent-key(type='text', data-validate='', placeholder='Server key (optional)')
+              .wizard-error
+                .alert.alert-error
+                  strong There was a problem
+                  |  with your submission.
+                  |                                         Please correct the errors and re-submit.
+              .wizard-failure
+                .alert.alert-error
+                  strong There was a problem
+                  |  submitting the form.
+                  |                                         Please try again in a minute.
+              .wizard-success
+                .alert.alert-success
+                  span.create-server-name
+                  | was created 
+                  strong successfully.
+                a.btn.btn-default.create-another-server Create another server
+                span(style='padding:0 10px') or
+                a.btn.btn-primary.im-done Done
