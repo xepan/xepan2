@@ -1,0 +1,282 @@
+.row(style='opacity: 1;')
+    .col-lg-12
+      .row
+        .col-lg-12
+          ol.breadcrumb
+            li
+              a(href='#') Home
+            li
+              a(href='#')
+                span Graphs
+            li.active
+              span Dygraphs Charts
+          h1 Dygraphs Charts
+      .row
+        .col-lg-12
+          .main-box
+            header.main-box-header.clearfix
+              h2 Demo of the Range Selector with no roll period.
+            .main-box-body.clearfix
+              #noroll.dygraph(style='width:100%; height:300px;')
+                div(style='text-align: left; position: relative; width: 1059px; height: 300px;')
+                  canvas(style='position: absolute; width: 1059px; height: 300px;', width='1059', height='300')
+                  canvas(style='position: absolute; width: 1059px; height: 300px;', width='1059', height='300')
+                  canvas.dygraph-rangesel-bgcanvas(style='position: absolute; z-index: 9; top: 260px; left: 56px; width: 998px; height: 40px;', width='998', height='40')
+                  canvas.dygraph-rangesel-fgcanvas(style='position: absolute; z-index: 9; cursor: default; top: 260px; left: 56px; width: 998px; height: 40px;', width='998', height='40')
+                  img.dygraph-rangesel-zoomhandle(height='16', width='9', style='position: absolute; z-index: 10; visibility: visible; cursor: col-resize; left: 51.5px; top: 272px;', src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAAXNSR0IArs4c6QAAAAZiS0dEANAAzwDP4Z7KegAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAAd0SU1FB9sHGw0cMqdt1UwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAaElEQVQoz+3SsRFAQBCF4Z9WJM8KCDVwownl6YXsTmCUsyKGkZzcl7zkz3YLkypgAnreFmDEpHkIwVOMfpdi9CEEN2nGpFdwD03yEqDtOgCaun7sqSTDH32I1pQA2Pb9sZecAxc5r3IAb21d6878xsAAAAAASUVORK5CYII=')
+                  img.dygraph-rangesel-zoomhandle(height='16', width='9', style='position: absolute; z-index: 10; visibility: visible; cursor: col-resize; left: 1049.5px; top: 272px;', src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAAXNSR0IArs4c6QAAAAZiS0dEANAAzwDP4Z7KegAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAAd0SU1FB9sHGw0cMqdt1UwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAaElEQVQoz+3SsRFAQBCF4Z9WJM8KCDVwownl6YXsTmCUsyKGkZzcl7zkz3YLkypgAnreFmDEpHkIwVOMfpdi9CEEN2nGpFdwD03yEqDtOgCaun7sqSTDH32I1pQA2Pb9sZecAxc5r3IAb21d6878xsAAAAAASUVORK5CYII=')
+                  div(style='position: absolute; left: 0px; top: 0px; width: 1054px; height: 28px; text-align: center; font-size: 20px; font-weight: bold; z-index: 10;')
+                    .dygraph-label.dygraph-title Daily Temperatures in New York vs. San Francisco
+                  div(style='position: absolute; left: 0px; top: 28px; width: 0px; height: 272px; font-size: 16px;')
+                    div(style='position: absolute; width: 272px; height: 0px; top: 136px; left: -136px; text-align: center; transform: rotate(-90deg);')
+                      .dygraph-label.dygraph-ylabel Temperature (F)
+                  input(type='text', style='display: none; position: absolute; z-index: 10; top: 211px; left: 57px;', size='2')
+                  .dygraph-legend(style='position: absolute; font-size: 14px; z-index: 10; width: 250px; top: 28px; left: 803px; background: none repeat scroll 0% 0% white; line-height: normal; text-align: right; overflow: hidden;')
+                    span(style='font-weight: bold; color: rgb(0,128,0);')
+                      div(style='display: inline-block; position: relative; bottom: .5ex; padding-left: 1em; height: 1px; border-bottom: 2px solid rgb(0,128,0);')
+                      |  NY
+                    span(style='font-weight: bold; color: rgb(0,0,128);')
+                      div(style='display: inline-block; position: relative; bottom: .5ex; padding-left: 1em; height: 1px; border-bottom: 2px solid rgb(0,0,128);')
+                      |  SF
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 229px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 0
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 191.657px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 20
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 154.314px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 40
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 116.971px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 60
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 79.6284px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 80
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 42.2855px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 100
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 26px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jan 2007
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 110.022px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Apr 2007
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 194.978px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jul 2007
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 280.868px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Oct 2007
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 366.758px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jan 2008
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 451.714px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Apr 2008
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 536.67px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jul 2008
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 622.559px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Oct 2008
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 708.449px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jan 2009
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 792.471px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Apr 2009
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 877.427px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jul 2009
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 239px; left: 963.317px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Oct 2009
+      .row
+        .col-lg-12
+          .main-box
+            header.main-box-header.clearfix
+              h2 Roll period of 14 timesteps, custom range selector height and plot color.
+            .main-box-body.clearfix
+              #roll14.dygraph(style='width:100%; height:300px;')
+                div(style='text-align: left; position: relative; width: 1059px; height: 300px;')
+                  canvas(style='position: absolute; width: 1059px; height: 300px;', width='1059', height='300')
+                  canvas(style='position: absolute; width: 1059px; height: 300px;', width='1059', height='300')
+                  canvas.dygraph-rangesel-bgcanvas(style='position: absolute; z-index: 9; top: 270px; left: 56px; width: 998px; height: 30px;', width='998', height='30')
+                  canvas.dygraph-rangesel-fgcanvas(style='position: absolute; z-index: 9; cursor: default; top: 270px; left: 56px; width: 998px; height: 30px;', width='998', height='30')
+                  img.dygraph-rangesel-zoomhandle(height='16', width='9', style='position: absolute; z-index: 10; visibility: visible; cursor: col-resize; left: 51.5px; top: 277px;', src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAAXNSR0IArs4c6QAAAAZiS0dEANAAzwDP4Z7KegAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAAd0SU1FB9sHGw0cMqdt1UwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAaElEQVQoz+3SsRFAQBCF4Z9WJM8KCDVwownl6YXsTmCUsyKGkZzcl7zkz3YLkypgAnreFmDEpHkIwVOMfpdi9CEEN2nGpFdwD03yEqDtOgCaun7sqSTDH32I1pQA2Pb9sZecAxc5r3IAb21d6878xsAAAAAASUVORK5CYII=')
+                  img.dygraph-rangesel-zoomhandle(height='16', width='9', style='position: absolute; z-index: 10; visibility: visible; cursor: col-resize; left: 1049.5px; top: 277px;', src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAAXNSR0IArs4c6QAAAAZiS0dEANAAzwDP4Z7KegAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAAd0SU1FB9sHGw0cMqdt1UwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAaElEQVQoz+3SsRFAQBCF4Z9WJM8KCDVwownl6YXsTmCUsyKGkZzcl7zkz3YLkypgAnreFmDEpHkIwVOMfpdi9CEEN2nGpFdwD03yEqDtOgCaun7sqSTDH32I1pQA2Pb9sZecAxc5r3IAb21d6878xsAAAAAASUVORK5CYII=')
+                  div(style='position: absolute; left: 0px; top: 0px; width: 1054px; height: 28px; text-align: center; font-size: 20px; font-weight: bold; z-index: 10;')
+                    .dygraph-label.dygraph-title Daily Temperatures in New York vs. San Francisco
+                  div(style='position: absolute; left: 0px; top: 28px; width: 0px; height: 272px; font-size: 16px;')
+                    div(style='position: absolute; width: 272px; height: 0px; top: 136px; left: -136px; text-align: center; transform: rotate(-90deg);')
+                      .dygraph-label.dygraph-ylabel Temperature (F)
+                  input(type='text', style='display: block; position: absolute; z-index: 10; top: 221px; left: 57px;', size='2')
+                  .dygraph-legend(style='position: absolute; font-size: 14px; z-index: 10; width: 250px; top: 28px; left: 803px; background: none repeat scroll 0% 0% white; line-height: normal; text-align: right; overflow: hidden;')
+                    span(style='font-weight: bold; color: rgb(0,128,0);')
+                      div(style='display: inline-block; position: relative; bottom: .5ex; padding-left: 1em; height: 1px; border-bottom: 2px solid rgb(0,128,0);')
+                      |  NY
+                    span(style='font-weight: bold; color: rgb(0,0,128);')
+                      div(style='display: inline-block; position: relative; bottom: .5ex; padding-left: 1em; height: 1px; border-bottom: 2px solid rgb(0,0,128);')
+                      |  SF
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 218.095px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 20
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 166.972px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 40
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 115.85px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 60
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 64.7278px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 80
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 26px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jan 2007
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 110.022px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Apr 2007
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 194.978px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jul 2007
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 280.868px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Oct 2007
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 366.758px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jan 2008
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 451.714px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Apr 2008
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 536.67px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jul 2008
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 622.559px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Oct 2008
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 708.449px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jan 2009
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 792.471px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Apr 2009
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 877.427px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Jul 2009
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 249px; left: 963.317px;')
+                    .dygraph-axis-label.dygraph-axis-label-x Oct 2009
+      .row
+        .col-lg-12
+          .main-box
+            header.main-box-header.clearfix
+              h2 Stock Chart Demo
+            .main-box-body.clearfix
+              #stock_div.dygraph(style='width: 100%; height: 300px;')
+                div(style='text-align: left; position: relative; width: 1059px; height: 300px;')
+                  canvas(style='position: absolute; width: 1059px; height: 300px;', width='1059', height='300')
+                  canvas(style='position: absolute; width: 1059px; height: 300px;', width='1059', height='300')
+                  input(type='text', style='display: none; position: absolute; z-index: 10; top: 255px; left: 57px;', size='2')
+                  .dygraph-legend(style='position: absolute; font-size: 14px; z-index: 10; width: 250px; top: 0px; left: 803px; background: none repeat scroll 0% 0% white; line-height: normal; text-align: left; overflow: hidden; display: none;')
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 263.889px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 50
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 255.287px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 248.014px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 241.714px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 236.157px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 231.186px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 100
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 198.483px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 200
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 179.353px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 165.78px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 155.252px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 500
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 146.65px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 139.377px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 133.076px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 127.519px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 122.548px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 1000
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 89.8451px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 2000
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 70.7149px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 57.1418px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 46.6138px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 5000
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 38.0117px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 30.7387px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 24.4386px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 18.8815px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 13.9105px; left: 3px; text-align: right;')
+                    .dygraph-axis-label.dygraph-axis-label-y 10000
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 97.7921px;')
+                    .dygraph-axis-label.dygraph-axis-label-x 1920
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 200.961px;')
+                    .dygraph-axis-label.dygraph-axis-label-x 1930
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 304.102px;')
+                    .dygraph-axis-label.dygraph-axis-label-x 1940
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 407.272px;')
+                    .dygraph-axis-label.dygraph-axis-label-x 1950
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 510.413px;')
+                    .dygraph-axis-label.dygraph-axis-label-x 1960
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 613.582px;')
+                    .dygraph-axis-label.dygraph-axis-label-x 1970
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 716.723px;')
+                    .dygraph-axis-label.dygraph-axis-label-x 1980
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 819.893px;')
+                    .dygraph-axis-label.dygraph-axis-label-x 1990
+                  div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 923.034px;')
+                    .dygraph-axis-label.dygraph-axis-label-x 2000
+              br
+              div(style='width: 100%; text-align: center;')
+                button#linear.btn.btn-primary Linear Scale
+                button#log.btn.btn-primary(disabled='true') Log Scale
+      .row
+        .col-lg-12
+          .main-box
+            header.main-box-header.clearfix
+              h2 Custom interaction model
+            .main-box-body.clearfix
+              div(style='width:100%;')
+                button#restore3.btn.btn-primary Restore position
+                br
+                br
+                #div_g3.dygraph(style='width:100%; height:300px;')
+                  div(style='text-align: left; position: relative; width: 1059px; height: 300px;')
+                    canvas(style='position: absolute; width: 1059px; height: 300px;', width='1059', height='300')
+                    canvas(style='position: absolute; width: 1059px; height: 300px;', width='1059', height='300')
+                    input(type='text', style='display: none; position: absolute; z-index: 10; top: 255px; left: 57px;', size='2')
+                    .dygraph-legend(style='position: absolute; font-size: 14px; z-index: 10; width: 250px; top: 0px; left: 803px; background: none repeat scroll 0% 0% white; line-height: normal; text-align: left; overflow: hidden; display: none;')
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 266px; left: 3px; text-align: right;')
+                      .dygraph-axis-label.dygraph-axis-label-y 0
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 237.712px; left: 3px; text-align: right;')
+                      .dygraph-axis-label.dygraph-axis-label-y 1
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 202.424px; left: 3px; text-align: right;')
+                      .dygraph-axis-label.dygraph-axis-label-y 2
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 167.136px; left: 3px; text-align: right;')
+                      .dygraph-axis-label.dygraph-axis-label-y 3
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 131.848px; left: 3px; text-align: right;')
+                      .dygraph-axis-label.dygraph-axis-label-y 4
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 96.5605px; left: 3px; text-align: right;')
+                      .dygraph-axis-label.dygraph-axis-label-y 5
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 61.2726px; left: 3px; text-align: right;')
+                      .dygraph-axis-label.dygraph-axis-label-y 6
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 50px; line-height: normal; overflow: hidden; top: 25.9848px; left: 3px; text-align: right;')
+                      .dygraph-axis-label.dygraph-axis-label-y 7
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 26px;')
+                      .dygraph-axis-label.dygraph-axis-label-x 01 Oct
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 144.407px;')
+                      .dygraph-axis-label.dygraph-axis-label-x 08 Oct
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 262.814px;')
+                      .dygraph-axis-label.dygraph-axis-label-x 15 Oct
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 381.22px;')
+                      .dygraph-axis-label.dygraph-axis-label-x 22 Oct
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 499.627px;')
+                      .dygraph-axis-label.dygraph-axis-label-x 29 Oct
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 618.034px;')
+                      .dygraph-axis-label.dygraph-axis-label-x 05 Nov
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 736.441px;')
+                      .dygraph-axis-label.dygraph-axis-label-x 12 Nov
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 854.847px;')
+                      .dygraph-axis-label.dygraph-axis-label-x 19 Nov
+                    div(style='position: absolute; font-size: 14px; z-index: 10; color: black; width: 60px; line-height: normal; overflow: hidden; text-align: center; top: 283px; left: 973.254px;')
+                      .dygraph-axis-label.dygraph-axis-label-x 26 Nov
+                br
+                br
+                .alert.alert-info
+                  | Zoom in: double-click, scroll wheel
+                  br
+                  | Zoom out: ctrl-double-click, scroll wheel
+                  br
+                  | Standard Zoom: shift-click-drag
+                  | Standard Pan: click-drag
+                  br
+                  | Restore zoom level: press button
+                  br
+  footer#footer-bar.row(style='opacity: 1;')
+    p#footer-copyright.col-xs-12
+      | Powered by Cube Theme.

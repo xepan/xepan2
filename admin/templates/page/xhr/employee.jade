@@ -2,20 +2,37 @@
   .col-lg-12
     .row
       .col-lg-12
-        ol.breadcrumb
-          li
-            a(href='#') Home
-          li.active
-            span Users
-        .clearfix
-          h1.pull-left Users
-          .pull-right.top-page-ui
-            a.btn.btn-primary.pull-right(href='#')
-              i.fa.fa-plus-circle.fa-lg
-              |  Add user
-    .row
-      .col-lg-12
         .main-box.no-header.clearfix
+
+          header.main-box-header.clearfix
+            h2.pull-left Employee
+            .filter-block.pull-right
+              .form-group.pull-left
+                select.form-control.xepan-dropdown-micro
+                  option Deapartment
+                  option HR
+                  option MARKETING
+                  option COMMERCE
+                  option PRODUCTION
+                  option CRM
+                  option INVENTORY
+                  option PROJECT MANAGEMENT
+              .form-group.pull-left
+                select.form-control.xepan-dropdown-micro
+                  option POST
+                  option CEO
+                  option SR.DEVELOPER
+                  option PROJECT LEADER
+                  option JR.DEVELOER
+                  option TECHNICAL HELPER
+                  option TEAM LEADER
+                  option PROJECT MANAGER
+              .form-group.pull-left
+                input.form-control(type='text', placeholder='Search...')
+                i.fa.fa-search.search-icon
+              a.btn.btn-primary.pull-right(href='#')
+                i.fa.fa-plus-circle.fa-lg
+                |  Add Employee
           .main-box-body.clearfix
             .table-responsive
               table.table.user-list.table-hover
@@ -24,7 +41,7 @@
                     th
                       span User
                     th
-                      span Created
+                      span Date Of Joining
                     th.text-center
                       span Status
                     th
@@ -34,7 +51,7 @@
                   tr
                     td
                       img(alt='', src='img/samples/scarlet-159.png')
-                      a.user-link(href='#') Scarlett Johansson
+                      a.user-link(href='{url}?page=xhr_employee-profile{/}') Scarlett Johansson
                       span.user-subhead Admin
                     td
                       | 2013/08/08
@@ -58,7 +75,7 @@
                   tr
                     td
                       img(alt='', src='img/samples/robert-300.jpg')
-                      a.user-link(href='#') Robert Downey Jr.
+                      a.user-link(href='{url}?page=xhr_employee-profile{/}') Robert Downey Jr.
                       span.user-subhead Member
                     td
                       | 2013/08/12
@@ -82,7 +99,7 @@
                   tr
                     td
                       img(alt='', src='img/samples/ryan-300.jpg')
-                      a.user-link(href='#') Ryan Gossling
+                      a.user-link(href='{url}?page=xhr_employee-profile{/}') Ryan Gossling
                       span.user-subhead Registered
                     td
                       | 2013/03/03
@@ -106,7 +123,7 @@
                   tr
                     td
                       img(alt='', src='img/samples/emma-300.jpg')
-                      a.user-link(href='#') Emma Watson
+                      a.user-link(href='{url}?page=xhr_employee-profile{/}') Emma Watson
                       span.user-subhead Registered
                     td
                       | 2004/01/24
@@ -130,7 +147,7 @@
                   tr
                     td
                       img(alt='', src='img/samples/robert-300.jpg')
-                      a.user-link(href='#') Robert Downey Jr.
+                      a.user-link(href='{url}?page=xhr_employee-profile{/}') Robert Downey Jr.
                       span.user-subhead Admin
                     td
                       | 2013/12/31
@@ -154,7 +171,7 @@
                   tr
                     td
                       img(alt='', src='img/samples/kunis-300.jpg')
-                      a.user-link(href='#') Mila Kunis
+                      a.user-link(href='{url}?page=xhr_employee-profile{/}') Mila Kunis
                       span.user-subhead Admin
                     td
                       | 2013/08/08
@@ -178,7 +195,7 @@
                   tr
                     td
                       img(alt='', src='img/samples/lima-300.jpg')
-                      a.user-link(href='#') George Clooney
+                      a.user-link(href='{url}?page=xhr_employee-profile{/}') George Clooney
                       span.user-subhead Member
                     td
                       | 2013/08/12
@@ -202,7 +219,7 @@
                   tr
                     td
                       img(alt='', src='img/samples/ryan-300.jpg')
-                      a.user-link(href='#') Ryan Gossling
+                      a.user-link(href='{url}?page=xhr_employee-profile{/}') Ryan Gossling
                       span.user-subhead Registered
                     td
                       | 2013/03/03
@@ -226,7 +243,7 @@
                   tr
                     td
                       img(alt='', src='img/samples/emma-300.jpg')
-                      a.user-link(href='#') Emma Watson
+                      a.user-link(href='{url}?page=xhr_employee-profile{/}') Emma Watson
                       span.user-subhead Registered
                     td
                       | 2004/01/24
@@ -250,7 +267,7 @@
                   tr
                     td
                       img(alt='', src='img/samples/robert-300.jpg')
-                      a.user-link(href='#') Robert Downey Jr.
+                      a.user-link(href='{url}?page=xhr_employee-profile{/}') Robert Downey Jr.
                       span.user-subhead Admin
                     td
                       | 2013/12/31
