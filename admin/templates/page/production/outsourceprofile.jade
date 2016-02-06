@@ -1,30 +1,34 @@
-        .row
+.row
+    .col-lg-12
+      #user-profile
+        .col-lg-3.col-md-4.col-sm-4
           .main-box.clearfix
             header.main-box-header.clearfix
-              h2 Xavoc Technocrats Pvt.ltd
+              h2 Radha sharma
             .main-box-body.clearfix
               .profile-status
                 i.fa.fa-circle
                 |  Online
               img.profile-img.img-responsive.center-block(src='img/samples/scarlet-159.png', alt='')
               .profile-label
-                span.label.label-danger CEO
+                span.label.label-danger Admin
               .profile-stars
-                span Gowrav Vishwakarma
-              .profile-since Contact since: Jan 2013
+                span Radha
+              .profile-since Contact since: Jan 2012
             div
               .profile-contact
                 ul.fa-ul
                   li
                     i.fa-li.fa
                     | Emails: 
-                    div Gowrav@Xavoc.com
+                    div Dr.radha@gmail.com
+                    div sharma@gmail.com
                   li
                     i.fa-li.fa
                     | Phone No: 
                     div 9887012345
                     div 9887012345
-              .profile-message-btn.center-block.text-center
+              .btn-group(aria-label='...', role='group')
                 a.btn.btn-success(href='#')
                   i.fa.fa-envelope
                   | Send Email
@@ -37,16 +41,16 @@
                     li
                       i.fa-li.fa
                       | Organization: 
-                      div Xavoc_stars
+                      div IT_stars
                     li
                       i.fa-li.fa
                       | Post: 
-                      div CEO
+                      div Manager
                     li
                       i.fa-li.fa
                       | Website: 
                       div
-                        a(href='#') www.Xavoc@info.com
+                        a(href='#') www.avengers.com
               div
                 .profile-im
                   h5 IM Numbers                               
@@ -54,7 +58,7 @@
                     li
                       i.fa-li.fa
                       | Skype: 
-                      span Gowrav
+                      span Dr.Radha
                     li
                       i.fa-li.fa
                       | Whatsapp: 
@@ -67,7 +71,7 @@
                     li
                       i.fa-li.fa
                       | DOB: 
-                      span 12/5/85
+                      span 29/7/93
                     li
                       i.fa-li.fa
                       | Anaversery: 
@@ -80,11 +84,11 @@
                     li
                       i.fa-li.fa
                       | Fathers Name: 
-                      span vishwakarma
+                      span Mahesh
                     li
                       i.fa-li.fa
                       | Mothers Name: 
-                      span  vishwakarma
+                      span Rohini
         .col-lg-9.col-md-8.col-sm-8
           .main-box.clearfix
             .tabs-wrapper.profile-tabs
@@ -93,41 +97,62 @@
                   a(href='#tab-portfolio', data-toggle='tab') Portfolio
                 li
                   a(href='#tab-activity', data-toggle='tab') Activity
+                
               .tab-content
                 #tab-portfolio.tab-pane.fade.in.active
                   #portfolio
-                  div
-                    .col-lg-12
-                      .main-box
+                  .col-lg-12
+                    .panel.panel-default
+                      .panel-body
+                        .col-lg-12
+                          .col-lg-10
+                          .col-lg-2
+                            button.btn.btn-success.push-right(type='submit') Edit Information   
                         header.main-box-header.clearfix
-                          h2 Company Detail
-                        .main-box-body.clearfix
-                          div
-                            span|Company Name
-                            span.pull-right.col-lg-9|Xavoc Technocarts Pvt.Ltd Udaipur
-                          div
-                            span|Created Date
-                            span.pull-right.col-lg-9|01-jan-2013
-                          div
-                            span|Type
-                            span.pull-right.col-lg-9|Information Technology
-
-                  div
-                    .col-lg-12
-                      .main-box
+                          h2 Company Information
+                        .col-lg-12
+                          .col-lg-4
+                            label Company Name:
+                            br
+                            | Xavoc Technocrats pvt.ltd udaipur
+                          .col-lg-4
+                            label Company Type:
+                            br
+                            | IT
+                          .col-lg-4
+                            label Registeration:
+                            br
+                            |  153522
+                  .col-lg-12
+                    .panel.panel-default
+                      .panel-body
                         header.main-box-header.clearfix
-                          h2 Job-cards detail
-                        .main-box-body.clearfix
-                          div
-                            span|Item Name
-                            span.pull-right.col-lg-9|Website
-                          div
-                            span|Created Date
-                            span.pull-right.col-lg-9|12-dec-2015
-                          div
-                            span|Status
-                            span.pull-right.col-lg-9|Complete
-                          
+                          h2 Orders:
+                        .col-lg-12
+                          .col-lg-4
+                            label Item:
+                            br
+                            |  printing
+                          .col-lg-4
+                            label Type:
+                            br
+                            |  digital printing
+                          .col-lg-4
+                            label Created Date:
+                            br
+                            |  06-feb-16
+                        .col-lg-12
+                          .col-lg-4
+                            label Department:
+                            br
+                            |  IT
+                          .col-lg-4
+                            label Price:
+                            br
+                          .col-lg-4
+                            label Duration:
+                            br
+                            |  7 months{From To Date}
                 #tab-activity.tab-pane.fade
                   .table-responsive
                     table.table
@@ -160,5 +185,5 @@
                             | to 
                             span.label.label-success Completed
                           td 2014/08/08 12:08
-                 
-.row(style='opacity: 1;')
+                
+                
