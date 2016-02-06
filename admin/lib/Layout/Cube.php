@@ -3,6 +3,6 @@
 
 class Layout_Cube extends Layout_Fluid {
 	function defaultTemplate(){
-		return ['html','Layout'];
+		return ['layout/cube'];
 	}
 }
