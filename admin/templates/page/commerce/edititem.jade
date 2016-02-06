@@ -1,0 +1,325 @@
+html
+  body
+      .row(style='opacity: 1;')
+        .col-lg-12
+          //- .row
+          //-   .col-lg-12
+          //-     ol.breadcrumb
+          //-       li
+          //-         a(href='#') Home
+          //-       li
+          //-         a(href='#') Sales
+          //-       li.active
+          //-         span Items
+          //-     h1 Item Details
+          #user-profile.row
+            .col-lg-3.col-md-4.col-sm-4
+              .main-box.clearfix
+                header.main-box-header.clearfix
+                  h2 Ipad-2
+                .main-box-body.clearfix
+                  .profile-status
+                    i.fa.fa-circle
+                    |  Availabe In Stock
+                  img.img-responsive.center-block(alt='', src='img/samples/ipad.png')  
+                  //- profile-img
+                  .profile-label
+                    span.label.label-danger Phones
+                  .profile-stars
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star-o
+                    span Market Demand
+                  .profile-since
+                    | Added in List: Jan 2012
+                  .profile-details
+                    ul.fa-ul
+                      li
+                        i.fa-li.fa.fa-truck
+                        | Orders: 
+                        span 456
+                      li
+                        i.fa-li.fa.fa-shopping-cart
+                        | Sold: 
+                        span 350
+                  .profile-message-btn.center-block.text-center
+                    a.btn.btn-success(href='#')
+                      i.fa.fa-edit
+                      | Edit
+            .col-lg-9.col-md-8.col-sm-8
+              .main-box.clearfix
+                .tabs-wrapper.profile-tabs
+                  ul.nav.nav-tabs
+                    li.active
+                      a(data-toggle='tab', href='#tab-Basic') Basic
+                    li
+                      a(data-toggle='tab', href='#tab-Attribute') Attribute
+                    li
+                      a(data-toggle='tab', href='#tab-Qty&Price') Qty&Price
+                    li
+                      a(data-toggle='tab', href='#tab-Category') Category
+                    li
+                      a(data-toggle='tab', href='#tab-SEO') SEO
+                    li
+                      a(data-toggle='tab', href='#tab-Production Phase') Production Phase
+                    li
+                      a(data-toggle='tab', href='#tab-Update Theme') Update Theme
+                  .tab-content
+                    #tab-Basic.tab-pane.fade.in.active
+                    
+                    span Designer:
+                      div.btn-group
+                        button.btn.btn-primary.dropdown-toggle(type="button",style="width:500px" data-toggle="dropdown")
+                             | Please Select..
+                             span.caret
+                         ul.dropdown-menu(role="menu",style="width:500px")
+                             li
+                               | Mr Harsh Pareek
+                             li.divider
+                             li
+                               | Mr Narendra Joshi
+
+                        .col-lg-12
+                        
+                          label Search:
+                            input.form-control.input-sm(type='search', placeholder='', aria-controls='table-example')
+                          label Search:
+                            input.form-control.input-sm(type='search', placeholder='', aria-controls='table-example')
+
+                    #tab-activity.tab-pane.fade
+                      .table-responsive
+                        table.table
+                          tbody
+                            tr
+                              td.text-center
+                                i.fa.fa-comment
+                              td
+                                | Scarlett Johansson posted a comment in 
+                                a(href='#') Avengers Initiative
+                                |  project.
+                              td
+                                | 2014/08/08 12:08
+                            tr
+                              td.text-center
+                                i.fa.fa-truck
+                              td
+                                | Scarlett Johansson changed order status from 
+                                span.label.label-primary Pending
+                                | to 
+                                span.label.label-success Completed
+                              td
+                                | 2014/08/08 12:08
+                            tr
+                              td.text-center
+                                i.fa.fa-check
+                              td
+                                | Scarlett Johansson posted a comment in 
+                                a(href='#') Lost in Translation opening scene
+                                |  discussion.
+                              td
+                                | 2014/08/08 12:08
+                            tr
+                              td.text-center
+                                i.fa.fa-users
+                              td
+                                | Scarlett Johansson posted a comment in 
+                                a(href='#') Avengers Initiative
+                                |  project.
+                              td
+                                | 2014/08/08 12:08
+                            tr
+                              td.text-center
+                                i.fa.fa-heart
+                              td
+                                | Scarlett Johansson changed order status from 
+                                span.label.label-warning On Hold
+                                | to 
+                                span.label.label-danger Disabled
+                              td
+                                | 2014/08/08 12:08
+                            tr
+                              td.text-center
+                                i.fa.fa-check
+                              td
+                                | Scarlett Johansson posted a comment in 
+                                a(href='#') Lost in Translation opening scene
+                                |  discussion.
+                              td
+                                | 2014/08/08 12:08
+                            tr
+                              td.text-center
+                                i.fa.fa-truck
+                              td
+                                | Scarlett Johansson changed order status from 
+                                span.label.label-primary Pending
+                                | to 
+                                span.label.label-success Completed
+                              td
+                                | 2014/08/08 12:08
+                            tr
+                              td.text-center
+                                i.fa.fa-users
+                              td
+                                | Scarlett Johansson posted a comment in 
+                                a(href='#') Avengers Initiative
+                                |  project.
+                              td
+                                | 2014/08/08 12:08
+                    #tab-friends.tab-pane.clearfix.fade
+                      ul.widget-users.row
+                        li.col-md-6
+                          .img
+                            img(alt='', src='img/samples/scarlet.png')
+                          .details
+                            .name
+                              a(href='#') Scarlett Johansson
+                            .time
+                              i.fa.fa-clock-o
+                              |  Last online: 5 minutes ago
+                            .type
+                              span.label.label-danger Admin
+                        li.col-md-6
+                          .img
+                            img(alt='', src='img/samples/kunis.png')
+                          .details
+                            .name
+                              a(href='#') Mila Kunis
+                            .time.online
+                              i.fa.fa-check-circle
+                              |  Online
+                            .type
+                              span.label.label-warning Pending
+                        li.col-md-6
+                          .img
+                            img(alt='', src='img/samples/ryan.png')
+                          .details
+                            .name
+                              a(href='#') Ryan Gossling
+                            .time.online
+                              i.fa.fa-check-circle
+                              |  Online
+                        li.col-md-6
+                          .img
+                            img(alt='', src='img/samples/robert.png')
+                          .details
+                            .name
+                              a(href='#') Robert Downey Jr.
+                            .time
+                              i.fa.fa-clock-o
+                              |  Last online: Thursday
+                        li.col-md-6
+                          .img
+                            img(alt='', src='img/samples/emma.png')
+                          .details
+                            .name
+                              a(href='#') Emma Watson
+                            .time
+                              i.fa.fa-clock-o
+                              |  Last online: 1 week ago
+                        li.col-md-6
+                          .img
+                            img(alt='', src='img/samples/george.png')
+                          .details
+                            .name
+                              a(href='#') George Clooney
+                            .time
+                              i.fa.fa-clock-o
+                              |  Last online: 1 month ago
+                        li.col-md-6
+                          .img
+                            img(alt='', src='img/samples/kunis.png')
+                          .details
+                            .name
+                              a(href='#') Mila Kunis
+                            .time.online
+                              i.fa.fa-check-circle
+                              |  Online
+                            .type
+                              span.label.label-warning Pending
+                        li.col-md-6
+                          .img
+                            img(alt='', src='img/samples/ryan.png')
+                          .details
+                            .name
+                              a(href='#') Ryan Gossling
+                            .time.online
+                              i.fa.fa-check-circle
+                              |  Online
+                      br
+                      a.btn.btn-success.pull-right(href='#') View all users
+                    #tab-chat.tab-pane.fade
+                      .conversation-wrapper
+                        .conversation-content
+                          .slimScrollDiv(style='position: relative; overflow: hidden; width: auto; height: 340px;')
+                            .conversation-inner(style='overflow: hidden; width: auto; height: 340px;')
+                              .conversation-item.item-left.clearfix
+                                .conversation-user
+                                  img(alt='', src='img/samples/ryan.png')
+                                .conversation-body
+                                  .name
+                                    | Ryan Gossling
+                                  .time.hidden-xs
+                                    | September 21, 2013 18:28
+                                  .text
+                                    | I don't think they tried to market it to the billionaire, spelunking,
+                                    | base-jumping crowd.
+                              .conversation-item.item-right.clearfix
+                                .conversation-user
+                                  img(alt='', src='img/samples/kunis.png')
+                                .conversation-body
+                                  .name
+                                    | Mila Kunis
+                                  .time.hidden-xs
+                                    | September 21, 2013 12:45
+                                  .text
+                                    | Normally, both your asses would be dead as fucking fried chicken, but you
+                                    | happen to pull this shit while I'm in a transitional period so I don't wanna
+                                    | kill you, I wanna help you.
+                              .conversation-item.item-right.clearfix
+                                .conversation-user
+                                  img(alt='', src='img/samples/kunis.png')
+                                .conversation-body
+                                  .name
+                                    | Mila Kunis
+                                  .time.hidden-xs
+                                    | September 21, 2013 12:45
+                                  .text
+                                    | Normally, both your asses would be dead as fucking fried chicken, but you
+                                    | happen to pull this shit while I'm in a transitional period so I don't wanna
+                                    | kill you, I wanna help you.
+                              .conversation-item.item-left.clearfix
+                                .conversation-user
+                                  img(alt='', src='img/samples/ryan.png')
+                                .conversation-body
+                                  .name
+                                    | Ryan Gossling
+                                  .time.hidden-xs
+                                    | September 21, 2013 18:28
+                                  .text
+                                    | I don't think they tried to market it to the billionaire, spelunking,
+                                    | base-jumping crowd.
+                              .conversation-item.item-right.clearfix
+                                .conversation-user
+                                  img(alt='', src='img/samples/kunis.png')
+                                .conversation-body
+                                  .name
+                                    | Mila Kunis
+                                  .time.hidden-xs
+                                    | September 21, 2013 12:45
+                                  .text
+                                    | Normally, both your asses would be dead as fucking fried chicken, but you
+                                    | happen to pull this shit while I'm in a transitional period so I don't wanna
+                                    | kill you, I wanna help you.
+                            .slimScrollBar(style='background: none repeat scroll 0% 0% rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;')
+                            .slimScrollRail(style='width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: none repeat scroll 0% 0% rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;')
+                        .conversation-new-message
+                          form
+                            .form-group
+                              textarea.form-control(placeholder='Enter your message...', rows='2')
+                            .clearfix
+                              button.btn.btn-success.pull-right(type='submit') Send message
+      footer#footer-bar.row(style='opacity: 1;')
+        p#footer-copyright.col-xs-12
+          | Powered by Cube Theme.

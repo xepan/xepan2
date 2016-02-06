@@ -1,0 +1,216 @@
+html
+   body
+    .col-lg-12
+      .main-box.clearfix
+        header.main-box-header.clearfix
+          h2.pull-left Products
+          .filter-block.pull-right
+            .form-group.pull-right
+              input.form-control(type='text', placeholder='Search...')
+              i.fa.fa-search.search-icon
+            a.btn.btn-primary.pull-left(href='#')
+              i.fa.fa-plus-circle.fa-lg
+              |  Add product
+            .btn-group
+                button.btn.btn-primary.dropdown-toggle.pull-right(type='button', data-toggle='dropdown', data-original-title='Select')
+                  | Category Management
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Mugs 
+                  li
+                    a(href='#') Business Card
+                  li
+                    a(href='#') Wedding Cards  
+            .btn-group
+                button.btn.btn-primary.dropdown-toggle.pull-right(type='button', data-toggle='dropdown', data-original-title='Select')
+                  | Template Management
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Mugs 
+                  li
+                    a(href='#') Business Card
+                  li
+                    a(href='#') Wedding Cards  
+
+        .main-box-body.clearfix
+            .table-responsive
+          table.table
+            thead
+              tr
+                th.text-center
+                  a(href='#')
+                    span Image
+                th
+                  a(href='#')
+                    span Name
+                th.text-right
+                  a.asc(href='#')
+                    span Price
+                th.text-center
+                  a.desc(href='#')
+                  span Type
+                
+                th.text-center
+                  
+                    span Status
+                 th.text-center
+                  a.desc(href='#')
+                    span Total Sale
+                th  
+            tbody
+               tr
+                td.text-center                
+                  img(alt='', src='img/samples/ipad.png')
+                  br
+                  span.pull-center(title='code') Ipd001
+
+                td
+                  | iPad Mini 32GB Wifi
+                td.text-right
+                  i(style='text-decoration:line-through;') $800.50
+                  br
+                  | $ 625.50
+                td.text-center
+                  span.label.label-info Purchasable
+                
+                td.text-center
+                  span.label.label-default Publish
+                td.text-center
+                 span.graph-label
+                  i.fa.fa-shopping-cart
+                    b 1000
+                  |  Orders
+                  .graph-content.spark-orders
+                  canvas(style='display: inline-block; width: 3px; height: 2px; vertical-align: top;', width='3', height='2')
+             
+                td(style='width: 15%;')
+                  a.table-link(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-copy.fa-stack-1x.fa-inverse
+                  a.table-link(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-pencil.fa-stack-1x.fa-inverse
+                  a.table-link.danger(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-trash-o.fa-stack-1x.fa-inverse
+
+              tr
+                td.text-center                
+                  img(alt='', src='img/samples/ipad.png')
+                  br
+                  span.pull-center(title='code') Ipd001
+
+                td
+                  | iPad Mini 32GB Wifi
+                td.text-right
+                  i(style='text-decoration:line-through;') $800.50
+                  br
+                  | $ 625.50
+                td.text-center
+                  span.label.label-warning Saleable
+               
+                td.text-center
+                  span.label.label-primary PartyPublish
+                td.text-center
+                 span.graph-label
+                  i.fa.fa-shopping-cart
+                    b 1500
+                  |  Orders
+                  .graph-content.spark-orders
+                  canvas(style='display: inline-block; width: 3px; height: 2px; vertical-align: top;', width='3', height='2')
+                
+                td(style='width: 15%;')
+                  a.table-link(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-copy.fa-stack-1x.fa-inverse
+                  a.table-link(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-pencil.fa-stack-1x.fa-inverse
+                  a.table-link.danger(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-trash-o.fa-stack-1x.fa-inverse
+              tr
+                td.text-center                
+                  img(alt='', src='img/samples/ipad.png')
+                  br
+                  span.pull-center(title='code') Ipd001
+
+                td
+                  | iPad Mini 32GB Wifi
+                td.text-right
+                  i(style='text-decoration:line-through;') $800.50
+                  br
+                  | $ 625.50
+                td.text-center
+                  span.label.label-success Online
+                
+                td.text-center
+                  span.label.label-danger Not Publish
+                td.text-center
+                 span.graph-label
+                  i.fa.fa-shopping-cart
+                    b 800
+                  |  Orders
+                  .graph-content.spark-orders
+                  canvas(style='display: inline-block; width: 3px; height: 2px; vertical-align: top;', width='3', height='2')
+                 
+                td(style='width: 15%;')
+                  a.table-link(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-copy.fa-stack-1x.fa-inverse
+                  a.table-link(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-pencil.fa-stack-1x.fa-inverse
+                  a.table-link.danger(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-trash-o.fa-stack-1x.fa-inverse
+
+              tr
+                td.text-center                
+                  img(alt='', src='img/samples/ipad.png')
+                  br
+                  span.pull-center(title='code') Ipd001
+
+                td
+                  | iPad Mini 32GB Wifi
+                td.text-right
+                  i(style='text-decoration:line-through;') $800.50
+                  br
+                  | $ 625.50
+                td.text-center
+                  span.label.label-success Online
+                
+                td.text-center
+                  span.label.label-danger Not Publish
+                td.text-center
+                 span.graph-label
+                  i.fa.fa-shopping-cart
+                    b 900
+                  |  Orders
+                  .graph-content.spark-orders
+                  canvas(style='display: inline-block; width: 3px; height: 2px; vertical-align: top;', width='3', height='2')
+                  
+                td(style='width: 15%;')
+                  a.table-link(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-copy.fa-stack-1x.fa-inverse
+                  a.table-link(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-pencil.fa-stack-1x.fa-inverse
+                  a.table-link.danger(href='#')
+                    span.fa-stack
+                      i.fa.fa-square.fa-stack-2x
+                      i.fa.fa-trash-o.fa-stack-1x.fa-inverse
