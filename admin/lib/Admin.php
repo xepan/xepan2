@@ -9,6 +9,13 @@ class Admin extends App_Frontend {
 
         $this->dbConnect();
         $this->add('jUI');
+        
+
+        $this->api->pathfinder
+            ->addLocation(array(
+                'addons' => array('addons', 'vendor','shared/addons2'),
+            ))
+            ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
 
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
         $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
@@ -34,15 +41,9 @@ class Admin extends App_Frontend {
          */
         
         $auth = $this->add('BasicAuth');
-        $auth->setModel('User_Active','username','password');
+        $auth->setModel('xepan\base\User_Active','username','password');
 
         $auth->check();
 
-        $this->api->pathfinder
-            ->addLocation(array(
-                'addons' => array('addons', 'vendor','shared/addons2'),
-            ))
-            ->setBasePath($this->pathfinder->base_location->getPath() . '/..')
-        ;
     }
 }

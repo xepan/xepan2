@@ -7,6 +7,7 @@ class page_index extends Page {
     function init() {
         parent::init();
 
+        $this->add('View')->set($this->api->auth->model->ref('xepan\base\Contact_Email')->tryLoadAny()->ref('contact_id')->get('first_name'));
 
     }
 
