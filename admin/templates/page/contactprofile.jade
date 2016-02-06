@@ -28,7 +28,7 @@
               | Phone No: 
               div 9887012345
               div 9887012345
-        .profile-message-btn.center-block.text-center
+        .btn-group(role='group', aria-label='...')
           a.btn.btn-success(href='#')
             i.fa.fa-envelope
             | Send Email
@@ -140,28 +140,34 @@
                     .panel.panel-default
                       .panel-body 
                         header.main-box-header.clearfix
-                          h2 Previous Work Experience
+                          h2 Previous Work Experience:
                         .col-lg-12  
                           .col-lg-4
-                                label Previous Company
-                                input#inputSuccess.form-control(type='text')
+                                label Previous Company:
+                                br
+                                |  Xyz Corporations
 
                           .col-lg-4
-                                label Branch
-                                input#inputSuccess.form-control(type='text',placeholder='Dropdown here')
+                                label Branch:
+                                br
+                                |  Jaipur
                           .col-lg-4
-                                label Designation
-                                input#inputSuccess.form-control(type='text')
+                                label Designation:
+                                br
+                                |  Sr. Manager
                         .col-lg-12              
                           .col-lg-4
-                                label Department
-                                input#inputSuccess.form-control(type='text')
+                                label Department:
+                                br
+                                |  IT
                           .col-lg-4
-                                label Salary
-                                input#inputSuccess.form-control(type='text')
+                                label Salary:
+                                br
+                                |  
                           .col-lg-4
-                                label Duration
-                                input#inputSuccess.form-control(type='text',placeholder='From date to date and duration')
+                                label Duration:
+                                br
+                                |  7 months{From To Date}
    
 
              #tab-activity.tab-pane.fade
@@ -296,7 +302,14 @@
                                 td
                                   |Vaibhavsharma38@gmail.com
                                 td
-                                  span.label.label-sm.label-success Active    
+                                  .dropdown
+                                    button.btn.btn-danger.btn-sm.dropdown-toggle(type='button', data-toggle='dropdown')
+                                          | Inactive
+                                          span.caret
+                                        ul.dropdown-menu
+                                          li
+                                            |Active
+                                            
                                 td(style='width: 20%;')
                                   a.table-link(href='#')
                                     span.fa-stack
@@ -310,7 +323,14 @@
                                   td
                                     |Vaibhavsharma38@gmail.com
                                   td
-                                    span.label.label-sm.label-danger Inactive  
+                                    .dropdown
+                                      button.btn.btn-danger.btn-sm.dropdown-toggle(type='button', data-toggle='dropdown')
+                                        | Inactive
+                                        span.caret
+                                      ul.dropdown-menu
+                                        li
+                                          |Active
+                                         
                                   td(style='width: 20%;')
                                     a.table-link(href='#')
                                       span.fa-stack
@@ -324,7 +344,14 @@
                                   td
                                     |Vaibhavsharma38@gmail.com
                                   td
-                                    span.label.label-sm.label-danger Inactive
+                                    .dropdown
+                                      button.btn.btn-success.btn-sm.dropdown-toggle(type='button', data-toggle='dropdown')
+                                          | Active
+                                          span.caret
+                                        ul.dropdown-menu
+                                          li
+                                            |Inactive
+                                          
                                   td(style='width: 20%;')
                                     a.table-link(href='#')
                                       span.fa-stack

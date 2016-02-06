@@ -24,7 +24,7 @@
             </li>
           </ul>
         </div>
-        <div class="profile-message-btn center-block text-center"><a href="#" class="btn btn-success"><i class="fa fa-envelope"></i>Send Email</a><a href="#" class="btn btn-success"><i class="fa fa-envelope"></i>Send Message </a></div>
+        <div role="group" aria-label="..." class="btn-group"><a href="#" class="btn btn-success"><i class="fa fa-envelope"></i>Send Email</a><a href="#" class="btn btn-success"><i class="fa fa-envelope"></i>Send Message </a></div>
         <div>
           <div class="profile-details">
             <ul class="fa-ul">
@@ -116,34 +116,28 @@
                 <div class="panel panel-default">
                   <div class="panel-body"> 
                     <header class="main-box-header clearfix">
-                      <h2>Previous Work Experience</h2>
+                      <h2>Previous Work Experience:</h2>
                     </header>
                     <div class="col-lg-12"> 
                       <div class="col-lg-4">
-                        <label>Previous Company</label>
-                        <input id="inputSuccess" type="text" class="form-control"/>
+                        <label>Previous Company:</label><br/> Xyz Corporations
                       </div>
                       <div class="col-lg-4">
-                        <label>Branch</label>
-                        <input id="inputSuccess" type="text" placeholder="Dropdown here" class="form-control"/>
+                        <label>Branch:</label><br/> Jaipur
                       </div>
                       <div class="col-lg-4">
-                        <label>Designation</label>
-                        <input id="inputSuccess" type="text" class="form-control"/>
+                        <label>Designation:</label><br/> Sr. Manager
                       </div>
                     </div>
                     <div class="col-lg-12">             
                       <div class="col-lg-4">
-                        <label>Department</label>
-                        <input id="inputSuccess" type="text" class="form-control"/>
+                        <label>Department:</label><br/> IT
                       </div>
                       <div class="col-lg-4">
-                        <label>Salary</label>
-                        <input id="inputSuccess" type="text" class="form-control"/>
+                        <label>Salary:</label><br/> 
                       </div>
                       <div class="col-lg-4">
-                        <label>Duration</label>
-                        <input id="inputSuccess" type="text" placeholder="From date to date and duration" class="form-control"/>
+                        <label>Duration:</label><br/> 7 months{From To Date}
                       </div>
                     </div>
                   </div>
@@ -289,16 +283,37 @@
                           <tbody>
                             <tr>
                               <td>Vaibhavsharma38@gmail.com</td>
-                              <td><span class="label label-sm label-success">Active    </span></td>
+                              <td>
+                                <div class="dropdown">
+                                  <button type="button" data-toggle="dropdown" class="btn btn-danger btn-sm dropdown-toggle">Inactive<span class="caret"></span></button>
+                                  <ul class="dropdown-menu">
+                                    <li>Active</li>
+                                  </ul>
+                                </div>
+                              </td>
                               <td style="width: 20%;"><a href="#" class="table-link"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span></a><a href="#" class="table-link danger"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-trash-o fa-stack-1x fa-inverse"></i></span></a></td>
                               <tr>
                                 <td>Vaibhavsharma38@gmail.com</td>
-                                <td><span class="label label-sm label-danger">Inactive  </span></td>
+                                <td>
+                                  <div class="dropdown">
+                                    <button type="button" data-toggle="dropdown" class="btn btn-danger btn-sm dropdown-toggle">Inactive<span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                      <li>Active</li>
+                                    </ul>
+                                  </div>
+                                </td>
                                 <td style="width: 20%;"><a href="#" class="table-link"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span></a><a href="#" class="table-link danger"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-trash-o fa-stack-1x fa-inverse">       </i></span></a></td>
                               </tr>
                               <tr>
                                 <td>Vaibhavsharma38@gmail.com</td>
-                                <td><span class="label label-sm label-danger">Inactive</span></td>
+                                <td>
+                                  <div class="dropdown">
+                                    <button type="button" data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle">Active<span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                      <li>Inactive</li>
+                                    </ul>
+                                  </div>
+                                </td>
                                 <td style="width: 20%;"><a href="#" class="table-link"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span></a><a href="#" class="table-link danger"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-trash-o fa-stack-1x fa-inverse">       </i></span></a></td>
                               </tr>
                             </tr>
