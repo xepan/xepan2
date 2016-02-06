@@ -110,51 +110,59 @@
           .tab-content
             #tab-portfolio.tab-pane.fade.in.active
               #portfolio
-              div
-                .col-lg-12
-                  .main-box
-                    header.main-box-header.clearfix
-                      h2 Education Qualification
-                    .main-box-body.clearfix
-                      form.form-inline(role='form')
-                        .form-group
-                          label.sr-only(for='text1') text
-                          input#Password1.form-control(type='text', placeholder='Qualification')
-                        .form-group
-                          label.sr-only(for='text2') text
-                          input#Password2.form-control(type='text', placeholder='level')    
-                        .form-group
-                          label.sr-only(for='text3') text
-                          input#Password3.form-control(type='text', placeholder='percentage')
-              div
-                .col-lg-12
-                  .main-box
-                    header.main-box-header.clearfix
-                      h2 Previous Work Experience
-                    .main-box-body.clearfix
-                      form.form-inline(role='form')
-                        .form-group
-                          label.sr-only(for='text1') text
-                          input#Password1.form-control(type='text', placeholder='Company Name')
-                        .form-group
-                          label.sr-only(for='text2') text
-                          input#Password2.form-control(type='text', placeholder='Branch')    
-                        .form-group
-                          label.sr-only(for='text3') text
-                          input#Password3.form-control(type='text', placeholder='Designation')  
-                        .form-group
-                          label.sr-only(for='text4') text
-                          input#Password3.form-control(type='text', placeholder='Department')
-                        .form-group
-                          label.sr-only(for='text4') text
-                          input#Password3.form-control(type='text', placeholder='Department')
-                        .form-group
-                          label.sr-only(for='text5') text
-                          input#Password3.form-control(type='text', placeholder='From-To')
-                        .form-group
-                          label.sr-only(for='text5') text
-                          input#Password3.form-control(type='text', placeholder='Relieve Date')
-     
+              .col-lg-12
+                    .panel.panel-default
+                      .panel-body 
+                        .col-lg-12
+                          .col-lg-10
+                          .col-lg-2 
+                            button.btn.btn-success.push-right(type='submit') Edit Information   
+                        header.main-box-header.clearfix
+                            h2 Education Qualificaton 
+                        .col-lg-12
+                          
+                          .col-lg-4
+                                label Qualification:
+                                br
+                                | Master Of Computer Applications
+
+                          .col-lg-4
+                                label Qualification Level:
+                                br
+                                | Post Graduation  
+                          .col-lg-4
+                                label Percentage:
+                                br
+                                |  7.00
+                          
+                                     
+              .col-lg-12
+                    .panel.panel-default
+                      .panel-body 
+                        header.main-box-header.clearfix
+                          h2 Previous Work Experience
+                        .col-lg-12  
+                          .col-lg-4
+                                label Previous Company
+                                input#inputSuccess.form-control(type='text')
+
+                          .col-lg-4
+                                label Branch
+                                input#inputSuccess.form-control(type='text',placeholder='Dropdown here')
+                          .col-lg-4
+                                label Designation
+                                input#inputSuccess.form-control(type='text')
+                        .col-lg-12              
+                          .col-lg-4
+                                label Department
+                                input#inputSuccess.form-control(type='text')
+                          .col-lg-4
+                                label Salary
+                                input#inputSuccess.form-control(type='text')
+                          .col-lg-4
+                                label Duration
+                                input#inputSuccess.form-control(type='text',placeholder='From date to date and duration')
+   
 
              #tab-activity.tab-pane.fade
               .table-responsive
@@ -202,43 +210,49 @@
                       td
                         | 2014/08/08 12:08
             #tab-documents.tab-pane.clearfix.fade
+              .col-lg-12
+                  .col-lg-10
+                  .col-lg-2
+                      button.btn.btn-success.push-right(type='submit') Add Document 
+
               ul.widget-users.row
                 li.col-md-6
                   .details
                     .name
                       a(href='#') Secondary Marksheet
-                    .time
-                      i.fa.fa-check-circle
-                      |  Document: Present
                     .type
-                      button.btn.btn-success(type='button') Download
+                      .btn-group(role='group', aria-label='...')
+                        button.btn.btn-sm.btn-success(type='button') Download
+                        button.btn.btn-sm.btn-danger(type='button')  
+                            i.glyphicon.glyphicon-trash
+                
                 li.col-md-6
                   .details
                     .name
                       a(href='#') Higher Secondary Marksheet
-                    .time.online
-                      i.fa.fa-check-circle
-                      |  Document: Present
                     .type
-                      button.btn.btn-success(type='button') Download 
+                      .btn-group(role='group', aria-label='...')
+                        button.btn.btn-sm.btn-success(type='button') Download
+                        button.btn.btn-sm.btn-danger(type='button')  
+                            i.glyphicon.glyphicon-trash 
                 li.col-md-6
                   .details
                     .name
                       a(href='#') Appointment letter
-                    .time.online
-                      i.fa.fa-times-circle
-                      |  Document: Not present
                     .type
-                      button.btn.btn-warning(type='button') Upload  
+                      .btn-group(role='group', aria-label='...')
+                        button.btn.btn-sm.btn-success(type='button') Download
+                        button.btn.btn-sm.btn-danger(type='button')  
+                            i.glyphicon.glyphicon-trash
                 li.col-md-6
                   .details
                     .name
                       a(href='#') Address Proof
-                    .time
-                      i.fa.fa-times-circle
-                      |  Document: Not Present
                     .type
-                      button.btn.btn-warning(type='button') Upload  
+                      .btn-group(role='group', aria-label='...')
+                        button.btn.btn-sm.btn-success(type='button') Download
+                        button.btn.btn-sm.btn-danger(type='button')  
+                            i.glyphicon.glyphicon-trash
                 
               
             #tab-chat.tab-pane.fade
@@ -263,15 +277,65 @@
                   .col-lg-12
                     .main-box
                       header.main-box-header.clearfix
-                        h2 Update Email Info.
+                        .col-lg-12
+                          .col-lg-10
+                            h2 Update Email Info
+                          .col-lg-2
+                            button.btn.btn-success.push-right(type='submit') Add Email    
                       .main-box-body.clearfix
-                        form.form-inline(role='form')
-                          .form-group
-                            label.sr-only(for='Password3') Password
-                            input#inputEmail1.form-control(type='email', placeholder='scarlett@gmail.com')
-                          .form-group
-                            .label.label-success Active
+                        .table-responsive
+                          table.table
+                            thead
+                              tr
+                                th
+                                 span Email
+                                th
+                                 span Status 
+                            tbody
+                              tr
+                                td
+                                  |Vaibhavsharma38@gmail.com
+                                td
+                                  span.label.label-sm.label-success Active    
+                                td(style='width: 20%;')
+                                  a.table-link(href='#')
+                                    span.fa-stack
+                                      i.fa.fa-square.fa-stack-2x
+                                      i.fa.fa-pencil.fa-stack-1x.fa-inverse
+                                  a.table-link.danger(href='#')
+                                    span.fa-stack
+                                      i.fa.fa-square.fa-stack-2x
+                                      i.fa.fa-trash-o.fa-stack-1x.fa-inverse
+                                tr
+                                  td
+                                    |Vaibhavsharma38@gmail.com
+                                  td
+                                    span.label.label-sm.label-danger Inactive  
+                                  td(style='width: 20%;')
+                                    a.table-link(href='#')
+                                      span.fa-stack
+                                        i.fa.fa-square.fa-stack-2x
+                                        i.fa.fa-pencil.fa-stack-1x.fa-inverse
+                                    a.table-link.danger(href='#')
+                                      span.fa-stack
+                                        i.fa.fa-square.fa-stack-2x
+                                        i.fa.fa-trash-o.fa-stack-1x.fa-inverse        
+                                tr
+                                  td
+                                    |Vaibhavsharma38@gmail.com
+                                  td
+                                    span.label.label-sm.label-danger Inactive
+                                  td(style='width: 20%;')
+                                    a.table-link(href='#')
+                                      span.fa-stack
+                                        i.fa.fa-square.fa-stack-2x
+                                        i.fa.fa-pencil.fa-stack-1x.fa-inverse
+                                    a.table-link.danger(href='#')
+                                      span.fa-stack
+                                        i.fa.fa-square.fa-stack-2x
+                                        i.fa.fa-trash-o.fa-stack-1x.fa-inverse        
+
     
-                          button.btn.btn-success(type='submit') Add New
-                          button.btn.btn-success(type='submit') Edit 
-                            
+                                          
+    
+                                
