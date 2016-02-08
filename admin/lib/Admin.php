@@ -7,23 +7,23 @@ class Admin extends App_Frontend {
     function init() {
         parent::init();
 
+        $this->dbConnect();
+        $this->add('jUI');
+
+        // Move to SandBOX Part Start
+
         $this->api->pathfinder
             ->addLocation(array(
                 'addons' => array('addons', 'vendor','shared/addons2'),
             ))
             ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
             
-        // Must be checked by SANDBOX from some local db
         $addons = ['xepan\\base','xepan\\hr','xepan\\marketing','xepan\\commerce'];
 
         foreach ($addons as $addon) {
             $this->add("$addon\Initiator");
         }
-
-        $this->dbConnect();
-        $this->add('jUI');
-        
-
+        // Move to SandBOX Part END
 
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
         $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
