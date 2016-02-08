@@ -2,16 +2,6 @@ html
   body
       .row(style='opacity: 1;')
         .col-lg-12
-          //- .row
-          //-   .col-lg-12
-          //-     ol.breadcrumb
-          //-       li
-          //-         a(href='#') Home
-          //-       li
-          //-         a(href='#') Sales
-          //-       li.active
-          //-         span Items
-          //-     h1 Item Details
           #user-profile.row
             .col-lg-3.col-md-4.col-sm-4
               .main-box.clearfix
@@ -22,9 +12,8 @@ html
                     i.fa.fa-circle
                     |  Availabe In Stock
                   img.img-responsive.center-block(alt='', src='img/samples/ipad.png')  
-                  //- profile-img
                   .profile-label
-                    span.label.label-danger Phones
+                    span.label.label-info Phones
                   .profile-stars
                     i.fa.fa-star
                     i.fa.fa-star
@@ -57,7 +46,7 @@ html
                     li
                       a(data-toggle='tab', href='#tab-Attribute') Attribute
                     li
-                      a(data-toggle='tab', href='#tab-Qty&Price') Qty&Price
+                      a(data-toggle='tab', href='#tab-QtyPrice') Qty&Price
                     li
                       a(data-toggle='tab', href='#tab-Category') Category
                     li
@@ -68,258 +57,173 @@ html
                       a(data-toggle='tab', href='#tab-Update Theme') Update Theme
                   .tab-content
                     #tab-Basic.tab-pane.fade.in.active
-                    
-                    span Designer:
-                      div.btn-group
-                        button.btn.btn-primary.dropdown-toggle(type="button",style="width:500px" data-toggle="dropdown")
-                             | Please Select..
-                             span.caret
-                         ul.dropdown-menu(role="menu",style="width:500px")
-                             li
-                               | Mr Harsh Pareek
-                             li.divider
-                             li
-                               | Mr Narendra Joshi
-
-                        .col-lg-12
-                        
-                          label Search:
-                            input.form-control.input-sm(type='search', placeholder='', aria-controls='table-example')
-                          label Search:
-                            input.form-control.input-sm(type='search', placeholder='', aria-controls='table-example')
-
-                    #tab-activity.tab-pane.fade
-                      .table-responsive
-                        table.table
-                          tbody
-                            tr
-                              td.text-center
-                                i.fa.fa-comment
-                              td
-                                | Scarlett Johansson posted a comment in 
-                                a(href='#') Avengers Initiative
-                                |  project.
-                              td
-                                | 2014/08/08 12:08
-                            tr
-                              td.text-center
-                                i.fa.fa-truck
-                              td
-                                | Scarlett Johansson changed order status from 
-                                span.label.label-primary Pending
-                                | to 
-                                span.label.label-success Completed
-                              td
-                                | 2014/08/08 12:08
-                            tr
-                              td.text-center
-                                i.fa.fa-check
-                              td
-                                | Scarlett Johansson posted a comment in 
-                                a(href='#') Lost in Translation opening scene
-                                |  discussion.
-                              td
-                                | 2014/08/08 12:08
-                            tr
-                              td.text-center
-                                i.fa.fa-users
-                              td
-                                | Scarlett Johansson posted a comment in 
-                                a(href='#') Avengers Initiative
-                                |  project.
-                              td
-                                | 2014/08/08 12:08
-                            tr
-                              td.text-center
-                                i.fa.fa-heart
-                              td
-                                | Scarlett Johansson changed order status from 
-                                span.label.label-warning On Hold
-                                | to 
-                                span.label.label-danger Disabled
-                              td
-                                | 2014/08/08 12:08
-                            tr
-                              td.text-center
-                                i.fa.fa-check
-                              td
-                                | Scarlett Johansson posted a comment in 
-                                a(href='#') Lost in Translation opening scene
-                                |  discussion.
-                              td
-                                | 2014/08/08 12:08
-                            tr
-                              td.text-center
-                                i.fa.fa-truck
-                              td
-                                | Scarlett Johansson changed order status from 
-                                span.label.label-primary Pending
-                                | to 
-                                span.label.label-success Completed
-                              td
-                                | 2014/08/08 12:08
-                            tr
-                              td.text-center
-                                i.fa.fa-users
-                              td
-                                | Scarlett Johansson posted a comment in 
-                                a(href='#') Avengers Initiative
-                                |  project.
-                              td
-                                | 2014/08/08 12:08
-                    #tab-friends.tab-pane.clearfix.fade
-                      ul.widget-users.row
-                        li.col-md-6
-                          .img
-                            img(alt='', src='img/samples/scarlet.png')
-                          .details
-                            .name
-                              a(href='#') Scarlett Johansson
-                            .time
-                              i.fa.fa-clock-o
-                              |  Last online: 5 minutes ago
-                            .type
-                              span.label.label-danger Admin
-                        li.col-md-6
-                          .img
-                            img(alt='', src='img/samples/kunis.png')
-                          .details
-                            .name
-                              a(href='#') Mila Kunis
-                            .time.online
-                              i.fa.fa-check-circle
-                              |  Online
-                            .type
-                              span.label.label-warning Pending
-                        li.col-md-6
-                          .img
-                            img(alt='', src='img/samples/ryan.png')
-                          .details
-                            .name
-                              a(href='#') Ryan Gossling
-                            .time.online
-                              i.fa.fa-check-circle
-                              |  Online
-                        li.col-md-6
-                          .img
-                            img(alt='', src='img/samples/robert.png')
-                          .details
-                            .name
-                              a(href='#') Robert Downey Jr.
-                            .time
-                              i.fa.fa-clock-o
-                              |  Last online: Thursday
-                        li.col-md-6
-                          .img
-                            img(alt='', src='img/samples/emma.png')
-                          .details
-                            .name
-                              a(href='#') Emma Watson
-                            .time
-                              i.fa.fa-clock-o
-                              |  Last online: 1 week ago
-                        li.col-md-6
-                          .img
-                            img(alt='', src='img/samples/george.png')
-                          .details
-                            .name
-                              a(href='#') George Clooney
-                            .time
-                              i.fa.fa-clock-o
-                              |  Last online: 1 month ago
-                        li.col-md-6
-                          .img
-                            img(alt='', src='img/samples/kunis.png')
-                          .details
-                            .name
-                              a(href='#') Mila Kunis
-                            .time.online
-                              i.fa.fa-check-circle
-                              |  Online
-                            .type
-                              span.label.label-warning Pending
-                        li.col-md-6
-                          .img
-                            img(alt='', src='img/samples/ryan.png')
-                          .details
-                            .name
-                              a(href='#') Ryan Gossling
-                            .time.online
-                              i.fa.fa-check-circle
-                              |  Online
-                      br
-                      a.btn.btn-success.pull-right(href='#') View all users
-                    #tab-chat.tab-pane.fade
-                      .conversation-wrapper
-                        .conversation-content
-                          .slimScrollDiv(style='position: relative; overflow: hidden; width: auto; height: 340px;')
-                            .conversation-inner(style='overflow: hidden; width: auto; height: 340px;')
-                              .conversation-item.item-left.clearfix
-                                .conversation-user
-                                  img(alt='', src='img/samples/ryan.png')
-                                .conversation-body
-                                  .name
-                                    | Ryan Gossling
-                                  .time.hidden-xs
-                                    | September 21, 2013 18:28
-                                  .text
-                                    | I don't think they tried to market it to the billionaire, spelunking,
-                                    | base-jumping crowd.
-                              .conversation-item.item-right.clearfix
-                                .conversation-user
-                                  img(alt='', src='img/samples/kunis.png')
-                                .conversation-body
-                                  .name
-                                    | Mila Kunis
-                                  .time.hidden-xs
-                                    | September 21, 2013 12:45
-                                  .text
-                                    | Normally, both your asses would be dead as fucking fried chicken, but you
-                                    | happen to pull this shit while I'm in a transitional period so I don't wanna
-                                    | kill you, I wanna help you.
-                              .conversation-item.item-right.clearfix
-                                .conversation-user
-                                  img(alt='', src='img/samples/kunis.png')
-                                .conversation-body
-                                  .name
-                                    | Mila Kunis
-                                  .time.hidden-xs
-                                    | September 21, 2013 12:45
-                                  .text
-                                    | Normally, both your asses would be dead as fucking fried chicken, but you
-                                    | happen to pull this shit while I'm in a transitional period so I don't wanna
-                                    | kill you, I wanna help you.
-                              .conversation-item.item-left.clearfix
-                                .conversation-user
-                                  img(alt='', src='img/samples/ryan.png')
-                                .conversation-body
-                                  .name
-                                    | Ryan Gossling
-                                  .time.hidden-xs
-                                    | September 21, 2013 18:28
-                                  .text
-                                    | I don't think they tried to market it to the billionaire, spelunking,
-                                    | base-jumping crowd.
-                              .conversation-item.item-right.clearfix
-                                .conversation-user
-                                  img(alt='', src='img/samples/kunis.png')
-                                .conversation-body
-                                  .name
-                                    | Mila Kunis
-                                  .time.hidden-xs
-                                    | September 21, 2013 12:45
-                                  .text
-                                    | Normally, both your asses would be dead as fucking fried chicken, but you
-                                    | happen to pull this shit while I'm in a transitional period so I don't wanna
-                                    | kill you, I wanna help you.
-                            .slimScrollBar(style='background: none repeat scroll 0% 0% rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;')
-                            .slimScrollRail(style='width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: none repeat scroll 0% 0% rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;')
-                        .conversation-new-message
-                          form
+                     .col-lg-12
+                      .main-box
+                        header.main-box-header.clearfix
+                          h2 Basic Detail
+                        .main-box-body.clearfix
+                          form(role='form')
                             .form-group
-                              textarea.form-control(placeholder='Enter your message...', rows='2')
-                            .clearfix
-                              button.btn.btn-success.pull-right(type='submit') Send message
+                              label(for='') Designer Name
+                              .input-group
+                                .input-group-btn
+                                  button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown')
+                                    | Select Designer 
+                                    span.caret
+                                  ul.dropdown-menu
+                                    li
+                                      a(href='#') Narendra Seth
+                                    li
+                                      a(href='#') Vijay Kumar
+                                    li
+                                      a(href='#') Sushil Soni
+                                    li.divider
+                                    li
+                                      a(href='#') New Designer
+                                input.form-control(type='text')
+                            .form-group
+                              label(for='examplePrepend') ShortDescriptor
+                              .input-group
+                                span.input-group-addon s
+                                input#examplePrepend.form-control(type='text', placeholder='')
+                            .form-group
+                              label(for='exampleAppend') RankWeight
+                              .input-group
+                                input#exampleAppend.form-control(type='text',placeholder='0')
+                                span.input-group-addon .00
+                            .form-group
+                              label(for='exampleAppPre') ExpiryDate:
+                              .input-group
+                                span.input-group-addon 
+                                 i.fa.fa-calendar
+                                input#exampleAppPre.form-control(type='text')
+                                span.input-group-addon --/--/----
+                      .col-lg-12
+                       .panel.panel-default
+                        .panel-body 
+                           h2 Item Allow Option
+                         .main-box-body.clearfix
+                           .row
+                              .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-1(type='checkbox', checked='checked')
+                                      label(for='checkbox-1') Is Saleable
+                               .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-2(type='checkbox')
+                                      label(for='checkbox-2') Allow Uploadable 
+                                .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-1(type='checkbox')
+                                      label(for='checkbox-1') Is Purchaseable 
+                            .row
+                                .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-1(type='checkbox')
+                                      label(for='checkbox-0') Is Productionable
+                                .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-1(type='checkbox')
+                                      label(for='checkbox-1') Is Website Display 
+                                .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-1(type='checkbox')
+                                      label(for='checkbox-1') Is Maintain Inventory
+                            .row 
+                                .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-1(type='checkbox')
+                                      label(for='checkbox-1') Is AllowNegative Stock 
+                                .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-1(type='checkbox')
+                                      label(for='checkbox-1') Is Allow Enquiry Allow
+                                .col-lg-4
+                                   .checkbox-nice
+                                       input#checkbox-1(type='checkbox')
+                                       label(for='checkbox-1') Is Template
+                      .col-lg-12
+                       .main-box
+                         header.main-box-header.clearfix
+                           h2 Item Display Option
+                         .main-box-body.clearfix
+                           .row
+                              .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-1(type='checkbox', checked='checked')
+                                      label(for='checkbox-1') Show Detail
+                               .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-2(type='checkbox')
+                                      label(for='checkbox-2') Show Deatail 
+                                .col-lg-4
+                                  .checkbox-nice
+                                      input#checkbox-1(type='checkbox')
+                                      label(for='checkbox-1') Is Visible Sold  
+                      .col-lg-12
+                       .main-box
+                         header.main-box-header.clearfix
+                           h2 Item Allow Option
+                         .main-box-body.clearfix
+                              .form-group
+                                label(for='exampleRadio') Prepend radio
+                                .input-group
+                                  span.input-group-addon
+                                    input(type='radio')
+                                  input#exampleRadio.form-control(type='text')
+                              .form-group
+                                label(for='exmaplePrependButton') Prepend button
+                                .input-group
+                                  span.input-group-btn
+                                    button.btn.btn-primary(type='button') Go!
+                                  input#exmaplePrependButton.form-control(type='text')
+                              .form-group
+                                label(for='examplePrependDropdown') Prepend button dropdown
+                                .input-group
+                                  .input-group-btn
+                                    button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown')
+                                      | Action 
+                                      span.caret
+                                    ul.dropdown-menu
+                                      li
+                                        label(for='ID') Hemendra Seth 
+                                      li
+                                        a(href='#') Narendra Kumar
+                                      li
+                                        a(href='#') Something else here
+                                      li.divider
+                                      li
+                                        a(href='#') Separated link
+                                  input#examplePrependDropdown.form-control(type='text')
+                    #tab-Attribute.tab-pane.fade
+                     .row
+                      .col-lg-12.col-md-8.col-sm-8
+                       .main-box.clearfix
+                         .tabs-wrapper.profile-tabs
+                           ul.nav.nav-tabs
+                             li.active
+                               a(data-toggle='tab', href='#tab-Specification') Specification
+                             li
+                               a(data-toggle='tab', href='#tab-CustionFeild') CustomField
+                             li
+                               a(data-toggle='tab', href='#tab-StockEffectCustomFeilds') StockEffectCustomFeild
+                             li
+                               a(data-toggle='tab', href='#tab-Filter') Filter
+                               .tab-content
+                                  #tab-Specification.tab-pane.fade.in.active
+                                  .row
+                                   .col-lg-12
+                                    .box
+                                      header.main-box-header.clearfix
+                                        h2 Basic Detail
+                                      .main-box-body.clearfix
+                                         a.btn.btn-primary.pull-left(href='#')
+                                          i.fa.fa-plus-circle.fa-lg
+                                          |  Add product
+                    #tab-QtyPrice.tab-pane.clearfix.fade
+                      
+                    #tab-chat.tab-pane.fade
+                      
       footer#footer-bar.row(style='opacity: 1;')
         p#footer-copyright.col-xs-12
           | Powered by Cube Theme.
