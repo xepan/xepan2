@@ -17,12 +17,14 @@ class Admin extends App_Frontend {
                 'addons' => array('addons', 'vendor','shared/addons2'),
             ))
             ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
-            
+        
+        // Should come from any local DB store
         $addons = ['xepan\\base','xepan\\hr','xepan\\marketing','xepan\\commerce'];
 
         foreach ($addons as $addon) {
             $this->add("$addon\Initiator");
         }
+
         // Move to SandBOX Part END
 
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
