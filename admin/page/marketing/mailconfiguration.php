@@ -1,6 +1,6 @@
 <?php
 
-class page_marketing_lead extends Page{
+class page_marketing_mailconfiguration extends Page{
 
 	function init(){
 		parent::init();
@@ -10,6 +10,6 @@ class page_marketing_lead extends Page{
 
 	function defaultTemplate(){
 
-		return ['page/marketing/lead'];
+		return ['page/marketing/mailconfiguration'];
 	}
 }
