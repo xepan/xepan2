@@ -1,18 +1,21 @@
-.row
-	.col-lg-12
-		.panel.panel-default
-			.panel-body
-				h4 Add Social Post
-			.row
-				.col-lg-1
-				.col-lg-10
-					.panel.panel-default
-						.panel-body
-							h4 General Information
-						.row
-							.col-lg-6
-								span dropdown here
-							.col-lg-6		
-								span name here
-				.col-lg-1
-			.row		
+.panel.panel-default
+	.panel-heading Add Social Post
+	.panel-body
+		.row.col-lg-12
+			.col-lg-3
+				.dropdown
+					button.btn.btn-success.btn-sm.dropdown-toggle(type='button', data-toggle='dropdown')
+						| Your Category here
+						span.caret
+					ul.dropdown-menu
+						li
+							| Test	
+			
+						li
+							| Demo	
+			
+						li
+							| Phase one of marketing	
+			.col-lg-4 
+				input#inputSuccess.form-control(type='text', placeholder='Name here')
+					
