@@ -6,6 +6,7 @@ class page_marketing_leadprofile extends Page{
 		parent::init();
 
 		$this->add('View_Marketing_activity',null,'activity');
+		$this->add('View_Marketing_opportunity',null,'opportunity');
 
 	}
 

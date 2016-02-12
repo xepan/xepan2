@@ -1,7 +1,6 @@
 {$Content}
 .row
-  .col-lg-12
-    img(alt='activity timeline',src='http://apps4halifax.ca/assets/img/horizontal-timeline.png')
+  {$progressbar}
   br
   br  
   .row
@@ -46,93 +45,5 @@
                 li
                   label(for='ID') @@@@@@
         hr           
-        .col-lg-4.col-md-6.col-sm-6
-          .main-box.clearfix.project-box.green-box
-            .main-box-body.clearfix
-              span.label.pull-right.label-danger Jaipur Printing
-              .project-box-header.green-bg
-                .name
-                  a(href='#')
-                    | Marketing phase 1 content  
-              .project-box-content
-                  span
-                    |Content will be shown here Lorem Ipsum is simply a dummy text of printing and Content will be shown here Lorem Ipsum is simply a dummy text of printing 
-              .project-box-footer.clearfix
-                a(href='#')
-                  span.value 0
-                  span.label Likes
-                a(href='#')
-                  span.value 0
-                  span.label Follows
-                a(href='#')
-                  span.value 0
-                  span.label Comments
-              .project-box-ultrafooter.clearfix
-                .col-lg-4
-                  a.btn.btn-primary.btn-sm(href='#')
-                    |  Get Approval
-                .col-lg-4
-                  a.btn.btn-primary.btn-sm(href='#')
-                    i.fa.fa-sm
-                    i.fa.fa-delicious
-                    span &nbsp;
-                    | Delete
-                .col-lg-4  
-                  a.btn.btn-primary.btn-sm(href='#')
-                    i.fa.fa-sm
-                    i.fa.fa-delicious
-                    span &nbsp;  
-                    |Edit  
-
-        .col-lg-4.col-md-6.col-sm-6
-          .main-box.clearfix.project-box.green-box
-            .main-box-body.clearfix
-              span.label.pull-right.label-primary Jaipur Printing
-              .project-box-header.green-bg
-                .name
-                  a(href='#')
-                    | Marketing phase 1 content
-              .project-box-content
-                  span
-                    |Content will be shown here Lorem Ipsum is simply a dummy text of printing and Content will be shown here Lorem Ipsum is simply a dummy text of printing 
-              .project-box-footer.clearfix
-                a(href='#')
-                  span.value 0
-                  span.label Likes
-                a(href='#')
-                  span.value 0
-                  span.label Follows
-                a(href='#')
-                  span.value 0
-                  span.label Comments
-              .project-box-ultrafooter.clearfix
-                .col-lg-4
-                .col-lg-4  
-                  a.btn.btn-primary.btn-sm(href='#')
-                    |  Post
-                .col-lg-4    
-
-
-        .col-lg-4.col-md-6.col-sm-6
-          .main-box.clearfix.project-box.green-box
-            span.label.pull-right.label-success Jaipur Printing
-            .main-box-body.clearfix
-              .project-box-header.green-bg
-                .name
-                  a(href='#')
-                    | Marketing phase 1 content
-              .project-box-content
-                  span
-                    |Content will be shown here Lorem Ipsum is simply a dummy text of printing and Content will be shown here Lorem Ipsum is simply a dummy text of printing 
-              .project-box-footer.clearfix
-                a(href='#')
-                  span.value 130
-                  span.label Likes
-                a(href='#')
-                  span.value 5
-                  span.label Follows
-                a(href='#')
-                  span.value 30
-                  span.label Comments
-              .project-box-ultrafooter.clearfix
-                
+        .row
+          {$social}
