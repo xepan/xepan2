@@ -1,0 +1,480 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"item_",
+				"item_name"
+			],
+			[
+				"V",
+				"View_Info"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"small",
+				"smaller"
+			],
+			[
+				"location",
+				"location"
+			],
+			[
+				"big",
+				"Bigger"
+			],
+			[
+				"atk-c",
+				"atk-swatch-yellow"
+			],
+			[
+				"ret",
+				"retype_password"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"add",
+				"addColumn"
+			],
+			[
+				"n",
+				"n"
+			],
+			[
+				"blue",
+				"blue"
+			],
+			[
+				"d",
+				"d"
+			],
+			[
+				"atk",
+				"atk-swatch-red"
+			],
+			[
+				"set",
+				"setClass"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 243.0,
+		"last_filter": "git stat",
+		"selected_items":
+		[
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				" git status",
+				"Git: Status"
+			],
+			[
+				"git ",
+				"Git: Status"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"pacin",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pacins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/var/www/html/xepan2/agiletoolkit-css"
+	],
+	"file_history":
+	[
+		"/var/www/html/xepan2/admin/templates/page/xhr/department.html",
+		"/var/www/html/xepan2/admin/page/hr/departments.php",
+		"/var/www/html/xepan2/admin/templates/page/xhr/post.html",
+		"/var/www/html/xepan2/admin/page/hr/post.php",
+		"/var/www/html/xepan2/admin/templates/page/xhr/employee.html",
+		"/var/www/html/xepan2/admin/page/hr/employee.php",
+		"/var/www/html/agiletoolkit/admin/template/page/blue.jade",
+		"/var/www/html/agiletoolkit/admin/template/page/blue.html",
+		"/var/www/html/agiletoolkit/admin/template/page/next.html",
+		"/var/www/html/agiletoolkit/admin/page/product.php",
+		"/var/www/html/agiletoolkit/admin/lib/View/product.php",
+		"/var/www/html/agiletoolkit/admin/template/product.html",
+		"/var/www/html/agiletoolkit/admin/template/product.jade",
+		"/var/www/html/agiletoolkit/admin/page/game.php",
+		"/var/www/html/agiletoolkit/admin/lib/View/cart.php",
+		"/var/www/html/agiletoolkit/admin/page/checkout.php",
+		"/var/www/html/agiletoolkit/admin/templates/page/next.html",
+		"/var/www/html/agiletoolkit/admin/page/ngame.php",
+		"/var/www/html/agiletoolkit/admin/templates/page/next.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/email_news.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/ex.html",
+		"/var/www/html/agiletoolkit/admin/templates/page/ex2.html",
+		"/var/www/html/agiletoolkit/admin/templates/page/ex2.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/responsive-mail.html",
+		"/var/www/html/agiletoolkit/admin/page/form3.php",
+		"/var/www/html/agiletoolkit/admin/page/ngame2.php",
+		"/var/www/html/agiletoolkit/admin/templates/page/ex.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/ex1.html",
+		"/var/www/html/agiletoolkit/admin/templates/page/ex1.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/responsive-mail.jade",
+		"/var/www/html/agiletoolkit/admin/page/test4.php",
+		"/var/www/html/agiletoolkit/admin/page/test3.php",
+		"/var/www/html/agiletoolkit/admin/page/test2.php",
+		"/var/www/html/agiletoolkit/admin/page/test.php",
+		"/var/www/html/agiletoolkit/admin/page/form.php",
+		"/var/www/html/agiletoolkit/admin/page/column.php",
+		"/var/www/html/agiletoolkit/admin/page/n1.php",
+		"/var/www/html/agiletoolkit/admin/lib/Admin.php",
+		"/var/www/html/agiletoolkit/admin/page/n2.php",
+		"/var/www/html/agiletoolkit/admin/page/n3.php",
+		"/var/www/html/agiletoolkit/admin/page/form33.php",
+		"/var/www/html/agiletoolkit/admin/page/setup.php",
+		"/var/www/html/agiletoolkit/admin/page/setup2.php",
+		"/var/www/html/agiletoolkit/admin/templates/page/experiment.jade",
+		"/var/www/html/agiletoolkit/admin/page/twst4.php",
+		"/var/www/html/agiletoolkit/admin/page/form2.php",
+		"/var/www/html/agiletoolkit/admin/page/test5.php",
+		"/var/www/html/agiletoolkit/admin/templates/page/experiment.html",
+		"/var/www/html/agiletoolkit/admin/templates/page/tubor.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/minty.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/litmus.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/litmus2.jade",
+		"/var/www/html/agiletoolkit/admin/page/success.php",
+		"/var/www/html/agiletoolkit/admin/templates/page/underscore.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/wooshi.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/tempo.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/ex_blue.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/ex_blue.html",
+		"/var/www/html/agiletoolkit/admin/templates/page/ex_green.jade",
+		"/var/www/html/agiletoolkit/admin/templates/page/nj2",
+		"/var/www/html/agiletoolkit/admin/page/experiment.jade",
+		"/media/nilam/NJ/free/nj2",
+		"/var/www/html/xepan2/admin/templates/page/forms/wizard.jade",
+		"/var/www/html/xepan2/admin/templates/page/intro.html",
+		"/var/www/html/xepan2/admin/templates/page/xhr/department.jade",
+		"/var/www/html/xepan2/admin/lib/Menu.php",
+		"/var/www/html/xepan2/vendor/atk4/atk4/lib/View/Button.php",
+		"/var/www/html/xepan2/admin/templates/html.jade",
+		"/var/www/html/xepan2/admin/templates/page/xhr/post.jade",
+		"/var/www/html/xepan2/admin/templates/page/xhr/employee.jade",
+		"/var/www/html/xepan2/admin/page/test.php",
+		"/var/www/html/xepan2/admin/page/test2.php",
+		"/home/nilam/Desktop/11.html",
+		"/var/www/html/xepan2/admin/page/test3.php",
+		"/var/www/html/xepan2/admin/public/index.php",
+		"/var/www/html/xepan2/admin/templates/page/forms/wysiwyg.jade",
+		"/var/www/html/xepan2/admin/templates/page/forms/ckeditor.jade",
+		"/var/www/html/xepan2/admin/templates/page/forms/multiple-file-upload.jade",
+		"/var/www/html/xepan2/admin/templates/page/forms/summernote.jade",
+		"/var/www/html/xepan2/admin/templates/page/forms/wizard-popup.jade",
+		"/var/www/html/xepan2/admin/templates/page/forms/elements.html",
+		"/var/www/html/xepan2/admin/templates/page/forms/elements.jade",
+		"/var/www/html/xepan2/admin/templates/page/forms/x-editable.jade",
+		"/var/www/html/xepan2/admin/templates/page/intro.jade",
+		"/var/www/html/xepan2/admin/templates/page/wigets/widget1.jade",
+		"/var/www/html/xepan2/admin/templates/page/invoice.jade",
+		"/var/www/html/xepan2/admin/templates/page/search-results.jade",
+		"/var/www/html/xepan2/admin/templates/page/timeline-grid.jade",
+		"/var/www/html/xepan2/admin/templates/page/projects.jade",
+		"/var/www/html/xepan2/admin/templates/page/price.jade",
+		"/var/www/html/xepan2/cube/form-elements.html",
+		"/var/www/html/xepan2/admin/templates/page/calendar.jade",
+		"/var/www/html/xepan2/admin/templates/page/gallery-v2.jade",
+		"/var/www/html/xepan2/admin/templates/page/gallery.jade",
+		"/var/www/html/xepan2/admin/templates/html.html",
+		"/var/www/html/xepan2/admin/templates/page/timeline.jade",
+		"/var/www/html/xepan2/admin/templates/page/email/email-compose.jade",
+		"/var/www/html/xepan2/admin/templates/page/email/email-detail.jade",
+		"/var/www/html/xepan2/admin/templates/page/email/email-inbox.html",
+		"/var/www/html/xepan2/admin/templates/page/gallery.html",
+		"/var/www/html/index.html",
+		"/var/www/html/xepan2/admin/templates/page/email/email-inbox.jade",
+		"/var/www/html/xepan2/admin/templates/page/team-member.jade",
+		"/var/www/html/xepan2/admin/templates/page/calendar.html",
+		"/var/www/html/xepan2/admin/templates/page/price.html",
+		"/var/www/html/xepan2/admin/page/team member.html",
+		"/var/www/html/xepan2/test.jade",
+		"/var/www/html/xepan2/index.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".",
+			"border-collapse",
+			"src",
+			"50",
+			"xepan",
+			"xepa",
+			"Spacing",
+			"increase",
+			"be global",
+			"bgcolor",
+			"xepan",
+			"xe[an",
+			"print",
+			"if you want",
+			"jpg",
+			"incr",
+			"print",
+			"track",
+			"src",
+			"++)\n",
+			"padding",
+			"font-size",
+			"bgcolor",
+			"border-collapse",
+			"background-color",
+			"bgcolor",
+			"color",
+			"border",
+			"bgcolor",
+			"bgcolor='#0db9ea'",
+			"bgcolor",
+			"minty",
+			"this",
+			"page_test",
+			"price"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git-commit":
+	{
+		"height": 112.0
+	},
+	"pinned_build_system": "Packages/Jade Build/Jade.sublime-build",
+	"project": "css.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"depa",
+				"admin/templates/page/xhr/department.html"
+			],
+			[
+				"post",
+				"admin/templates/page/xhr/post.html"
+			],
+			[
+				"xhremp",
+				"admin/templates/page/xhr/employee.html"
+			],
+			[
+				"pageproduct",
+				"admin/page/product.php"
+			],
+			[
+				"viewproduct",
+				"admin/lib/View/product.php"
+			],
+			[
+				"ex1.html",
+				"admin/templates/page/ex1.html"
+			],
+			[
+				"viewbutton",
+				"vendor/atk4/atk4/lib/View/Button.php"
+			],
+			[
+				"gitstatus",
+				"*git-status*: xepan2"
+			],
+			[
+				"employee",
+				"admin/templates/page/xhr/employee.jade"
+			],
+			[
+				"pos",
+				"admin/templates/page/xhr/post.jade"
+			],
+			[
+				"depart",
+				"admin/templates/page/xhr/department.jade"
+			],
+			[
+				"elemet",
+				"cube/form-elements.html"
+			],
+			[
+				"",
+				"admin/templates/page/forms.jade/elements.jade"
+			],
+			[
+				"html",
+				"admin/templates/html.jade"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/var/www/html/agiletoolkit/xepan2.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 318.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
