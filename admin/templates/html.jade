@@ -196,6 +196,15 @@ html(lang="{lang}en{/}")
                     span 
                     i.fa.fa-caret-down
                   ul.dropdown-menu
+                    li.item
+                      a(href='{url}?page=production_jobcard{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | JobCard
+                    li.item
+                      a(href='{url}?page=production_outsourceparty{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Out Source Party
+                    
                 li.dropdown.hidden-xs
                   a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
                     | CRM
@@ -642,7 +651,7 @@ html(lang="{lang}en{/}")
     script.
       $(document).ready(function() {
       //CHARTS
-      function gd(year, day, month) {
+      function (year, day, month) {
       return new Date(year, month - 1, day).getTime();
       }
       if ($('#graph-bar').length) {

@@ -1,3 +1,4 @@
+{$Content}
 .main-box.no-header.clearfix
   header.main-box-header.clearfix
     h2.pull-left Out-Source Party
@@ -8,6 +9,12 @@
       a.btn.btn-primary.pull-right(href='#')
         i.fa.fa-plus-circle.fa-lg
         |  Add Out-Source Party
+    .filter-block.pull-right
+      .form-group.pull-left
+        select.form-control.xepan-dropdown-micro
+          option Sort By
+          option Pending Job DSC Order
+          option Pending Job ASC Order
   .main-box-body.clearfix
     .table-responsive
       table.table.user-list.table-hover
@@ -26,13 +33,14 @@
               img(alt='', src='img/samples/scarlet-159.png')
               a.user-link(href='{url}?page=production_outsourceprofile{/}') I.B printing corporates
               span
-                small| xyz
+                small| Karauli / Rajasthan / India
             td.text-center
               span.label.label-success active
             td.text-center
-               span 20
+               span
+               a.user-link(href='{url}?page=production_jobcard{/}') 20
             td(style='width: 20%;')
-              a.table-link(href='#')
+              a.table-link(href='{url}?page=production_outsourceparty{/}')
                 span.fa-stack
                   i.fa.fa-square.fa-stack-2x
                   i.fa.fa-pencil.fa-stack-1x.fa-inverse
@@ -45,13 +53,14 @@
               img(alt='', src='img/samples/scarlet-159.png')
               a.user-link(href='{url}?page=production_outsourceprofile{/}') Rajastshan printing 
               span
-                small| abc
+                small| Jaipur / Rajasthan / India
             td.text-center
               span.label.label-danger Inactive
             td.text-center
-               span 5
+               span 
+               a.user-link(href='{url}?page=production_jobcard{/}') 5
             td(style='width: 20%;')
-              a.table-link(href='#')
+              a.table-link(href='{url}?page=production_outsourceparty{/}')
                 span.fa-stack
                   i.fa.fa-square.fa-stack-2x
                   i.fa.fa-pencil.fa-stack-1x.fa-inverse
