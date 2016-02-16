@@ -1,6 +1,6 @@
 <?php
 
-class View_production_opportunity extends View{
+class View_Production_opportunity extends View{
 
 	function init(){
 		parent::init();
