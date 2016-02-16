@@ -190,6 +190,26 @@ html(lang="{lang}en{/}")
                     span 
                     i.fa.fa-caret-down
                   ul.dropdown-menu
+                    li.item
+                      a(href='{url}?page=commerce_itemlist{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Item
+                    li.item
+                      a(href='{url}?page=commerce_customerprofile{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Customer
+                    li.item
+                      a(href='{url}?page=commerce_supplier{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Supplier
+                    li.item
+                      a(href='{url}?page=commerce_salesorder{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Sales Order
+                    li.item
+                      a(href='{url}?page=commerce_salesinvoice{/}')
+                        i(class="fa fa-{icon}shopping-cart{/}")
+                        | Sales Invoice
                 li.dropdown.hidden-xs
                   a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
                     | Production

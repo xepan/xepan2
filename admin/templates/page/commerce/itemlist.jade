@@ -33,7 +33,7 @@ html
                 li
                   input#ID(type='checkbox', name='NAME', value='VALUE')
                   label(for='ID') Wedding
-            a.btn.btn-primary(href='#')
+            a.btn.btn-primary(href='{url}?page=commerce_additem{/}')
               i.fa.fa-plus-circle.fa-lg
               |  Add product 
             .form-group.pull-right
@@ -56,9 +56,7 @@ html
                 th.text-center
                   a.desc(href='#')
                   span Type
-                
                 th.text-center
-                  
                     span Status
                  th.text-center
                   a.desc(href='#')
@@ -66,10 +64,11 @@ html
                 th  
             tbody
                tr
-                td.text-center                
-                  img(alt='', src='img/samples/ipad.png')
+                td.text-center 
+                  img(alt='', src='img/samples/ipad.png') 
                 td
-                  h2  iPad Mini 32GB Wifi
+                  a(href='{url}?page=commerce_viewitem{/}')
+                    h2 iPad Mini 32GB Wifi
                   span.pull-center(title='code') Code: Ipd001
                 td.text-right
                   | $ 625.50
@@ -102,8 +101,9 @@ html
                 td.text-center                
                   img(alt='', src='img/samples/ipad.png')
                 td
-                 h2 iPad Mini 32GB Wifi
-                 span.pull-center(title='code') Code: Ipd001
+                  a(href='{url}?page=commerce_viewitem{/}')
+                    h2 iPad Mini 32GB Wifi
+                  span.pull-center(title='code') Code: Ipd001
                 td.text-right
                   | $ 625.50
                   br
@@ -132,7 +132,8 @@ html
                 td.text-center                
                   img(alt='', src='img/samples/ipad.png')
                 td
-                  h2 iPad Mini 32GB Wifi
+                  a(href='{url}?page=commerce_viewitem{/}')
+                    h2 iPad Mini 32GB Wifi
                   span.pull-center(title='code') Code: Ipd001
                 td.text-right
                   | $ 625.50
@@ -162,7 +163,8 @@ html
                 td.text-center                
                   img(alt='', src='img/samples/ipad.png')
                 td
-                  h2 iPad Mini 32GB Wifi
+                  a(href='{url}?page=commerce_viewitem{/}')
+                    h2 iPad Mini 32GB Wifi
                   span.pull-center(title='code') Code: Ipd001
                 td.text-right
                   | $ 625.50

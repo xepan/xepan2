@@ -10,6 +10,17 @@ html
           a.btn.btn-primary.pull-right(href='#')
             i.fa.fa-plus-circle.fa-lg
             |  Add Customer
+          .form-group.pull-left
+            button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown')
+              | Sort By
+              span.caret
+            ul.dropdown-menu
+              li
+                label(for='ID') ####
+              li
+                label(for='ID') ####
+              li
+                label(for='ID') ####
       .main-box-body.clearfix
         .table-responsive
           table.table.user-list.table-hover
@@ -28,7 +39,7 @@ html
               tr
                 td
                   img(src='img/samples/scarlet-159.png', alt='')
-                  a.user-link(href='?page=xhr_employee-profile') Scarlett Johansson
+                  a.user-link(href='{url}?page=commerce_customerdetail{/}') Scarlett Johansson
                   span.user-subhead Company Name
                 td
                   a(href='#') mila@kunis.com
@@ -48,7 +59,7 @@ html
               tr
                 td
                   img(src='img/samples/scarlet-159.png', alt='')
-                  a.user-link(href='?page=xhr_employee-profile') Scarlett Johansson
+                  a.user-link(href='{url}?page=commerce_customerdetail{/}') Scarlett Johansson
                   span.user-subhead Company Name
                 td
                   a(href='#') mila@kunis.com
@@ -68,7 +79,7 @@ html
               tr
                 td
                   img(src='img/samples/scarlet-159.png', alt='')
-                  a.user-link(href='?page=xhr_employee-profile') Scarlett Johansson
+                  a.user-link(href='{url}?page=commerce_customerdetail{/}') Scarlett Johansson
                   span.user-subhead Company Name
                 td
                   a(href='#') mila@kunis.com
@@ -88,7 +99,7 @@ html
               tr
                 td
                   img(src='img/samples/scarlet-159.png', alt='')
-                  a.user-link(href='?page=xhr_employee-profile') Scarlett Johansson
+                  a.user-link(href='{url}?page=commerce_customerdetail{/}') Scarlett Johansson
                   span.user-subhead Company Name
                 td
                   a(href='#') mila@kunis.com
