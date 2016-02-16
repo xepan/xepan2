@@ -8,7 +8,7 @@ class Admin extends App_Frontend {
         parent::init();
 
         // $this->dbConnect();
-
+        
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
         $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
 
