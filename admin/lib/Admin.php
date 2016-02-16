@@ -7,8 +7,26 @@ class Admin extends App_Frontend {
     function init() {
         parent::init();
 
-        // $this->dbConnect();
+        $this->dbConnect();
+        $this->add('jUI');
+
+        // Move to SandBOX Part Start
+
+        $this->api->pathfinder
+            ->addLocation(array(
+                'addons' => array('addons', 'vendor','shared/addons2'),
+            ))
+            ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
         
+        // Should come from any local DB store
+        $addons = ['xepan\\base','xepan\\hr','xepan\\marketing','xepan\\commerce'];
+
+        foreach ($addons as $addon) {
+            $this->add("$addon\Initiator");
+        }
+
+        // Move to SandBOX Part END
+
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
         $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
 
@@ -30,12 +48,11 @@ class Admin extends App_Frontend {
             - Load Hooks for all Installed Applications From Cache
                 - Update Cache if not updated for future calls
          */
+        
+        $auth = $this->add('BasicAuth');
+        $auth->setModel('xepan\base\User_Active','username','password');
 
-        $this->api->pathfinder
-            ->addLocation(array(
-                'addons' => array('addons', 'vendor','shared/addons2'),
-            ))
-            ->setBasePath($this->pathfinder->base_location->getPath() . '/..')
-        ;
+        $auth->check();
+
     }
 }
