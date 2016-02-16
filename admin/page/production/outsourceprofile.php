@@ -6,7 +6,8 @@ class page_production_outsourceprofile extends Page {
 
     function init() {
         parent::init();
-       // $this->add('View_Info')->set('hiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
+		$this->add('View_Production_activity',null,'activity');
+		$this->add('View_Production_opportunity',null,'opportunity');
     }
     function defaultTemplate(){
 		return ['page/production/outsourceprofile'];
