@@ -2,7 +2,7 @@ html
   body
     .main-box.no-header.clearfix
       header.main-box-header.clearfix
-        h2.pull-left SalesOrder
+        h2.pull-left Sales Invoice
         .filter-block.pull-right
           .form-group.pull-left
             input.form-control(type='text', placeholder='Search...')
@@ -21,7 +21,7 @@ html
                   span Customer
                 th
                   span Order Id
-                th
+                th.text-center
                   span Created
                 th.text-center
                   span Customer Name
@@ -37,15 +37,23 @@ html
                 td
                   img(alt='', src='img/samples/robert-300.jpg')
                 td 
-                  a(href='#') 045556
-                  br
+                  a(href='{url}?page=commerce_invoicedetail{/}')
+                    h2 045556
                   span Scarlet
                 td
-                  span Created Date: 5 months ago
-                  br
-                  span Created By: Hemendra Seth
-                td.text-left
-                  a.user-link(href='?page=marketing_leadprofile') Customer Name
+                  .row
+                    .col-lg-12
+                      .row
+                        .col-lg-6
+                          | Created Date:
+                          br
+                          | Created By:
+                        .col-lg-6.pull-right
+                          | 5 months ago
+                          br
+                          | Hemendra Seth
+                td.text-center
+                 | Customer Name
                 td 
                   | 65823214578
                 td.text-center
@@ -53,26 +61,27 @@ html
                 td
                   .row
                     .col-lg-12
-                      .col-lg-6
-                        | Amount 
-                        br
-                        | Tax 
-                        br
-                        | GrossAmount  
-                        br
-                        span ShippingCharges 
-                        br
-                        | NetAmount 
-                      .col-lg-3.pull-right
-                        | 00000
-                        br
-                        | 0000
-                        br
-                        | 000000 
-                        br
-                        | 000000
-                        br
-                        | 0000 
+                      .row
+                        .col-lg-8
+                          | Amount 
+                          br
+                          | Tax 
+                          hr(style='margin:2px;')
+                          | Gross Amount  
+                          br
+                          | Shipping Charges
+                          hr(style='margin:2px;')
+                          | Net Amount 
+                        .col-lg-3.pull-right
+                          | 0
+                          br
+                          | 0000
+                          hr(style='margin:2px;')
+                          | 0000 
+                          br
+                          | 0000
+                          hr(style='margin:2px;')
+                          | 0000 
                 td(style='width: 15%;')
                   a.table-link(href='#')
                     span.fa-stack
@@ -86,15 +95,23 @@ html
                 td
                   img(alt='', src='img/samples/robert-300.jpg')
                 td 
-                  a(href='#') 045556
-                  br
+                  a(href='{url}?page=commerce_invoicedetail{/}')
+                    h2 045556
                   span Scarlet
                 td
-                  span Created Date: 5 months ago
-                  br
-                  span Created By: Hemendra Seth
-                td.text-left
-                  a.user-link(href='?page=marketing_leadprofile') Customer Name
+                  .row
+                    .col-lg-12
+                      .row
+                        .col-lg-6
+                          | Created Date:
+                          br
+                          | Created By:
+                        .col-lg-6.pull-right
+                          | 5 months ago
+                          br
+                          | Hemendra Seth
+                td.text-center
+                 | Customer Name
                 td 
                   | 65823214578
                 td.text-center
@@ -102,26 +119,27 @@ html
                 td
                   .row
                     .col-lg-12
-                      .col-lg-6
-                        | Amount 
-                        br
-                        | Tax 
-                        br
-                        | GrossAmount  
-                        br
-                        span ShippingCharges 
-                        br
-                        | NetAmount 
-                      .col-lg-3.pull-right
-                        | 00000
-                        br
-                        | 0000
-                        br
-                        | 000000 
-                        br
-                        | 000000
-                        br
-                        | 0000 
+                      .row
+                        .col-lg-8
+                          | Amount 
+                          br
+                          | Tax 
+                          hr(style='margin:2px;')
+                          | Gross Amount  
+                          br
+                          | Shipping Charges
+                          hr(style='margin:2px;')
+                          | Net Amount 
+                        .col-lg-3.pull-right
+                          | 0
+                          br
+                          | 0000
+                          hr(style='margin:2px;')
+                          | 0000 
+                          br
+                          | 0000
+                          hr(style='margin:2px;')
+                          | 0000 
                 td(style='width: 15%;')
                   a.table-link(href='#')
                     span.fa-stack
@@ -135,15 +153,23 @@ html
                 td
                   img(alt='', src='img/samples/robert-300.jpg')
                 td 
-                  a(href='#') 045556
-                  br
+                  a(href='{url}?page=commerce_invoicedetail{/}')
+                    h2 045556
                   span Scarlet
                 td
-                  span Created Date: 5 months ago
-                  br
-                  span Created By: Hemendra Seth
-                td.text-left
-                  a.user-link(href='?page=marketing_leadprofile') Customer Name
+                  .row
+                    .col-lg-12
+                      .row
+                        .col-lg-6
+                          | Created Date:
+                          br
+                          | Created By:
+                        .col-lg-6.pull-right
+                          | 5 months ago
+                          br
+                          | Hemendra Seth
+                td.text-center
+                 | Customer Name
                 td 
                   | 65823214578
                 td.text-center
@@ -151,26 +177,27 @@ html
                 td
                   .row
                     .col-lg-12
-                      .col-lg-6
-                        | Amount 
-                        br
-                        | Tax 
-                        br
-                        | GrossAmount  
-                        br
-                        span ShippingCharges 
-                        br
-                        | NetAmount 
-                      .col-lg-3.pull-right
-                        | 00000
-                        br
-                        | 0000
-                        br
-                        | 000000 
-                        br
-                        | 000000
-                        br
-                        | 0000 
+                      .row
+                        .col-lg-8
+                          | Amount 
+                          br
+                          | Tax 
+                          hr(style='margin:2px;')
+                          | Gross Amount  
+                          br
+                          | Shipping Charges
+                          hr(style='margin:2px;')
+                          | Net Amount 
+                        .col-lg-3.pull-right
+                          | 0
+                          br
+                          | 0000
+                          hr(style='margin:2px;')
+                          | 0000 
+                          br
+                          | 0000
+                          hr(style='margin:2px;')
+                          | 0000 
                 td(style='width: 15%;')
                   a.table-link(href='#')
                     span.fa-stack
@@ -184,15 +211,23 @@ html
                 td
                   img(alt='', src='img/samples/robert-300.jpg')
                 td 
-                  a(href='#') 045556
-                  br
+                  a(href='{url}?page=commerce_invoicedetail{/}')
+                    h2 045556
                   span Scarlet
                 td
-                  span Created Date: 5 months ago
-                  br
-                  span Created By: Hemendra Seth
-                td.text-left
-                  a.user-link(href='?page=marketing_leadprofile') Customer Name
+                  .row
+                    .col-lg-12
+                      .row
+                        .col-lg-6
+                          | Created Date:
+                          br
+                          | Created By:
+                        .col-lg-6.pull-right
+                          | 5 months ago
+                          br
+                          | Hemendra Seth
+                td.text-center
+                 | Customer Name
                 td 
                   | 65823214578
                 td.text-center
@@ -200,26 +235,27 @@ html
                 td
                   .row
                     .col-lg-12
-                      .col-lg-6
-                        | Amount 
-                        br
-                        | Tax 
-                        br
-                        | GrossAmount  
-                        br
-                        span ShippingCharges 
-                        br
-                        | NetAmount 
-                      .col-lg-3.pull-right
-                        | 00000
-                        br
-                        | 0000
-                        br
-                        | 000000 
-                        br
-                        | 000000
-                        br
-                        | 0000 
+                      .row
+                        .col-lg-8
+                          | Amount 
+                          br
+                          | Tax 
+                          hr(style='margin:2px;')
+                          | Gross Amount  
+                          br
+                          | Shipping Charges
+                          hr(style='margin:2px;')
+                          | Net Amount 
+                        .col-lg-3.pull-right
+                          | 0
+                          br
+                          | 0000
+                          hr(style='margin:2px;')
+                          | 0000 
+                          br
+                          | 0000
+                          hr(style='margin:2px;')
+                          | 0000 
                 td(style='width: 15%;')
                   a.table-link(href='#')
                     span.fa-stack
