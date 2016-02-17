@@ -24,12 +24,17 @@ class Admin extends App_Frontend {
         // Should come from any local DB store
         $addons = ['xepan\\base','xepan\\hr','xepan\\marketing','xepan\\commerce'];
 
+        $app_initiators=[];
         foreach ($addons as $addon) {
-            $this->add("$addon\Initiator");
-            if($addon=='xepan\\base')
-                $this->top_menu = $this->layout->add('xepan\base\Menu_Bar',null,'Main_Menu');
+            $app_initiators[$addon] = $this->add("$addon\Initiator");
+            
+            if($addon=='xepan\\base'){
+                $this->top_menu = $this->layout->add('xepan\base\Menu_TopBar',null,'Main_Menu');
+                $this->side_menu = $this->layout->add('xepan\base\Menu_SideBar',null,'Side_Menu');
+            }
         }
-        
+
+        $app_initiators['xepan\\base']->installEvilVirus([/* while_page_list */]);
 
         // Move to SandBOX Part END
 
