@@ -108,19 +108,7 @@
                     li.item-footer
                       a(href='#')
                         | View all messages
-                {Main_Menu}{Menu}
-                li.dropdown.hidden-xs
-                  a.btn.dropdown-toggle(data-toggle='dropdown' class="{$class}")
-                    | New Item
-                    span {$Badge}
-                    i.fa.fa-caret-down
-                  ul.dropdown-menu{$SubMenu}
-                    {Item}
-                    li.item
-                      a(href="{url}\#{/url}")
-                        i(class="fa fa-{icon}shopping-cart{/}")
-                        | New Order
-                    {/Item}{/Menu}
+                {Main_Menu}
                 {/Main_Menu}
             #header-nav.nav-no-collapse.pull-right
               ul.nav.navbar-nav.pull-right
