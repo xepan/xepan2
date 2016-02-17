@@ -26,8 +26,10 @@ class Admin extends App_Frontend {
 
         foreach ($addons as $addon) {
             $this->add("$addon\Initiator");
-            if($addon=='xepan\\base')
-                $this->top_menu = $this->layout->add('xepan\base\Menu_Bar',null,'Main_Menu');
+            if($addon=='xepan\\base'){
+                $this->top_menu = $this->layout->add('xepan\base\Menu_TopBar',null,'Main_Menu');
+                $this->side_menu = $this->layout->add('xepan\base\Menu_SideBar',null,'Side_Menu');
+            }
         }
         
 
