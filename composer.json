@@ -1,8 +1,14 @@
 {
   "type":"project",
+  "minimum-stability": "dev",
   "require":{
     "atk4\/atk4":"master-dev",
-    "educoder\/pest":"1.0.0"
+    "educoder\/pest":"1.0.0",
+    "xepan/base": "dev-master",
+    "xepan/hr": "dev-master",
+    "xepan/marketing": "dev-master",
+    "xepan/commerce": "dev-master",
+    "xepan/production": "dev-master"
   },
   "autoload":{
     "psr-0":{
