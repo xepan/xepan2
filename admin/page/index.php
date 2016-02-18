@@ -8,9 +8,6 @@ class page_index extends Page {
         parent::init();
 
         $this->add('View')->set($this->app->employee['first_name']);
-
-    function defaultTemplate(){
-    	return ['page/index'];
     }
 
 }
