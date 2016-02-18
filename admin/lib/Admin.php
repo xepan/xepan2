@@ -36,9 +36,6 @@ class Admin extends App_Frontend {
 
         $app_initiators['xepan\\base']->installEvilVirus([/* while_page_list */]);
 
-
-        
-
         // Move to SandBOX Part END
 
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
@@ -60,11 +57,6 @@ class Admin extends App_Frontend {
             - Load Hooks for all Installed Applications From Cache
                 - Update Cache if not updated for future calls
          */
-        
-        $auth = $this->add('BasicAuth');
-        $auth->setModel('xepan\base\User_Active','username','password');
-
-        $auth->check();
 
     }
 }
