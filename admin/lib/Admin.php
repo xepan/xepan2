@@ -11,6 +11,8 @@ class Admin extends App_Frontend {
         $this->add('jUI');
 
         // Move to SandBOX Part Start
+        $this->add($this->layout_class,null,'Layout');
+
 
         $this->api->pathfinder
             ->addLocation(array(
@@ -18,19 +20,26 @@ class Admin extends App_Frontend {
             ))
             ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
         
+        
         // Should come from any local DB store
         $addons = ['xepan\\base','xepan\\hr','xepan\\marketing','xepan\\commerce'];
 
+        $app_initiators=[];
         foreach ($addons as $addon) {
-            $this->add("$addon\Initiator");
+            $app_initiators[$addon] = $this->add("$addon\Initiator");
+            
+            if($addon=='xepan\\base'){
+                $this->top_menu = $this->layout->add('xepan\base\Menu_TopBar',null,'Main_Menu');
+                $this->side_menu = $this->layout->add('xepan\base\Menu_SideBar',null,'Side_Menu');
+            }
         }
+
+        $app_initiators['xepan\\base']->installEvilVirus([/* while_page_list */]);
 
         // Move to SandBOX Part END
 
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
         $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
-
-        $this->add($this->layout_class,null,'Layout');
 
         /**
             What sandbox could do here I guess as a PlugAndPlay Supporter
@@ -48,11 +57,6 @@ class Admin extends App_Frontend {
             - Load Hooks for all Installed Applications From Cache
                 - Update Cache if not updated for future calls
          */
-        
-        $auth = $this->add('BasicAuth');
-        $auth->setModel('xepan\base\User_Active','username','password');
-
-        $auth->check();
 
     }
 }

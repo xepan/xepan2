@@ -1,6 +1,6 @@
 .main-box.clearfix
   header.main-box-header.clearfix
-    h2.pull-left Departments
+    //- h2.pull-left Departments
     .filter-block.pull-right
       .form-group.pull-left
         input.form-control(type='text', placeholder='Search...')
@@ -28,14 +28,14 @@
         tbody
           tr
             td
-              | HR
+              | {$name}
             td.text-right
-              | 1
+              | {$production_level}
             td.text-center
-              span.label.label-warning Inactive
+              span.label.label-success {$status}
             td.text-center
-              a(href='index.php?page=xhr_post')
-                | 2 Edit
+              a(href='index.php?page=xepan_hr_post')
+                | {$posts}2 Edit
             td(style='width: 15%;')
               a.table-link(href='#')
                 span.fa-stack
