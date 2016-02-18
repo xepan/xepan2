@@ -57,11 +57,6 @@ class Admin extends App_Frontend {
             - Load Hooks for all Installed Applications From Cache
                 - Update Cache if not updated for future calls
          */
-        
-        $auth = $this->add('BasicAuth');
-        $auth->setModel('xepan\base\User_Active','username','password');
-
-        $auth->check();
 
     }
 }
