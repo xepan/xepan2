@@ -22,7 +22,7 @@ class Admin extends App_Frontend {
         
         
         // Should come from any local DB store
-        $addons = ['xepan\\base','xepan\\hr','xepan\\marketing','xepan\\commerce'];
+        $addons = ['xepan\\base','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\crm'];
 
         $app_initiators=[];
         foreach ($addons as $addon) {
