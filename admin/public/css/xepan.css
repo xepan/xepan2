@@ -1,1 +1,24 @@
-input{background-color:rgba(254,254,254,0); border : none; font-weight: bold;}/*# sourceMappingURL=xepan.css.map */
+input{background-color:rgba(254,254,254,0);border:none;font-weight:bold}
+.xepan-grid .atk-actions button{
+	border-radius:3px solid #2980b9;
+	border-color:#2980b9;
+	background-color:#03a9f4;
+	color:#FFF;
+	font-weight:normal;
+	line-height:1.42857;
+	text-align:center;
+	vertical-align:middle;
+	margin-left:5px;
+    background-clip: padding-box;
+    border-color: -moz-use-text-color;
+    border-image: none;
+    border-radius: 3px;
+    border-style: none none solid;
+    border-width: medium medium 2px;
+    outline: medium none;
+    padding: 6px 12px;
+    transition: border-color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s;
+    font-size:14px;
+	border-bottom:2px solid #216897;
+}
+.xepan-grid .atk-actions button:hover{background-color:#017fb5;color:#FFF}
