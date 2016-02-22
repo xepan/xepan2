@@ -38,9 +38,6 @@ class Admin extends App_Frontend {
 
         // Move to SandBOX Part END
 
-        $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
-        $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
-
         /**
             What sandbox could do here I guess as a PlugAndPlay Supporter
             - Check for well installed
