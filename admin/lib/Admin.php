@@ -34,7 +34,7 @@ class Admin extends App_Frontend {
             }
         }
 
-        $app_initiators['xepan\\base']->installEvilVirus([/* while_page_list */]);
+        // $app_initiators['xepan\\base']->installEvilVirus([/* while_page_list */]);
 
         // Move to SandBOX Part END
 
