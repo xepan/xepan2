@@ -22,5 +22,6 @@ addons/
 /db/*
 assets/*
 *.orig
+*.todo
 /cube
 *.mwb
