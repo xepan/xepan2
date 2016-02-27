@@ -23,9 +23,39 @@ input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:no
 	border-bottom:2px solid #216897;
 }*/
 /*.xepan-grid .atk-actions button:hover{background-color:#017fb5;color:#FFF}*/
-.xepan-grid-search{width: 20%;margin:auto;margin-right:14%!important}
 
 /*remove border from all input*/
 .form-control{
 	border:none ;
+}
+
+.filter-block .form-group .search-icon{
+	right:0px;
+	float: right;
+}
+
+.filter-block .form-group .atk-jackscrew{
+	float: right;
+}
+
+.xepan-filter-form .atk-input-combo div.atk-cell:first-child {
+	float: left !important;
+}
+.xepan-filter-form span.icon-cancel{
+	padding:5px;
+	display:inline-block;
+	font:normal normal normal 14px/1 FontAwesome;
+	font-size:inherit;
+	text-rendering:auto;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	transform:translate(0, 0);	
+	background-color: #e84e40;
+	color: white;
+	border-radius:5px;
+}
+.xepan-filter-form span.icon-cancel:before{content:"\f00d";}
+
+.xepan-filter-form .form-control > i.search-icon{
+	/*background-color: yellow;*/
 }
