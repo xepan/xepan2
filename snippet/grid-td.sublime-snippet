@@ -39,7 +39,7 @@
                         {\$edit\}
                         {\$delete\}
                     }
-                    {/}\
+                    {/}
                 {/}{/}
                 {not_found}
                 div.row
