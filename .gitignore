@@ -2,7 +2,8 @@ doc/dbupdates/*.ok
 doc/dbupdates/*.fail
 *.swp
 *.bak
-upload/*
+admin/upload/*
+shared/addons2
 .DS_Store
 config.php
 config-default.php

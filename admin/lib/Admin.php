@@ -4,6 +4,9 @@ class Admin extends App_Frontend {
 
     public $layout_class='Layout_Cube';
 
+    public $is_frontend= false;
+    public $is_admin= true;
+
     function init() {
         parent::init();
 
