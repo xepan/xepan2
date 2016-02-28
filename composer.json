@@ -10,7 +10,8 @@
     "xepan/commerce": "dev-master",
     "xepan/production": "dev-master",
     "xepan/communication": "dev-master",
-    "xepan/crm": "dev-master"
+    "xepan/crm": "dev-master",
+    "xepan/cms": "dev-master"
   },
   "autoload":{
     "psr-0":{
