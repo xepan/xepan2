@@ -10,9 +10,19 @@ class Frontend extends ApiFrontend {
     public $is_frontend= true;
     public $is_admin= false;
 
+    public $page_class='xepan\base\page_cms';
+
     function init() {
+
+
         parent::init();
 
+        $this->addLocation(array(
+            'page'=>array('websites/default'),
+            'js'=>array('websites/default/js'),
+            'css'=>array('websites/default','websites/default/css'),
+            'template'=>['websites/default']
+        ))->setParent($this->pathfinder->base_location);
 
         //DB Connect not default added by rakesh
         $this->dbConnect();
@@ -26,158 +36,53 @@ class Frontend extends ApiFrontend {
 
         $this->add('jUI');
         
-        $this->pathfinder->base_location->defineContents([
-                'template'=>'websites/default'
-            ]);
 
-        $this->add('Layout_Fluid',null,null,[$this->page]);
-        $this->page='index';
+        $this->api->pathfinder
+            ->addLocation(array(
+                'addons' => array('addons', 'vendor','shared/addons2'),
+            ))
+            ->setBasePath($this->pathfinder->base_location->getPath() );
+        
+        
+        // Should come from any local DB store
+        $addons = ['xepan\\base'];
 
-        // $this->initAddons();
-        // $this->addLocations();
-        // $this->addProjectLocations();
-        // $this->addAddonsLocations();
+        $app_initiators=[];
+        foreach ($addons as $addon) {
+            $app_initiators[$addon] = $this->add("$addon\Initiator");
+        }
+
+        if($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
+            $this->app->add('Layout_Fluid',null,null,['layout/'.$this->page]);
+        }elseif($this->pathfinder->locate('template','layout/default.html','path',false)){
+            $this->app->add('Layout_Fluid',null,null,['layout/default']);
+        }else{
+            echo 'TODO: add just empty template with {$Content} tag';
+            exit;
+        }        
 
     }
 
-    function addLocations() {
-        $this->api->pathfinder->base_location->defineContents(array(
-            'docs'=>array('docs','doc'),   // Documentation (external)
-            'content'=>'content',          // Content in MD format
-            'addons'=>'vendor',
-            'php'=>array('shared','frontend','admin'),
-            'js'=>array('../shared/public/js')
-        ));//->setBasePath($this->api_base_path);
-    }
+    protected function loadStaticPage($page){
 
-    function addProjectLocations() {
-//        $this->pathfinder->base_location->setBasePath($this->api_base_path);
-//        $this->pathfinder->base_location->setBaseUrl($this->url('/'));
-        $this->pathfinder->addLocation(
-            array(
-                'page'=>'page',
-                'php'=>'../shared',
-            )
-        )->setBasePath($this->api_base_path);
-        $this->pathfinder->addLocation(
-            array(
-                'js'=>'js',
-                'css'=>'css',
-            )
-        )
-                ->setBaseUrl($this->url('/'))
-                ->setBasePath($this->api_public_path)
-        ;
-    }
-
-    function addAddonsLocations() {
-        $base_path = $this->pathfinder->base_location->getPath();
-        $file = $base_path.'/sandbox_addons.json';
-        if (file_exists($file)) {
-            $json = file_get_contents($file);
-            $objects = json_decode($json);
-            foreach ($objects as $obj) {
-                // Private location contains templates and php files YOU develop yourself
-                /*$this->private_location = */
-                $this->api->pathfinder->addLocation(array(
-                    'docs'      => 'docs',
-                    'php'       => 'lib',
-                    'template'  => 'templates',
-                ))
-                        ->setBasePath($base_path.'/'.$obj->addon_full_path)
-                ;
-
-                $addon_public = $obj->addon_symlink_name;
-                // this public location cotains YOUR js, css and images, but not templates
-                /*$this->public_location = */
-                $this->api->pathfinder->addLocation(array(
-                    'js'     => 'js',
-                    'css'    => 'css',
-                    'public' => './',
-                    //'public'=>'.',  // use with < ?public? > tag in your template
-                ))
-                        ->setBasePath($this->api_base_path.'/'.$obj->addon_public_symlink)
-                        ->setBaseURL($this->api->url('/').$addon_public) // $this->api->pm->base_path
-                ;
+        $layout = $this->layout ?: $this;
+        try{
+            $t='page/'.str_replace('_','/',strtolower($page));
+            $this->template->findTemplate($t);
+            $this->page_object=$layout->add($page,$page,'Content',array($t));
+        }catch(PathFinder_Exception $e2){
+            try{
+                $t='page/'.strtolower($page);
+                $this->template->findTemplate($t);
+                $this->page_object=$layout->add($page,$page,'Content',array($t));
+            }catch(PathFinder_Exception $e3){
+                $t=strtolower($page);
+                $this->page_object=$layout->add($this->page_class,$page,'Content',[str_replace("_", "/",$page)]);
             }
         }
-    }
-    function initAddons() {
-        $base_path = $this->pathfinder->base_location->getPath();
-        $file = $base_path.'/sandbox_addons.json';
-        if (file_exists($file)) {
-            $json = file_get_contents($file);
-            $objects = json_decode($json);
-            foreach ($objects as $obj) {
-                // init addon
-                $init_class_path = $base_path.'/'.$obj->addon_full_path.'/lib/Initiator.php';
-                if (file_exists($init_class_path)) {
-                    $class_name = str_replace('/','\\',$obj->name.'\\Initiator');
-                    $init = $this->add($class_name,array(
-                        'addon_obj' => $obj,
-                    ));
-                }
-            }
-        }
+
+        return $this->page_object;
     }
 
-    function initLayout(){
-
-//        $l = $this->add('Layout_Fluid');
-
-//        $m = $l->addMenu('MainMenu');
-//        $m->addClass('atk-wrapper');
-//        $m->addMenuItem('index','Home');
-//        $m->addMenuItem('services','Services');
-//        $m->addMenuItem('team','Team');
-//        $m->addMenuItem('portfolio','Portfolio');
-//        $m->addMenuItem('contact','Contact');
-//
-//        $l->addFooter()->addClass('atk-swatch-seaweed atk-section-small')->setHTML('
-//            <div class="row atk-wrapper">
-//                <div class="col span_4">
-//                    © 1998 - 2013 Agile55 Limited
-//                </div>
-//                <div class="col span_4 atk-align-center">
-//                    <img src="'.$this->pm->base_path.'images/powered_by_agile.png" alt="powered_by_agile">
-//                </div>
-//                <div class="col span_4 atk-align-right">
-//                    <a href="http://colubris.agiletech.ie/">
-//                        <span class="icon-key-1"></span> Client Login
-//                    </a>
-//                </div>
-//            </div>
-//        ');
-
-        parent::initLayout();
-    }
-
-    function switchCurrentBridge($bridge){
-        $this->api->saved_bridge = $this->api->currentBridge;
-        $this->api->currentBridge = $bridge;
-    }
-
-    function revertCurrentBridge(){
-        $this->api->currentBridge = $this->api->saved_bridge;
-    }
 
 }
-
-
-
-
-
-//        $publicDir = dirname(@$_SERVER['SCRIPT_FILENAME']);
-//        $baseDir   = dirname($publicDir);
-//
-//
-//        //$parent_directory=/*dirname(*/dirname(@$_SERVER['SCRIPT_FILENAME'])/*)*/;
-//        var_dump($baseDir);
-//
-//        $this->pathfinder->public_location->addRelativeLocation('public/',
-//            array(
-//                'css'=>'css',
-//                'public'=>'.',
-//            )
-//        );
-//
