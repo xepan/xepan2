@@ -122,28 +122,28 @@
                         i.fa.fa-search.nav-search-icon
                 li.dropdown.profile-dropdown
                   a.dropdown-toggle(href='#', data-toggle='dropdown')
-                    img(src='img/samples/scarlet-159.png', alt='')
-                    span.hidden-xs Scarlett Johansson
+                    //- img(src='img/samples/scarlet-159.png', alt='')
+                    span.hidden-xs {department}Scarlett{/department} / {post}Johansson{/post}
                     b.caret
-                  ul.dropdown-menu.dropdown-menu-right
-                    li
-                      a(href='user-profile.html')
-                        i.fa.fa-user
-                        | Profile
-                    li
-                      a(href='#')
-                        i.fa.fa-cog
-                        | Settings
-                    li
-                      a(href='#')
-                        i.fa.fa-envelope-o
-                        | Messages
-                    li
-                      a(href='#')
-                        i.fa.fa-power-off
-                        | Logout
+                  //- ul.dropdown-menu.dropdown-menu-right
+                  //-   li
+                  //-     a(href='user-profile.html')
+                  //-       i.fa.fa-user
+                  //-       | Profile
+                  //-   li
+                  //-     a(href='#')
+                  //-       i.fa.fa-cog
+                  //-       | Settings
+                  //-   li
+                  //-     a(href='#')
+                  //-       i.fa.fa-envelope-o
+                  //-       | Messages
+                  //-   li
+                  //-     a(href='#')
+                  //-       i.fa.fa-power-off
+                  //-       | Logout
                 li.hidden-xxs
-                  a.btn
+                  a(href="?page=logout" class="btn")
                     i.fa.fa-power-off
       #page-wrapper.container
         .row
@@ -155,23 +155,23 @@
                   .user-box
                     span.name
                       a.dropdown-toggle(href='#', data-toggle='dropdown')
-                        | Scarlett J.
+                        | {first_name}Scarlett J.{/}
                         i.fa.fa-angle-down
                       ul.dropdown-menu
                         li
-                          a(href='user-profile.html')
+                          a(href='?page=xepan_hr_employee_profile')
                             i.fa.fa-user
                             | Profile
                         li
-                          a(href='#')
+                          a(href='?page=xepan_hr_employee_setting')
                             i.fa.fa-cog
                             | Settings
+                        //- li
+                        //-   a(href='#')
+                        //-     i.fa.fa-envelope-o
+                        //-     | Messages
                         li
-                          a(href='#')
-                            i.fa.fa-envelope-o
-                            | Messages
-                        li
-                          a(href='#')
+                          a(href='?page=logout')
                             i.fa.fa-power-off
                             | Logout
                     span.status
