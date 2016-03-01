@@ -10,19 +10,12 @@ class Frontend extends ApiFrontend {
     public $is_frontend= true;
     public $is_admin= false;
 
-    public $page_class='xepan\base\page_cms';
+    public $current_website_name=null;
+
+    public $page_class='xepan\cms\page_cms';
 
     function init() {
-
-
-        parent::init();
-
-        $this->addLocation(array(
-            'page'=>array('websites/default'),
-            'js'=>array('websites/default/js'),
-            'css'=>array('websites/default','websites/default/css'),
-            'template'=>['websites/default']
-        ))->setParent($this->pathfinder->base_location);
+        parent::init();        
 
         //DB Connect not default added by rakesh
         $this->dbConnect();
@@ -45,22 +38,37 @@ class Frontend extends ApiFrontend {
         
         
         // Should come from any local DB store
-        $addons = ['xepan\\base'];
+        $addons = ['xepan\\base','xepan\\cms','xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production'];
 
         $app_initiators=[];
         foreach ($addons as $addon) {
             $app_initiators[$addon] = $this->add("$addon\Initiator");
         }
 
-        if($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
-            $this->app->add('Layout_Fluid',null,null,['layout/'.$this->page]);
-        }elseif($this->pathfinder->locate('template','layout/default.html','path',false)){
-            $this->app->add('Layout_Fluid',null,null,['layout/default']);
-        }else{
-            echo 'TODO: add just empty template with {$Content} tag';
-            exit;
-        }        
 
+    }
+
+    function defaultTemplate(){
+
+        $current_website = $this->current_website_name = 'default';
+        $this->addLocation(array(
+            'page'=>array("websites/$current_website"),
+            'js'=>array("websites/$current_website/js"),
+            'css'=>array("websites/$current_website","websites/$current_website/css"),
+            'template'=>["websites/$current_website"]
+        ))->setParent($this->pathfinder->base_location);
+
+        if($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
+            return ['layout/'.$this->page];
+        }elseif($this->pathfinder->locate('template','layout/default.html','path',false)){            
+            return ['layout/default'];
+        }elseif(!$this->layout){
+            throw new \Exception("Error Processing Request", 1);
+            
+        }else{
+            throw new \Exception("Error Processing Request", 1);
+            
+        }  
     }
 
     protected function loadStaticPage($page){
