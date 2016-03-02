@@ -14,7 +14,6 @@ composer.phar
 run.sh
 run.bat
 VERSION
-/index.php
 .idea
 .composer
 composer

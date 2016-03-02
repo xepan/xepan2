@@ -59,3 +59,12 @@ input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:no
 .xepan-filter-form .form-control > i.search-icon{
 	/*background-color: yellow;*/
 }
+.xepan-push-small{
+	margin-bottom: 0.7rem;
+}
+.xepan-push{
+	margin-bottom: 1.4rem;
+}
+.xepan-push-large{
+	margin-bottom: 2.8rem;
+}
