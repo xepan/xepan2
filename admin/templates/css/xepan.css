@@ -68,3 +68,23 @@ input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:no
 .xepan-push-large{
 	margin-bottom: 2.8rem;
 }
+
+/*xEpan HasMany Grid Button display on hover*/
+.xepan-hover-button{
+	display: none;
+	right:0;
+}
+
+.xepan-hasmany-row {
+	position: relative;
+}
+.xepan-hasmany-row:hover .xepan-hover-button{
+	display: block;
+	position: absolute;
+	top:0;
+}
+
+.xepan-hasmany-row td{
+	padding:5px !important;
+	font-size: 1em;
+}
