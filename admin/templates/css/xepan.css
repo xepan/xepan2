@@ -123,6 +123,11 @@ textarea {width: 100%;}
 	display: none !important;
 }
 
+/*Removing margin and top border of profile detail*/
+.xepan-contact-profile .profile-details{
+	border-top:0px !important;
+	margin-top:0px !important;
+}
 /*.xepan-micro-grid .atk-actions button {
   visibility: hidden;
 }*/
