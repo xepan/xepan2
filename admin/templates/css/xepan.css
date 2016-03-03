@@ -88,3 +88,46 @@ input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:no
 	padding:5px !important;
 	font-size: 1em;
 }
+
+.xepan-micro-grid header,.xepan-micro-grid .form-group{
+	padding:0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px !important;
+}
+.xepan-micro-grid .atk-actions{
+	margin-right: 10px;
+}
+
+.xepan-hasmany-row > td a{
+	padding:0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px !important;
+	font-size: 0.9em !important;
+
+}
+.xepan-hasmany-row .fa-pencil{
+	color:#689f38;
+}
+.xepan-hasmany-row .fa-trash-o{
+	color: #e84e40;
+}
+
+.xepan-hasmany-row .fa-pencil,.xepan-hasmany-row .fa-trash-o{
+	background-color: #f3f3f3;
+}
+
+.xepan-hasmany-row .fa-pencil:hover, .xepan-hasmany-row .fa-trash-o:hover{
+	background-color: gray;
+	color: white;
+}
+.xepan-hasmany-row .fa-stack i.fa-stack-2x{
+	display: none !important;
+}
+
+/*.xepan-micro-grid .atk-actions button {
+  visibility: hidden;
+}*/
+
+/*.xepan-micro-grid .atk-actions button:after {
+  content:' + '; 
+  visibility: visible;
+  background-color: blue;
+}*/
