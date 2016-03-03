@@ -19,8 +19,8 @@ class Form_Field_DropDown extends Form_Field_ValueList {
     public $select_menu_options = array();
 
     function getInput($attr=array()){
-        $this->select_menu_options['change']=$this->js()->trigger('change')->_enclose();
-        // $this->js(true)->selectmenu($this->select_menu_options);
+        // $this->select_menu_options['change']=$this->js()->trigger('change')->_enclose();
+        $this->js(true)->select2($this->select_menu_options);
         $multi = isset($this->attr['multiple']);
         $output=$this->getTag('select',array_merge(array(
                         'name'=>$this->name . ($multi?'[]':''),
