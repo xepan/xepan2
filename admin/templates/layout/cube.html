@@ -7,16 +7,7 @@
         <div class="nav-no-collapse navbar-left pull-left hidden-sm hidden-xs">
           <ul class="nav navbar-nav pull-left">
             <li><a id="make-small-nav" class="btn"><i class="fa fa-bars"></i></a></li>
-            <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle"><i class="fa fa-bell"></i><span class="count">{notification_count}8{/}</span></a>
-              <ul class="dropdown-menu notifications-list">
-                <li class="pointer">
-                  <div class="pointer-inner">
-                    <div class="arrow"></div>
-                  </div>
-                </li>
-                <li class="item-header">You have {unread_notification}6{/} new notifications</li>{$notification_view}
-              </ul>
-            </li>
+            <li id="notificationid" class="dropdown hidden-xs">{$notification_view}                      </li>
             <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle"><i class="fa fa-envelope-o"></i><span class="count">{message_count}16{/}</span></a>
               <ul class="dropdown-menu notifications-list messages-list">
                 <li class="pointer">
