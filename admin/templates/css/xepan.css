@@ -1,4 +1,4 @@
-input{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; font-weight:bold; border-bottom-color: grey; border-bottom-width: 1px}
+input{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; font-weight:normal; border-bottom-color: grey; border-bottom-width: 1px}
 input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; border-bottom-color: grey; border-bottom-width: 1px; outline: none !important}
 textarea {width: 100%;}
 /*.xepan-grid .atk-actions button{
@@ -61,13 +61,13 @@ textarea {width: 100%;}
 	/*background-color: yellow;*/
 }
 .xepan-push-small{
-	margin-bottom: 0.7rem;
+	margin-bottom: 0.7rem !important;
 }
 .xepan-push{
-	margin-bottom: 1.4rem;
+	margin-bottom: 1.4rem !important;
 }
 .xepan-push-large{
-	margin-bottom: 2.8rem;
+	margin-bottom: 2.8rem !important;
 }
 
 /*xEpan HasMany Grid Button display on hover*/

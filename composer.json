@@ -11,7 +11,8 @@
     "xepan/production": "dev-master",
     "xepan/communication": "dev-master",
     "xepan/crm": "dev-master",
-    "xepan/cms": "dev-master"
+    "xepan/cms": "dev-master",
+    "eden/mail": "^4.0"
   },
   "autoload":{
     "psr-0":{
