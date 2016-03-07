@@ -61,13 +61,13 @@ textarea {width: 100%;}
 	/*background-color: yellow;*/
 }
 .xepan-push-small{
-	margin-bottom: 0.7rem;
+	margin-bottom: 0.7rem !important;
 }
 .xepan-push{
-	margin-bottom: 1.4rem;
+	margin-bottom: 1.4rem !important;
 }
 .xepan-push-large{
-	margin-bottom: 2.8rem;
+	margin-bottom: 2.8rem !important;
 }
 
 /*xEpan HasMany Grid Button display on hover*/
