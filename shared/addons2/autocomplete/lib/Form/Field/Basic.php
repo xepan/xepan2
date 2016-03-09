@@ -42,8 +42,8 @@ class Form_Field_Basic extends \Form_Field_Hidden
             'js'=>'js',
             'css'=>'templates/css'
             ))
-            ->setBasePath($this->api->pathfinder->base_location->base_path.'/'.$addon_location)
-            ->setBaseURL($this->api->pm->base_path.'/'.$addon_location);
+            ->setBasePath($this->api->pathfinder->base_location->base_path.'/../'.$addon_location)
+            ->setBaseURL($this->api->pm->base_path.'/../'.$addon_location);
         ;
 
         // $this->api->pathfinder->addLocation($addon_location, array(
