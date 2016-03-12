@@ -160,6 +160,9 @@ textarea {width: 100%;}
 	padding-right: 0px;
 	padding-right: 0px;
 }
-/*.user-subhead{
+.user-subhead{
 	color: #616161;
-}*/
+}
+a >.user-subhead{
+	color: #03a9f4;
+}
