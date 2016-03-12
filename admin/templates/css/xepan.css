@@ -1,4 +1,4 @@
-input{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; font-weight:normal; border-bottom-color: grey; border-bottom-width: 1px;width:100%;}
+input{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; font-weight:normal; border-bottom-color: grey; border-bottom-width: 1px}
 input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; border-bottom-color: grey; border-bottom-width: 1px; outline: none !important}
 textarea {width: 100%;}
 /*.xepan-grid .atk-actions button{
@@ -159,4 +159,7 @@ textarea {width: 100%;}
 	padding-bottom: 0px;
 	padding-right: 0px;
 	padding-right: 0px;
+}
+.user-subhead{
+	color: #616161!important;
 }
