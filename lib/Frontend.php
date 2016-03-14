@@ -55,7 +55,8 @@ class Frontend extends ApiFrontend {
             'page'=>array("websites/$current_website"),
             'js'=>array("websites/$current_website/js"),
             'css'=>array("websites/$current_website","websites/$current_website/css"),
-            'template'=>["websites/$current_website"]
+            'template'=>["websites/$current_website"],
+            'addons'=> ['websites/'.$this->current_website_name]
         ))->setParent($this->pathfinder->base_location);
 
         if($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
