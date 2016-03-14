@@ -73,21 +73,25 @@ textarea {width: 100%;}
 /*xEpan HasMany Grid Button display on hover*/
 .xepan-hover-button{
 	display: none;
-	right:0;
-}
-
-.xepan-hasmany-row {
-	position: relative;
+	position: absolute;
+	right:0px;
+	top: 0px;
 }
 .xepan-hasmany-row:hover .xepan-hover-button{
 	display: block;
-	position: absolute;
-	top:0;
+}
+
+.xepan-hasmany-row{
+	position: relative;
 }
 
 .xepan-hasmany-row td{
 	padding:5px !important;
 	font-size: 1em;
+}
+
+.xepan-micro-grid{
+	font-size:0.7em;
 }
 
 .xepan-micro-grid header,.xepan-micro-grid .form-group{
@@ -96,6 +100,9 @@ textarea {width: 100%;}
 }
 .xepan-micro-grid .atk-actions{
 	margin-right: 10px;
+}
+.xepan-micro-grid .main-box-body{
+	padding: 0px;
 }
 
 .xepan-hasmany-row > td a{
@@ -123,17 +130,40 @@ textarea {width: 100%;}
 	display: none !important;
 }
 
+.xepan-micro-grid{
+	font-size:0.8em;
+}
+
+.main-box-body > h2{
+
+}
+
 /*Removing margin and top border of profile detail*/
 .xepan-contact-profile .profile-details{
 	border-top:0px !important;
 	margin-top:0px !important;
 }
-/*.xepan-micro-grid .atk-actions button {
-  visibility: hidden;
-}*/
 
-/*.xepan-micro-grid .atk-actions button:after {
-  content:' + '; 
-  visibility: visible;
-  background-color: blue;
+
+
+/*General CSS Class*/
+.margin-reset{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-right: 0px;
+}
+
+.padding-reset{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	padding-right: 0px;
+}
+
+.input-full-width input{
+	width:100%;
+}
+/*.user-subhead{
+	color: #616161;
 }*/
