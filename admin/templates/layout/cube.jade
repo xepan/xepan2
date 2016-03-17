@@ -110,10 +110,8 @@
                         {breadcrumb}
                         ol.breadcrumb
                           {rows}{row}
-                          li
-                            a(href='#') {crumb}Home{/crumb}
-                          li.active
-                            span Dashboard
+                          li(class="{$active}")
+                            a(href='{$url}') {title}Home{/title}
                           {/row}{/rows}
                         {/breadcrumb}
                         h1 {page_title}Page_Title{/}

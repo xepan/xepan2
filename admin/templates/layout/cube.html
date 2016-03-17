@@ -72,8 +72,7 @@
                 <div id="content-header" class="clearfix">
                   <div class="pull-left">{breadcrumb}
                     <ol class="breadcrumb">{rows}{row}
-                      <li><a href="#">{crumb}Home{/crumb}</a></li>
-                      <li class="active"><span>Dashboard</span></li>{/row}{/rows}
+                      <li class="{$active}"><a href="{$url}">{title}Home{/title}</a></li>{/row}{/rows}
                     </ol>{/breadcrumb}
                     <h1>{page_title}Page_Title{/}</h1>
                   </div>
