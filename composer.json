@@ -13,7 +13,8 @@
     "xepan/crm": "dev-master",
     "xepan/cms": "dev-master",
     "eden/mail": "^4.0",
-    "nette/mail": "^2.3"
+    "nette/mail": "^2.3",
+    "xepan/gd-text" : "dev-master"
   },
   "autoload":{
     "psr-0":{
