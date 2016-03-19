@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2dcb3c30e031756fe12ca3c768e106fc",
-    "content-hash": "fb71a855420944b26a811b66dad2da26",
+    "hash": "3ca1269b51bd70cfbeb853ca244b7dd8",
+    "content-hash": "fd8aaaa22d973c4e4a4540f146e9a415",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -347,50 +347,6 @@
             "description": "A proper REST client for PHP.",
             "homepage": "https://github.com/educoder/pest",
             "time": "2013-11-17 12:58:01"
-        },
-        {
-            "name": "kus/php-image",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kus/php-image.git",
-                "reference": "c4ca46b1700ef0a69294b24c4e93c7f6ed0068ef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kus/php-image/zipball/c4ca46b1700ef0a69294b24c4e93c7f6ed0068ef",
-                "reference": "c4ca46b1700ef0a69294b24c4e93c7f6ed0068ef",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/PHPImage.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Blake Kus",
-                    "email": "blakekus@gmail.com",
-                    "homepage": "http://www.blakek.us"
-                }
-            ],
-            "description": "Wrapper for PHP's GD Library for easy image manipulation",
-            "homepage": "http://blakek.us",
-            "keywords": [
-                "gd",
-                "image",
-                "php",
-                "text"
-            ],
-            "time": "2016-01-04 12:39:33"
         },
         {
             "name": "nette/mail",
@@ -763,7 +719,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-19 12:43:53"
+            "time": "2016-03-19 12:32:37"
         },
         {
             "name": "xepan/communication",
@@ -861,16 +817,16 @@
         },
         {
             "name": "xepan/gd-text",
-            "version": "dev-master",
+            "version": "v1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xepan/gd-text.git",
-                "reference": "38d1beb66fbf47ba07bde0bdc427f9649413f3c7"
+                "reference": "1b86bd8ca1d70d2cd4312ed4b50339b9dfac8052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/gd-text/zipball/38d1beb66fbf47ba07bde0bdc427f9649413f3c7",
-                "reference": "38d1beb66fbf47ba07bde0bdc427f9649413f3c7",
+                "url": "https://api.github.com/repos/xepan/gd-text/zipball/1b86bd8ca1d70d2cd4312ed4b50339b9dfac8052",
+                "reference": "1b86bd8ca1d70d2cd4312ed4b50339b9dfac8052",
                 "shasum": ""
             },
             "require": {
@@ -880,16 +836,15 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "GDText\\": "src/",
-                    "GDText\\Tests\\": "tests/"
+                    "GDText\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "A class drawing multiline and aligned text on pictures. Uses GD extension. forked from stil/gd-text",
-            "time": "2016-03-18 13:19:44"
+            "description": "A class drawing multiline and aligned text on pictures. Uses GD extension.",
+            "time": "2016-03-18 14:10:14"
         },
         {
             "name": "xepan/hr",
@@ -979,7 +934,51 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-14 18:42:31"
+            "time": "2016-03-18 14:34:00"
+        },
+        {
+            "name": "xepan/php-image",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xepan/php-image.git",
+                "reference": "cae8c05bdfa39a3e823fefa1e1e6cf76b3c2fc86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/php-image/zipball/cae8c05bdfa39a3e823fefa1e1e6cf76b3c2fc86",
+                "reference": "cae8c05bdfa39a3e823fefa1e1e6cf76b3c2fc86",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/PHPImage.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rakesh Sinha",
+                    "email": "support@xepan.org",
+                    "homepage": "http://www.xepan.org"
+                }
+            ],
+            "description": "Wrapper for PHP's GD Library for easy image manipulation, fork from kus/php-image",
+            "homepage": "http://xepan.org",
+            "keywords": [
+                "gd",
+                "image",
+                "php",
+                "text"
+            ],
+            "time": "2016-03-19 13:08:19"
         },
         {
             "name": "xepan/production",
@@ -1040,7 +1039,7 @@
         "xepan/crm": 20,
         "xepan/cms": 20,
         "xepan/gd-text": 20,
-        "kus/php-image": 20
+        "xepan/php-image": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
