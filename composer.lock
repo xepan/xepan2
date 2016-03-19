@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ef5fe5b46de5fda4ec9a18aa241e72d5",
-    "content-hash": "3de38b459fcf3b68207084d3fc091bd7",
+    "hash": "2dcb3c30e031756fe12ca3c768e106fc",
+    "content-hash": "fb71a855420944b26a811b66dad2da26",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -349,6 +349,50 @@
             "time": "2013-11-17 12:58:01"
         },
         {
+            "name": "kus/php-image",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kus/php-image.git",
+                "reference": "c4ca46b1700ef0a69294b24c4e93c7f6ed0068ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kus/php-image/zipball/c4ca46b1700ef0a69294b24c4e93c7f6ed0068ef",
+                "reference": "c4ca46b1700ef0a69294b24c4e93c7f6ed0068ef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/PHPImage.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Blake Kus",
+                    "email": "blakekus@gmail.com",
+                    "homepage": "http://www.blakek.us"
+                }
+            ],
+            "description": "Wrapper for PHP's GD Library for easy image manipulation",
+            "homepage": "http://blakek.us",
+            "keywords": [
+                "gd",
+                "image",
+                "php",
+                "text"
+            ],
+            "time": "2016-01-04 12:39:33"
+        },
+        {
             "name": "nette/mail",
             "version": "dev-master",
             "source": {
@@ -523,6 +567,69 @@
             "time": "2016-01-14 20:55:00"
         },
         {
+            "name": "tecnickcom/tcpdf",
+            "version": "6.2.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tecnickcom/TCPDF.git",
+                "reference": "2f732eaa91b5665274689b1d40b285a7bacdc37f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/2f732eaa91b5665274689b1d40b285a7bacdc37f",
+                "reference": "2f732eaa91b5665274689b1d40b285a7bacdc37f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "fonts",
+                    "config",
+                    "include",
+                    "tcpdf.php",
+                    "tcpdf_parser.php",
+                    "tcpdf_import.php",
+                    "tcpdf_barcodes_1d.php",
+                    "tcpdf_barcodes_2d.php",
+                    "include/tcpdf_colors.php",
+                    "include/tcpdf_filters.php",
+                    "include/tcpdf_font_data.php",
+                    "include/tcpdf_fonts.php",
+                    "include/tcpdf_images.php",
+                    "include/tcpdf_static.php",
+                    "include/barcodes/datamatrix.php",
+                    "include/barcodes/pdf417.php",
+                    "include/barcodes/qrcode.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Nicola Asuni",
+                    "email": "info@tecnick.com",
+                    "homepage": "http://nicolaasuni.tecnick.com"
+                }
+            ],
+            "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
+            "homepage": "http://www.tcpdf.org/",
+            "keywords": [
+                "PDFD32000-2008",
+                "TCPDF",
+                "barcodes",
+                "datamatrix",
+                "pdf",
+                "pdf417",
+                "qrcode"
+            ],
+            "time": "2015-09-12 10:08:34"
+        },
+        {
             "name": "xepan/base",
             "version": "dev-master",
             "source": {
@@ -563,7 +670,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-18 12:57:13"
+            "time": "2016-03-18 14:26:24"
         },
         {
             "name": "xepan/cms",
@@ -656,7 +763,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-18 08:34:37"
+            "time": "2016-03-19 12:43:53"
         },
         {
             "name": "xepan/communication",
@@ -703,7 +810,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-03-18 09:09:39"
+            "time": "2016-03-18 11:19:31"
         },
         {
             "name": "xepan/crm",
@@ -754,16 +861,16 @@
         },
         {
             "name": "xepan/gd-text",
-            "version": "v1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xepan/gd-text.git",
-                "reference": "a3e561afd5a53a6a4b0c1d64ebaf51e768348a66"
+                "reference": "38d1beb66fbf47ba07bde0bdc427f9649413f3c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/gd-text/zipball/a3e561afd5a53a6a4b0c1d64ebaf51e768348a66",
-                "reference": "a3e561afd5a53a6a4b0c1d64ebaf51e768348a66",
+                "url": "https://api.github.com/repos/xepan/gd-text/zipball/38d1beb66fbf47ba07bde0bdc427f9649413f3c7",
+                "reference": "38d1beb66fbf47ba07bde0bdc427f9649413f3c7",
                 "shasum": ""
             },
             "require": {
@@ -773,15 +880,16 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "GDText\\": "src/"
+                    "GDText\\": "src/",
+                    "GDText\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "A class drawing multiline and aligned text on pictures. Uses GD extension.",
-            "time": "2015-01-02 12:21:25"
+            "description": "A class drawing multiline and aligned text on pictures. Uses GD extension. forked from stil/gd-text",
+            "time": "2016-03-18 13:19:44"
         },
         {
             "name": "xepan/hr",
@@ -826,7 +934,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-18 08:31:52"
+            "time": "2016-03-18 14:33:40"
         },
         {
             "name": "xepan/marketing",
@@ -930,7 +1038,9 @@
         "xepan/production": 20,
         "xepan/communication": 20,
         "xepan/crm": 20,
-        "xepan/cms": 20
+        "xepan/cms": 20,
+        "xepan/gd-text": 20,
+        "kus/php-image": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
