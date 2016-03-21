@@ -14,7 +14,7 @@
     "xepan/cms": "dev-master",
     "eden/mail": "^4.0",
     "nette/mail": "^2.3",
-    "xepan/gd-text" : "dev-master"
+    "xepan/accounts": "dev-master"
   },
   "autoload":{
     "psr-0":{
@@ -26,5 +26,8 @@
             "document-root": "frontend/public",
             "index-document": "index.php"
         }
-    }
+    },
+  "require-dev": {
+    "xepan/gd-text": "^1.0"
+  }
 }

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ef5fe5b46de5fda4ec9a18aa241e72d5",
-    "content-hash": "3de38b459fcf3b68207084d3fc091bd7",
+    "hash": "ec5adb20fd6479eb321f31f4128bb173",
+    "content-hash": "fae6a47d54f485b02f9f24d054abbdd4",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -523,6 +523,50 @@
             "time": "2016-01-14 20:55:00"
         },
         {
+            "name": "xepan/accounts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:xepan/accounts.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/accounts/zipball/f8bd1f2477c1d0deafb33e8ea86af1ee68066cfe",
+                "reference": "f8bd1f2477c1d0deafb33e8ea86af1ee68066cfe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "xepan/base": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "autocomplete": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "Accounting Application for xEpan Platform",
+            "homepage": "https://github.com/xepan/accounting",
+            "keywords": [
+                "Accounting",
+                "ERP",
+                "saas",
+                "xepan"
+            ],
+            "time": "2016-03-19 17:12:14"
+        },
+        {
             "name": "xepan/base",
             "version": "dev-master",
             "source": {
@@ -563,7 +607,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-18 12:57:13"
+            "time": "2016-03-18 14:26:24"
         },
         {
             "name": "xepan/cms",
@@ -656,7 +700,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-18 08:34:37"
+            "time": "2016-03-19 14:08:43"
         },
         {
             "name": "xepan/communication",
@@ -703,7 +747,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-03-18 09:09:39"
+            "time": "2016-03-18 11:19:31"
         },
         {
             "name": "xepan/crm",
@@ -750,38 +794,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-14 18:40:35"
-        },
-        {
-            "name": "xepan/gd-text",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/xepan/gd-text.git",
-                "reference": "a3e561afd5a53a6a4b0c1d64ebaf51e768348a66"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/xepan/gd-text/zipball/a3e561afd5a53a6a4b0c1d64ebaf51e768348a66",
-                "reference": "a3e561afd5a53a6a4b0c1d64ebaf51e768348a66",
-                "shasum": ""
-            },
-            "require": {
-                "ext-gd": "*",
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "GDText\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A class drawing multiline and aligned text on pictures. Uses GD extension.",
-            "time": "2015-01-02 12:21:25"
+            "time": "2016-03-19 11:12:24"
         },
         {
             "name": "xepan/hr",
@@ -826,7 +839,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-18 08:31:52"
+            "time": "2016-03-18 14:33:40"
         },
         {
             "name": "xepan/marketing",
@@ -871,7 +884,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-14 18:42:31"
+            "time": "2016-03-19 12:59:23"
         },
         {
             "name": "xepan/production",
@@ -919,7 +932,39 @@
             "time": "2016-03-14 18:42:51"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "xepan/gd-text",
+            "version": "v1.0.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xepan/gd-text.git",
+                "reference": "1b86bd8ca1d70d2cd4312ed4b50339b9dfac8052"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/gd-text/zipball/1b86bd8ca1d70d2cd4312ed4b50339b9dfac8052",
+                "reference": "1b86bd8ca1d70d2cd4312ed4b50339b9dfac8052",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GDText\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A class drawing multiline and aligned text on pictures. Uses GD extension.",
+            "time": "2016-03-18 14:10:14"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
@@ -930,7 +975,8 @@
         "xepan/production": 20,
         "xepan/communication": 20,
         "xepan/crm": 20,
-        "xepan/cms": 20
+        "xepan/cms": 20,
+        "xepan/accounts": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
