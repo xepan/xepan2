@@ -16,7 +16,8 @@
     "nette/mail": "^2.3",
     "xepan/gd-text" : "v1.0.0.x-dev",
     "tecnickcom/tcpdf": "^6.2",
-    "xepan/php-image": "dev-master"
+    "xepan/php-image": "dev-master",
+    "xepan/accounts": "dev-master"
   },
   "autoload":{
     "psr-0":{

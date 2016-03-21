@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3ca1269b51bd70cfbeb853ca244b7dd8",
-    "content-hash": "fd8aaaa22d973c4e4a4540f146e9a415",
+    "hash": "89268600288a2b3fe3f3db335cab8c57",
+    "content-hash": "6a02fb9cf42016cc3d144c8ae16c9d9c",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -586,6 +586,50 @@
             "time": "2015-09-12 10:08:34"
         },
         {
+            "name": "xepan/accounts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:xepan/accounts.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/accounts/zipball/f8bd1f2477c1d0deafb33e8ea86af1ee68066cfe",
+                "reference": "f8bd1f2477c1d0deafb33e8ea86af1ee68066cfe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "xepan/base": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "autocomplete": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "Accounting Application for xEpan Platform",
+            "homepage": "https://github.com/xepan/accounting",
+            "keywords": [
+                "Accounting",
+                "ERP",
+                "saas",
+                "xepan"
+            ],
+            "time": "2016-03-21 04:42:56"
+        },
+        {
             "name": "xepan/base",
             "version": "dev-master",
             "source": {
@@ -719,7 +763,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-19 12:32:37"
+            "time": "2016-03-19 12:43:53"
         },
         {
             "name": "xepan/communication",
@@ -934,7 +978,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-18 14:34:00"
+            "time": "2016-03-14 18:42:31"
         },
         {
             "name": "xepan/php-image",
@@ -942,12 +986,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xepan/php-image.git",
-                "reference": "cae8c05bdfa39a3e823fefa1e1e6cf76b3c2fc86"
+                "reference": "6bc27c2b8e17b5d6191662f3d94f2fdbd4e693de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/php-image/zipball/cae8c05bdfa39a3e823fefa1e1e6cf76b3c2fc86",
-                "reference": "cae8c05bdfa39a3e823fefa1e1e6cf76b3c2fc86",
+                "url": "https://api.github.com/repos/xepan/php-image/zipball/6bc27c2b8e17b5d6191662f3d94f2fdbd4e693de",
+                "reference": "6bc27c2b8e17b5d6191662f3d94f2fdbd4e693de",
                 "shasum": ""
             },
             "require": {
@@ -978,7 +1022,7 @@
                 "php",
                 "text"
             ],
-            "time": "2016-03-19 13:08:19"
+            "time": "2016-03-19 13:18:13"
         },
         {
             "name": "xepan/production",
@@ -1039,7 +1083,8 @@
         "xepan/crm": 20,
         "xepan/cms": 20,
         "xepan/gd-text": 20,
-        "xepan/php-image": 20
+        "xepan/php-image": 20,
+        "xepan/accounts": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
