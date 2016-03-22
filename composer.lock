@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "89268600288a2b3fe3f3db335cab8c57",
-    "content-hash": "6a02fb9cf42016cc3d144c8ae16c9d9c",
+    "hash": "d2b021ed2b50dea868ecca2c52021ca2",
+    "content-hash": "f0d0c0c6a9f32f06c073b5207086c9d2",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -471,6 +471,45 @@
             "time": "2016-03-18 12:31:51"
         },
         {
+            "name": "setasign/fpdf",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setasign/FPDF.git",
+                "reference": "2c68c9e6c034ac3187d25968790139a73184cdb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setasign/FPDF/zipball/2c68c9e6c034ac3187d25968790139a73184cdb1",
+                "reference": "2c68c9e6c034ac3187d25968790139a73184cdb1",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "fpdf.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "no usage restriction"
+            ],
+            "authors": [
+                {
+                    "name": "Olivier Plathey",
+                    "email": "oliver@fpdf.org",
+                    "homepage": "http://fpdf.org/"
+                }
+            ],
+            "description": "FPDF is a PHP class which allows to generate PDF files with pure PHP. F from FPDF stands for Free: you may use it for any kind of usage and modify it to suit your needs.",
+            "homepage": "http://www.fpdf.org",
+            "keywords": [
+                "fpdf",
+                "pdf"
+            ],
+            "time": "2016-01-01 17:47:15"
+        },
+        {
             "name": "tburry/pquery",
             "version": "dev-master",
             "source": {
@@ -627,7 +666,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-21 04:42:56"
+            "time": "2016-03-21 14:46:16"
         },
         {
             "name": "xepan/base",
@@ -670,7 +709,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-18 14:26:24"
+            "time": "2016-03-21 13:48:55"
         },
         {
             "name": "xepan/cms",
@@ -763,7 +802,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-19 12:43:53"
+            "time": "2016-03-22 08:47:58"
         },
         {
             "name": "xepan/communication",
@@ -857,7 +896,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-14 18:40:35"
+            "time": "2016-03-19 11:12:24"
         },
         {
             "name": "xepan/gd-text",
@@ -933,7 +972,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-18 14:33:40"
+            "time": "2016-03-22 05:31:39"
         },
         {
             "name": "xepan/marketing",
@@ -978,7 +1017,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-14 18:42:31"
+            "time": "2016-03-21 14:08:18"
         },
         {
             "name": "xepan/php-image",
@@ -1067,7 +1106,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-14 18:42:51"
+            "time": "2016-03-21 07:55:33"
         }
     ],
     "packages-dev": [],
