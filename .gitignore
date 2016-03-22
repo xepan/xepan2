@@ -17,7 +17,6 @@ VERSION
 .idea
 .composer
 composer
-composer.lock
 addons/
 /db/*
 assets/*
