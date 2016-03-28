@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cd8dd665d38a9477d273b8b41da2c0a2",
-    "content-hash": "9dd75d6be27ac73024c65967184626b4",
+    "hash": "bb403005e5702503b611bcc796af6d08",
+    "content-hash": "9457ff9ac33f17854c8f87165bad1414",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -685,12 +685,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tburry/pquery.git",
-                "reference": "872339ffd38d261c4417ea1855428b1b4ff9abf1"
+                "reference": "c28159447f4cec57f2a016c2ec15f5b754b58052"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/tburry/pquery/zipball/c28159447f4cec57f2a016c2ec15f5b754b58052",
-                "reference": "872339ffd38d261c4417ea1855428b1b4ff9abf1",
+                "reference": "c28159447f4cec57f2a016c2ec15f5b754b58052",
                 "shasum": ""
             },
             "require": {
@@ -729,7 +729,7 @@
                 "ganon",
                 "php"
             ],
-            "time": "2016-01-14 20:55:00"
+            "time": "2016-03-23 18:57:26"
         },
         {
             "name": "tecnickcom/tcpdf",
@@ -836,7 +836,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-22 14:04:59"
+            "time": "2016-03-26 15:31:36"
         },
         {
             "name": "xepan/base",
@@ -879,7 +879,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-25 13:04:31"
+            "time": "2016-03-26 14:06:02"
         },
         {
             "name": "xepan/cms",
@@ -972,7 +972,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-26 09:43:57"
+            "time": "2016-03-26 15:37:44"
         },
         {
             "name": "xepan/communication",
@@ -1069,6 +1069,50 @@
             "time": "2016-03-19 11:12:24"
         },
         {
+            "name": "xepan/dispatch",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:xepan/dispatch.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/dispatch/zipball/1a5baa77989ab75e685063c069f05622633640ce",
+                "reference": "1a5baa77989ab75e685063c069f05622633640ce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "xepan/base": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "autocomplete": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "Dispatch Management Application for xEpan Platform",
+            "homepage": "https://github.com/xepan/dispatch",
+            "keywords": [
+                "ERP",
+                "dispatch",
+                "saas",
+                "xepan"
+            ],
+            "time": "2016-03-26 15:37:13"
+        },
+        {
             "name": "xepan/gd-text",
             "version": "v1.0.0.x-dev",
             "source": {
@@ -1142,7 +1186,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-22 05:31:39"
+            "time": "2016-03-26 05:07:01"
         },
         {
             "name": "xepan/marketing",
@@ -1187,7 +1231,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-21 14:08:18"
+            "time": "2016-03-19 12:59:23"
         },
         {
             "name": "xepan/php-image",
@@ -1276,7 +1320,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-21 07:55:33"
+            "time": "2016-03-14 18:42:51"
         }
     ],
     "packages-dev": [],
@@ -1293,7 +1337,8 @@
         "xepan/cms": 20,
         "xepan/gd-text": 20,
         "xepan/php-image": 20,
-        "xepan/accounts": 20
+        "xepan/accounts": 20,
+        "xepan/dispatch": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
