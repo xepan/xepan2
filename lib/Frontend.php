@@ -19,7 +19,7 @@ class Frontend extends ApiFrontend {
 
         //DB Connect not default added by rakesh
         $this->dbConnect();
-
+        
         // Might come handy when multi-timezone base networks integrates
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
         $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
