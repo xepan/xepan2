@@ -658,3 +658,35 @@ background-color:none repeat scroll 0 0 rgba(162, 217, 246, 0.33)
 ul.xshop-item li:first-child{
 height:230px;
 }
+
+.full-width{
+  width: 100%;
+}
+
+.width-90{
+  width:90%;
+}
+
+.move-center{
+  margin-right: auto; 
+  margin-left: auto; 
+  margin-top: 0;
+  margin-top: 0;
+}
+
+.width-70{
+  width:70%;
+}
+
+.footer-menu{
+  padding:10px;
+}
+
+.footer h3{
+  color: #f7a707;
+  font-size:16px;
+}
+.footer{
+  background-color:#141b22;
+  padding-top: 15px; 
+}
