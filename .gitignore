@@ -24,3 +24,4 @@ assets/*
 *.todo
 /cube
 *.mwb
+/upload/*
