@@ -73,6 +73,7 @@ class Frontend extends ApiFrontend {
     }
 
     protected function loadStaticPage($page){
+        
 
         $layout = $this->layout ?: $this;
         try{
