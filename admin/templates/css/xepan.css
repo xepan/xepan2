@@ -164,6 +164,121 @@ textarea {width: 100%;}
 .input-full-width input{
 	width:100%;
 }
-/*.user-subhead{
-	color: #616161;
-}*/
+.xepan-size-pow10 {
+  font-size: 9.70287953rem;
+}
+.xepan-size-pow9 {
+  font-size: 7.62801223rem;
+}
+.xepan-size-pow8 {
+  font-size: 5.99683531rem;
+}
+.xepan-size-yotta {
+  font-size: 4.71446986rem;
+}
+.xepan-size-zetta {
+  font-size: 3.7063259rem;
+}
+.xepan-size-exa {
+  font-size: 2.91376382rem;
+}
+.xepan-size-peta {
+  font-size: 2.2906835rem;
+}
+h1,
+.xepan-size-tera {
+  font-size: 1.8008429rem;
+}
+h2,
+.xepan-size-giga {
+  font-size: 1.59672895rem;
+}
+h3,
+.xepan-size-mega {
+  font-size: 1.41575rem;
+}
+h4,
+.xepan-size-kilo {
+  font-size: 1.25528385rem;
+}
+h5,
+.xepan-size-default,
+.xepan-size-reset {
+  font-size: 0.875rem;
+}
+h6,
+small,
+.xepan-size-milli {
+  font-size: 0.77582438rem;
+}
+.xepan-size-micro {
+  font-size: 0.68788968rem;
+}
+.xepan-size-nano {
+  font-size: 0.5407911rem;
+}
+
+.xepan-text-lead,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+.xepan-text-bold {
+  font-weight: bold;
+}
+.xepan-text-medium {
+  font-weight: 600;
+}
+.xepan-text-normal {
+  font-weight: normal;
+  text-transform: normal;
+}
+.xepan-text-light {
+  font-weight: 300;
+}
+.xepan-text-italic {
+  font-style: italic;
+}
+.xepan-text-dimmed,
+*[class*=atk-swatch] .xepan-text-dimmed {
+  color: #8c9399;
+}
+.xepan-text-dimmed a,
+*[class*=atk-swatch]:not(.xepan-text-inherit) .xepan-text-dimmed a:link {
+  color: #666c72;
+}
+.xepan-text-dimmed a:hover,
+*[class*=atk-swatch]:not(.xepan-text-inherit) .xepan-text-dimmed a:link:hover {
+  color: #575d62;
+}
+a.xepan-text-dimmed,
+*[class*=atk-swatch] a.xepan-text-dimmed {
+  color: #8c9399;
+}
+a.xepan-text-dimmed:hover,
+*[class*=atk-swatch] a.xepan-text-dimmed:hover {
+  color: #7c848a;
+}
+.xepan-text-nowrap {
+  white-space: nowrap;
+}
+.xepan-text-reset {
+  font-size: 0;
+  line-height: 0;
+}
+.xepan-text-baseline-default {
+  line-height: 1.618;
+}
+.xepan-text-ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.xepan-text-inherit {
+  color: inherit;
+}
