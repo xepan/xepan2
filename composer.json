@@ -19,8 +19,7 @@
     "xepan/php-image": "dev-master",
     "xepan/accounts": "dev-master",
     "setasign/fpdf": "1.8.1",
-    "nesbot/carbon": "^1.21",
-    "xepan/dispatch": "dev-master"
+    "nesbot/carbon": "^1.21"
   },
   "autoload":{
     "psr-0":{

@@ -38,7 +38,7 @@ class Frontend extends ApiFrontend {
         
         
         // Should come from any local DB store
-        $addons = ['xepan\\base','xepan\\cms','xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production','xepan\\dispatch'];
+        $addons = ['xepan\\base','xepan\\cms','xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production'];
 
         $app_initiators=[];
         foreach ($addons as $addon) {
