@@ -19,13 +19,13 @@ class Admin extends App_Frontend {
 
         $this->api->pathfinder
             ->addLocation(array(
-                'addons' => array('addons', 'vendor','shared/addons2'),
+                'addons' => array('shared/addons', 'vendor','shared/addons2'),
             ))
             ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
         
         
         // Should come from any local DB store
-        $addons = ['xepan\\base','xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production','xepan\\crm'];
+        $addons = ['xepan\\base','xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\accounts','xepan\\commerce','xepan\\production','xepan\\crm'];
 
         $app_initiators=[];
         foreach ($addons as $addon) {

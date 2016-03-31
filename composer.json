@@ -2,7 +2,7 @@
   "type":"project",
   "minimum-stability": "dev",
   "require":{
-    "atk4\/atk4":"master-dev",
+    "atk4\/atk4":"4.3",
     "educoder\/pest":"1.0.0",
     "xepan/base": "dev-master",
     "xepan/hr": "dev-master",
@@ -11,7 +11,15 @@
     "xepan/production": "dev-master",
     "xepan/communication": "dev-master",
     "xepan/crm": "dev-master",
-    "xepan/cms": "dev-master"
+    "xepan/cms": "dev-master",
+    "eden/mail": "^4.0",
+    "nette/mail": "^2.3",
+    "xepan/gd-text" : "v1.0.0.x-dev",
+    "tecnickcom/tcpdf": "^6.2",
+    "xepan/php-image": "dev-master",
+    "xepan/accounts": "dev-master",
+    "setasign/fpdf": "1.8.1",
+    "nesbot/carbon": "^1.21"
   },
   "autoload":{
     "psr-0":{

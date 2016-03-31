@@ -1,5 +1,6 @@
-input{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; font-weight:bold; border-bottom-color: grey; border-bottom-width: 1px}
+input{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; font-weight:normal; border-bottom-color: grey; border-bottom-width: 1px}
 input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; border-bottom-color: grey; border-bottom-width: 1px; outline: none !important}
+textarea {width: 100%;}
 /*.xepan-grid .atk-actions button{
 	border-radius:3px solid #2980b9;
 	border-color:#2980b9;
@@ -60,11 +61,109 @@ input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:no
 	/*background-color: yellow;*/
 }
 .xepan-push-small{
-	margin-bottom: 0.7rem;
+	margin-bottom: 0.7rem !important;
 }
 .xepan-push{
-	margin-bottom: 1.4rem;
+	margin-bottom: 1.4rem !important;
 }
 .xepan-push-large{
-	margin-bottom: 2.8rem;
+	margin-bottom: 2.8rem !important;
 }
+
+/*xEpan HasMany Grid Button display on hover*/
+.xepan-hover-button{
+	display: none;
+	position: absolute;
+	right:0px;
+	top: 0px;
+}
+.xepan-hasmany-row:hover .xepan-hover-button{
+	display: block;
+}
+
+.xepan-hasmany-row{
+	position: relative;
+}
+
+.xepan-hasmany-row td{
+	padding:5px !important;
+	font-size: 1em;
+}
+
+.xepan-micro-grid{
+	font-size:0.7em;
+}
+
+.xepan-micro-grid header,.xepan-micro-grid .form-group{
+	padding:0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px !important;
+}
+.xepan-micro-grid .atk-actions{
+	margin-right: 10px;
+}
+.xepan-micro-grid .main-box-body{
+	padding: 0px;
+}
+
+.xepan-hasmany-row > td a{
+	padding:0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px !important;
+	font-size: 0.9em !important;
+
+}
+.xepan-hasmany-row .fa-pencil{
+	color:#689f38;
+}
+.xepan-hasmany-row .fa-trash-o{
+	color: #e84e40;
+}
+
+.xepan-hasmany-row .fa-pencil,.xepan-hasmany-row .fa-trash-o{
+	background-color: #f3f3f3;
+}
+
+.xepan-hasmany-row .fa-pencil:hover, .xepan-hasmany-row .fa-trash-o:hover{
+	background-color: gray;
+	color: white;
+}
+.xepan-hasmany-row .fa-stack i.fa-stack-2x{
+	display: none !important;
+}
+
+.xepan-micro-grid{
+	font-size:0.8em;
+}
+
+.main-box-body > h2{
+
+}
+
+/*Removing margin and top border of profile detail*/
+.xepan-contact-profile .profile-details{
+	border-top:0px !important;
+	margin-top:0px !important;
+}
+
+
+
+/*General CSS Class*/
+.margin-reset{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-right: 0px;
+}
+
+.padding-reset{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	padding-right: 0px;
+}
+
+.input-full-width input{
+	width:100%;
+}
+/*.user-subhead{
+	color: #616161;
+}*/

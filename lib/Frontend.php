@@ -19,7 +19,7 @@ class Frontend extends ApiFrontend {
 
         //DB Connect not default added by rakesh
         $this->dbConnect();
-
+        
         // Might come handy when multi-timezone base networks integrates
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
         $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
@@ -32,7 +32,7 @@ class Frontend extends ApiFrontend {
 
         $this->api->pathfinder
             ->addLocation(array(
-                'addons' => array('addons', 'vendor','shared/addons2'),
+                'addons' => array('shared/addons', 'vendor','shared/addons2'),
             ))
             ->setBasePath($this->pathfinder->base_location->getPath() );
         
@@ -55,7 +55,8 @@ class Frontend extends ApiFrontend {
             'page'=>array("websites/$current_website"),
             'js'=>array("websites/$current_website/js"),
             'css'=>array("websites/$current_website","websites/$current_website/css"),
-            'template'=>["websites/$current_website"]
+            'template'=>["websites/$current_website"],
+            'addons'=> ['websites/'.$this->current_website_name]
         ))->setParent($this->pathfinder->base_location);
 
         if($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
@@ -72,6 +73,7 @@ class Frontend extends ApiFrontend {
     }
 
     protected function loadStaticPage($page){
+        
 
         $layout = $this->layout ?: $this;
         try{

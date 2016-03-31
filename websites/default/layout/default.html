@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>One page website template for multipurpose website</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
     <meta charset="utf-8" />
-     <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon" />
     <meta name="robots" content="index, follow" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="en" />
@@ -14,22 +14,20 @@
     <base href="websites/default/" />
 
      <!---Common css---->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link href="{css}/common.css{/}" rel="stylesheet" type="text/css" />
-         <link href="{css}/style.css{/}" type="text/css" rel="stylesheet" />
-         <link href="{css}/theme1024.css{/}" rel="stylesheet" type="text/css" />
-        <link href="{css}/theme990.css{/}" rel="stylesheet" type="text/css" />
-        <link href="{css}/theme768.css{/}" rel="stylesheet" type="text/css" />
-        <link href="{css}/theme480.css{/}" rel="stylesheet" type="text/css" />
-        <link href="{css}/theme320.css{/}" rel="stylesheet" type="text/css" />
-        <link href="{css}/theme319.css{/}" rel="stylesheet" type="text/css" />
+        <link href="{css}/style.css{/}" type="text/css" rel="stylesheet" />
+
+
     <link href="{css}/quickweb.css{/}" rel="stylesheet" type="text/css" />
      <link href="fonts/style.css" rel="stylesheet" type="text/css" />   
-   <link href="{css}/slider_css.css{/}" type="text/css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="/xepan2/admin/templates/css/jquery-ui.css" />
 
-
-    <script src="{js}slider.js{/}"></script>
-    <script src="{js}plugin.js{/}"></script>
+    <link rel="stylesheet" type="text/css" href="{css}css/xShop-itemgrid.css{/}" />
+    <link rel="stylesheet" type="text/css" href="{css}css/mystyles.css{/}" />
+    <link rel="stylesheet" type="text/css" href="{css}css/xepan_category.css{/}" />
 
     <!--if lt IE 9
     script(src='js/html5shiv.js')
@@ -41,9 +39,106 @@
           {$document_ready}
       });
     </script>
+    
+    <script src="{js}slider.js{/}"></script>
+    <script src="{js}plugin.js{/}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
+<header>
+    <div class="prime-scan">
+        <div class="p-topbar container full-width">
+            <div class="p-topbar-row width-90 move-center row">
+                <div class="col-md-6">
+                    <div style="background-image: url('image/icon/print_on_click_contact_icon.png'); background-repeat: no-repeat; margin-top: 1px;" class="p-icon" component_type="Text" component_namespace="baseElements">
+                    +91 9828088440
+                    </div>
+                </div>
+                <div class="col-md-2 userpanel">
+                    <div style="padding-right: 10px; background-image: url('image/icon/print_on_click_signin_icon.png'); background-repeat: no-repeat;background-position:right;background-position:right">
+                    Login
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div style="padding-right: 10px; background-image: url(image/icon/print_on_click_cart_icon.png); background-repeat: no-repeat;background-position:right" class="xcart-icon p-icon-right" class=" xshop-cart">
+                    Cart Detail
+                    </div>
+                </div>
+                <div class="col-md-2 myaccount">
+                    <div style="width: auto; max-width: 100%; background-image: url('image/icon/print_on_click_my_account_icon.png'); background-repeat: no-repeat; background-position: right center; color: rgb(0, 0, 0);" class="editor epan-component editor-attached p-icon-right pull-right p-icon-account">
+                    <a href="?subpage=myaccount" style="text-decoration:none;" title="View Your Account">  My Account </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="width-90 move-center row">
+            <div class="col-md-4">
+                <a class="xepan-image-anchor" href="index.php?subpage=home">    <img class="ui-resizable" data-extra-classes="" style="max-width:100%; height: auto; width:100%" src="image/site/logo_print_on_click_online_printing.gif"></a>
+            </div>
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-4 p-search">
+                <input >
+            </div>
+        </div>
+
+        <div style="width: 100%;" class="atk-swatch-ink p-manubar">
+            <div style="width: 88%; margin-right: auto; margin-left: auto;">
+                <div class="xshop-category-main-container">
+                    <ul class="sky-mega-menu sky-mega-menu-anim-slide sky-mega-menu-response-to-stack">
+                        <li class="xshop-category" aria-haspopup="true">
+                            <a href="/?subpage=category&amp;xsnb_category_id=4">Business Essential</a>
+                            <div class="grid-container3">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</header>
+    
 {$Content}
+<footer class="footer">
+    <div class="width-90 move-center row">
+        <div class="col-md-3">
+            <h3 style="">PrintOnClick</h3>
+            <div class="glyphicon glyphicon-home footer-menu" style="width: 100%; background-color: transparent;">
+                <a href="?subpage=home">&nbsp; Home</a>
+            </div>
+            <div class="glyphicon glyphicon-home footer-menu" style="width: 100%; background-color: transparent;">
+                <a href="?subpage=home">&nbsp; About</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h3 style="">Help</h3>
+            <div class="glyphicon glyphicon-home footer-menu" style="width: 100%; background-color: transparent;">
+                <a href="?subpage=home">&nbsp; How to Order</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <div style="width: auto; background-color: rgb(0, 0, 0);border-top:1px solid #f7a707;padding:20px;font-size:20px;color:white;">
+        <div style="width: 85%; margin-right: auto; margin-left: auto; background-color: transparent;" class="row">
+            <div class="col-md-10">
+                <div style="width: 80%; margin-right: auto; margin-left: 0px; font-size: 14px;">Copyright PRINTONCLICK.IN @ 2015. &nbsp;All right reserved.
+                </div>
+            </div>
+            <div class="col-md-1">
+                <a href="#">
+                    <div title="Up" class="glyphicon glyphicon-arrow-up pull-right">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="tooltip fade top in" style="top: -33px; left: 1296.5px; display: block;">
+            
+        </div>
+</div>
+</footer>
 
    <script type="text/javascript">
         thumb_slider({

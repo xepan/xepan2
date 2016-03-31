@@ -1,22 +1,13 @@
 
 <div id="theme-wrapper" class="atk-layout">
   <header id="header-navbar" class="navbar">
-    <div class="container"><a id="logo" href="index.html" class="navbar-brand"><img src="img/logo.png" alt="" class="normal-logo logo-white"/><img src="img/logo-black.png" alt="" class="normal-logo logo-black"/><img src="img/logo-small.png" alt="" class="small-logo hidden-xs hidden-sm hidden"/></a>
+    <div class="container"><a id="logo" href="index.html" class="navbar-brand"><img src="img/logo3.png" alt="" class="normal-logo logo-white"/><img src="img/logo-black.png" alt="" class="normal-logo logo-black"/><img src="img/logo-small.png" alt="" class="small-logo hidden-xs hidden-sm hidden"/></a>
       <div class="clearfix">
         <button data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="fa fa-bars"></span></button>
         <div class="nav-no-collapse navbar-left pull-left hidden-sm hidden-xs">
           <ul class="nav navbar-nav pull-left">
             <li><a id="make-small-nav" class="btn"><i class="fa fa-bars"></i></a></li>
-            <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle"><i class="fa fa-bell"></i><span class="count">{notification_count}8{/}</span></a>
-              <ul class="dropdown-menu notifications-list">
-                <li class="pointer">
-                  <div class="pointer-inner">
-                    <div class="arrow"></div>
-                  </div>
-                </li>
-                <li class="item-header">You have {unread_notification}6{/} new notifications</li>{$notification_view}
-              </ul>
-            </li>
+            <li id="notificationid" class="dropdown hidden-xs">{$notification_view}                      </li>
             <li class="dropdown hidden-xs"><a data-toggle="dropdown" class="btn dropdown-toggle"><i class="fa fa-envelope-o"></i><span class="count">{message_count}16{/}</span></a>
               <ul class="dropdown-menu notifications-list messages-list">
                 <li class="pointer">
@@ -40,7 +31,10 @@
                 </form>
               </div>
             </li>
-            <li class="dropdown profile-dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="hidden-xs">{department}Scarlett{/department} / {post}Johansson{/post}</span></a>
+            <li class="dropdown profile-dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="hidden-xs">{department}Scarlett{/department} / {post}Johansson{/post}</span><b class="caret"></b></a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="?page=xepan_base_generalsetting"><i class="fa fa-user"></i>General Settings</a></li>
+              </ul>
             </li>
             <li class="hidden-xxs"><a href="?page=logout" class="btn"><i class="fa fa-power-off"></i></a></li>
           </ul>
@@ -78,8 +72,7 @@
                 <div id="content-header" class="clearfix">
                   <div class="pull-left">{breadcrumb}
                     <ol class="breadcrumb">{rows}{row}
-                      <li><a href="#">{crumb}Home{/crumb}</a></li>
-                      <li class="active"><span>Dashboard</span></li>{/row}{/rows}
+                      <li class="{$active}"><a href="{$url}">{title}Home{/title}</a></li>{/row}{/rows}
                     </ol>{/breadcrumb}
                     <h1>{page_title}Page_Title{/}</h1>
                   </div>
