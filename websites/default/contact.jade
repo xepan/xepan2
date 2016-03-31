@@ -1,0 +1,49 @@
+.container.ui-sortable(style=' ', component_type='Container', component_namespace='baseElements')
+  .editor.p-header-middle-line.editor-attached(contenteditable='false', data-extra-classes='p-header-middle-line', style=' ', component_type='Text', component_namespace='baseElements')
+    h3 Contact Us
+  .atk-row(style=' ', component_type='HtmlBlock', component_namespace='baseElements')
+    iframe(width='100%', height='300', frameborder='0', style='border:0', src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d906.975486310765!2d73.710345!3d24.592579999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xe3b1462a3b17ef5b!2sPrime+Scan!5e0!3m2!1sen!2sin!4v1431922941425')
+  .atk-row.ui-sortable(style='margin: 0% auto auto;', component_namespace='baseElements', component_type='Row')
+    .ui-sortable.atk-col-7(span='7', component_type='Columns')
+      .editor.p-header-middle-line.editor-attached(contenteditable='false', data-extra-classes='p-header-middle-line', style=' ', component_type='Text', component_namespace='baseElements')
+        h3 Enquiry Form
+      .atk-row(style='', data-is-serverside-component='true', data-responsible-view='View_Tools_CustomeForm', data-responsible-namespace='xEnquiryNSubscription', component_type='CustomeForm', component_namespace='xEnquiryNSubscription', data-options='3')
+        .atk-row(style='')
+          .atk-form.atk4_form_widget(style='')
+            form.atk4_form(method='post', action='/?subpage=contact&submit=d485320b__ontact_Contact')
+              input(type='hidden', value='1', data-initvalue='1')
+              .atk-cells-group.atk-cells-gutter-large
+                input(type='hidden', value='3', data-shortname='data_options', data-initvalue='3')
+                .atk-form-row.atk-cells.atk-push-small.atk-form-row-line
+                  .atk-cell.atk-form-label.atk-text-nowrap
+                    label
+                      span First Name:
+                  .atk-cell.atk-form-field.atk-jackscrew
+                    input(type='text', value='', data-shortname='First_Name', data-initvalue='')
+                .atk-form-row.atk-cells.atk-push-small.atk-form-row-line
+                  .atk-cell.atk-form-label.atk-text-nowrap
+                    label.mandatory(for='d485320b__ontact_Contact_Email')
+                      span Email:
+                  .atk-cell.atk-form-field.atk-jackscrew
+                    input(type='text', value='', data-shortname='Email', data-initvalue='')
+                .atk-form-row.atk-cells.atk-push-small.atk-form-row-number
+                  .atk-cell.atk-form-label.atk-text-nowrap
+                    label.mandatory
+                      span Mobile No:
+                  .atk-cell.atk-form-field.atk-jackscrew
+                    input(type='number', value='', data-shortname='Mobile_No', data-initvalue='')
+                .atk-form-row.atk-cells.atk-push-small.atk-form-row-line
+                  .atk-cell.atk-form-label.atk-text-nowrap
+                    label.mandatory(for='d485320b__ontact_Contact_captcha')
+                      span Captcha:
+                  .atk-cell.atk-form-field.atk-jackscrew
+                      .xepan-captcha
+                        img(src='/?subpage=contact&captcha_view=true&rand=c327d26c3a1d086c5f777ce1da554b46', style='cursor:pointer')
+                        span.icon-ccw.btn.btn-default
+                        input(type='text', value='', data-shortname='captcha', data-initvalue='')
+                        h5(style='') Please enter the code shown above
+                .atk-cells.atk-cells-gutter-large
+                  .atk-cell
+                  .atk-cell.atk-actions
+                    button.atk-button(style='', data-initvalue='') Submit
+    .epan-sortable-component.epan-component.ui-sortable.atk-col-5(span='5', component_type='Columns')
