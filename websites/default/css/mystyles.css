@@ -153,7 +153,7 @@ text-decoration:none;
 padding-right:30px !important;
 height:26px !important;
 }
-.p-page-min-height .ui-tabs-active a{
+/*.p-page-min-height .ui-tabs-active a{
    background-color:#fdd490 !important;
 }
 
@@ -166,6 +166,29 @@ height:26px !important;
 }
 .p-page-min-height .ui-tabs-nav li:nth-of-type(3n){
  background-color:#A2D9F6 !important;
+}*/
+
+.nav-tabs > .active > a{
+  background-color:#fdd490 !important;
+}
+
+.nav-tabs > li > a:hover{
+  background-color: #303136 !important;
+    border: medium none;
+    border-radius: 0;
+    color:#fff;
+}
+
+.nav-tabs li{
+  background-color:#A2D9F6;
+}
+
+.tab-content{
+  padding:3px 0px 0px 8px;
+  
+  border: 2px #99ccff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  margin-left:1px;
 }
 
 .xshop-item-detail-design{
