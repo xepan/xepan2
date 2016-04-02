@@ -1,12 +1,13 @@
+div(id='{$_name}')
 {$Content}
 {rows}{row}
 ul.xshop-item.col-md-3.col-sm-3.col-xl-3(data-xsnb-item-id='372', style='', onclick='javascript:void(0)')
   li
-    a.xshop-item-image-anchor(style='', href='?page=product-detail&xsnb_item_id={$id}')
+    a.xshop-item-image-anchor(style='', href='?page=product-detail&commerce_item_id={$id}')
       img.xshop-item-img(style='', src='{$file}')
   li.xshop-item-short-description(style='', onclick='javascript:void(0)')
   li
-    .xshop-item-personalize(style='', onclick='$(this).univ().location("index.php?subpage=product-design&xsnb_design_item_id=372")') Personalize
+    .xshop-item-personalize(style='', onclick='$(this).univ().location("index.php?subpage=product-design&commerce_design_item_id=372")') Personalize
   li {$name}
 {/}{/}
 {$Paginator}
