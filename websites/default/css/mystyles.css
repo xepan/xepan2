@@ -617,6 +617,10 @@ margin-top:10px;
 text-decoration:none;
 color:black;
 }
+.footer a{
+  color:white;
+  font-family: times-roman;
+}
 /*end of topbar*/
 
 .p-heading{
