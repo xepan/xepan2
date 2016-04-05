@@ -1,11 +1,11 @@
 
 <div id="{$_name}"></div>{$Content}
 {rows}{row}
-<ul data-xsnb-item-id="372" style="" onclick="javascript:void(0)" class="xshop-item col-md-3 col-sm-3 col-xl-3">
-  <li><a style="" href="?page=product-detail&amp;commerce_item_id={$id}" class="xshop-item-image-anchor"><img style="" src="{$file}" class="xshop-item-img"/></a></li>
+<ul data-xsnb-item-id="372" style="" onclick="javascript:void(0)" class="xshop-item col-lg-3 col-md-3">
+  <li><a style="" href="{$base_url}?page=product-detail&amp;commerce_item_id={$id}" class="xshop-item-image-anchor"><img style="" src="{$file}" class="xshop-item-img"/></a></li>
   <li style="" onclick="javascript:void(0)" class="xshop-item-short-description"></li>
   <li>
-    <div style="" onclick="$(this).univ().location(&quot;index.php?subpage=product-design&amp;commerce_design_item_id=372&quot;)" class="xshop-item-personalize">Personalize</div>
+    <div style="" onclick="$(this).univ().location(&quot;{$base_url}index.php?subpage=product-design&amp;commerce_design_item_id={$id}&quot;)" class="xshop-item-personalize">Personalize</div>
   </li>
   <li>{$name}</li>
 </ul>{/}{/}
