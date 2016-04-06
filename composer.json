@@ -19,8 +19,7 @@
     "xepan/accounts": "dev-master",
     "setasign/fpdf": "1.8.1",
     "nesbot/carbon": "^1.21",
-    "xepan/projects": "dev-master",
-    "ddeboer/imap": "^0.5.2"
+    "xepan/projects": "dev-master"
   },
   "autoload":{
     "psr-0":{

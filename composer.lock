@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c31e347163c3b93b880bc463d29fdecb",
-    "content-hash": "a9c7d6899e15914c850180a4cc44ffe3",
+    "hash": "f95822e51e1c4ba0fe25ef23b8ff0db2",
+    "content-hash": "535496da621296e59c402576c77df131",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -40,122 +40,6 @@
                 "framework"
             ],
             "time": "2015-03-16 16:27:31"
-        },
-        {
-            "name": "ddeboer/imap",
-            "version": "0.5.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ddeboer/imap.git",
-                "reference": "b1939740d62e427a8105312a3fb574deb62dcf68"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ddeboer/imap/zipball/b1939740d62e427a8105312a3fb574deb62dcf68",
-                "reference": "b1939740d62e427a8105312a3fb574deb62dcf68",
-                "shasum": ""
-            },
-            "require": {
-                "ddeboer/transcoder": "~1",
-                "ext-imap": "*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "ext-iconv": "*",
-                "ext-mbstring": "*",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Ddeboer\\Imap\\": "src/",
-                    "Ddeboer\\Imap\\Tests\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "David de Boer",
-                    "email": "david@ddeboer.nl"
-                },
-                {
-                    "name": "Community contributors",
-                    "homepage": "https://github.com/ddeboer/imap/graphs/contributors"
-                }
-            ],
-            "description": "Object-oriented IMAP for PHP",
-            "keywords": [
-                "email",
-                "imap",
-                "mail"
-            ],
-            "time": "2015-12-03 13:23:36"
-        },
-        {
-            "name": "ddeboer/transcoder",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ddeboer/transcoder.git",
-                "reference": "e56652fe3b97908def6f53d97498952bbf13a9f6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ddeboer/transcoder/zipball/e56652fe3b97908def6f53d97498952bbf13a9f6",
-                "reference": "e56652fe3b97908def6f53d97498952bbf13a9f6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "suggest": {
-                "ext-iconv": "For using the IconvTranscoder",
-                "ext-mbstring": "For using the MbTranscoder"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Ddeboer\\Transcoder\\": "src/",
-                    "Ddeboer\\Transcoder\\Tests\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "David de Boer",
-                    "email": "david@ddeboer.nl"
-                },
-                {
-                    "name": "Community contributors",
-                    "homepage": "https://github.com/ddeboer/transcoder/graphs/contributors"
-                }
-            ],
-            "description": "Better encoding conversion for PHP",
-            "keywords": [
-                "charset",
-                "encoding",
-                "iconv",
-                "iso",
-                "mb",
-                "mb_convert_encoding",
-                "multibyte",
-                "utf-8"
-            ],
-            "time": "2015-01-23 17:55:34"
         },
         {
             "name": "educoder/pest",
@@ -687,7 +571,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-04 07:11:22"
+            "time": "2016-04-06 04:04:48"
         },
         {
             "name": "xepan/base",
@@ -730,7 +614,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-04 06:06:47"
+            "time": "2016-04-05 10:40:24"
         },
         {
             "name": "xepan/cms",
@@ -776,7 +660,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-30 04:31:02"
+            "time": "2016-04-06 06:42:27"
         },
         {
             "name": "xepan/commerce",
@@ -823,7 +707,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-04 07:58:52"
+            "time": "2016-04-06 07:03:00"
         },
         {
             "name": "xepan/communication",
@@ -870,7 +754,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-04-04 14:42:49"
+            "time": "2016-04-06 07:43:02"
         },
         {
             "name": "xepan/crm",
@@ -917,7 +801,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-14 18:40:35"
+            "time": "2016-03-19 11:12:24"
         },
         {
             "name": "xepan/gd-text",
@@ -1038,7 +922,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-21 14:08:18"
+            "time": "2016-04-02 13:32:31"
         },
         {
             "name": "xepan/php-image",
@@ -1172,7 +1056,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-05 04:42:58"
+            "time": "2016-04-05 10:32:32"
         }
     ],
     "packages-dev": [],
