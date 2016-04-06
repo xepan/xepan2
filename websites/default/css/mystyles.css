@@ -506,7 +506,7 @@ border-radius: 0px !important;
 font-family:Lato !important;
 }
 
-.xshop-item-personalize{
+.xshop-item-personalize,.xshop-item-addtocart{
 background-image: url("epans/web/site_images/home_page/print_on_click_next_step%20copy%201.png");
 background-repeat: no-repeat;
 width:auto !important;

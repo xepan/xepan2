@@ -1,12 +1,19 @@
 
-<div id="{$_name}"></div>{$Content}
-{rows}{row}
-<ul data-xsnb-item-id="372" style="" onclick="javascript:void(0)" class="xshop-item col-lg-3 col-md-3">
-  <li><a style="" href="{$base_url}?page=product-detail&amp;commerce_item_id={$id}" class="xshop-item-image-anchor"><img style="" src="{$file}" class="xshop-item-img"/></a></li>
-  <li style="" onclick="javascript:void(0)" class="xshop-item-short-description"></li>
-  <li>
-    <div style="" onclick="$(this).univ().location(&quot;{$base_url}index.php?subpage=product-design&amp;commerce_design_item_id={$id}&quot;)" class="xshop-item-personalize">Personalize</div>
-  </li>
-  <li>{$name}</li>
-</ul>{/}{/}
-{$Paginator}
+<div id="{$_name}" style="{$style}" class="{$class} row">{rows}{row}
+  <ul data-xsnb-item-id="{$id}" onclick="javascript:void(0);" class="xshop-item col-lg-3 col-md-3">
+    <li><a href="{$item_detail_url}" class="xshop-item-image-anchor"><img src="{$first_image}" class="xshop-item-img full-width"/></a></li>{description_wrapper}
+    <li onclick="javascript:void(0)" class="xshop-item-short-description">{$description}</li>{/}
+    {name_wrapper}
+    <li>{$name}</li>{/}
+    {personalized_wrapper}
+    <li>
+      <div data-xsnbitemid="{$id}" class="xshop-item-personalize">{personalized_button_name}Personalize{/}</div>
+    </li>{/}
+    {addtocart_wrapper}
+    <li>
+      <div data-xsnbitemid="{$id}" data-name="{$name}" class="xshop-item-addtocart">{$Addtocart}</div>
+    </li>{/}
+  </ul>{/}{/}
+  {not_found}
+  <div role="alert" class="full-width alert alert-warning"><strong class="glyphicon glyphicon-warning-sign">&nbsp;Warning!<span>&nbsp;{$not_found_message}</span></strong></div>{/}
+</div>{$Paginator}
