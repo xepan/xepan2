@@ -2873,7 +2873,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-06 04:04:48"
+            "time": "2016-04-07 08:55:28"
         },
         {
             "name": "xepan/base",
@@ -2916,7 +2916,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-05 10:40:24"
+            "time": "2016-04-08 18:53:25"
         },
         {
             "name": "xepan/cms",
@@ -3009,7 +3009,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-10 01:38:15"
+            "time": "2016-04-07 08:55:09"
         },
         {
             "name": "xepan/communication",
@@ -3056,7 +3056,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-04-04 14:42:49"
+            "time": "2016-04-09 07:55:57"
         },
         {
             "name": "xepan/crm",
@@ -3103,7 +3103,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-19 11:12:24"
+            "time": "2016-04-08 11:54:23"
         },
         {
             "name": "xepan/gd-text",
@@ -3179,7 +3179,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-31 14:51:52"
+            "time": "2016-04-08 11:36:25"
         },
         {
             "name": "xepan/marketing",
@@ -3236,8 +3236,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/omnipay_ccavenue/zipball/1fe7db06401e61d9d67cd8de8269188f359d2c22",
-                "reference": "1fe7db06401e61d9d67cd8de8269188f359d2c22",
+                "url": "https://api.github.com/repos/xepan/omnipay_ccavenue/zipball/fa0f433ef185615fa81617a66daed453f45a9dbc",
+                "reference": "fa0f433ef185615fa81617a66daed453f45a9dbc",
                 "shasum": ""
             },
             "require": {
@@ -3246,8 +3246,8 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "autocomplete": "lib"
+                "psr-4": {
+                    "xepan\\omnipay_ccavenue\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3270,7 +3270,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-08 13:44:44"
+            "time": "2016-04-10 21:12:22"
         },
         {
             "name": "xepan/php-image",
@@ -3404,7 +3404,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-05 12:34:54"
+            "time": "2016-04-09 10:20:17"
         }
     ],
     "packages-dev": [],
