@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "46f55f7c4a0cea5ba923485b9ed63873",
-    "content-hash": "c995c560463becdb4e0242a9c48142c4",
+    "hash": "78b406b4b147cc566cdab7da99856cfe",
+    "content-hash": "8a09127332ee8ca0de065ae1b70c1e6a",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -175,16 +175,16 @@
         },
         {
             "name": "eden/mail",
-            "version": "4.x-dev",
+            "version": "v4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Eden-PHP/Mail.git",
-                "reference": "141eb79f705846917a8f94516a0d824ec737d5b9"
+                "reference": "a3e3086423431bcff46e41554a8fa39ac0c88212"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/Eden-PHP/Mail/zipball/a3e3086423431bcff46e41554a8fa39ac0c88212",
-                "reference": "141eb79f705846917a8f94516a0d824ec737d5b9",
+                "reference": "a3e3086423431bcff46e41554a8fa39ac0c88212",
                 "shasum": ""
             },
             "require": {
@@ -217,7 +217,7 @@
                 "eden",
                 "library"
             ],
-            "time": "2015-10-13 03:16:09"
+            "time": "2016-04-07 07:22:26"
         },
         {
             "name": "eden/path",
@@ -2919,6 +2919,57 @@
             "time": "2016-04-08 18:53:25"
         },
         {
+            "name": "xepan/ccavenue",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:xepan/ccavenue.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/ccavenue/zipball/a143f53beec0d11174f453af445452868342e0a1",
+                "reference": "a143f53beec0d11174f453af445452868342e0a1",
+                "shasum": ""
+            },
+            "require": {
+                "omnipay/omnipay": "~2.0",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Omnipay\\ccavenue\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "CC Avenue Payment Gateway for OmniPay ",
+            "homepage": "https://github.com/xepan/omnipay_ccavenue",
+            "keywords": [
+                "ERP",
+                "ccavenue",
+                "omnipay",
+                "paymentgateway",
+                "saas",
+                "xepan"
+            ],
+            "time": "2016-04-09 12:29:31"
+        },
+        {
             "name": "xepan/cms",
             "version": "dev-master",
             "source": {
@@ -3009,7 +3060,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-07 08:55:09"
+            "time": "2016-04-10 23:36:52"
         },
         {
             "name": "xepan/communication",
@@ -3227,27 +3278,87 @@
             "time": "2016-04-02 13:32:31"
         },
         {
-            "name": "xepan/omnipay_ccavenue",
+            "name": "xepan/omnipay",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:xepan/omnipay_ccavenue.git",
-                "reference": "origin/master"
+                "url": "https://github.com/xepan/omnipay.git",
+                "reference": "432305c2f37f27f792b4c286681c7e0d4c40325b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/omnipay_ccavenue/zipball/fa0f433ef185615fa81617a66daed453f45a9dbc",
-                "reference": "fa0f433ef185615fa81617a66daed453f45a9dbc",
+                "url": "https://api.github.com/repos/xepan/omnipay/zipball/432305c2f37f27f792b4c286681c7e0d4c40325b",
+                "reference": "432305c2f37f27f792b4c286681c7e0d4c40325b",
                 "shasum": ""
             },
             "require": {
-                "omnipay/omnipay": "~2.0",
-                "php": ">=5.3"
+                "omnipay/2checkout": "~2.0",
+                "omnipay/authorizenet": "~2.0",
+                "omnipay/buckaroo": "~2.0",
+                "omnipay/cardsave": "~2.0",
+                "omnipay/coinbase": "~2.0",
+                "omnipay/common": "~2.3",
+                "omnipay/dummy": "~2.0",
+                "omnipay/eway": "~2.0",
+                "omnipay/firstdata": "~2.0",
+                "omnipay/gocardless": "~2.0",
+                "omnipay/manual": "~2.0",
+                "omnipay/migs": "~2.0",
+                "omnipay/mollie": "~3.0",
+                "omnipay/multisafepay": "~2.0",
+                "omnipay/netaxept": "~2.0",
+                "omnipay/netbanx": "~2.0",
+                "omnipay/payfast": "~2.0",
+                "omnipay/payflow": "~2.0",
+                "omnipay/paymentexpress": "~2.0",
+                "omnipay/paypal": "~2.0",
+                "omnipay/pin": "~2.0",
+                "omnipay/sagepay": "~2.0",
+                "omnipay/securepay": "~2.0",
+                "omnipay/stripe": "~2.0",
+                "omnipay/targetpay": "~2.0",
+                "omnipay/worldpay": "~2.0",
+                "xepan/ccavenue": "dev-master"
             },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "xepan\\omnipay_ccavenue\\": "src/"
+            "require-dev": {
+                "omnipay/tests": "~2.0"
+            },
+            "suggest": {
+                "academe/omnipay-helcim": "Helcim",
+                "agmscode/omnipay-agms": "Agms",
+                "alfaproject/omnipay-neteller": "Neteller",
+                "alfaproject/omnipay-skrill": "Skrill",
+                "andreas22/omnipay-fasapay": "Fasapay",
+                "andylibrian/omnipay-veritrans": "Veritrans",
+                "cardgate/omnipay-cardgate": "CardGate",
+                "coatesap/omnipay-datacash": "DataCash",
+                "coatesap/omnipay-paymentsense": "PaymentSense",
+                "coatesap/omnipay-realex": "Realex",
+                "dabsquared/omnipay-cybersource-soap": "Cybersource SOAP",
+                "delatbabel/omnipay-fatzebra": "Fat Zebra",
+                "dercoder/omnipay-ecopayz": "ecoPayz",
+                "dercoder/omnipay-globalcloudpay": "Globalcloudpay",
+                "descubraomundo/omnipay-pagarme": "Pagar.me",
+                "dioscouri/omnipay-cybersource": "Cybersource",
+                "fotografde/omnipay-checkoutcom": "Checkout.com",
+                "fruitcakestudio/omnipay-sisow": "Sisow",
+                "igaponov/omnipay-wirecard": "Wirecard",
+                "justinbusschau/omnipay-secpay": "SecPay",
+                "lokielse/omnipay-alipay": "Alipay",
+                "lokielse/omnipay-global-alipay": "Global Alipay",
+                "lokielse/omnipay-unionpay": "UnionPay",
+                "lokielse/omnipay-wechatpay": "WechatPay",
+                "mfauveau/omnipay-nmi": "Network Merchants Inc. (NMI)",
+                "mfauveau/omnipay-pacnet": "Pacnet",
+                "omnipay/payu": "PayU",
+                "paypronl/omnipay-paypro": "PayPro",
+                "samvaughton/omnipay-barclays-epdq": "Barclays ePDQ",
+                "teaandcode/omnipay-worldpay-xml": "WorldPay XML Direct"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3256,21 +3367,69 @@
             ],
             "authors": [
                 {
-                    "name": "Xavoc Technocrats Pvt. Ltd.",
-                    "email": "info@xavoc.com"
+                    "name": "Adrian Macneil",
+                    "email": "adrian@adrianmacneil.com"
+                },
+                {
+                    "name": "Kayla Daniels",
+                    "email": "kayladnls@gmail.com"
+                },
+                {
+                    "name": "Omnipay Community",
+                    "homepage": "https://github.com/thephpleague/omnipay/graphs/contributors"
                 }
             ],
-            "description": "CC Avenue Payment Gateway for OmniPay ",
-            "homepage": "https://github.com/xepan/omnipay_ccavenue",
+            "description": "Includes Omnipay payment processing library and all officially supported gateways",
+            "homepage": "https://github.com/thephpleague/omnipay",
             "keywords": [
-                "ERP",
+                "2checkout",
+                "2co",
+                "auth.net",
+                "authorize",
+                "authorize.net",
+                "buckaroo",
+                "cardsave",
                 "ccavenue",
-                "omnipay",
-                "paymentgateway",
-                "saas",
-                "xepan"
+                "checkoutcom",
+                "coinbase",
+                "commweb",
+                "cybersource",
+                "dps",
+                "egate",
+                "eway",
+                "express",
+                "first data",
+                "firstdata",
+                "gateway",
+                "gocardless",
+                "ideal",
+                "merchant",
+                "migs",
+                "mollie",
+                "multisafepay",
+                "netaxept",
+                "netbanx",
+                "pagarme",
+                "pay",
+                "payfast",
+                "payflow",
+                "payment",
+                "paymentexpress",
+                "paypal",
+                "payu",
+                "pin",
+                "purchase",
+                "rapid",
+                "sagepay",
+                "securepay",
+                "stripe",
+                "tala",
+                "tala-payments",
+                "targetpay",
+                "twocheckout",
+                "worldpay"
             ],
-            "time": "2016-04-10 21:12:22"
+            "time": "2016-04-09 12:12:49"
         },
         {
             "name": "xepan/php-image",
@@ -3404,7 +3563,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-09 10:20:17"
+            "time": "2016-04-09 11:17:46"
         }
     ],
     "packages-dev": [],
@@ -3423,7 +3582,7 @@
         "xepan/php-image": 20,
         "xepan/accounts": 20,
         "xepan/projects": 20,
-        "xepan/omnipay_ccavenue": 20
+        "xepan/omnipay": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
