@@ -1,13 +1,34 @@
-div(id='{$_name}')
-{$Content}
-{rows}{row}
-ul.xshop-item.col-lg-3.col-md-3(data-xsnb-item-id='372', style='', onclick='javascript:void(0)')
-  li
-    a.xshop-item-image-anchor(style='', href='{$base_url}?page=product-detail&commerce_item_id={$id}')
-      img.xshop-item-img(style='', src='{$file}')
-  li.xshop-item-short-description(style='', onclick='javascript:void(0)')
-  li
-    .xshop-item-personalize(style='', onclick='$(this).univ().location("{$base_url}index.php?subpage=product-design&commerce_design_item_id={$id}")') Personalize
-  li {$name}
-{/}{/}
+div(id='{$_name}' class="{$class} row" style="{$style}")
+	{rows}{row}
+	ul.xshop-item.col-lg-3.col-md-3(data-xsnb-item-id='{$id}', onclick='javascript:void(0);')
+		li
+			a.xshop-item-image-anchor(href='{$item_detail_url}')
+				img.xshop-item-img.full-width(src='{$first_image}')
+		{description_wrapper}
+		li.xshop-item-short-description(onclick='javascript:void(0)')
+			{$description}
+		{/}
+		{name_wrapper}
+		li {$name}
+		{/}
+		{sale_price_wrapper}
+		li.xepan-commerce-tool-item-sale-price {$sale_price}
+		{/}
+		{original_price_wrapper}
+		li.xepan-commerce-tool-item-original-price {$original_price}
+		{/}
+		{personalized_wrapper}
+		li
+			.xshop-item-personalize(data-xsnbitemid="{$id}") {personalized_button_name}Personalize{/}
+		{/}
+		{addtocart_wrapper}
+		li
+			.xshop-item-addtocart(data-xsnbitemid="{$id}" data-name="{$name}"){$Addtocart}
+		{/}
+	{/}{/}
+	{not_found}
+	div.full-width.alert.alert-warning(role="alert")
+		strong.glyphicon.glyphicon-warning-sign &nbsp;Warning!
+			span &nbsp;{$not_found_message}
+	{/}
 {$Paginator}
