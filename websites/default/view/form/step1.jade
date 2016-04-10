@@ -1,0 +1,60 @@
+{$Content}
+form.atk-form(id="{$_name}" action="#")
+  .atk-cells.atk-cells-justified.atk-cells-gutter.atk-push
+  .row
+      .col-6
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span Billing Address
+          .atk-form-row.atk-form-field {$billing_address}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span City
+          .atk-form-row.atk-form-field {$billing_city}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span State
+          .atk-form-row.atk-form-field {$billing_state}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span Country
+          .atk-form-row.atk-form-field {$billing_country}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span Pin Code
+          .atk-form-row.atk-form-field {$billing_pincode}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span Mobile No
+          .atk-form-row.atk-form-field {$billing_contact}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span Email
+          .atk-form-row.atk-form-field {$billing_email}
+      .col-6
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span Shipping Address
+          .atk-form-row.atk-form-field {$shipping_address}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span City
+          .atk-form-row.atk-form-field {$shipping_city}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span State
+          .atk-form-row.atk-form-field {$shipping_state}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span Country
+          .atk-form-row.atk-form-field {$shipping_country}
+
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span Pin Code
+          .atk-form-row.atk-form-field {$shipping_pincode}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span Mobile No
+          .atk-form-row.atk-form-field {$shipping_contact}
+          .atk-cell.atk-form-label.atk-text-nowrap
+              span Email
+          .atk-form-row.atk-form-field {$shipping_email}
+  .row
+    .col-12
+      .atk-form-row.atk-form-field.atk-align-center{$copy_address}
+  .row
+    .col-12
+          .atk-cell.atk-form-label.atk-text-nowrap
+            //- span.atk-text-bold I Have Read All trems & Conditions
+    .atk-form-row.atk-form-field {$i_read}
+  .row
+    .col-6
+      .atk-actions(class="{$buttons_class}"){$FormButtons}
