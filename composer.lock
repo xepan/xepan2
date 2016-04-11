@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "78b406b4b147cc566cdab7da99856cfe",
+    "hash": "d73c7d1ae78c1f1051b23eb35037b95c",
     "content-hash": "8a09127332ee8ca0de065ae1b70c1e6a",
     "packages": [
         {
@@ -538,17 +538,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/mail.git",
-                "reference": "e53945342a4c765b91a7e3950e554e1c3d702f08"
+                "reference": "9e4037f8b4265024831c361a668da4236d9c7466"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/mail/zipball/e53945342a4c765b91a7e3950e554e1c3d702f08",
-                "reference": "e53945342a4c765b91a7e3950e554e1c3d702f08",
+                "url": "https://api.github.com/repos/nette/mail/zipball/9e4037f8b4265024831c361a668da4236d9c7466",
+                "reference": "9e4037f8b4265024831c361a668da4236d9c7466",
                 "shasum": ""
             },
             "require": {
                 "ext-iconv": "*",
-                "nette/utils": "~2.2",
+                "nette/utils": "~2.4",
                 "php": ">=5.6.0"
             },
             "conflict": {
@@ -591,7 +591,7 @@
             ],
             "description": "Nette Mail: Sending E-mails",
             "homepage": "https://nette.org",
-            "time": "2016-03-15 19:56:26"
+            "time": "2016-04-11 00:26:47"
         },
         {
             "name": "nette/utils",
@@ -599,12 +599,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "cf3bb5e487e57776103828d6b5ad2a446fcdf17d"
+                "reference": "dc666cb3cfc5917eb2daf095e5df5bf312a7b433"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/cf3bb5e487e57776103828d6b5ad2a446fcdf17d",
-                "reference": "cf3bb5e487e57776103828d6b5ad2a446fcdf17d",
+                "url": "https://api.github.com/repos/nette/utils/zipball/dc666cb3cfc5917eb2daf095e5df5bf312a7b433",
+                "reference": "dc666cb3cfc5917eb2daf095e5df5bf312a7b433",
                 "shasum": ""
             },
             "require": {
@@ -652,7 +652,7 @@
             ],
             "description": "Nette Utility Classes",
             "homepage": "https://nette.org",
-            "time": "2016-04-01 20:08:37"
+            "time": "2016-04-11 00:12:08"
         },
         {
             "name": "omnipay/2checkout",
@@ -946,16 +946,16 @@
         },
         {
             "name": "omnipay/common",
-            "version": "v2.3.4",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/omnipay-common.git",
-                "reference": "fcd5a606713d11536c89315a5ae02d965a737c21"
+                "reference": "550138529e850143af7a87eab8cfe16e72a2f768"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay-common/zipball/fcd5a606713d11536c89315a5ae02d965a737c21",
-                "reference": "fcd5a606713d11536c89315a5ae02d965a737c21",
+                "url": "https://api.github.com/repos/thephpleague/omnipay-common/zipball/550138529e850143af7a87eab8cfe16e72a2f768",
+                "reference": "550138529e850143af7a87eab8cfe16e72a2f768",
                 "shasum": ""
             },
             "require": {
@@ -974,7 +974,6 @@
                 "gateways": [
                     "AuthorizeNet_AIM",
                     "AuthorizeNet_SIM",
-                    "Buckaroo",
                     "Buckaroo_Ideal",
                     "Buckaroo_PayPal",
                     "CardSave",
@@ -1004,26 +1003,7 @@
                     "TargetPay_Directebanking",
                     "TargetPay_Ideal",
                     "TargetPay_Mrcash",
-                    "TwoCheckout",
-                    "WorldPay",
-                    "Alipay Bank",
-                    "AliPay Dual Func",
-                    "Alipay Express",
-                    "Alipay Mobile Express",
-                    "Alipay Secured",
-                    "Alipay Wap Express",
-                    "Cybersource",
-                    "DataCash",
-                    "Ecopayz",
-                    "Neteller",
-                    "Pacnet",
-                    "PaymentSense",
-                    "Realex Remote",
-                    "SecPay (PayPoint.net)",
-                    "Sisow",
-                    "Skrill",
-                    "YandexMoney",
-                    "YandexMoneyIndividual"
+                    "WorldPay"
                 ]
             },
             "autoload": {
@@ -1058,7 +1038,7 @@
                 "payment",
                 "purchase"
             ],
-            "time": "2015-03-30 14:34:46"
+            "time": "2016-03-10 03:03:17"
         },
         {
             "name": "omnipay/dummy",
@@ -1633,118 +1613,6 @@
                 "payment"
             ],
             "time": "2014-09-17 00:38:46"
-        },
-        {
-            "name": "omnipay/omnipay",
-            "version": "2.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/omnipay.git",
-                "reference": "e9e6d95a2e7c3641ba31c985334d82e39dbd6078"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay/zipball/e9e6d95a2e7c3641ba31c985334d82e39dbd6078",
-                "reference": "e9e6d95a2e7c3641ba31c985334d82e39dbd6078",
-                "shasum": ""
-            },
-            "require": {
-                "omnipay/2checkout": "~2.0",
-                "omnipay/authorizenet": "~2.0",
-                "omnipay/buckaroo": "~2.0",
-                "omnipay/cardsave": "~2.0",
-                "omnipay/coinbase": "~2.0",
-                "omnipay/common": "~2.3.0",
-                "omnipay/dummy": "~2.0",
-                "omnipay/eway": "~2.0",
-                "omnipay/firstdata": "~2.0",
-                "omnipay/gocardless": "~2.0",
-                "omnipay/manual": "~2.0",
-                "omnipay/migs": "~2.0",
-                "omnipay/mollie": "~3.0",
-                "omnipay/multisafepay": "~2.0",
-                "omnipay/netaxept": "~2.0",
-                "omnipay/netbanx": "~2.0",
-                "omnipay/payfast": "~2.0",
-                "omnipay/payflow": "~2.0",
-                "omnipay/paymentexpress": "~2.0",
-                "omnipay/paypal": "~2.0",
-                "omnipay/pin": "~2.0",
-                "omnipay/sagepay": "~2.0",
-                "omnipay/securepay": "~2.0",
-                "omnipay/stripe": "~2.0",
-                "omnipay/targetpay": "~2.0",
-                "omnipay/worldpay": "~2.0"
-            },
-            "require-dev": {
-                "omnipay/tests": "~2.0"
-            },
-            "type": "metapackage",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adrian Macneil",
-                    "email": "adrian@adrianmacneil.com"
-                },
-                {
-                    "name": "Omnipay Community",
-                    "homepage": "https://github.com/thephpleague/omnipay/graphs/contributors"
-                }
-            ],
-            "description": "Includes Omnipay payment processing library and all officially supported gateways",
-            "homepage": "https://github.com/thephpleague/omnipay",
-            "keywords": [
-                "2checkout",
-                "2co",
-                "auth.net",
-                "authorize",
-                "authorize.net",
-                "buckaroo",
-                "cardsave",
-                "coinbase",
-                "commweb",
-                "dps",
-                "egate",
-                "eway",
-                "express",
-                "first data",
-                "firstdata",
-                "gateway",
-                "gocardless",
-                "ideal",
-                "merchant",
-                "migs",
-                "mollie",
-                "multisafepay",
-                "netaxept",
-                "netbanx",
-                "pay",
-                "payfast",
-                "payflow",
-                "payment",
-                "paymentexpress",
-                "paypal",
-                "pin",
-                "purchase",
-                "rapid",
-                "sagepay",
-                "securepay",
-                "stripe",
-                "tala",
-                "tala-payments",
-                "targetpay",
-                "twocheckout",
-                "worldpay"
-            ],
-            "time": "2014-12-10 13:55:00"
         },
         {
             "name": "omnipay/payfast",
@@ -2873,7 +2741,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-07 08:55:28"
+            "time": "2016-04-06 04:04:48"
         },
         {
             "name": "xepan/base",
@@ -2916,7 +2784,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-08 18:53:25"
+            "time": "2016-04-10 18:20:27"
         },
         {
             "name": "xepan/ccavenue",
@@ -2928,12 +2796,12 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/ccavenue/zipball/a143f53beec0d11174f453af445452868342e0a1",
-                "reference": "a143f53beec0d11174f453af445452868342e0a1",
+                "url": "https://api.github.com/repos/xepan/ccavenue/zipball/1aba94dd3f1187b4e260bbe001427377d8a7f3d6",
+                "reference": "1aba94dd3f1187b4e260bbe001427377d8a7f3d6",
                 "shasum": ""
             },
             "require": {
-                "omnipay/omnipay": "~2.0",
+                "omnipay/common": "~2.0",
                 "php": ">=5.3"
             },
             "type": "library",
@@ -2944,7 +2812,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Omnipay\\ccavenue\\": "src/"
+                    "Omnipay\\CCAvenue\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2967,7 +2835,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-09 12:29:31"
+            "time": "2016-04-09 17:11:53"
         },
         {
             "name": "xepan/cms",
@@ -3013,7 +2881,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-07 13:15:40"
+            "time": "2016-04-09 17:13:12"
         },
         {
             "name": "xepan/commerce",
@@ -3060,7 +2928,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-10 23:36:52"
+            "time": "2016-04-11 02:30:26"
         },
         {
             "name": "xepan/communication",
@@ -3107,7 +2975,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-04-09 07:55:57"
+            "time": "2016-04-04 14:42:49"
         },
         {
             "name": "xepan/crm",
@@ -3154,7 +3022,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-08 11:54:23"
+            "time": "2016-03-19 11:12:24"
         },
         {
             "name": "xepan/gd-text",
@@ -3230,7 +3098,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-08 11:36:25"
+            "time": "2016-03-31 14:51:52"
         },
         {
             "name": "xepan/marketing",
@@ -3563,7 +3431,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-09 11:17:46"
+            "time": "2016-04-05 12:34:54"
         }
     ],
     "packages-dev": [],
