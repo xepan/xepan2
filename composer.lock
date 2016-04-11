@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d73c7d1ae78c1f1051b23eb35037b95c",
-    "content-hash": "8a09127332ee8ca0de065ae1b70c1e6a",
+    "hash": "a85237829dfe260932553dffa1950302",
+    "content-hash": "984ccb3150f2fc55887c2f0ad9ca7c02",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -40,271 +40,6 @@
                 "framework"
             ],
             "time": "2015-03-16 16:27:31"
-        },
-        {
-            "name": "eden/array",
-            "version": "4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Eden-PHP/Array.git",
-                "reference": "6d65e0def5b1d353bb43a97f300dd706b483cd0a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Eden-PHP/Array/zipball/6d65e0def5b1d353bb43a97f300dd706b483cd0a",
-                "reference": "6d65e0def5b1d353bb43a97f300dd706b483cd0a",
-                "shasum": ""
-            },
-            "require": {
-                "eden/core": "4.*",
-                "eden/string": "4.*",
-                "php": ">=5.4.1"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Blanquera",
-                    "email": "cblanquera@openovate.com"
-                }
-            ],
-            "description": "Autoloading, error and exception handler",
-            "homepage": "http://eden-php.com",
-            "keywords": [
-                "eden",
-                "library"
-            ],
-            "time": "2015-11-09 05:50:52"
-        },
-        {
-            "name": "eden/core",
-            "version": "4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Eden-PHP/Core.git",
-                "reference": "40ae91a6a988a77ad8c143512b4538b86110e7c4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Eden-PHP/Core/zipball/40ae91a6a988a77ad8c143512b4538b86110e7c4",
-                "reference": "40ae91a6a988a77ad8c143512b4538b86110e7c4",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Eden\\Core\\": "src/"
-                },
-                "classmap": [
-                    "src/Decorator.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Blanquera",
-                    "email": "cblanquera@openovate.com"
-                }
-            ],
-            "description": "Eden Core component full of secret sauce",
-            "homepage": "http://eden-php.com",
-            "keywords": [
-                "eden",
-                "library"
-            ],
-            "time": "2015-11-17 05:14:38"
-        },
-        {
-            "name": "eden/file",
-            "version": "4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Eden-PHP/File.git",
-                "reference": "c38e1e52154d10fbd6c905ae27a0b6a843189536"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Eden-PHP/File/zipball/c38e1e52154d10fbd6c905ae27a0b6a843189536",
-                "reference": "c38e1e52154d10fbd6c905ae27a0b6a843189536",
-                "shasum": ""
-            },
-            "require": {
-                "eden/array": "4.*",
-                "eden/core": "4.*",
-                "eden/path": "4.*",
-                "eden/string": "4.*",
-                "php": ">=5.4.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Eden\\File\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Blanquera",
-                    "email": "cblanquera@openovate.com"
-                }
-            ],
-            "description": "File methods",
-            "homepage": "http://eden-php.com",
-            "keywords": [
-                "eden",
-                "library"
-            ],
-            "time": "2015-11-13 10:09:45"
-        },
-        {
-            "name": "eden/mail",
-            "version": "v4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Eden-PHP/Mail.git",
-                "reference": "a3e3086423431bcff46e41554a8fa39ac0c88212"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Eden-PHP/Mail/zipball/a3e3086423431bcff46e41554a8fa39ac0c88212",
-                "reference": "a3e3086423431bcff46e41554a8fa39ac0c88212",
-                "shasum": ""
-            },
-            "require": {
-                "eden/array": "4.*",
-                "eden/core": "4.*",
-                "eden/file": "4.*",
-                "eden/path": "4.*",
-                "eden/string": "4.*",
-                "php": ">=5.4.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Eden\\Mail\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Blanquera",
-                    "email": "cblanquera@openovate.com"
-                }
-            ],
-            "description": "Eden POP3, IMAP and SMTP component",
-            "homepage": "http://eden-php.com",
-            "keywords": [
-                "eden",
-                "library"
-            ],
-            "time": "2016-04-07 07:22:26"
-        },
-        {
-            "name": "eden/path",
-            "version": "4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Eden-PHP/Path.git",
-                "reference": "c702d7b158db21968e3dc9af6c873a9adb7d574e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Eden-PHP/Path/zipball/c702d7b158db21968e3dc9af6c873a9adb7d574e",
-                "reference": "c702d7b158db21968e3dc9af6c873a9adb7d574e",
-                "shasum": ""
-            },
-            "require": {
-                "eden/array": "4.*",
-                "eden/core": "4.*",
-                "eden/string": "4.*",
-                "php": ">=5.4.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Eden\\Path\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Blanquera",
-                    "email": "cblanquera@openovate.com"
-                }
-            ],
-            "description": "Path resolver",
-            "homepage": "http://eden-php.com",
-            "keywords": [
-                "eden",
-                "library"
-            ],
-            "time": "2015-11-13 10:10:18"
-        },
-        {
-            "name": "eden/string",
-            "version": "4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Eden-PHP/String.git",
-                "reference": "f66e4067bab689a4be984e53ff9804ebd699d955"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Eden-PHP/String/zipball/f66e4067bab689a4be984e53ff9804ebd699d955",
-                "reference": "f66e4067bab689a4be984e53ff9804ebd699d955",
-                "shasum": ""
-            },
-            "require": {
-                "eden/array": "4.*",
-                "eden/core": "4.*",
-                "php": ">=5.4.1"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Blanquera",
-                    "email": "cblanquera@openovate.com"
-                }
-            ],
-            "description": "Autoloading, error and exception handler",
-            "homepage": "http://eden-php.com",
-            "keywords": [
-                "eden",
-                "library"
-            ],
-            "time": "2015-11-09 05:51:42"
         },
         {
             "name": "educoder/pest",
@@ -2741,7 +2476,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-06 04:04:48"
+            "time": "2016-04-07 08:55:28"
         },
         {
             "name": "xepan/base",
@@ -2784,7 +2519,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-10 18:20:27"
+            "time": "2016-04-08 18:53:25"
         },
         {
             "name": "xepan/ccavenue",
@@ -2881,7 +2616,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-09 17:13:12"
+            "time": "2016-04-07 13:15:40"
         },
         {
             "name": "xepan/commerce",
@@ -2928,7 +2663,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-11 02:30:26"
+            "time": "2016-04-11 03:09:29"
         },
         {
             "name": "xepan/communication",
@@ -2975,7 +2710,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-04-04 14:42:49"
+            "time": "2016-04-09 13:33:06"
         },
         {
             "name": "xepan/crm",
@@ -3022,7 +2757,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-19 11:12:24"
+            "time": "2016-04-08 11:54:23"
         },
         {
             "name": "xepan/gd-text",
@@ -3098,7 +2833,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-03-31 14:51:52"
+            "time": "2016-04-11 03:04:06"
         },
         {
             "name": "xepan/marketing",
@@ -3431,7 +3166,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-05 12:34:54"
+            "time": "2016-04-11 03:05:20"
         }
     ],
     "packages-dev": [],
