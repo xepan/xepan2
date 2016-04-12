@@ -21,7 +21,7 @@
     "setasign/fpdf": "1.8.1",
     "nesbot/carbon": "^1.21",
     "xepan/projects": "dev-master",
-    "xepan/omnipay": "dev-master"
+    "xepan/omnipay":"dev-master"
   },
   "autoload":{
     "psr-0":{
