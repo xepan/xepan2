@@ -9,7 +9,8 @@ div(id='{$_name}' class="{$class} row" style="{$style}")
 			{$description}
 		{/}
 		{name_wrapper}
-		li {$name}
+		li 
+			a(href='{url}?page=product-detail&commerce_item_id={$id}{/}'){$name}
 		{/}
 		{sale_price_wrapper}
 		li.xepan-commerce-tool-item-sale-price {$sale_price}

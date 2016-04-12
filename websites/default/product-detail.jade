@@ -4,8 +4,15 @@ div.container.width-90
 		div.col-lg-4
 			h1 
 			span Item Images
-			div.xepan-component(xepan-component="xepan\\commerce\\Tool_ItemImage" )
+			div.xepan-component(xepan-component="xepan\\commerce\\Tool_ItemImage")
 		div.col-lg-8
 			h2 
 			span Item Description
-			div.xepan-component(xepan-component="xepan\\commerce\\Tool_ItemDetail" )
+			div.xepan-component(xepan-component="xepan\\commerce\\Tool_Detail" layout="detail"
+			show_name="true" show_description="true"
+			personalized_button_name='Presonalized'
+			show_customfield="true"
+			show_qtyform="true"
+			show_addtocart="true"
+            addtocart_name="Add To Cart"
+            addtocart="yes")
