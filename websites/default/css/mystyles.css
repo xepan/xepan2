@@ -833,3 +833,11 @@ ul.xshop-item{
 .xepan-commerce-tool-cart ul.dropdown-cart li .item-right button{
     margin-top:14px;
 }
+
+.reset-margin{
+  margin: 0px;
+}
+
+.reset-padding{
+  padding:0px;
+}
