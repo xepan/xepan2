@@ -1,5 +1,5 @@
 .p-manubar{
- margin-bottom: 55px !important;
+ margin-bottom: 0px !important;
 }
 .temp-content{
    min-height:500px !important;
@@ -840,4 +840,8 @@ ul.xshop-item{
 
 .reset-padding{
   padding:0px;
+}
+
+.xepan-commerce-tool-cart ol,ul{
+  margin-bottom: 0px;
 }
