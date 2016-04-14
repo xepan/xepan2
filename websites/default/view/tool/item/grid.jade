@@ -18,9 +18,10 @@ div(id='{$_name}' class="{$class} row" style="{$style}")
 		{original_price_wrapper}
 		li.xepan-commerce-tool-item-original-price {$original_price}
 		{/}
-		{personalized_wrapper}
+		{personalizedbtn_wrapper}
 		li
-			.xshop-item-personalize(data-xsnbitemid="{$id}") {personalized_button_name}Personalize{/}
+			.xshop-item-personalize(data-xsnbitemid="{$id}")
+				{$personalizedbtn}
 		{/}
 		{addtocart_wrapper}
 		li
