@@ -58,17 +58,17 @@
                 </div>
                 <div class="col-md-2 userpanel">
                     <div style="padding-right: 10px; background-image: url('image/icon/print_on_click_signin_icon.png'); background-repeat: no-repeat;background-position:right;background-position:right">
-                    Login
+                    <a href="../../?page=login">Login</a>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div style="padding-right: 10px; background-image: url(image/icon/print_on_click_cart_icon.png); background-repeat: no-repeat;background-position:right" class="xcart-icon p-icon-right" class=" xshop-cart">
-                    Cart Detail
+                        <div class="xepan-component" xepan-component="xepan\commerce\Tool_Cart" layout="short_cart" cart-detail-url="yourcart">Tool_Cart</div>
                     </div>
                 </div>
                 <div class="col-md-2 myaccount">
                     <div style="width: auto; max-width: 100%; background-image: url('image/icon/print_on_click_my_account_icon.png'); background-repeat: no-repeat; background-position: right center; color: rgb(0, 0, 0);" class="editor epan-component editor-attached p-icon-right pull-right p-icon-account">
-                    <a href="?subpage=myaccount" style="text-decoration:none;" title="View Your Account">  My Account </a>
+                    <a href="../../?page=member-account" style="text-decoration:none;" title="View Your Account">  My Account </a>
                     </div>
                 </div>
             </div>
@@ -81,9 +81,19 @@
                 
             </div>
             <div class="col-md-4 p-search">
-                <input >
+                <div class="xepan-component" xepan-component="xepan\commerce\Tool_Search">
+                    </div>
             </div>
         </div>
+        <div class="full-width atk-swatch-ink p-manubar">
+            <div style="width: 88%; margin-right: auto; margin-left: auto;">
+                <div class="xshop-category-main-container">
+                    <div class="xepan-component" xepan-component="xepan\commerce\Tool_Category" show_description="false">
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
 </header>
 {$Content}
 <footer class="footer"style="color:white">
