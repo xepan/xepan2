@@ -20,7 +20,8 @@
     "nesbot/carbon": "^1.21",
     "xepan/projects": "dev-master",
     "xepan/omnipay":"dev-master",
-    "xepan/mail": "^2.3"
+    "xepan/mail": "^2.3",
+    "codeception/codeception": "^2.1"
   },
   "autoload":{
     "psr-0":{

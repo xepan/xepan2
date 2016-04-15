@@ -24,3 +24,5 @@ assets/*
 /cube
 *.mwb
 /upload/*
+tests/_output/*
+tests
