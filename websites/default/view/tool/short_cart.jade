@@ -1,37 +1,41 @@
-.xepan-commerce-tool-cart(id='{$_name}', class='{$class}')
+x.xepan-commerce-tool-cart(id='{$_name}', class='{$class}')
   ul
     li.dropdown.reset-margin.text-center(style="padding:0px;margin:0px;")
       a.dropdown-toggle.reset-margin(href='#', data-toggle='dropdown', role='button', aria-expanded='false' style="padding:0px;margin:0px;")
         span.xepan-commerce-cart-item-count  {$total_count}
         |  - Items
         span.caret
-      ul.dropdown-menu.dropdown-cart(role='menu')
+      ul.dropdown-menu.dropdown-cart(role='menu',style='width:300px')
         | {lister}
         | {rows}{row}
         li(id='item-{$id}' class="xepan-commerce-tool-cart-item-row")
           span.item
-            span.item-left
-              img(src='http://lorempixel.com/50/50/', alt='')
-              span.item-info
-                span {$name}{$item_code}
-                span qty:{$qty} amount{$sales_amount}
             span.item-right
               button.btn.btn-xs.btn-danger.pull-right.xepan-commerce-cart-item-delete(data-cartid='{$id}') x
+            span.item-left
+              img(src='http://lorempixel.com/50/50/', alt='')
+            span {$name}
+              span {$item_code}
+              span qty:{$qty}
+              span.text-center amount{$sales_amount}
         |           {/}{/}
         |           {/lister}
         li.divider
         |               {sum_amount_excluding_tax_wrapper}
-        li Sum Amount₹ {sum_amount_excluding_tax}amt_excluding_tax_here{/}
+        .row
+          li Sum Amount
+            .text-right ₹{sum_amount_excluding_tax}amt_excluding_tax_here{/}
         |               {/}
         |               {shipping_charge_wrapper}
-        li ₹ {$shipping_charge}
+        li.text-right ₹ {$shipping_charge}
         |               {/}
         |               {tax_amount_wrapper}
-        li ₹ {tax_amount}tax_amount{/}
+        li.text-right ₹ {tax_amount}tax_amount{/}
         li
           | {/}
           | {total_amount_wrapper}
-        li Total Amount:₹ {total_amount}total_amount{/} 
+        li Total Amount:
+          li.text-right ₹ {total_amount}total_amount{/} 
         |               {/}
         li
           a.text-center(href="{$cart_detail_url}") View Cart
