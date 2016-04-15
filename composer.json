@@ -12,7 +12,6 @@
     "xepan/communication": "dev-master",
     "xepan/crm": "dev-master",
     "xepan/cms": "dev-master",
-    "nette/mail": "^2.3",
     "xepan/gd-text" : "v1.0.0.x-dev",
     "tecnickcom/tcpdf": "^6.2",
     "xepan/php-image": "dev-master",
@@ -20,7 +19,8 @@
     "setasign/fpdf": "1.8.1",
     "nesbot/carbon": "^1.21",
     "xepan/projects": "dev-master",
-    "xepan/omnipay":"dev-master"
+    "xepan/omnipay":"dev-master",
+    "xepan/mail": "^2.3"
   },
   "autoload":{
     "psr-0":{
