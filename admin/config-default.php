@@ -8,3 +8,5 @@ $config['locale']['date_js'] = 'dd/mm/yyyy';
 $config['tmail']['transport'] = 'Echo';
 // $config['js']['versions']['jqueryui']='1.11.master';
 // $config['js']['versions']['jquery']='';
+
+$config['developer_mode'] = true;
