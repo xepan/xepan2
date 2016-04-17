@@ -6,6 +6,8 @@ class Admin extends App_Frontend {
 
     public $is_frontend= false;
     public $is_admin= true;
+    public $xepan_addons = [];
+    public $xepan_app_initiators=[];
 
     function init() {
         parent::init();
@@ -25,11 +27,11 @@ class Admin extends App_Frontend {
         
         
         // Should come from any local DB store
-        $addons = ['xepan\\base','xepan\\communication','xepan\\hr','xepan\\projects','xepan\\marketing','xepan\\accounts','xepan\\commerce','xepan\\production','xepan\\crm'];
+        $this->xepan_addons = $addons = ['xepan\\base','xepan\\hr','xepan\\communication','xepan\\projects','xepan\\marketing','xepan\\accounts','xepan\\commerce','xepan\\production','xepan\\crm'];
 
-        $app_initiators=[];
+        $this->xepan_app_initiators = $app_initiators=[];
         foreach ($addons as $addon) {
-            $app_initiators[$addon] = $this->add("$addon\Initiator");
+            $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator");
             
             if($addon=='xepan\\base'){
                 $this->top_menu = $this->layout->add('xepan\base\Menu_TopBar',null,'Main_Menu');
