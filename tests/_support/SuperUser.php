@@ -29,11 +29,11 @@ class SuperUser extends \Codeception\Actor
    public function login(){
       $i=$this;
    		$i->amOnPage('/admin');
-   		$i->fillField('[data-shortname=username]','gowrav@xavoc.com');
-   		$i->fillField('[data-shortname=password]','nomylove');
+   		$i->fillField('[data-shortname=username]','admin@epan.in');
+   		$i->fillField('[data-shortname=password]','admin');
    		$i->click('Login');
    		$i->waitPageLoad();
-   		$i->see('Gowrav');
+   		$i->see('Super');
    }
 
    public function tryLogin($user,$pass){
