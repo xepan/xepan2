@@ -285,10 +285,14 @@ background-color: #44c0f0;
     padding-top: 3px;
 
 }
+.p-search{
+  margin-top:30px;
+}
 .p-search  input {
 background-color: #FFCE8E;
 color: white;
 font-weight:bold;
+height: 35px;
 }
 
 .atk-table input[placeholder]{
@@ -789,9 +793,9 @@ height: auto !important;
   position: relative;
 }
 
-ul.xshop-item{
+/*ul.xshop-item{
   height:600px !important;
-}
+}*/
 
 
 //SHORT-CART CSS
