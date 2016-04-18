@@ -14,7 +14,13 @@ class hrCest
     {
     }
 
-    
+    public function unit(SuperUser $i){
+        $i->login();
+        $i->amOnpage('/admin/?page=xepan_hr_runtests');
+        $i->waitPageLoad();
+        $i->dontSee('Fail');
+    }
+
     public function test_default_non_editable_department_named_company(SuperUser $i)
     {
         $i->wantTo('Test if default "Company" named department is there and it is non editable');
