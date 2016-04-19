@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "32ed5e0873442fff0044375b55751496",
-    "content-hash": "7b76358dcbeb62eaebe5799768ec5bc7",
+    "hash": "cfe3a7d84d3972ed2dde10091366ce21",
+    "content-hash": "247a4ccd63f32bd529c0fd00ae971bcf",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -184,6 +184,43 @@
                 "unit testing"
             ],
             "time": "2016-04-13 23:38:20"
+        },
+        {
+            "name": "dg/mysql-dump",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dg/MySQL-dump.git",
+                "reference": "c1c00a6b7ded9cab37f0280fa2940b1809835f90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dg/MySQL-dump/zipball/c1c00a6b7ded9cab37f0280fa2940b1809835f90",
+                "reference": "c1c00a6b7ded9cab37f0280fa2940b1809835f90",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "http://davidgrudl.com"
+                }
+            ],
+            "description": "MySQL database dump.",
+            "homepage": "https://github.com/dg/MySQL-dump",
+            "keywords": [
+                "mysql"
+            ],
+            "time": "2015-04-18 14:09:50"
         },
         {
             "name": "doctrine/instantiator",
@@ -4238,7 +4275,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-14 14:36:48"
+            "time": "2016-04-18 09:47:32"
         },
         {
             "name": "xepan/base",
@@ -4281,7 +4318,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-14 18:42:48"
+            "time": "2016-04-18 11:11:17"
         },
         {
             "name": "xepan/ccavenue",
@@ -4378,7 +4415,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-14 03:49:29"
+            "time": "2016-04-17 17:39:42"
         },
         {
             "name": "xepan/commerce",
@@ -4425,7 +4462,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-15 08:58:54"
+            "time": "2016-04-18 10:04:07"
         },
         {
             "name": "xepan/communication",
@@ -4472,7 +4509,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-04-14 17:18:29"
+            "time": "2016-04-18 09:48:57"
         },
         {
             "name": "xepan/crm",
@@ -4519,7 +4556,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-14 16:22:56"
+            "time": "2016-04-18 09:49:13"
         },
         {
             "name": "xepan/gd-text",
@@ -4595,7 +4632,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-13 10:48:49"
+            "time": "2016-04-18 10:03:24"
         },
         {
             "name": "xepan/mail",
@@ -4701,7 +4738,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-12 11:17:23"
+            "time": "2016-04-18 10:28:41"
         },
         {
             "name": "xepan/omnipay",
@@ -4944,7 +4981,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-14 10:18:48"
+            "time": "2016-04-18 09:50:40"
         },
         {
             "name": "xepan/projects",
@@ -4989,7 +5026,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-15 04:42:51"
+            "time": "2016-04-18 09:49:47"
         }
     ],
     "packages-dev": [],
