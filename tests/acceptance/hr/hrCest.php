@@ -27,20 +27,13 @@ class hrCest
 
         $i->wantTo('Test Quick Search');
         
-        $i->fillField('[data-shortname=q]','comp');
-        $i->pressKey('[data-shortname=q]',\Facebook\WebDriver\WebDriverKeys::ENTER);
-        $i->waitPageLoad();
+        $i->searchFor('comp');
         $i->see('Company',Locator::elementAt('//table/tbody/tr/td', 1));
 
-        $i->fillField('[data-shortname=q]','xxxxssssss');
-        $i->pressKey('[data-shortname=q]',\Facebook\WebDriver\WebDriverKeys::ENTER);
-        $i->waitPageLoad();
+        $i->searchFor('xxxxssssss');
         $i->see('No matching records found');
-        $i->seeElementInDOM('span.icon-cancel');
 
-        $i->fillField('[data-shortname=q]','');
-        $i->pressKey('[data-shortname=q]',\Facebook\WebDriver\WebDriverKeys::ENTER);
-        $i->waitPageLoad();
+        $i->searchFor('');
         $i->dontSee('No matching records found');
         $i->see('Company',Locator::elementAt('//table/tbody/tr/td', 1));
 
@@ -68,10 +61,72 @@ class hrCest
         $i->waitPageLoad();
         $i->see('Adding new Department');
 
-        $i->fillField('[data-shortname=name]','Company');
+        $i->fillAtkField('name','Company');
         $i->click('Add');
         $i->waitForElement('.field-error-text');
         $i->see('Name value "Company" already exists');
 
+        $i->fillAtkField('name','Desining');
+        $i->click('Add');
+        $i->waitForText('Production Level must be filled',10);
+       
+        $i->fillAtkField('production_level','initial_stage');
+        $i->click('Add');
+        $i->waitForText('Production_level must be an integer: eg 1234',5);
+
+        $i->fillAtkField('production_level','0');
+        $i->click('Add');
+        $i->waitForText('Production_level must be greater than 0',5);
+
+
+        $i->fillAtkField('production_level','1');
+        $i->click('Add');
+        $i->waitForPageLoad();
+        $i->see('Desining',['css'=>'table tbody tr:nth-child(2) td:first-child']);
+
+        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(4) button']);
+        $i->click('Deactivate');
+        $i->waitForPageLoad();
+        $i->see('InActive');
+
+        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(4) button']);
+        $i->click('Activate');
+        $i->waitForPageLoad();
+        $i->see('Active',['css'=>'table tbody tr:nth-child(2) td:nth-child(4)']);
+
+        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(5) a.pb_edit']);
+        $i->waitForPageLoad();
+        $i->see('Editing Department');
+
+        $i->seeInField('[data-shortname=name]','Desining');
+        $i->fillAtkField('name','Designing');
+        $i->click('Save');
+        $i->waitForPageLoad();
+        $i->see('Designing');
+        $i->dontSee('Desining');
+
+        // Delete Test
+        $i->click('Add Department');
+        $i->waitForPageLoad();
+        $i->fillAtkField('name','test to delete');
+        $i->fillAtkField('production_level',2);
+        $i->click('Add');
+        $i->waitForPageLoad();
+        $i->see('test to delete');
+
+        $i->click(['css'=>'table tbody tr:nth-child(3) td:nth-child(5) a.do-delete']);
+        $i->acceptPopup();
+        $i->waitForPageLoad();
+        $i->dontSee('test to delete');
+        $i->waitForText('Deleted Successfully',5);
+
+        $i->wait(5);
     }
+
+    function testACL(SuperUser $i){
+        $i->login();
+        $i->changeACL('Intern','xepan\hr/Department',['Active'=>['view'=>'Selft only','edit'=>'None']]);
+    }
+
+
 }
