@@ -15,9 +15,9 @@ extensions:
 modules:
     config:
         Db:
-            dsn: ''
-            user: ''
-            password: ''
-            dump: tests/_data/dump.sql
+            dsn: 'mysql:host=localhost;dbname=xepan2'
+            user: 'root'
+            password: 'winserver'
+            dump: tests/_data/data.sql
 coverage:
     enabled: true

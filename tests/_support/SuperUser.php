@@ -26,7 +26,7 @@ class SuperUser extends \Codeception\Actor
    
 
    
-   public function login(){
+    public function login(){
       $i=$this;
    		$i->amOnPage('/admin');
    		$i->fillField('[data-shortname=username]','admin@epan.in');
@@ -34,14 +34,48 @@ class SuperUser extends \Codeception\Actor
    		$i->click('Login');
    		$i->waitPageLoad();
    		$i->see('Super');
-   }
+    }
 
-   public function tryLogin($user,$pass){
+    public function tryLogin($user,$pass){
       $i=$this;
       $i->amOnPage('/admin');
       $i->fillField('[data-shortname=username]',$user);
       $i->fillField('[data-shortname=password]',$pass);
       $i->click('Login');
       $i->waitPageLoad();
-   }
+    }
+
+    public function searchFor($string){
+      $i = $this;
+      $i->fillField('[data-shortname=q]',$string);
+      $i->pressKey('[data-shortname=q]',\Facebook\WebDriver\WebDriverKeys::ENTER);
+      $i->waitPageLoad();
+      if($string)
+        $i->seeElementInDOM('span.icon-cancel');
+    }
+
+    public function waitForPageLoad(){
+      $i=$this;
+      $i->WaitPageLoad();
+    }
+
+    public function fillAtkField($field,$value){
+      $i = $this;
+      $i->fillField('[data-shortname='.$field.']',$value);
+    }
+
+    public function changeACL($post, $document,$acl_array,$allow_add=true)
+    {
+        $i = $this;
+        $i->click('HR');
+        $i->click('ACL');
+        $i->waitForPageLoad();
+        $i->selectOptionForSelect2("[data-shortname=post]",$post);
+        $i->wait(2);
+        $i->selectOptionForSelect2("[data-shortname=document_type]",$document);
+        $i->wait(2);
+        $i->click('Go');
+        $i->waitForText('Allow Add');
+        $i->wait(10);
+    }
 }
