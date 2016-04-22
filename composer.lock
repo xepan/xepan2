@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cfe3a7d84d3972ed2dde10091366ce21",
-    "content-hash": "247a4ccd63f32bd529c0fd00ae971bcf",
+    "hash": "2e88d4867313a596915aed065995869c",
+    "content-hash": "c97d6a287df45852823383edbbd5c854",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -768,7 +768,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/c7aad62b45a4eda8d1916e14c8040000a011cea7",
+                "url": "https://api.github.com/repos/nette/utils/zipball/3d2aa2937715d773217ddeaa341e972c61959450",
                 "reference": "c7aad62b45a4eda8d1916e14c8040000a011cea7",
                 "shasum": ""
             },
@@ -947,7 +947,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay-buckaroo/zipball/76a4fdc4af46a2eeff58036bcb16af7d077363b9",
+                "url": "https://api.github.com/repos/thephpleague/omnipay-buckaroo/zipball/7f14dadb8adfdb5f84f2d7e021c40b5420ca47e8",
                 "reference": "76a4fdc4af46a2eeff58036bcb16af7d077363b9",
                 "shasum": ""
             },
@@ -2479,7 +2479,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9e5dbd28bb830ef9f00d6c14855999e638291a13",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6d3b505cb3a6143adcd58375870eb0b4b98636bc",
                 "reference": "9e5dbd28bb830ef9f00d6c14855999e638291a13",
                 "shasum": ""
             },
@@ -2720,7 +2720,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ed59ed9c4e8789b00e3a813384f7caa3f6ef1d49",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9b5b99b3da70e3eea5294712bc5843910ad2bad6",
                 "reference": "ed59ed9c4e8789b00e3a813384f7caa3f6ef1d49",
                 "shasum": ""
             },
@@ -2795,7 +2795,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/6ffb3e27628aa502f9642c3d5acfdbbfda922241",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/5d8c2a839d2c77757b7499eb135f34f9f5f07e6f",
                 "reference": "6ffb3e27628aa502f9642c3d5acfdbbfda922241",
                 "shasum": ""
             },
@@ -3443,6 +3443,64 @@
             "time": "2016-01-01 17:47:15"
         },
         {
+            "name": "studio-42/elfinder",
+            "version": "2.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Studio-42/elFinder.git",
+                "reference": "8087cd58820126b9f6e546d8be07b91aa8b655b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/8087cd58820126b9f6e546d8be07b91aa8b655b3",
+                "reference": "8087cd58820126b9f6e546d8be07b91aa8b655b3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "suggest": {
+                "barryvdh/elfinder-flysystem-driver": "VolumeDriver for elFinder to use Flysystem as a root.",
+                "dropbox-php/dropbox-php": "elFinder Volume driver `Dropbox` require `dropbox-php/dropbox-php`.",
+                "nao-pon/flysystem-google-drive": "require in GoogleDrive network volume mounting.",
+                "pear/http_oauth": "dropbox-php require `pear/http_oauth` or `PHP OAuth extension`."
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Levashov",
+                    "email": "dio@std42.ru",
+                    "homepage": "http://std42.ru"
+                },
+                {
+                    "name": "Troex Nevelin",
+                    "email": "troex@fury.scancode.ru",
+                    "homepage": "http://std42.ru"
+                },
+                {
+                    "name": "Naoki Sawada",
+                    "email": "hypweb@gmail.com",
+                    "homepage": "http://xoops.hypweb.net"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Studio-42/elFinder/contributors"
+                }
+            ],
+            "description": "File manager for web",
+            "homepage": "http://elfinder.org",
+            "time": "2016-04-22 02:17:20"
+        },
+        {
             "name": "symfony/browser-kit",
             "version": "3.0.x-dev",
             "source": {
@@ -3509,7 +3567,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/7541c505d2b804cc65a4edf90a6f1cb496523fef",
+                "url": "https://api.github.com/repos/symfony/console/zipball/8e6292db6e77aa7fec40aaf12ae4bdee6b5b8007",
                 "reference": "7541c505d2b804cc65a4edf90a6f1cb496523fef",
                 "shasum": ""
             },
@@ -3842,7 +3900,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/1289d16209491b584839022f29257ad859b8532d",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/6bab34bbffa5f5ac079fdc4a68e143f158e87b7d",
                 "reference": "1289d16209491b584839022f29257ad859b8532d",
                 "shasum": ""
             },
@@ -4234,6 +4292,52 @@
             "time": "2015-09-12 10:08:34"
         },
         {
+            "name": "tinymce/tinymce",
+            "version": "4.3.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tinymce/tinymce-dist.git",
+                "reference": "ee747f1bc97ec8380e7fd8a1ce827be5e735a10b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/ee747f1bc97ec8380e7fd8a1ce827be5e735a10b",
+                "reference": "ee747f1bc97ec8380e7fd8a1ce827be5e735a10b",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "tinymce.js",
+                        "plugins/*/plugin.js",
+                        "themes/*/theme.js"
+                    ],
+                    "files": [
+                        "tinymce.min.js",
+                        "plugins/*/plugin.min.js",
+                        "themes/*/theme.min.js",
+                        "skins/**"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "description": "Web based JavaScript HTML WYSIWYG editor control.",
+            "homepage": "http://www.tinymce.com",
+            "keywords": [
+                "editor",
+                "html",
+                "javascript",
+                "richtext",
+                "tinymce",
+                "wysiwyg"
+            ],
+            "time": "2016-04-12 13:26:22"
+        },
+        {
             "name": "xepan/accounts",
             "version": "dev-master",
             "source": {
@@ -4275,7 +4379,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-18 09:47:32"
+            "time": "2016-04-20 14:45:01"
         },
         {
             "name": "xepan/base",
@@ -4318,7 +4422,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-18 11:11:17"
+            "time": "2016-04-21 04:50:08"
         },
         {
             "name": "xepan/ccavenue",
@@ -4462,7 +4566,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-18 10:04:07"
+            "time": "2016-04-20 14:27:15"
         },
         {
             "name": "xepan/communication",
@@ -4632,7 +4736,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-18 10:03:24"
+            "time": "2016-04-21 04:50:59"
         },
         {
             "name": "xepan/mail",
@@ -4738,7 +4842,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-18 10:28:41"
+            "time": "2016-04-21 09:53:23"
         },
         {
             "name": "xepan/omnipay",
