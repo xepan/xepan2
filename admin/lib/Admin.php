@@ -9,6 +9,8 @@ class Admin extends App_Frontend {
     public $xepan_addons = [];
     public $xepan_app_initiators=[];
 
+    public $current_website_name='default';
+
     function init() {
         parent::init();
 
