@@ -7,6 +7,7 @@ shared/addons2
 .DS_Store
 config.php
 config-auto.php
+admin/config-default.php
 composer.phar
 /vendor/*
 /agiletoolkit-sandbox.phar
