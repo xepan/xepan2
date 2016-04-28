@@ -35,10 +35,6 @@ class Admin extends App_Frontend {
         foreach ($addons as $addon) {
             $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator");
             
-            if($addon=='xepan\\base'){
-                $this->top_menu = $this->layout->add('xepan\base\Menu_TopBar',null,'Main_Menu');
-                $this->side_menu = $this->layout->add('xepan\base\Menu_SideBar',null,'Side_Menu');
-            }
         }
 
         // $app_initiators['xepan\\base']->installEvilVirus([/* while_page_list */]);
