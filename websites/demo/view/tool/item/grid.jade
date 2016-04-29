@@ -1,0 +1,29 @@
+
+div(id='{$_name}' class="{$class} row" style="{$style}")
+	{rows}{row}
+	.col-lg-3.col-md-4.col-sm-6
+		.tile
+			.badges
+				span.sale Sale
+			{sale_price_wrapper}
+			.price-label {$sale_price} $
+			{/}
+			a(href='shop-single-item-v1.html')
+				img(alt='1', src='image/categories/1_004.jpg')
+			span.tile-overlay
+			.footer
+				a(href='#') {$name}
+				span by {$designer}
+				{addtocart_wrapper}
+				button.btn.btn-primary.xshop-item-addtocart(data-xsnbitemid="{$id}" data-name="{$name}"){$Addtocart}
+				{/}
+				{personalizedbtn_wrapper}
+				button.btn.btn-primary.xshop-item-personalize(data-xsnbitemid="{$id}" data-name="{$name}"){$personalizedbtn}
+				{/}
+	{/}{/}
+	{not_found}
+	div.full-width.alert.alert-warning(role="alert")
+		strong.glyphicon.glyphicon-warning-sign &nbsp;Warning!
+			span &nbsp;{$not_found_message}
+	{/}
+{$Paginator}
