@@ -3,6 +3,8 @@
   <div id="hero-slider" style="height: 455px; margin: 0px; width: 1353px;" class="master-slider before-init ms-moz"></div>
 </section>
 <section class="cat-tiles">
+  <div class="main"></div>
+
   <div class="container">
     <h2>Browse Categories</h2>
     <div class="row">
@@ -27,87 +29,25 @@
     </div>
   </div>
 </section>
-<section class="catalog-grid">
-  <div class="container">
-    <h2 class="dark-color">Catalog picks</h2>
-    <div class="row">
-      <!-- Tile-->
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="tile">
-          <div class="badges"><span class="sale">Sale</span></div>
-          <div class="price-label">715,00 $</div><a href="shop-single-item-v1.html"><img alt="1" src="image/categories/1.jpg"/><span class="tile-overlay"></span></a>
-          <div class="footer"><a href="#">Smart Backpack</a><span>by David Banks</span>
-            <button class="btn btn-primary">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <!-- Tile-->
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="tile">
-          <div class="badges"><span class="out">Out</span></div>
-          <div class="price-label">715,00 $</div>
-          <div class="price-label old-price">920,00 $</div><a href="shop-single-item-v1.html"><img alt="1" src="image/categories/2.jpg"/><span class="tile-overlay"></span></a>
-          <div class="footer"><a href="#">Two-tone leather shopper</a><span>by Andy Shooter</span>
-            <button class="btn btn-primary">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <!-- Tile-->
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="tile">
-          <div class="badges"><span class="best-seller">Best Seller</span></div>
-          <div class="price-label">715,00 $</div><a href="shop-single-item-v1.html"><img alt="1" src="image/categories/3.jpg"/><span class="tile-overlay"></span></a>
-          <div class="footer"><a href="#">Gussetted shopper bag</a><span>by Choper Bar</span>
-            <button class="btn btn-primary">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <!-- Tile-->
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="tile">
-          <div class="price-label">715,00 $</div><a href="shop-single-item-v1.html"><img alt="1" src="image/categories/4.jpg"/><span class="tile-overlay"></span></a>
-          <div class="footer"><a href="#">Mini shopper</a><span>by David Choper</span>
-            <button class="btn btn-primary">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <!-- Tile-->
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="tile">
-          <div class="price-label">715,00 $</div><a href="shop-single-item-v1.html"><img alt="1" src="image/categories/5.jpg"/><span class="tile-overlay"></span></a>
-          <div class="footer"><a href="#">Shopper with buckle</a><span>by Ivan Tookle</span>
-            <button class="btn btn-primary">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <!-- Tile-->
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="tile">
-          <div class="price-label">715,00 $</div>
-          <div class="price-label old-price">920,00 $</div><a href="shop-single-item-v1.html"><img alt="1" src="image/categories/6.jpg"/><span class="tile-overlay"></span></a>
-          <div class="footer"><a href="#">City bag</a><span>by Carol Flag</span>
-            <button class="btn btn-primary">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <!-- Tile-->
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="tile">
-          <div class="price-label">715,00 $</div><a href="shop-single-item-v1.html"><img alt="1" src="image/categories/7.jpg"/><span class="tile-overlay"></span></a>
-          <div class="footer"><a href="#">Cheap Zip Bag</a><span>by Aron Tag</span>
-            <button class="btn btn-primary">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <!-- Tile-->
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="tile">
-          <div class="price-label">715,00 $</div><a href="shop-single-item-v1.html"><img alt="1" src="image/categories/8.jpg"/><span class="tile-overlay"></span></a>
-          <div class="footer"><a href="#">Leather bag with side pocket</a><span>by Anna Canara</span>
-            <button class="btn btn-primary">Add to Cart</button>
-          </div>
-        </div>
-      </div>
+<section class="choose-theme section-padding color-white catalog-grid"  id="item">
+<div class="container">
+  <h2 class="dark-color">Catalog picks</h2>
+  <div class="xepan-component container" xepan-component="xepan\commerce\Tool_ItemList" 
+            show_description="false"
+            show_paginator='4'
+            personalized_button_name='Presonalized'
+            personalized_page_url="productdesigner"
+            show_personalizedbtn="false"
+            item_detail_page_url="product-detail"
+            show_addtocart="true"
+            addtocart_name="Add To Cart"
+            addtocart="no"
+            show_sale_price="true"
+            show_original_price="true"
+            name_redirect_to_detail="false"
+            image_redirect_to_detail="true"
+            >
     </div>
-  </div>
+</div>
+        </section>
 </section>
