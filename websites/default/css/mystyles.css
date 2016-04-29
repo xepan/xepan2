@@ -849,3 +849,26 @@ height: auto !important;
 .xepan-commerce-tool-cart ol,ul{
   margin-bottom: 0px;
 }
+
+
+.atk-cell .atk-jackscrew input{
+  width: 100%;
+}
+
+.atk-cells{
+  display: table;
+  width: 100%;
+}
+
+.atk-cells > .atk-cell{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.atk-align-right{
+  text-align:right;
+}
+
+.atk-align-left{
+  text-align:left;
+}

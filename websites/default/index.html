@@ -62,10 +62,10 @@
     <div class="text-center larger-header p-header-middle-line">
         <h3 style="background-color: transparent;">  Popular Products </h3>
     </div>
-    <div>
-      <div class="xepan-component" xepan-component="xepan\commerce\Tool_Filter" ></div>
-    </div>
-    <div class="main">
+    <div class="row">
+
+      <div class="col-md-3 xepan-component" xepan-component="xepan\commerce\Tool_Filter" show_price_filter="true"></div>
+     <div class="main col-md-9">
       <section class="choose-theme section-padding color-white"  id="item">
             <div class="xepan-component" xepan-component="xepan\commerce\Tool_ItemList" 
             show_description="false"
@@ -81,9 +81,12 @@
             show_original_price="false"
             name_redirect_to_detail="false"
             image_redirect_to_detail="true"
+            is_filterable = true
             >
             </div>
         </section>
+      </div>
+      
     </div>
 </div>
 <div class="container width-90">

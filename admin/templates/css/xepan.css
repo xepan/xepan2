@@ -167,3 +167,21 @@ textarea {width: 100%;}
 .atk-cell .atk-jackscrew input{
 	width: 100%;
 }
+
+.atk-cells{
+	display: table;
+	width: 100%;
+}
+
+.atk-cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.atk-align-right{
+	text-align:right;
+}
+
+.atk-align-left{
+	text-align:left;
+}
