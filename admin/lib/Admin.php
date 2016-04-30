@@ -33,7 +33,7 @@ class Admin extends App_Frontend {
 
         $this->xepan_app_initiators = $app_initiators=[];
         foreach ($addons as $addon) {
-            $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator");
+            $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator")->setup_admin();
             
         }
 

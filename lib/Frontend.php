@@ -42,7 +42,7 @@ class Frontend extends ApiFrontend {
 
         $app_initiators=[];
         foreach ($addons as $addon) {
-            $app_initiators[$addon] = $this->add("$addon\Initiator");
+            $app_initiators[$addon] = $this->add("$addon\Initiator")->setup_frontend();
         }
 
 
