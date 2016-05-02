@@ -38,7 +38,7 @@ class Frontend extends ApiFrontend {
         
         
         // Should come from any local DB store
-        $addons = ['xepan\\base','xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production','xepan\\accounts','xepan\\cms'];
+        $addons = ['xepan\\base','xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production','xepan\\accounts','xepan\\cms','xepan\\crm'];
 
         $app_initiators=[];
         foreach ($addons as $addon) {
@@ -50,7 +50,7 @@ class Frontend extends ApiFrontend {
 
     function defaultTemplate(){
 
-        $current_website = $this->current_website_name = 'demo';
+        $current_website = $this->current_website_name = 'default';
         $this->addLocation(array(
             'page'=>array("websites/$current_website"),
             'js'=>array("websites/$current_website/js"),
