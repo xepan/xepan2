@@ -171,6 +171,18 @@ textarea {width: 100%;}
 	width: auto;
 
 }
+.editable-checklist  input {
+	width: auto!important;
+}
 .field-error-text{
 	color:red!important;
+}
+.xepan-form-field{
+	border-bottom: 1px solid #eee;
+    border-right: 2px solid #eee;
+    border-top: 2px solid #eee;
+    line-height: 27px;
+    margin-top: 0;
+    border-radius:4px;
+    /*border-left-radius:0px;*/
 }
