@@ -171,6 +171,9 @@ textarea {width: 100%;}
 	width: auto;
 
 }
+.editable-checklist  input {
+	width: auto!important;
+}
 .field-error-text{
 	color:red!important;
 }
