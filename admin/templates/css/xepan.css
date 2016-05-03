@@ -189,6 +189,9 @@ textarea {width: 100%;}
 .atk-align-right{
 	text-align:right;
 }
+.xepan-paginator {
+  margin: auto 0 0 30%;
+}
 
 .atk-align-left{
 	text-align:left;
