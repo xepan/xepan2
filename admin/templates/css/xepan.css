@@ -1,7 +1,7 @@
 input{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; font-weight:normal; border-bottom-color: grey; border-bottom-width: 1px;width: 100%}
 input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; border-bottom-color: grey; border-bottom-width: 1px; outline: none !important}
 textarea {width: 100%;}
-/*.xepan-grid .atk-actions button{
+/*.xepan-grid .xepan-actions button{
 	border-radius:3px solid #2980b9;
 	border-color:#2980b9;
 	background-color:#03a9f4;
@@ -23,7 +23,7 @@ textarea {width: 100%;}
     font-size:14px;
 	border-bottom:2px solid #216897;
 }*/
-/*.xepan-grid .atk-actions button:hover{background-color:#017fb5;color:#FFF}*/
+/*.xepan-grid .xepan-actions button:hover{background-color:#017fb5;color:#FFF}*/
 
 /*remove border from all input*/
 .form-control{
@@ -35,11 +35,11 @@ textarea {width: 100%;}
 	float: right;
 }
 
-.filter-block .form-group .atk-jackscrew{
+.filter-block .form-group .xepan-jackscrew{
 	float: right;
 }
 
-.xepan-filter-form .atk-input-combo div.atk-cell:first-child {
+.xepan-filter-form .xepan-input-combo div.xepan-cell:first-child {
 	float: left !important;
 }
 .xepan-filter-form span.icon-cancel{
@@ -98,7 +98,7 @@ textarea {width: 100%;}
 	padding:0px 0px 0px 0px !important;
 	margin: 0px 0px 0px 0px !important;
 }
-.xepan-micro-grid .atk-actions{
+.xepan-micro-grid .xepan-actions{
 	margin-right: 10px;
 }
 .xepan-micro-grid .main-box-body{
@@ -164,7 +164,7 @@ textarea {width: 100%;}
 .input-full-width input{
 	width:100%;
 }
-.atk-cell .atk-jackscrew input{
+.xepan-cell .xepan-jackscrew input{
 	width: 100%;
 }
 .xepan-filter-form input{
@@ -185,4 +185,135 @@ textarea {width: 100%;}
     margin-top: 0;
     border-radius:4px;
     /*border-left-radius:0px;*/
+}
+
+.xepan-padding-xsmall {
+  padding: 0.5rem;
+}
+.xepan-padding-small {
+  padding: 0.75rem;
+}
+.xepan-padding {
+  padding: 1.5rem;
+}
+.xepan-padding-large {
+  padding: 3rem;
+}
+.xepan-padding-xlarge {
+  padding: 4.5rem;
+}
+.xepan-padding-horizontal-xsmall {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.xepan-padding-horizontal-small {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.xepan-padding-horizontal {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.xepan-padding-horizontal-large {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.xepan-padding-horizontal-xlarge {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+}
+.xepan-padding-vertical-xsmall {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+.xepan-padding-vertical-small {
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+}
+.xepan-padding-vertical {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+.xepan-padding-vertical-large {
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+.xepan-padding-vertical-xlarge {
+  padding-bottom: 4.5rem;
+  padding-top: 4.5rem;
+}
+.xepan-padding-left-xsmall {
+  padding-left: 0.5rem;
+}
+.xepan-padding-left-small {
+  padding-left: 0.75rem;
+}
+.xepan-padding-left {
+  padding-left: 1.5rem;
+}
+.xepan-padding-left-large {
+  padding-left: 3rem;
+}
+.xepan-padding-left-xlarge {
+  padding-left: 4.5rem;
+}
+.xepan-padding-right-xsmall {
+  padding-right: 0.5rem;
+}
+.xepan-padding-right-small {
+  padding-right: 0.75rem;
+}
+.xepan-padding-right {
+  padding-right: 1.5rem;
+}
+.xepan-padding-right-large {
+  padding-right: 3rem;
+}
+.xepan-padding-right-xlarge {
+  padding-right: 4.5rem;
+}
+.xepan-padding-top-xsmall {
+  padding-top: 0.5rem;
+}
+.xepan-padding-top-small {
+  padding-top: 0.75rem;
+}
+.xepan-padding-top {
+  padding-top: 1.5rem;
+}
+.xepan-padding-top-large {
+  padding-top: 3rem;
+}
+.xepan-padding-top-xlarge {
+  padding-top: 4.5rem;
+}
+.xepan-padding-bottom-xsmall {
+  padding-bottom: 0.5rem;
+}
+.xepan-padding-bottom-small {
+  padding-bottom: 0.75rem;
+}
+.xepan-padding-bottom {
+  padding-bottom: 1.5rem;
+}
+.xepan-padding-bottom-large {
+  padding-bottom: 3rem;
+}
+.xepan-padding-bottom-xlarge {
+  padding-bottom: 4.5rem;
+}
+.xepan-padding-reset {
+  padding: 0;
+}
+.xepan-padding-left-reset {
+  padding-left: 0;
+}
+.xepan-padding-right-reset {
+  padding-right: 0;
+}
+.xepan-padding-top-reset {
+  padding-top: 0;
+}
+.xepan-padding-bottom-reset {
+  padding-bottom: 0;
 }
