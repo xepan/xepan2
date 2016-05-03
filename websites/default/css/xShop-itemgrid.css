@@ -5,7 +5,7 @@
 
 ul.xshop-item{
     list-style-type: none;
-    height:300px !important;
+    height:330px !important;
     border-left:1px solid #f3f3f3;
 }
 ul.xshop-item:hover{
@@ -24,6 +24,7 @@ transition:all 0.3s ease 0s;
 margin-top:10px;
 text-align:left;
 border-bottom:1px solid #f3f3f3 !important;
+height:40px;
 }
 
 li > div.xshop-item-specifications{

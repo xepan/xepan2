@@ -167,8 +167,10 @@ textarea {width: 100%;}
 .xepan-cell .xepan-jackscrew input{
 	width: 100%;
 }
+
 .xepan-filter-form input{
 	width: auto;
+}
 
 .atk-cells{
 	display: table;
@@ -194,6 +196,7 @@ textarea {width: 100%;}
 span.select2{
 	width:100% !important;
 }
+
 .xepan-form-field{
 	border-bottom: 1px solid #eee;
     border-right: 2px solid #eee;

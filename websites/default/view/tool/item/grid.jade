@@ -34,4 +34,7 @@ div(id='{$_name}' class="{$class} row" style="{$style}")
 		strong.glyphicon.glyphicon-warning-sign &nbsp;Warning!
 			span &nbsp;{$not_found_message}
 	{/}
-{$Paginator}
+{paginator_wrapper}
+.atk-align-center.xshop-item-paginator
+	{$Paginator}
+{/}

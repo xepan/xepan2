@@ -129,12 +129,17 @@ color: white !important ;
 .sky-mega-menu li li a{
 padding:0 12px !important;
 }
-.grid-container3 li{
-line-height:40px !impoortant;
+
+.grid-container3 li a .sky-menu-thumbnail-name{
+  line-height:30px !important;
+  padding-top:5px;
+  padding-bottom:5px;
 }
+
 .sky-mega-menu li{
 line-height:40px !important;
 }
+
 .back-product-btn{
    color:#f7a707;
    padding:3px;
@@ -508,28 +513,39 @@ border-radius: 0px !important;
 font-family:Lato !important;
 }
 
-.xshop-item-personalize,.xshop-item-addtocart{
-background-image: url("epans/web/site_images/home_page/print_on_click_next_step%20copy%201.png");
+.xshop-item-personalize{
+  float:right;
+}
+.xshop-item-personalize > button,.xshop-item-addtocart > button{
+background-image: url("../image/site/print_on_click_button_personalize.png");
 background-repeat: no-repeat;
 width:auto !important;
-color:#f7a707;
+/*color:#f7a707;*/
 padding:5px 5px;
-border:1px solid #f7a737;
 font-size:15px;
 margin-top:5px;
-float:right;
 cursor:pointer;
-}
-.xshop-item-personalize:hover{
+color: rgb(51, 51, 51); 
+padding: 6px 24px; 
+background-color:#f7a707;
 color:white;
-font-weight:700;
 }
 
-.xshop-item-personalize{
- background-image:url('site_images/home_page/print_on_click_next_step%20copy%201.png'); 
+.xshop-item-personalize > button:hover{
+/*color:white;*/
+background-size:30px;
+}
+
+.xshop-item-personalize > button:active{
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+.xshop-item-personalize > button{
+ background-image:url('../image/site/print_on_click_button_personalize.png'); 
  background-position:right; 
  background-size:25px;
- padding-right:30px;
+ padding-right:35px;
 }
 
 .xepan-user-panel button,.prime-scan button, .xshop-item-personalize{
@@ -560,18 +576,15 @@ font-weight:700;
     z-index: -1;
 }
 .xepan-user-panel button:hover, .prime-scan button:hover, .hvr-bounce-to-bottom:focus, .hvr-bounce-to-bottom:active, .xshop-item-personalize :hover, .xshop-item-personalize :focus, .xshop-item-personalize:active{
-  color: white;
   cursor:pointer;
 }
 
-.xepan-user-panel button:hover:before, .prime-scan button:hover:before, .prime-scan button:focus:before, .prime-scan button:active:before, .xshop-item-personalize:hover:before, .xshop-item-personalize:focus:before, .xshop-item-personalize:active:before  {
+/*.xepan-user-panel button:hover:before, .prime-scan button:hover:before, .prime-scan button:focus:before, .prime-scan button:active:before, .xshop-item-personalize:hover:before, .xshop-item-personalize:focus:before, .xshop-item-personalize:active:before  {
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
   -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-}
-
-//End
+}*/
 
 .prime-scan *{
 font-family: Lato !important; 
@@ -871,4 +884,67 @@ height: auto !important;
 
 .atk-align-left{
   text-align:left;
+}
+
+.files-container div{
+float:left;
+margin:10px;
+}
+
+.grid-container3 li a{
+  padding:8px !important;
+}
+
+table.prime-category-item-selector td:nth-child(3){
+padding:10px !important; 
+}
+
+table.prime-category-item-selector td:nth-child(3) > a{
+ background-color:#ff9900;
+   padding: 5px;
+    color: white;
+    box-shadow: 1px 1px 1px black;
+    font-weight: 700;
+
+}
+
+.prime-category-item-selector tr:nth-child(odd) {
+background: #F6F6F6;
+}
+
+table.prime-category-item-selector tr:nth-child(even) {
+background-color: rgb(255, 252, 229);
+}
+
+.prime-category-item-selector  h2{
+padding:10px;background-color:white
+}
+.prime-category-item-selector tr:nth-child(2){
+background-color:white !important;
+}
+
+.xshop-cart-detail-estimate-container{
+background-color:none repeat scroll 0 0 rgba(162, 217, 246, 0.33)
+}
+ul.xshop-item li:first-child{
+height:230px;
+}
+
+.xshop-item-old-price{
+display:none !important;
+}
+.amount-label{
+float: left !important;
+font-size:16px;
+}
+.amount-lable{
+float:left;
+}
+.xshop-item-price{
+position:absolute;
+margin-left:100px;
+}
+
+.xshop-item-detail-price > span{
+font-size:20px;
 }
