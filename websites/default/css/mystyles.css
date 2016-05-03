@@ -64,6 +64,19 @@ font-size:17px;
 padding:5px; 
 }
 
+.xshop-tool-header{
+text-align:center;
+font-size:17px;
+padding:2px; 
+color:#4f5cb7;
+}
+
+.xshop-item-name-header{
+font-size:20px;
+font-family:Times;
+padding:2px; 
+}
+
 .xshop-item-paginator{
     background-color:#D4ECFB !important;
     border: 1px solid #dadde0;
@@ -218,6 +231,10 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 
 .xshop-item-detail-design{
    float:right !important;
+}
+
+.xshop-item-detail-price > span{
+font-size:50px;
 }
 .sky-mega-menu li:nth-of-type(1n){
   background-color:#FF7D23 !important;
@@ -786,6 +803,10 @@ height: auto !important;
   outline: 1px solid black !important;
   float: left;
   margin-left:4px; 
+}
+
+.xshop-item-image-block img{
+  width:100%;
 }
 
 .zoom3-small-image{
