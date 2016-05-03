@@ -64,10 +64,11 @@
     </div>
     <div class="row">
      <div class="main col-md-12">
-      <section class="choose-theme section-padding color-white"  id="item">
+      <section class=""  id="item">
             <div class="xepan-component" xepan-component="xepan\commerce\Tool_ItemList" 
             show_description="false"
-            show_paginator='8'
+            show_paginator="true"
+            paginator_set_rows_per_page="4"
             personalized_button_name='Presonalized'
             personalized_page_url="productdesigner"
             show_personalizedbtn="true"
@@ -79,7 +80,8 @@
             show_original_price="false"
             name_redirect_to_detail="false"
             image_redirect_to_detail="true"
-            is_filterable = true
+            is_filterable = "true"
+            is_mostviewed = "true"
             >
             </div>
         </section>
@@ -90,9 +92,25 @@
     <div class="text-center larger-header p-header-middle-line">
         <h3 style="background-color: transparent;">  Recent Products </h3></div>
     <div class="main">
-      <section class="choose-theme section-padding color-white"  id="item">
-            <div class="xepan-component" xepan-component="xepan\commerce\Tool_ItemList"
-            show_paginator='4'>
+      <section id="item">
+            <div class="xepan-component" xepan-component="xepan\commerce\Tool_ItemList" 
+            show_description="false"
+            show_paginator="true"
+            paginator_set_rows_per_page="4"
+            personalized_button_name='Presonalized'
+            personalized_page_url="productdesigner"
+            show_personalizedbtn="true"
+            item_detail_page_url="product-detail"
+            show_addtocart="true"
+            addtocart_name="Add To Cart"
+            addtocart="no"
+            show_sale_price="false"
+            show_original_price="false"
+            name_redirect_to_detail="false"
+            image_redirect_to_detail="true"
+            is_filterable = "true"
+            is_new = "true"
+            >
             </div>
         </section>
     </div>
