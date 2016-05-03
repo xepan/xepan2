@@ -185,3 +185,7 @@ textarea {width: 100%;}
 .atk-align-left{
 	text-align:left;
 }
+
+span.select2{
+	width:100% !important;
+}
