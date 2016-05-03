@@ -189,12 +189,36 @@ textarea {width: 100%;}
 .atk-align-right{
 	text-align:right;
 }
-.xepan-move-center {
-  margin: auto 0 0 30%;
+.xepan-clear-fix:after {
+  clear: both;
+}
+.xepan-move-left {
+  float: left;
+}
+/*.xepan-move-center {
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.xepan-move-center.atk-button {
+  display: block;
+}*/
+.xepan-move-right {
+  float: right;
+}
+.xepan-align-left {
+  text-align: left;
 }
 
-.atk-align-left{
+.xepan-align-left{
 	text-align:left;
+}
+.xepan-align-center {
+  text-align: center;
+}
+
+.xepan-move-center {
+  margin: auto 0 0 30%;
 }
 .paginator > span.select2{
 	width: 80px!important;
