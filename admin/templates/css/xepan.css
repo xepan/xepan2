@@ -167,11 +167,12 @@ textarea {width: 100%;}
 .xepan-cell .xepan-jackscrew input{
 	width: 100%;
 }
-
 .xepan-filter-form input{
 	width: auto;
 }
-
+.editable-checklist input{
+	width: auto;
+}
 .atk-cells{
 	display: table;
 	width: 100%;
@@ -188,15 +189,44 @@ textarea {width: 100%;}
 .atk-align-right{
 	text-align:right;
 }
+.xepan-clear-fix:after {
+  clear: both;
+}
+.xepan-move-left {
+  float: left;
+}
+/*.xepan-move-center {
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.xepan-move-center.atk-button {
+  display: block;
+}*/
+.xepan-move-right {
+  float: right;
+}
+.xepan-align-left {
+  text-align: left;
+}
 
 .atk-align-left{
 	text-align:left;
 }
-
-span.select2{
-	width:100% !important;
+.xepan-align-center {
+  text-align: center;
 }
 
+.xepan-move-center {
+  margin: auto 0 0 30%;
+}
+.paginator > span.select2{
+	width: 80px!important;
+}
+
+/*span.select2{
+	width:100% !important;
+}*/
 .xepan-form-field{
 	border-bottom: 1px solid #eee;
     border-right: 2px solid #eee;
