@@ -10,4 +10,4 @@ $config['tmail']['transport'] = 'Echo';
 // $config['js']['versions']['jquery']='';
 
 $config['developer_mode'] = false;
-$config['all_rights_to_superuser'] = true;
+$config['all_rights_to_superuser'] = false;
