@@ -960,3 +960,11 @@ font-size:20px;
 .prime-page-container{
   margin-top: 30px;
 }
+
+.prime-category-detail > div > div > div > div > hr{
+  margin-bottom: -15px !important;
+}
+/*
+.prime-category-detail > div > div > div > table{
+  margin-top:-10px !important;
+}*/
