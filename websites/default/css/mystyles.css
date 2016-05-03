@@ -65,10 +65,17 @@ padding:5px;
 }
 
 .xshop-item-paginator{
-    background-color:#D4ECFB !important;
-    border: 1px solid #dadde0;
-    padding: 0.5em !important;
-   border-radius: 0px !important;
+  margin-top:10px;
+  width:99%; 
+  background-color:#D4ECFB !important;
+  border: 1px solid #dadde0;
+}
+
+.xshop-item-paginator > div{
+  padding: 0.5em !important;
+  border-radius: 0px !important;
+  width:350px;
+  margin:0 auto 0px auto !important;
 }
 
 .xshop-item-paginator a{
@@ -761,7 +768,8 @@ height:230px;
 }
 .footer{
   background-color:#141b22;
-  padding-top: 15px; 
+  padding-top: 15px;
+  margin-top: 10px;
 }
 
 .zoomWrapper{

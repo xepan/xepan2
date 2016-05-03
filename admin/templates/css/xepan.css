@@ -218,7 +218,7 @@ textarea {width: 100%;}
 }
 
 .xepan-move-center {
-  margin: auto 0 0 30%;
+  margin: auto 0 0 auto !important;
 }
 .paginator > span.select2{
 	width: 80px!important;
