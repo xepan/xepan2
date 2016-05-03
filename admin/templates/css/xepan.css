@@ -173,18 +173,18 @@ textarea {width: 100%;}
 .editable-checklist input{
 	width: auto;
 }
-.atk-cells{
+/*.atk-cells{
 	display: table;
 	width: 100%;
-}
+}*/
 .field-error-text{
 	color:red!important;
 }
 
-.atk-cell{
+/*.atk-cell{
 	display: table-cell;
 	vertical-align: middle;
-}
+}*/
 
 .atk-align-right{
 	text-align:right;
