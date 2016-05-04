@@ -883,6 +883,12 @@ height: auto !important;
 
 }
 
+.th{
+  font-size: 0.875em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .xepan-commerce-tool-total{
   font-weight: 900;
 }
@@ -908,7 +914,7 @@ height: auto !important;
 
 .xepan-name{
   font-size: 1.1em;
-  font-weight: 300
+  font-weight: 300;
 }
 .xepan-commerce-tool-cart ul.dropdown-cart li .item-left{
     float:left;
