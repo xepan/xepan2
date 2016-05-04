@@ -91,7 +91,8 @@ padding:2px;
 .xshop-item-paginator > div{
   padding: 0.5em !important;
   border-radius: 0px !important;
-  width:350px;
+  width: 100%;
+  text-align:center;
   margin:0 auto 0px auto !important;
 }
 
@@ -501,7 +502,7 @@ font-size: 20px;
  height:500px;
 }
 /**/
-.p-header-middle-line{
+div.p-header-middle-line{
  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='1px' height='1px' viewBox='0 0 1 1' enable-background='new 0 0 1 1' fill='%23f7a707' xml:space='preserve'><rect width='1' height='1'/></svg>"); 
 background-repeat: repeat-x; 
 background-position: left; 
