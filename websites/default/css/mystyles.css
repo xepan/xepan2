@@ -26,6 +26,10 @@ background: linear-gradient(to right, rgba(239,126,26,1) 72%,rgba(255,255,255,1)
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef7e1a', endColorstr='#a2d9f6',GradientType=1 ); /* IE6-9 */
 }
 
+.editor.epan-component.editor-attached h4{
+  color:  #7b7d7d;
+}
+
 
 ul.xshop-item:hover{
 border-bottom: 0px solid #f7a707 !important;
@@ -497,7 +501,7 @@ font-size: 20px;
  height:500px;
 }
 /**/
-div.p-header-middle-line{
+.p-header-middle-line{
  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='1px' height='1px' viewBox='0 0 1 1' enable-background='new 0 0 1 1' fill='%23f7a707' xml:space='preserve'><rect width='1' height='1'/></svg>"); 
 background-repeat: repeat-x; 
 background-position: left; 
