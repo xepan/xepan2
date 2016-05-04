@@ -150,6 +150,10 @@ color: white !important ;
 padding:0 12px !important;
 }
 
+.grid-container3 li{
+  z-index: 30;
+}
+
 .grid-container3 li a .sky-menu-thumbnail-name{
   line-height:30px !important;
   padding-top:5px;
@@ -364,10 +368,11 @@ color:black !important;
 .theme-bar:hover  a.nivo-prevNav {
 left : 0px !important;
 }
+
 ul.xshop-item{
-background-color: #EDEDED;
-    
-    }
+  background-color: #EDEDED;
+  margin-top: 10px;
+}
 
 .xshop-item-img{
  padding : 10px 10px 10px 0px;
@@ -540,7 +545,7 @@ font-family:Lato !important;
 .xshop-item-personalize{
   float:right;
 }
-.xshop-item-personalize > button,.xshop-item-addtocart > button{
+.xshop-item-personalize,.xshop-item-personalize > button,.xshop-item-addtocart > button{
 background-image: url("../image/site/print_on_click_button_personalize.png");
 background-repeat: no-repeat;
 width:auto !important;
@@ -555,7 +560,7 @@ background-color:#f7a707;
 color:white;
 }
 
-.xshop-item-personalize > button:hover{
+.xshop-item-personalize > button:hover,.xshop-item-personalize:hover{
 /*color:white;*/
 background-size:30px;
 }
@@ -565,7 +570,7 @@ background-size:30px;
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
 }
-.xshop-item-personalize > button{
+.xshop-item-personalize,.xshop-item-personalize > button{
  background-image:url('../image/site/print_on_click_button_personalize.png'); 
  background-position:right; 
  background-size:25px;
@@ -989,3 +994,52 @@ font-size:20px;
 .prime-category-detail > div > div > div > table{
   margin-top:-10px !important;
 }*/
+
+.prime-cart{
+  background-color: rgb(212,237,252);
+
+}
+
+.prime-cart-empty{
+  text-align: center;
+  font-size: 15px;
+}
+.xshop-category{
+  z-index: 20 !important;
+}
+
+.carousel-caption{
+  z-index: 0 !important;
+}
+.carousel-indicators{
+  z-index: 1 !important;
+}
+
+table div.middle{
+  margin-top: 8px !important;
+}
+
+.prime-swatch-light-blue{
+  background-color: #cfeffc;
+  font-size: 17px;
+  padding: 5px;
+  text-align: center;
+}
+
+.prime-swatch-dark-blue{
+  background-color: rgb(68,192,240);
+  font-size: 17px;
+  padding: 5px;
+  color: white;
+  text-align: center;
+}
+
+.prime-swatch-dark-orange{
+    background-color: #ef7e1a;
+    border-right: 1px solid white;
+    color: white;
+    float: left;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 5px;
+}

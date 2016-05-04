@@ -1,11 +1,11 @@
-x.xepan-commerce-tool-cart(id='{$_name}', class='{$class}')
+.xepan-commerce-tool-cart(id='{$_name}', class='{$class}')
   ul
     li.dropdown.reset-margin.text-center(style="padding:0px;margin:0px;")
       a.dropdown-toggle.reset-margin(href='#', data-toggle='dropdown', role='button', aria-expanded='false' style="padding:0px;margin:0px;")
-        span.xepan-commerce-cart-item-count  {$total_count}
+        span.xepan-commerce-cart-item-count  {total_count}0{/}
         |  - Items
         span.caret
-      ul.dropdown-menu.dropdown-cart(role='menu',style='width:300px')
+      ul.dropdown-menu.dropdown-cart.prime-cart(role='menu',style='width:300px')
         | {lister}
         | {rows}{row}
         li(id='item-{$id}' class="xepan-commerce-tool-cart-item-row")
@@ -18,8 +18,13 @@ x.xepan-commerce-tool-cart(id='{$_name}', class='{$class}')
               span {$item_code}
               span qty:{$qty}
               span.text-center amount{$sales_amount}
-        |           {/}{/}
+        | {/}{/}
         |           {/lister}
+        {not_found}
+        li.prime-cart-empty
+          {$not_found_message}
+        {/}
+        {footer}
         li.divider
         |               {sum_amount_excluding_tax_wrapper}
         .row
@@ -40,4 +45,4 @@ x.xepan-commerce-tool-cart(id='{$_name}', class='{$class}')
         li
           a.text-center(href="{$cart_detail_url}") View Cart
           {$place_order}
-| {$content}
+        {/footer}
