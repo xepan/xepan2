@@ -87,7 +87,8 @@ padding:2px;
 .xshop-item-paginator > div{
   padding: 0.5em !important;
   border-radius: 0px !important;
-  width:350px;
+  width: 100%;
+  text-align:center;
   margin:0 auto 0px auto !important;
 }
 
@@ -1042,4 +1043,8 @@ table div.middle{
     font-size: 17px;
     font-weight: bold;
     padding: 5px;
+}
+
+#item ul{
+  margin-bottom: 10px !important;
 }
