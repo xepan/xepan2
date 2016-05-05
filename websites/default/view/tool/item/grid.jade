@@ -1,4 +1,3 @@
-
 div(id='{$_name}' class="{$class} row" style="{$style}")
 	{rows}{row}
 	ul.xshop-item.col-lg-3.col-md-3(data-xsnb-item-id='{$id}', onclick='javascript:void(0);')
@@ -11,7 +10,7 @@ div(id='{$_name}' class="{$class} row" style="{$style}")
 		{/}
 		{name_wrapper}
 		li 
-			a.xepan-commerce-item-name(href='{item_detail_page_url_via_name}{/}'){$name}
+			a.xepan-commerce-item-name(href='{item_detail_page_url_via_image}{/}'){$name}
 		{/}
 		{sale_price_wrapper}
 		li.xepan-commerce-tool-item-sale-price {$sale_price}
@@ -34,7 +33,7 @@ div(id='{$_name}' class="{$class} row" style="{$style}")
 		strong.glyphicon.glyphicon-warning-sign &nbsp;Warning!
 			span &nbsp;{$not_found_message}
 	{/}
-{paginator_wrapper}
-.xshop-item-paginator
-	{$Paginator}
-{/}
+	{paginator_wrapper}
+	.xshop-item-paginator(style='float:none; clear:both')
+		{$Paginator}
+	{/}
