@@ -38,6 +38,7 @@ class Form_Field_DatePicker extends Form_Field_Line {
         // $this->value contains date in MySQL format
         // we need it in locale format
 
+        $this->js(true)->_load('bootstrap-datepicker')->_css('libs/datepicker');
         $this->js(true)->datepicker(array_merge(array(
                     'duration'=>0,
                     'showOn'=>'none',
