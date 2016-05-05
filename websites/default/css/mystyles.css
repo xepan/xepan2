@@ -785,6 +785,12 @@ height:230px;
   width:70%;
 }
 
+.width-50{
+  width: 50%;
+}
+.width-40{
+  width: 40%;
+}
 .footer-menu{
   padding:10px;
 }
@@ -1096,4 +1102,17 @@ table div.middle{
     font-size: 17px;
     font-weight: bold;
     padding: 5px;
+}
+
+.prime-swatch-dark-orange:hover{
+    background-color: #ef7e1a;
+}
+
+.prime-login input{
+  border-radius:0px 5px 5px 0px !important;
+  height:35px;
+}
+
+.prime-login div.atk-cells-group{
+  width:100% !important;
 }
