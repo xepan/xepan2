@@ -1132,3 +1132,42 @@ table div.middle{
 .member-acount-left-panel button:hover{
   background-color:#C4E0E5;
 }
+
+.xepan-designer-step-active{
+  background-color:green; 
+  color: white;
+  padding: 10px;
+}
+.xepan-designer-step-deactive{
+  padding: 10px;
+  background-color: gray;
+  color: white
+}
+
+.xepan-designer-next-step-button, .xepan-designer-previous-step-button{
+  padding: 10px;
+  border-radius:40px !important;
+  width:80px !important;
+  transition: all .2s ease-in-out;
+}
+
+.xepan-designer-previous-step-button:hover{
+  transform: scale(1.1);
+  color: white !important;
+  background-color: rgb(247,170,72) !important;
+  
+}
+
+.xepan-designer-next-step-button:hover{
+  transform: scale(1.1);
+  background-color: rgb(68,192,240) !important;
+  color: white !important;
+}
+
+.xepan-designer-previous-step-button.dimmed,.xepan-designer-previous-step-button.dimmed:hover{
+  background-color: #f2f2f2;
+}
+
+.button-section{
+  padding: 5px;
+}
