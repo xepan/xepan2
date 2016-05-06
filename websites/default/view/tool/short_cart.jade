@@ -5,44 +5,61 @@
         span.xepan-commerce-cart-item-count  {total_count}0{/}
         |  - Items
         span.caret
-      ul.dropdown-menu.dropdown-cart.prime-cart(role='menu',style='width:300px')
-        | {lister}
-        | {rows}{row}
-        li(id='item-{$id}' class="xepan-commerce-tool-cart-item-row")
-          span.item
-            span.item-right
-              button.btn.btn-xs.btn-danger.pull-right.xepan-commerce-cart-item-delete(data-cartid='{$id}') x
-            span.item-left
-              img(src='http://lorempixel.com/50/50/', alt='')
-            span {$name}
-              span {$item_code}
-              span qty:{$qty}
-              span.text-center amount{$sales_amount}
-        | {/}{/}
-        |           {/lister}
+      ul.dropdown-menu.dropdown-cart.prime-cart(role='menu',style='width:400px; background:white') 
+        .scroll-item
+          {lister}
+          {rows}{row}
+          li(id='item-{$id}' class="xepan-commerce-tool-cart-item-row" style='background:white;'  )
+            span.item(style='background:white')
+              .row(style='background:#F2F2F2')
+                .col-lg-3
+                  img(src='http://lorempixel.com/50/50/', alt='')
+                .col-lg-8.short-cart-item-name
+                  {$name}
+                  .row
+                    .col-lg-6.short-cart-item-detail
+                      ul 
+                        li Item Code :
+                        li Qty:
+                        li Amount:
+                    .col-lg-6.short-cart-item-detail
+                      ul
+                        li {$item_code}
+                        li {$qty}
+                        li {$sales_amount}
+                .col-lg-1
+                  button.btn.btn-xs.btn-info.pull-right.xepan-commerce-cart-item-delete(data-cartid='{$id}') x
+          {/}{/}
+          {/lister}
         {not_found}
         li.prime-cart-empty
           {$not_found_message}
         {/}
         {footer}
         li.divider
-        |               {sum_amount_excluding_tax_wrapper}
-        .row
-          li Sum Amount
-            .text-right ₹{sum_amount_excluding_tax}amt_excluding_tax_here{/}
-        |               {/}
-        |               {shipping_charge_wrapper}
-        li.text-right ₹ {$shipping_charge}
-        |               {/}
-        |               {tax_amount_wrapper}
-        li.text-right ₹ {tax_amount}tax_amount{/}
         li
-          | {/}
-          | {total_amount_wrapper}
-        li Total Amount:
-          li.text-right ₹ {total_amount}total_amount{/} 
-        |               {/}
+          {sum_amount_excluding_tax_wrapper}
+          .row
+            .col-lg-6 Sum Amount
+            .col-lg-6.text-right  ₹{sum_amount_excluding_tax}{/}
+          {/}
+          {sum_shipping_charge_wrapper}
+          .row
+            .col-lg-6 Shipping Charge
+            .col-lg-6.text-right ₹{sum_shipping_charge}0.00{/}
+          {/}
+          {tax_amount_wrapper}
+          .row
+            .col-lg-6 Tax Amount
+            .col-lg-6.text-right ₹ {tax_amount}tax_amount{/}
+          {/}
+          {total_amount_wrapper}
+          .row
+            .col-lg-6 Total Amount:
+            .col-lg-6.text-right ₹ {net_amount}{/}
+          {/}
+        li.divider
         li
           a.text-center(href="{$cart_detail_url}") View Cart
-          {$place_order}
+            {$place_order}
         {/footer}

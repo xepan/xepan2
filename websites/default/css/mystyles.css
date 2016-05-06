@@ -570,6 +570,13 @@ color:white;
 background-size:30px;
 }
 
+.scroll-item {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 250px;
+    background: white;
+}
+
 .xshop-item-personalize > button:active{
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
@@ -934,6 +941,14 @@ height: auto !important;
 .xepan-commerce-tool-cartul.dropdown-cart li .item-left span.item-info{
     float:left;
 }
+
+.short-cart-item-name{
+    font-size: 12px;
+}
+
+.short-cart-item-detail{
+    font-size:10px;
+}
 .xepan-commerce-tool-cart ul.dropdown-cart li .item-left span.item-info{
     margin-left:10px;   
 }
@@ -1170,4 +1185,21 @@ table div.middle{
 
 .button-section{
   padding: 5px;
+}
+
+.memeber-account-member-address-form div{
+  padding-bottom:10px;
+}
+
+.member-account-member-address input{
+  width: 100% !important;
+}
+
+.atk-cells-group{
+  display: inline !important;
+  width:100%;
+}
+
+.memeber-account-member-address-form textarea{
+  height: 30px !important;
 }
