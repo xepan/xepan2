@@ -2,33 +2,65 @@
 <div id="{$_name}" class="xepan-commerce-tool-cart {$class}">
   <ul>
     <li style="padding:0px;margin:0px;" class="dropdown reset-margin text-center"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" style="padding:0px;margin:0px;" class="dropdown-toggle reset-margin"><span class="xepan-commerce-cart-item-count"> {total_count}0{/}</span> - Items<span class="caret"></span></a>
-      <ul role="menu" style="width:300px" class="dropdown-menu dropdown-cart prime-cart">
-        {lister}
-        {rows}{row}
-        <li id="item-{$id}" class="xepan-commerce-tool-cart-item-row"><span class="item"><span class="item-right">
-              <button data-cartid="{$id}" class="btn btn-xs btn-danger pull-right xepan-commerce-cart-item-delete">x</button></span><span class="item-left"><img src="http://lorempixel.com/50/50/" alt=""/></span><span>{$name}<span>{$item_code}</span><span>qty:{$qty}</span><span class="text-center">amount{$sales_amount}</span></span></span></li>{/}{/}
-                  {/lister}
-        {not_found}
+      <ul role="menu" style="width:400px; background:white" class="dropdown-menu dropdown-cart prime-cart"> 
+        <div class="scroll-item">
+          {lister}
+          {rows}{row}
+          <li id="item-{$id}" style="background:white;" class="xepan-commerce-tool-cart-item-row"><span style="background:white" class="item">
+              <div style="background:#F2F2F2" class="row">
+                <div class="col-lg-3"><img src="http://lorempixel.com/50/50/" alt=""/></div>
+                <div class="col-lg-8 short-cart-item-name">{$name}
+                  <div class="row">
+                    <div class="col-lg-6 short-cart-item-detail">
+                      <ul> 
+                        <li>Item Code :</li>
+                        <li>Qty:</li>
+                        <li>Amount:</li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-6 short-cart-item-detail">
+                      <ul>
+                        <li>{$item_code}</li>
+                        <li>{$qty}</li>
+                        <li>{$sales_amount}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-1">
+                  <button data-cartid="{$id}" class="btn btn-xs btn-info pull-right xepan-commerce-cart-item-delete">x</button>
+                </div>
+              </div></span></li>{/}{/}
+          {/lister}
+        </div>{not_found}
         <li class="prime-cart-empty">{$not_found_message}</li>{/}
         {footer}
-        <li class="divider"></li>              {sum_amount_excluding_tax_wrapper}
-        <div class="row">
-          <li>Sum Amount
-            <div class="text-right">₹{sum_amount_excluding_tax}amt_excluding_tax_here{/}</div>
-          </li>
-        </div>              {/}
-                      {shipping_charge_wrapper}
-        <li class="text-right">₹ {$shipping_charge}</li>              {/}
-                      {tax_amount_wrapper}
-        <li class="text-right">₹ {tax_amount}tax_amount{/}</li>
-        <li>
-          {/}
+        <li class="divider"></li>
+        <li>{sum_amount_excluding_tax_wrapper}
+          <div class="row">
+            <div class="col-lg-6">Sum Amount</div>
+            <div class="col-lg-6 text-right"> ₹{sum_amount_excluding_tax}{/}</div>
+          </div>{/}
+          {sum_shipping_charge_wrapper}
+          <div class="row">
+            <div class="col-lg-6">Shipping Charge</div>
+            <div class="col-lg-6 text-right">₹{sum_shipping_charge}0.00{/}</div>
+          </div>{/}
+          {tax_amount_wrapper}
+          <div class="row">
+            <div class="col-lg-6">Tax Amount</div>
+            <div class="col-lg-6 text-right">₹ {tax_amount}tax_amount{/}</div>
+          </div>{/}
           {total_amount_wrapper}
+          <div class="row">
+            <div class="col-lg-6">Total Amount:</div>
+            <div class="col-lg-6 text-right">₹ {net_amount}{/}</div>
+          </div>{/}
         </li>
-        <li>Total Amount:
-          <li class="text-right">₹ {total_amount}total_amount{/} </li>
-        </li>              {/}
-        <li><a href="{$cart_detail_url}" class="text-center">View Cart</a>{$place_order}</li>{/footer}
+        <li class="divider"></li>
+        <li><a href="{$cart_detail_url}" class="text-center">
+            View Cart
+            {$place_order}</a></li>{/footer}
       </ul>
     </li>
   </ul>
