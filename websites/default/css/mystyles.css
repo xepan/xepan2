@@ -1132,3 +1132,20 @@ table div.middle{
 .member-acount-left-panel button:hover{
   background-color:#C4E0E5;
 }
+
+.memeber-account-member-address-form div{
+  padding-bottom:10px;
+}
+
+.member-account-member-address input{
+  width: 100% !important;
+}
+
+.atk-cells-group{
+  display: inline !important;
+  width:100%;
+}
+
+.memeber-account-member-address-form textarea{
+  height: 30px !important;
+}
