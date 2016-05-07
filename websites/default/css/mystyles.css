@@ -1168,6 +1168,18 @@ table div.middle{
   transition: all .2s ease-in-out;
 }
 
+.xepan-designer-next-step-button{
+  margin-right: 10px;
+}
+
+.xepan-designer-previous-step-button{
+  margin-left: 10px;
+}
+
+.field-error-text{
+  color:red !important;
+}
+
 
 .xepan-designer-next-step-button:hover{
   transform: scale(1.1);
@@ -1177,7 +1189,13 @@ table div.middle{
 
 
 .button-section{
+  padding: 1px;
+}
+
+.button-section button{
+  border-radius: 40px !important;
   padding: 5px;
+  width: 40%;
 }
 
 .memeber-account-member-address-form div{
@@ -1205,8 +1223,6 @@ table div.middle{
 }
 .xepan-designer-step-button-dimmed{
   background-color: #f2f2f2 !important;
-  padding: 10px;
-  border-radius:40px !important;
 }
 .xepan-designer-step-button-dimmed.finish,.xepan-designer-step-button-dimmed.finish:hover{
   border:2px solid rgb(119,186,93);
@@ -1229,4 +1245,13 @@ table div.middle{
   color: white !important;
   font-size: 18px;
   border:2px solid #f7a707 !important;
+}
+
+.xshop-designer-item-name{
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.xshop-desiner-tool-canvas{
+  margin: 0 auto;
 }
