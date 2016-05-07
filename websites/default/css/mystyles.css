@@ -30,6 +30,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef7e1a', end
   color:  #7b7d7d;
 }
 
+.button-order {
+display: block;
+background: blue;
+width/*: 63px;
+height:*/ 34px;
+}
+
 
 ul.xshop-item:hover{
 border-bottom: 0px solid #f7a707 !important;
@@ -573,7 +580,8 @@ background-size:30px;
 .scroll-item {
     overflow-x: hidden;
     overflow-y: auto;
-    height: 250px;
+    min-height: auto;
+    max-height:250px;
     background: white;
 }
 
