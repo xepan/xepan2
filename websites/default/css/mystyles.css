@@ -1149,14 +1149,16 @@ table div.middle{
 }
 
 .xepan-designer-step-active{
-  background-color:green; 
+  background-color:rgb(119,186,93); 
   color: white;
   padding: 10px;
+  font-weight: bold;
 }
 .xepan-designer-step-deactive{
   padding: 10px;
-  background-color: gray;
-  color: white
+  background-color: rgb(242,242,242);
+  color: black;
+  border-right:1px solid rgb(235,103,82);
 }
 
 .xepan-designer-next-step-button, .xepan-designer-previous-step-button{
@@ -1166,12 +1168,6 @@ table div.middle{
   transition: all .2s ease-in-out;
 }
 
-.xepan-designer-previous-step-button:hover{
-  transform: scale(1.1);
-  color: white !important;
-  background-color: rgb(247,170,72) !important;
-  
-}
 
 .xepan-designer-next-step-button:hover{
   transform: scale(1.1);
@@ -1179,9 +1175,6 @@ table div.middle{
   color: white !important;
 }
 
-.xepan-designer-previous-step-button.dimmed,.xepan-designer-previous-step-button.dimmed:hover{
-  background-color: #f2f2f2;
-}
 
 .button-section{
   padding: 5px;
@@ -1202,4 +1195,38 @@ table div.middle{
 
 .memeber-account-member-address-form textarea{
   height: 30px !important;
+}
+
+.xepan-designer-previous-step-button:hover{
+  transform: scale(1.1);
+  color: white !important;
+  background-color: rgb(247,170,72) !important;
+  
+}
+.xepan-designer-step-button-dimmed{
+  background-color: #f2f2f2 !important;
+  padding: 10px;
+  border-radius:40px !important;
+}
+.xepan-designer-step-button-dimmed.finish,.xepan-designer-step-button-dimmed.finish:hover{
+  border:2px solid rgb(119,186,93);
+}
+
+.xepan-designer-price-addtocart-section > div{
+  width:50%;
+  margin: 0 auto;
+}
+
+/*for prime*/
+.xepan-commerce-tool-item-original-price{
+  display: none;
+}
+
+.xepan-designer-addtocart button{
+  width:100%;
+  padding:8px !important;
+  background-color:rgb(247,167,7) !important;
+  color: white !important;
+  font-size: 18px;
+  border:2px solid #f7a707 !important;
 }
