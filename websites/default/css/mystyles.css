@@ -30,6 +30,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef7e1a', end
   color:  #7b7d7d;
 }
 
+.button-order {
+display: block;
+background: blue;
+width/*: 63px;
+height:*/ 34px;
+}
+
 
 ul.xshop-item:hover{
 border-bottom: 0px solid #f7a707 !important;
@@ -570,6 +577,14 @@ color:white;
 background-size:30px;
 }
 
+.scroll-item {
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: auto;
+    max-height:250px;
+    background: white;
+}
+
 .xshop-item-personalize > button:active{
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
@@ -934,6 +949,14 @@ height: auto !important;
 .xepan-commerce-tool-cartul.dropdown-cart li .item-left span.item-info{
     float:left;
 }
+
+.short-cart-item-name{
+    font-size: 12px;
+}
+
+.short-cart-item-detail{
+    font-size:10px;
+}
 .xepan-commerce-tool-cart ul.dropdown-cart li .item-left span.item-info{
     margin-left:10px;   
 }
@@ -1133,6 +1156,56 @@ table div.middle{
   background-color:#C4E0E5;
 }
 
+.xepan-designer-step-active{
+  background-color:rgb(119,186,93); 
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+.xepan-designer-step-deactive{
+  padding: 10px;
+  background-color: rgb(242,242,242);
+  color: black;
+  border-right:1px solid rgb(235,103,82);
+}
+
+.xepan-designer-next-step-button, .xepan-designer-previous-step-button{
+  padding: 10px;
+  border-radius:40px !important;
+  width:80px !important;
+  transition: all .2s ease-in-out;
+}
+
+.xepan-designer-next-step-button{
+  margin-right: 10px;
+}
+
+.xepan-designer-previous-step-button{
+  margin-left: 10px;
+}
+
+.field-error-text{
+  color:red !important;
+}
+
+
+.xepan-designer-next-step-button:hover{
+  transform: scale(1.1);
+  background-color: rgb(68,192,240) !important;
+  color: white !important;
+}
+
+
+.button-section{
+  padding: 1px;
+}
+
+.button-section button{
+  border-radius: 40px !important;
+  padding: 5px;
+  width: 40%;
+}
+
 .memeber-account-member-address-form div{
   padding-bottom:10px;
 }
@@ -1148,4 +1221,45 @@ table div.middle{
 
 .memeber-account-member-address-form textarea{
   height: 30px !important;
+}
+
+.xepan-designer-previous-step-button:hover{
+  transform: scale(1.1);
+  color: white !important;
+  background-color: rgb(247,170,72) !important;
+  
+}
+.xepan-designer-step-button-dimmed{
+  background-color: #f2f2f2 !important;
+}
+.xepan-designer-step-button-dimmed.finish,.xepan-designer-step-button-dimmed.finish:hover{
+  border:2px solid rgb(119,186,93);
+}
+
+.xepan-designer-price-addtocart-section > div{
+  width:50%;
+  margin: 0 auto;
+}
+
+/*for prime*/
+.xepan-commerce-tool-item-original-price{
+  display: none;
+}
+
+.xepan-designer-addtocart button{
+  width:100%;
+  padding:8px !important;
+  background-color:rgb(247,167,7) !important;
+  color: white !important;
+  font-size: 18px;
+  border:2px solid #f7a707 !important;
+}
+
+.xshop-designer-item-name{
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.xshop-desiner-tool-canvas{
+  margin: 0 auto;
 }
