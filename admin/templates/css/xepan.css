@@ -370,3 +370,9 @@ textarea {width: 100%;}
 .xepan-padding-bottom-reset {
   padding-bottom: 0;
 }
+
+.xepan-hover-hand span{
+  cursor:pointer;
+  cursor: hand;
+  max-width:600px;
+}
