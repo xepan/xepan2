@@ -38,7 +38,7 @@ class Frontend extends ApiFrontend {
         
         
         // Should come from any local DB store
-        $addons = ['xepan\\base','xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production','xepan\\accounts','xepan\\cms','xepan\\crm'];
+        $addons = ['xepan\\base','xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production','xepan\\accounts','xepan\\crm','xepan\\cms'];
 
         $app_initiators=[];
         foreach ($addons as $addon) {
@@ -73,8 +73,7 @@ class Frontend extends ApiFrontend {
     }
 
     protected function loadStaticPage($page){
-        
-
+            
         $layout = $this->layout ?: $this;
         try{
             $t='page/'.str_replace('_','/',strtolower($page));

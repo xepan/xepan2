@@ -466,7 +466,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/85cb758d7367f3aaaa8ffc9269e777919c5f68bb",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/58e54017e95418968bddb1b16548e2e119312776",
                 "reference": "85cb758d7367f3aaaa8ffc9269e777919c5f68bb",
                 "shasum": ""
             },
@@ -768,7 +768,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/b8b4bb5fc98baa8a2b139952902eb302b7921c54",
+                "url": "https://api.github.com/repos/nette/utils/zipball/69684ba1fdbe7a6a72cdb9ccb303344adb068156",
                 "reference": "b8b4bb5fc98baa8a2b139952902eb302b7921c54",
                 "shasum": ""
             },
@@ -2417,7 +2417,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/b02221e42163be673f9b44a0bc92a8b4907a7c6d",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/80138299aadb590ce3fd0b75d30343fff9f8d0a8",
                 "reference": "b02221e42163be673f9b44a0bc92a8b4907a7c6d",
                 "shasum": ""
             },
@@ -2479,7 +2479,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6d3b505cb3a6143adcd58375870eb0b4b98636bc",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9eb699e97e0097f05bcf1cd9bbb91c582a48bf9e",
                 "reference": "6d3b505cb3a6143adcd58375870eb0b4b98636bc",
                 "shasum": ""
             },
@@ -2720,7 +2720,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a6e1988caf6cf5a77a04936c46825fc5a6d7b2d0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/82a3aafd187033fd5572ad28dfff7c1989cbf68d",
                 "reference": "a6e1988caf6cf5a77a04936c46825fc5a6d7b2d0",
                 "shasum": ""
             },
@@ -3061,7 +3061,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/2292b116f43c272ff4328083096114f84ea46a56",
                 "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
                 "shasum": ""
             },
@@ -3452,7 +3452,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/6f0159230536f4b36a257e5c2a3899bde8ff494e",
+                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/352dde22c034ea5e5dceaa8cfa1dba67b8a19c1c",
                 "reference": "6f0159230536f4b36a257e5c2a3899bde8ff494e",
                 "shasum": ""
             },
@@ -3736,7 +3736,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/81c4c51f7fd6d0d40961bd53dd60cade32db6ed6",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/a158f13992a3147d466af7a23b564ac719a4ddd8",
                 "reference": "81c4c51f7fd6d0d40961bd53dd60cade32db6ed6",
                 "shasum": ""
             },
@@ -4379,7 +4379,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-28 13:34:23"
+            "time": "2016-05-05 16:44:05"
         },
         {
             "name": "xepan/base",
@@ -4422,7 +4422,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-29 11:51:09"
+            "time": "2016-05-06 10:17:47"
         },
         {
             "name": "xepan/ccavenue",
@@ -4519,7 +4519,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-18 09:35:53"
+            "time": "2016-05-06 09:47:14"
         },
         {
             "name": "xepan/commerce",
@@ -4566,7 +4566,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-29 05:37:21"
+            "time": "2016-05-03 06:02:38"
         },
         {
             "name": "xepan/communication",
@@ -4613,7 +4613,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-04-28 06:08:59"
+            "time": "2016-05-07 12:49:09"
         },
         {
             "name": "xepan/crm",
@@ -4660,7 +4660,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-28 14:22:55"
+            "time": "2016-05-06 14:07:46"
         },
         {
             "name": "xepan/gd-text",
@@ -4736,7 +4736,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-28 07:58:42"
+            "time": "2016-05-06 12:43:09"
         },
         {
             "name": "xepan/mail",
@@ -4842,7 +4842,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-27 11:22:30"
+            "time": "2016-05-06 14:19:42"
         },
         {
             "name": "xepan/omnipay",
@@ -4850,12 +4850,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xepan/omnipay.git",
-                "reference": "432305c2f37f27f792b4c286681c7e0d4c40325b"
+                "reference": "405b3d516c83be4f0f44b33ffed2393c06ed1ba1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/omnipay/zipball/432305c2f37f27f792b4c286681c7e0d4c40325b",
-                "reference": "432305c2f37f27f792b4c286681c7e0d4c40325b",
+                "url": "https://api.github.com/repos/xepan/omnipay/zipball/405b3d516c83be4f0f44b33ffed2393c06ed1ba1",
+                "reference": "405b3d516c83be4f0f44b33ffed2393c06ed1ba1",
                 "shasum": ""
             },
             "require": {
@@ -4885,7 +4885,8 @@
                 "omnipay/stripe": "~2.0",
                 "omnipay/targetpay": "~2.0",
                 "omnipay/worldpay": "~2.0",
-                "xepan/ccavenue": "dev-master"
+                "xepan/ccavenue": "dev-master",
+                "xepan/xepanwallet": "dev-master"
             },
             "require-dev": {
                 "omnipay/tests": "~2.0"
@@ -4994,9 +4995,10 @@
                 "tala-payments",
                 "targetpay",
                 "twocheckout",
-                "worldpay"
+                "worldpay",
+                "xepanwallet"
             ],
-            "time": "2016-04-09 12:12:49"
+            "time": "2016-05-07 13:59:23"
         },
         {
             "name": "xepan/php-image",
@@ -5085,7 +5087,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-22 11:30:55"
+            "time": "2016-05-01 06:10:26"
         },
         {
             "name": "xepan/projects",
@@ -5130,7 +5132,58 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-28 05:58:53"
+            "time": "2016-04-30 07:32:39"
+        },
+        {
+            "name": "xepan/xepanwallet",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:xepan/xepanwallet.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/xepanwallet/zipball/f7dbaaa0e1c53caf96a1671d8e3c12209411d9bb",
+                "reference": "f7dbaaa0e1c53caf96a1671d8e3c12209411d9bb",
+                "shasum": ""
+            },
+            "require": {
+                "omnipay/common": "~2.0",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Omnipay\\xepanwallet\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "xepan wallet credit Payment Gateway for OmniPay ",
+            "homepage": "https://github.com/xepan/xepanwallet",
+            "keywords": [
+                "ERP",
+                "omnipay",
+                "paymentgateway",
+                "saas",
+                "xepan",
+                "xepanwallet"
+            ],
+            "time": "2016-05-07 13:55:31"
         }
     ],
     "packages-dev": [],

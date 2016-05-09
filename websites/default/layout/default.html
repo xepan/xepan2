@@ -63,7 +63,7 @@
                 </div>
                 <div class="col-md-2 userpanel">
                     <div style="padding-right: 10px; background-image: url('image/icon/print_on_click_signin_icon.png'); background-repeat: no-repeat;background-position:right;background-position:right">
-                       <div xepan-component="\xepan\base\Tool_UserPanel" layout="micro_login" class="xepan-component" show_micro_login="true"></div> 
+                       <div xepan-component="/xepan/base/Tool_UserPanel" layout="micro_login" class="xepan-component xepan-serverside-component" show_micro_login="true"></div> 
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -100,7 +100,7 @@
         </div>
 </div>
 </header>
-<div class="prime-page-container">
+<div class="prime-page-container xepan-component xepan-sortable-component" xepan-component='/xepan/cms/Tool_Container'>
 {$Content}
 </div>
 

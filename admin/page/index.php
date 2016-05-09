@@ -1,6 +1,6 @@
 <?php
 
-class page_index extends Page {
+class page_index extends \xepan\base\Page {
 
     public $title='DashboardXX';
 
