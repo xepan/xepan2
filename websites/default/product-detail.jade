@@ -2,10 +2,10 @@ div(id='{$_name}')
 div.container.width-90
 	div.row
 		div.col-lg-4
-			div.xepan-component(xepan-component="xepan\\commerce\\Tool_ItemImage")
+			div.xepan-component.xepan-serverside-component(xepan-component="xepan/commerce/Tool_ItemImage")
 		div.col-lg-8
 			//- item description
-			div.xepan-component(xepan-component="xepan\\commerce\\Tool_Item_Detail" layout="detail"
+			div.xepan-component.xepan-serverside-component(xepan-component="xepan/commerce/Tool_Item_Detail" layout="detail"
 			show_name="true" 
 			show_description="true"
 			personalized_button_label='Personalize'
