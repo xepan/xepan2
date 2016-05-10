@@ -32,6 +32,9 @@ textarea {width: 100%;}
 .form-control{
 	border:none ;
 }
+.form-control button{
+  float:right;
+}
 
 .filter-block .form-group .search-icon{
 	right:0px;
@@ -375,4 +378,20 @@ textarea {width: 100%;}
   cursor:pointer;
   cursor: hand;
   max-width:600px;
+}
+
+#content-wrapper{
+  height: auto;
+  min-height: 623px;
+}
+.navbar > .container .navbar-brand{
+  width: 200px;
+}
+.xepan-contact-profile button{
+  font-size: 10px;
+  padding: 5px 6px;
+}
+#user-profile .profile-details{
+  margin:0px;
+  padding: 0px;
 }
