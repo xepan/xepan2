@@ -1,43 +1,75 @@
-x.xepan-commerce-tool-cart(id='{$_name}', class='{$class}')
-  ul
-    li.dropdown.reset-margin.text-center(style="padding:0px;margin:0px;")
-      a.dropdown-toggle.reset-margin(href='#', data-toggle='dropdown', role='button', aria-expanded='false' style="padding:0px;margin:0px;")
-        span.xepan-commerce-cart-item-count  {$total_count}
-        |  - Items
-        span.caret
-      ul.dropdown-menu.dropdown-cart(role='menu',style='width:300px')
-        | {lister}
-        | {rows}{row}
-        li(id='item-{$id}' class="xepan-commerce-tool-cart-item-row")
-          span.item
-            span.item-right
-              button.btn.btn-xs.btn-danger.pull-right.xepan-commerce-cart-item-delete(data-cartid='{$id}') x
-            span.item-left
-              img(src='http://lorempixel.com/50/50/', alt='')
-            span {$name}
-              span {$item_code}
-              span qty:{$qty}
-              span.text-center amount{$sales_amount}
-        |           {/}{/}
-        |           {/lister}
-        li.divider
-        |               {sum_amount_excluding_tax_wrapper}
-        .row
-          li Sum Amount
-            .text-right ₹{sum_amount_excluding_tax}amt_excluding_tax_here{/}
-        |               {/}
-        |               {shipping_charge_wrapper}
-        li.text-right ₹ {$shipping_charge}
-        |               {/}
-        |               {tax_amount_wrapper}
-        li.text-right ₹ {tax_amount}tax_amount{/}
-        li
-          | {/}
-          | {total_amount_wrapper}
-        li Total Amount:
-          li.text-right ₹ {total_amount}total_amount{/} 
-        |               {/}
-        li
-          a.text-center(href="{$cart_detail_url}") View Cart
-          {$place_order}
-| {$content}
+// Cart Dropdown
+.cart-dropdown.xepan-commerce-tool-cart(id='{$_name}', class='{$class}')
+  span
+  // Small rectangle to overlap Cart button
+  {lister}
+  .body
+    table
+      {cols}{col}
+      tr
+        th Items
+        th Quantity
+        th Price
+      {/}{/}
+      {rows}{row}
+      tr.item
+        {cols}
+        td
+          .delete
+          a(href='#') {name} Good Joo-Joo Surfb {/}
+        td
+          {qty}
+          input(type='text', value='1')
+          {/}
+        td.price {sales_amount} 4 300 $ {/}
+        {/}
+      {/}{/}
+  {/lister}
+  .footer.group
+      .buttons
+        a.btn.btn-outlined-invert(href='checkout.html')
+          i.icon-download
+          | Checkout
+        a.btn.btn-outlined-invert(href="{$cart_detail_url}")
+          i.icon-shopping-cart-content
+          | {place_order} To Cart {/}
+      .total {total_amount}93 389 ${/}
+{$content}
+
+
+
+//-         span.xepan-commerce-cart-item-count  {$total_count}
+//-         |  - Items
+//-         span.caret
+//-       ul.dropdown-menu.dropdown-cart(role='menu')
+//-         | {lister}
+//-         | {rows}{row}
+//-         li(id='item-{$id}' class="xepan-commerce-tool-cart-item-row")
+//-           span.item
+//-             span.item-left
+//-               img(alt='', src='{$image_url}')
+//-               span.item-info
+//-                 span {$name}{$item_code}
+//-                 span qty:{$qty} amount{$sales_amount}
+//-             span.item-right
+//-               button.btn.btn-xs.btn-danger.pull-right.xepan-commerce-cart-item-delete(data-cartid='{$id}') x
+//-         |           {/}{/}
+//-         |           {/lister}
+//-         li.divider
+//-         |               {sum_amount_excluding_tax_wrapper}
+//-         li Sum Amount₹ {sum_amount_excluding_tax}amt_excluding_tax_here{/}
+//-         |               {/}
+//-         |               {shipping_charge_wrapper}
+//-         li ₹ {$shipping_charge}
+//-         |               {/}
+//-         |               {tax_amount_wrapper}
+//-         li ₹ {tax_amount}tax_amount{/}
+//-         li
+//-           | {/}
+//-           | {total_amount_wrapper}
+//-         li Total Amount:₹ {total_amount}total_amount{/} 
+//-         |               {/}
+//-         li
+//-           a.text-center(href="{$cart_detail_url}") View Cart
+//-           {$place_order}
+//- | {$content}
