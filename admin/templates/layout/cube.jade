@@ -1,3 +1,14 @@
+#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+        h4.modal-title Quick Search
+      .modal-body
+        {$quick_search_form}
+        {$quick_search_result}
+      .modal-footer
+        button.btn.btn-default(type='button', data-dismiss='modal') Close
 #theme-wrapper.atk-layout
       header#header-navbar.navbar
         .container
@@ -30,13 +41,8 @@
             #header-nav.nav-no-collapse.pull-right
               ul.nav.navbar-nav.pull-right
                 li.mobile-search
-                  a.btn
+                  a.btn(data-toggle="modal", href="#myModal")
                     i.fa.fa-search
-                  .drowdown-search
-                    form(role='search')
-                      .form-group
-                        input.form-control(type='text', placeholder='Search...')
-                        i.fa.fa-search.nav-search-icon
                 li.dropdown.profile-dropdown
                   a.dropdown-toggle(href='#', data-toggle='dropdown')
                     //- img(src='img/samples/scarlet-159.png', alt='')

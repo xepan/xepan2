@@ -19,20 +19,22 @@
   <link href="css/styles.css" rel="stylesheet" media="screen"/>
   <!-- Color Scheme-->
   <link href="css/color-default.css" rel="stylesheet" media="screen" class="color-scheme"/>
+  <link href="css/mystyle.css" rel="stylesheet"/>
   <!-- Color Switcher-->
   <link href="css/color-switcher.css" rel="stylesheet" media="screen"/>
-  <!-- Modernizr-->
-  <script src="js/dc.js" async="" type="text/javascript"></script>
-  <script src="js/modernizr.js"></script>
   <!-- Adding Media Queries Support for IE8-->
   <!--if lt IE 9script(src='js/plugins/respond.js')
-  -->{$js_block}
+  -->
+  {$js_block}
   {$js_include}
   <script type="text/javascript">
     $(function(){
-    {$document_ready}
+      {$document_ready}
     });
   </script>
+  <!-- Modernizr-->
+  <script src="js/dc.js" async="" type="text/javascript"></script>
+  <script src="js/modernizr.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -45,6 +47,8 @@
         <div class="form-group">
           <label for="search-hd" class="sr-only">Search for product</label>
           <input id="search-hd" type="text" placeholder="Search for product" name="search-hd" class="form-control"/>
+          <div class="xepan-component" xepan-component="xepan\commerce\Tool_Search">
+          </div>
           <button type="submit"><i class="icon-magnifier"></i></button>
         </div>
       </div>
@@ -157,46 +161,7 @@
             <div class="cart-dropdown"><span></span>
               <!-- Small rectangle to overlap Cart button-->
               <div class="body">
-                <table>
-                  <tbody>
-                    <tr>
-                      <th>Items</th>
-                      <th>Quantity</th>
-                      <th>Price</th>
-                    </tr>
-                    <tr class="item">
-                      <td>
-                        <div class="delete"></div><a href="#">Good Joo-Joo Surfb</a>
-                      </td>
-                      <td>
-                        <input type="text" value="1"/>
-                      </td>
-                      <td class="price">89 005 $</td>
-                    </tr>
-                    <tr class="item">
-                      <td>
-                        <div class="delete"></div><a href="#">Good Joo-Joo Item</a>
-                      </td>
-                      <td>
-                        <input type="text" value="2"/>
-                      </td>
-                      <td class="price">4 300 $</td>
-                    </tr>
-                    <tr class="item">
-                      <td>
-                        <div class="delete"></div><a href="#">Good Joo-Joo</a>
-                      </td>
-                      <td>
-                        <input type="text" value="5"/>
-                      </td>
-                      <td class="price">84 $</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="footer group">
-                <div class="buttons"><a href="checkout.html" class="btn btn-outlined-invert"><i class="icon-download"></i>Checkout</a><a href="shopping-cart.html" class="btn btn-outlined-invert"><i class="icon-shopping-cart-content"></i>To cart</a></div>
-                <div class="total">93 389 $</div>
+                <div xepan-component="xepan/commerce/Tool_Cart" layout="short_cart"  class="xepan-component xepan-serverside-component" image="yes" show_customfield="true" show_qtyform="true" show_round_amount="yes" checkout_page="checkout" place_order_button_name="Place Order" show_design_edit="true" designer_page_url="productdesigner" show_discount_voucher="true"></div>
               </div>
             </div>
             <!-- Cart Dropdown Close-->
@@ -207,6 +172,20 @@
       </div>
     </div>
   </header>
+    <!--Login Modal-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+            <h2>Login or <a href="register.html">Register</a></h2>
+          </div>
+          <div class="modal-body">
+             <div xepan-component="xepan/base/Tool_UserPanel" layout="login_view" class="xepan-component xepan-serverside-component"></div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
   <div class="page-content"> {$Content}</div>
   <!-- Footer-->
   <footer class="footer">

@@ -11,30 +11,29 @@
     <meta name="keywords" content="mz,mzcreatives,creatives,template,website,onepage,webdesign,portfolio,build website,themeforest" />
     <meta name="description" content="Now you can buy or use template from themeforest design by mzcreatives" />
     <meta property="og:title" content="One page website template for multipurpose website" />
-    <base href="websites/default/" />
-
+    
      <!---Common css---->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link href="{css}/common.css{/}" rel="stylesheet" type="text/css" />
-        <link href="{css}/style.css{/}" type="text/css" rel="stylesheet" />
+        <link href="css/common.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" type="text/css" rel="stylesheet" />
 
 
-    <link href="{css}/quickweb.css{/}" rel="stylesheet" type="text/css" />
+    <link href="css/quickweb.css" rel="stylesheet" type="text/css" />
      <link href="fonts/style.css" rel="stylesheet" type="text/css" />   
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900' rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" type="text/css" href="/xepan2/admin/templates/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../admin/templates/css/jquery-ui.css" />
 
-    <link rel="stylesheet" type="text/css" href="{css}css/xShop-itemgrid.css{/}" />
-    <link rel="stylesheet" type="text/css" href="{css}css/mystyles.css{/}" />
-    <link rel="stylesheet" type="text/css" href="{css}css/addtocart.css{/}" />
-    <!-- <link rel="stylesheet" type="text/css" href="{css}css/_epan.css{/}" /> -->
-    <link rel="stylesheet" type="text/css" href="{css}css/xepan_category.css{/}" />
-    <link rel="stylesheet" type="text/css" href="{css}css/jquery.fancybox-buttons.css{/}" />
-    <link rel="stylesheet" type="text/css" href="{css}css/jquery.fancybox.css{/}" />
+    <link rel="stylesheet" type="text/css" href="css/xShop-itemgrid.css" />
+    <link rel="stylesheet" type="text/css" href="css/mystyles.css" />
+    <link rel="stylesheet" type="text/css" href="css/addtocart.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/_epan.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/xepan_category.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox-buttons.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" />
     <!-- pace  css -->
     <!-- // <script src="js/pace.min.js"></script> -->
-    <!-- <link rel="stylesheet" type="text/css" href="{css}css/pace-loading-bar.css{/}" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/pace-loading-bar.css" /> -->
     
     <!--if lt IE 9
     script(src='js/html5shiv.js')
@@ -63,12 +62,12 @@
                 </div>
                 <div class="col-md-2 userpanel">
                     <div style="padding-right: 10px; background-image: url('image/icon/print_on_click_signin_icon.png'); background-repeat: no-repeat;background-position:right;background-position:right">
-                       <div xepan-component="/xepan/base/Tool_UserPanel" layout="micro_login" class="xepan-component xepan-serverside-component" show_micro_login="true"></div> 
+                       <div xepan-component="xepan/base/Tool_UserPanel" layout="micro_login" class="xepan-component xepan-serverside-component" show_micro_login="true"></div> 
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div style="padding-right: 10px; background-image: url(image/icon/print_on_click_cart_icon.png); background-repeat: no-repeat;background-position:right" class="xcart-icon p-icon-right" class=" xshop-cart">
-                        <div class="xepan-component xepan-serverside-component" xepan-component="xepan/commerce/Tool_Cart" layout="short_cart" cart-detail-url="yourcart" image="yes" place_order_button_name="checkout" checkout_page="checkout" show-place-order="true" show_discount_voucher="false" show_customfield="false" show_qtyform="false" show_discount_voucher="false">Tool_Cart</div>
+                        <div class="xepan-component" xepan-component="xepan\commerce\Tool_Cart" layout="short_cart" cart-detail-url="yourcart">Tool_Cart</div>
                     </div>
                 </div>
                 <div class="col-md-2 myaccount">
