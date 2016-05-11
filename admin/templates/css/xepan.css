@@ -395,3 +395,57 @@ textarea {width: 100%;}
   margin:0px;
   padding: 0px;
 }
+
+/*all input tag are 100 % */
+.xepan-admin-input-full-width .atk-form-field > *{
+  width:100%;
+}
+.xepan-admin-input-full-width .atk-form-row{
+  margin-bottom: 10px;
+}
+
+.xepan-admin-input-full-width .atk-actions  > button{
+  background-color: #03a9f4;
+  border-color: #2980b9;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-clip: padding-box;
+  border-color: -moz-use-text-color;
+  border-image: none;
+  border-radius: 3px;
+  border-style: none none solid;
+  border-width: medium medium 4px;
+  outline: medium none;
+  padding: 6px 12px;
+  transition: border-color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s;
+  color:#FFFFFF;  
+  border-color: #2980b9;
+}
+.has-error{
+  color: red;
+}
+
+/*100% width of multiselect*/
+.multiselect-full-width + span.select2 {
+  width:100% !important;
+}
+*Status Icon Color classes */
+
+.xepan-effect-green{
+  color: #8bc34a;
+}
+.xepan-effect-red{
+  color: #e84e40;
+  
+}
+.xepan-effect-yellow{
+  color: #ffc107;  
+}
+.xepan-effect-blue{
+  color: #03a9f4;
+}
+.xepan-effect-warning{
+  color: #f0ad4e;
+}

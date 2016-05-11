@@ -11,3 +11,4 @@ $config['tmail']['transport'] = 'Echo';
 
 $config['developer_mode'] = true;
 $config['all_rights_to_superuser'] = true;
+$config['status_icon'] = [];
