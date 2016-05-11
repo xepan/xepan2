@@ -7,7 +7,6 @@
   <meta name="description" content="Responsive HTML5 E-Commerce Template"/>
   <meta name="keywords" content="responsive html5 template, e-commerce, shop, bootstrap 3.0, css, jquery, flat, modern"/>
   <meta name="author" content="8Guild"/>
-  <base href="websites/demo/"/>
   <!-- Mobile Specific Meta Tag-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <!-- Favicon-->
@@ -46,7 +45,7 @@
         <div class="form-group">
           <label for="search-hd" class="sr-only">Search for product</label>
           <input id="search-hd" type="text" placeholder="Search for product" name="search-hd" class="form-control"/>
-          <div class="xepan-component" xepan-component="xepan\commerce\Tool_Search">
+          <div class="xepan-component xepan-serverside-component" xepan-component="xepan\commerce\Tool_Search">
           </div>
           <button type="submit"><i class="icon-magnifier"></i></button>
         </div>
@@ -157,12 +156,7 @@
         <div class="toolbar group"><a data-target="#loginModal" data-toggle="modal" href="#" class="login-btn btn-outlined-invert"><i class="icon-profile"></i><span><b>L</b>ogin</span></a><a href="wishlist.html" class="btn-outlined-invert"><i class="icon-heart"></i><span><b>W</b>ishlist</span></a>
           <div class="cart-btn"><a href="shopping-cart.html" class="btn btn-outlined-invert"><i class="icon-shopping-cart-content"></i><span>3</span><b>36 5654</b></a>
             <!-- Cart Dropdown-->
-            <div class="cart-dropdown"><span></span>
-              <!-- Small rectangle to overlap Cart button-->
-              <div class="body">
                 <div xepan-component="xepan/commerce/Tool_Cart" layout="short_cart"  class="xepan-component xepan-serverside-component" image="yes" show_customfield="true" show_qtyform="true" show_round_amount="yes" checkout_page="checkout" place_order_button_name="Place Order" show_design_edit="true" designer_page_url="productdesigner" show_discount_voucher="true"></div>
-              </div>
-            </div>
             <!-- Cart Dropdown Close-->
           </div>
           <button class="search-btn btn-outlined-invert"><i class="icon-magnifier"></i></button>
@@ -185,7 +179,10 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-  <div class="page-content"> {$Content}</div>
+  <div class="page-content prime-page-container xepan-component xepan-sortable-component" xepan-component='/xepan/cms/Tool_Container'>
+  {$Content}
+  </div>
+  <!-- <div class="page-content"> {$Content}</div> -->
   <!-- Footer-->
   <footer class="footer">
     <div class="container">
