@@ -32,21 +32,24 @@
 <section class="choose-theme section-padding color-white catalog-grid"  id="item">
 <div class="container">
   <h2 class="dark-color">Catalog picks</h2>
-  <div class="xepan-component container" xepan-component="xepan\commerce\Tool_ItemList" 
-            show_description="false"
-            show_paginator='4'
-            personalized_button_name='Presonalized'
-            personalized_page_url="productdesigner"
-            show_personalizedbtn="false"
-            item_detail_page_url="product-detail"
-            show_addtocart="true"
-            addtocart_name="Add To Cart"
-            addtocart="no"
-            show_sale_price="true"
-            show_original_price="true"
-            name_redirect_to_detail="false"
-            image_redirect_to_detail="true"
-            >
+    <div class="xepan-component " xepan-component="xepan/commerce/Tool_ItemList" 
+    show_description="false"
+    show_paginator="true"
+    paginator_set_rows_per_page="4"
+    personalized_button_name='Presonalized'
+    personalized_page_url="productdesigner"
+    show_personalizedbtn="true"
+    item_detail_page_url="product-detail"
+    show_addtocart="true"
+    addtocart_name="Add To Cart"
+    addtocart="no"
+    show_sale_price="false"
+    show_original_price="false"
+    name_redirect_to_detail="false"
+    image_redirect_to_detail="true"
+    is_filterable = "true"
+    is_mostviewed = "true"
+    >
     </div>
 </div>
         </section>

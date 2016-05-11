@@ -1,0 +1,17 @@
+form.registr-form(method='post', novalidate='novalidate')
+  .form-group.group
+    label Email
+    .atk-form-row.atk-form-field.xepan-form-field{$email_id}
+  .form-group.group
+    label Password
+    .atk-form-row.atk-form-field.xepan-form-field{$password}
+  .form-group.group
+    label Repeat password
+    .atk-form-row.atk-form-field.xepan-form-field{$retype_password}
+  .checkbox
+    label
+      .icheckbox(style='position: relative;')
+        input(type='checkbox', name='remember', style='position: absolute; opacity: 0;')
+        ins.iCheck-helper(style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;')
+      |  I have read and agree with the terms
+  input.btn.btn-black(type='submit', value='Register')

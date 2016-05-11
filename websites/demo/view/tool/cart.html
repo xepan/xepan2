@@ -1,0 +1,91 @@
+{$content}
+<section class="shopping-cart xepan-commerce-tool-cart">
+  <div class="container">
+    <div class="row">
+      <!-- Items List-->
+      <div class="col-lg-9 col-md-9">
+        <h2 class="title">Shopping cart</h2>{lister}
+        <table id="{$_name}" class="items-list {$class}">
+          <tbody>
+            <tr>{cols}{col}
+              <th> </th>
+              <th>Product name</th>
+              <th>Product price</th>
+              <th>Quantity</th>
+              <th>Total</th>{/}{/}
+            </tr>
+            <!-- Item-->{rows}{row}
+            <tr data-id="{$id}" class="item first {$odd_even} xepan-commerce-tool-cart-item-row">{cols}
+              <td class="thumb"><a href="shop-single-item-v1.html"><img alt="Lorem ipsum" src="img/catalog/shopping-cart-thumb_1.jpg"/></a></td>
+              <td class="name"><a href="shop-single-item-v1.html">{name}Wristlet{/}</a></td>
+              <td class="price">{unit_price}715,00 ${/}</td>
+              <td class="qnt-count"><a href="#" class="incr-btn">-</a>{qty_wrapper}   
+                {qty_form}{qty}
+                <input type="text" value="2" class="quantity form-control"/>{/}{/}{/}<a href="#" class="incr-btn">+</a>
+              </td>
+              <td class="total">{amount_including_tax}2715,00 ${/}</td>
+              <td class="delete xepan-commerce-cart-item-delete"><i data-cartid="{$id}" class="icon-delete"></i></td>{/}
+            </tr>{/}{/}
+          </tbody>
+        </table>{/lister}
+      </div>
+      <!-- Sidebar-->
+      <div class="col-lg-3 col-md-3">
+        <h3>Cart totals</h3>
+        <form method="post" class="cart-sidebar">
+          <div class="cart-totals">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Cart subtotal</td>
+                  <td class="total align-r">{gross_amount}2715,00 ${/}</td>
+                </tr>
+                <tr class="devider">
+                  <td>Shipping</td>
+                  <td class="align-r">{total_shipping_amount}Free shipping{/}</td>
+                </tr>
+                <tr>
+                  <td>Order total</td>
+                  <td class="total align-r">{net_amount}2715,00 ${/}</td>
+                </tr>
+              </tbody>
+            </table>
+            <h3>Have a coupon?</h3>
+            <div class="coupon">
+              <div class="form-group">
+                <label for="coupon-code" class="sr-only">Enter coupon code</label>{discount_voucher}
+                <input id="coupon-code" type="text" placeholder="Enter coupon code" name="coupon-code" class="form-control"/>{/}
+              </div>
+              <input type="submit" value="Apply coupon" name="apply-coupon" class="btn btn-primary btn-sm btn-block"/>
+            </div>
+            <input type="submit" value="Update shopping cart" name="update-cart" class="btn btn-primary btn-sm btn-block"/>{place_order}<a href="checkout.html" class="btn btn-black btn-block">Proceed to checkout</a>{/}
+          </div><a href="#calc-shipping" class="panel-toggle">
+            <h3>Calculate shipping</h3></a>
+          <div id="calc-shipping" class="hidden-panel calc-shipping">
+            <div class="form-group">
+              <div class="select-style">
+                <select name="country">
+                  <option>Australia</option>
+                  <option>Belgium</option>
+                  <option>Germany</option>
+                  <option>United Kingdom</option>
+                  <option>Switzerland</option>
+                  <option>USA</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="state" class="sr-only">State/ province</label>
+              <input id="state" type="text" placeholder="State/ province" name="state" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label for="postcode" class="sr-only">Postcode/ ZIP</label>
+              <input id="postcode" type="text" placeholder="Postcode/ ZIP" name="postcode" class="form-control"/>
+            </div>
+            <input type="submit" value="Update totals" name="update-totals" class="btn btn-primary btn-sm btn-block"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

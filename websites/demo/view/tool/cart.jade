@@ -1,0 +1,88 @@
+{$content}
+section.shopping-cart.xepan-commerce-tool-cart
+  .container
+    .row
+      // Items List
+      .col-lg-9.col-md-9
+        h2.title Shopping cart
+        {lister}
+        table.items-list(id="{$_name}" class="{$class}")
+          tbody
+            tr
+              {cols}{col}
+              th  
+              th Product name
+              th Product price
+              th Quantity
+              th Total
+              {/}{/}
+            // Item
+            {rows}{row}
+            tr.item.first(class="{$odd_even} xepan-commerce-tool-cart-item-row" data-id="{$id}")
+              {cols}
+              td.thumb
+                a(href='shop-single-item-v1.html')
+                  img(alt='Lorem ipsum', src='img/catalog/shopping-cart-thumb_1.jpg')
+              td.name
+                a(href='shop-single-item-v1.html') {name}Wristlet{/}
+              td.price {unit_price}715,00 ${/}
+              td.qnt-count
+                a.incr-btn(href='#') -
+                {qty_wrapper}   
+                {qty_form}{qty}
+                input.quantity.form-control(type='text', value='2')
+                {/}{/}{/}
+                a.incr-btn(href='#') +
+              td.total {amount_including_tax}2715,00 ${/}
+              td.delete.xepan-commerce-cart-item-delete
+                i.icon-delete(data-cartid='{$id}')
+              {/}
+            {/}{/}
+        {/lister}
+      // Sidebar
+      .col-lg-3.col-md-3
+        h3 Cart totals
+        form.cart-sidebar(method='post')
+          .cart-totals
+            table
+              tbody
+                tr
+                  td Cart subtotal
+                  td.total.align-r {gross_amount}2715,00 ${/}
+                tr.devider
+                  td Shipping
+                  td.align-r {total_shipping_amount}Free shipping{/}
+                tr
+                  td Order total
+                  td.total.align-r {net_amount}2715,00 ${/}
+            h3 Have a coupon?
+            .coupon
+              .form-group
+                label.sr-only(for='coupon-code') Enter coupon code
+                {discount_voucher}
+                input#coupon-code.form-control(type='text', placeholder='Enter coupon code', name='coupon-code')
+                {/}
+              input.btn.btn-primary.btn-sm.btn-block(type='submit', value='Apply coupon', name='apply-coupon')
+            input.btn.btn-primary.btn-sm.btn-block(type='submit', value='Update shopping cart', name='update-cart')
+            {place_order}
+            a.btn.btn-black.btn-block(href='checkout.html') Proceed to checkout
+            {/}
+          a.panel-toggle(href='#calc-shipping')
+            h3 Calculate shipping
+          #calc-shipping.hidden-panel.calc-shipping
+            .form-group
+              .select-style
+                select(name='country')
+                  option Australia
+                  option Belgium
+                  option Germany
+                  option United Kingdom
+                  option Switzerland
+                  option USA
+            .form-group
+              label.sr-only(for='state') State/ province
+              input#state.form-control(type='text', placeholder='State/ province', name='state')
+            .form-group
+              label.sr-only(for='postcode') Postcode/ ZIP
+              input#postcode.form-control(type='text', placeholder='Postcode/ ZIP', name='postcode')
+            input.btn.btn-primary.btn-sm.btn-block(type='submit', value='Update totals', name='update-totals')

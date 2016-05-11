@@ -1,0 +1,156 @@
+section.catalog-single
+  .row
+    // Product Description
+    .col-lg-12.col-md-12
+      h1 {name_wrapper} {$name} {/}
+      .old-price {original_price_wrapper}{original_price}815,00 $ {/} {/}
+      .price {sale_price_wrapper} {sale_price}715,00 $ {/} {/}
+      .buttons.group
+        .qnt-count
+          a.incr-btn(href='#') -
+          input#quantity.form-control(type='text', value='2')
+          a.incr-btn(href='#') +
+        {personalized_wrapper}
+        .pr{$personalized_button}
+        {/}
+  .row
+    .col-lg-12.col-md-12
+      ul.nav.nav-tabs
+        {description_wrapper}
+        li.active
+          a(href='#tab-Summary', data-toggle='tab' , background:color="#fffff") Product Summary
+        {/}
+        {specification_wrapper}
+        li
+          a(href='#tab-Specification', data-toggle='tab') Specification
+        {/}
+        {addtocart_wrapper}
+        li
+          a(href='#tab-Price', data-toggle='tab') Price
+        {/}
+        {item_upload_wrapper}
+        li
+          a(href='#tab-UploadYourDesign', data-toggle='tab') Upload Your Design
+        {/}
+      .tab-content
+        {description_wrapper}
+        #tab-Summary.tab-pane.fade.in.active
+          .panel
+            .panel-body
+              .row
+                .col-12
+                  .xepan-push-large 
+                  {$item_description}
+        {/}
+        {specification_wrapper}
+        #tab-Specification.tab-pane.fade 
+          {specification} {/}
+        {/}
+        {addtocart_wrapper}
+        #tab-Price.tab-pane.fade
+          .panel
+            .panel-body
+              .row.xepan-push
+                .col-lg-8
+                  .xshop-item-custom-field-name.xshop-item-addtocart(data-xsnbitemid="{$id}" data-name="{$name}"){$Addtocart}
+        {/}
+        {item_upload_wrapper}
+        #tab-UploadYourDesign.tab-pane.fade
+          {$item_upload}
+        {/}
+  .row
+    .col-lg-4.col-md-4.col-sm-5
+      h3 Tell friends
+      .social-links
+        a(href='#')
+          i.fa.fa-tumblr-square
+        a(href='#')
+          i.fa.fa-pinterest-square
+        a(href='#')
+          i.fa.fa-facebook-square
+    .col-lg-8.col-md-8.col-sm-7
+      h3 Tags
+      .tags
+        a(href='#') Backpack
+        | , 
+        a(href='#') Chanel
+        | , 
+        a(href='#') Wristlet
+  .promo-labels
+    div(data-content='This is a place for the unique commercial offer. Make it known.', data-original-title='', title='')
+      span
+        i.fa.fa-truck
+        | Free delivery
+    div(data-content='This is a place for the unique commercial offer. Make it known.', data-original-title='', title='')
+      i.fa.fa-space-shuttle
+      | Deliver even on Mars
+    div(data-content='This is a place for the unique commercial offer. Make it known.', data-original-title='', title='')
+      i.fa.fa-shield
+      | Safe Buy
+section.tabs-widget
+  // Nav tabs
+  ul.nav.nav-tabs
+    li.active
+      a(data-toggle='tab', href='#specs', aria-expanded='true') Specs
+    li
+      a(data-toggle='tab', href='#descr', aria-expanded='false') Description
+    li
+      a(data-toggle='tab', href='#review', aria-expanded='false') Reviews
+  .tab-content
+    // Tab1 (Specs)
+    #specs.tab-pane.fade.active.in
+      .container
+        .row
+          section.tech-specs
+            {specification_wrapper} 
+            {specification} {/}
+            {/}
+            // Item
+    // Tab2 (Description)
+    #descr.tab-pane.fade
+      .container
+        .row
+          .col-lg-4.col-md-5.col-sm-5
+            img.center-block(alt='Description', src='img/posts-widget/2.jpg')
+          .col-lg-8.col-md-7.col-sm-7
+            p.p-style2
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+            .row
+              .col-lg-3.col-md-4.col-sm-5.col-xs-6
+                h4 Unordered list
+                ul
+                  li List item
+                  li
+                    a(href='#') List item link
+                  li List item
+              .col-lg-3.col-md-4.col-sm-5.col-xs-6
+                h4 Ordered list
+                ol
+                  li List item
+                  li
+                    a(href='#') List item link
+                  li List item
+    // Tab3 (Reviews)
+    #review.tab-pane.fade
+      .container
+        .row
+          // Disqus Comments Plugin
+          .col-lg-10.col-lg-offset-1
+            #disqus_thread
+              iframe#dsq-app2(width='100%', frameborder='0', name='dsq-app2', allowtransparency='true', scrolling='no', tabindex='0', title='Disqus', style='width: 1px ! important; min-width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 0px ! important;', src='http://disqus.com/embed/comments/?base=default&version=6e66a306ba2433e1ef167a1d183dc2ab&f=8guild&t_u=http%3A%2F%2Fthe8guild.com%2Fthemes%2Fhtml%2Flimo%2Fv1.4%2Fshop-single-item-v1.html&t_d=Limo%20-%20HTML5%20E-Commerce%20Template&t_t=Limo%20-%20HTML5%20E-Commerce%20Template&s_o=default', horizontalscrolling='no', verticalscrolling='no')
+            script(type='text/javascript').
+              /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+              var disqus_shortname = '8guild'; // required: replace example with your forum shortname
+              /* * * DON'T EDIT BELOW THIS LINE * * */
+              (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+            noscript
+              | Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+
+
+
+
+
