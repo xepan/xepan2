@@ -928,14 +928,10 @@ height: auto !important;
 }*/
 .round-button-circle {
   width: 100%;
-  /*height:0;*/
-  /*padding-bottom: 100%;*/
-    border-radius: 50%;
-  border:2px solid #cfdcec;
-    /*overflow:hidden;*/
-    
-    /*background: #4679BD; */
-    /*box-shadow: 0 0 3px gray;*/
+  background: rgb(234, 83, 62) none repeat scroll 0 0;
+  border: 0 solid red;
+  color: white;
+  width: 100%;
 }
 
 .xepan-name{
@@ -1234,6 +1230,7 @@ table div.middle{
 }
 .xepan-designer-step-button-dimmed.finish,.xepan-designer-step-button-dimmed.finish:hover{
   border:2px solid rgb(119,186,93);
+  width: 80px;
 }
 
 .xepan-designer-price-addtocart-section > div{
@@ -1253,6 +1250,7 @@ table div.middle{
   color: white !important;
   font-size: 18px;
   border:2px solid #f7a707 !important;
+  margin-top:10px ;
 }
 
 .xshop-designer-item-name{
@@ -1262,4 +1260,19 @@ table div.middle{
 }
 .xshop-desiner-tool-canvas{
   margin: 0 auto;
+}
+
+.xepan-designer-addtocart .atk-form-row{
+  width:50% !important;
+  float: left;
+}
+
+.xepan-designer-addtocart input, .xepan-designer-addtocart select{
+  width: 100%;
+  height: 30px;
+}
+
+.xepan-cart-placeorder-btn{
+  background-color: rgb(248,167,12);
+  color: white;
 }

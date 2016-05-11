@@ -7,9 +7,11 @@
           {lister}
           {rows}{row}
           <li id="item-{$id}" style="background:white;" class="xepan-commerce-tool-cart-item-row"><span style="background:white" class="item">
-              <div style="background:#F2F2F2" class="row">
-                <div class="col-lg-3"><img alt="" src="{$image_url}"/></div>
-                <div class="col-lg-8 short-cart-item-name">{$name}
+              <div style="background:#F2F2F2;padding:5px;" class="row">
+                <div style="margin:0px;padding:0px;" class="col-lg-3"><img alt="" src="{$image_url}"/></div>
+                <div class="col-lg-8 short-cart-item-name">
+                  {$name}
+                  {$custom_field}
                   <div class="row">
                     <div class="col-lg-6 short-cart-item-detail">
                       <ul> 
@@ -58,9 +60,20 @@
           </div>{/}
         </li>
         <li class="divider"></li>
-        <li><a href="{$cart_detail_url}" class="text-center">
-            View Cart
-            {$place_order}</a></li>{/footer}
+        <li>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="btn btn-success btn-block">{cart_detail_btn_wrapper}<a href="{$cart_detail_url}" class="text-center">View Cart</a>{/}</div>
+            </div>
+            <div class="col-md-6">
+              <div class="btn btn-warning btn-block">
+                {place_order_wrapper}
+                {$place_order}
+                {/}
+              </div>
+            </div>
+          </div>
+        </li>{/footer}
       </ul>
     </li>
   </ul>
