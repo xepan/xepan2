@@ -395,3 +395,22 @@ textarea {width: 100%;}
   margin:0px;
   padding: 0px;
 }
+
+/*Status Icon Color classes */
+
+.xepan-effect-green{
+  color: #8bc34a;
+}
+.xepan-effect-red{
+  color: #e84e40;
+  
+}
+.xepan-effect-yellow{
+  color: #ffc107;  
+}
+.xepan-effect-blue{
+  color: #03a9f4;
+}
+.xepan-effect-warning{
+  color: #f0ad4e;
+}
