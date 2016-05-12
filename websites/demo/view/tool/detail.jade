@@ -1,0 +1,80 @@
+.row
+  // Product Description
+  .col-lg-12.col-md-12
+    h1 {name_wrapper} {$name} {/}
+    .old-price {original_price_wrapper}{original_price}815,00 $ {/} {/}
+    .price {sale_price_wrapper} {sale_price}715,00 $ {/} {/}
+    .buttons.group
+      .qnt-count
+        a.incr-btn(href='#') -
+        input#quantity.form-control(type='text', value='2')
+        a.incr-btn(href='#') +
+      {personalized_wrapper}
+      {$personalized_button}
+      {/}
+.row
+  .col-lg-4.col-md-4.col-sm-5
+    h3 Tell friends
+    .social-links
+      a(href='#')
+        i.fa.fa-tumblr-square
+      a(href='#')
+        i.fa.fa-pinterest-square
+      a(href='#')
+        i.fa.fa-facebook-square
+  .col-lg-8.col-md-8.col-sm-7
+    h3 Tags
+    .tags
+      a(href='#') Backpack
+      | , 
+      a(href='#') Chanel
+      | , 
+      a(href='#') Wristlet
+.promo-labels
+  div(data-content='This is a place for the unique commercial offer. Make it known.', data-original-title='', title='')
+    span
+      i.fa.fa-truck
+      | Free delivery
+  div(data-content='This is a place for the unique commercial offer. Make it known.', data-original-title='', title='')
+    i.fa.fa-space-shuttle
+    | Deliver even on Mars
+  div(data-content='This is a place for the unique commercial offer. Make it known.', data-original-title='', title='')
+    i.fa.fa-shield
+    | Safe Buy
+.row
+  .col-lg-12.col-md-12
+    section.tabs-widget
+      // Nav tabs
+      ul.nav.nav-tabs
+        li.active
+          a(data-toggle='tab', href='#descr', aria-expanded='true') Description
+        li
+          a(data-toggle='tab', href='#spec', aria-expanded='false') Spec
+        li
+          a(data-toggle='tab', href='#price', aria-expanded='false') Price
+        li
+          a(data-toggle='tab', href='#upload', aria-expanded='false') Upload Design
+      .tab-content
+        // Tab1 (Specs)
+        {description_wrapper}
+        #descr.tab-pane.fade.active.in
+          {$item_description}
+        {/}
+        {specification_wrapper} 
+        #spec.tab-pane.fade
+          {specification} {/}
+        {/}
+        {addtocart_wrapper}
+        #price.tab-pane.fade
+          .xshop-item-custom-field-name.xshop-item-addtocart(data-xsnbitemid="{$id}" data-name="{$name}"){$Addtocart}
+        {/}
+        {item_upload_wrapper}
+        #upload.tab-pane.fade
+          {$item_upload}
+        {/}
+
+
+
+
+
+

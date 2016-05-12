@@ -9,3 +9,11 @@
 .form-group {
 	
 }
+
+.xshop-item-image-list{
+  width: 25%;
+  z-index: 10px;
+}
+.pr > button{
+	background-color: blue;
+}
