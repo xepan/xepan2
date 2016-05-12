@@ -1,3 +1,4 @@
+a.reg_view.xepan-login-panl-loadview.pull-right(style= "cursor:pointer; cursor: hand; max-width:600px;" data-showview="verify_account")  Activate Account if not activate?
 form(role='form', action='#', method='POST' class="login-form")
   .form-group.group
     label Email
@@ -6,5 +7,5 @@ form(role='form', action='#', method='POST' class="login-form")
   .form-group.group
     label Password
     .atk-form-row.atk-form-field.form-control{$password}
-    a#login-forget-link.help-link.xepan-login-panl-loadview.forgotpassword(data-showview="forget_password") Forgot password?
+    a#login-forget-link.help-link.xepan-login-panl-loadview.forgotpassword(data-showview="forget_password" href="?page=forgotpassword") Forgot password?
   button.btn.btn-black(type='submit') Login

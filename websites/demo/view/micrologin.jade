@@ -1,0 +1,13 @@
+{login_wrapper}
+a.login-btn.btn-outlined-invert(data-target='#loginModal', data-toggle='modal', href='#')
+  i.icon-profile
+  span
+    b L
+    | ogin
+{/}
+{logout_wrapper}
+a.login-btn.btn-outlined-invert(href="{$logout_url}")
+  i.icon-profile 
+  span.small Welcome {$username} 
+  span.small logout
+{/}

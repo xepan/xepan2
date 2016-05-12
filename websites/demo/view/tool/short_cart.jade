@@ -1,7 +1,7 @@
 a.btn.btn-outlined-invert.xepan-commerce-cart-item-count(href="?page=shopping-cart")
   i.icon-shopping-cart-content
   span {total_count}3{/}
-  b {total_amount}36 5654{/}
+  b {net_amount}}36 5654{/}
   // Cart Dropdown
 .cart-dropdown.xepan-commerce-tool-cart(id='{$_name}', class='{$class}')
   span
@@ -20,7 +20,7 @@ a.btn.btn-outlined-invert.xepan-commerce-cart-item-count(href="?page=shopping-ca
         {cols}
         td
           .delete.xepan-commerce-cart-item-delete(data-cartid='{$id}')
-          a(href='#') {name} Good Joo-Joo Surfb {/}
+          a(href='#') {name} Good Joo-Joo Surfb {/}{$custom_field}
         td
           {qty}
           input(type='text', value='1')
@@ -37,43 +37,4 @@ a.btn.btn-outlined-invert.xepan-commerce-cart-item-count(href="?page=shopping-ca
         a.btn.btn-outlined-invert(href="{$cart_detail_url}")
           i.icon-shopping-cart-content
           | {place_order} To Cart {/}
-      .total {total_amount}93 389 ${/}
-  {$content}
-
-
-
-//-         span.xepan-commerce-cart-item-count  {$total_count}
-//-         |  - Items
-//-         span.caret
-//-       ul.dropdown-menu.dropdown-cart(role='menu')
-//-         | {lister}
-//-         | {rows}{row}
-//-         li(id='item-{$id}' class="xepan-commerce-tool-cart-item-row")
-//-           span.item
-//-             span.item-left
-//-               img(alt='', src='{$image_url}')
-//-               span.item-info
-//-                 span {$name}{$item_code}
-//-                 span qty:{$qty} amount{$sales_amount}
-//-             span.item-right
-//-               button.btn.btn-xs.btn-danger.pull-right.xepan-commerce-cart-item-delete(data-cartid='{$id}') x
-//-         |           {/}{/}
-//-         |           {/lister}
-//-         li.divider
-//-         |               {sum_amount_excluding_tax_wrapper}
-//-         li Sum Amount₹ {sum_amount_excluding_tax}amt_excluding_tax_here{/}
-//-         |               {/}
-//-         |               {shipping_charge_wrapper}
-//-         li ₹ {$shipping_charge}
-//-         |               {/}
-//-         |               {tax_amount_wrapper}
-//-         li ₹ {tax_amount}tax_amount{/}
-//-         li
-//-           | {/}
-//-           | {total_amount_wrapper}
-//-         li Total Amount:₹ {total_amount}total_amount{/} 
-//-         |               {/}
-//-         li
-//-           a.text-center(href="{$cart_detail_url}") View Cart
-//-           {$place_order}
-//- | {$content}
+      .total {net_amount}93 389 ${/}

@@ -1,4 +1,4 @@
-{$content}
+
 <section class="shopping-cart xepan-commerce-tool-cart">
   <div class="container">
     <div class="row">
@@ -16,8 +16,14 @@
             </tr>
             <!-- Item-->{rows}{row}
             <tr data-id="{$id}" class="item first {$odd_even} xepan-commerce-tool-cart-item-row">{cols}
-              <td class="thumb"><a href="shop-single-item-v1.html"><img alt="Lorem ipsum" src="img/catalog/shopping-cart-thumb_1.jpg"/></a></td>
-              <td class="name"><a href="shop-single-item-v1.html">{name}Wristlet{/}</a></td>
+              <td class="thumb"><a href="shop-single-item-v1.html"><img alt="" src="{$image_url}"/></a></td>
+              <td class="name"><a href="shop-single-item-v1.html">{name}Wristlet{/}</a>
+                <div class="sml"><small>{custom_fields_wrapper}</small><small>{custom_field}</small>
+                  <div> <small>
+                       
+                      {$id}: {$name}</small></div>{/}{/}
+                </div>
+              </td>
               <td class="price">{unit_price}715,00 ${/}</td>
               <td class="qnt-count"><a href="#" class="incr-btn">-</a>{qty_wrapper}   
                 {qty_form}{qty}
@@ -54,11 +60,11 @@
             <div class="coupon">
               <div class="form-group">
                 <label for="coupon-code" class="sr-only">Enter coupon code</label>{discount_voucher}
-                <input id="coupon-code" type="text" placeholder="Enter coupon code" name="coupon-code" class="form-control"/>{/}
+                <input id="coupon-code" type="text" placeholder="Enter coupon code" name="coupon-code" class="form-control"/>
               </div>
               <input type="submit" value="Apply coupon" name="apply-coupon" class="btn btn-primary btn-sm btn-block"/>
             </div>
-            <input type="submit" value="Update shopping cart" name="update-cart" class="btn btn-primary btn-sm btn-block"/>{place_order}<a href="checkout.html" class="btn btn-black btn-block">Proceed to checkout</a>{/}
+            <input type="submit" value="Update shopping cart" name="update-cart" class="btn btn-primary btn-sm btn-block"/>{place_order}<a href="?page=checkout" class="btn btn-black btn-block">Proceed to checkout</a>{/}
           </div><a href="#calc-shipping" class="panel-toggle">
             <h3>Calculate shipping</h3></a>
           <div id="calc-shipping" class="hidden-panel calc-shipping">

@@ -1,4 +1,4 @@
-<a href="?page=shopping-cart" class="btn btn-outlined-invert xepan-commerce-cart-item-count"><i class="icon-shopping-cart-content"></i><span>{total_count}3{/}</span><b>{total_amount}36 5654{/}</b>
+<a href="?page=shopping-cart" class="btn btn-outlined-invert xepan-commerce-cart-item-count"><i class="icon-shopping-cart-content"></i><span>{total_count}3{/}</span><b>{net_amount}}36 5654{/}</b>
   <!-- Cart Dropdown--></a>
 <div id="{$_name}" class="cart-dropdown xepan-commerce-tool-cart {$class}"><span></span>
   <!-- Small rectangle to overlap Cart button-->{lister}
@@ -12,7 +12,7 @@
       {rows}{row}
       <tr class="item">{cols}
         <td>
-          <div data-cartid="{$id}" class="delete xepan-commerce-cart-item-delete"></div><a href="#">{name} Good Joo-Joo Surfb {/}</a>
+          <div data-cartid="{$id}" class="delete xepan-commerce-cart-item-delete"></div><a href="#">{name} Good Joo-Joo Surfb {/}{$custom_field}</a>
         </td>
         <td>{qty}
           <input type="text" value="1"/>{/}
@@ -23,6 +23,6 @@
   </div>{/lister}
   <div class="footer group">
     <div class="buttons"><a href="checkout.html" class="btn btn-outlined-invert"><i class="icon-download"></i>Checkout</a><a href="{$cart_detail_url}" class="btn btn-outlined-invert"><i class="icon-shopping-cart-content"></i>{place_order} To Cart {/}</a></div>
-    <div class="total">{total_amount}93 389 ${/}</div>
-  </div>{$content}
+    <div class="total">{net_amount}93 389 ${/}</div>
+  </div>
 </div>

@@ -1,4 +1,3 @@
-{$content}
 section.shopping-cart.xepan-commerce-tool-cart
   .container
     .row
@@ -22,9 +21,16 @@ section.shopping-cart.xepan-commerce-tool-cart
               {cols}
               td.thumb
                 a(href='shop-single-item-v1.html')
-                  img(alt='Lorem ipsum', src='img/catalog/shopping-cart-thumb_1.jpg')
+                  img(alt='', src='{$image_url}')
               td.name
                 a(href='shop-single-item-v1.html') {name}Wristlet{/}
+                .sml
+                  small {custom_fields_wrapper}
+                  small {custom_field}
+                  div 
+                    small 
+                      {$id}: {$name}
+                  {/}{/}
               td.price {unit_price}715,00 ${/}
               td.qnt-count
                 a.incr-btn(href='#') -
@@ -61,11 +67,11 @@ section.shopping-cart.xepan-commerce-tool-cart
                 label.sr-only(for='coupon-code') Enter coupon code
                 {discount_voucher}
                 input#coupon-code.form-control(type='text', placeholder='Enter coupon code', name='coupon-code')
-                {/}
+                //- {/}
               input.btn.btn-primary.btn-sm.btn-block(type='submit', value='Apply coupon', name='apply-coupon')
             input.btn.btn-primary.btn-sm.btn-block(type='submit', value='Update shopping cart', name='update-cart')
             {place_order}
-            a.btn.btn-black.btn-block(href='checkout.html') Proceed to checkout
+            a.btn.btn-black.btn-block(href='?page=checkout') Proceed to checkout
             {/}
           a.panel-toggle(href='#calc-shipping')
             h3 Calculate shipping

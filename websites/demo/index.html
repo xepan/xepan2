@@ -2,37 +2,39 @@
 <section style="position: relative;" class="hero-slider">
   <div id="hero-slider" style="height: 455px; margin: 0px; width: 1353px;" class="master-slider before-init ms-moz"></div>
 </section>
-<section class="cat-tiles">
+<section class="cat-tiles" id="item">
   <div class="main"></div>
-
-  <div class="container">
-    <h2>Browse Categories</h2>
-    <div class="row">
-      <!-- Category-->
-      <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6"><a href="#"><img alt="1" src="image/categories/1.jpg"/>
-          <p>Leather belt</p></a></div>
-      <!-- Category-->
-      <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6"><a href="#"><img alt="1" src="image/categories/2.jpg"/>
-          <p>Wallet</p></a></div>
-      <!-- Category-->
-      <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6"><a href="#"><img alt="1" src="image/categories/3.jpg"/>
-          <p>Gloves</p></a></div>
-      <!-- Category-->
-      <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6"><a href="#"><img alt="1" src="image/categories/4.jpg"/>
-          <p>City bag</p></a></div>
-      <!-- Category-->
-      <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6"><a href="#"><img alt="1" src="image/categories/5.jpg"/>
-          <p>Backpack</p></a></div>
-      <!-- Category-->
-      <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6"><a href="#"><img alt="1" src="image/categories/6.jpg"/>
-          <p>Belts</p></a></div>
+    <div class="container">
+      <h2>Browse Categories</h2>
+        <div class="xepan-component xepan-serverside-component" xepan-component="xepan/commerce/Tool_ItemList" 
+        show_description="false"
+        show_paginator="true"
+        paginator_set_rows_per_page="4"
+        personalized_button_name='Presonalized'
+        personalized_page_url="productdesigner"
+        show_personalizedbtn="true"
+        item_detail_page_url="product-detail"
+        show_addtocart="true"
+        addtocart_name="Add To Cart"
+        addtocart="no"
+        show_sale_price="false"
+        show_original_price="false"
+        name_redirect_to_detail="false"
+        image_redirect_to_detail="true"
+        is_filterable = "true"
+        show_is_mostviewed = "true"
+        show_is_new = "false"
+        show_image="true"
+        >
+        </div>
     </div>
   </div>
 </section>
 <section class="choose-theme section-padding color-white catalog-grid"  id="item">
-<div class="container">
+<div class="container" id="item">
   <h2 class="dark-color">Catalog picks</h2>
-    <div class="xepan-component " xepan-component="xepan/commerce/Tool_ItemList" 
+  <section id="item">
+    <div class="xepan-component xepan-serverside-component" xepan-component="xepan/commerce/Tool_ItemList" 
     show_description="false"
     show_paginator="true"
     paginator_set_rows_per_page="4"
@@ -48,9 +50,12 @@
     name_redirect_to_detail="false"
     image_redirect_to_detail="true"
     is_filterable = "true"
-    is_mostviewed = "true"
+    show_is_mostviewed = "true"
+    show_is_new = "false"
+    show_image="true"
     >
     </div>
+  </section>
 </div>
         </section>
 </section>

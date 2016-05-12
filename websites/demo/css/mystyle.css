@@ -17,3 +17,11 @@
 .pr > button{
 	background-color: blue;
 }
+
+.font{
+font-size: 20px;
+}
+
+.sml{
+	font-size: 15px;
+}
