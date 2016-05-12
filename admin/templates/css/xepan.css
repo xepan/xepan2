@@ -427,25 +427,17 @@ textarea {width: 100%;}
   color: red;
 }
 
+/*for qsp select 2 full width*/
+.invoice-box span.select2{
+  width:100% !important;
+}
+
 /*100% width of multiselect*/
 .multiselect-full-width + span.select2 {
   width:100% !important;
 }
-*Status Icon Color classes */
+/*Status Icon Color classes */
 
-.xepan-effect-green{
-  color: #8bc34a;
-}
-.xepan-effect-red{
-  color: #e84e40;
-  
-}
 .xepan-effect-yellow{
   color: #ffc107;  
-}
-.xepan-effect-blue{
-  color: #03a9f4;
-}
-.xepan-effect-warning{
-  color: #f0ad4e;
 }
