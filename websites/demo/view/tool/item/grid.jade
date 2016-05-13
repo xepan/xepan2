@@ -18,12 +18,8 @@ div(id='{$_name}' class="{$class} row" style="{$style}")
 			a(href='{item_detail_page_url_via_image}{/}') {$name}
 			{/}
 			span by {$designer}
-			br
-			{addtocart_wrapper}
-			button.btn.btn-primary(data-xsnbitemid="{$id}" data-name="{$name}") {$Addtocart}
-			{/}
 			{personalizedbtn_wrapper}
-			button.btn.btn-primary(data-xsnbitemid="{$id}" data-name="{$name}"){$personalizedbtn}
+			div(data-xsnbitemid="{$id}" data-name="{$name}"){$personalizedbtn}
 			{/}
 	{/}{/}
 	{not_found}
@@ -31,4 +27,4 @@ div(id='{$_name}' class="{$class} row" style="{$style}")
 		strong.glyphicon.glyphicon-warning-sign &nbsp;Warning!
 			span &nbsp;{$not_found_message}
 	{/}
-{$Paginator}
+.xshop-item-paginator{$Paginator}

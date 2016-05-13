@@ -7,12 +7,11 @@
       {original_price_wrapper}
       <div class="price-label old-price xepan-commerce-tool-item-original-price">{$original_price} $</div>{/}
     </div><a href="{$item_detail_page_url_via_image}"><img alt="1" src="{$first_image}"/><span class="tile-overlay"></span></a>
-    <div class="footer format">{name_wrapper}<a href="{item_detail_page_url_via_image}{/}">{$name}</a>{/}<span>by {$designer}</span><br/>{addtocart_wrapper}
-      <button data-xsnbitemid="{$id}" data-name="{$name}" class="btn btn-primary">{$Addtocart}</button>{/}
-      {personalizedbtn_wrapper}
-      <button data-xsnbitemid="{$id}" data-name="{$name}" class="btn btn-primary">{$personalizedbtn}</button>{/}
+    <div class="footer format">{name_wrapper}<a href="{item_detail_page_url_via_image}{/}">{$name}</a>{/}<span>by {$designer}</span>{personalizedbtn_wrapper}
+      <div data-xsnbitemid="{$id}" data-name="{$name}">{$personalizedbtn}</div>{/}
     </div>
   </div>{/}{/}
   {not_found}
   <div role="alert" class="full-width alert alert-warning"><strong class="glyphicon glyphicon-warning-sign">&nbsp;Warning!<span>&nbsp;{$not_found_message}</span></strong></div>{/}
-</div>{$Paginator}
+</div>
+<div class="xshop-item-paginator">{$Paginator}</div>
