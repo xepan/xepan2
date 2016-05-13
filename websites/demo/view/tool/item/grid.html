@@ -2,13 +2,15 @@
 <div id="{$_name}" style="{$style}" class="{$class} row">{rows}{row}
   <div class="col-lg-3 col-md-4 col-sm-6">
     <div class="tile">
-      <div class="badges"><span class="sale">Sale</span></div>{sale_price_wrapper}
-      <div class="price-label">{$sale_price} $</div>{/}<a href="shop-single-item-v1.html"><img alt="1" src="image/categories/1_004.jpg"/></a><span class="tile-overlay"></span>
-      <div class="footer"><a href="#">{$name}</a><span>by {$designer}</span>{addtocart_wrapper}
-        <button data-xsnbitemid="{$id}" data-name="{$name}" class="btn btn-primary xshop-item-addtocart">{$Addtocart}</button>{/}
-        {personalizedbtn_wrapper}
-        <button data-xsnbitemid="{$id}" data-name="{$name}" class="btn btn-primary xshop-item-personalize">{$personalizedbtn}</button>{/}
-      </div>
+      <div class="badges"><span class="sale">Sale</span></div>{sale_price_wrapper}`
+      <div class="price-label xepan-commerce-tool-item-sale-price">{$sale_price} $</div>{/}
+      {original_price_wrapper}
+      <div class="price-label old-price xepan-commerce-tool-item-original-price">{$original_price} $</div>{/}
+    </div><a href="{$item_detail_page_url_via_image}"><img alt="1" src="{$first_image}"/><span class="tile-overlay"></span></a>
+    <div class="footer format">{name_wrapper}<a href="{item_detail_page_url_via_image}{/}">{$name}</a>{/}<span>by {$designer}</span><br/>{addtocart_wrapper}
+      <button data-xsnbitemid="{$id}" data-name="{$name}" class="btn btn-primary">{$Addtocart}</button>{/}
+      {personalizedbtn_wrapper}
+      <button data-xsnbitemid="{$id}" data-name="{$name}" class="btn btn-primary">{$personalizedbtn}</button>{/}
     </div>
   </div>{/}{/}
   {not_found}

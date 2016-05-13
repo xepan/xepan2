@@ -25,3 +25,19 @@ font-size: 20px;
 .sml{
 	font-size: 15px;
 }
+
+.rec-tiles{
+	color: gray;
+    font-size: 1.125em;
+    font-weight: normal;
+    margin-bottom: 24px;
+}
+
+.format{
+	background: #fff none repeat scroll 0 0;
+	padding: 24px 12px 12px;
+	position: relative;
+    text-align: center;
+    border: 1px solid #a1a1a1;
+}
+

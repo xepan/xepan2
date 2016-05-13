@@ -1,11 +1,7 @@
-
-<section style="position: relative;" class="hero-slider">
-  <div id="hero-slider" style="height: 455px; margin: 0px; width: 1353px;" class="master-slider before-init ms-moz"></div>
-</section>
-<section class="cat-tiles" id="item">
-  <div class="main"></div>
-    <div class="container">
-      <h2>Browse Categories</h2>
+<section class="catalog-grid choose-theme section-padding color-white">
+    <div class="container" id="item">
+      <h2 class="rec-tiles">Recent Products</h2>
+        <!--Category-->
         <div class="xepan-component xepan-serverside-component" xepan-component="xepan/commerce/Tool_ItemList" 
         show_description="false"
         show_paginator="true"
@@ -17,8 +13,8 @@
         show_addtocart="true"
         addtocart_name="Add To Cart"
         addtocart="no"
-        show_sale_price="false"
-        show_original_price="false"
+        show_sale_price="true"
+        show_original_price="true"
         name_redirect_to_detail="false"
         image_redirect_to_detail="true"
         is_filterable = "true"
@@ -28,12 +24,14 @@
         >
         </div>
     </div>
-  </div>
 </section>
-<section class="choose-theme section-padding color-white catalog-grid"  id="item">
-<div class="container" id="item">
-  <h2 class="dark-color">Catalog picks</h2>
-  <section id="item">
+<!--Categories Close-->
+
+<!--Catalog Grid-->
+<section class="catalog-grid choose-theme section-padding color-white">
+<div class="container" id="item"> 
+  <h2 class="dark-color">Popular Products</h2>
+    <!--Tile-->
     <div class="xepan-component xepan-serverside-component" xepan-component="xepan/commerce/Tool_ItemList" 
     show_description="false"
     show_paginator="true"
@@ -45,17 +43,16 @@
     show_addtocart="true"
     addtocart_name="Add To Cart"
     addtocart="no"
-    show_sale_price="false"
-    show_original_price="false"
+    show_sale_price="true"
+    show_original_price="true"
     name_redirect_to_detail="false"
     image_redirect_to_detail="true"
     is_filterable = "true"
     show_is_mostviewed = "true"
     show_is_new = "false"
     show_image="true"
-    >
+    > 
     </div>
-  </section>
 </div>
-        </section>
 </section>
+<!--Catalog Grid Close-->
