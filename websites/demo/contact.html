@@ -1,18 +1,6 @@
-
-<div id="{$_name}"></div>
-<div style=" " component_type="Container" component_namespace="baseElements" class="epan-container width-90 epan-sortable-component epan-component ui-sortable">
-  <div contenteditable="false" data-extra-classes="p-header-middle-line" style=" " component_type="Text" component_namespace="baseElements" class="editor epan-component p-header-middle-line editor-attached">
-    <h3>Contact Us</h3>
-  </div>
-  <div style=" " component_type="HtmlBlock" component_namespace="baseElements" class="epan-component">
-    <iframe width="100%" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d906.975486310765!2d73.710345!3d24.592579999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xe3b1462a3b17ef5b!2sPrime+Scan!5e0!3m2!1sen!2sin!4v1431922941425"></iframe>
-  </div>
-  <div style="margin: 0% auto auto;" component_namespace="baseElements" component_type="Row" class="atk-row epan-sortable-component epan-component epan-component ui-sortable">
-    <div span="7" component_type="Columns" class="epan-sortable-component epan-component ui-sortable atk-col-7">
-      <div contenteditable="false" data-extra-classes="p-header-middle-line" style=" " component_type="Text" component_namespace="baseElements" class="editor epan-component p-header-middle-line editor-attached">
-        <h3>Enquiry Form</h3>
-      </div>
-      <div xepan-component="xepan\cms\Tool_CustomForm" layout="enquiry" customformid="4" class="xepan-component"> </div>
-    </div>
-  </div>
-</div>
+<h3>Contact Us</h3>
+  <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:440px;width:100%;'><div id='gmap_canvas' style='height:440px;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">                 embed google maps             </a></small></div><div><small><a href="http://www.autohuren.world/locaties/amsterdam/">auto huren amsterdam</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(24.623915431214442,73.74503951518558),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(24.623915431214442,73.74503951518558)});infowindow = new google.maps.InfoWindow({content:'<strong>Xavoc Tehnocrats Pvt. Ltd.</strong><br>Gayatri Marg,Kanji Ka Hata<br>Udaipur,Rajasthan.<br>India(313001)<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+<h3>Enquiry Form</h3>
+  <div id="{$_name}"></div>
+    <div xepan-component="xepan\cms\Tool_CustomForm" layout="enquiry" customformid="4" class="xepan-component xepan-serverside-component"> </div>
+  <div>
