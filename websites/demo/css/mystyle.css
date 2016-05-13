@@ -93,3 +93,59 @@ background-size:30px;
    color: #1d18b2 !important;
 }
 
+.xepan-designer-step-button-dimmed,.atk-button > button{
+  background-repeat: no-repeat;
+width:auto !important;
+/*color:#f7a707;*/
+font-size:15px;
+margin-top:5px;
+cursor:pointer;
+color: rgb(51, 51, 51); 
+padding: 6px 24px; 
+background-color:#566573;
+color:white;
+}
+
+.next >button{
+background-repeat: no-repeat;
+width:auto !important;
+/*color:#f7a707;*/
+font-size:15px;
+margin-top:5px;
+cursor:pointer;
+color: rgb(51, 51, 51); 
+padding: 6px 24px; 
+background-color:#566573;
+color:white;
+}
+
+ .xepan-designer-previous-step-button,.atk-button > button{
+  background-repeat: no-repeat;
+  width:auto !important;
+  /*color:#f7a707;*/
+  font-size:15px;
+  margin-top:5px;
+  cursor:pointer;
+  color: rgb(51, 51, 51); 
+  padding: 6px 24px; 
+  background-color:#566573;
+  color:white;
+
+ }
+
+.head{
+  font-size: 19px;
+}
+
+.colmargin{
+  margin-top: 20px;
+  
+}
+.area{
+  background-color:white;
+  margin-top: 18px;
+}
+
+.crt{
+  padding-left: 4cm;
+}
