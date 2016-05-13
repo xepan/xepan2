@@ -15,11 +15,17 @@
   <link href="css/masterslider.css" rel="stylesheet" media="screen"/>
   <!-- Styles-->
   <link href="css/styles.css" rel="stylesheet" media="screen"/>
+  <!-- Fonts-->
+  <link href="css/font-awesome2.css" rel="stylesheet"/>
+  <link href="css/font-awesome.min.css" rel="stylesheet"/>
   <!-- Color Scheme-->
   <link href="css/color-default.css" rel="stylesheet" media="screen" class="color-scheme"/>
   <link href="css/mystyle.css" rel="stylesheet"/>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900' rel='stylesheet' type='text/css'/>
   <!-- Color Switcher-->
   <link href="css/color-switcher.css" rel="stylesheet" media="screen"/>
+  <!--Modernizr-->
+    <script src="js/libs/modernizr.custom.js"></script>
   <!-- Adding Media Queries Support for IE8-->
   <!--if lt IE 9script(src='js/plugins/respond.js')
   -->
@@ -73,7 +79,7 @@
           </li>
           <li class="has-submenu"><a href="#"><span>P</span>ages<i class="fa fa-chevron-down"></i></a>
             <ul class="submenu">
-              <li><a href="?page=register">Login / Registration</a></li>
+              <li><a href="?page=registration">Login / Registration</a></li>
               <li><a href="?page=mydesign">My-Design</a></li>
               <li><a href="?page=edit-item">Edit-Item</a></li>
             </ul>
@@ -103,7 +109,7 @@
     <div class="toolbar-container">
       <div class="container">
         <!-- Toolbar-->
-        <div class="toolbar group"><a xepan-component="xepan/base/Tool_UserPanel" layout="micro_login" class="xepan-component xepan-serverside-component" show_micro_login="true" ></a><a href="wishlist.html" class="btn-outlined-invert"><i class="icon-heart"></i><span><b>W</b>ishlist</span></a>
+        <div class="toolbar group"><a xepan-component="xepan/base/Tool_UserPanel" layout="micro_login" class="xepan-component xepan-serverside-component" show_micro_login="true" ></a>
             <!-- Cart Dropdown-->
                 <div xepan-component="xepan/commerce/Tool_Cart" layout="short_cart"  class="xepan-component xepan-serverside-component cart-btn" image="yes"  show_round_amount="yes" checkout_page="checkout" place_order_button_name="Place Order"></div>
             <!-- Cart Dropdown Close-->
@@ -174,22 +180,62 @@
   </footer>
   <!-- Footer Close-->
   <!-- Javascript (jQuery) Libraries and Plugins-->
-  <script src="js/jquery-1.js"></script>
-  <script src="js/jquery-ui-1.js"></script>
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/smoothscroll.js"></script>
-  <script src="js/jquery_005.js"></script>
-  <script src="js/icheck.js"></script>
-  <script src="js/jquery_003.js"></script>
-  <script src="js/jquery_002.js"></script>
-  <script src="js/jquery_006.js"></script>
-  <script src="js/jquery_004.js"></script>
-  <script src="js/lightGallery.js"></script>
-  <script src="js/owl.js"></script>
-  <script src="js/masterslider.js"></script>
-  <script src="js/mailer.js"></script>
-  <script src="js/scripts.js"></script>
-  <script src="js/color-switcher.js"></script>
+    <script src="js/jquery-1.js"></script>
+    <script src="js/jquery-ui-1.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/jquery_005.js"></script>
+    <script src="js/icheck.js"></script>
+    <script src="js/jquery_003.js"></script>
+    <script src="js/jquery_002.js"></script>
+    <script src="js/jquery_006.js"></script>
+    <script src="js/jquery_004.js"></script>
+    <script src="js/lightGallery.js"></script>
+    <script src="js/owl.js"></script>
+    <script src="js/masterslider.js"></script>
+    <script src="js/mailer.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/color-switcher.js"></script>
+
+
+   <!-- These are different from prev taken from limo (Libraries and Plugins)-->
+  <script src="js/libs/jquery-1.11.1.min.js"></script>
+    <script src="js/libs/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/libs/jquery.easing.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/smoothscroll.js"></script>
+    <script src="js/plugins/jquery.validate.min.js"></script>
+    <script src="js/plugins/icheck.min.js"></script>
+    <script src="js/plugins/jquery.placeholder.js"></script>
+    <script src="js/plugins/jquery.stellar.min.js"></script>
+    <script src="js/plugins/jquery.touchSwipe.min.js"></script>
+    <script src="js/plugins/jquery.shuffle.min.js"></script>
+    <script src="js/plugins/lightGallery.min.js"></script>
+    <script src="js/plugins/owl.carousel.min.js"></script>
+    <script src="js/plugins/masterslider.min.js"></script>
+    <script src="mailer/mailer.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <script src="color-switcher/color-switcher.js"></script>
+
   <!-- Google Remarketing Tag (Placed before </body>)-->
+
+  <!-- Extra JS from Limo (Placed before </body>)-->
+  <script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 966923546;
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+  /* ]]> */
+  </script>
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+  <noscript>
+  <div style="display:inline;">
+  <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/966923546/?value=0&amp;guid=ON&amp;script=0"/>
+  </div>
+  </noscript>
+
+
 </body>
