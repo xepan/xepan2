@@ -50,7 +50,7 @@ class Frontend extends ApiFrontend {
 
     function defaultTemplate(){
 
-        $current_website = $this->current_website_name = 'demo';
+        $current_website = $this->current_website_name = 'demo_old';
         $this->addLocation(array(
             'page'=>array("websites/$current_website"),
             'js'=>array("websites/$current_website/js"),
