@@ -22,7 +22,7 @@
     <link href="css/quickweb.css" rel="stylesheet" type="text/css" />
      <link href="fonts/style.css" rel="stylesheet" type="text/css" />   
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900' rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" type="text/css" href="../admin/templates/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../../admin/templates/css/jquery-ui.css" />
 
     <link rel="stylesheet" type="text/css" href="css/xShop-itemgrid.css" />
     <link rel="stylesheet" type="text/css" href="css/mystyles.css" />
@@ -67,12 +67,12 @@
                 </div>
                 <div class="col-md-2">
                     <div style="padding-right: 10px; background-image: url(image/icon/print_on_click_cart_icon.png); background-repeat: no-repeat;background-position:right" class="xcart-icon p-icon-right" class=" xshop-cart">
-                        <div class="xepan-component" xepan-component="xepan\commerce\Tool_Cart" layout="short_cart" cart-detail-url="yourcart">Tool_Cart</div>
+                        <div class="xepan-component xepan-serverside-component" xepan-component="xepan/commerce/Tool_Cart" layout="short_cart" cart-detail-url="yourcart">Tool_Cart</div>
                     </div>
                 </div>
                 <div class="col-md-2 myaccount">
                     <div style="width: auto; max-width: 100%; background-image: url('image/icon/print_on_click_my_account_icon.png'); background-repeat: no-repeat; background-position: right center; color: rgb(0, 0, 0);" class="editor epan-component editor-attached p-icon-right pull-right p-icon-account">
-                    <a href="../../?page=member-account" style="text-decoration:none;" title="View Your Account">  My Account </a>
+                    <a href="?page=member-account" style="text-decoration:none;" title="View Your Account">  My Account </a>
                     </div>
                 </div>
             </div>
@@ -82,11 +82,11 @@
                 <a class="xepan-image-anchor" href="index.php?subpage=home">    <img class="ui-resizable" data-extra-classes="" style="max-width:100%; height: auto; width:100%" src="image/site/logo_print_on_click_online_printing.gif"></a>
             </div>
             <div class="col-md-4">
-                
             </div>
             <div class="col-md-4 p-search">
-                <div class="xepan-component" xepan-component="xepan\commerce\Tool_Search">
-                    </div>
+                <div class="xepan-component xepan-serverside-component" xepan-component="xepan/commerce/Tool_Search">
+                   Search_Tool 
+                </div>
             </div>
         </div>
         <div class="full-width atk-swatch-ink p-manubar">
@@ -99,7 +99,7 @@
         </div>
 </div>
 </header>
-<div class="prime-page-container xepan-component xepan-sortable-component" xepan-component='/xepan/cms/Tool_Container'>
+<div class="prime-page-container xepan-component xepan-sortable-component " xepan-component='/xepan/cms/Tool_Container'>
 {$Content}
 </div>
 
@@ -108,7 +108,7 @@
         <div class="col-md-3">
             <h3 style="">PrintOnClick</h3>
             <div class="glyphicon glyphicon-home footer-menu" style="width: 100%; background-color: transparent;">
-                <a href="?page=home" style="col">&nbsp; Home</a>
+                <a href="?page=index" style="col">&nbsp; Home</a>
             </div>
             <div class="glyphicon glyphicon-book   footer-menu" style="width: 100%; background-color: transparent;">
                 <a href="?page=about">&nbsp; About</a>
