@@ -64,7 +64,7 @@ class VirtualPage extends AbstractController
 {
     public $type='frameURL';
     public $page_template=null;
-    public $page_class='Page';
+    public $page_class='xepan\base\Page';
 
     public $frame_options=null;
 
