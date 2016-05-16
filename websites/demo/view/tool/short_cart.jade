@@ -1,0 +1,40 @@
+a.btn.btn-outlined-invert.xepan-commerce-cart-item-count(href="?page=shopping-cart")
+  i.icon-shopping-cart-content
+  span {total_count}3{/}
+  b {net_amount}}36 5654{/}
+  // Cart Dropdown
+.cart-dropdown.xepan-commerce-tool-cart(id='{$_name}', class='{$class}')
+  span
+  // Small rectangle to overlap Cart button
+  {lister}
+  .body.xepan-commerce-tool-cart-item-row(id='item-{$id}')
+    table
+      {cols}{col}
+      tr
+        th Items
+        th Quantity
+        th Price
+      {/}{/}
+      {rows}{row}
+      tr.item
+        {cols}
+        td
+          .delete.xepan-commerce-cart-item-delete(data-cartid='{$id}')
+          a(href='#') {name} Good Joo-Joo Surfb {/}{$custom_field}
+        td
+          {qty}
+          input(type='text', value='1')
+          {/}
+        td.price.xepan-commerce-cart-item-count {sales_amount} 4 300 $ {/}
+        {/}
+      {/}{/}
+  {/lister}
+  .footer.group
+      .buttons
+        a.btn.btn-outlined-invert(href='checkout.html')
+          i.icon-download
+          | Checkout
+        a.btn.btn-outlined-invert(href="{$cart_detail_url}")
+          i.icon-shopping-cart-content
+          | {place_order} To Cart {/}
+      .total {net_amount}93 389 ${/}
