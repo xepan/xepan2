@@ -36,5 +36,8 @@
             "document-root": "frontend/public",
             "index-document": "index.php"
         }
-    }
+    },
+  "require-dev": {
+    "xepan/epanservice": "dev-master"
+  }
 }
