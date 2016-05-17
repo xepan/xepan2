@@ -38,6 +38,5 @@
         }
     },
   "require-dev": {
-    "xepan/epanservice": "dev-master"
   }
 }

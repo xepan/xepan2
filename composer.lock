@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e91253a7ffc3e1b4a08f550b044e3b66",
-    "content-hash": "5dba51b76cbf7e19e0635732287b8b87",
+    "hash": "cc571c948111b5035670d717679aa639",
+    "content-hash": "5cf8124ac9dc370176743b6ef3723159",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -5186,51 +5186,7 @@
             "time": "2016-05-07 13:55:31"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "xepan/epanservice",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:xepan/epanservice.git",
-                "reference": "origin/master"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/xepan/epanservice/zipball/d311035136a9d231e19d868205ff0089612b9454",
-                "reference": "d311035136a9d231e19d868205ff0089612b9454",
-                "shasum": ""
-            },
-            "require": {
-                "atk4/atk4": "4.3",
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "autocomplete": "lib"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Xavoc Technocrats Pvt. Ltd.",
-                    "email": "info@xavoc.com"
-                }
-            ],
-            "description": "Epan Service for xEpan Platform",
-            "homepage": "https://github.com/xepan/epanservice",
-            "keywords": [
-                "ERP",
-                "saas",
-                "xepan"
-            ],
-            "time": "2016-05-17 13:22:19"
-        }
-    ],
+    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
@@ -5246,8 +5202,7 @@
         "xepan/php-image": 20,
         "xepan/accounts": 20,
         "xepan/projects": 20,
-        "xepan/omnipay": 20,
-        "xepan/epanservice": 20
+        "xepan/omnipay": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
