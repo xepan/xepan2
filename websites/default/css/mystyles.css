@@ -1257,6 +1257,9 @@ table div.middle{
   font-size: 18px;
   padding-top: 5px;
   padding-bottom: 5px;
+  clear: both;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 .xshop-desiner-tool-canvas{
   margin: 0 auto;
