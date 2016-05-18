@@ -62,15 +62,12 @@
         <li class="divider"></li>
         <li>
           <div class="row">
-            <div class="col-md-6">
-              <div class="btn btn-success btn-block">{cart_detail_btn_wrapper}<a href="{$cart_detail_url}" class="text-center">View Cart</a>{/}</div>
+            <div class="col-md-6">{cart_detail_btn_wrapper}
+              <div class="btn btn-success btn-block"><a href="{$cart_detail_url}" class="text-center">View Cart</a></div>{/}
             </div>
-            <div class="col-md-6">
-              <div class="btn btn-warning btn-block">
-                {place_order_wrapper}
-                {$place_order}
-                {/}
-              </div>
+            <div class="col-md-6">{place_order_wrapper}
+              <div class="btn btn-warning btn-block xepan-cart-placeorder-btn">{$place_order}</div>{$Content}
+              {/}
             </div>
           </div>
         </li>{/footer}

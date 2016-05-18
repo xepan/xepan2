@@ -63,13 +63,14 @@
         li
           .row
             .col-md-6
+              {cart_detail_btn_wrapper}
               .btn.btn-success.btn-block
-                {cart_detail_btn_wrapper}
                 a.text-center(href="{$cart_detail_url}") View Cart
-                {/}
+              {/}
             .col-md-6
-              .btn.btn-warning.btn-block
-                {place_order_wrapper}
+              {place_order_wrapper}
+              .btn.btn-warning.btn-block.xepan-cart-placeorder-btn
                 {$place_order}
-                {/}
+              {$Content}
+              {/}
         {/footer}
