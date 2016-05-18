@@ -448,24 +448,7 @@ cursor:pointer;
     text-shadow: 0 0 0px rgba(0, 0, 0, 0.33);
    color: #f7a707;
 }
-
-.atk-form-row,.atk-form-row-xepan\commerce\dropdown{
-  padding:5px 7px 9px 4px;
-  }
-
-.atk-actions > .atk-button {
-  width:50%; 
-  margin-left:124px;
-}
-
-/*End*/
-
-.atk-form-field input
-{
-  width: 50px !important;
-  float:right;
-  transform: translateY(-31%);
-} 
+ 
 
 .xshop-item-detail-code{
 padding:10px 0 0 0 !important;
@@ -499,10 +482,6 @@ font-size:20px;
 }
 /**/
 
-/**/
-.prime-scan textarea{
-
-}
 /**/
 
 /*All Text Box CSS*/
@@ -1310,7 +1289,7 @@ table div.middle{
 }
 
 
-input {
+.xepan-login-panel input {
     width:100%;
     background-color: transparent;
     border: 1px solid;
