@@ -222,6 +222,11 @@ height:26px !important;
   background-color:#A2D9F6;
 }
 
+.panel > .panel-body > .row > .col-12 h2{
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
 .tab-content{
   padding:3px 0px 0px 8px;
   
