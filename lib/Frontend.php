@@ -38,7 +38,7 @@ class Frontend extends ApiFrontend {
         
         
         // Should come from any local DB store
-        $addons = ['xepan\\base','xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production','xepan\\accounts','xepan\\crm','xepan\\cms'];
+        $addons = ['xepan\\base'];//,'xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production','xepan\\accounts','xepan\\crm','xepan\\cms'];
 
         $app_initiators=[];
         foreach ($addons as $addon) {
@@ -50,13 +50,16 @@ class Frontend extends ApiFrontend {
 
     function defaultTemplate(){
 
-        $current_website = $this->current_website_name = 'demo';
+        $url = "{$_SERVER['HTTP_HOST']}";
+        $sub_domain = $this->extract_subdomains($url)?:'default';
+
+        $current_website = $this->current_website_name = $sub_domain;
         $this->addLocation(array(
-            'page'=>array("websites/$current_website"),
-            'js'=>array("websites/$current_website/js"),
-            'css'=>array("websites/$current_website","websites/$current_website/css"),
-            'template'=>["websites/$current_website"],
-            'addons'=> ['websites/'.$this->current_website_name]
+            'page'=>array("websites/$current_website/www"),
+            'js'=>array("websites/$current_website/www/js"),
+            'css'=>array("websites/$current_website/www","websites/$current_website/www/css"),
+            'template'=>["websites/$current_website/www"],
+            'addons'=> ['websites/'.$current_website.'/www']
         ))->setParent($this->pathfinder->base_location);
 
         if($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
@@ -92,6 +95,28 @@ class Frontend extends ApiFrontend {
 
         return $this->page_object;
     }
+
+
+
+    function extract_domain($domain)
+    {
+        if(preg_match("/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i", $domain, $matches))
+        {
+            return $matches['domain'];
+        } else {
+            return $domain;
+        }
+    }
+
+    function extract_subdomains($domain)
+    {
+        $subdomains = $domain;
+        $domain = $this->extract_domain($subdomains);
+        $subdomains = rtrim(strstr($subdomains, $domain, true), '.');
+
+        return $subdomains;
+    }
+
 
 
 }
