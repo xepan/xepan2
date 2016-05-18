@@ -222,11 +222,18 @@ height:26px !important;
   background-color:#A2D9F6;
 }
 
-.panel > .panel-body > .row > .col-12 h2{
+#tab-Summary h2{
   font-size: 2rem;
   text-decoration: underline;
 }
 
+#tab-Summary p{
+  padding: 8px 0px 3px 0px;
+}
+
+.pading{
+  padding: 5px 3px 11px 8px;
+}
 .tab-content{
   padding:3px 0px 0px 8px;
   
@@ -441,7 +448,24 @@ cursor:pointer;
     text-shadow: 0 0 0px rgba(0, 0, 0, 0.33);
    color: #f7a707;
 }
+
+.atk-form-row,.atk-form-row-xepan\commerce\dropdown{
+  padding:5px 7px 9px 4px;
+  }
+
+.atk-actions > .atk-button {
+  width:50%; 
+  margin-left:124px;
+}
+
 /*End*/
+
+.atk-form-field input
+{
+  width: 50px !important;
+  float:right;
+  transform: translateY(-31%);
+} 
 
 .xshop-item-detail-code{
 padding:10px 0 0 0 !important;
