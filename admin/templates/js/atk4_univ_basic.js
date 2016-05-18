@@ -302,7 +302,12 @@ $.each({
         // Combination of ajax and exec. Will pull provided url and execute returned javascript.
         region=this.jquery;
 
-        if(region.data('ajaxec_loading'))return this.successMessage('Please Wait');
+        if(region.data('ajaxec_loading')){
+            console.log(region);
+            console.log('Ajax loading, please wait');
+            return;
+            return this.successMessage('Please Wait');
+        };
         region.data('ajaxec_loading',true);
 
 

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cc571c948111b5035670d717679aa639",
-    "content-hash": "5cf8124ac9dc370176743b6ef3723159",
+    "hash": "72c2630130dd7e6eee3473e405a1a45a",
+    "content-hash": "63abccb3f53b6cd79295e8edb72f8bed",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -768,7 +768,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/69684ba1fdbe7a6a72cdb9ccb303344adb068156",
+                "url": "https://api.github.com/repos/nette/utils/zipball/3eb3c002e77e3e1adac19ad12e46d65540df7d17",
                 "reference": "b8b4bb5fc98baa8a2b139952902eb302b7921c54",
                 "shasum": ""
             },
@@ -4663,6 +4663,50 @@
             "time": "2016-05-14 08:15:10"
         },
         {
+            "name": "xepan/epanservices",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:xepan/epanservices.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/epanservices/zipball/05f37902c1b2ff5527d5eac7d159ef2e342364a2",
+                "reference": "05f37902c1b2ff5527d5eac7d159ef2e342364a2",
+                "shasum": ""
+            },
+            "require": {
+                "xepan/hr": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "autocomplete": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "Epan Services Management Application for xEpan Platform",
+            "homepage": "https://github.com/xepan/epanservices",
+            "keywords": [
+                "ERP",
+                "Epan",
+                "Epan Services",
+                "saas",
+                "xepan"
+            ],
+            "time": "2016-05-18 05:40:42"
+        },
+        {
             "name": "xepan/gd-text",
             "version": "v1.0.0.x-dev",
             "source": {
@@ -5202,7 +5246,8 @@
         "xepan/php-image": 20,
         "xepan/accounts": 20,
         "xepan/projects": 20,
-        "xepan/omnipay": 20
+        "xepan/omnipay": 20,
+        "xepan/epanservices": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

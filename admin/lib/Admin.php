@@ -29,12 +29,13 @@ class Admin extends App_Frontend {
         
         
         // Should come from any local DB store
-        $this->xepan_addons = $addons = ['xepan\\base','xepan\\hr','xepan\\communication','xepan\\projects','xepan\\marketing','xepan\\accounts','xepan\\commerce','xepan\\production','xepan\\crm','xepan\\cms'];
+        // $this->xepan_addons = $addons = ['xepan\\base','xepan\\hr','xepan\\communication','xepan\\projects','xepan\\marketing','xepan\\accounts','xepan\\commerce','xepan\\production','xepan\\crm','xepan\\cms'];
+        $this->xepan_addons = $addons = ['xepan\\base'];
 
         $this->xepan_app_initiators = $app_initiators=[];
+
         foreach ($addons as $addon) {
-            $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator")->setup_admin();
-            
+            $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator")->setup_admin();    
         }
 
         // $app_initiators['xepan\\base']->installEvilVirus([/* while_page_list */]);
