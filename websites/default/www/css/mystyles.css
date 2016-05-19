@@ -449,9 +449,6 @@ cursor:pointer;
    color: #f7a707;
 }
 
-.atk-form-row,.atk-form-row-xepan\commerce\dropdown{
-  padding:5px 7px 9px 4px;
-  }
 
 /*End*/
 
@@ -1260,6 +1257,10 @@ table div.middle{
 .xepan-designer-price-addtocart-section > div{
   width:50%;
   margin: 0 auto;
+}
+
+.xepan-designer-price-addtocart-section,.atk-form-row{
+  padding: 7px 3px 5px 2px;
 }
 
 /*for prime*/
