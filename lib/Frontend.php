@@ -36,9 +36,10 @@ class Frontend extends ApiFrontend {
             ))
             ->setBasePath($this->pathfinder->base_location->getPath() );
         
-        
         // Should come from any local DB store
-        $addons = ['xepan\\base'];//,'xepan\\communication','xepan\\hr','xepan\\marketing','xepan\\commerce','xepan\\production','xepan\\accounts','xepan\\crm','xepan\\cms'];
+         $this->xepan_addons = $addons = ['xepan\\base'];
+        $this->xepan_app_initiators = $app_initiators=[];
+
 
         $app_initiators=[];
         foreach ($addons as $addon) {
