@@ -18,6 +18,7 @@ class Frontend extends ApiFrontend {
         parent::init();        
 
         //DB Connect not default added by rakesh
+        $this->readConfig("websites/$this->current_website_name/config.php");
         $this->dbConnect();
         
         // Might come handy when multi-timezone base networks integrates
@@ -55,6 +56,7 @@ class Frontend extends ApiFrontend {
         $sub_domain = $this->extract_subdomains($url)?:'default';
 
         $current_website = $this->current_website_name = $sub_domain;
+
         $this->addLocation(array(
             'page'=>array("websites/$current_website/www"),
             'js'=>array("websites/$current_website/www/js"),
@@ -97,8 +99,6 @@ class Frontend extends ApiFrontend {
         return $this->page_object;
     }
 
-
-
     function extract_domain($domain)
     {
         if(preg_match("/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i", $domain, $matches))
@@ -117,7 +117,5 @@ class Frontend extends ApiFrontend {
 
         return $subdomains;
     }
-
-
 
 }
