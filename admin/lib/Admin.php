@@ -38,26 +38,44 @@ class Admin extends App_Frontend {
             $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator")->setup_admin();    
         }
 
-        // $app_initiators['xepan\\base']->installEvilVirus([/* while_page_list */]);
-
-        // Move to SandBOX Part END
-
-        /**
-            What sandbox could do here I guess as a PlugAndPlay Supporter
-            - Check for well installed
-                - Run Installer if not
-            - Check License for xEpan
-                -  ...
-            - Check permission for required Component's page
-                - Prompt to purchase/upgrate etc
-            - Initiate some global event holder
-                (
-                    This is important as if this is in sandbox, you cannot remove sandbox, otherwise
-                    Your Components won't listen global events and xEpan collapse
-                )
-            - Load Hooks for all Installed Applications From Cache
-                - Update Cache if not updated for future calls
-         */
-
     }
+
+    function defaultTemplate(){
+
+        $url = "{$_SERVER['HTTP_HOST']}";
+        $sub_domain = $this->extract_subdomains($url)?:'default';
+
+        $current_website = $this->current_website_name = $sub_domain;
+        $this->readConfig("websites/$this->current_website_name/config.php");
+
+        $this->addLocation(array(
+            'page'=>array("websites/$current_website/www"),
+            'js'=>array("websites/$current_website/www/js"),
+            'css'=>array("websites/$current_website/www","websites/$current_website/www/css"),
+            'template'=>["websites/$current_website/www"],
+            'addons'=> ['websites/'.$current_website.'/www']
+        ))->setParent($this->pathfinder->base_location);
+        
+        return parent::defaultTemplate();
+    }
+
+    function extract_domain($domain)
+    {
+        if(preg_match("/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i", $domain, $matches))
+        {
+            return $matches['domain'];
+        } else {
+            return $domain;
+        }
+    }
+
+    function extract_subdomains($domain)
+    {
+        $subdomains = $domain;
+        $domain = $this->extract_domain($subdomains);
+        $subdomains = rtrim(strstr($subdomains, $domain, true), '.');
+
+        return $subdomains;
+    }
+
 }
