@@ -18,7 +18,6 @@ class Frontend extends ApiFrontend {
         parent::init();        
 
         //DB Connect not default added by rakesh
-        $this->readConfig("websites/$this->current_website_name/config.php");
         $this->dbConnect();
         
         // Might come handy when multi-timezone base networks integrates
@@ -56,7 +55,8 @@ class Frontend extends ApiFrontend {
         $sub_domain = $this->extract_subdomains($url)?:'default';
 
         $current_website = $this->current_website_name = $sub_domain;
-
+        $this->readConfig("websites/$this->current_website_name/config.php");
+        
         $this->addLocation(array(
             'page'=>array("websites/$current_website/www"),
             'js'=>array("websites/$current_website/www/js"),
@@ -64,6 +64,16 @@ class Frontend extends ApiFrontend {
             'template'=>["websites/$current_website/www"],
             'addons'=> ['websites/'.$current_website.'/www']
         ))->setParent($this->pathfinder->base_location);
+
+        if($tmpt = $this->getConfig('xepan-template',false)){
+            $this->addLocation(array(
+                'page'=>array("xepantemplates/$tmpt"),
+                'js'=>array("xepantemplates/$tmpt/js"),
+                'css'=>array("xepantemplates/$tmpt","xepantemplates/$tmpt/css"),
+                'template'=>["xepantemplates/$tmpt"],
+                'addons'=> ['xepantemplates/'.$tmpt]
+            ))->setParent($this->pathfinder->base_location);
+        }
 
         if($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
             return ['layout/'.$this->page];
@@ -79,7 +89,7 @@ class Frontend extends ApiFrontend {
     }
 
     protected function loadStaticPage($page){
-            
+
         $layout = $this->layout ?: $this;
         try{
             $t='page/'.str_replace('_','/',strtolower($page));

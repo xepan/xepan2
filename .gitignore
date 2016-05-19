@@ -27,3 +27,5 @@ assets/*
 /upload/*
 tests/_output/*
 .tmb
+xepantemplates/*
+websites/*
