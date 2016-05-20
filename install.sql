@@ -1,27 +1,12 @@
-# ************************************************************
-# Sequel Pro SQL dump
-# Version 4541
-#
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Host: 127.0.0.1 (MySQL 5.5.5-10.0.21-MariaDB)
-# Database: prime_gen_2
-# Generation Time: 2016-05-19 08:36:38 +0000
-# ************************************************************
+-- Created at 20.5.2016 12:43 using David Grudl MySQL Dump Utility
+-- Host: epan.xepan-local.org
+-- MySQL Server: 5.5.5-10.0.21-MariaDB
+-- Database: epan
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
-# Dump of table account_balance_sheet
-# ------------------------------------------------------------
+SET NAMES utf8;
+SET SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
+SET FOREIGN_KEY_CHECKS=0;
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `account_balance_sheet`;
 
@@ -37,12 +22,13 @@ CREATE TABLE `account_balance_sheet` (
   `created_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO `account_balance_sheet` (`id`, `epan_id`, `name`, `positive_side`, `is_pandl`, `show_sub`, `subtract_from`, `order`, `created_at`) VALUES
+(2,	3,	'Current Liabilities',	'RT',	0,	NULL,	'DR',	'3',	'2016-05-20');
 
 
-
-# Dump of table account_group
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `account_group`;
 
@@ -60,12 +46,13 @@ CREATE TABLE `account_group` (
   KEY `parent_group_id` (`parent_group_id`) USING BTREE,
   KEY `root_group_id` (`root_group_id`) USING BTREE,
   FULLTEXT KEY `quick_search` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO `account_group` (`id`, `epan_id`, `balance_sheet_id`, `name`, `created_at`, `parent_group_id`, `root_group_id`) VALUES
+(2,	3,	2,	'Sundry Creditor',	'2016-05-20',	NULL,	2);
 
 
-
-# Dump of table account_transaction
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `account_transaction`;
 
@@ -88,8 +75,7 @@ CREATE TABLE `account_transaction` (
 
 
 
-# Dump of table account_transaction_row
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `account_transaction_row`;
 
@@ -112,8 +98,7 @@ CREATE TABLE `account_transaction_row` (
 
 
 
-# Dump of table account_transaction_types
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `account_transaction_types`;
 
@@ -130,8 +115,7 @@ CREATE TABLE `account_transaction_types` (
 
 
 
-# Dump of table acl
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `acl`;
 
@@ -146,12 +130,11 @@ CREATE TABLE `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 
 
-# Dump of table activity
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `activity`;
 
@@ -175,8 +158,7 @@ CREATE TABLE `activity` (
 
 
 
-# Dump of table affiliate
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `affiliate`;
 
@@ -189,8 +171,7 @@ CREATE TABLE `affiliate` (
 
 
 
-# Dump of table application
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `application`;
 
@@ -198,13 +179,24 @@ CREATE TABLE `application` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `namespace` varchar(255) DEFAULT '',
+  `user_installable` tinyint(4) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+
+INSERT INTO `application` (`id`, `name`, `namespace`, `user_installable`) VALUES
+(21,	'hr',	'xepan\\hr',	1),
+(22,	'communication',	'xepan\\communication',	1),
+(23,	'projects',	'xepan\\projects',	1),
+(24,	'marketing',	'xepan\\marketing',	1),
+(25,	'accounts',	'xepan\\accounts',	1),
+(26,	'commerce',	'xepan\\commerce',	1),
+(27,	'production',	'xepan\\production',	1),
+(28,	'crm',	'xepan\\crm',	1),
+(29,	'cms',	'xepan\\cms',	1),
+(30,	'epanservices',	'xepan\\epanservices',	1);
 
 
-
-# Dump of table attachment
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `attachment`;
 
@@ -219,8 +211,7 @@ CREATE TABLE `attachment` (
 
 
 
-# Dump of table campaign
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `campaign`;
 
@@ -238,8 +229,7 @@ CREATE TABLE `campaign` (
 
 
 
-# Dump of table campaign_category_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `campaign_category_association`;
 
@@ -254,8 +244,7 @@ CREATE TABLE `campaign_category_association` (
 
 
 
-# Dump of table campaign_socialuser_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `campaign_socialuser_association`;
 
@@ -270,8 +259,7 @@ CREATE TABLE `campaign_socialuser_association` (
 
 
 
-# Dump of table category
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `category`;
 
@@ -296,8 +284,7 @@ CREATE TABLE `category` (
 
 
 
-# Dump of table category_item_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `category_item_association`;
 
@@ -313,8 +300,7 @@ CREATE TABLE `category_item_association` (
 
 
 
-# Dump of table cms_editors
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `cms_editors`;
 
@@ -324,12 +310,11 @@ CREATE TABLE `cms_editors` (
   `can_edit_template` tinyint(4) DEFAULT NULL,
   `can_edit_page_content` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 
 
-# Dump of table comments
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `comments`;
 
@@ -349,8 +334,7 @@ CREATE TABLE `comments` (
 
 
 
-# Dump of table communication
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `communication`;
 
@@ -383,12 +367,11 @@ CREATE TABLE `communication` (
   PRIMARY KEY (`id`),
   KEY `related_document_id` (`related_document_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 
 
-# Dump of table communication_attachment
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `communication_attachment`;
 
@@ -403,8 +386,7 @@ CREATE TABLE `communication_attachment` (
 
 
 
-# Dump of table communication_sms_setting
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `communication_sms_setting`;
 
@@ -425,8 +407,7 @@ CREATE TABLE `communication_sms_setting` (
 
 
 
-# Dump of table contact
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `contact`;
 
@@ -457,12 +438,13 @@ CREATE TABLE `contact` (
   KEY `image_id` (`image_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`search_string`),
   CONSTRAINT `fk_epan_id` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `contact` (`id`, `epan_id`, `first_name`, `last_name`, `type`, `status`, `address`, `city`, `state`, `country`, `pin_code`, `organization`, `post`, `website`, `image_id`, `user_id`, `created_at`, `updated_at`, `created_by_id`, `search_string`) VALUES
+(3,	3,	'Super',	'User',	'Employee',	'Active',	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	6,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	2,	'   0        Super User');
 
 
-
-# Dump of table contact_info
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `contact_info`;
 
@@ -481,8 +463,7 @@ CREATE TABLE `contact_info` (
 
 
 
-# Dump of table content
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `content`;
 
@@ -500,12 +481,13 @@ CREATE TABLE `content` (
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `marketing_category_id` (`marketing_category_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `content` (`id`, `message_255`, `title`, `document_id`, `marketing_category_id`, `is_template`, `message_3000`, `message_blog`, `url`, `message_160`) VALUES
+(3,	'No Content',	'Empty',	14,	13,	0,	'No Content',	'No Content',	'xavoc.com',	'No Content');
 
 
-
-# Dump of table currency
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `currency`;
 
@@ -517,12 +499,13 @@ CREATE TABLE `currency` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `currency` (`document_id`, `icon`, `name`, `value`, `id`) VALUES
+(15,	NULL,	'Default Currency',	'1',	3);
 
 
-
-# Dump of table custom_form
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `custom_form`;
 
@@ -542,8 +525,7 @@ CREATE TABLE `custom_form` (
 
 
 
-# Dump of table custom_form_field
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `custom_form_field`;
 
@@ -561,8 +543,7 @@ CREATE TABLE `custom_form_field` (
 
 
 
-# Dump of table customer
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `customer`;
 
@@ -592,8 +573,7 @@ CREATE TABLE `customer` (
 
 
 
-# Dump of table customfield_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `customfield_association`;
 
@@ -612,8 +592,7 @@ CREATE TABLE `customfield_association` (
 
 
 
-# Dump of table customfield_generic
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `customfield_generic`;
 
@@ -631,8 +610,7 @@ CREATE TABLE `customfield_generic` (
 
 
 
-# Dump of table customfield_value
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `customfield_value`;
 
@@ -648,8 +626,7 @@ CREATE TABLE `customfield_value` (
 
 
 
-# Dump of table department
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `department`;
 
@@ -662,12 +639,13 @@ CREATE TABLE `department` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `department` (`document_id`, `name`, `production_level`, `is_system`, `is_outsourced`, `id`) VALUES
+(11,	'Company',	1,	1,	0,	3);
 
 
-
-# Dump of table designer_image_category
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `designer_image_category`;
 
@@ -684,8 +662,7 @@ CREATE TABLE `designer_image_category` (
 
 
 
-# Dump of table designer_images
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `designer_images`;
 
@@ -701,8 +678,7 @@ CREATE TABLE `designer_images` (
 
 
 
-# Dump of table discount_voucher
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `discount_voucher`;
 
@@ -724,8 +700,7 @@ CREATE TABLE `discount_voucher` (
 
 
 
-# Dump of table discount_voucher_used
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `discount_voucher_used`;
 
@@ -739,8 +714,7 @@ CREATE TABLE `discount_voucher_used` (
 
 
 
-# Dump of table document
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `document`;
 
@@ -759,12 +733,17 @@ CREATE TABLE `document` (
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`),
   CONSTRAINT `fk_document_epan1` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+INSERT INTO `document` (`id`, `epan_id`, `type`, `sub_type`, `created_by_id`, `created_at`, `updated_by_id`, `updated_at`, `status`, `search_string`) VALUES
+(11,	3,	'Department',	NULL,	2,	'2016-05-20 12:43:23',	2,	'2016-05-20 12:43:23',	'Active',	'  Company 1 1  '),
+(12,	3,	'Post',	NULL,	2,	'2016-05-20 12:43:23',	2,	'2016-05-20 12:43:23',	'Active',	'  CEO  '),
+(13,	3,	'MarketingCategory',	NULL,	2,	'2016-05-20 12:43:23',	NULL,	'2016-05-20 12:43:23',	NULL,	'  default MarketingCategory '),
+(14,	3,	'Newsletter',	NULL,	NULL,	'2016-05-20 12:43:23',	NULL,	'2016-05-20 12:43:23',	'Draft',	'  Empty Newsletter No Content No Content No Content No Content Draft'),
+(15,	3,	'Currency',	NULL,	2,	'2016-05-20 12:43:23',	NULL,	'2016-05-20 12:43:23',	'Active',	'  Default Currency 1 Currency Active');
 
 
-
-# Dump of table emails
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `emails`;
 
@@ -778,8 +757,7 @@ CREATE TABLE `emails` (
 
 
 
-# Dump of table emailsetting
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `emailsetting`;
 
@@ -830,8 +808,7 @@ CREATE TABLE `emailsetting` (
 
 
 
-# Dump of table employee
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `employee`;
 
@@ -853,12 +830,13 @@ CREATE TABLE `employee` (
   KEY `fk_employee_contact1_idx` (`contact_id`),
   KEY `fk_employee_post1_idx` (`post_id`),
   KEY `department_id` (`department_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `employee` (`contact_id`, `post_id`, `department_id`, `notified_till`, `id`, `offer_date`, `doj`, `contract_date`, `leaving_date`, `mode`, `in_time`, `out_time`, `remark`) VALUES
+(3,	12,	11,	0,	3,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL);
 
 
-
-# Dump of table employee_documents
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `employee_documents`;
 
@@ -874,8 +852,7 @@ CREATE TABLE `employee_documents` (
 
 
 
-# Dump of table employee_movement
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `employee_movement`;
 
@@ -889,12 +866,11 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 
 
-# Dump of table epan
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `epan`;
 
@@ -909,12 +885,13 @@ CREATE TABLE `epan` (
   PRIMARY KEY (`id`),
   KEY `fk_epan_category_id` (`epan_category_id`),
   CONSTRAINT `fk_epan_category_id` FOREIGN KEY (`epan_category_id`) REFERENCES `epan_category` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `epan` (`id`, `epan_category_id`, `name`, `status`, `created_by_id`, `created_at`, `type`) VALUES
+(3,	3,	'default',	'Trial',	NULL,	'2016-05-20 12:43:23',	'Epan');
 
 
-
-# Dump of table epan_category
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `epan_category`;
 
@@ -922,12 +899,13 @@ CREATE TABLE `epan_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `epan_category` (`id`, `name`) VALUES
+(3,	'default');
 
 
-
-# Dump of table epan_config
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `epan_config`;
 
@@ -939,12 +917,13 @@ CREATE TABLE `epan_config` (
   `application` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `epan_config` (`id`, `epan_id`, `head`, `value`, `application`) VALUES
+(3,	3,	'DEFAULT_CURRENCY_ID',	'15',	'accounts');
 
 
-
-# Dump of table experience
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `experience`;
 
@@ -963,8 +942,7 @@ CREATE TABLE `experience` (
 
 
 
-# Dump of table filestore_file
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `filestore_file`;
 
@@ -985,8 +963,7 @@ CREATE TABLE `filestore_file` (
 
 
 
-# Dump of table filestore_image
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `filestore_image`;
 
@@ -1003,8 +980,7 @@ CREATE TABLE `filestore_image` (
 
 
 
-# Dump of table filestore_type
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `filestore_type`;
 
@@ -1015,42 +991,34 @@ CREATE TABLE `filestore_type` (
   `extension` varchar(5) NOT NULL DEFAULT '' COMMENT 'Filename extension',
   `allow` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
-LOCK TABLES `filestore_type` WRITE;
-/*!40000 ALTER TABLE `filestore_type` DISABLE KEYS */;
-
-INSERT INTO `filestore_type` (`id`, `name`, `mime_type`, `extension`, `allow`)
-VALUES
-	(1,'png','image/png','png',1),
-	(2,'jpeg','image/jpeg','jpg',1),
-	(3,'gif','image/gif','gif',1),
-	(4,'pdf','application/pdf','pdf',1),
-	(5,'doc','application/doc','doc',0),
-	(6,'xls','application/xls','xls',0),
-	(7,'application/vnd.openxmlformats-officedocument.wordprocessingml.d','application/vnd.openxmlformats-officedocument.wordprocessingml.d','',1),
-	(8,'application/vnd.openxmlformats-officedocument.wordprocessingml.d','application/vnd.openxmlformats-officedocument.wordprocessingml.d','',1),
-	(9,'application/vnd.openxmlformats-officedocument.wordprocessingml.d','application/vnd.openxmlformats-officedocument.wordprocessingml.d','',1),
-	(10,'application/vnd.openxmlformats-officedocument.wordprocessingml.d','application/vnd.openxmlformats-officedocument.wordprocessingml.d','',1),
-	(11,'application/vnd.openxmlformats-officedocument.wordprocessingml.d','application/vnd.openxmlformats-officedocument.wordprocessingml.d','',1),
-	(12,'application/vnd.openxmlformats-officedocument.wordprocessingml.d','application/vnd.openxmlformats-officedocument.wordprocessingml.d','',1),
-	(13,'application/msword','application/msword','',1),
-	(14,'application/vnd.openxmlformats-officedocument.spreadsheetml.shee','application/vnd.openxmlformats-officedocument.spreadsheetml.shee','',1),
-	(15,'application/zip','application/zip','',1),
-	(16,'application/vnd.oasis.opendocument.text','application/vnd.oasis.opendocument.text','',1),
-	(17,'application/vnd.openxmlformats-officedocument.wordprocessingml.d','application/vnd.openxmlformats-officedocument.wordprocessingml.d','',1),
-	(18,'application/vnd.openxmlformats-officedocument.wordprocessingml.d','application/vnd.openxmlformats-officedocument.wordprocessingml.d','',1),
-	(19,'application/CDFV2-unknown','application/CDFV2-unknown','',1),
-	(20,'application/vnd.openxmlformats-officedocument.wordprocessingml.d','application/vnd.openxmlformats-officedocument.wordprocessingml.d','',1),
-	(21,'text/plain','text/plain','',1),
-	(22,'application/vnd.openxmlformats-officedocument.wordprocessingml.d','application/vnd.openxmlformats-officedocument.wordprocessingml.d','',1);
-
-/*!40000 ALTER TABLE `filestore_type` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `filestore_type` (`id`, `name`, `mime_type`, `extension`, `allow`) VALUES
+(1,	'png',	'image/png',	'png',	1),
+(2,	'jpeg',	'image/jpeg',	'jpg',	1),
+(3,	'gif',	'image/gif',	'gif',	1),
+(4,	'pdf',	'application/pdf',	'pdf',	1),
+(5,	'doc',	'application/doc',	'doc',	0),
+(6,	'xls',	'application/xls',	'xls',	0),
+(7,	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'',	1),
+(8,	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'',	1),
+(9,	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'',	1),
+(10,	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'',	1),
+(11,	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'',	1),
+(12,	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'',	1),
+(13,	'application/msword',	'application/msword',	'',	1),
+(14,	'application/vnd.openxmlformats-officedocument.spreadsheetml.shee',	'application/vnd.openxmlformats-officedocument.spreadsheetml.shee',	'',	1),
+(15,	'application/zip',	'application/zip',	'',	1),
+(16,	'application/vnd.oasis.opendocument.text',	'application/vnd.oasis.opendocument.text',	'',	1),
+(17,	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'',	1),
+(18,	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'',	1),
+(19,	'application/CDFV2-unknown',	'application/CDFV2-unknown',	'',	1),
+(20,	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'',	1),
+(21,	'text/plain',	'text/plain',	'',	1),
+(22,	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'application/vnd.openxmlformats-officedocument.wordprocessingml.d',	'',	1);
 
 
-# Dump of table filestore_volume
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `filestore_volume`;
 
@@ -1063,21 +1031,13 @@ CREATE TABLE `filestore_volume` (
   `stored_files_cnt` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Approximate count of stored files',
   `enabled` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Volume enabled?',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-LOCK TABLES `filestore_volume` WRITE;
-/*!40000 ALTER TABLE `filestore_volume` DISABLE KEYS */;
-
-INSERT INTO `filestore_volume` (`id`, `name`, `dirname`, `total_space`, `used_space`, `stored_files_cnt`, `enabled`)
-VALUES
-	(1,'upload','upload',1000000000,0,333,1);
-
-/*!40000 ALTER TABLE `filestore_volume` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `filestore_volume` (`id`, `name`, `dirname`, `total_space`, `used_space`, `stored_files_cnt`, `enabled`) VALUES
+(1,	'upload',	'upload',	1000000000,	0,	333,	1);
 
 
-# Dump of table follower_task_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `follower_task_association`;
 
@@ -1092,8 +1052,7 @@ CREATE TABLE `follower_task_association` (
 
 
 
-# Dump of table installed_application
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `installed_application`;
 
@@ -1108,12 +1067,22 @@ CREATE TABLE `installed_application` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `application_id` (`application_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+
+INSERT INTO `installed_application` (`id`, `epan_id`, `application_id`, `name`, `installed_on`, `valid_till`, `is_active`) VALUES
+(21,	3,	21,	NULL,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	1),
+(22,	3,	22,	NULL,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	1),
+(23,	3,	23,	NULL,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	1),
+(24,	3,	24,	NULL,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	1),
+(25,	3,	25,	NULL,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	1),
+(26,	3,	26,	NULL,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	1),
+(27,	3,	27,	NULL,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	1),
+(28,	3,	28,	NULL,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	1),
+(29,	3,	29,	NULL,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	1),
+(30,	3,	30,	NULL,	'2016-05-20 12:43:23',	'2016-05-20 12:43:23',	1);
 
 
-
-# Dump of table invoice_transaction_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `invoice_transaction_association`;
 
@@ -1132,8 +1101,7 @@ CREATE TABLE `invoice_transaction_association` (
 
 
 
-# Dump of table item
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `item`;
 
@@ -1204,8 +1172,7 @@ CREATE TABLE `item` (
 
 
 
-# Dump of table item_department_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `item_department_association`;
 
@@ -1222,8 +1189,7 @@ CREATE TABLE `item_department_association` (
 
 
 
-# Dump of table item_department_consumption
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `item_department_consumption`;
 
@@ -1241,8 +1207,7 @@ CREATE TABLE `item_department_consumption` (
 
 
 
-# Dump of table item_image
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `item_image`;
 
@@ -1261,8 +1226,7 @@ CREATE TABLE `item_image` (
 
 
 
-# Dump of table item_template_design
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `item_template_design`;
 
@@ -1281,8 +1245,7 @@ CREATE TABLE `item_template_design` (
 
 
 
-# Dump of table jobcard
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `jobcard`;
 
@@ -1304,8 +1267,7 @@ CREATE TABLE `jobcard` (
 
 
 
-# Dump of table jobcard_detail
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `jobcard_detail`;
 
@@ -1322,8 +1284,7 @@ CREATE TABLE `jobcard_detail` (
 
 
 
-# Dump of table landingresponse
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `landingresponse`;
 
@@ -1346,8 +1307,7 @@ CREATE TABLE `landingresponse` (
 
 
 
-# Dump of table lead
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `lead`;
 
@@ -1362,8 +1322,7 @@ CREATE TABLE `lead` (
 
 
 
-# Dump of table lead_category_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `lead_category_association`;
 
@@ -1378,8 +1337,7 @@ CREATE TABLE `lead_category_association` (
 
 
 
-# Dump of table ledger
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `ledger`;
 
@@ -1404,12 +1362,13 @@ CREATE TABLE `ledger` (
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_id` (`related_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`name`,`ledger_type`,`LedgerDisplayName`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO `ledger` (`id`, `contact_id`, `group_id`, `name`, `ledger_type`, `LedgerDisplayName`, `is_active`, `OpeningBalanceDr`, `OpeningBalanceCr`, `affectsBalanceSheet`, `created_at`, `updated_at`, `epan_id`, `related_id`) VALUES
+(2,	3,	2,	'Super User',	'Employee',	'Super User',	1,	0,	0,	1,	'2016-05-20',	'2016-05-20',	3,	3);
 
 
-
-# Dump of table lodgement
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `lodgement`;
 
@@ -1427,8 +1386,7 @@ CREATE TABLE `lodgement` (
 
 
 
-# Dump of table marketingcampaign_socialconfig
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `marketingcampaign_socialconfig`;
 
@@ -1447,8 +1405,7 @@ CREATE TABLE `marketingcampaign_socialconfig` (
 
 
 
-# Dump of table marketingcampaign_socialpostings
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `marketingcampaign_socialpostings`;
 
@@ -1476,8 +1433,7 @@ CREATE TABLE `marketingcampaign_socialpostings` (
 
 
 
-# Dump of table marketingcampaign_socialpostings_activities
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `marketingcampaign_socialpostings_activities`;
 
@@ -1499,8 +1455,7 @@ CREATE TABLE `marketingcampaign_socialpostings_activities` (
 
 
 
-# Dump of table marketingcampaign_socialusers
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `marketingcampaign_socialusers`;
 
@@ -1523,8 +1478,7 @@ CREATE TABLE `marketingcampaign_socialusers` (
 
 
 
-# Dump of table marketingcategory
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `marketingcategory`;
 
@@ -1534,12 +1488,13 @@ CREATE TABLE `marketingcategory` (
   `document_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `marketingcategory` (`id`, `name`, `document_id`) VALUES
+(3,	'default',	13);
 
 
-
-# Dump of table opportunity
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `opportunity`;
 
@@ -1557,8 +1512,7 @@ CREATE TABLE `opportunity` (
 
 
 
-# Dump of table order_item_departmental_status
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `order_item_departmental_status`;
 
@@ -1575,8 +1529,7 @@ CREATE TABLE `order_item_departmental_status` (
 
 
 
-# Dump of table outsource_party
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `outsource_party`;
 
@@ -1605,8 +1558,7 @@ CREATE TABLE `outsource_party` (
 
 
 
-# Dump of table payment_gateway
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `payment_gateway`;
 
@@ -1624,8 +1576,7 @@ CREATE TABLE `payment_gateway` (
 
 
 
-# Dump of table post
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `post`;
 
@@ -1641,12 +1592,13 @@ CREATE TABLE `post` (
   KEY `fk_post_department1_idx` (`department_id`),
   KEY `parent_post_id` (`parent_post_id`) USING BTREE,
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `post` (`document_id`, `name`, `department_id`, `id`, `parent_post_id`, `in_time`, `out_time`) VALUES
+(12,	'CEO',	11,	3,	NULL,	'00:00:00',	'00:00:00');
 
 
-
-# Dump of table post_email_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `post_email_association`;
 
@@ -1661,8 +1613,7 @@ CREATE TABLE `post_email_association` (
 
 
 
-# Dump of table project
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `project`;
 
@@ -1680,8 +1631,7 @@ CREATE TABLE `project` (
 
 
 
-# Dump of table projectcomment
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `projectcomment`;
 
@@ -1697,8 +1647,7 @@ CREATE TABLE `projectcomment` (
 
 
 
-# Dump of table qsp_detail
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `qsp_detail`;
 
@@ -1721,8 +1670,7 @@ CREATE TABLE `qsp_detail` (
 
 
 
-# Dump of table qsp_master
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `qsp_master`;
 
@@ -1768,8 +1716,7 @@ CREATE TABLE `qsp_master` (
 
 
 
-# Dump of table qualification
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `qualification`;
 
@@ -1785,8 +1732,7 @@ CREATE TABLE `qualification` (
 
 
 
-# Dump of table quantity_condition
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `quantity_condition`;
 
@@ -1801,8 +1747,7 @@ CREATE TABLE `quantity_condition` (
 
 
 
-# Dump of table quantity_set
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `quantity_set`;
 
@@ -1821,8 +1766,7 @@ CREATE TABLE `quantity_set` (
 
 
 
-# Dump of table schedule
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `schedule`;
 
@@ -1840,8 +1784,7 @@ CREATE TABLE `schedule` (
 
 
 
-# Dump of table socialuser
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `socialuser`;
 
@@ -1854,8 +1797,7 @@ CREATE TABLE `socialuser` (
 
 
 
-# Dump of table store_transaction
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `store_transaction`;
 
@@ -1871,6 +1813,12 @@ CREATE TABLE `store_transaction` (
   `status` varchar(255) DEFAULT NULL,
   `jobcard_id` int(11) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
+  `delivery_via` varchar(255) DEFAULT NULL,
+  `delivery_reference` varchar(255) DEFAULT NULL,
+  `shipping_address` text DEFAULT NULL,
+  `shipping_charge` double(8,4) DEFAULT NULL,
+  `narration` text DEFAULT NULL,
+  `tracking_code` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_doc_id` (`related_document_id`) USING BTREE,
@@ -1881,8 +1829,7 @@ CREATE TABLE `store_transaction` (
 
 
 
-# Dump of table store_transaction_row
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `store_transaction_row`;
 
@@ -1906,8 +1853,7 @@ CREATE TABLE `store_transaction_row` (
 
 
 
-# Dump of table supplier
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `supplier`;
 
@@ -1926,8 +1872,7 @@ CREATE TABLE `supplier` (
 
 
 
-# Dump of table support_ticket
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `support_ticket`;
 
@@ -1957,8 +1902,7 @@ CREATE TABLE `support_ticket` (
 
 
 
-# Dump of table task
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `task`;
 
@@ -1991,8 +1935,7 @@ CREATE TABLE `task` (
 
 
 
-# Dump of table task_attachment
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `task_attachment`;
 
@@ -2007,8 +1950,7 @@ CREATE TABLE `task_attachment` (
 
 
 
-# Dump of table taxation
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `taxation`;
 
@@ -2025,8 +1967,7 @@ CREATE TABLE `taxation` (
 
 
 
-# Dump of table taxation_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `taxation_association`;
 
@@ -2041,8 +1982,7 @@ CREATE TABLE `taxation_association` (
 
 
 
-# Dump of table team_project_association
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `team_project_association`;
 
@@ -2057,8 +1997,7 @@ CREATE TABLE `team_project_association` (
 
 
 
-# Dump of table ticket_attachment
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `ticket_attachment`;
 
@@ -2071,8 +2010,7 @@ CREATE TABLE `ticket_attachment` (
 
 
 
-# Dump of table timesheet
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `timesheet`;
 
@@ -2090,8 +2028,7 @@ CREATE TABLE `timesheet` (
 
 
 
-# Dump of table tnc
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `tnc`;
 
@@ -2106,8 +2043,7 @@ CREATE TABLE `tnc` (
 
 
 
-# Dump of table user
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `user`;
 
@@ -2127,12 +2063,13 @@ CREATE TABLE `user` (
   KEY `created_by_id` (`created_by_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`username`,`type`,`scope`),
   CONSTRAINT `fk_user_epan1` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+INSERT INTO `user` (`id`, `username`, `password`, `status`, `epan_id`, `scope`, `type`, `hash`, `last_login_date`, `created_by_id`) VALUES
+(6,	'admin@epan.in',	'21232f297a57a5a743894a0e4a801fc3',	'Active',	3,	'SuperUser',	'User',	NULL,	NULL,	0);
 
 
-
-# Dump of table xmarketingcampaign_googlebloggerconfig
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `xmarketingcampaign_googlebloggerconfig`;
 
@@ -2156,8 +2093,7 @@ CREATE TABLE `xmarketingcampaign_googlebloggerconfig` (
 
 
 
-# Dump of table xshop_item_images
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `xshop_item_images`;
 
@@ -2178,8 +2114,7 @@ CREATE TABLE `xshop_item_images` (
 
 
 
-# Dump of table xshop_item_quantity_set_conditions
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `xshop_item_quantity_set_conditions`;
 
@@ -2200,10 +2135,4 @@ CREATE TABLE `xshop_item_quantity_set_conditions` (
 
 
 
-
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- THE END
