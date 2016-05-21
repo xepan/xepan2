@@ -65,7 +65,11 @@ class Frontend extends ApiFrontend {
             'addons'=> ['websites/'.$current_website.'/www']
         ))->setParent($this->pathfinder->base_location);
 
-        if($tmpt = $this->getConfig('xepan-template',false)){
+        if($tmpt = $this->recall('xepan-template',
+                $this->memorize('xepan-template',
+                    $_GET['xepan-template']?:$this->getConfig('xepan-template',false)
+                )
+        {
             $this->addLocation(array(
                 'page'=>array("xepantemplates/$tmpt"),
                 'js'=>array("xepantemplates/$tmpt/js"),

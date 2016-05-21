@@ -2133,6 +2133,13 @@ CREATE TABLE `xshop_item_quantity_set_conditions` (
   KEY `fk_department_phase_id` (`department_phase_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
-
+DROP TABLE IF EXISTS `xepan_templates`;
+CREATE TABLE `xepan_templates` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `tags` text,
+  `description` text,
+  `is_active` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- THE END
