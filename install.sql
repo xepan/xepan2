@@ -882,10 +882,11 @@ CREATE TABLE `epan` (
   `created_by_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `type` varchar(5) DEFAULT NULL,
+  `xepan_template_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_epan_category_id` (`epan_category_id`),
   CONSTRAINT `fk_epan_category_id` FOREIGN KEY (`epan_category_id`) REFERENCES `epan_category` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 INSERT INTO `epan` (`id`, `epan_category_id`, `name`, `status`, `created_by_id`, `created_at`, `type`) VALUES
 (3,	3,	'default',	'Trial',	NULL,	'2016-05-20 12:43:23',	'Epan');
@@ -2133,13 +2134,14 @@ CREATE TABLE `xshop_item_quantity_set_conditions` (
   KEY `fk_department_phase_id` (`department_phase_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `xepan_templates`;
-CREATE TABLE `xepan_templates` (
+DROP TABLE IF EXISTS `xepan_template`;
+CREATE TABLE `xepan_template` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `tags` text,
   `description` text,
   `is_active` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
 -- THE END
