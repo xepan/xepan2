@@ -57,6 +57,17 @@ class Frontend extends ApiFrontend {
         $current_website = $this->current_website_name = $sub_domain;
         $this->readConfig("websites/$this->current_website_name/config.php");
         
+        if($tmpt = $this->recall('xepan-template-preview',$_GET['xepan-template-preview'])){
+            $this->memorize('xepan-template-preview',$tmpt);
+            $this->addLocation(array(
+                'page'=>array("xepantemplates/$tmpt"),
+                'js'=>array("xepantemplates/$tmpt/js"),
+                'css'=>array("xepantemplates/$tmpt","xepantemplates/$tmpt/css"),
+                'template'=>["xepantemplates/$tmpt"],
+                'addons'=> ['xepantemplates/'.$tmpt]
+            ))->setParent($this->pathfinder->base_location);
+        }
+
         $this->addLocation(array(
             'page'=>array("websites/$current_website/www"),
             'js'=>array("websites/$current_website/www/js"),
@@ -65,11 +76,8 @@ class Frontend extends ApiFrontend {
             'addons'=> ['websites/'.$current_website.'/www']
         ))->setParent($this->pathfinder->base_location);
 
-        if($tmpt = $this->recall('xepan-template',
-                $this->memorize('xepan-template',
-                    $_GET['xepan-template']?:$this->getConfig('xepan-template',false)
-                )
-        {
+
+        if($tmpt = $this->getConfig('xepan-template',false)){
             $this->addLocation(array(
                 'page'=>array("xepantemplates/$tmpt"),
                 'js'=>array("xepantemplates/$tmpt/js"),
