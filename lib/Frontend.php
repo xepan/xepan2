@@ -32,7 +32,7 @@ class Frontend extends ApiFrontend {
 
         $this->api->pathfinder
             ->addLocation(array(
-                'addons' => array('shared/addons', 'vendor','shared/addons2'),
+                'addons' => array('vendor','shared/addons2','shared/addons'),
             ))
             ->setBasePath($this->pathfinder->base_location->getPath() );
         
