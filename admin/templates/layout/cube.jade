@@ -1,7 +1,18 @@
+#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+        h4.modal-title Quick Search
+      .modal-body
+        {$quick_search_form}
+        {$quick_search_result}
+      .modal-footer
+        button.btn.btn-default(type='button', data-dismiss='modal') Close
 #theme-wrapper.atk-layout
       header#header-navbar.navbar
         .container
-          a#logo.navbar-brand(href='index.html')
+          a#logo.navbar-brand(href='index.php')
             img.normal-logo.logo-white(src='img/logo3.png', alt='')
             //- img.normal-logo.logo-white(src='img/logo.png', alt='')
             img.normal-logo.logo-black(src='img/logo-black.png', alt='')
@@ -16,27 +27,22 @@
                   a#make-small-nav.btn
                     i.fa.fa-bars
                 li.dropdown.hidden-xs#notificationid {$notification_view}                      
-                li.dropdown.hidden-xs
-                  a.btn.dropdown-toggle(data-toggle='dropdown')
-                    i.fa.fa-envelope-o
-                    span.count {message_count}16{/}
-                  ul.dropdown-menu.notifications-list.messages-list
-                    li.pointer
-                      .pointer-inner
-                        .arrow
-                    {$message_view}
+                //- li.dropdown.hidden-xs
+                //-   a.btn.dropdown-toggle(data-toggle='dropdown')
+                //-     i.fa.fa-envelope-o
+                //-     span.count {message_count}16{/}
+                //-   ul.dropdown-menu.notifications-list.messages-list
+                //-     li.pointer
+                //-       .pointer-inner
+                //-         .arrow
+                //-     {$message_view}
                 {Main_Menu}
                 {/Main_Menu}
             #header-nav.nav-no-collapse.pull-right
               ul.nav.navbar-nav.pull-right
                 li.mobile-search
-                  a.btn
+                  a.btn(data-toggle="modal", href="#myModal")
                     i.fa.fa-search
-                  .drowdown-search
-                    form(role='search')
-                      .form-group
-                        input.form-control(type='text', placeholder='Search...')
-                        i.fa.fa-search.nav-search-icon
                 li.dropdown.profile-dropdown
                   a.dropdown-toggle(href='#', data-toggle='dropdown')
                     //- img(src='img/samples/scarlet-159.png', alt='')
@@ -44,8 +50,8 @@
                     b.caret
                   ul.dropdown-menu.dropdown-menu-right
                     li
-                      a(href='?page=xepan_base_generalsetting')
-                        i.fa.fa-user
+                      a(href='?page=xepan_communication_generalsetting')
+                        i.fa.fa-cog.fa-spin
                         | General Settings
                   //-   li
                   //-     a(href='#')
@@ -60,7 +66,7 @@
                   //-       i.fa.fa-power-off
                   //-       | Logout
                 li.hidden-xxs
-                  a(href="?page=logout" class="btn")
+                  a(href="?page=xepan_base_logout" class="btn")
                     i.fa.fa-power-off
       #page-wrapper.container
         .row
@@ -68,11 +74,11 @@
             section#col-left.col-left-nano
               #col-left-inner.col-left-nano-content
                 #user-left-box.clearfix.hidden-sm.hidden-xs.dropdown.profile2-dropdown
-                  img(alt='', src='{employee_image}img/samples/scarlet-159.png{/}')
+                  {avatar}img(alt='', src='{image}img/samples/scarlet-159.png{/}'){/}
                   .user-box
                     span.name
                       a.dropdown-toggle(href='#', data-toggle='dropdown')
-                        | {first_name}Scarlett J.{/}
+                        | {first_name}Scarlett J.{/} 
                         i.fa.fa-angle-down
                       ul.dropdown-menu
                         li
@@ -88,7 +94,7 @@
                         //-     i.fa.fa-envelope-o
                         //-     | Messages
                         li
-                          a(href='?page=logout')
+                          a(href='?page=xepan_base_logout')
                             i.fa.fa-power-off
                             | Logout
                     span.status
@@ -116,22 +122,12 @@
                         {/breadcrumb}
                         h1 {page_title}Page_Title{/}
                       .pull-right.hidden-xs
-                        .xs-graph.pull-left
-                          .graph-label
-                            b
-                              i.fa.fa-shopping-cart
-                              |  838
-                            |  Orders
-                          .graph-content.spark-orders
-                        .xs-graph.pull-left.mrg-l-lg.mrg-r-sm
-                          .graph-label
-                            b &dollar;12.338
-                            |  Revenues
-                          .graph-content.spark-revenues
+                        {page_top_right}
+                        {/page_top_right}
                  {$Content}
             footer#footer-bar.row
               p#footer-copyright.col-xs-12
-                | Powered by Cube Theme.
+                | Powered by Xavoc Technocrats Pvt Ltd.
     #config-tool.closed
       a#config-tool-cog
         i.fa.fa-cog
@@ -158,11 +154,11 @@
               input#config-boxed-layout(type='checkbox')
               label(for='config-boxed-layout')
                 | Boxed Layout
-          li
-            .checkbox-nice
-              input#config-rtl-layout(type='checkbox')
-              label(for='config-rtl-layout')
-                | Right-to-Left
+          //- li
+          //-   .checkbox-nice
+          //-     input#config-rtl-layout(type='checkbox')
+          //-     label(for='config-rtl-layout')
+          //-       | Right-to-Left
         br
         h4 Skin Color
         ul#skin-colors.clearfix

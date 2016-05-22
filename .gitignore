@@ -6,8 +6,8 @@ admin/upload/*
 shared/addons2
 .DS_Store
 config.php
-config-default.php
 config-auto.php
+admin/config-default.php
 composer.phar
 /vendor/*
 /agiletoolkit-sandbox.phar
@@ -24,3 +24,8 @@ assets/*
 *.todo
 /cube
 *.mwb
+/upload/*
+tests/_output/*
+.tmb
+xepantemplates/*
+websites/*

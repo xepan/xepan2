@@ -1,7 +1,10 @@
-input{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; font-weight:normal; border-bottom-color: grey; border-bottom-width: 1px}
+input{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; font-weight:normal; border-bottom-color: grey; border-bottom-width: 1px;width: 100%}
+input[type=checkbox]{
+	width: auto!important;
+}
 input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; border-bottom-color: grey; border-bottom-width: 1px; outline: none !important}
 textarea {width: 100%;}
-/*.xepan-grid .atk-actions button{
+/*.xepan-grid .xepan-actions button{
 	border-radius:3px solid #2980b9;
 	border-color:#2980b9;
 	background-color:#03a9f4;
@@ -23,11 +26,14 @@ textarea {width: 100%;}
     font-size:14px;
 	border-bottom:2px solid #216897;
 }*/
-/*.xepan-grid .atk-actions button:hover{background-color:#017fb5;color:#FFF}*/
+/*.xepan-grid .xepan-actions button:hover{background-color:#017fb5;color:#FFF}*/
 
 /*remove border from all input*/
 .form-control{
 	border:none ;
+}
+.form-control button{
+  float:right;
 }
 
 .filter-block .form-group .search-icon{
@@ -35,11 +41,11 @@ textarea {width: 100%;}
 	float: right;
 }
 
-.filter-block .form-group .atk-jackscrew{
+.filter-block .form-group .xepan-jackscrew{
 	float: right;
 }
 
-.xepan-filter-form .atk-input-combo div.atk-cell:first-child {
+.xepan-filter-form .xepan-input-combo div.xepan-cell:first-child {
 	float: left !important;
 }
 .xepan-filter-form span.icon-cancel{
@@ -98,7 +104,7 @@ textarea {width: 100%;}
 	padding:0px 0px 0px 0px !important;
 	margin: 0px 0px 0px 0px !important;
 }
-.xepan-micro-grid .atk-actions{
+.xepan-micro-grid .xepan-actions{
 	margin-right: 10px;
 }
 .xepan-micro-grid .main-box-body{
@@ -164,6 +170,274 @@ textarea {width: 100%;}
 .input-full-width input{
 	width:100%;
 }
-/*.user-subhead{
-	color: #616161;
+.xepan-cell .xepan-jackscrew input{
+	width: 100%;
+}
+.xepan-filter-form input{
+	width: auto;
+}
+.editable-checklist input{
+	width: auto;
+}
+/*.atk-cells{
+	display: table;
+	width: 100%;
 }*/
+.field-error-text{
+	color:red!important;
+}
+
+/*.atk-cell{
+	display: table-cell;
+	vertical-align: middle;
+}*/
+
+.atk-align-right{
+	text-align:right;
+}
+.xepan-clear-fix:after {
+  clear: both;
+}
+.xepan-move-left {
+  float: left;
+}
+/*.xepan-move-center {
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.xepan-move-center.atk-button {
+  display: block;
+}*/
+.xepan-move-right {
+  float: right;
+}
+.xepan-align-left {
+  text-align: left;
+}
+
+.atk-align-left{
+	text-align:left;
+}
+.xepan-align-center {
+  text-align: center;
+}
+
+.xepan-move-center {
+  margin: auto 0 0 auto !important;
+}
+.paginator > span.select2{
+	width: 80px!important;
+}
+
+/*span.select2{
+	width:100% !important;
+}*/
+.xepan-form-field{
+	border-bottom: 1px solid #eee;
+    border-right: 2px solid #eee;
+    border-top: 2px solid #eee;
+    line-height: 27px;
+    margin-top: 0;
+    border-radius:4px;
+    /*border-left-radius:0px;*/
+}
+
+.xepan-padding-xsmall {
+  padding: 0.5rem;
+}
+.xepan-padding-small {
+  padding: 0.75rem;
+}
+.xepan-padding {
+  padding: 1.5rem;
+}
+.xepan-padding-large {
+  padding: 3rem;
+}
+.xepan-padding-xlarge {
+  padding: 4.5rem;
+}
+.xepan-padding-horizontal-xsmall {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.xepan-padding-horizontal-small {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.xepan-padding-horizontal {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.xepan-padding-horizontal-large {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.xepan-padding-horizontal-xlarge {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+}
+.xepan-padding-vertical-xsmall {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+.xepan-padding-vertical-small {
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+}
+.xepan-padding-vertical {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+.xepan-padding-vertical-large {
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+.xepan-padding-vertical-xlarge {
+  padding-bottom: 4.5rem;
+  padding-top: 4.5rem;
+}
+.xepan-padding-left-xsmall {
+  padding-left: 0.5rem;
+}
+.xepan-padding-left-small {
+  padding-left: 0.75rem;
+}
+.xepan-padding-left {
+  padding-left: 1.5rem;
+}
+.xepan-padding-left-large {
+  padding-left: 3rem;
+}
+.xepan-padding-left-xlarge {
+  padding-left: 4.5rem;
+}
+.xepan-padding-right-xsmall {
+  padding-right: 0.5rem;
+}
+.xepan-padding-right-small {
+  padding-right: 0.75rem;
+}
+.xepan-padding-right {
+  padding-right: 1.5rem;
+}
+.xepan-padding-right-large {
+  padding-right: 3rem;
+}
+.xepan-padding-right-xlarge {
+  padding-right: 4.5rem;
+}
+.xepan-padding-top-xsmall {
+  padding-top: 0.5rem;
+}
+.xepan-padding-top-small {
+  padding-top: 0.75rem;
+}
+.xepan-padding-top {
+  padding-top: 1.5rem;
+}
+.xepan-padding-top-large {
+  padding-top: 3rem;
+}
+.xepan-padding-top-xlarge {
+  padding-top: 4.5rem;
+}
+.xepan-padding-bottom-xsmall {
+  padding-bottom: 0.5rem;
+}
+.xepan-padding-bottom-small {
+  padding-bottom: 0.75rem;
+}
+.xepan-padding-bottom {
+  padding-bottom: 1.5rem;
+}
+.xepan-padding-bottom-large {
+  padding-bottom: 3rem;
+}
+.xepan-padding-bottom-xlarge {
+  padding-bottom: 4.5rem;
+}
+.xepan-padding-reset {
+  padding: 0;
+}
+.xepan-padding-left-reset {
+  padding-left: 0;
+}
+.xepan-padding-right-reset {
+  padding-right: 0;
+}
+.xepan-padding-top-reset {
+  padding-top: 0;
+}
+.xepan-padding-bottom-reset {
+  padding-bottom: 0;
+}
+
+.xepan-hover-hand span{
+  cursor:pointer;
+  cursor: hand;
+  max-width:600px;
+}
+
+#content-wrapper{
+  height: auto;
+  min-height: 623px;
+}
+.navbar > .container .navbar-brand{
+  width: 200px;
+}
+.xepan-contact-profile button{
+  font-size: 10px;
+  padding: 5px 6px;
+}
+#user-profile .profile-details{
+  margin:0px;
+  padding: 0px;
+}
+
+/*all input tag are 100 % */
+.xepan-admin-input-full-width .atk-form-field > *{
+  width:100%;
+}
+.xepan-admin-input-full-width .atk-form-row{
+  margin-bottom: 10px;
+}
+
+.xepan-admin-input-full-width .atk-actions  > button{
+  background-color: #03a9f4;
+  border-color: #2980b9;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-clip: padding-box;
+  border-color: -moz-use-text-color;
+  border-image: none;
+  border-radius: 3px;
+  border-style: none none solid;
+  border-width: medium medium 4px;
+  outline: medium none;
+  padding: 6px 12px;
+  transition: border-color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s;
+  color:#FFFFFF;  
+  border-color: #2980b9;
+}
+.has-error{
+  color: red;
+}
+
+/*for qsp select 2 full width*/
+.invoice-box span.select2{
+  width:100% !important;
+}
+
+/*100% width of multiselect*/
+.multiselect-full-width + span.select2 {
+  width:100% !important;
+}
+/*Status Icon Color classes */
+
+.xepan-effect-yellow{
+  color: #ffc107;  
+}
