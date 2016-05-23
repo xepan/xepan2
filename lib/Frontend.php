@@ -9,7 +9,7 @@ class Frontend extends ApiFrontend {
 
     public $is_frontend= true;
     public $is_admin= false;
-
+    public $isEditing = false;
     public $current_website_name=null;
 
     public $page_class='xepan\cms\page_cms';
