@@ -52,7 +52,7 @@ class Frontend extends ApiFrontend {
     function defaultTemplate(){
 
         $url = "{$_SERVER['HTTP_HOST']}";
-        $sub_domain = $this->extract_subdomains($url)?:'default';
+        $sub_domain = $this->extract_subdomains($url)?:'www';
 
         $current_website = $this->current_website_name = $sub_domain;
         $this->readConfig("websites/$this->current_website_name/config.php");
