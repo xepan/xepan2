@@ -441,7 +441,13 @@ textarea {width: 100%;}
 .xepan-effect-yellow{
   color: #ffc107;  
 }
-
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable{
+  left:10%!important;
+  width: 80%!important;
+}
+.accordion-link {
+    display: none!important;
+  }
 /* ----------- Galaxy S3 ----------- */
 
 /* Portrait and Landscape */
@@ -449,12 +455,19 @@ textarea {width: 100%;}
   #page-wrapper{
     font-size: 0.875em;
   }
+  #content-wrapper{
+    height: auto;
+    min-height: 430px;
+  }
+  .main-box-body{
+    padding: 0px!important;
+  }
   #page-wrapper a , #page-wrapper .btn{
     font-size: 0.875em;
   }
-  #page-wrapper table span{
+  /*#page-wrapper table span{
     font-size: 0.7em;
-  }
+  }*/
 
   .navbar-ex1-collapse{
     width:100%;
@@ -486,7 +499,7 @@ textarea {width: 100%;}
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       transform: rotate(0deg)!important;
-    }
+  }
 
     /*document action buttons*/
   .xepan-document-actions div.btn {
@@ -546,25 +559,46 @@ textarea {width: 100%;}
   .tools .reply i{
     color: white;
   }
-  /*.select2-container.select2-container--default.select2-container--open .select2-results{
-    font-size: 0.7em;
+  
+  /*Bootstrap Tabs */
+  .responsive-tabs-container[class*="accordion-"] .tab-pane {
+    margin-bottom: 15px;
   }
-  .paginator > span.select2{
-    width: 100%!important;
-    font-size: 0.875em;   
+  .responsive-tabs-container[class*="accordion-"] .accordion-link {
+    display: none;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    color: #333;
   }
-  .select2-container--default .select2-selection--single{
-    height: auto!important;
+  .responsive-tabs-container.accordion-xs .nav-tabs {
+    display: none;
   }
-  .select2-container .select2-selection--single .select2-selection__arrow{
-    height: 26px!important;
-    width: 30%!important;
+  .responsive-tabs-container.accordion-xs .accordion-link {
+    display: block;
   }
-  .select2-container .select2-selection--single .select2-selection__rendered{
-    line-height: 25px!important;
-  }*/
+  .responsive-tabs-container.accordion-sm .nav-tabs {
+    display: none;
+  }
+  .responsive-tabs-container.accordion-sm .accordion-link {
+    display: block;
+  }
+  .responsive-tabs-container.accordion-md .nav-tabs {
+    display: none;
+  }
+  .responsive-tabs-container.accordion-md .accordion-link {
+    display: block;
+  }
+  .responsive-tabs-container.accordion-lg .nav-tabs {
+    display: none;
+  }
+  .accordion-link {
+    display: block!important;
+  }
+}  
 
-}
 
 /* Portrait */
 @media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -609,4 +643,5 @@ textarea {width: 100%;}
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
 
 }
+  
 
