@@ -25,7 +25,8 @@
     "studio-42/elfinder": "^2.1",
     "tinymce/tinymce": "^4.3",
     "xepan/epanservices": "dev-master",
-    "xepan/filestore": "dev-master"
+    "xepan/filestore": "dev-master",
+    "xepan/blog": "dev-master"
   },
   "autoload":{
     "psr-0":{

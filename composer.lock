@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a078281fd8c403c36eb6016a80facb11",
-    "content-hash": "cb1591d68bfa48dbce522ece006760ad",
+    "hash": "2a14d845b18e6c0e71ee5a12d94256f7",
+    "content-hash": "3990c403c59747c820d5f6c2fbbc5af0",
     "packages": [
         {
             "name": "atk4/atk4",
@@ -2729,6 +2729,49 @@
             "time": "2016-05-23 12:48:41"
         },
         {
+            "name": "xepan/blog",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:xepan/blog.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/blog/zipball/1a7df4523ada6839ce8ba69f7faa66a4b601531c",
+                "reference": "1a7df4523ada6839ce8ba69f7faa66a4b601531c",
+                "shasum": ""
+            },
+            "require": {
+                "xepan/cms": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "autocomplete": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "Blog Appllication for xEpan Platform",
+            "homepage": "https://github.com/xepan/blog",
+            "keywords": [
+                "ERP",
+                "blog",
+                "saas",
+                "xepan"
+            ],
+            "time": "2016-05-25 05:10:31"
+        },
+        {
             "name": "xepan/ccavenue",
             "version": "dev-master",
             "source": {
@@ -3051,7 +3094,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-23 11:06:15"
+            "time": "2016-05-24 14:26:32"
         },
         {
             "name": "xepan/gd-text",
@@ -5422,7 +5465,8 @@
         "xepan/projects": 20,
         "xepan/omnipay": 20,
         "xepan/epanservices": 20,
-        "xepan/filestore": 20
+        "xepan/filestore": 20,
+        "xepan/blog": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
