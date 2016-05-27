@@ -11,62 +11,59 @@
         button.btn.btn-default(type='button', data-dismiss='modal') Close
 #theme-wrapper.atk-layout
       header#header-navbar.navbar
+        nav
+          .container
+            .navbar-header
+              a#logo.navbar-brand(href='index.php')
+                  img.normal-logo.logo-white(src='img/logo3.png', alt='')
+                  img.normal-logo.logo-black(src='img/logo3-black.png', alt='')
+                  img.small-logo.hidden-xs.hidden-sm.hidden(src='img/logo.png', alt='')
+            .clearfix
+              button.navbar-toggle.pull-left(data-target='.navbar-ex1-collapse', data-toggle='collapse', type='button')
+                span.sr-only Toggle navigation
+                span.fa.fa-bars
+              button.navbar-toggle(data-target='.navbar-ex1-collapse1', data-toggle='collapse', type='button')
+                span.sr-only Toggle navigation
+                span.fa.fa-bars
+              #header-nav.nav-no-collapse.pull-right
+                ul.nav.navbar-nav
+                  li.dropdown#notificationid {$notification_view}
+                  li.mobile-search
+                    a.btn(data-toggle="modal", href="#myModal")
+                      i.fa.fa-search
+                  li.dropdown.profile-dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown')
+                      //- img(src='img/samples/scarlet-159.png', alt='')
+                      span.hidden-xs {department}Scarlett{/department} / {post}Johansson{/post}
+                      b.caret
+                    ul.dropdown-menu.dropdown-menu-right
+                      li
+                        a(href='?page=xepan_communication_generalsetting')
+                          i.fa.fa-cog.fa-spin
+                          | General Settings
+                    li.hidden-xxs
+                      a(href="?page=xepan_base_logout" class="btn")
+                        i.fa.fa-power-off      
+              .navbar-ex1-collapse.navbar-left.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                  li
+                    a#make-small-nav.btn.hidden-xs
+                      i.fa.fa-bars
+                  {Main_Menu}
+                  {/Main_Menu}
+                    
         .container
-          a#logo.navbar-brand(href='index.php')
-            img.normal-logo.logo-white(src='img/logo3.png', alt='')
-            img.normal-logo.logo-black(src='img/logo3-black.png', alt='')
-            img.small-logo.hidden-xs.hidden-sm.hidden(src='img/logo.png', alt='')
           .clearfix
-            button.navbar-toggle(data-target='.navbar-ex1-collapse', data-toggle='collapse', type='button')
-              span.sr-only Toggle navigation
-              span.fa.fa-bars
-            .nav-no-collapse.navbar-left.pull-left.hidden-sm.hidden-xs
-              ul.nav.navbar-nav.pull-left
-                li
-                  a#make-small-nav.btn
-                    i.fa.fa-bars
-                li.dropdown.hidden-xs#notificationid {$notification_view}                      
-                //- li.dropdown.hidden-xs
-                //-   a.btn.dropdown-toggle(data-toggle='dropdown')
-                //-     i.fa.fa-envelope-o
-                //-     span.count {message_count}16{/}
-                //-   ul.dropdown-menu.notifications-list.messages-list
-                //-     li.pointer
-                //-       .pointer-inner
-                //-         .arrow
-                //-     {$message_view}
-                {Main_Menu}
-                {/Main_Menu}
-            #header-nav.nav-no-collapse.pull-right
-              ul.nav.navbar-nav.pull-right
-                li.mobile-search
-                  a.btn(data-toggle="modal", href="#myModal")
-                    i.fa.fa-search
-                li.dropdown.profile-dropdown
-                  a.dropdown-toggle(href='#', data-toggle='dropdown')
-                    //- img(src='img/samples/scarlet-159.png', alt='')
-                    span.hidden-xs {department}Scarlett{/department} / {post}Johansson{/post}
-                    b.caret
-                  ul.dropdown-menu.dropdown-menu-right
-                    li
-                      a(href='?page=xepan_communication_generalsetting')
-                        i.fa.fa-cog.fa-spin
-                        | General Settings
-                  //-   li
-                  //-     a(href='#')
-                  //-       i.fa.fa-cog
-                  //-       | Settings
-                  //-   li
-                  //-     a(href='#')
-                  //-       i.fa.fa-envelope-o
-                  //-       | Messages
-                  //-   li
-                  //-     a(href='#')
-                  //-       i.fa.fa-power-off
-                  //-       | Logout
-                li.hidden-xxs
-                  a(href="?page=xepan_base_logout" class="btn")
-                    i.fa.fa-power-off
+            
+            //- .nav-no-collapse.navbar-left.pull-left
+            //-   ul.nav.navbar-nav.pull-left
+            //-     li
+            //-       a#make-small-nav.btn
+            //-         i.fa.fa-bars
+            //-     li.dropdown.hidden-xs#notificationid {$notification_view}                      
+            //-     {Main_Menu}
+            //-     {/Main_Menu}
+            
       #page-wrapper.container
         .row
           #nav-col
@@ -99,7 +96,7 @@
                     span.status
                       i.fa.fa-circle
                       |  {status}Online{/}
-                #sidebar-nav.collapse.navbar-collapse.navbar-ex1-collapse
+                #sidebar-nav.collapse.navbar-collapse.navbar-ex1-collapse1
                   ul.nav.nav-pills.nav-stacked
                     li.nav-header.nav-header-first.hidden-sm.hidden-xs
                       | Navigation
