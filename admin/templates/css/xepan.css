@@ -706,7 +706,25 @@ textarea {width: 100%;}
     display: block!important;
   }
   /*Email Form Wizard*/
-
+  .wizard .wizard-inner .actions{
+    background-color:transparent!important;
+    border-left:0px!important;
+    padding-left:0px!important;
+    padding-right:0px!important;
+    position: relative!important;
+  }
+  .wizard .wizard-inner ul li .chevron{
+    border-style: solid none solid solid;
+    border-width: 0px 0 0px 0px!important;
+    top: 23px!important;
+  }
+  .wizard .wizard-inner ul li .chevron::before{
+    border-width: 18px 0 19px 13px!important;
+  }
+  .wizard .wizard-inner ul li{
+    height: 35px!important;
+    line-height: 35px!important;
+  }
 }  
 
 
