@@ -92,11 +92,13 @@
                         li
                           a(href='?page=xepan_base_logout')
                             i.fa.fa-power-off
-                            | Logout
+                            | Logout     
                     span.status
                       i.fa.fa-circle
                       |  {status}Online{/}
                 #sidebar-nav.collapse.navbar-collapse.navbar-ex1-collapse1
+                  small.text-muted{$task_status}
+                  hr
                   ul.nav.nav-pills.nav-stacked
                     li.nav-header.nav-header-first.hidden-sm.hidden-xs
                       | Navigation

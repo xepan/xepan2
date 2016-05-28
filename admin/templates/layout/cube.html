@@ -60,10 +60,11 @@
                   <ul class="dropdown-menu">
                     <li><a href="?page=xepan_hr_employee_profile"><i class="fa fa-user"></i>Profile</a></li>
                     <li><a href="?page=xepan_hr_employee_setting"><i class="fa fa-cog"></i>Settings</a></li>
-                    <li><a href="?page=xepan_base_logout"><i class="fa fa-power-off"></i>Logout</a></li>
+                    <li><a href="?page=xepan_base_logout"><i class="fa fa-power-off"></i>Logout     </a></li>
                   </ul></span><span class="status"><i class="fa fa-circle"></i> {status}Online{/}</span></div>
             </div>
-            <div id="sidebar-nav" class="collapse navbar-collapse navbar-ex1-collapse1">
+            <div id="sidebar-nav" class="collapse navbar-collapse navbar-ex1-collapse1"><small class="text-muted">{$task_status}</small>
+              <hr/>
               <ul class="nav nav-pills nav-stacked">
                 <li class="nav-header nav-header-first hidden-sm hidden-xs">Navigation</li>{$Side_Menu}
               </ul>
