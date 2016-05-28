@@ -4,43 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a33cb19bece980a6ef0095557458a69b",
-    "content-hash": "b102cd2568ad04ded597ec19b6bb12a3",
+    "hash": "876fb9b886b34b94c1d6f76a03ca5b30",
+    "content-hash": "7acbbf56851f6a2f2228e59a0e582334",
     "packages": [
-        {
-            "name": "atk4/atk4",
-            "version": "4.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/atk4/atk4.git",
-                "reference": "9ac0f6c8644323780244b602e06bab3703a97dc0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/atk4/atk4/zipball/9ac0f6c8644323780244b602e06bab3703a97dc0",
-                "reference": "9ac0f6c8644323780244b602e06bab3703a97dc0",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "": "lib/"
-                },
-                "files": [
-                    "/lib/static.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "homepage": "https://agiletoolkit.org/",
-            "keywords": [
-                "atk4",
-                "framework"
-            ],
-            "time": "2015-03-16 16:27:31"
-        },
         {
             "name": "dg/mysql-dump",
             "version": "v1.3.0",
@@ -2394,7 +2360,7 @@
                 {
                     "name": "Todd Burry",
                     "email": "todd@vanillaforums.com",
-                    "role": "Developer"
+                    "role": "developer"
                 }
             ],
             "description": "A jQuery like html dom parser written in php.",
@@ -2560,7 +2526,7 @@
         },
         {
             "name": "xepan/atk4",
-            "version": "4.3.x-dev",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xepan/atk4.git",
@@ -2603,13 +2569,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/base/zipball/99c1564afa179f547963c79b0f11f614ea222015",
-                "reference": "99c1564afa179f547963c79b0f11f614ea222015",
+                "url": "https://api.github.com/repos/xepan/base/zipball/5153489cd098993c1adc349d5cbc36beb54e66eb",
+                "reference": "5153489cd098993c1adc349d5cbc36beb54e66eb",
                 "shasum": ""
             },
             "require": {
-                "atk4/atk4": ">=4.3",
-                "php": ">=5.5"
+                "nette/utils": "~2.4",
+                "php": ">=5.3",
+                "xepan/atk4": "4.3",
+                "xepan/filestore": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -2634,7 +2602,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-27 14:06:29"
+            "time": "2016-05-28 05:40:44"
         },
         {
             "name": "xepan/blog",
@@ -2677,7 +2645,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-26 14:39:14"
+            "time": "2016-05-27 03:56:10"
         },
         {
             "name": "xepan/ccavenue",
@@ -2774,7 +2742,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-26 05:10:56"
+            "time": "2016-05-27 12:45:14"
         },
         {
             "name": "xepan/commerce",
@@ -2971,13 +2939,13 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/filestore/zipball/17a768b40d03c9921491b48426c2327cffe7e3ba",
-                "reference": "17a768b40d03c9921491b48426c2327cffe7e3ba",
+                "url": "https://api.github.com/repos/xepan/filestore/zipball/f4153653ad5ad19f3958f464b8bc835347884cfa",
+                "reference": "f4153653ad5ad19f3958f464b8bc835347884cfa",
                 "shasum": ""
             },
             "require": {
-                "atk4/atk4": "4.3",
-                "php": ">=5.3"
+                "php": ">=5.3",
+                "xepan/atk4": "4.3"
             },
             "type": "library",
             "autoload": {
@@ -3002,7 +2970,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-24 14:26:32"
+            "time": "2016-05-28 05:43:59"
         },
         {
             "name": "xepan/gd-text",
@@ -3078,7 +3046,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-27 14:05:00"
+            "time": "2016-05-28 05:27:11"
         },
         {
             "name": "xepan/mail",
@@ -3474,7 +3442,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-25 10:41:25"
+            "time": "2016-05-28 04:29:42"
         },
         {
             "name": "xepan/xepanwallet",
@@ -5359,7 +5327,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "xepan/atk4": 20,
         "xepan/base": 20,
         "xepan/hr": 20,
         "xepan/marketing": 20,
