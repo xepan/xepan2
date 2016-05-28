@@ -447,7 +447,23 @@ textarea {width: 100%;}
 }
 .accordion-link {
     display: none!important;
-  }
+}
+
+/*icon-plus replace to fa fa-plus*/
+.icon-plus::before{
+  content: "";
+}
+.icon-plus{
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;  
+}
+
 /* ----------- Galaxy S3 ----------- */
 
 /* Portrait and Landscape */
@@ -531,8 +547,16 @@ textarea {width: 100%;}
   }
   .filter-block .form-group{
     float: left !important;
-    width: 100%;
+    /*width: 100%;*/
   }
+  .filter-block .btn {
+    overflow: hidden;
+    width: 34px
+  }
+  .filter-block .btn i{
+    padding-right: 18px;
+  }
+
   .xepan-filter-form .atk-cell.atk-jackscrew :not(input){display: none;}
   .xepan-filter-form .form-control .atk-cells.atk-input-combo div.atk-cell{float: left;}
   .xepan-filter-form .form-control .atk-cells.atk-input-combo{float: right;}
@@ -541,6 +565,11 @@ textarea {width: 100%;}
   .navbar-nav > li > .dropdown-menu.notifications-list{
     font-size: 0.8em!important;
     min-width: 160px!important;
+  }
+  /*Side bar*/
+  #sidebar-nav hr{
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
   /*Email Layouts Css*/
   #email-list li .name{
@@ -593,6 +622,7 @@ textarea {width: 100%;}
   /*Layout Options Css*/
  #config-tool{
   width: 160px;
+  top:107px;
  }
  #config-tool.closed{
   right:-160px;
@@ -619,19 +649,19 @@ textarea {width: 100%;}
     margin-bottom: 2px;
   }
   #config-tool #config-tool-cog{
-    width: 40px;
-    left: -40px;
-    padding: 5px;
+    width: 30px;
+    left: -30px;
+    padding: 2px;
   }
-  #config-tool #config-tool-options ul .checkbox-nice{
+  .checkbox-nice{
     padding-left:5px;
   }
-  #config-tool #config-tool-options ul .checkbox-nice label::before{
+  .checkbox-nice label::before{
     height: 15px;
     width: 15px;
     top:12px;
   }
-  #config-tool #config-tool-options ul .checkbox-nice label::after{
+  .checkbox-nice label::after{
     border-width: medium medium 2px 2px;
     height: 5px;
     left: 5px;
@@ -675,6 +705,8 @@ textarea {width: 100%;}
   .accordion-link {
     display: block!important;
   }
+  /*Email Form Wizard*/
+
 }  
 
 
