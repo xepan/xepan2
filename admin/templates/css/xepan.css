@@ -589,6 +589,55 @@ textarea {width: 100%;}
   .mobile-email-navigation-tool-closed{
     left: -200px;
   }
+
+  /*Layout Options Css*/
+ #config-tool{
+  width: 160px;
+ }
+ #config-tool.closed{
+  right:-160px;
+ }
+  #config-tool #config-tool-options ul li{
+    padding:2px 0;
+  }
+  #config-tool #config-tool-options h4{
+    font-size: 1em;
+  }
+  #config-tool #config-tool-options ul{
+    padding: 10px;
+    padding-bottom: 0px;
+  }
+  #config-tool #skin-colors li{
+    padding: 2px!important;
+  }
+  #config-tool #skin-colors li a.skin-changer{
+    width: 15px;
+    height: 15px;
+  }
+  #config-tool-options .checkbox-nice label{
+    font-size: 0.73em;
+    margin-bottom: 2px;
+  }
+  #config-tool #config-tool-cog{
+    width: 40px;
+    left: -40px;
+    padding: 5px;
+  }
+  #config-tool #config-tool-options ul .checkbox-nice{
+    padding-left:5px;
+  }
+  #config-tool #config-tool-options ul .checkbox-nice label::before{
+    height: 15px;
+    width: 15px;
+    top:12px;
+  }
+  #config-tool #config-tool-options ul .checkbox-nice label::after{
+    border-width: medium medium 2px 2px;
+    height: 5px;
+    left: 5px;
+    top: 16px;
+    width: 8px;
+  }
   /*Bootstrap Tabs */
   .responsive-tabs-container[class*="accordion-"] .tab-pane {
     margin-bottom: 15px;
