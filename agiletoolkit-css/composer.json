@@ -1,8 +1,0 @@
-{
-    "name": "atk4/agiletoolkit-css",
-    "source": {
-        "url": "git@github.com:atk4/agiletoolkit-css.git",
-        "type": "git",
-        "reference": "origin/master"
-    }
-}
