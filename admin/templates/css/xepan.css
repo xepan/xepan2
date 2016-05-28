@@ -559,7 +559,36 @@ textarea {width: 100%;}
   .tools .reply i{
     color: white;
   }
-  
+  .mobile-email-navigation-tool-cog{
+    background: #fff none repeat scroll 0 0 padding-box;
+    border-radius: 0px 3px 3px 0px;
+    box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    right: -30px;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: all 0.1s ease-in-out 0s;
+    width: 30px;
+  }
+
+  .mobile-email-navigation-tool{
+    position: fixed;
+    left: 0;
+    top: 107px;
+    transition: all 0.2s ease-in-out 0s;
+    width: 200px;
+    z-index: 1000;
+  }
+  .mobile-email-navigation-tool-options{
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+  .mobile-email-navigation-tool-closed{
+    left: -200px;
+  }
   /*Bootstrap Tabs */
   .responsive-tabs-container[class*="accordion-"] .tab-pane {
     margin-bottom: 15px;
