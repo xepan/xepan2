@@ -464,10 +464,21 @@ textarea {width: 100%;}
   font-weight: normal;  
 }
 
+/*hasone in frameURL*/
+  /*.ui-widget-content span.select2{
+    width: auto!important;
+  }*/
+  .select2{
+    width: auto!important;
+  }
+
 /* ----------- Galaxy S3 ----------- */
 
 /* Portrait and Landscape */
 @media screen and (max-width: 980px) and (min-width: 320px) {
+  .atk4_form , .atk-push-reset{
+    margin-bottom: 5rem!important;
+  }
   #page-wrapper{
     font-size: 0.875em;
   }
@@ -478,7 +489,7 @@ textarea {width: 100%;}
   .main-box-body{
     padding: 0px!important;
   }
-  #page-wrapper a , #page-wrapper .btn{
+  #page-wrapper a{
     font-size: 0.875em;
   }
   /*#page-wrapper table span{
@@ -528,9 +539,12 @@ textarea {width: 100%;}
   
   .xepan-document-actions button.btn {
         /* for icons*/
-    padding-left:0.075em !important;
-    padding-top:0.875em !important;
+    padding-left:0.077em !important;
+    /*padding-top:0.875em !important;*/
     font-size: 0.78em!important;
+  }
+  .main-box-body .row .btn{
+    margin-bottom: 0rem!important;
   }
   .xepan-document-actions .dropdown-menu {
     font-size:0.875em;
@@ -549,12 +563,16 @@ textarea {width: 100%;}
     float: left !important;
     /*width: 100%;*/
   }
-  .filter-block .btn {
+  .filter-block button.btn {
     overflow: hidden;
-    width: 34px
+    width: 40px
   }
-  .filter-block .btn i{
+  .filter-block button.btn i{
     padding-right: 18px;
+  }
+  .xepan-micro-grid button{
+    width: 24px!important;
+    margin-right: 10px;
   }
 
   .xepan-filter-form .atk-cell.atk-jackscrew :not(input){display: none;}
@@ -728,12 +746,25 @@ textarea {width: 100%;}
 
   /*main-box-body Form Field Layout*/
   .main-box-body .row div{
-    margin-top: :0.3rem!important;
-    margin-bottom: 0.3rem;
+    margin-top: :0.5rem!important;
+    margin-bottom: 0.5rem;
   }
   .atk-form-row div{
-    margin-top: :0.3rem!important; 
-    margin-bottom: 0.3rem;
+    margin-top: :0.5rem!important; 
+    margin-bottom: 0.5rem;
+  }
+
+  /*Support Ticket details accordian*/
+  .accordion .panel-title > a::after{
+    top:10px!important;
+  }
+  #email-body #accordion h4 a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }  
+  .conversation-wrapper{
+    padding-bottom: 0px!important;
   }
 }  
 
