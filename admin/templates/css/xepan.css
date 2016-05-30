@@ -465,12 +465,15 @@ textarea {width: 100%;}
 }
 
 /*hasone in frameURL*/
-  /*.ui-widget-content span.select2{
-    width: auto!important;
-  }*/
-  .select2{
+  .ui-widget-content span.select2{
     width: auto!important;
   }
+  .main-box-body .select2{
+    width: auto!important;
+  }
+  /*.page_composeemail span{  
+    width: 100%!important;
+  }*/
 
 /* ----------- Galaxy S3 ----------- */
 
@@ -766,6 +769,7 @@ textarea {width: 100%;}
   .conversation-wrapper{
     padding-bottom: 0px!important;
   }
+
 }  
 
 
