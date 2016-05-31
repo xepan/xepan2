@@ -474,6 +474,9 @@ textarea {width: 100%;}
   /*.page_composeemail span{  
     width: 100%!important;
   }*/
+  #nav-col{
+    z-index: 90;
+  }
 
 /* ----------- Galaxy S3 ----------- */
 
