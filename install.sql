@@ -872,7 +872,8 @@ CREATE TABLE `epan` (
   `type` varchar(5) DEFAULT NULL,
   `xepan_template_id` int(11) DEFAULT NULL,
   `valid_till` datetime DEFAULT NULL,
-  `is_published` varchar(255) DEFAULT NULL
+  `is_published` varchar(255) DEFAULT NULL,
+  `extra_info` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
