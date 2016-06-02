@@ -26,7 +26,8 @@
     "tinymce/tinymce": "^4.3",
     "xepan/epanservices": "dev-master",
     "xepan/filestore": "dev-master",
-    "xepan/blog": "dev-master"
+    "xepan/blog": "dev-master",
+    "nlp-tools/nlp-tools": "1.0.*@dev"
   },
   "autoload":{
     "psr-0":{
