@@ -466,7 +466,7 @@ textarea {width: 100%;}
 
 /*hasone in frameURL*/
   .ui-widget-content span.select2{
-    width: auto!important;
+    width: 100% !important;
   }
   .main-box-body .select2{
     width: auto!important;
