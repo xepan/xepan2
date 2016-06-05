@@ -31,5 +31,9 @@
     <script src="templates/js/demo.js"></script>
     
     <script src="templates/js/scripts.js"></script>
+    <script>
+      var bootstrapButton = $.fn.button.noConflict(); // return $.fn.button to previously assigned value
+      $.fn.bootstrapBtn = bootstrapButton;            // give $().bootstrapBtn the Bootstrap functionality
+    </script>
   </body>
 </html>
