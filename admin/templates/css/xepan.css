@@ -509,6 +509,8 @@ textarea {width: 100%;}
 
   .navbar-ex1-collapse{
     width:100%;
+    margin-top: 0px!important;
+    margin-left: 0px!important;
   }
   .navbar-header{
     float: left;
