@@ -477,6 +477,10 @@ textarea {width: 100%;}
   #nav-col{
     z-index: 90;
   }
+  .navbar-ex1-collapse{
+    margin-top: -50px!important;
+    margin-left: 90px!important;
+  }
 
 /* ----------- Galaxy S3 ----------- */
 
