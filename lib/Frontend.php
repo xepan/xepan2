@@ -57,7 +57,8 @@ class Frontend extends ApiFrontend {
         $domain = str_replace('www.','',$this->extract_domain($url))?:'www';
         $sub_domain = str_replace('www.','',$this->extract_subdomains($url))?:'www';
 
-        if($this->getConfig('xepan-service-host',false)!==$domain){
+        $service_host = $this->getConfig('xepan-service-host',false);
+        if($service_host && $service_host!==$domain){
             $epan = $domain;
         }else{
             $epan = $sub_domain;
