@@ -51,10 +51,25 @@ class Frontend extends ApiFrontend {
 
     function defaultTemplate(){
 
-        $url = "{$_SERVER['HTTP_HOST']}";
-        $sub_domain = $this->extract_subdomains($url)?:'www';
+        $this->readConfig("websites/www/config.php");
 
-        $current_website = $this->current_website_name = $sub_domain;
+        $url = "{$_SERVER['HTTP_HOST']}";
+        $domain = str_replace('www.','',$this->extract_domain($url))?:'www';
+        $sub_domain = str_replace('www.','',$this->extract_subdomains($url))?:'www';
+
+        if($this->getConfig('xepan-service-host',false)!==$domain){
+            $epan = $domain;
+        }else{
+            $epan = $sub_domain;
+        }
+        
+        $this->dbConnect();
+        $epan = $this->db->dsql()->table('epan')->where($this->db->dsql()->orExpr()->where('name',$epan)->where('aliases','like','"%'.$epan.'%"'))->getHash();
+
+        // die(print_r($epan,true));
+        // die($epan['name']);
+
+        $current_website = $this->current_website_name = $epan['name'];
         $this->readConfig("websites/$this->current_website_name/config.php");
         
         if($tmpt = $this->recall('xepan-template-preview',$_GET['xepan-template-preview'])){
@@ -92,7 +107,7 @@ class Frontend extends ApiFrontend {
         }elseif($this->pathfinder->locate('template','layout/default.html','path',false)){            
             return ['layout/default'];
         }elseif(!$this->layout){
-            throw new \Exception("No Website content found or No Template in Website default", 1);
+            throw new \Exception("No Website content found or No Template in Website default for ". $this->current_website_name, 1);
             
         }else{
             throw new \Exception("Error Processing Request", 1);
