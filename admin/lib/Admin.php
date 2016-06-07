@@ -41,11 +41,27 @@ class Admin extends App_Frontend {
     }
 
     function defaultTemplate(){
+        
+        $this->readConfig("websites/www/config.php");
 
         $url = "{$_SERVER['HTTP_HOST']}";
-        $sub_domain = $this->extract_subdomains($url)?:'www';
+        $domain = str_replace('www.','',$this->extract_domain($url))?:'www';
+        $sub_domain = str_replace('www.','',$this->extract_subdomains($url))?:'www';
 
-        $current_website = $this->current_website_name = $sub_domain;
+        $service_host = $this->getConfig('xepan-service-host',false);
+        if($service_host && $service_host!==$domain){
+            $epan = $domain;
+        }else{
+            $epan = $sub_domain;
+        }
+
+        $this->dbConnect();
+        $epan = $this->db->dsql()->table('epan')->where($this->db->dsql()->orExpr()->where('name',$epan)->where('aliases','like','"%'.$epan.'%"'))->getHash();
+
+        // die(print_r($epan,true));
+        // die($epan['name']);
+
+        $current_website = $this->current_website_name = $epan['name'];
         $this->readConfig("websites/$this->current_website_name/config.php");
 
         $this->addLocation(array(
