@@ -475,10 +475,10 @@ textarea {width: 100%;}
   #nav-col{
     z-index: 90;
   }
-  .navbar-ex1-collapse{
+  /*.navbar-ex1-collapse{
     margin-top: -50px!important;
     margin-left: 90px!important;
-  }
+  }*/
 
   /*page website Elfinder css*/
   .page_websites .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable{
