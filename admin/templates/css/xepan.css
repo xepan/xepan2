@@ -484,12 +484,16 @@ textarea {width: 100%;}
 
   /*page website Elfinder css*/
   .page_websites .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable{
-    margin-left:-30%!important;
-    top:-100px!important;
-    width:100%!important;
+    margin-left:-10%!important;
+    top:-125% !important;
+    width: 100%!important;
+    /*position: absolute!important;*/
   }
   .page_websites .CodeMirror{
-    height: 530px!important;
+    height: 440px!important;
+  }
+  .elfinder .elfinder-navbar{
+    background: #dde4eb none repeat scroll 0 0 !important;
   }
 
 /* ----------- Galaxy S3 ----------- */
