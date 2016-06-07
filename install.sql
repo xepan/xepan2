@@ -892,6 +892,7 @@ CREATE TABLE `epan` (
   `valid_till` datetime DEFAULT NULL,
   `is_published` varchar(255) DEFAULT NULL,
   `extra_info` text,
+  `aliases` text,
   PRIMARY KEY (`id`),
   KEY `fk_epan_category_id` (`epan_category_id`),
   CONSTRAINT `fk_epan_category_id` FOREIGN KEY (`epan_category_id`) REFERENCES `epan_category` (`id`)
