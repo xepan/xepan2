@@ -229,6 +229,9 @@ textarea {width: 100%;}
 .paginator > span.select2{
 	width: 80px!important;
 }
+ .tools .reply i{
+    color: white;
+  }
 
 /*span.select2{
 	width:100% !important;
@@ -634,9 +637,7 @@ textarea {width: 100%;}
   .nano-slider{
     height:0px!important;
   }
-  .tools .reply i{
-    color: white;
-  }
+ 
   .mobile-email-navigation-tool-cog{
     background: #fff none repeat scroll 0 0 padding-box;
     border-radius: 0px 3px 3px 0px;
