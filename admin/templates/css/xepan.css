@@ -478,6 +478,16 @@ textarea {width: 100%;}
     z-index: 90;
   }
 
+  /*page website Elfinder css*/
+  .page_websites .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable{
+    margin-left:-30%!important;
+    top:-100px!important;
+    width:100%!important;
+  }
+  .page_websites .CodeMirror{
+    height: 530px!important;
+  }
+
 /* ----------- Galaxy S3 ----------- */
 
 /* Portrait and Landscape */
