@@ -2,7 +2,7 @@
   "type":"project",
   "minimum-stability": "dev",
   "require":{
-    "xepan/atk4":"4.3",
+    "xepan/atk4":"dev-4.3",
     "educoder\/pest":"1.0.0",
     "xepan/base": "@dev",
     "xepan/hr": "@dev",
