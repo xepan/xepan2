@@ -280,7 +280,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/3eb3c002e77e3e1adac19ad12e46d65540df7d17",
+                "url": "https://api.github.com/repos/nette/utils/zipball/494968f844889e0fe53b597e7c5c67b475656a99",
                 "reference": "3eb3c002e77e3e1adac19ad12e46d65540df7d17",
                 "shasum": ""
             },
@@ -504,7 +504,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay-buckaroo/zipball/54ec8f37ed4eb472785fdfb8cdfb91537cfed365",
+                "url": "https://api.github.com/repos/thephpleague/omnipay-buckaroo/zipball/9645115449cf6d4ef8865606fad34b3c5de6e724",
                 "reference": "54ec8f37ed4eb472785fdfb8cdfb91537cfed365",
                 "shasum": ""
             },
@@ -1964,7 +1964,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/249ef036eaacd1a5d31a6b1516e1c183afd5ff8e",
+                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/3dfcde3ad3b1f703a27545f178899a37d284ce51",
                 "reference": "249ef036eaacd1a5d31a6b1516e1c183afd5ff8e",
                 "shasum": ""
             },
@@ -2082,7 +2082,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/c5e76b7efbd2420066143ffb62684133be28c490",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/fd5ef7a14c5b1e1eae1e50a9ce7f3bfe1a9a22e8",
                 "reference": "c5e76b7efbd2420066143ffb62684133be28c490",
                 "shasum": ""
             },
@@ -2647,7 +2647,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-31 06:48:33"
+            "time": "2016-06-04 11:24:55"
         },
         {
             "name": "xepan/blog",
@@ -2690,7 +2690,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-31 09:00:27"
+            "time": "2016-05-31 14:44:29"
         },
         {
             "name": "xepan/ccavenue",
@@ -2787,7 +2787,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-31 09:02:36"
+            "time": "2016-06-04 12:49:58"
         },
         {
             "name": "xepan/commerce",
@@ -2834,7 +2834,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-30 15:18:41"
+            "time": "2016-06-03 15:46:29"
         },
         {
             "name": "xepan/communication",
@@ -2881,7 +2881,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-05-30 16:14:44"
+            "time": "2016-06-03 09:55:03"
         },
         {
             "name": "xepan/crm",
@@ -2972,7 +2972,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-26 14:59:26"
+            "time": "2016-06-03 04:30:20"
         },
         {
             "name": "xepan/filestore",
@@ -3091,7 +3091,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-30 10:24:06"
+            "time": "2016-06-04 05:04:18"
         },
         {
             "name": "xepan/mail",
@@ -3442,7 +3442,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-28 13:44:00"
+            "time": "2016-06-02 08:31:53"
         },
         {
             "name": "xepan/projects",
@@ -3487,7 +3487,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-31 08:02:24"
+            "time": "2016-06-01 05:03:18"
         },
         {
             "name": "xepan/xepanwallet",
@@ -4117,7 +4117,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/844ec6eabee15768f1e34a8871f6fddfc3d5f602",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/900370c81280cc0d942ffbc5912d80464eaee7e9",
                 "reference": "844ec6eabee15768f1e34a8871f6fddfc3d5f602",
                 "shasum": ""
             },
@@ -4361,7 +4361,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c5f916fea37634a027b091d533fce4f7ff3f49fc",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/02448a3f767240a24e498e4b86802ed35738f462",
                 "reference": "c5f916fea37634a027b091d533fce4f7ff3f49fc",
                 "shasum": ""
             },
@@ -4436,7 +4436,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/5bf0ba29dd683ec4f2e5d4fb212ad31827501012",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/0dc8fd8e87e0366c22b6c25d1f43c4e2e66847b3",
                 "reference": "5bf0ba29dd683ec4f2e5d4fb212ad31827501012",
                 "shasum": ""
             },
@@ -5111,7 +5111,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/30beaa1b3ccdc0074baaf910a17cdae80df1e32d",
+                "url": "https://api.github.com/repos/symfony/console/zipball/ff0dfb5f9d649fc81dfca86f62358765fa6ce00e",
                 "reference": "30beaa1b3ccdc0074baaf910a17cdae80df1e32d",
                 "shasum": ""
             },
