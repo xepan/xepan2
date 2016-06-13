@@ -117,20 +117,26 @@ class Frontend extends ApiFrontend {
     }
 
     protected function loadStaticPage($page){
-
         $layout = $this->layout ?: $this;
         try{
             $t='page/'.str_replace('_','/',strtolower($page));
             $this->template->findTemplate($t);
             $this->page_object=$layout->add($page,$page,'Content',array($t));
-        }catch(PathFinder_Exception $e2){
+        }catch(\PathFinder_Exception $e2){
             try{
                 $t='page/'.strtolower($page);
                 $this->template->findTemplate($t);
                 $this->page_object=$layout->add($page,$page,'Content',array($t));
-            }catch(PathFinder_Exception $e3){
+            }catch(\PathFinder_Exception $e3){
                 $t=strtolower($page);
-                $this->page_object=$layout->add($this->page_class,$page,'Content',[str_replace("_", "/",$page)]);
+                try{
+                    if(!file_exists(getcwd().'/websites/'.$this->current_website_name.'/www/'.str_replace("_", "/",$page))){
+                        $page='404';
+                    }
+                    $this->page_object=$layout->add($this->page_class,$page,'Content',[str_replace("_", "/",$page)]);
+                }catch(\PathFinder_Exception $e4){
+                    $this->app->redirect('404');
+                }
             }
         }
 
