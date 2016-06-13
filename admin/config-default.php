@@ -14,3 +14,5 @@ $config['all_rights_to_superuser'] = true;
 $config['status_icon'] = [];
 
 $config['form']['layout']['inputonly']=false; // true will hide all hints etc
+
+$config['filestore']['chmod'] = 0755;
