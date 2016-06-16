@@ -3,6 +3,10 @@ input[type=checkbox]{
 	width: auto!important;
 }
 
+.filter-block select{
+  width:auto!important;
+}
+
 input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; border-bottom-color: grey; border-bottom-width: 1px; outline: none !important}
 textarea {width: 100%;}
 /*.xepan-grid .xepan-actions button{
