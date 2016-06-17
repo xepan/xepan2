@@ -2,7 +2,7 @@
 
 class page_index extends \xepan\base\Page {
 
-    public $title='DashboardXX';
+    public $title='Dashboard';
 
     function init() {
         parent::init();
