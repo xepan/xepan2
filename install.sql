@@ -11,7 +11,8 @@
  Target Server Version : 50624
  File Encoding         : utf-8
 
- Date: 06/08/2016 12:15:20 PM
+ Date: 06/ns
+ 08/2016 12:15:20 PM
 */
 
 SET NAMES utf8;
@@ -214,9 +215,9 @@ CREATE TABLE `blog_post` (
   `description` text NOT NULL,
   `tag` text NOT NULL,
   `meta_title` varchar(255) NOT NULL,
-  'anonymous_comment_config' varchar(255) NOT NULL,
-  'registered_comment_config' varchar(255) NOT NULL,
-  'show_comments' varchar(255) NOT NULL,
+  `anonymous_comment_config` varchar(255) NOT NULL,
+  `registered_comment_config` varchar(255) NOT NULL,
+  `show_comments` varchar(255) NOT NULL,
   `meta_description` text NOT NULL,
   `created_at` datetime NOT NULL,
   `status` text NOT NULL,
