@@ -452,6 +452,7 @@ textarea {width: 100%;}
 .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable{
   left:10%!important;
   width: 80%!important;
+  z-index: 2048;
 }
 .accordion-link {
     display: none!important;
