@@ -491,7 +491,13 @@ textarea {width: 100%;}
   .ui-widget-content span.select2{
     width: 100% !important;
   }
-  
+  .ui-widget-content .filter-block span.select2{
+    width: auto!important;
+  }
+  .ui-widget-content .main-box-body .btn{
+    font-size: 12px;
+  }
+
   /*.page_composeemail span{  
     width: 100%!important;
   }*/
