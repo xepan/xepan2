@@ -526,7 +526,7 @@ textarea {width: 100%;}
     z-index: 98!important;
   }
   .navbar-nav .btn:active, .btn.active{
-    box-shadow: 0 3px 50px rgba(0, 0, 0, 0.125) inset!important;
+    box-shadow: 0 3px 85px rgba(0, 0, 0, 0.125) inset!important;
   }
 
 
