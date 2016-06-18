@@ -529,6 +529,12 @@ textarea {width: 100%;}
     box-shadow: 0 3px 85px rgba(0, 0, 0, 0.125) inset!important;
   }
 
+/*Tab base form */
+.tab-pane .atk-form .atk-actions button {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
 
 /* ----------- Galaxy S3 ----------- */
 
