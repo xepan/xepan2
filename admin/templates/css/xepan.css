@@ -506,9 +506,24 @@ textarea {width: 100%;}
   }*/
 
   /*page website Elfinder css*/
+  .page_websites .ui-widget-header .ui-icon{
+    background-image:url("images/ui-icons_3c5269_256x240.png")
+  }
+  .page_websites .ui-widget-header{
+    background: transparent;
+    border:0px;
+    color: black;
+  }
+  .page_websites .ui-state-default {
+    background: transparent;
+  }
+  .page_websites .std42-dialog, .std42-dialog .ui-widget-content{
+    background-color:white!important;
+  }
+
   .page_websites .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable{
     margin-left:-10%!important;
-    top:-125% !important;
+    /*top:-125% !important;*/
     width: 100%!important;
     /*position: absolute!important;*/
   }
