@@ -1,27 +1,26 @@
--- MySQL dump 10.13  Distrib 5.6.28, for debian-linux-gnu (i686)
---
--- Host: localhost    Database: xepan2
--- ------------------------------------------------------
--- Server version 5.6.28-0ubuntu0.15.04.1
+/*
+ Navicat Premium Data Transfer
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+ Source Server         : 192.168.1.101
+ Source Server Type    : MySQL
+ Source Server Version : 50624
+ Source Host           : 192.168.1.101
+ Source Database       : xepan2
 
---
--- Table structure for table `account_balance_sheet`
---
+ Target Server Type    : MySQL
+ Target Server Version : 50624
+ File Encoding         : utf-8
 
+ Date: 06/23/2016 15:15:22 PM
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+--  Table structure for `account_balance_sheet`
+-- ----------------------------
 DROP TABLE IF EXISTS `account_balance_sheet`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `account_balance_sheet` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -34,16 +33,12 @@ CREATE TABLE `account_balance_sheet` (
   `created_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `account_group`
---
-
+-- ----------------------------
+--  Table structure for `account_group`
+-- ----------------------------
 DROP TABLE IF EXISTS `account_group`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `account_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -58,16 +53,12 @@ CREATE TABLE `account_group` (
   KEY `parent_group_id` (`parent_group_id`) USING BTREE,
   KEY `root_group_id` (`root_group_id`) USING BTREE,
   FULLTEXT KEY `quick_search` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `account_transaction`
---
-
+-- ----------------------------
+--  Table structure for `account_transaction`
+-- ----------------------------
 DROP TABLE IF EXISTS `account_transaction`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `account_transaction` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -83,16 +74,12 @@ CREATE TABLE `account_transaction` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `transaction_type_id` (`transaction_type_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=732 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `account_transaction_row`
---
-
+-- ----------------------------
+--  Table structure for `account_transaction_row`
+-- ----------------------------
 DROP TABLE IF EXISTS `account_transaction_row`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `account_transaction_row` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -108,16 +95,12 @@ CREATE TABLE `account_transaction_row` (
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `transaction_id` (`transaction_id`) USING BTREE,
   KEY `ledger_id` (`ledger_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=1727 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `account_transaction_types`
---
-
+-- ----------------------------
+--  Table structure for `account_transaction_types`
+-- ----------------------------
 DROP TABLE IF EXISTS `account_transaction_types`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `account_transaction_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -127,16 +110,12 @@ CREATE TABLE `account_transaction_types` (
   `Default_Narration` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `acl`
---
-
+-- ----------------------------
+--  Table structure for `acl`
+-- ----------------------------
 DROP TABLE IF EXISTS `acl`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `acl` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -148,16 +127,12 @@ CREATE TABLE `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=212 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `activity`
---
-
+-- ----------------------------
+--  Table structure for `activity`
+-- ----------------------------
 DROP TABLE IF EXISTS `activity`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `activity` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -174,31 +149,23 @@ CREATE TABLE `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=363 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `affiliate`
---
-
+-- ----------------------------
+--  Table structure for `affiliate`
+-- ----------------------------
 DROP TABLE IF EXISTS `affiliate`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `affiliate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `narration` text,
   `contact_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `application`
---
-
+-- ----------------------------
+--  Table structure for `application`
+-- ----------------------------
 DROP TABLE IF EXISTS `application`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `application` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -206,16 +173,12 @@ CREATE TABLE `application` (
   `user_installable` tinyint(4) DEFAULT '1',
   `default_currency_price` double(8,4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `attachment`
---
-
+-- ----------------------------
+--  Table structure for `attachment`
+-- ----------------------------
 DROP TABLE IF EXISTS `attachment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `attachment` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `document_id` int(11) DEFAULT NULL,
@@ -223,16 +186,12 @@ CREATE TABLE `attachment` (
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `file_id` (`file_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `blog_comment`
---
-
+-- ----------------------------
+--  Table structure for `blog_comment`
+-- ----------------------------
 DROP TABLE IF EXISTS `blog_comment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `blog_comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created_by_id` int(11) NOT NULL,
@@ -243,15 +202,11 @@ CREATE TABLE `blog_comment` (
   `comment_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `blog_post`
---
-
+-- ----------------------------
+--  Table structure for `blog_post`
+-- ----------------------------
 DROP TABLE IF EXISTS `blog_post`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `blog_post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created_by_id` int(11) NOT NULL,
@@ -270,47 +225,37 @@ CREATE TABLE `blog_post` (
   PRIMARY KEY (`id`),
   FULLTEXT KEY `search_string` (`title`,`description`,`tag`,`meta_title`,`meta_description`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `blog_post_category`
---
-
+-- ----------------------------
+--  Table structure for `blog_post_category`
+-- ----------------------------
 DROP TABLE IF EXISTS `blog_post_category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `blog_post_category` (
   `id` tinyint(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
   `created_by_id` int(11) NOT NULL,
+  `order` int(11) DEFAULT NULL,
+  `group` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `blog_post_category_association`
---
-
+-- ----------------------------
+--  Table structure for `blog_post_category_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `blog_post_category_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `blog_post_category_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `blog_post_id` int(11) NOT NULL,
   `blog_post_category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `campaign`
---
-
+-- ----------------------------
+--  Table structure for `campaign`
+-- ----------------------------
 DROP TABLE IF EXISTS `campaign`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `campaign` (
   `document_id` int(11) NOT NULL,
   `schedule` text NOT NULL,
@@ -322,16 +267,12 @@ CREATE TABLE `campaign` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `document_id` (`document_id`),
   FULLTEXT KEY `search_string` (`title`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `campaign_category_association`
---
-
+-- ----------------------------
+--  Table structure for `campaign_category_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `campaign_category_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `campaign_category_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `marketing_category_id` int(11) NOT NULL,
@@ -339,16 +280,12 @@ CREATE TABLE `campaign_category_association` (
   PRIMARY KEY (`id`),
   KEY `marketing_category_id` (`marketing_category_id`) USING BTREE,
   KEY `campaign_id` (`campaign_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `campaign_socialuser_association`
---
-
+-- ----------------------------
+--  Table structure for `campaign_socialuser_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `campaign_socialuser_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `campaign_socialuser_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `socialuser_id` int(11) NOT NULL,
@@ -356,16 +293,12 @@ CREATE TABLE `campaign_socialuser_association` (
   PRIMARY KEY (`id`),
   KEY `social_user_id` (`socialuser_id`) USING BTREE,
   KEY `campaign_id` (`campaign_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `category`
---
-
+-- ----------------------------
+--  Table structure for `category`
+-- ----------------------------
 DROP TABLE IF EXISTS `category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `document_id` int(11) NOT NULL,
@@ -383,16 +316,12 @@ CREATE TABLE `category` (
   KEY `document_id` (`document_id`),
   KEY `parent_category_id` (`parent_category_id`),
   KEY `cat_image_id` (`cat_image_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `category_item_association`
---
-
+-- ----------------------------
+--  Table structure for `category_item_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `category_item_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category_item_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `item_id` int(11) NOT NULL,
@@ -401,16 +330,12 @@ CREATE TABLE `category_item_association` (
   KEY `item_document_id` (`item_id`,`category_id`),
   KEY `item_id` (`item_id`) USING BTREE,
   KEY `category_id` (`category_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=829 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `cms_editors`
---
-
+-- ----------------------------
+--  Table structure for `cms_editors`
+-- ----------------------------
 DROP TABLE IF EXISTS `cms_editors`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_editors` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -418,15 +343,11 @@ CREATE TABLE `cms_editors` (
   `can_edit_page_content` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `comments`
---
-
+-- ----------------------------
+--  Table structure for `comments`
+-- ----------------------------
 DROP TABLE IF EXISTS `comments`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `communication_id` int(11) DEFAULT NULL,
@@ -439,16 +360,12 @@ CREATE TABLE `comments` (
   PRIMARY KEY (`id`),
   KEY `communication_id` (`communication_id`) USING BTREE,
   KEY `ticket_id` (`ticket_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `communication`
---
-
+-- ----------------------------
+--  Table structure for `communication`
+-- ----------------------------
 DROP TABLE IF EXISTS `communication`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `communication` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `mailbox` varchar(45) DEFAULT NULL,
@@ -478,16 +395,12 @@ CREATE TABLE `communication` (
   PRIMARY KEY (`id`),
   KEY `related_document_id` (`related_document_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=1084 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `communication_attachment`
---
-
+-- ----------------------------
+--  Table structure for `communication_attachment`
+-- ----------------------------
 DROP TABLE IF EXISTS `communication_attachment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `communication_attachment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `communication_id` int(11) NOT NULL,
@@ -495,16 +408,12 @@ CREATE TABLE `communication_attachment` (
   PRIMARY KEY (`id`),
   KEY `communication_id` (`communication_id`) USING BTREE,
   KEY `file_id` (`file_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=344 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `communication_sms_setting`
---
-
+-- ----------------------------
+--  Table structure for `communication_sms_setting`
+-- ----------------------------
 DROP TABLE IF EXISTS `communication_sms_setting`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `communication_sms_setting` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `gateway_url` varchar(255) DEFAULT NULL,
@@ -518,16 +427,12 @@ CREATE TABLE `communication_sms_setting` (
   `sms_postfix` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `contact`
---
-
+-- ----------------------------
+--  Table structure for `contact`
+-- ----------------------------
 DROP TABLE IF EXISTS `contact`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `contact` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -555,16 +460,12 @@ CREATE TABLE `contact` (
   KEY `image_id` (`image_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`search_string`),
   CONSTRAINT `fk_epan_id` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=469 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=626 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `contact_info`
---
-
+-- ----------------------------
+--  Table structure for `contact_info`
+-- ----------------------------
 DROP TABLE IF EXISTS `contact_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `contact_info` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -576,16 +477,12 @@ CREATE TABLE `contact_info` (
   `contact_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=700 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=1177 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `content`
---
-
+-- ----------------------------
+--  Table structure for `content`
+-- ----------------------------
 DROP TABLE IF EXISTS `content`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `content` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `message_255` text NOT NULL,
@@ -600,16 +497,12 @@ CREATE TABLE `content` (
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `marketing_category_id` (`marketing_category_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `country`
---
-
+-- ----------------------------
+--  Table structure for `country`
+-- ----------------------------
 DROP TABLE IF EXISTS `country`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `country` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -618,16 +511,12 @@ CREATE TABLE `country` (
   `status` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=247 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=247 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `currency`
---
-
+-- ----------------------------
+--  Table structure for `currency`
+-- ----------------------------
 DROP TABLE IF EXISTS `currency`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `currency` (
   `document_id` int(11) DEFAULT NULL,
   `icon` varchar(255) DEFAULT NULL,
@@ -636,16 +525,12 @@ CREATE TABLE `currency` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=1816 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `custom_form`
---
-
+-- ----------------------------
+--  Table structure for `custom_form`
+-- ----------------------------
 DROP TABLE IF EXISTS `custom_form`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `custom_form` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -659,16 +544,12 @@ CREATE TABLE `custom_form` (
   `email_subject` text,
   `emailsetting_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `custom_form_field`
---
-
+-- ----------------------------
+--  Table structure for `custom_form_field`
+-- ----------------------------
 DROP TABLE IF EXISTS `custom_form_field`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `custom_form_field` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_form_id` int(11) DEFAULT NULL,
@@ -680,31 +561,23 @@ CREATE TABLE `custom_form_field` (
   `type` varchar(255) DEFAULT NULL,
   `auto_reply` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `custom_form_submission`
---
-
+-- ----------------------------
+--  Table structure for `custom_form_submission`
+-- ----------------------------
 DROP TABLE IF EXISTS `custom_form_submission`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `custom_form_submission` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_form_id` int(11) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `customer`
---
-
+-- ----------------------------
+--  Table structure for `customer`
+-- ----------------------------
 DROP TABLE IF EXISTS `customer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customer` (
   `contact_id` int(11) NOT NULL,
   `billing_address` varchar(255) DEFAULT '',
@@ -726,16 +599,12 @@ CREATE TABLE `customer` (
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`),
   KEY `currency_id` (`currency_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=451 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `customfield_association`
---
-
+-- ----------------------------
+--  Table structure for `customfield_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `customfield_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customfield_association` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `item_id` int(11) DEFAULT NULL,
@@ -749,16 +618,12 @@ CREATE TABLE `customfield_association` (
   KEY `item_id` (`item_id`) USING BTREE,
   KEY `customfield_generic_id` (`customfield_generic_id`) USING BTREE,
   KEY `department_id` (`department_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5446 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `customfield_generic`
---
-
+-- ----------------------------
+--  Table structure for `customfield_generic`
+-- ----------------------------
 DROP TABLE IF EXISTS `customfield_generic`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customfield_generic` (
   `name` varchar(255) NOT NULL,
   `display_type` varchar(255) NOT NULL,
@@ -769,16 +634,12 @@ CREATE TABLE `customfield_generic` (
   `created_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `sequence_order` (`sequence_order`)
-) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `customfield_value`
---
-
+-- ----------------------------
+--  Table structure for `customfield_value`
+-- ----------------------------
 DROP TABLE IF EXISTS `customfield_value`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customfield_value` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -787,16 +648,12 @@ CREATE TABLE `customfield_value` (
   `highlight_it` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `itemcustomassociation_id` (`customfield_association_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11136 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `department`
---
-
+-- ----------------------------
+--  Table structure for `department`
+-- ----------------------------
 DROP TABLE IF EXISTS `department`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `department` (
   `document_id` int(11) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
@@ -806,16 +663,12 @@ CREATE TABLE `department` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `designer_image_category`
---
-
+-- ----------------------------
+--  Table structure for `designer_image_category`
+-- ----------------------------
 DROP TABLE IF EXISTS `designer_image_category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `designer_image_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `contact_id` int(11) DEFAULT NULL,
@@ -825,16 +678,12 @@ CREATE TABLE `designer_image_category` (
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `designer_images`
---
-
+-- ----------------------------
+--  Table structure for `designer_images`
+-- ----------------------------
 DROP TABLE IF EXISTS `designer_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `designer_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `designer_category_id` int(11) DEFAULT NULL,
@@ -843,16 +692,12 @@ CREATE TABLE `designer_images` (
   PRIMARY KEY (`id`),
   KEY `designer_category_id` (`designer_category_id`) USING BTREE,
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=694 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `discount_voucher`
---
-
+-- ----------------------------
+--  Table structure for `discount_voucher`
+-- ----------------------------
 DROP TABLE IF EXISTS `discount_voucher`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `discount_voucher` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) NOT NULL,
@@ -872,16 +717,12 @@ CREATE TABLE `discount_voucher` (
   `based_on` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `discount_voucher_condition`
---
-
+-- ----------------------------
+--  Table structure for `discount_voucher_condition`
+-- ----------------------------
 DROP TABLE IF EXISTS `discount_voucher_condition`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `discount_voucher_condition` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `discountvoucher_id` int(11) NOT NULL,
@@ -890,16 +731,12 @@ CREATE TABLE `discount_voucher_condition` (
   `name` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `discount_voucher_used`
---
-
+-- ----------------------------
+--  Table structure for `discount_voucher_used`
+-- ----------------------------
 DROP TABLE IF EXISTS `discount_voucher_used`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `discount_voucher_used` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `qsp_master_id` int(11) NOT NULL,
@@ -907,15 +744,11 @@ CREATE TABLE `discount_voucher_used` (
   `discountvoucher_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `document`
---
-
+-- ----------------------------
+--  Table structure for `document`
+-- ----------------------------
 DROP TABLE IF EXISTS `document`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `document` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) NOT NULL,
@@ -931,32 +764,24 @@ CREATE TABLE `document` (
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`),
   CONSTRAINT `fk_document_epan1` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6555 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2390 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `emails`
---
-
+-- ----------------------------
+--  Table structure for `emails`
+-- ----------------------------
 DROP TABLE IF EXISTS `emails`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `emails` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `contact_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `emailsetting`
---
-
+-- ----------------------------
+--  Table structure for `emailsetting`
+-- ----------------------------
 DROP TABLE IF EXISTS `emailsetting`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `emailsetting` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -1000,16 +825,12 @@ CREATE TABLE `emailsetting` (
   `signature` text,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `employee`
---
-
+-- ----------------------------
+--  Table structure for `employee`
+-- ----------------------------
 DROP TABLE IF EXISTS `employee`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employee` (
   `contact_id` int(11) NOT NULL,
   `post_id` int(11) DEFAULT NULL,
@@ -1028,16 +849,12 @@ CREATE TABLE `employee` (
   KEY `fk_employee_contact1_idx` (`contact_id`),
   KEY `fk_employee_post1_idx` (`post_id`),
   KEY `department_id` (`department_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `employee_documents`
---
-
+-- ----------------------------
+--  Table structure for `employee_documents`
+-- ----------------------------
 DROP TABLE IF EXISTS `employee_documents`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employee_documents` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -1047,15 +864,11 @@ CREATE TABLE `employee_documents` (
   KEY `employee_document_id` (`employee_document_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `employee_movement`
---
-
+-- ----------------------------
+--  Table structure for `employee_movement`
+-- ----------------------------
 DROP TABLE IF EXISTS `employee_movement`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employee_movement` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `employee_id` int(11) NOT NULL,
@@ -1066,16 +879,12 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=248 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `epan`
---
-
+-- ----------------------------
+--  Table structure for `epan`
+-- ----------------------------
 DROP TABLE IF EXISTS `epan`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `epan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_category_id` int(11) DEFAULT NULL,
@@ -1092,30 +901,22 @@ CREATE TABLE `epan` (
   PRIMARY KEY (`id`),
   KEY `fk_epan_category_id` (`epan_category_id`),
   CONSTRAINT `fk_epan_category_id` FOREIGN KEY (`epan_category_id`) REFERENCES `epan_category` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `epan_category`
---
-
+-- ----------------------------
+--  Table structure for `epan_category`
+-- ----------------------------
 DROP TABLE IF EXISTS `epan_category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `epan_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `epan_config`
---
-
+-- ----------------------------
+--  Table structure for `epan_config`
+-- ----------------------------
 DROP TABLE IF EXISTS `epan_config`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `epan_config` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -1124,16 +925,12 @@ CREATE TABLE `epan_config` (
   `application` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `experience`
---
-
+-- ----------------------------
+--  Table structure for `experience`
+-- ----------------------------
 DROP TABLE IF EXISTS `experience`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `experience` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `employee_id` int(11) DEFAULT NULL,
@@ -1145,16 +942,12 @@ CREATE TABLE `experience` (
   `duration` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `filestore_file`
---
-
+-- ----------------------------
+--  Table structure for `filestore_file`
+-- ----------------------------
 DROP TABLE IF EXISTS `filestore_file`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `filestore_file` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `filestore_type_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'File type',
@@ -1164,35 +957,27 @@ CREATE TABLE `filestore_file` (
   `filesize` int(11) NOT NULL DEFAULT '0' COMMENT 'File size',
   `deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Deleted file',
   PRIMARY KEY (`id`),
-  KEY `fk_filestore_file_filestore_type1_idx` (`filestore_type_id`) USING BTREE,
-  KEY `fk_filestore_file_filestore_volume1_idx` (`filestore_volume_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3053 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  KEY `fk_filestore_file_filestore_type1_idx` (`filestore_type_id`),
+  KEY `fk_filestore_file_filestore_volume1_idx` (`filestore_volume_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=329 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `filestore_image`
---
-
+-- ----------------------------
+--  Table structure for `filestore_image`
+-- ----------------------------
 DROP TABLE IF EXISTS `filestore_image`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `filestore_image` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `original_file_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Original File',
   `thumb_file_id` int(10) unsigned DEFAULT NULL COMMENT 'Thumbnail file',
   PRIMARY KEY (`id`),
-  KEY `fk_filestore_image_filestore_file1_idx` (`original_file_id`) USING BTREE,
-  KEY `fk_filestore_image_filestore_file2_idx` (`thumb_file_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1817 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  KEY `fk_filestore_image_filestore_file1_idx` (`original_file_id`),
+  KEY `fk_filestore_image_filestore_file2_idx` (`thumb_file_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `filestore_type`
---
-
+-- ----------------------------
+--  Table structure for `filestore_type`
+-- ----------------------------
 DROP TABLE IF EXISTS `filestore_type`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `filestore_type` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Name',
@@ -1200,16 +985,12 @@ CREATE TABLE `filestore_type` (
   `extension` varchar(5) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Filename extension',
   `allow` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `filestore_volume`
---
-
+-- ----------------------------
+--  Table structure for `filestore_volume`
+-- ----------------------------
 DROP TABLE IF EXISTS `filestore_volume`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `filestore_volume` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(128) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Volume name',
@@ -1219,16 +1000,12 @@ CREATE TABLE `filestore_volume` (
   `stored_files_cnt` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Approximate count of stored files',
   `enabled` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Volume enabled?',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `follower_task_association`
---
-
+-- ----------------------------
+--  Table structure for `follower_task_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `follower_task_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `follower_task_association` (
   `task_id` int(11) DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1236,16 +1013,12 @@ CREATE TABLE `follower_task_association` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `installed_application`
---
-
+-- ----------------------------
+--  Table structure for `installed_application`
+-- ----------------------------
 DROP TABLE IF EXISTS `installed_application`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `installed_application` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -1257,16 +1030,12 @@ CREATE TABLE `installed_application` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `application_id` (`application_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `invoice_transaction_association`
---
-
+-- ----------------------------
+--  Table structure for `invoice_transaction_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `invoice_transaction_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `invoice_transaction_association` (
   `id` int(11) NOT NULL,
   `transaction_id` int(11) DEFAULT NULL,
@@ -1279,15 +1048,11 @@ CREATE TABLE `invoice_transaction_association` (
   KEY `transaction_id` (`transaction_id`) USING BTREE,
   KEY `saleinvoice_id` (`salesinvoice_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `item`
---
-
+-- ----------------------------
+--  Table structure for `item`
+-- ----------------------------
 DROP TABLE IF EXISTS `item`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item` (
   `document_id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -1354,16 +1119,12 @@ CREATE TABLE `item` (
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `duplicate_from_item_id` (`duplicate_from_item_id`) USING BTREE,
   KEY `to_customer_id` (`to_customer_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=380 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `item_department_association`
---
-
+-- ----------------------------
+--  Table structure for `item_department_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `item_department_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item_department_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `department_id` int(11) NOT NULL,
@@ -1373,16 +1134,12 @@ CREATE TABLE `item_department_association` (
   PRIMARY KEY (`id`),
   KEY `department_id` (`department_id`) USING BTREE,
   KEY `item_id` (`item_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1149 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `item_department_consumption`
---
-
+-- ----------------------------
+--  Table structure for `item_department_consumption`
+-- ----------------------------
 DROP TABLE IF EXISTS `item_department_consumption`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item_department_consumption` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `composition_item_id` int(11) DEFAULT NULL,
@@ -1393,16 +1150,12 @@ CREATE TABLE `item_department_consumption` (
   PRIMARY KEY (`id`),
   KEY `composition_item_id` (`composition_item_id`) USING BTREE,
   KEY `item_department_association_id` (`item_department_association_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `item_image`
---
-
+-- ----------------------------
+--  Table structure for `item_image`
+-- ----------------------------
 DROP TABLE IF EXISTS `item_image`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item_image` (
   `id` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `file_id` int(11) DEFAULT NULL,
@@ -1414,16 +1167,12 @@ CREATE TABLE `item_image` (
   KEY `file_id` (`file_id`) USING BTREE,
   KEY `item_id` (`item_id`) USING BTREE,
   KEY `custom_field_value_id` (`customfield_value_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=730 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `item_template_design`
---
-
+-- ----------------------------
+--  Table structure for `item_template_design`
+-- ----------------------------
 DROP TABLE IF EXISTS `item_template_design`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item_template_design` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -1435,20 +1184,16 @@ CREATE TABLE `item_template_design` (
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`) USING BTREE,
   KEY `contact_id` (`contact_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `jobcard`
---
-
+-- ----------------------------
+--  Table structure for `jobcard`
+-- ----------------------------
 DROP TABLE IF EXISTS `jobcard`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jobcard` (
   `document_id` int(11) DEFAULT NULL,
   `outsourceparty_id` int(11) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '  ',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '	',
   `department_id` int(11) NOT NULL,
   `due_date` date DEFAULT NULL,
   `order_item_id` int(11) DEFAULT NULL,
@@ -1459,16 +1204,12 @@ CREATE TABLE `jobcard` (
   KEY `department_id` (`department_id`) USING BTREE,
   KEY `oreder_item_id` (`order_item_id`) USING BTREE,
   KEY `parent_jobcard_id` (`parent_jobcard_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `jobcard_detail`
---
-
+-- ----------------------------
+--  Table structure for `jobcard_detail`
+-- ----------------------------
 DROP TABLE IF EXISTS `jobcard_detail`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jobcard_detail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `quantity` varchar(255) DEFAULT NULL,
@@ -1478,16 +1219,12 @@ CREATE TABLE `jobcard_detail` (
   PRIMARY KEY (`id`),
   KEY `parent_detail_id` (`parent_detail_id`) USING BTREE,
   KEY `jobcard_id` (`jobcard_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `landingresponse`
---
-
+-- ----------------------------
+--  Table structure for `landingresponse`
+-- ----------------------------
 DROP TABLE IF EXISTS `landingresponse`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `landingresponse` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `campaign_id` int(11) DEFAULT NULL,
@@ -1504,15 +1241,11 @@ CREATE TABLE `landingresponse` (
   KEY `lead_id` (`lead_id`) USING BTREE,
   KEY `opportunity_id` (`opportunity_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `lead`
---
-
+-- ----------------------------
+--  Table structure for `lead`
+-- ----------------------------
 DROP TABLE IF EXISTS `lead`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `lead` (
   `contact_id` int(11) NOT NULL,
   `source` varchar(45) DEFAULT NULL,
@@ -1520,16 +1253,12 @@ CREATE TABLE `lead` (
   `remark` longblob,
   PRIMARY KEY (`id`),
   KEY `fk_lead_contact1_idx` (`contact_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=491 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `lead_category_association`
---
-
+-- ----------------------------
+--  Table structure for `lead_category_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `lead_category_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `lead_category_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `lead_id` int(11) NOT NULL,
@@ -1537,16 +1266,12 @@ CREATE TABLE `lead_category_association` (
   PRIMARY KEY (`id`),
   KEY `lead_id` (`lead_id`) USING BTREE,
   KEY `marketing_category_id` (`marketing_category_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=531 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `ledger`
---
-
+-- ----------------------------
+--  Table structure for `ledger`
+-- ----------------------------
 DROP TABLE IF EXISTS `ledger`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ledger` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `contact_id` int(11) DEFAULT NULL,
@@ -1568,16 +1293,12 @@ CREATE TABLE `ledger` (
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_id` (`related_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`name`,`ledger_type`,`LedgerDisplayName`)
-) ENGINE=InnoDB AUTO_INCREMENT=480 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=574 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `lodgement`
---
-
+-- ----------------------------
+--  Table structure for `lodgement`
+-- ----------------------------
 DROP TABLE IF EXISTS `lodgement`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `lodgement` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `amount` decimal(10,0) DEFAULT NULL,
@@ -1589,15 +1310,11 @@ CREATE TABLE `lodgement` (
   UNIQUE KEY `salesinvoice_id` (`salesinvoice_id`) USING BTREE,
   KEY `account_transaction_id` (`account_transaction_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `marketingcampaign_socialconfig`
---
-
+-- ----------------------------
+--  Table structure for `marketingcampaign_socialconfig`
+-- ----------------------------
 DROP TABLE IF EXISTS `marketingcampaign_socialconfig`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `marketingcampaign_socialconfig` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -1609,16 +1326,12 @@ CREATE TABLE `marketingcampaign_socialconfig` (
   `filter_repeated_posts` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_epan_id` (`epan_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `marketingcampaign_socialpostings`
---
-
+-- ----------------------------
+--  Table structure for `marketingcampaign_socialpostings`
+-- ----------------------------
 DROP TABLE IF EXISTS `marketingcampaign_socialpostings`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `marketingcampaign_socialpostings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -1639,16 +1352,12 @@ CREATE TABLE `marketingcampaign_socialpostings` (
   KEY `fk_user_id` (`user_id`),
   KEY `fk_post_id` (`post_id`),
   KEY `fk_campaign_id` (`campaign_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `marketingcampaign_socialpostings_activities`
---
-
+-- ----------------------------
+--  Table structure for `marketingcampaign_socialpostings_activities`
+-- ----------------------------
 DROP TABLE IF EXISTS `marketingcampaign_socialpostings_activities`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `marketingcampaign_socialpostings_activities` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -1664,15 +1373,11 @@ CREATE TABLE `marketingcampaign_socialpostings_activities` (
   KEY `fk_epan_id` (`epan_id`),
   KEY `fk_posting_id` (`posting_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `marketingcampaign_socialusers`
---
-
+-- ----------------------------
+--  Table structure for `marketingcampaign_socialusers`
+-- ----------------------------
 DROP TABLE IF EXISTS `marketingcampaign_socialusers`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `marketingcampaign_socialusers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -1688,32 +1393,24 @@ CREATE TABLE `marketingcampaign_socialusers` (
   PRIMARY KEY (`id`),
   KEY `fk_epan_id` (`epan_id`),
   KEY `fk_config_id` (`config_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `marketingcategory`
---
-
+-- ----------------------------
+--  Table structure for `marketingcategory`
+-- ----------------------------
 DROP TABLE IF EXISTS `marketingcategory`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `marketingcategory` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `document_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `opportunity`
---
-
+-- ----------------------------
+--  Table structure for `opportunity`
+-- ----------------------------
 DROP TABLE IF EXISTS `opportunity`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `opportunity` (
   `document_id` int(11) NOT NULL,
   `title` varchar(45) NOT NULL,
@@ -1724,16 +1421,12 @@ CREATE TABLE `opportunity` (
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `lead_id` (`lead_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `order_item_departmental_status`
---
-
+-- ----------------------------
+--  Table structure for `order_item_departmental_status`
+-- ----------------------------
 DROP TABLE IF EXISTS `order_item_departmental_status`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `order_item_departmental_status` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `qsp_detail_id` int(11) DEFAULT NULL,
@@ -1743,16 +1436,12 @@ CREATE TABLE `order_item_departmental_status` (
   PRIMARY KEY (`id`),
   KEY `qsp_detail_id` (`qsp_detail_id`) USING BTREE,
   KEY `department_id` (`department_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `outsource_party`
---
-
+-- ----------------------------
+--  Table structure for `outsource_party`
+-- ----------------------------
 DROP TABLE IF EXISTS `outsource_party`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `outsource_party` (
   `contact_id` int(11) NOT NULL,
   `bank_name` varchar(255) NOT NULL,
@@ -1774,16 +1463,12 @@ CREATE TABLE `outsource_party` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `department_id` (`department_id`) USING BTREE,
   KEY `currency_id` (`currency_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `payment_gateway`
---
-
+-- ----------------------------
+--  Table structure for `payment_gateway`
+-- ----------------------------
 DROP TABLE IF EXISTS `payment_gateway`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `payment_gateway` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -1794,16 +1479,12 @@ CREATE TABLE `payment_gateway` (
   `gateway_image_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `gateway_image_id` (`gateway_image_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `post`
---
-
+-- ----------------------------
+--  Table structure for `post`
+-- ----------------------------
 DROP TABLE IF EXISTS `post`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `post` (
   `document_id` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
@@ -1816,16 +1497,12 @@ CREATE TABLE `post` (
   KEY `fk_post_department1_idx` (`department_id`),
   KEY `parent_post_id` (`parent_post_id`) USING BTREE,
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `post_email_association`
---
-
+-- ----------------------------
+--  Table structure for `post_email_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `post_email_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `post_email_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `post_id` int(11) DEFAULT NULL,
@@ -1833,16 +1510,12 @@ CREATE TABLE `post_email_association` (
   PRIMARY KEY (`id`),
   KEY `post_id` (`post_id`) USING BTREE,
   KEY `email_settings_id` (`emailsetting_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `project`
---
-
+-- ----------------------------
+--  Table structure for `project`
+-- ----------------------------
 DROP TABLE IF EXISTS `project`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `project` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -1853,16 +1526,12 @@ CREATE TABLE `project` (
   PRIMARY KEY (`id`),
   KEY `created_by_id` (`created_by_id`) USING BTREE,
   FULLTEXT KEY `quick_search` (`name`,`description`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `projectcomment`
---
-
+-- ----------------------------
+--  Table structure for `projectcomment`
+-- ----------------------------
 DROP TABLE IF EXISTS `projectcomment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `projectcomment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `task_id` int(11) DEFAULT NULL,
@@ -1871,16 +1540,12 @@ CREATE TABLE `projectcomment` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `qsp_detail`
---
-
+-- ----------------------------
+--  Table structure for `qsp_detail`
+-- ----------------------------
 DROP TABLE IF EXISTS `qsp_detail`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `qsp_detail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `qsp_master_id` int(11) NOT NULL,
@@ -1901,16 +1566,12 @@ CREATE TABLE `qsp_detail` (
   KEY `qsp_master_id` (`qsp_master_id`),
   KEY `item_id` (`item_id`),
   KEY `taxation_id` (`taxation_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8775 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=56450 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `qsp_detail_attachment`
---
-
+-- ----------------------------
+--  Table structure for `qsp_detail_attachment`
+-- ----------------------------
 DROP TABLE IF EXISTS `qsp_detail_attachment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `qsp_detail_attachment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `contact_id` int(11) NOT NULL,
@@ -1918,15 +1579,11 @@ CREATE TABLE `qsp_detail_attachment` (
   `file_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `qsp_master`
---
-
+-- ----------------------------
+--  Table structure for `qsp_master`
+-- ----------------------------
 DROP TABLE IF EXISTS `qsp_master`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `qsp_master` (
   `document_id` int(11) NOT NULL,
   `contact_id` int(11) NOT NULL,
@@ -1967,16 +1624,12 @@ CREATE TABLE `qsp_master` (
   KEY `related_qsp_master_id` (`related_qsp_master_id`) USING BTREE,
   KEY `nominal_id` (`nominal_id`) USING BTREE,
   CONSTRAINT `document` FOREIGN KEY (`document_id`) REFERENCES `document` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6063 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=247 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `qualification`
---
-
+-- ----------------------------
+--  Table structure for `qualification`
+-- ----------------------------
 DROP TABLE IF EXISTS `qualification`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `qualification` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `employee_id` int(11) DEFAULT NULL,
@@ -1985,16 +1638,12 @@ CREATE TABLE `qualification` (
   `remarks` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `quantity_condition`
---
-
+-- ----------------------------
+--  Table structure for `quantity_condition`
+-- ----------------------------
 DROP TABLE IF EXISTS `quantity_condition`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `quantity_condition` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `quantity_set_id` int(11) NOT NULL,
@@ -2002,16 +1651,12 @@ CREATE TABLE `quantity_condition` (
   PRIMARY KEY (`id`),
   KEY `qty_set_id` (`quantity_set_id`) USING BTREE,
   KEY `customfield_value_id` (`customfield_value_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=42907 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=554 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `quantity_set`
---
-
+-- ----------------------------
+--  Table structure for `quantity_set`
+-- ----------------------------
 DROP TABLE IF EXISTS `quantity_set`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `quantity_set` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `item_id` int(11) NOT NULL,
@@ -2022,16 +1667,12 @@ CREATE TABLE `quantity_set` (
   `is_default` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=15882 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `schedule`
---
-
+-- ----------------------------
+--  Table structure for `schedule`
+-- ----------------------------
 DROP TABLE IF EXISTS `schedule`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `campaign_id` int(11) NOT NULL,
@@ -2042,32 +1683,24 @@ CREATE TABLE `schedule` (
   PRIMARY KEY (`id`),
   KEY `campaign_id` (`campaign_id`) USING BTREE,
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `shipping_association`
---
-
+-- ----------------------------
+--  Table structure for `shipping_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `shipping_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `shipping_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `item_id` int(11) DEFAULT NULL,
   `shipping_rule_id` int(11) DEFAULT NULL,
   `priority` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `shipping_rule`
---
-
+-- ----------------------------
+--  Table structure for `shipping_rule`
+-- ----------------------------
 DROP TABLE IF EXISTS `shipping_rule`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `shipping_rule` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -2078,16 +1711,12 @@ CREATE TABLE `shipping_rule` (
   `type` varchar(255) NOT NULL,
   `creaed_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `shipping_rule_row`
---
-
+-- ----------------------------
+--  Table structure for `shipping_rule_row`
+-- ----------------------------
 DROP TABLE IF EXISTS `shipping_rule_row`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `shipping_rule_row` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `shipping_rule_id` int(11) DEFAULT NULL,
@@ -2102,31 +1731,23 @@ CREATE TABLE `shipping_rule_row` (
   `express_shipping_duration_days` tinyint(4) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `socialuser`
---
-
+-- ----------------------------
+--  Table structure for `socialuser`
+-- ----------------------------
 DROP TABLE IF EXISTS `socialuser`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `socialuser` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `configuration` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `state`
---
-
+-- ----------------------------
+--  Table structure for `state`
+-- ----------------------------
 DROP TABLE IF EXISTS `state`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `state` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -2136,16 +1757,12 @@ CREATE TABLE `state` (
   `created_by_id` int(11) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3716 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=3716 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `store_transaction`
---
-
+-- ----------------------------
+--  Table structure for `store_transaction`
+-- ----------------------------
 DROP TABLE IF EXISTS `store_transaction`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `store_transaction` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -2170,16 +1787,12 @@ CREATE TABLE `store_transaction` (
   KEY `from_warehouse_id` (`from_warehouse_id`) USING BTREE,
   KEY `to_warehouse_id` (`to_warehouse_id`) USING BTREE,
   KEY `jobcard_id` (`jobcard_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `store_transaction_row`
---
-
+-- ----------------------------
+--  Table structure for `store_transaction_row`
+-- ----------------------------
 DROP TABLE IF EXISTS `store_transaction_row`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `store_transaction_row` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -2196,16 +1809,12 @@ CREATE TABLE `store_transaction_row` (
   KEY `qsp_detail_id` (`qsp_detail_id`) USING BTREE,
   KEY `customfield_generic_id` (`customfield_generic_id`) USING BTREE,
   KEY `customfield_value_id` (`customfield_value_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `supplier`
---
-
+-- ----------------------------
+--  Table structure for `supplier`
+-- ----------------------------
 DROP TABLE IF EXISTS `supplier`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `supplier` (
   `contact_id` int(11) NOT NULL,
   `tin_no` varchar(255) NOT NULL,
@@ -2216,16 +1825,12 @@ CREATE TABLE `supplier` (
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`),
   KEY `currency_id` (`currency_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `support_ticket`
---
-
+-- ----------------------------
+--  Table structure for `support_ticket`
+-- ----------------------------
 DROP TABLE IF EXISTS `support_ticket`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `support_ticket` (
   `document_id` int(11) NOT NULL,
   `contact_id` int(11) DEFAULT NULL,
@@ -2248,16 +1853,12 @@ CREATE TABLE `support_ticket` (
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `communication_id` (`communication_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=340 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `task`
---
-
+-- ----------------------------
+--  Table structure for `task`
+-- ----------------------------
 DROP TABLE IF EXISTS `task`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `task` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) DEFAULT NULL,
@@ -2282,16 +1883,12 @@ CREATE TABLE `task` (
   `is_reminded` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `task_title_full_text` (`task_name`,`description`,`status`,`type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=291 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `task_attachment`
---
-
+-- ----------------------------
+--  Table structure for `task_attachment`
+-- ----------------------------
 DROP TABLE IF EXISTS `task_attachment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `task_attachment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `task_id` int(11) DEFAULT NULL,
@@ -2299,16 +1896,12 @@ CREATE TABLE `task_attachment` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `file_id` (`file_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `taxation`
---
-
+-- ----------------------------
+--  Table structure for `taxation`
+-- ----------------------------
 DROP TABLE IF EXISTS `taxation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `taxation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -2318,32 +1911,24 @@ CREATE TABLE `taxation` (
   PRIMARY KEY (`id`),
   KEY `created_by_id` (`created_by_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`name`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `taxation_association`
---
-
+-- ----------------------------
+--  Table structure for `taxation_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `taxation_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `taxation_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `item_id` int(11) NOT NULL,
   `taxation_rule_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=461 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `taxation_rule`
---
-
+-- ----------------------------
+--  Table structure for `taxation_rule`
+-- ----------------------------
 DROP TABLE IF EXISTS `taxation_rule`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `taxation_rule` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -2351,16 +1936,12 @@ CREATE TABLE `taxation_rule` (
   `priority` int(11) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `taxation_rule_row`
---
-
+-- ----------------------------
+--  Table structure for `taxation_rule_row`
+-- ----------------------------
 DROP TABLE IF EXISTS `taxation_rule_row`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `taxation_rule_row` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `taxation_id` int(11) NOT NULL,
@@ -2371,16 +1952,12 @@ CREATE TABLE `taxation_rule_row` (
   `type` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Table structure for table `team_project_association`
---
-
+-- ----------------------------
+--  Table structure for `team_project_association`
+-- ----------------------------
 DROP TABLE IF EXISTS `team_project_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `team_project_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `employee_id` int(11) DEFAULT NULL,
@@ -2388,31 +1965,23 @@ CREATE TABLE `team_project_association` (
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE,
   KEY `project_id` (`project_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `ticket_attachment`
---
-
+-- ----------------------------
+--  Table structure for `ticket_attachment`
+-- ----------------------------
 DROP TABLE IF EXISTS `ticket_attachment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ticket_attachment` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ticket_id` int(11) DEFAULT NULL,
   `attachment_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `timesheet`
---
-
+-- ----------------------------
+--  Table structure for `timesheet`
+-- ----------------------------
 DROP TABLE IF EXISTS `timesheet`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `timesheet` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `task_id` int(11) DEFAULT NULL,
@@ -2423,16 +1992,12 @@ CREATE TABLE `timesheet` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=147 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `tnc`
---
-
+-- ----------------------------
+--  Table structure for `tnc`
+-- ----------------------------
 DROP TABLE IF EXISTS `tnc`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tnc` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text CHARACTER SET latin1 COLLATE latin1_general_cs,
@@ -2443,16 +2008,12 @@ CREATE TABLE `tnc` (
   `is_default_for_sale_invoice` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `user`
---
-
+-- ----------------------------
+--  Table structure for `user`
+-- ----------------------------
 DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) DEFAULT NULL,
@@ -2469,16 +2030,12 @@ CREATE TABLE `user` (
   KEY `created_by_id` (`created_by_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`username`,`type`,`scope`),
   CONSTRAINT `fk_user_epan1` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=457 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `xepan_template`
---
-
+-- ----------------------------
+--  Table structure for `xepan_template`
+-- ----------------------------
 DROP TABLE IF EXISTS `xepan_template`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `xepan_template` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -2487,15 +2044,11 @@ CREATE TABLE `xepan_template` (
   `is_active` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `xmarketingcampaign_googlebloggerconfig`
---
-
+-- ----------------------------
+--  Table structure for `xmarketingcampaign_googlebloggerconfig`
+-- ----------------------------
 DROP TABLE IF EXISTS `xmarketingcampaign_googlebloggerconfig`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `xmarketingcampaign_googlebloggerconfig` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
@@ -2512,16 +2065,12 @@ CREATE TABLE `xmarketingcampaign_googlebloggerconfig` (
   `is_active` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_epan_id` (`epan_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `xshop_item_images`
---
-
+-- ----------------------------
+--  Table structure for `xshop_item_images`
+-- ----------------------------
 DROP TABLE IF EXISTS `xshop_item_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `xshop_item_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `item_id` int(11) DEFAULT NULL,
@@ -2536,15 +2085,11 @@ CREATE TABLE `xshop_item_images` (
   KEY `fk_epan_id` (`epan_id`),
   KEY `fk_item_image_id` (`item_image_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=798 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `xshop_item_quantity_set_conditions`
---
-
+-- ----------------------------
+--  Table structure for `xshop_item_quantity_set_conditions`
+-- ----------------------------
 DROP TABLE IF EXISTS `xshop_item_quantity_set_conditions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `xshop_item_quantity_set_conditions` (
   `id` int(11) NOT NULL,
   `quantityset_id` int(11) DEFAULT NULL,
@@ -2559,15 +2104,5 @@ CREATE TABLE `xshop_item_quantity_set_conditions` (
   KEY `fk_customfield_id` (`customfield_id`),
   KEY `fk_department_phase_id` (`department_phase_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-06-21 13:58:02
+SET FOREIGN_KEY_CHECKS = 1;
