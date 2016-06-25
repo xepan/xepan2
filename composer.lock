@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4d0ca4ac7da29d0c2d50abfbbc2f3090",
-    "content-hash": "78281cf5c703da000d8c0a21db3d94ce",
+    "hash": "4bfe877430814fcd5b3ec763418f26dd",
+    "content-hash": "b6500509ed6d5c98a84921e9f94da90a",
     "packages": [
         {
             "name": "dg/mysql-dump",
@@ -279,6 +279,50 @@
                 "password"
             ],
             "time": "2014-11-20 19:18:42"
+        },
+        {
+            "name": "linkedinapi/linkedin",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ashwinks/PHP-LinkedIn-SDK.git",
+                "reference": "7fa96885b99e9267b4ae5c0f463f5a550c47a66c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ashwinks/PHP-LinkedIn-SDK/zipball/7fa96885b99e9267b4ae5c0f463f5a550c47a66c",
+                "reference": "7fa96885b99e9267b4ae5c0f463f5a550c47a66c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "LinkedIn": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ashwin Surajbali",
+                    "email": "ashwin@redinkdesign.net",
+                    "homepage": "http://www.redinkdesign.co"
+                }
+            ],
+            "description": "PHP LinkedIn SDK",
+            "homepage": "https://github.com/ashwinks/PHP-LinkedIn-SDK",
+            "keywords": [
+                "api",
+                "api client",
+                "linkedin",
+                "rest"
+            ],
+            "time": "2014-03-03 15:16:50"
         },
         {
             "name": "nesbot/carbon",
@@ -2462,7 +2506,7 @@
                 {
                     "name": "Todd Burry",
                     "email": "todd@vanillaforums.com",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "A jQuery like html dom parser written in php.",
@@ -2592,8 +2636,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/accounts/zipball/f8bd1f2477c1d0deafb33e8ea86af1ee68066cfe",
-                "reference": "f8bd1f2477c1d0deafb33e8ea86af1ee68066cfe",
+                "url": "https://api.github.com/repos/xepan/accounts/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -2671,8 +2715,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/base/zipball/5153489cd098993c1adc349d5cbc36beb54e66eb",
-                "reference": "5153489cd098993c1adc349d5cbc36beb54e66eb",
+                "url": "https://api.github.com/repos/xepan/base/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -2704,7 +2748,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-23 11:21:26"
+            "time": "2016-06-25 06:05:04"
         },
         {
             "name": "xepan/blog",
@@ -2716,8 +2760,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/blog/zipball/1a7df4523ada6839ce8ba69f7faa66a4b601531c",
-                "reference": "1a7df4523ada6839ce8ba69f7faa66a4b601531c",
+                "url": "https://api.github.com/repos/xepan/blog/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -2759,8 +2803,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/ccavenue/zipball/1aba94dd3f1187b4e260bbe001427377d8a7f3d6",
-                "reference": "1aba94dd3f1187b4e260bbe001427377d8a7f3d6",
+                "url": "https://api.github.com/repos/xepan/ccavenue/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -2810,8 +2854,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/cms/zipball/6b023d8989b8132ea466d9f08871d94191b9bf23",
-                "reference": "6b023d8989b8132ea466d9f08871d94191b9bf23",
+                "url": "https://api.github.com/repos/xepan/cms/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -2844,7 +2888,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-21 13:10:10"
+            "time": "2016-06-24 09:30:34"
         },
         {
             "name": "xepan/commerce",
@@ -2856,8 +2900,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/commerce/zipball/295b45811ff34d55e194163ed77e7746371f0060",
-                "reference": "295b45811ff34d55e194163ed77e7746371f0060",
+                "url": "https://api.github.com/repos/xepan/commerce/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -2891,7 +2935,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-24 06:29:12"
+            "time": "2016-06-25 05:06:09"
         },
         {
             "name": "xepan/communication",
@@ -2903,8 +2947,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/communication/zipball/b44ab0c29193b6a318a470649cf8672629ccf66f",
-                "reference": "b44ab0c29193b6a318a470649cf8672629ccf66f",
+                "url": "https://api.github.com/repos/xepan/communication/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -2938,7 +2982,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-06-21 14:35:55"
+            "time": "2016-06-25 05:19:56"
         },
         {
             "name": "xepan/crm",
@@ -2950,8 +2994,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/crm/zipball/c255612701c9ba14eb48f2d1b2d75ca2c4e63a9c",
-                "reference": "c255612701c9ba14eb48f2d1b2d75ca2c4e63a9c",
+                "url": "https://api.github.com/repos/xepan/crm/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -2985,7 +3029,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-18 05:00:49"
+            "time": "2016-06-25 05:21:23"
         },
         {
             "name": "xepan/epanservices",
@@ -2997,8 +3041,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/epanservices/zipball/05f37902c1b2ff5527d5eac7d159ef2e342364a2",
-                "reference": "05f37902c1b2ff5527d5eac7d159ef2e342364a2",
+                "url": "https://api.github.com/repos/xepan/epanservices/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -3041,8 +3085,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/filestore/zipball/f4153653ad5ad19f3958f464b8bc835347884cfa",
-                "reference": "f4153653ad5ad19f3958f464b8bc835347884cfa",
+                "url": "https://api.github.com/repos/xepan/filestore/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -3072,7 +3116,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-05-28 05:43:59"
+            "time": "2016-05-28 17:53:20"
         },
         {
             "name": "xepan/gd-text",
@@ -3115,8 +3159,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/hr/zipball/8987db379b4e438815b6499da0a4a799c3dbde17",
-                "reference": "8987db379b4e438815b6499da0a4a799c3dbde17",
+                "url": "https://api.github.com/repos/xepan/hr/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -3221,8 +3265,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/marketing/zipball/16a47737f0c721e5127bac028fc816d124eb2f87",
-                "reference": "16a47737f0c721e5127bac028fc816d124eb2f87",
+                "url": "https://api.github.com/repos/xepan/marketing/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -3254,7 +3298,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-20 13:17:28"
+            "time": "2016-06-25 09:53:06"
         },
         {
             "name": "xepan/omnipay",
@@ -3466,8 +3510,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/production/zipball/a2b4f73654ad529b9d3da4f3f244ef72f389b915",
-                "reference": "a2b4f73654ad529b9d3da4f3f244ef72f389b915",
+                "url": "https://api.github.com/repos/xepan/production/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -3511,8 +3555,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/projects/zipball/96da1374799da91567513e439456042a47d5b788",
-                "reference": "96da1374799da91567513e439456042a47d5b788",
+                "url": "https://api.github.com/repos/xepan/projects/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -3544,7 +3588,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-18 10:07:15"
+            "time": "2016-06-25 05:24:31"
         },
         {
             "name": "xepan/xepanwallet",
@@ -3556,8 +3600,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xepan/xepanwallet/zipball/f7dbaaa0e1c53caf96a1671d8e3c12209411d9bb",
-                "reference": "f7dbaaa0e1c53caf96a1671d8e3c12209411d9bb",
+                "url": "https://api.github.com/repos/xepan/xepanwallet/zipball/origin/master",
+                "reference": "origin/master",
                 "shasum": ""
             },
             "require": {
@@ -3664,12 +3708,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "e3cdbfac598323fe79c35b477da5cb496dd09467"
+                "reference": "d570f4b3ab67f3eb2357996e0c550ecad597b59a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/e3cdbfac598323fe79c35b477da5cb496dd09467",
-                "reference": "e3cdbfac598323fe79c35b477da5cb496dd09467",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/d570f4b3ab67f3eb2357996e0c550ecad597b59a",
+                "reference": "d570f4b3ab67f3eb2357996e0c550ecad597b59a",
                 "shasum": ""
             },
             "require": {
@@ -3747,7 +3791,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2016-06-21 22:53:23"
+            "time": "2016-06-24 11:33:53"
         },
         {
             "name": "doctrine/instantiator",
@@ -3966,12 +4010,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "d591cba5ee515bbf3ac2392f269abb7c0b097e1c"
+                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/d591cba5ee515bbf3ac2392f269abb7c0b097e1c",
-                "reference": "d591cba5ee515bbf3ac2392f269abb7c0b097e1c",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
+                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
                 "shasum": ""
             },
             "require": {
@@ -4016,7 +4060,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-06-20 22:24:42"
+            "time": "2016-06-24 23:00:38"
         },
         {
             "name": "myclabs/deep-copy",
@@ -4061,38 +4105,87 @@
             "time": "2015-11-20 12:04:31"
         },
         {
-            "name": "phpdocumentor/reflection-docblock",
-            "version": "2.0.4",
+            "name": "phpdocumentor/reflection-common",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "d68dbdc53dc358a816f00b300704702b2eaff7b8"
+                "url": "https://github.com/phpDocumentor/ReflectionCommon.git",
+                "reference": "144c307535e82c8fdcaacbcfc1d6d8eeb896687c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/d68dbdc53dc358a816f00b300704702b2eaff7b8",
-                "reference": "d68dbdc53dc358a816f00b300704702b2eaff7b8",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/144c307535e82c8fdcaacbcfc1d6d8eeb896687c",
+                "reference": "144c307535e82c8fdcaacbcfc1d6d8eeb896687c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "suggest": {
-                "dflydev/markdown": "~1.0",
-                "erusev/parsedown": "~1.0"
+                "phpunit/phpunit": "^4.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "phpDocumentor": [
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": [
+                        "src"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jaap van Otterdijk",
+                    "email": "opensource@ijaap.nl"
+                }
+            ],
+            "description": "Common reflection classes used by phpdocumentor to reflect the code structure",
+            "homepage": "http://www.phpdoc.org",
+            "keywords": [
+                "FQSEN",
+                "phpDocumentor",
+                "phpdoc",
+                "reflection",
+                "static analysis"
+            ],
+            "time": "2015-12-27 11:43:31"
+        },
+        {
+            "name": "phpdocumentor/reflection-docblock",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+                "reference": "9270140b940ff02e58ec577c237274e92cd40cdd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/9270140b940ff02e58ec577c237274e92cd40cdd",
+                "reference": "9270140b940ff02e58ec577c237274e92cd40cdd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "phpdocumentor/reflection-common": "^1.0@dev",
+                "phpdocumentor/type-resolver": "^0.2.0",
+                "webmozart/assert": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": [
                         "src/"
                     ]
                 }
@@ -4104,10 +4197,58 @@
             "authors": [
                 {
                     "name": "Mike van Riel",
-                    "email": "mike.vanriel@naenius.com"
+                    "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2015-02-03 12:10:50"
+            "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
+            "time": "2016-06-10 09:48:41"
+        },
+        {
+            "name": "phpdocumentor/type-resolver",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/TypeResolver.git",
+                "reference": "b39c7a5b194f9ed7bd0dd345c751007a41862443"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/b39c7a5b194f9ed7bd0dd345c751007a41862443",
+                "reference": "b39c7a5b194f9ed7bd0dd345c751007a41862443",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "phpdocumentor/reflection-common": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.2||^4.8.24"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "me@mikevanriel.com"
+                }
+            ],
+            "time": "2016-06-10 07:14:17"
         },
         {
             "name": "phpspec/prophecy",
@@ -4417,16 +4558,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "dev-master",
+            "version": "5.4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "89a327785353164381c95be2ffef51f4d6cb15dc"
+                "reference": "59d58dee0814e555bcfa35b0ed44e1554c31e005"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/89a327785353164381c95be2ffef51f4d6cb15dc",
-                "reference": "89a327785353164381c95be2ffef51f4d6cb15dc",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/59d58dee0814e555bcfa35b0ed44e1554c31e005",
+                "reference": "59d58dee0814e555bcfa35b0ed44e1554c31e005",
                 "shasum": ""
             },
             "require": {
@@ -4465,7 +4606,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.5.x-dev"
+                    "dev-master": "5.4.x-dev"
                 }
             },
             "autoload": {
@@ -4491,7 +4632,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-06-17 15:20:20"
+            "time": "2016-06-17 15:20:16"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -5177,12 +5318,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "dad1f6bd8d7370a1bf69d44dbc75fb7f6d7ca5c5"
+                "reference": "e32c3264c55b58a1b22eec48e792e246b6f20760"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/dad1f6bd8d7370a1bf69d44dbc75fb7f6d7ca5c5",
-                "reference": "dad1f6bd8d7370a1bf69d44dbc75fb7f6d7ca5c5",
+                "url": "https://api.github.com/repos/symfony/console/zipball/e32c3264c55b58a1b22eec48e792e246b6f20760",
+                "reference": "e32c3264c55b58a1b22eec48e792e246b6f20760",
                 "shasum": ""
             },
             "require": {
@@ -5231,7 +5372,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-06-23 18:06:08"
+            "time": "2016-06-24 06:07:32"
         },
         {
             "name": "symfony/css-selector",
@@ -5445,6 +5586,56 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-06-23 13:44:47"
+        },
+        {
+            "name": "webmozart/assert",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozart/assert.git",
+                "reference": "3a8e045064f294992a13966b6c892fb9d64853a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/3a8e045064f294992a13966b6c892fb9d64853a3",
+                "reference": "3a8e045064f294992a13966b6c892fb9d64853a3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.6",
+                "sebastian/version": "^1.0.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Assert\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Assertions to validate method input/output with nice error messages.",
+            "keywords": [
+                "assert",
+                "check",
+                "validate"
+            ],
+            "time": "2016-03-04 13:27:44"
         }
     ],
     "aliases": [],
