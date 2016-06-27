@@ -29,7 +29,8 @@
     "xepan/blog": "dev-master",
     "nlp-tools/nlp-tools": "1.0.*@dev",
     "facebook/php-sdk-v4" : "~5.0",
-    "linkedinapi/linkedin": "^1.1"
+    "linkedinapi/linkedin": "^1.1",
+    "guzzlehttp/guzzle": "^6.2"
   },
   "autoload":{
     "psr-0":{
