@@ -130,9 +130,10 @@ class Frontend extends ApiFrontend {
             }catch(\PathFinder_Exception $e3){
                 $t=strtolower($page);
                 try{
-                    $original_page=$page;
+                    $original_page=null;
                     if(!file_exists(getcwd().'/websites/'.$this->current_website_name.'/www/'.str_replace("_", "/",$page).".html")){
                         $page='404';
+	                    $original_page=$page;
                     }
                     $this->page_object=$layout->add($this->page_class,['name'=>$page,'page_requested'=>$original_page],'Content',[str_replace("_", "/",$page)]);
                 }catch(\PathFinder_Exception $e4){
