@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 15, 2016 at 11:28 AM
+-- Generation Time: Jul 16, 2016 at 11:40 AM
 -- Server version: 5.6.24-2+deb.sury.org~trusty+2
 -- PHP Version: 5.6.20-1+deb.sury.org~trusty+1
 
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=458 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=467 ;
 
 -- --------------------------------------------------------
 
@@ -406,7 +406,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   PRIMARY KEY (`id`),
   KEY `communication_id` (`communication_id`) USING BTREE,
   KEY `ticket_id` (`ticket_id`) USING BTREE
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=163 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=165 ;
 
 -- --------------------------------------------------------
 
@@ -445,7 +445,7 @@ CREATE TABLE IF NOT EXISTS `communication` (
   PRIMARY KEY (`id`),
   KEY `related_document_id` (`related_document_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1289 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1294 ;
 
 -- --------------------------------------------------------
 
@@ -555,6 +555,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   `message_blog` text NOT NULL,
   `url` varchar(255) NOT NULL,
   `message_160` text NOT NULL,
+  `content_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `marketing_category_id` (`marketing_category_id`) USING BTREE
@@ -981,7 +982,7 @@ CREATE TABLE IF NOT EXISTS `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=324 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=335 ;
 
 -- --------------------------------------------------------
 
@@ -1208,7 +1209,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   `stock_availability` tinyint(4) DEFAULT NULL,
   `show_detail` tinyint(1) DEFAULT NULL,
   `show_price` tinyint(1) DEFAULT NULL,
-  `display_sequence` varchar(255) DEFAULT NULL,
+  `display_sequence` int(11) DEFAULT NULL,
   `is_new` tinyint(1) DEFAULT NULL,
   `is_feature` tinyint(1) DEFAULT NULL,
   `is_mostviewed` tinyint(1) DEFAULT NULL,
@@ -2282,7 +2283,7 @@ CREATE TABLE IF NOT EXISTS `timesheet` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=147 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=148 ;
 
 -- --------------------------------------------------------
 
