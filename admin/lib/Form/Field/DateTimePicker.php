@@ -20,7 +20,9 @@ class Form_Field_DateTimePicker extends Form_Field_Line {
         ->_css('libs/bootstrap-datetimepicker')
         ;
         $this->js(true)->appendDtpicker(array_merge(array(
-                    'closeOnSelected'=> true
+                    'closeOnSelected'=> true,
+                    'dateFormat' => 'YYYY-MM-DD HH:mm:00',
+                    'autodateOnStart'=> false
                     ),$this->options));
 
         return parent::getInput(array_merge(
