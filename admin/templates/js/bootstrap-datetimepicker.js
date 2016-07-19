@@ -334,7 +334,7 @@
     var ActivePickerId = -1;
 
     var getParentPickerObject = function(obj) {
-        return $(obj).closest('.datepicker');
+        return $(obj).closest('.datetimepicker');
     };
 
     var getPickersInputObject = function($obj) {
@@ -1121,7 +1121,7 @@
             window.alert('destroy!');
         };
 
-        $picker.addClass('datepicker');
+        $picker.addClass('datetimepicker');
         $obj.append($picker);
 
         /* Set current date */
@@ -1379,7 +1379,7 @@
 
             var $picker_parent = $($d).dtpicker(options); // call dtpicker() method
 
-            var $picker = $picker_parent.children('.datepicker');
+            var $picker = $picker_parent.children('.datetimepicker');
 
             /* Link input-field with picker*/
             $(input).data('pickerId', pickerId);

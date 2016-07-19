@@ -11,19 +11,21 @@ class Form_Field_DateTimePicker extends Form_Field_Line {
         $this->addButton('',array('options'=>array('text'=>false)))
             ->setHtml('')
             ->setIcon(' fa fa-calendar')
-            ->js('click',$this->js()->appendDtpicker('show'));
-        $this->js('focus', $this->js()->appendDtpicker('show'));
+            // ->js('click',$this->js()->handleDtpicker('show'))
+            ;
+        // $this->js('focus', $this->js()->handleDtpicker('show'));
     }
     function getInput($attr=array()){
-        $this->js(true)->_load('bootstrap-datetimepicker')->_css('libs/bootstrap-datetimepicker');
+        $this->js(true)->_load('bootstrap-datetimepicker')
+        ->_css('libs/bootstrap-datetimepicker')
+        ;
         $this->js(true)->appendDtpicker(array_merge(array(
-                    'closeOnSelected'=> true,
-                    'futureOnly'=> true
+                    'closeOnSelected'=> true
                     ),$this->options));
 
         return parent::getInput(array_merge(
                     array(
-                        'value'=>'',
+                        'value'=>date('Y-m-d H-i-s',strtotime($this->value)),
                          ),$attr
                     ));
     }
