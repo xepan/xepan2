@@ -22,7 +22,7 @@ class Form_Field_DateTimePicker extends Form_Field_Line {
         $this->js(true)->appendDtpicker(array_merge(array(
                     'minuteInterval' => 5,
                     'closeOnSelected'=> true,
-                    'dateFormat' => 'YYYY-MM-DD HH:mm:00',
+                    'dateFormat' => 'YYYY-MM-DD hh:mm:00',
                     'autodateOnStart'=> false
                     ),$this->options));
 
