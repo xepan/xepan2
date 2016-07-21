@@ -3,11 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
-<<<<<<< HEAD
 -- Generation Time: Jul 21, 2016 at 07:58 PM
-=======
--- Generation Time: Jul 21, 2016 at 12:39 PM
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 -- Server version: 5.6.24-2+deb.sury.org~trusty+2
 -- PHP Version: 5.6.20-1+deb.sury.org~trusty+1
 
@@ -87,11 +83,7 @@ CREATE TABLE IF NOT EXISTS `account_transaction` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `transaction_type_id` (`transaction_type_id`) USING BTREE
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=746 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=736 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -114,11 +106,7 @@ CREATE TABLE IF NOT EXISTS `account_transaction_row` (
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `transaction_id` (`transaction_id`) USING BTREE,
   KEY `ledger_id` (`ledger_id`) USING BTREE
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1761 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1737 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -154,11 +142,7 @@ CREATE TABLE IF NOT EXISTS `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=241 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=240 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -183,11 +167,7 @@ CREATE TABLE IF NOT EXISTS `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=631 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=611 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -427,11 +407,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   PRIMARY KEY (`id`),
   KEY `communication_id` (`communication_id`) USING BTREE,
   KEY `ticket_id` (`ticket_id`) USING BTREE
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=168 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=167 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -470,11 +446,7 @@ CREATE TABLE IF NOT EXISTS `communication` (
   PRIMARY KEY (`id`),
   KEY `related_document_id` (`related_document_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2847 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2755 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -886,11 +858,7 @@ CREATE TABLE IF NOT EXISTS `document` (
   PRIMARY KEY (`id`),
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2404 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2403 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -1015,11 +983,7 @@ CREATE TABLE IF NOT EXISTS `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=373 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=369 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -1109,11 +1073,7 @@ CREATE TABLE IF NOT EXISTS `filestore_file` (
   PRIMARY KEY (`id`),
   KEY `fk_filestore_file_filestore_type1_idx` (`filestore_type_id`),
   KEY `fk_filestore_file_filestore_volume1_idx` (`filestore_volume_id`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT AUTO_INCREMENT=387 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT AUTO_INCREMENT=381 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -1503,11 +1463,7 @@ CREATE TABLE IF NOT EXISTS `ledger` (
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_id` (`related_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`name`,`ledger_type`,`LedgerDisplayName`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=588 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=581 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -1837,11 +1793,7 @@ CREATE TABLE IF NOT EXISTS `qsp_detail` (
   KEY `qsp_master_id` (`qsp_master_id`),
   KEY `item_id` (`item_id`),
   KEY `taxation_id` (`taxation_id`) USING BTREE
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56453 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56452 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -1902,11 +1854,7 @@ CREATE TABLE IF NOT EXISTS `qsp_master` (
   KEY `payment_gateway_id` (`paymentgateway_id`) USING BTREE,
   KEY `related_qsp_master_id` (`related_qsp_master_id`) USING BTREE,
   KEY `nominal_id` (`nominal_id`) USING BTREE
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=249 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=248 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
@@ -2216,11 +2164,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `notify_to` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `task_title_full_text` (`task_name`,`description`,`status`,`type`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=346 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=345 ;
->>>>>>> 8f47e2924cb8c782e1a1f0566201609dd37c2925
 
 -- --------------------------------------------------------
 
