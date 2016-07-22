@@ -16,6 +16,7 @@ class Form_Field_DateTimePicker extends Form_Field_Line {
         // $this->js('focus', $this->js()->handleDtpicker('show'));
     }
     function getInput($attr=array()){
+        
         $this->js(true)->_load('bootstrap-datetimepicker')
         ->_css('libs/bootstrap-datetimepicker')
         ;
@@ -28,11 +29,12 @@ class Form_Field_DateTimePicker extends Form_Field_Line {
 
         return parent::getInput(array_merge(
                     array(
-                        'value'=>date('Y-m-d H-i-s',strtotime($this->value)),
+                        'value'=>date('Y-m-d H:i:00',strtotime($this->value)),
                          ),$attr
                     ));
     }
     function set($value){
+
         // value can be valid date format, as in config['locale']['date']
         if(!$value)return parent::set(null);
         if(is_int($value)){
@@ -41,7 +43,7 @@ class Form_Field_DateTimePicker extends Form_Field_Line {
         @list($d,$m,$y)=explode('/',$value);
         if($y)$value=join('/',array($m,$d,$y));
         elseif($m)$value=join('/',array($m,$d));
-        $value=date('Y-m-d H-i-s',strtotime($value));
+        $value=date('Y-m-d H:i:00',strtotime($value));
         return parent::set($value);
     }
     function get(){
