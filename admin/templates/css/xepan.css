@@ -546,6 +546,32 @@ textarea {width: 100%;}
   margin-top: 10px;
 }
 
+.xbtn button {
+   -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-clip: padding-box;
+    border-color: -moz-use-text-color;
+    border-image: none;
+    border-radius: 3px;
+    border-style: none none solid;
+    border-width: medium medium 2px;
+    outline: medium none;
+    padding: 6px 12px;
+    transition: border-color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s;
+}
+.xbtn-primary button {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #fff;
+}
+.xbtn button:hover {
+  background-color:#216897;
+  border-color:#2e6da4;
+  color:#fff;
+}
+
 
 /* ----------- Galaxy S3 ----------- */
 
