@@ -571,6 +571,12 @@ textarea {width: 100%;}
   border-color:#2e6da4;
   color:#fff;
 }
+.xbtn-xs, .xbtn-group-xs > .xbtn {
+    border-radius: 3px;
+    font-size: 12px!important;
+    line-height: 1.5;
+    padding: 1px 5px!important;
+}
 
 
 .atk-cells {
