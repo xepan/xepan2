@@ -573,6 +573,21 @@ textarea {width: 100%;}
 }
 
 
+.atk-cells {
+  display: table;
+  width: 100%;
+}
+.atk-cells > .atk-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+.atk-cells.atk-cells-justified {
+  table-layout: fixed;
+}
+.atk-cells[class*=atk-move] {
+  width: auto;
+}
+
 /* ----------- Galaxy S3 ----------- */
 
 /* Portrait and Landscape */
