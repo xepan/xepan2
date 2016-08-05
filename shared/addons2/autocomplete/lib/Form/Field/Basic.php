@@ -54,12 +54,14 @@ class Form_Field_Basic extends \Form_Field_Hidden
         // add additional form field
         $name = preg_replace('/_id$/', '', $this->short_name);
         $caption = null;
-        if ($this->owner->model) {
-            if ($f = $this->owner->model->getField($this->short_name)) {
+        $form = $this->owner instanceof \Form ? $this->owner: $this->owner->owner;
+        if ($form->model) {
+            if ($f = $form->model->getField($this->short_name)) {
                 $caption = $f->caption();
             }
         }
-        $this->other_field = $this->owner->addField('line', $name, $caption);
+
+        $this->other_field = $form->addField('line', $name, $caption,null,$this->spot);
         if ($this->hint) {
             $text = sprintf($this->hint, $this->min_length, $this->limit_rows);
             if ($this->hint_show_as=='placeholder') {
