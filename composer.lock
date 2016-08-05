@@ -281,6 +281,7 @@
                 "rest",
                 "web service"
             ],
+            "abandoned": "guzzlehttp/guzzle",
             "time": "2015-04-29 17:06:53"
         },
         {
@@ -3062,7 +3063,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-25 06:05:04"
+            "time": "2016-07-02 10:33:23"
         },
         {
             "name": "xepan/blog",
@@ -3105,7 +3106,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-27 05:02:46"
+            "time": "2016-07-01 17:25:56"
         },
         {
             "name": "xepan/ccavenue",
@@ -3202,7 +3203,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-29 08:38:43"
+            "time": "2016-06-29 09:01:00"
         },
         {
             "name": "xepan/commerce",
@@ -3249,7 +3250,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-25 15:10:19"
+            "time": "2016-07-02 12:52:09"
         },
         {
             "name": "xepan/communication",
@@ -3296,7 +3297,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-06-25 05:19:56"
+            "time": "2016-06-30 09:47:23"
         },
         {
             "name": "xepan/crm",
@@ -3387,7 +3388,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-28 14:38:31"
+            "time": "2016-06-30 07:55:40"
         },
         {
             "name": "xepan/filestore",
@@ -3506,7 +3507,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-18 13:01:20"
+            "time": "2016-07-01 14:22:54"
         },
         {
             "name": "xepan/mail",
@@ -3612,7 +3613,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-28 09:01:28"
+            "time": "2016-07-01 14:23:11"
         },
         {
             "name": "xepan/omnipay",
@@ -3857,7 +3858,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-21 08:55:20"
+            "time": "2016-07-01 14:23:26"
         },
         {
             "name": "xepan/projects",
@@ -4022,12 +4023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "98c6d67128b585b3f88953963be1314d1f5992a9"
+                "reference": "8db582576c4d77b1862dd783a5ad061dc765c5b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/98c6d67128b585b3f88953963be1314d1f5992a9",
-                "reference": "98c6d67128b585b3f88953963be1314d1f5992a9",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/8db582576c4d77b1862dd783a5ad061dc765c5b7",
+                "reference": "8db582576c4d77b1862dd783a5ad061dc765c5b7",
                 "shasum": ""
             },
             "require": {
@@ -4105,7 +4106,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2016-06-29 21:18:31"
+            "time": "2016-07-01 11:44:05"
         },
         {
             "name": "doctrine/instantiator",
@@ -5412,12 +5413,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "464e1784515c4e4b6d689a28ee191c2717069f21"
+                "reference": "e62a1ec70f679510ecde30466885ffb89d4c7cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/464e1784515c4e4b6d689a28ee191c2717069f21",
-                "reference": "464e1784515c4e4b6d689a28ee191c2717069f21",
+                "url": "https://api.github.com/repos/symfony/console/zipball/e62a1ec70f679510ecde30466885ffb89d4c7cb8",
+                "reference": "e62a1ec70f679510ecde30466885ffb89d4c7cb8",
                 "shasum": ""
             },
             "require": {
@@ -5466,7 +5467,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-06-29 19:53:37"
+            "time": "2016-07-01 16:19:27"
         },
         {
             "name": "symfony/css-selector",
@@ -5632,12 +5633,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "bebaa0496239958f0c41cdc33392a7aa8e59f578"
+                "reference": "b69648974b39cc6f76aea9d3aee8212cd0c0d75d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/bebaa0496239958f0c41cdc33392a7aa8e59f578",
-                "reference": "bebaa0496239958f0c41cdc33392a7aa8e59f578",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/b69648974b39cc6f76aea9d3aee8212cd0c0d75d",
+                "reference": "b69648974b39cc6f76aea9d3aee8212cd0c0d75d",
                 "shasum": ""
             },
             "require": {
@@ -5679,7 +5680,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-06-29 05:48:55"
+            "time": "2016-07-01 16:08:10"
         },
         {
             "name": "webmozart/assert",
