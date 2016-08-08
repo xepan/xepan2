@@ -19,6 +19,7 @@ VERSION
 composer
 addons/
 /db/*
+states/*
 assets/*
 *.orig
 *.todo
