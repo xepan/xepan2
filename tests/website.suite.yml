@@ -1,0 +1,36 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+class_name: Visitor
+modules:
+    enabled:
+        - WebDriver:
+            url: https://epan.in
+            browser: 'firefox'
+            webdriver.chrome.driver: "~/Downloads/geckodriver"
+            capabilities:
+                unexpectedAlertBehaviour: 'accept'
+        - \Helper\Acceptance
+        - \Helper\Select2
+
+env:
+    local_reset_db:
+        modules:
+            config:
+                WebDriver:
+                    url: 'http://localhost/xepan2'
+                    browser: 'firefox'
+            enabled:
+                - Db:
+                    dsn: 'mysql:host=localhost;dbname=xepan2'
+                    user: 'root'
+                    password: 'winserver'
+                    dump: tests/_data/data.sql
+    remote:
+        modules:
+            config:
+                WebDriver:
+                    url: 'https://epan.in'
