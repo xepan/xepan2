@@ -23,4 +23,13 @@ class Visitor extends \Codeception\Actor
    /**
     * Define custom actions here
     */
+  	public function fillAtkField($field,$value){
+      $i = $this;
+      $i->fillField('[data-shortname='.$field.']',$value);
+    }
+    
+    public function waitForPageLoad(){
+      $i=$this;
+      $i->WaitPageLoad();
+    }
 }
