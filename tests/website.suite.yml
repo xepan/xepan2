@@ -4,11 +4,11 @@
 # Perform tests in browser using the WebDriver or PhpBrowser.
 # If you need both WebDriver and PHPBrowser tests - create a separate suite.
 
-class_name: SuperUser
+class_name: Visitor
 modules:
     enabled:
         - WebDriver:
-            url: http://localhost/xepan2
+            url: https://epan.in
             browser: 'firefox'
             webdriver.chrome.driver: "~/Downloads/geckodriver"
             capabilities:
