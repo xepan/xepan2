@@ -10,8 +10,27 @@ modules:
         - WebDriver:
             url: http://localhost/xepan2
             browser: 'firefox'
+            webdriver.chrome.driver: "~/Downloads/geckodriver"
             capabilities:
                 unexpectedAlertBehaviour: 'accept'
         - \Helper\Acceptance
         - \Helper\Select2
-        - Db
+
+env:
+    local_reset_db:
+        modules:
+            config:
+                WebDriver:
+                    url: 'http://localhost/xepan2'
+                    browser: 'firefox'
+            enabled:
+                - Db:
+                    dsn: 'mysql:host=localhost;dbname=xepan2'
+                    user: 'root'
+                    password: 'winserver'
+                    dump: tests/_data/data.sql
+    remote:
+        modules:
+            config:
+                WebDriver:
+                    url: 'https://epan.in'

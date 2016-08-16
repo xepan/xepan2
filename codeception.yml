@@ -12,12 +12,5 @@ settings:
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
-modules:
-    config:
-        Db:
-            dsn: 'mysql:host=localhost;dbname=xepan2'
-            user: 'root'
-            password: 'winserver'
-            dump: tests/_data/data.sql
 coverage:
     enabled: true
