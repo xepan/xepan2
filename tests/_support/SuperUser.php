@@ -98,6 +98,11 @@ class SuperUser extends \Codeception\Actor
       $i->waitPageLoad();
     }
 
+    function waitForAjaxError($error){
+      $i->waitForElement('.field-error-text');
+      $i->see($error);
+    }
+
     function select2Option($selector,$value,$time_out=1){
       $this->selectOptionForSelect2("[data-shortname=$selector]",$value,$time_out);
     }

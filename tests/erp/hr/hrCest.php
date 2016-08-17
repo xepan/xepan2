@@ -52,10 +52,12 @@ class hrCest
         $i->waitPageLoad();
         $i->click('Add Department');
 
+        $i->click('Add');
+        $i->waitForAjaxError('Name must not be empty');
+
         $i->fillAtkField('name','Company');
         $i->click('Add');
-        $i->waitForElement('.field-error-text');
-        $i->see('Name value "Company" already exists');
+        $i->waitForAjaxError('Name value "Company" already exists');
 
         $i->fillAtkField('name','Desining');
         $i->click('Add');
@@ -73,6 +75,7 @@ class hrCest
         $i->fillAtkField('production_level','1');
         $i->click('Add');
         $i->waitForPageLoad();
+        $i->waitForAjaxError('')
         $i->see('Desining',['css'=>'table tbody tr:nth-child(2) td:first-child']);
 
         // $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(4) button']);
