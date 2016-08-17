@@ -18,10 +18,8 @@ class hrCest
     public function test_default_non_editable_department_named_company(SuperUser $i)
     {
         $i->wantTo('Test if default "Company" named department is there and it is non editable');
-        $i->login();
-        $i->click('HR');
-        $i->click('Department');
-        $i->waitPageLoad();
+        $i->login('management@xavoc.com');
+        $i->clickMenu('HR->Department');
         $i->see('Company',Locator::elementAt('//table/tbody/tr/td', 1));
         $i->dontSeeElementInDOM('table tbody tr:first-child  td:last-child a');
 
@@ -47,12 +45,12 @@ class hrCest
 
     }
 
-    function test_sorting(SuperUser $i){
-        $i->see('NOT IMPLEMENTED');
-    }
+    // function test_sorting(SuperUser $i){
+    //     $i->see('NOT IMPLEMENTED');
+    // }
 
     function test_add_department(SuperUser $i){
-        $i->login();
+        $i->login('management@xavoc.com');
         $i->waitPageLoad();
         $i->click('HR');
         $i->click('Department');

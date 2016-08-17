@@ -26,12 +26,12 @@ class SuperUser extends \Codeception\Actor
    
 
    
-    public function login(){
+    public function login($username='admin@epan.in',$password='admin'){
       $i=$this;
    		$i->amOnPage('/admin');
       $i->waitPageLoad();
-   		$i->fillField('[data-shortname=username]','admin@epan.in');
-   		$i->fillField('[data-shortname=password]','admin');
+   		$i->fillField('[data-shortname=username]',$username);
+   		$i->fillField('[data-shortname=password]',$password);
    		$i->click('Login');
    		$i->waitPageLoad();
    		$i->see('Super');
@@ -78,5 +78,17 @@ class SuperUser extends \Codeception\Actor
         $i->click('Go');
         $i->waitForText('Allow Add');
         $i->wait(10);
+    }
+
+    function clickMenu($menu){
+      $i = $this;
+      $menu = explode('->', $menu);
+      for ($j=0; $j < count($menu); $j++) { 
+        $i->click(['link'=>$menu[$j]]);
+        if(isset($menu[$j+1])){
+          $i->waitForText($menu[$j+1]);
+        }
+      }
+      $i->waitPageLoad();
     }
 }

@@ -8,7 +8,7 @@ class_name: SuperUser
 modules:
     enabled:
         - WebDriver:
-            url: http://demo.epan.in
+            url: 'http://demo.xepan-local.org/xepan2'
             browser: 'firefox'
             webdriver.chrome.driver: "~/Downloads/geckodriver"
             capabilities:
