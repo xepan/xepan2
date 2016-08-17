@@ -35,14 +35,10 @@ class hrCest
         $i->dontSee('No matching records found');
         $i->see('Company',Locator::elementAt('//table/tbody/tr/td', 1));
 
-        $i->selectOptionForSelect2("[data-shortname=status]",'Active');
+        $i->click('Active');
         $i->waitPageLoad();
-        $i->see('Company',Locator::elementAt('//table/tbody/tr/td', 1));
-        
-        $i->selectOptionForSelect2("[data-shortname=status]",'Inactive');
+        $i->click('InActive');
         $i->waitPageLoad();
-        $i->dontSee('Company',Locator::elementAt('//table/tbody/tr/td', 1));
-
     }
 
     // function test_sorting(SuperUser $i){
@@ -52,12 +48,9 @@ class hrCest
     function test_add_department(SuperUser $i){
         $i->login('management@xavoc.com');
         $i->waitPageLoad();
-        $i->click('HR');
-        $i->click('Department');
+        $i->clickMenu('HR->Department');
         $i->waitPageLoad();
         $i->click('Add Department');
-        $i->waitPageLoad();
-        $i->see('Adding new Department');
 
         $i->fillAtkField('name','Company');
         $i->click('Add');
@@ -82,15 +75,13 @@ class hrCest
         $i->waitForPageLoad();
         $i->see('Desining',['css'=>'table tbody tr:nth-child(2) td:first-child']);
 
-        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(4) button']);
-        $i->click('Deactivate');
-        $i->waitForPageLoad();
-        $i->see('InActive');
-
-        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(4) button']);
-        $i->click('Activate');
-        $i->waitForPageLoad();
-        $i->see('Active',['css'=>'table tbody tr:nth-child(2) td:nth-child(4)']);
+        // $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(4) button']);
+        // $i->click('Deactivate');
+        // $i->waitForPageLoad();
+        // $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(4) button']);
+        // $i->click('Activate');
+        // $i->waitForPageLoad();
+        // $i->see('Active',['css'=>'table tbody tr:nth-child(2) td:nth-child(4)']);
 
         $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(5) a.pb_edit']);
         $i->waitForPageLoad();
@@ -121,9 +112,81 @@ class hrCest
         $i->wait(5);
     }
 
-    function testACL(SuperUser $i){
-        $i->login();
-        $i->changeACL('Intern','xepan\hr/Department',['Active'=>['view'=>'Selft only','edit'=>'None']]);
+    // function testACL(SuperUser $i){
+    //     $i->login('management@xavoc.com');
+    //     $i->changeACL('CEO','xepan\hr/Department',['Active'=>['view'=>'Selft only','edit'=>'None']]);
+    // }
+
+    function testPost(SuperUser $i){
+        $i->login('management@xavoc.com');
+        $i->clickMenu('HR->Post');
+        $i->waitPageLoad();
+        $i->see('CEO');
+        $i->click(['css'=>'table tbody tr td:nth-child(4) a.emails-accesible']);
+        // $i->acceptPopup();
+        $i->see('Permitted Emails');
+        $i->click(['css'=>' button.editable-cancel']);
+        $i->wait(2);
+        $i->click(['css'=>'table tbody tr td:nth-child(5) a.do-view-post-employees']);
+        $i->see('Post Employees');
+        $i->wait(2);
+        $i->click(['css'=>' button.ui-dialog-titlebar-close']);
+        // $i->click(['css'=>'table tbody tr td:nth-child(1) a.do-view-employee']);
+        // $i->see('Employee Details');
+        // $i->wait(2);
+        // $i->click(['css'=>' button.ui-dialog-titlebar-close']);
+        // $i->see('Post Employees');
+        $i->wait(2);
+        $i->click(['css'=>'table tbody tr td:nth-child(6) button']);
+    }
+    function test_add_post(SuperUser $i){
+        $i->login('management@xavoc.com');
+        $i->clickMenu('HR->Post');
+        $i->waitPageLoad();
+        $i->see('Add Post');
+        $i->click('Add Post');
+
+        $i->fillAtkField('name','management');
+        $i->click('Add');
+        $i->waitForElement('.field-error-text');
+        $i->see('Department_id must not be empty');
+        $i->wait(10);
+        // $i->selectOptionForSelect2("[data-shortname=department]",'Company');
+        $i->click('Add');
+        $i->see('management');
+    }
+    function testEmployee(SuperUser $i){
+        $i->login('management@xavoc.com');
+        $i->clickMenu('HR->Employee');
+        $i->waitPageLoad();
+        $i->see('Add Employee');
+        $i->click(['css'=>'table tbody tr td:nth-child(1) a.do-view-employee']);
+        $i->wait(2);
+        $i->click(['css'=>' a.#tab-official']);
+        $i->wait(2);
+        $i->click(['css'=>' a.#tab-activity']);
+        $i->wait(2);
+        $i->click(['css'=>' a.#tab-documents']);
+    }
+    
+    function testEmployeeMovement(SuperUser $i){
+        $i->login('management@xavoc.com');
+        $i->clickMenu('HR->Employee Movement');
+        $i->waitPageLoad();
+        $i->see('Employee Movement');
+        
+    }
+    function testUser(SuperUser $i){
+        $i->login('management@xavoc.com');
+        $i->clickMenu('HR->User');
+        $i->waitPageLoad();
+        $i->see('Add User');
+    }
+    function testAffiliate(SuperUser $i){
+        $i->login('management@xavoc.com');
+        $i->clickMenu('HR->Affiliate');
+        $i->waitPageLoad();
+        $i->see('Add Affiliate');
     }
 
 

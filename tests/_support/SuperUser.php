@@ -68,16 +68,16 @@ class SuperUser extends \Codeception\Actor
     public function changeACL($post, $document,$acl_array,$allow_add=true)
     {
         $i = $this;
-        $i->click('HR');
-        $i->click('ACL');
+        $i->clickMenu('HR->ACL');
         $i->waitForPageLoad();
+        $i->see('Access Control Management');
         $i->selectOptionForSelect2("[data-shortname=post]",$post);
-        $i->wait(2);
+        $i->wait(10);
         $i->selectOptionForSelect2("[data-shortname=document_type]",$document);
-        $i->wait(2);
+        $i->wait(10);
         $i->click('Go');
         $i->waitForText('Allow Add');
-        $i->wait(10);
+        $i->wait(20);
     }
 
     function clickMenu($menu){
