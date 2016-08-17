@@ -1,38 +1,21 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : server
- Source Server Type    : MySQL
- Source Server Version : 50624
- Source Host           : 192.168.1.101
- Source Database       : xepan2
+ Source Server         : DO(Root)
+ Source Server Type    : MariaDB
+ Source Server Version : 100025
+ Source Host           : epan.in
+ Source Database       : demo
 
- Target Server Type    : MySQL
- Target Server Version : 50624
+ Target Server Type    : MariaDB
+ Target Server Version : 100025
  File Encoding         : utf-8
 
- Date: 08/13/2016 15:12:14 PM
+ Date: 08/16/2016 16:12:18 PM
 */
 
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
-
--- ----------------------------
---  Table structure for `IP2LOCATION-LITE-DB11`
--- ----------------------------
-DROP TABLE IF EXISTS `IP2LOCATION-LITE-DB11`;
-CREATE TABLE `IP2LOCATION-LITE-DB11` (
-  `ip_from` int(11) DEFAULT NULL,
-  `ip_to` int(11) DEFAULT NULL,
-  `country_code` varchar(5) DEFAULT NULL,
-  `country` varchar(255) DEFAULT NULL,
-  `state` varchar(255) DEFAULT NULL,
-  `city` varchar(255) DEFAULT NULL,
-  `latitude` varchar(255) DEFAULT NULL,
-  `longitude` float DEFAULT NULL,
-  `zip_code` varchar(255) DEFAULT NULL,
-  `time_zone` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `account_balance_sheet`
@@ -50,7 +33,7 @@ CREATE TABLE `account_balance_sheet` (
   `created_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `account_group`
@@ -71,7 +54,7 @@ CREATE TABLE `account_group` (
   KEY `parent_group_id` (`parent_group_id`) USING BTREE,
   KEY `root_group_id` (`root_group_id`) USING BTREE,
   FULLTEXT KEY `quick_search` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `account_transaction`
@@ -93,7 +76,7 @@ CREATE TABLE `account_transaction` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `transaction_type_id` (`transaction_type_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `account_transaction_row`
@@ -114,7 +97,7 @@ CREATE TABLE `account_transaction_row` (
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `transaction_id` (`transaction_id`) USING BTREE,
   KEY `ledger_id` (`ledger_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `account_transaction_types`
@@ -129,7 +112,7 @@ CREATE TABLE `account_transaction_types` (
   `Default_Narration` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `acl`
@@ -146,7 +129,14 @@ CREATE TABLE `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=221 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `acl`
+-- ----------------------------
+BEGIN;
+INSERT INTO `acl` VALUES ('212', '3', '2391', null, '[]', '1', 'xepan\\commerce'), ('213', '3', '2391', null, '[]', '1', 'xepan\\base'), ('214', '3', '2391', null, '[]', '1', 'xepan\\hr'), ('215', '3', '2391', null, '[]', '1', 'xepan\\projects'), ('216', '3', '2391', null, '[]', '1', 'xepan\\projects'), ('217', '3', '2391', null, '[]', '1', 'xepan\\commerce'), ('218', '3', '2391', null, '[]', '1', 'xepan\\marketing'), ('219', '3', '2391', 'Post', '[]', '1', 'xepan\\hr'), ('220', '3', '2391', 'Employee', '[]', '1', 'xepan\\hr');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `activity`
@@ -169,7 +159,14 @@ CREATE TABLE `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2227 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=366 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `activity`
+-- ----------------------------
+BEGIN;
+INSERT INTO `activity` VALUES ('363', '3', '626', '626', null, 'Task Assigned', null, '2016-06-24 09:49:10', '[\"626\"]', 'Task Assigend to you : Base Application Documentation', null), ('364', '3', '626', '626', '291', 'Task Completed', null, '2016-06-24 09:49:19', '[\"626\"]', 'Task Completed : Base Application Documentation', null), ('365', '3', '626', '626', null, 'Task Assigned', null, '2016-06-24 09:50:33', '[\"626\"]', 'Task Assigend to you : Project Application Documentation', null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `affiliate`
@@ -180,7 +177,7 @@ CREATE TABLE `affiliate` (
   `narration` text,
   `contact_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `application`
@@ -193,7 +190,14 @@ CREATE TABLE `application` (
   `user_installable` tinyint(4) DEFAULT '1',
   `default_currency_price` double(8,4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `application`
+-- ----------------------------
+BEGIN;
+INSERT INTO `application` VALUES ('11', 'communication', 'xepan\\communication', '1', null), ('12', 'hr', 'xepan\\hr', '1', null), ('13', 'projects', 'xepan\\projects', '1', null), ('14', 'marketing', 'xepan\\marketing', '1', null), ('15', 'accounts', 'xepan\\accounts', '1', null), ('16', 'commerce', 'xepan\\commerce', '1', null), ('17', 'production', 'xepan\\production', '1', null), ('18', 'crm', 'xepan\\crm', '1', null), ('19', 'cms', 'xepan\\cms', '1', null), ('20', 'blog', 'xepan\\blog', '1', null), ('21', 'epanservices', 'xepan\\epanservices', '1', null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `attachment`
@@ -206,7 +210,7 @@ CREATE TABLE `attachment` (
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `file_id` (`file_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `blog_comment`
@@ -289,7 +293,7 @@ CREATE TABLE `campaign` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `document_id` (`document_id`),
   FULLTEXT KEY `search_string` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `campaign_category_association`
@@ -302,7 +306,7 @@ CREATE TABLE `campaign_category_association` (
   PRIMARY KEY (`id`),
   KEY `marketing_category_id` (`marketing_category_id`) USING BTREE,
   KEY `campaign_id` (`campaign_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `campaign_socialuser_association`
@@ -315,7 +319,7 @@ CREATE TABLE `campaign_socialuser_association` (
   PRIMARY KEY (`id`),
   KEY `social_user_id` (`socialuser_id`) USING BTREE,
   KEY `campaign_id` (`campaign_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `category`
@@ -338,7 +342,7 @@ CREATE TABLE `category` (
   KEY `document_id` (`document_id`),
   KEY `parent_category_id` (`parent_category_id`),
   KEY `cat_image_id` (`cat_image_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `category_item_association`
@@ -352,7 +356,7 @@ CREATE TABLE `category_item_association` (
   KEY `item_document_id` (`item_id`,`category_id`),
   KEY `item_id` (`item_id`) USING BTREE,
   KEY `category_id` (`category_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `cms_editors`
@@ -364,7 +368,14 @@ CREATE TABLE `cms_editors` (
   `can_edit_template` tinyint(4) DEFAULT NULL,
   `can_edit_page_content` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `cms_editors`
+-- ----------------------------
+BEGIN;
+INSERT INTO `cms_editors` VALUES ('2', '11', '1', '1');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `comments`
@@ -382,7 +393,7 @@ CREATE TABLE `comments` (
   PRIMARY KEY (`id`),
   KEY `communication_id` (`communication_id`) USING BTREE,
   KEY `ticket_id` (`ticket_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `communication`
@@ -419,7 +430,7 @@ CREATE TABLE `communication` (
   PRIMARY KEY (`id`),
   KEY `related_document_id` (`related_document_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=4822 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `communication_attachment`
@@ -432,7 +443,7 @@ CREATE TABLE `communication_attachment` (
   PRIMARY KEY (`id`),
   KEY `communication_id` (`communication_id`) USING BTREE,
   KEY `file_id` (`file_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=435 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `communication_sms_setting`
@@ -451,7 +462,7 @@ CREATE TABLE `communication_sms_setting` (
   `sms_postfix` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `contact`
@@ -486,7 +497,14 @@ CREATE TABLE `contact` (
   KEY `image_id` (`image_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`search_string`),
   CONSTRAINT `fk_epan_id` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=639 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=627 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `contact`
+-- ----------------------------
+BEGIN;
+INSERT INTO `contact` VALUES ('626', '3', 'Super', 'User', 'Employee', 'Active', null, null, null, null, null, null, null, null, null, '11', '2016-06-23 09:54:14', '2016-06-24 09:51:47', '0', '   365  2016-06-23      Super User', null, null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `contact_info`
@@ -503,7 +521,7 @@ CREATE TABLE `contact_info` (
   `contact_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1251 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `content`
@@ -524,7 +542,14 @@ CREATE TABLE `content` (
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `marketing_category_id` (`marketing_category_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `content`
+-- ----------------------------
+BEGIN;
+INSERT INTO `content` VALUES ('40', 'No Content', 'Empty', '2393', '2392', '0', '', 'No Content', 'xavoc.com', '', null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `country`
@@ -538,7 +563,7 @@ CREATE TABLE `country` (
   `status` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=247 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `currency`
@@ -554,7 +579,14 @@ CREATE TABLE `currency` (
   `fractional_part` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1816 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1817 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `currency`
+-- ----------------------------
+BEGIN;
+INSERT INTO `currency` VALUES ('2394', null, 'Default Currency', '1', '1816', null, null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `custom_account_entries_templates`
@@ -569,7 +601,7 @@ CREATE TABLE `custom_account_entries_templates` (
   `unique_trnasaction_template_code` varchar(255) DEFAULT NULL,
   `is_system_default` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `custom_account_entries_templates_transaction_row`
@@ -602,7 +634,7 @@ CREATE TABLE `custom_account_entries_templates_transactions` (
   `template_id` int(11) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `custom_form`
@@ -621,7 +653,7 @@ CREATE TABLE `custom_form` (
   `email_subject` text,
   `emailsetting_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `custom_form_field`
@@ -638,7 +670,7 @@ CREATE TABLE `custom_form_field` (
   `type` varchar(255) DEFAULT NULL,
   `auto_reply` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `custom_form_submission`
@@ -675,7 +707,7 @@ CREATE TABLE `customer` (
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`),
   KEY `currency_id` (`currency_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `customfield_association`
@@ -694,7 +726,7 @@ CREATE TABLE `customfield_association` (
   KEY `item_id` (`item_id`) USING BTREE,
   KEY `customfield_generic_id` (`customfield_generic_id`) USING BTREE,
   KEY `department_id` (`department_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `customfield_generic`
@@ -710,7 +742,7 @@ CREATE TABLE `customfield_generic` (
   `created_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `sequence_order` (`sequence_order`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `customfield_value`
@@ -724,7 +756,7 @@ CREATE TABLE `customfield_value` (
   `highlight_it` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `itemcustomassociation_id` (`customfield_association_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `department`
@@ -742,6 +774,13 @@ CREATE TABLE `department` (
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Records of `department`
+-- ----------------------------
+BEGIN;
+INSERT INTO `department` VALUES ('2390', 'Company', '1', '1', '0', '36');
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `designer_image_category`
 -- ----------------------------
 DROP TABLE IF EXISTS `designer_image_category`;
@@ -754,7 +793,7 @@ CREATE TABLE `designer_image_category` (
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `designer_images`
@@ -769,7 +808,7 @@ CREATE TABLE `designer_images` (
   PRIMARY KEY (`id`),
   KEY `designer_category_id` (`designer_category_id`) USING BTREE,
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `discount_voucher`
@@ -841,7 +880,14 @@ CREATE TABLE `document` (
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`),
   CONSTRAINT `fk_document_epan1` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2438 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2395 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `document`
+-- ----------------------------
+BEGIN;
+INSERT INTO `document` VALUES ('2390', '3', 'Department', null, null, '2016-06-23 09:54:14', null, '2016-06-23 09:54:14', 'Active', '  Company'), ('2391', '3', 'Post', null, null, '2016-06-23 09:54:14', null, '2016-06-23 09:54:14', 'Active', '  CEO  '), ('2392', '3', 'MarketingCategory', null, null, '2016-06-23 09:54:14', null, '2016-06-23 09:54:14', null, '  default MarketingCategory '), ('2393', '3', 'Newsletter', null, null, '2016-06-23 09:54:14', null, '2016-06-23 09:54:14', 'Draft', '  Empty Newsletter No Content No Content Draft'), ('2394', '3', 'Currency', null, null, '2016-06-23 09:54:14', null, '2016-06-23 09:54:14', 'Active', '  Default Currency Currency Active');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `emails`
@@ -853,7 +899,7 @@ CREATE TABLE `emails` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `emailsetting`
@@ -902,7 +948,7 @@ CREATE TABLE `emailsetting` (
   `signature` text,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee`
@@ -926,7 +972,14 @@ CREATE TABLE `employee` (
   KEY `fk_employee_contact1_idx` (`contact_id`),
   KEY `fk_employee_post1_idx` (`post_id`),
   KEY `department_id` (`department_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `employee`
+-- ----------------------------
+BEGIN;
+INSERT INTO `employee` VALUES ('626', '2391', '2390', '365', '23', null, '2016-06-23', null, null, null, null, null, null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -940,7 +993,7 @@ CREATE TABLE `employee_documents` (
   PRIMARY KEY (`id`),
   KEY `employee_document_id` (`employee_document_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_movement`
@@ -956,7 +1009,14 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=442 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=253 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `employee_movement`
+-- ----------------------------
+BEGIN;
+INSERT INTO `employee_movement` VALUES ('248', '626', '2016-06-23 10:05:18', 'Attandance', 'In', null, null), ('249', '626', '2016-06-24 03:52:01', 'Attandance', 'In', null, null), ('250', '626', '2016-06-28 09:22:10', 'Attandance', 'In', null, null), ('251', '626', '2016-06-29 12:56:50', 'Attandance', 'In', null, null), ('252', '626', '2016-08-05 08:23:40', 'Attandance', 'In', null, null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `epan`
@@ -979,7 +1039,14 @@ CREATE TABLE `epan` (
   PRIMARY KEY (`id`),
   KEY `fk_epan_category_id` (`epan_category_id`),
   CONSTRAINT `fk_epan_category_id` FOREIGN KEY (`epan_category_id`) REFERENCES `epan_category` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `epan`
+-- ----------------------------
+BEGIN;
+INSERT INTO `epan` VALUES ('3', '2', 'demo', 'Trial', null, '2016-06-23 09:54:14', 'Epan', null, null, null, null, null, '3');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `epan_category`
@@ -989,7 +1056,14 @@ CREATE TABLE `epan_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `epan_category`
+-- ----------------------------
+BEGIN;
+INSERT INTO `epan_category` VALUES ('2', 'default');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `epan_config`
@@ -1006,6 +1080,13 @@ CREATE TABLE `epan_config` (
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Records of `epan_config`
+-- ----------------------------
+BEGIN;
+INSERT INTO `epan_config` VALUES ('25', '3', 'RESET_PASSWORD_SUBJECT_FOR_ADMIN', 'Password Reset Request', 'communication'), ('26', '3', 'RESET_PASSWORD_BODY_FOR_ADMIN', '<style type=\"text/css\">\n  <!--\n  /* CLIENT-SPECIFIC STYLES */\n  body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */\n  table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */\n  img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */\n  /* RESET STYLES */\n  img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}\n  table{border-collapse: collapse !important;}\n  body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}\n  /* iOS BLUE LINKS */\n  a[x-apple-data-detectors] {\n  color: inherit !important;\n  text-decoration: none !important;\n  font-size: inherit !important;\n  font-family: inherit !important;\n  font-weight: inherit !important;\n  line-height: inherit !important;\n  }\n  /* MOBILE STYLES */\n  @media screen and (max-width: 525px) {\n  /* ALLOWS FOR FLUID TABLES */\n  .wrapper {\n  width: 100% !important;\n  max-width: 100% !important;\n  }\n  /* ADJUSTS LAYOUT OF LOGO IMAGE */\n  .logo img {\n  margin: 0 auto !important;\n  }\n  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */\n  .mobile-hide {\n  display: none !important;\n  }\n  .img-max {\n  max-width: 100% !important;\n  width: 100% !important;\n  height: auto !important;\n  }\n  /* FULL-WIDTH TABLES */\n  .responsive-table {\n  width: 100% !important;\n  }\n  /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */\n  .padding {\n  padding: 10px 5% 15px 5% !important;\n  }\n  .padding-meta {\n  padding: 30px 5% 0px 5% !important;\n  text-align: center;\n  }\n  .padding-copy {\n  padding: 10px 5% 10px 5% !important;\n  text-align: center;\n  }\n  .no-padding {\n  padding: 0 !important;\n  }\n  .section-padding {\n  padding: 50px 15px 50px 15px !important;\n  }\n  /* ADJUST BUTTONS ON MOBILE */\n  .mobile-button-container {\n  margin: 0 auto;\n  width: 100% !important;\n  }\n  .mobile-button {\n  padding: 15px !important;\n  border: 0 !important;\n  font-size: 16px !important;\n  display: block !important;\n  }\n  }\n  /* ANDROID CENTER FIX */\n  div[style*=\"margin: 16px 0;\"] { margin: 0 !important; }\n  -->\n</style>\n<!--if gte mso 12\nstyle(type=\'text/css\').\n  .mso-right {\n  padding-left: 20px;\n  }\n-->\n<!-- HIDDEN PREHEADER TEXT-->\n<div style=\"display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;\"></div>\n<!-- HEADER-->\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n  <tbody>\n    <tr style=\"height: 165px;\">\n      <td style=\"height: 165px;\" align=\"center\" bgcolor=\"#34495E\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <table style=\"max-width: 500px;\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"wrapper\">\n          <tbody>\n            <tr>\n              <td style=\"padding: 15px 0;\" align=\"center\" valign=\"top\" class=\"logo\"><a href=\"http://litmus.com\" target=\"_blank\"><img caption=\"false\" alt=\"Logo\" src=\"blob:http://192.168.1.101/da82434c-a7ab-4271-b88d-42173fb7e58e\" style=\"display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;\" border=\"0\" height=\"120\" width=\"180\"/></a></td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n    <tr style=\"height: 10px;\">\n      <td style=\"padding: 70px 15px; height: 10px;\" align=\"center\" bgcolor=\"#ffffff\" class=\"section-padding\">\n        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"500\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td>\n                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                  <tbody>\n                    <tr>\n                      <td>\n                        <!-- COPY-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;\" align=\"center\" class=\"padding-copy\">Password Reset Request</td>\n                            </tr>\n                            <tr>\n                              <td style=\"padding: 20px 0px 0px; font-size: 16px; line-height: 25px; font-family: Helvetica,Arial,sans-serif; color: #666666; text-align: left;\" align=\"center\" class=\"padding-copy\">{$username},<br/>We received a request to reset the password for your account.<br/>Here\'s a one-time login link for you to use to access your account and set a new password. Click on the below button to proceed.  <br/>This link will expire after a day and nothing will happen if it\'s not used.<br/>See you!</td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td align=\"center\">\n                        <!-- BULLETPROOF BUTTON-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"padding-top: 25px;\" align=\"center\" class=\"padding\">\n                                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mobile-button-container\">\n                                  <tbody>\n                                    <tr>\n                                      <td style=\"border-radius: 3px;\" align=\"center\" bgcolor=\"#256F9C\"><a href=\"{$url}\" target=\"_blank\" style=\"font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #256F9C; display: inline-block;\" class=\"mobile-button\">Click Here →</a></td>\n                                    </tr>\n                                  </tbody>\n                                </table>\n                              </td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                  </tbody>\n                </table>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </td>\n    </tr>\n    <tr style=\"height: 20px;\">\n      <td style=\"padding: 20px 0px; height: 20px;\" align=\"center\" bgcolor=\"#ffffff\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <!-- UNSUBSCRIBE COPY-->\n        <table style=\"max-width: 500px;\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td style=\"font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color: #666666;\" align=\"center\">+91-9782300801,  +91-8875191258 <a href=\"mailto:support@epan.in|\">support@epan.in</a> <a href=\"mailto:info@epan.in\">info@epan.in</a><br/>A Xavoc Technocrats Pvt. Ltd. Product</td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n  </tbody>\n</table>', 'communication'), ('27', '3', 'UPDATE_PASSWORD_SUBJECT_FOR_ADMIN', 'Password Update', 'communication'), ('28', '3', 'UPDATE_PASSWORD_BODY_FOR_ADMIN', '<style type=\"text/css\">\n  <!--\n  /* CLIENT-SPECIFIC STYLES */\n  body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */\n  table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */\n  img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */\n  /* RESET STYLES */\n  img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}\n  table{border-collapse: collapse !important;}\n  body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}\n  /* iOS BLUE LINKS */\n  a[x-apple-data-detectors] {\n  color: inherit !important;\n  text-decoration: none !important;\n  font-size: inherit !important;\n  font-family: inherit !important;\n  font-weight: inherit !important;\n  line-height: inherit !important;\n  }\n  /* MOBILE STYLES */\n  @media screen and (max-width: 525px) {\n  /* ALLOWS FOR FLUID TABLES */\n  .wrapper {\n  width: 100% !important;\n  max-width: 100% !important;\n  }\n  /* ADJUSTS LAYOUT OF LOGO IMAGE */\n  .logo img {\n  margin: 0 auto !important;\n  }\n  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */\n  .mobile-hide {\n  display: none !important;\n  }\n  .img-max {\n  max-width: 100% !important;\n  width: 100% !important;\n  height: auto !important;\n  }\n  /* FULL-WIDTH TABLES */\n  .responsive-table {\n  width: 100% !important;\n  }\n  /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */\n  .padding {\n  padding: 10px 5% 15px 5% !important;\n  }\n  .padding-meta {\n  padding: 30px 5% 0px 5% !important;\n  text-align: center;\n  }\n  .padding-copy {\n  padding: 10px 5% 10px 5% !important;\n  text-align: center;\n  }\n  .no-padding {\n  padding: 0 !important;\n  }\n  .section-padding {\n  padding: 50px 15px 50px 15px !important;\n  }\n  /* ADJUST BUTTONS ON MOBILE */\n  .mobile-button-container {\n  margin: 0 auto;\n  width: 100% !important;\n  }\n  .mobile-button {\n  padding: 15px !important;\n  border: 0 !important;\n  font-size: 16px !important;\n  display: block !important;\n  }\n  }\n  /* ANDROID CENTER FIX */\n  div[style*=\"margin: 16px 0;\"] { margin: 0 !important; }\n  -->\n</style>\n<!--if gte mso 12\nstyle(type=\'text/css\').\n  .mso-right {\n  padding-left: 20px;\n  }\n-->\n<!-- HIDDEN PREHEADER TEXT-->\n<div style=\"display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;\"></div>\n<!-- HEADER-->\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n  <tbody>\n    <tr style=\"height: 165px;\">\n      <td style=\"height: 165px;\" align=\"center\" bgcolor=\"#34495E\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <table style=\"max-width: 500px;\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"wrapper\">\n          <tbody>\n            <tr>\n              <td style=\"padding: 15px 0;\" align=\"center\" valign=\"top\" class=\"logo\"><a href=\"http://litmus.com\" target=\"_blank\"><img caption=\"false\" alt=\"Logo\" src=\"blob:http://192.168.1.101/da82434c-a7ab-4271-b88d-42173fb7e58e\" style=\"display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;\" border=\"0\" height=\"120\" width=\"180\"/></a></td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n    <tr style=\"height: 10px;\">\n      <td style=\"padding: 70px 15px; height: 10px;\" align=\"center\" bgcolor=\"#ffffff\" class=\"section-padding\">\n        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"500\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td>\n                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                  <tbody>\n                    <tr>\n                      <td>\n                        <!-- COPY-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;\" align=\"center\" class=\"padding-copy\">Password Updated</td>\n                            </tr>\n                            <tr>\n                              <td style=\"padding: 20px 0px 0px; font-size: 16px; line-height: 25px; font-family: Helvetica,Arial,sans-serif; color: #666666; text-align: left;\" align=\"center\" class=\"padding-copy\">Hi {$username},<br/>Your password has been successfully updated.<br/>If you are not the person who changed the password, please report it<br/>to superuser/authority and make sure to reset your password again.<br/><strong>Note: Don\'t share your password with anybody.</strong><br/><br/>Greetings!</td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td align=\"center\">\n                        <!-- BULLETPROOF BUTTON-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"padding-top: 25px;\" align=\"center\" class=\"padding\"></td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                  </tbody>\n                </table>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </td>\n    </tr>\n    <tr style=\"height: 20px;\">\n      <td style=\"padding: 20px 0px; height: 20px;\" align=\"center\" bgcolor=\"#ffffff\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <!-- UNSUBSCRIBE COPY-->\n        <table style=\"max-width: 500px;\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td style=\"font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color: #666666;\" align=\"center\">+91-9782300801,  +91-8875191258 <a href=\"mailto:support@epan.in|\">support@epan.in</a> <a href=\"mailto:info@epan.in\">info@epan.in</a><br/>A Xavoc Technocrats Pvt. Ltd. Product</td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n  </tbody>\n</table>', 'communication'), ('29', '3', 'REGISTRATION_TYPE', 'self_activated', 'communication'), ('30', '3', 'REGISTRATION_SUBJECT', 'Registration mail', 'base'), ('31', '3', 'REGISTRATION_BODY', '<style type=\"text/css\">\n  <!--\n  /* CLIENT-SPECIFIC STYLES */\n  body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */\n  table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */\n  img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */\n  /* RESET STYLES */\n  img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}\n  table{border-collapse: collapse !important;}\n  body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}\n  /* iOS BLUE LINKS */\n  a[x-apple-data-detectors] {\n  color: inherit !important;\n  text-decoration: none !important;\n  font-size: inherit !important;\n  font-family: inherit !important;\n  font-weight: inherit !important;\n  line-height: inherit !important;\n  }\n  /* MOBILE STYLES */\n  @media screen and (max-width: 525px) {\n  /* ALLOWS FOR FLUID TABLES */\n  .wrapper {\n  width: 100% !important;\n  max-width: 100% !important;\n  }\n  /* ADJUSTS LAYOUT OF LOGO IMAGE */\n  .logo img {\n  margin: 0 auto !important;\n  }\n  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */\n  .mobile-hide {\n  display: none !important;\n  }\n  .img-max {\n  max-width: 100% !important;\n  width: 100% !important;\n  height: auto !important;\n  }\n  /* FULL-WIDTH TABLES */\n  .responsive-table {\n  width: 100% !important;\n  }\n  /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */\n  .padding {\n  padding: 10px 5% 15px 5% !important;\n  }\n  .padding-meta {\n  padding: 30px 5% 0px 5% !important;\n  text-align: center;\n  }\n  .padding-copy {\n  padding: 10px 5% 10px 5% !important;\n  text-align: center;\n  }\n  .no-padding {\n  padding: 0 !important;\n  }\n  .section-padding {\n  padding: 50px 15px 50px 15px !important;\n  }\n  /* ADJUST BUTTONS ON MOBILE */\n  .mobile-button-container {\n  margin: 0 auto;\n  width: 100% !important;\n  }\n  .mobile-button {\n  padding: 15px !important;\n  border: 0 !important;\n  font-size: 16px !important;\n  display: block !important;\n  }\n  }\n  /* ANDROID CENTER FIX */\n  div[style*=\"margin: 16px 0;\"] { margin: 0 !important; }\n  -->\n</style>\n<!--if gte mso 12\nstyle(type=\'text/css\').\n  .mso-right {\n  padding-left: 20px;\n  }\n-->\n<!-- HIDDEN PREHEADER TEXT-->\n<div style=\"display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;\"></div>\n<!-- HEADER-->\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n  <tbody>\n    <tr style=\"height: 165px;\">\n      <td style=\"height: 165px;\" align=\"center\" bgcolor=\"#34495E\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <table style=\"max-width: 500px;\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"wrapper\">\n          <tbody>\n            <tr>\n              <td style=\"padding: 15px 0;\" align=\"center\" valign=\"top\" class=\"logo\"><a href=\"http://litmus.com\" target=\"_blank\"><img caption=\"false\" alt=\"Logo\" src=\"blob:http://192.168.1.101/c55f4326-1714-47eb-9fd0-2f47ee8cf798\" style=\"display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;\" border=\"0\" height=\"120\" width=\"180\"/></a></td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n    <tr style=\"height: 10px;\">\n      <td style=\"padding: 70px 15px; height: 10px;\" align=\"center\" bgcolor=\"#ffffff\" class=\"section-padding\">\n        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"500\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td>\n                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                  <tbody>\n                    <tr>\n                      <td>\n                        <!-- COPY-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;\" align=\"center\" class=\"padding-copy\">It\'s Great To Have You</td>\n                            </tr>\n                            <tr>\n                              <td style=\"padding: 20px 0px 0px; font-size: 16px; line-height: 25px; font-family: Helvetica,Arial,sans-serif; color: #666666; text-align: left;\" align=\"center\" class=\"padding-copy\">Dear member,<br/>Thank you for registering. {$email_id}! It’s great to have you in the community.<br/>Before you can take advantage of all the great features your account comes with, you’ll need to verify your email address. <br/>Click the button below to verify your email and experience the best.</td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td align=\"center\">\n                        <!-- BULLETPROOF BUTTON-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"padding-top: 25px;\" align=\"center\" class=\"padding\">\n                                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mobile-button-container\">\n                                  <tbody>\n                                    <tr>\n                                      <td style=\"border-radius: 3px;\" align=\"center\" bgcolor=\"#256F9C\"><a href=\"{$url}\" target=\"_blank\" style=\"font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #256F9C; display: inline-block;\" class=\"mobile-button\">Click Here →</a></td>\n                                    </tr>\n                                  </tbody>\n                                </table>\n                              </td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                  </tbody>\n                </table>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </td>\n    </tr>\n    <tr style=\"height: 20px;\">\n      <td style=\"padding: 20px 0px; height: 20px;\" align=\"center\" bgcolor=\"#ffffff\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <!-- UNSUBSCRIBE COPY-->\n        <table style=\"max-width: 500px;\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td style=\"font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color: #666666;\" align=\"center\">+91-9782300801,  +91-8875191258 <a href=\"mailto:support@epan.in|\">support@epan.in</a> <a href=\"mailto:info@epan.i\">info@epan.in</a><br/>A Xavoc Technocrats Pvt. Ltd. Product</td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n  </tbody>\n</table>', 'base'), ('32', '3', 'RESET_PASSWORD_SUBJECT', 'Reset password', 'communication'), ('33', '3', 'RESET_PASSWORD_BODY', '<style type=\"text/css\">\n  <!--\n  /* CLIENT-SPECIFIC STYLES */\n  body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */\n  table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */\n  img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */\n  /* RESET STYLES */\n  img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}\n  table{border-collapse: collapse !important;}\n  body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}\n  /* iOS BLUE LINKS */\n  a[x-apple-data-detectors] {\n  color: inherit !important;\n  text-decoration: none !important;\n  font-size: inherit !important;\n  font-family: inherit !important;\n  font-weight: inherit !important;\n  line-height: inherit !important;\n  }\n  /* MOBILE STYLES */\n  @media screen and (max-width: 525px) {\n  /* ALLOWS FOR FLUID TABLES */\n  .wrapper {\n  width: 100% !important;\n  max-width: 100% !important;\n  }\n  /* ADJUSTS LAYOUT OF LOGO IMAGE */\n  .logo img {\n  margin: 0 auto !important;\n  }\n  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */\n  .mobile-hide {\n  display: none !important;\n  }\n  .img-max {\n  max-width: 100% !important;\n  width: 100% !important;\n  height: auto !important;\n  }\n  /* FULL-WIDTH TABLES */\n  .responsive-table {\n  width: 100% !important;\n  }\n  /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */\n  .padding {\n  padding: 10px 5% 15px 5% !important;\n  }\n  .padding-meta {\n  padding: 30px 5% 0px 5% !important;\n  text-align: center;\n  }\n  .padding-copy {\n  padding: 10px 5% 10px 5% !important;\n  text-align: center;\n  }\n  .no-padding {\n  padding: 0 !important;\n  }\n  .section-padding {\n  padding: 50px 15px 50px 15px !important;\n  }\n  /* ADJUST BUTTONS ON MOBILE */\n  .mobile-button-container {\n  margin: 0 auto;\n  width: 100% !important;\n  }\n  .mobile-button {\n  padding: 15px !important;\n  border: 0 !important;\n  font-size: 16px !important;\n  display: block !important;\n  }\n  }\n  /* ANDROID CENTER FIX */\n  div[style*=\"margin: 16px 0;\"] { margin: 0 !important; }\n  -->\n</style>\n<!--if gte mso 12\nstyle(type=\'text/css\').\n  .mso-right {\n  padding-left: 20px;\n  }\n-->\n<!-- HIDDEN PREHEADER TEXT-->\n<div style=\"display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;\"></div>\n<!-- HEADER-->\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n  <tbody>\n    <tr style=\"height: 165px;\">\n      <td style=\"height: 165px;\" align=\"center\" bgcolor=\"#34495E\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <table style=\"max-width: 500px;\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"wrapper\">\n          <tbody>\n            <tr>\n              <td style=\"padding: 15px 0;\" align=\"center\" valign=\"top\" class=\"logo\"><a href=\"http://litmus.com\" target=\"_blank\"><img caption=\"false\" alt=\"Logo\" src=\"blob:http://192.168.1.101/da82434c-a7ab-4271-b88d-42173fb7e58e\" style=\"display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;\" border=\"0\" height=\"120\" width=\"180\"/></a></td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n    <tr style=\"height: 10px;\">\n      <td style=\"padding: 70px 15px; height: 10px;\" align=\"center\" bgcolor=\"#ffffff\" class=\"section-padding\">\n        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"500\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td>\n                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                  <tbody>\n                    <tr>\n                      <td>\n                        <!-- COPY-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;\" align=\"center\" class=\"padding-copy\">Password Reset Request</td>\n                            </tr>\n                            <tr>\n                              <td style=\"padding: 20px 0px 0px; font-size: 16px; line-height: 25px; font-family: Helvetica,Arial,sans-serif; color: #666666; text-align: left;\" align=\"center\" class=\"padding-copy\">{$username},<br/>We received a request to reset the password for your account.<br/>Here\'s a one-time login link for you to use to access your account and set a new password. Click on the below button to proceed.  <br/>This link will expire after a day and nothing will happen if it\'s not used.<br/>See you!</td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td align=\"center\">\n                        <!-- BULLETPROOF BUTTON-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"padding-top: 25px;\" align=\"center\" class=\"padding\">\n                                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mobile-button-container\">\n                                  <tbody>\n                                    <tr>\n                                      <td style=\"border-radius: 3px;\" align=\"center\" bgcolor=\"#256F9C\"><a href=\"{$url}\" target=\"_blank\" style=\"font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #256F9C; display: inline-block;\" class=\"mobile-button\">Click Here →</a></td>\n                                    </tr>\n                                  </tbody>\n                                </table>\n                              </td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                  </tbody>\n                </table>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </td>\n    </tr>\n    <tr style=\"height: 20px;\">\n      <td style=\"padding: 20px 0px; height: 20px;\" align=\"center\" bgcolor=\"#ffffff\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <!-- UNSUBSCRIBE COPY-->\n        <table style=\"max-width: 500px;\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td style=\"font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color: #666666;\" align=\"center\">+91-9782300801,  +91-8875191258 <a href=\"mailto:support@epan.in|\">support@epan.in</a> <a href=\"mailto:info@epan.i\">info@epan.in</a><br/>A Xavoc Technocrats Pvt. Ltd. Product</td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n  </tbody>\n</table>', 'communication'), ('34', '3', 'VERIFICATIONE_MAIL_SUBJECT', 'Account validated', 'communication'), ('35', '3', 'VERIFICATIONE_MAIL_BODY', '<style type=\"text/css\">\n  <!--\n  /* CLIENT-SPECIFIC STYLES */\n  body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */\n  table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */\n  img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */\n  /* RESET STYLES */\n  img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}\n  table{border-collapse: collapse !important;}\n  body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}\n  /* iOS BLUE LINKS */\n  a[x-apple-data-detectors] {\n  color: inherit !important;\n  text-decoration: none !important;\n  font-size: inherit !important;\n  font-family: inherit !important;\n  font-weight: inherit !important;\n  line-height: inherit !important;\n  }\n  /* MOBILE STYLES */\n  @media screen and (max-width: 525px) {\n  /* ALLOWS FOR FLUID TABLES */\n  .wrapper {\n  width: 100% !important;\n  max-width: 100% !important;\n  }\n  /* ADJUSTS LAYOUT OF LOGO IMAGE */\n  .logo img {\n  margin: 0 auto !important;\n  }\n  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */\n  .mobile-hide {\n  display: none !important;\n  }\n  .img-max {\n  max-width: 100% !important;\n  width: 100% !important;\n  height: auto !important;\n  }\n  /* FULL-WIDTH TABLES */\n  .responsive-table {\n  width: 100% !important;\n  }\n  /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */\n  .padding {\n  padding: 10px 5% 15px 5% !important;\n  }\n  .padding-meta {\n  padding: 30px 5% 0px 5% !important;\n  text-align: center;\n  }\n  .padding-copy {\n  padding: 10px 5% 10px 5% !important;\n  text-align: center;\n  }\n  .no-padding {\n  padding: 0 !important;\n  }\n  .section-padding {\n  padding: 50px 15px 50px 15px !important;\n  }\n  /* ADJUST BUTTONS ON MOBILE */\n  .mobile-button-container {\n  margin: 0 auto;\n  width: 100% !important;\n  }\n  .mobile-button {\n  padding: 15px !important;\n  border: 0 !important;\n  font-size: 16px !important;\n  display: block !important;\n  }\n  }\n  /* ANDROID CENTER FIX */\n  div[style*=\"margin: 16px 0;\"] { margin: 0 !important; }\n  -->\n</style>\n<!--if gte mso 12\nstyle(type=\'text/css\').\n  .mso-right {\n  padding-left: 20px;\n  }\n-->\n<!-- HIDDEN PREHEADER TEXT-->\n<div style=\"display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;\"></div>\n<!-- HEADER-->\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n  <tbody>\n    <tr style=\"height: 165px;\">\n      <td style=\"height: 165px;\" align=\"center\" bgcolor=\"#34495E\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <table style=\"max-width: 500px;\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"wrapper\">\n          <tbody>\n            <tr>\n              <td style=\"padding: 15px 0;\" align=\"center\" valign=\"top\" class=\"logo\"><a href=\"http://litmus.com\" target=\"_blank\"><img caption=\"false\" alt=\"Logo\" src=\"blob:http://192.168.1.101/da82434c-a7ab-4271-b88d-42173fb7e58e\" style=\"display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;\" border=\"0\" height=\"120\" width=\"180\"/></a></td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n    <tr style=\"height: 10px;\">\n      <td style=\"padding: 70px 15px; height: 10px;\" align=\"center\" bgcolor=\"#ffffff\" class=\"section-padding\">\n        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"500\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td>\n                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                  <tbody>\n                    <tr>\n                      <td>\n                        <!-- COPY-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;\" align=\"center\" class=\"padding-copy\">Account Validated</td>\n                            </tr>\n                            <tr>\n                              <td style=\"padding: 20px 0px 0px; font-size: 16px; line-height: 25px; font-family: Helvetica,Arial,sans-serif; color: #666666; text-align: left;\" align=\"center\" class=\"padding-copy\">{$username},<br/>Your account has been successfully validated.<br/>Now you can enjoy the services by just logging in your account.<br/>Don\'t forgot to try before you buy a service ! We provide <strong>14 day free</strong><strong>trial.<br/></strong><br/>Greetings!</td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td align=\"center\">\n                        <!-- BULLETPROOF BUTTON-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"padding-top: 25px;\" align=\"center\" class=\"padding\"></td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                  </tbody>\n                </table>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </td>\n    </tr>\n    <tr style=\"height: 20px;\">\n      <td style=\"padding: 20px 0px; height: 20px;\" align=\"center\" bgcolor=\"#ffffff\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <!-- UNSUBSCRIBE COPY-->\n        <table style=\"max-width: 500px;\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td style=\"font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color: #666666;\" align=\"center\">+91-9782300801,  +91-8875191258 <a href=\"mailto:support@epan.in|\">support@epan.in</a> <a href=\"mailto:info@epan.in\">info@epan.in</a><br/>A Xavoc Technocrats Pvt. Ltd. Product</td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n  </tbody>\n</table>', 'communication'), ('36', '3', 'UPDATE_PASSWORD_SUBJECT', 'Password updated', 'communication'), ('37', '3', 'UPDATE_PASSWORD_BODY', '<style type=\"text/css\">\n  <!--\n  /* CLIENT-SPECIFIC STYLES */\n  body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */\n  table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */\n  img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */\n  /* RESET STYLES */\n  img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}\n  table{border-collapse: collapse !important;}\n  body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}\n  /* iOS BLUE LINKS */\n  a[x-apple-data-detectors] {\n  color: inherit !important;\n  text-decoration: none !important;\n  font-size: inherit !important;\n  font-family: inherit !important;\n  font-weight: inherit !important;\n  line-height: inherit !important;\n  }\n  /* MOBILE STYLES */\n  @media screen and (max-width: 525px) {\n  /* ALLOWS FOR FLUID TABLES */\n  .wrapper {\n  width: 100% !important;\n  max-width: 100% !important;\n  }\n  /* ADJUSTS LAYOUT OF LOGO IMAGE */\n  .logo img {\n  margin: 0 auto !important;\n  }\n  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */\n  .mobile-hide {\n  display: none !important;\n  }\n  .img-max {\n  max-width: 100% !important;\n  width: 100% !important;\n  height: auto !important;\n  }\n  /* FULL-WIDTH TABLES */\n  .responsive-table {\n  width: 100% !important;\n  }\n  /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */\n  .padding {\n  padding: 10px 5% 15px 5% !important;\n  }\n  .padding-meta {\n  padding: 30px 5% 0px 5% !important;\n  text-align: center;\n  }\n  .padding-copy {\n  padding: 10px 5% 10px 5% !important;\n  text-align: center;\n  }\n  .no-padding {\n  padding: 0 !important;\n  }\n  .section-padding {\n  padding: 50px 15px 50px 15px !important;\n  }\n  /* ADJUST BUTTONS ON MOBILE */\n  .mobile-button-container {\n  margin: 0 auto;\n  width: 100% !important;\n  }\n  .mobile-button {\n  padding: 15px !important;\n  border: 0 !important;\n  font-size: 16px !important;\n  display: block !important;\n  }\n  }\n  /* ANDROID CENTER FIX */\n  div[style*=\"margin: 16px 0;\"] { margin: 0 !important; }\n  -->\n</style>\n<!--if gte mso 12\nstyle(type=\'text/css\').\n  .mso-right {\n  padding-left: 20px;\n  }\n-->\n<!-- HIDDEN PREHEADER TEXT-->\n<div style=\"display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;\"></div>\n<!-- HEADER-->\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n  <tbody>\n    <tr style=\"height: 165px;\">\n      <td style=\"height: 165px;\" align=\"center\" bgcolor=\"#34495E\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <table style=\"max-width: 500px;\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"wrapper\">\n          <tbody>\n            <tr>\n              <td style=\"padding: 15px 0;\" align=\"center\" valign=\"top\" class=\"logo\"><a href=\"http://litmus.com\" target=\"_blank\"><img caption=\"false\" alt=\"Logo\" src=\"blob:http://192.168.1.101/da82434c-a7ab-4271-b88d-42173fb7e58e\" style=\"display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;\" border=\"0\" height=\"120\" width=\"180\"/></a></td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n    <tr style=\"height: 10px;\">\n      <td style=\"padding: 70px 15px; height: 10px;\" align=\"center\" bgcolor=\"#ffffff\" class=\"section-padding\">\n        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"500\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td>\n                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                  <tbody>\n                    <tr>\n                      <td>\n                        <!-- COPY-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;\" align=\"center\" class=\"padding-copy\">Password Updated</td>\n                            </tr>\n                            <tr>\n                              <td style=\"padding: 20px 0px 0px; font-size: 16px; line-height: 25px; font-family: Helvetica,Arial,sans-serif; color: #666666; text-align: left;\" align=\"center\" class=\"padding-copy\">Hi {$username},<br/>Your password has been successfully updated.<br/>If you are not the person who changed the password, please report it<br/>to superuser/authority and make sure to reset your password again.<br/><strong>Note: Don\'t share your password with anybody.</strong><br/><br/>Greetings!</td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td align=\"center\">\n                        <!-- BULLETPROOF BUTTON-->\n                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n                          <tbody>\n                            <tr>\n                              <td style=\"padding-top: 25px;\" align=\"center\" class=\"padding\"></td>\n                            </tr>\n                          </tbody>\n                        </table>\n                      </td>\n                    </tr>\n                  </tbody>\n                </table>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </td>\n    </tr>\n    <tr style=\"height: 20px;\">\n      <td style=\"padding: 20px 0px; height: 20px;\" align=\"center\" bgcolor=\"#ffffff\">\n        <!--if (gte mso 9)|(IE)\n        table(align=\'center\', border=\'0\', cellspacing=\'0\', cellpadding=\'0\', width=\'500\')\n          tr\n            td(align=\'center\', valign=\'top\', width=\'500\')\n        -->\n        <!-- UNSUBSCRIBE COPY-->\n        <table style=\"max-width: 500px;\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"responsive-table\">\n          <tbody>\n            <tr>\n              <td style=\"font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color: #666666;\" align=\"center\">+91-9782300801,  +91-8875191258 <a href=\"mailto:support@epan.in|\">support@epan.in</a> <a href=\"mailto:info@epan.i\">info@epan.in</a><br/>A Xavoc Technocrats Pvt. Ltd. Product</td>\n            </tr>\n          </tbody>\n        </table>\n        <!--if (gte mso 9)|(IE)-->\n      </td>\n    </tr>\n  </tbody>\n</table>', 'communication'), ('38', '3', 'DEFAULT_CURRENCY_ID', '2394', 'accounts');
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `experience`
 -- ----------------------------
 DROP TABLE IF EXISTS `experience`;
@@ -1020,7 +1101,7 @@ CREATE TABLE `experience` (
   `duration` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `filestore_file`
@@ -1037,7 +1118,7 @@ CREATE TABLE `filestore_file` (
   PRIMARY KEY (`id`),
   KEY `fk_filestore_file_filestore_type1_idx` (`filestore_type_id`),
   KEY `fk_filestore_file_filestore_volume1_idx` (`filestore_volume_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=439 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `filestore_image`
@@ -1050,7 +1131,7 @@ CREATE TABLE `filestore_image` (
   PRIMARY KEY (`id`),
   KEY `fk_filestore_image_filestore_file1_idx` (`original_file_id`),
   KEY `fk_filestore_image_filestore_file2_idx` (`thumb_file_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `filestore_type`
@@ -1063,7 +1144,7 @@ CREATE TABLE `filestore_type` (
   `extension` varchar(5) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Filename extension',
   `allow` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `filestore_volume`
@@ -1078,7 +1159,14 @@ CREATE TABLE `filestore_volume` (
   `stored_files_cnt` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Approximate count of stored files',
   `enabled` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Volume enabled?',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+--  Records of `filestore_volume`
+-- ----------------------------
+BEGIN;
+INSERT INTO `filestore_volume` VALUES ('2', 'upload', '', '0', '0', '0', '1');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `follower_task_association`
@@ -1091,7 +1179,7 @@ CREATE TABLE `follower_task_association` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `installed_application`
@@ -1108,7 +1196,14 @@ CREATE TABLE `installed_application` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `application_id` (`application_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `installed_application`
+-- ----------------------------
+BEGIN;
+INSERT INTO `installed_application` VALUES ('11', '3', '12', null, '2016-06-23 09:54:14', '2016-06-23 09:54:14', '1'), ('12', '3', '11', null, '2016-06-23 09:54:14', '2016-06-23 09:54:14', '1'), ('13', '3', '13', null, '2016-06-23 09:54:14', '2016-06-23 09:54:14', '1'), ('14', '3', '14', null, '2016-06-23 09:54:14', '2016-06-23 09:54:14', '1'), ('15', '3', '15', null, '2016-06-23 09:54:14', '2016-06-23 09:54:14', '1'), ('16', '3', '16', null, '2016-06-23 09:54:14', '2016-06-23 09:54:14', '1'), ('17', '3', '17', null, '2016-06-23 09:54:14', '2016-06-23 09:54:14', '1'), ('18', '3', '18', null, '2016-06-23 09:54:14', '2016-06-23 09:54:14', '1'), ('19', '3', '19', null, '2016-06-23 09:54:14', '2016-06-23 09:54:14', '1'), ('20', '3', '20', null, '2016-06-23 09:54:14', '2016-06-23 09:54:14', '1');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `invoice_transaction_association`
@@ -1126,6 +1221,23 @@ CREATE TABLE `invoice_transaction_association` (
   KEY `transaction_id` (`transaction_id`) USING BTREE,
   KEY `saleinvoice_id` (`salesinvoice_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `IP2LOCATION-LITE-DB11`
+-- ----------------------------
+DROP TABLE IF EXISTS `IP2LOCATION-LITE-DB11`;
+CREATE TABLE `IP2LOCATION-LITE-DB11` (
+  `ip_from` int(11) DEFAULT NULL,
+  `ip_to` int(11) DEFAULT NULL,
+  `country_code` varchar(5) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `latitude` varchar(255) DEFAULT NULL,
+  `longitude` float DEFAULT NULL,
+  `zip_code` varchar(255) DEFAULT NULL,
+  `time_zone` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `item`
@@ -1201,7 +1313,7 @@ CREATE TABLE `item` (
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `duplicate_from_item_id` (`duplicate_from_item_id`) USING BTREE,
   KEY `to_customer_id` (`to_customer_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `item_department_association`
@@ -1216,7 +1328,7 @@ CREATE TABLE `item_department_association` (
   PRIMARY KEY (`id`),
   KEY `department_id` (`department_id`) USING BTREE,
   KEY `item_id` (`item_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `item_department_consumption`
@@ -1232,7 +1344,7 @@ CREATE TABLE `item_department_consumption` (
   PRIMARY KEY (`id`),
   KEY `composition_item_id` (`composition_item_id`) USING BTREE,
   KEY `item_department_association_id` (`item_department_association_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `item_image`
@@ -1250,7 +1362,7 @@ CREATE TABLE `item_image` (
   KEY `file_id` (`file_id`) USING BTREE,
   KEY `item_id` (`item_id`) USING BTREE,
   KEY `custom_field_value_id` (`customfield_value_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `item_template_design`
@@ -1267,7 +1379,7 @@ CREATE TABLE `item_template_design` (
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`) USING BTREE,
   KEY `contact_id` (`contact_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `jobcard`
@@ -1276,7 +1388,7 @@ DROP TABLE IF EXISTS `jobcard`;
 CREATE TABLE `jobcard` (
   `document_id` int(11) DEFAULT NULL,
   `outsourceparty_id` int(11) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '  ',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '	',
   `department_id` int(11) NOT NULL,
   `due_date` date DEFAULT NULL,
   `order_item_id` int(11) DEFAULT NULL,
@@ -1287,7 +1399,7 @@ CREATE TABLE `jobcard` (
   KEY `department_id` (`department_id`) USING BTREE,
   KEY `oreder_item_id` (`order_item_id`) USING BTREE,
   KEY `parent_jobcard_id` (`parent_jobcard_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `jobcard_detail`
@@ -1302,7 +1414,7 @@ CREATE TABLE `jobcard_detail` (
   PRIMARY KEY (`id`),
   KEY `parent_detail_id` (`parent_detail_id`) USING BTREE,
   KEY `jobcard_id` (`jobcard_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `landingresponse`
@@ -1325,8 +1437,8 @@ CREATE TABLE `landingresponse` (
   `referrersite` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `campaign_id` (`campaign_id`) USING BTREE,
-  KEY `lead_id` (`contact_id`) USING BTREE,
-  KEY `opportunity_id` (`opportunity_id`) USING BTREE
+  KEY `opportunity_id` (`opportunity_id`) USING BTREE,
+  KEY `lead_id` (`contact_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -1338,7 +1450,7 @@ CREATE TABLE `lead` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `fk_lead_contact1_idx` (`contact_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=491 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `lead_category_association`
@@ -1351,7 +1463,7 @@ CREATE TABLE `lead_category_association` (
   PRIMARY KEY (`id`),
   KEY `lead_id` (`lead_id`) USING BTREE,
   KEY `marketing_category_id` (`marketing_category_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=536 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `ledger`
@@ -1378,7 +1490,7 @@ CREATE TABLE `ledger` (
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_id` (`related_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`name`,`ledger_type`,`LedgerDisplayName`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `lodgement`
@@ -1500,7 +1612,14 @@ CREATE TABLE `marketingcategory` (
   `document_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `marketingcategory`
+-- ----------------------------
+BEGIN;
+INSERT INTO `marketingcategory` VALUES ('17', 'default', '2392');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `opportunity`
@@ -1516,7 +1635,7 @@ CREATE TABLE `opportunity` (
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `lead_id` (`lead_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `order_item_departmental_status`
@@ -1531,7 +1650,7 @@ CREATE TABLE `order_item_departmental_status` (
   PRIMARY KEY (`id`),
   KEY `qsp_detail_id` (`qsp_detail_id`) USING BTREE,
   KEY `department_id` (`department_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `outsource_party`
@@ -1557,7 +1676,7 @@ CREATE TABLE `outsource_party` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `department_id` (`department_id`) USING BTREE,
   KEY `currency_id` (`currency_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `payment_gateway`
@@ -1573,7 +1692,7 @@ CREATE TABLE `payment_gateway` (
   `gateway_image_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `gateway_image_id` (`gateway_image_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `point_system`
@@ -1607,7 +1726,14 @@ CREATE TABLE `post` (
   KEY `fk_post_department1_idx` (`department_id`),
   KEY `parent_post_id` (`parent_post_id`) USING BTREE,
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `post`
+-- ----------------------------
+BEGIN;
+INSERT INTO `post` VALUES ('2391', 'CEO', '2390', '21', null, '00:00:00', '00:00:00');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `post_email_association`
@@ -1620,7 +1746,7 @@ CREATE TABLE `post_email_association` (
   PRIMARY KEY (`id`),
   KEY `post_id` (`post_id`) USING BTREE,
   KEY `email_settings_id` (`emailsetting_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `project`
@@ -1639,7 +1765,14 @@ CREATE TABLE `project` (
   PRIMARY KEY (`id`),
   KEY `created_by_id` (`created_by_id`) USING BTREE,
   FULLTEXT KEY `quick_search` (`name`,`description`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `project`
+-- ----------------------------
+BEGIN;
+INSERT INTO `project` VALUES ('14', 'Documentation', 'Documentation of Epan', 'project', 'Running', '626', null, null, null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `projectcomment`
@@ -1653,7 +1786,7 @@ CREATE TABLE `projectcomment` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `publish_schedule`
@@ -1665,7 +1798,7 @@ CREATE TABLE `publish_schedule` (
   `date` datetime DEFAULT NULL,
   `is_posted` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `qsp_detail`
@@ -1691,7 +1824,7 @@ CREATE TABLE `qsp_detail` (
   KEY `qsp_master_id` (`qsp_master_id`),
   KEY `item_id` (`item_id`),
   KEY `taxation_id` (`taxation_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=56455 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `qsp_detail_attachment`
@@ -1750,7 +1883,7 @@ CREATE TABLE `qsp_master` (
   KEY `related_qsp_master_id` (`related_qsp_master_id`) USING BTREE,
   KEY `nominal_id` (`nominal_id`) USING BTREE,
   CONSTRAINT `document` FOREIGN KEY (`document_id`) REFERENCES `document` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=251 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `qualification`
@@ -1764,7 +1897,7 @@ CREATE TABLE `qualification` (
   `remarks` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `quantity_condition`
@@ -1777,7 +1910,7 @@ CREATE TABLE `quantity_condition` (
   PRIMARY KEY (`id`),
   KEY `qty_set_id` (`quantity_set_id`) USING BTREE,
   KEY `customfield_value_id` (`customfield_value_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=554 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `quantity_set`
@@ -1793,7 +1926,7 @@ CREATE TABLE `quantity_set` (
   `is_default` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `rule-options`
@@ -1829,7 +1962,7 @@ CREATE TABLE `schedule` (
   PRIMARY KEY (`id`),
   KEY `campaign_id` (`campaign_id`) USING BTREE,
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `shipping_association`
@@ -1887,7 +2020,7 @@ CREATE TABLE `socialuser` (
   `name` varchar(255) NOT NULL,
   `configuration` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `state`
@@ -1902,7 +2035,7 @@ CREATE TABLE `state` (
   `created_by_id` int(11) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3716 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `store_transaction`
@@ -1932,7 +2065,7 @@ CREATE TABLE `store_transaction` (
   KEY `from_warehouse_id` (`from_warehouse_id`) USING BTREE,
   KEY `to_warehouse_id` (`to_warehouse_id`) USING BTREE,
   KEY `jobcard_id` (`jobcard_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `store_transaction_row`
@@ -1954,7 +2087,7 @@ CREATE TABLE `store_transaction_row` (
   KEY `qsp_detail_id` (`qsp_detail_id`) USING BTREE,
   KEY `customfield_generic_id` (`customfield_generic_id`) USING BTREE,
   KEY `customfield_value_id` (`customfield_value_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `supplier`
@@ -1969,7 +2102,7 @@ CREATE TABLE `supplier` (
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`),
   KEY `currency_id` (`currency_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `support_ticket`
@@ -1997,7 +2130,7 @@ CREATE TABLE `support_ticket` (
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `communication_id` (`communication_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=367 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `task`
@@ -2028,7 +2161,14 @@ CREATE TABLE `task` (
   `notify_to` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `task_title_full_text` (`task_name`,`description`,`status`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=382 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=293 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `task`
+-- ----------------------------
+BEGIN;
+INSERT INTO `task` VALUES ('291', '14', 'Base Application Documentation', null, '626', '', '2016-06-24 00:00:00', '3', '626', 'Completed', 'Task', '2016-06-24 09:49:10', '50', '', '0', null, '0', null, '0', null, null, null), ('292', '14', 'Project Application Documentation', null, '626', '', null, '3', '626', 'Pending', 'Task', '2016-06-24 09:50:33', '50', '', '0', null, '0', null, '0', null, null, null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `task_attachment`
@@ -2056,7 +2196,7 @@ CREATE TABLE `taxation` (
   PRIMARY KEY (`id`),
   KEY `created_by_id` (`created_by_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`name`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `taxation_association`
@@ -2068,7 +2208,7 @@ CREATE TABLE `taxation_association` (
   `taxation_rule_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `taxation_rule`
@@ -2110,7 +2250,7 @@ CREATE TABLE `team_project_association` (
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE,
   KEY `project_id` (`project_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `ticket_attachment`
@@ -2137,7 +2277,14 @@ CREATE TABLE `timesheet` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `timesheet`
+-- ----------------------------
+BEGIN;
+INSERT INTO `timesheet` VALUES ('147', '292', '626', '2016-06-24 09:50:39', '2016-06-24 10:29:10', null), ('148', '292', '626', '2016-06-24 10:43:18', '2016-06-24 11:14:10', null), ('149', '292', '626', '2016-06-24 11:16:44', '2016-06-28 09:22:18', null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `tnc`
@@ -2153,7 +2300,7 @@ CREATE TABLE `tnc` (
   `is_default_for_sale_invoice` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `user`
@@ -2175,7 +2322,14 @@ CREATE TABLE `user` (
   KEY `created_by_id` (`created_by_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`username`,`type`,`scope`),
   CONSTRAINT `fk_user_epan1` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `user`
+-- ----------------------------
+BEGIN;
+INSERT INTO `user` VALUES ('11', 'management@xavoc.com', '21232f297a57a5a743894a0e4a801fc3', 'Active', '3', 'SuperUser', 'User', null, '2016-08-05 08:23:40', '0');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `xepan_template`
@@ -2229,7 +2383,7 @@ CREATE TABLE `xshop_item_images` (
   KEY `fk_customefieldvalue_id` (`customefieldvalue_id`),
   KEY `fk_epan_id` (`epan_id`),
   KEY `fk_item_image_id` (`item_image_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=798 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `xshop_item_quantity_set_conditions`

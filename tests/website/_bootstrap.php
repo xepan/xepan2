@@ -3,4 +3,4 @@
 
 date_default_timezone_set('UTC');
 
-$this->getModule('WebDriver')->_reconfigure(array('browser' => 'chrome'));
+// $this->getModule('WebDriver')->_reconfigure(array('browser' => 'chrome'));
