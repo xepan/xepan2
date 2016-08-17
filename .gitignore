@@ -30,3 +30,6 @@ tests/_output/*
 .tmb
 xepantemplates/*
 websites/*
+/*.zip
+/*.csv
+/stats
