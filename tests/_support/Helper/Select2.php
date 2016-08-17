@@ -121,7 +121,7 @@ function() {
     }
   }
   // Find select option by text
-  return \$(\$("$selector").data("select2").select).find("option:textEquals('$optionText'):first").val();
+  return \$(\$("$selector")).find("option:textEquals('$optionText'):first").val();
 }();
 EOT;
             }
@@ -132,8 +132,8 @@ EOT;
   if (!option.id) {
     option.id = $optionId;
   }
-  \$("$selector").select2("data", option);
-  \$(\$("$selector").data("select2").select).trigger('change');
+  \$("$selector").val(option.id);
+  \$("$selector").trigger('change');
 }(jQuery));
 EOT;
             $I->executeJS($script, $timeout);
