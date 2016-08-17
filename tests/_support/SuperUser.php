@@ -26,15 +26,21 @@ class SuperUser extends \Codeception\Actor
    
 
    
-    public function login($username='admin@epan.in',$password='admin'){
+    public function login($username='management@xavoc.com',$password='admin'){
       $i=$this;
+      
+      if ($i->loadSessionSnapshot('login')) {
+            return;
+      }
+
    		$i->amOnPage('/admin');
       $i->waitPageLoad();
    		$i->fillField('[data-shortname=username]',$username);
    		$i->fillField('[data-shortname=password]',$password);
    		$i->click('Login');
    		$i->waitPageLoad();
-   		$i->see('Super');
+   		$i->see('Dashboard');
+      $i->saveSessionSnapshot('login');
     }
 
     public function tryLogin($user,$pass){
