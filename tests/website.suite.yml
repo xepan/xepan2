@@ -8,7 +8,7 @@ class_name: Visitor
 modules:
     enabled:
         - WebDriver:
-            url: https://epan.in
+            url: https://www.epan.in
             browser: 'firefox'
             webdriver.chrome.driver: "~/Downloads/geckodriver"
             capabilities:
@@ -33,4 +33,4 @@ env:
         modules:
             config:
                 WebDriver:
-                    url: 'https://epan.in'
+                    url: 'https://www.epan.in'

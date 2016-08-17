@@ -29,6 +29,7 @@ class SuperUser extends \Codeception\Actor
     public function login(){
       $i=$this;
    		$i->amOnPage('/admin');
+      $i->waitPageLoad();
    		$i->fillField('[data-shortname=username]','admin@epan.in');
    		$i->fillField('[data-shortname=password]','admin');
    		$i->click('Login');

@@ -8,7 +8,7 @@ class_name: SuperUser
 modules:
     enabled:
         - WebDriver:
-            url: http://localhost/xepan2
+            url: http://demo.epan.in
             browser: 'firefox'
             webdriver.chrome.driver: "~/Downloads/geckodriver"
             capabilities:
@@ -21,11 +21,11 @@ env:
         modules:
             config:
                 WebDriver:
-                    url: 'http://localhost/xepan2'
+                    url: 'http://demo.xepan-local.org/xepan2'
                     browser: 'firefox'
             enabled:
                 - Db:
-                    dsn: 'mysql:host=localhost;dbname=xepan2'
+                    dsn: 'mysql:host=localhost;dbname=demo'
                     user: 'root'
                     password: 'winserver'
                     dump: tests/_data/data.sql
@@ -33,4 +33,4 @@ env:
         modules:
             config:
                 WebDriver:
-                    url: 'https://epan.in'
+                    url: 'https://demo.epan.in'
