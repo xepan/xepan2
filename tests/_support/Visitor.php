@@ -32,4 +32,12 @@ class Visitor extends \Codeception\Actor
       $i=$this;
       $i->WaitPageLoad();
     }
+
+    public function login($user,$pwd){      
+      $i=$this;
+      $i->fillAtkField('username',$user);
+      $i->fillAtkField('password',$pwd);
+      $i->click(['css'=>'button[type=submit]']);
+      $i->waitPageLoad();
+    }
 }

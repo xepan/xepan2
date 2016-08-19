@@ -30,13 +30,34 @@ class runningCest
 
         $i->waitForText('Back To Login');
 
+        $i->wantTo('Check if registration is working');
         $i->fillAtkField('first_name','Tester');
         $i->fillAtkField('last_name','User');
-        $i->fillAtkField('email_id','wrong_id');
+        $i->fillAtkField('username','abc@gmail.com');
         $i->click('Register');
+        $i->waitForText('Password must not be empty');
+        
+        $i->fillAtkField('password','123');
+        $i->click('Register');
+        $i->waitForText('Password did not match');
 
-        $i->waitForElement('.field-error-text');
-        $i->see('Name value "Company" already exists');
+        $i->fillAtkField('retype_password','abc@gmail.com');
+        $i->click('Register');
+        $i->waitForText('Password did not match');
 
+        $i->fillAtkField('retype_password','123');
+        $i->click('Register');
+        $i->waitForText('Sign in to continue');
+        
+        $hash = $i->grabFromDatabase('user', 'hash', array('username' => 'abc@gmail.com'));
+        $i->click('Activate');
+        $i->waitForText('Activate your Account');
+
+        $i->fillAtkField('email','abc@gmail.com');
+        $i->fillAtkField('activation_code',$hash);
+        $i->click('Verify');              
+        $i->waitForText('Sign in to continue');
+        
+        $i->login('abc@gmail.com','123');
     } 
 }
