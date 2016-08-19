@@ -8,7 +8,7 @@ class_name: Visitor
 modules:
     enabled:
         - WebDriver:
-            url: 'http://demo.xepan-local.org/xepan2'
+            url: 'http://xepan-local.org/xepan2'
             browser: 'firefox'
             webdriver.chrome.driver: "~/Downloads/geckodriver"
             capabilities:
@@ -26,27 +26,14 @@ env:
         modules:
             config:
                 WebDriver:
-                    url: 'http://demo.xepan-local.org/xepan2'
-                    browser: 'firefox'
-            enabled:
-                - Db:
-                    dsn: 'mysql:host=localhost;dbname=demo'
-                    user: 'root'
-                    password: 'winserver'
-                    dump: tests/_data/data.sql
-                    cleanup: false
-    local_website_test:
-        modules:
-            config:
-                WebDriver:
                     url: 'http://localhost/xepan2'
                     browser: 'firefox'
             enabled:
                 - Db:
-                    dsn: 'mysql:host=localhost;dbname=demo'
+                    dsn: 'mysql:host=localhost;dbname=xepan2'
                     user: 'root'
                     password: 'winserver'
-                    dump: tests/_data/data.sql
+                    # dump: tests/_data/data.sql
                     cleanup: false
     remote:
         modules:
