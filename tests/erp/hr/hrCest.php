@@ -120,7 +120,6 @@ class hrCest
     function testPost(SuperUser $i){
         $i->login('management@xavoc.com');
         $i->clickMenu('HR->Post');
-        $i->waitPageLoad();
         $i->see('CEO');
         $i->click(['css'=>'table tbody tr td:nth-child(4) a.emails-accesible']);
         // $i->acceptPopup();
@@ -151,41 +150,40 @@ class hrCest
         $i->waitForElement('.field-error-text');
         $i->see('Department_id must not be empty');
         $i->wait(10);
-        $i->select2Option("department",['text'=>'Company']);
+        $i->select2Option("department_id",['text'=>'Company']);
         $i->click('Add');
         $i->see('management');
     }
     function testEmployee(SuperUser $i){
         $i->login('management@xavoc.com');
         $i->clickMenu('HR->Employee');
-        $i->waitPageLoad();
         $i->see('Add Employee');
         $i->click(['css'=>'table tbody tr td:nth-child(1) a.do-view-employee']);
-        $i->wait(2);
-        $i->click(['css'=>' a.#tab-official']);
-        $i->wait(2);
-        $i->click(['css'=>' a.#tab-activity']);
-        $i->wait(2);
-        $i->click(['css'=>' a.#tab-documents']);
+        $i->click('Official');
+        $i->waitForText('Offer Date');
+        $i->click('Activity');
+        // $i->waitForText("deactivated ");
+        $i->click('Documents');
+        $i->waitForText('No document found');
     }
     
     function testEmployeeMovement(SuperUser $i){
         $i->login('management@xavoc.com');
         $i->clickMenu('HR->Employee Movement');
-        $i->waitPageLoad();
+        // $i->waitPageLoad();
         $i->see('Employee Movement');
         
     }
     function testUser(SuperUser $i){
         $i->login('management@xavoc.com');
         $i->clickMenu('HR->User');
-        $i->waitPageLoad();
+        // $i->waitPageLoad();
         $i->see('Add User');
     }
     function testAffiliate(SuperUser $i){
         $i->login('management@xavoc.com');
         $i->clickMenu('HR->Affiliate');
-        $i->waitPageLoad();
+        // $i->waitPageLoad();
         $i->see('Add Affiliate');
     }
 
