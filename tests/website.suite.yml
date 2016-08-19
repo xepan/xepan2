@@ -8,13 +8,18 @@ class_name: Visitor
 modules:
     enabled:
         - WebDriver:
-            url: https://www.epan.in
+            url: 'http://xepan-local.org/xepan2'
             browser: 'firefox'
             webdriver.chrome.driver: "~/Downloads/geckodriver"
             capabilities:
                 unexpectedAlertBehaviour: 'accept'
         - \Helper\Acceptance
         - \Helper\Select2
+        # - Db:
+        #     dsn: 'mysql:host=localhost;dbname=demo'
+        #     user: 'root'
+        #     password: 'winserver'
+        #     dump: tests/_data/data.sql
 
 env:
     local_reset_db:
@@ -28,7 +33,8 @@ env:
                     dsn: 'mysql:host=localhost;dbname=xepan2'
                     user: 'root'
                     password: 'winserver'
-                    dump: tests/_data/data.sql
+                    dump: tests/_data/websitedata.sql
+                    cleanup: false
     remote:
         modules:
             config:

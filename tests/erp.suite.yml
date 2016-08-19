@@ -28,7 +28,8 @@ env:
                     dsn: 'mysql:host=localhost;dbname=demo'
                     user: 'root'
                     password: 'winserver'
-                    # dump: tests/_data/data.sql
+                    dump: tests/_data/data.sql
+                    cleanup: false
     remote:
         modules:
             config:
