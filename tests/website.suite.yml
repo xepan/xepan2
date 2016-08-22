@@ -33,8 +33,9 @@ env:
                     dsn: 'mysql:host=localhost;dbname=xepan2'
                     user: 'root'
                     password: 'winserver'
-                    dump: tests/_data/websitedata.sql
-                    cleanup: false
+                    # dump: tests/_data/xepan2.sql
+                    # populate: true
+                    # cleanup: false
     remote:
         modules:
             config:

@@ -59,5 +59,11 @@ class runningCest
         $i->waitForText('Sign in to continue');
         
         $i->login('abc@gmail.com','123');
+        $i->wait(4);
+        $i->click('Got it!');
+        $i->fillAtkField('epan_name','001testepan');
+        $i->waitForText('Free 14 day Trial');
+        $i->click(['css'=>'.xepan-service-trial button']);
+        $i->waitForPageLoad();
     } 
 }
