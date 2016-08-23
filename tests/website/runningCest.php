@@ -21,6 +21,7 @@ class runningCest
     }
 
     public function test_free_trial(Visitor $i){
+        return;
         $i->wantTo('Check if free trial is working');
         $i->click('Free 14 days trial');
         $i->waitForPageLoad();
@@ -64,6 +65,48 @@ class runningCest
         $i->fillAtkField('epan_name','001testepan');
         $i->waitForText('Free 14 day Trial');
         $i->click(['css'=>'.xepan-service-trial button']);
-        $i->waitForPageLoad();
+        $i->wait(200);
+
+        // remove wait in case of online testing
+        // add test for links click (admin/website/myaccount)
     } 
+
+    public function test_user_subscription(Visitor $i){
+        return;
+        $i->click('Blog');
+        $i->waitForText('Blogs','10');
+        $i->fillAtkField('first_name','test');
+        $i->fillAtkField('last_name','user');
+        $i->fillAtkField('email','02test@gmail.com');
+        $i->click('Got it!');
+        $i->click('Submit');
+        $i->waitForText('Done','20');
+        
+        $i->fillAtkField('first_name','test');
+        $i->fillAtkField('last_name','user');
+        $i->fillAtkField('email','abcd@gmail.com');
+        $i->click('Submit');
+        $i->waitForText('Already Subscribed','20');
+    }
+
+    public function test_user_enquiry(Visitor $i){
+        return;
+        $i->click('Got it!');
+        $i->click('Contact Us');
+        $i->waitForText('Drop Your Messages','10');
+        $i->fillAtkField('Name','test user');
+        $i->fillAtkField('Email','a@gmail.com');
+        $i->fillAtkField('Message','blah blah');
+        $i->click('Queries ??');
+        // $i->waitForText('');
+        // CAPTCHA PROBLEM
+    }
+
+    public function test_epan_documentation(Visitor $i){
+        $i->amOnPage('/');
+        $i->waitPageLoad();
+        $i->canSee('My Epans');
+        $i->click('Documentation');
+        $i->wait('10');
+    }
 }
