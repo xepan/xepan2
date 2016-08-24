@@ -1,0 +1,43 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - hhvm
+
+matrix:
+  allow_failures:
+    - php: hhvm
+
+branches:
+  except:
+    - develop
+    - master
+
+# cache:
+#   directories:
+#     - vendor
+#     - $HOME/.composer/cache
+
+install:
+  - wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
+  - composer self-update
+  - composer install --prefer-dist
+  - ulimit -c unlimited || true
+
+before_script:
+  - sh -e /etc/init.d/xvfb start
+  # - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - java -jar selenium-server-standalone-2.53.1.jar -port 4444 > /dev/null &
+  - sleep 5
+  - mkdir websites && cd websites && mkdir assets && mkdir upload && echo "<?php $config['dsn']='mysql://root:@localhost/xepan2';$config['test_mode']=true;" >> config.php && git clone https://github.com/xavoctechnocratspvtltd/epanwebsite.git www
+  - "mysql -e 'create database xepan2;'"
+  - php -S localhost:80 > /dev/null &
+  - php codecept build website
+  - php codecept build erp
+  
+script:
+  - php codecept run  # self tests
+  - php codecept run website
