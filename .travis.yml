@@ -38,6 +38,7 @@ before_script:
   - java -jar selenium-server-standalone-2.53.1.jar -port 4444 > /dev/null &
   - sleep 5
   - mkdir websites && cd websites && mkdir assets && mkdir upload && echo "<?php $config['dsn']='mysql://root:@localhost/xepan2';$config['test_mode']=true;" >> config.php && git clone https://github.com/xepan/epanwebsite.git www
+  - cd ..
   - mysql -e 'create database xepan2;'
   - mysql -e 'create database demo;'
   - mysql -uroot xepan2 < tests/_data/websitedata.sql
