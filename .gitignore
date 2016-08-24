@@ -13,7 +13,6 @@ composer.phar
 /agiletoolkit-sandbox.phar
 run.sh
 run.bat
-VERSION
 .idea
 .composer
 composer
