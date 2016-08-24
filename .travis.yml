@@ -33,10 +33,10 @@ before_script:
   - sleep 5
   - mkdir websites && cd websites && mkdir assets && mkdir upload && echo "<?php $config['dsn']='mysql://root:@localhost/xepan2';$config['test_mode']=true;" >> config.php && git clone https://github.com/xepan/epanwebsite.git www
   - "mysql -e 'create database xepan2;'"
-  - php -S localhost:80 > /dev/null &
-  - php codecept build website
-  - php codecept build erp
+  - php -S localhost:8080 > /dev/null &
+  - php vendor/codeception/codeception/codecept build website
+  - php vendor/codeception/codeception/codecept build erp
   
 script:
-  - php codecept run  # self tests
-  - php codecept run website
+  - php vendor/codeception/codeception/codecept run  # self tests
+  - php vendor/codeception/codeception/codecept run website
