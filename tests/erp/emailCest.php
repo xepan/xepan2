@@ -70,19 +70,19 @@ class emailCest{
         $i->waitForText('management@xavoc.com');
     }
 
-    public function text_check_email_setting_correct(SuperUser $i){
-    	$i->login('management@xavoc.com');
-    	$i->click('Emails');
-    	$i->waitForText('Inbox',5);
-    	$i->click(['css'=>'.email-nav-nano-content a.email-compose-btn']);
-    	$i->waitForText('Compose Email',5);
-        $i->select2Option("email_username",['text'=>'Management']);
-        $i->select2Option('email_to','Super User <vijay.mali552@gmail.com>');
-        $i->click('Cc');
-        $i->click('Bcc');
-        $i->fillAtkField('email_subject','Test case Email Testing Subject');
-        $i->fillAtkField('email_body','Test case Email Testing Message Body');
-        $i->click('Send');
-        $i->wait(10);
-    }
+    // public function text_check_email_setting_correct(SuperUser $i){
+    // 	$i->login('management@xavoc.com');
+    // 	$i->click('Emails');
+    // 	$i->waitForText('Inbox',5);
+    // 	$i->click(['css'=>'.email-nav-nano-content a.email-compose-btn']);
+    // 	$i->waitForText('Compose Email',5);
+    //     $i->select2Option("email_username",['text'=>'Management']);
+    //     $i->select2Option('email_to','Super User <vijay.mali552@gmail.com>');
+    //     $i->click('Cc');
+    //     $i->click('Bcc');
+    //     $i->fillAtkField('email_subject','Test case Email Testing Subject');
+    //     $i->fillAtkField('email_body','Test case Email Testing Message Body');
+    //     $i->click('Send');
+    //     $i->wait(10);
+    // }
 }    
