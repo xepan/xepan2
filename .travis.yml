@@ -12,7 +12,7 @@ matrix:
     - php: hhvm
 
 branches:
-  except:
+  only:
     - develop
 
 # cache:
