@@ -44,8 +44,7 @@ before_script:
   - mysql -uroot xepan2 < tests/_data/websitedata.sql
   - mysql -uroot xepan2 < tests/_data/data.sql
   - php -S localhost:8080 > /dev/null &
-  - php vendor/codeception/codeception/codecept build website
-  - php vendor/codeception/codeception/codecept build erp
+  - php vendor/codeception/codeception/codecept build
   
 script:
   - php vendor/codeception/codeception/codecept run  # self tests
