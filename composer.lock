@@ -190,13 +190,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/facebook/facebook-php-sdk-v4.git",
-                "reference": "7ed1ecdae6a5b2f8b8f60e132d06594b39b16fb1"
+                "url": "https://github.com/facebook/php-graph-sdk.git",
+                "reference": "ab068ef4097878e2a2a03a5c5b4bcbfc1f44f7cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/7ed1ecdae6a5b2f8b8f60e132d06594b39b16fb1",
-                "reference": "7ed1ecdae6a5b2f8b8f60e132d06594b39b16fb1",
+                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/ab068ef4097878e2a2a03a5c5b4bcbfc1f44f7cb",
+                "reference": "ab068ef4097878e2a2a03a5c5b4bcbfc1f44f7cb",
                 "shasum": ""
             },
             "require": {
@@ -231,16 +231,17 @@
             "authors": [
                 {
                     "name": "Facebook",
-                    "homepage": "https://github.com/facebook/facebook-php-sdk-v4/contributors"
+                    "homepage": "https://github.com/facebook/php-graph-sdk/contributors"
                 }
             ],
             "description": "Facebook SDK for PHP",
-            "homepage": "https://github.com/facebook/facebook-php-sdk-v4",
+            "homepage": "https://github.com/facebook/php-graph-sdk",
             "keywords": [
                 "facebook",
                 "sdk"
             ],
-            "time": "2016-08-09 11:32:26"
+            "abandoned": "facebook/graph-sdk",
+            "time": "2016-08-22 23:57:48"
         },
         {
             "name": "guzzle/guzzle",
@@ -1017,12 +1018,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/omnipay-common.git",
-                "reference": "e402629dc14b5f4c32e5fb5a4bbee558063577a9"
+                "reference": "82d6f01e66c919f24468df6c7103bce6042e639e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay-common/zipball/e402629dc14b5f4c32e5fb5a4bbee558063577a9",
-                "reference": "e402629dc14b5f4c32e5fb5a4bbee558063577a9",
+                "url": "https://api.github.com/repos/thephpleague/omnipay-common/zipball/82d6f01e66c919f24468df6c7103bce6042e639e",
+                "reference": "82d6f01e66c919f24468df6c7103bce6042e639e",
                 "shasum": ""
             },
             "require": {
@@ -1107,7 +1108,7 @@
                 "payment",
                 "purchase"
             ],
-            "time": "2016-08-15 12:03:06"
+            "time": "2016-08-19 08:49:55"
         },
         {
             "name": "omnipay/dummy",
@@ -2357,12 +2358,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Studio-42/elFinder.git",
-                "reference": "6961a10ee6dbc49f174920dd16df54769f5ea0be"
+                "reference": "637fa52fd6d6aaa8f2105d5c0db0184bda8c8558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/6961a10ee6dbc49f174920dd16df54769f5ea0be",
-                "reference": "6961a10ee6dbc49f174920dd16df54769f5ea0be",
+                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/637fa52fd6d6aaa8f2105d5c0db0184bda8c8558",
+                "reference": "637fa52fd6d6aaa8f2105d5c0db0184bda8c8558",
                 "shasum": ""
             },
             "require": {
@@ -2407,7 +2408,7 @@
             ],
             "description": "File manager for web",
             "homepage": "http://elfinder.org",
-            "time": "2016-08-15 13:19:02"
+            "time": "2016-08-24 09:07:48"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -2475,12 +2476,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "2a556af39e2f90d149bbe5d505b24e31896d2b92"
+                "reference": "f1e825ebf8947be664ecfd4b3c8dfd927104a5ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/2a556af39e2f90d149bbe5d505b24e31896d2b92",
-                "reference": "2a556af39e2f90d149bbe5d505b24e31896d2b92",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/f1e825ebf8947be664ecfd4b3c8dfd927104a5ea",
+                "reference": "f1e825ebf8947be664ecfd4b3c8dfd927104a5ea",
                 "shasum": ""
             },
             "require": {
@@ -2520,7 +2521,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-17 14:08:33"
+            "time": "2016-08-22 12:11:39"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2528,12 +2529,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "8a6bdec191138e01c92ae026e5aacb7b3e66267d"
+                "reference": "988cbed31ec9493057bcfc545b13447521849702"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/8a6bdec191138e01c92ae026e5aacb7b3e66267d",
-                "reference": "8a6bdec191138e01c92ae026e5aacb7b3e66267d",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/988cbed31ec9493057bcfc545b13447521849702",
+                "reference": "988cbed31ec9493057bcfc545b13447521849702",
                 "shasum": ""
             },
             "require": {
@@ -2579,7 +2580,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-06-29 14:58:48"
+            "time": "2016-08-17 08:39:54"
         },
         {
             "name": "symfony/process",
@@ -2587,12 +2588,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "489010d6598a9e3d0f52bba5b3c14cb130d5f7cc"
+                "reference": "2d6011bd6f6086b3409f85c6dd0ec61b90091a04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/489010d6598a9e3d0f52bba5b3c14cb130d5f7cc",
-                "reference": "489010d6598a9e3d0f52bba5b3c14cb130d5f7cc",
+                "url": "https://api.github.com/repos/symfony/process/zipball/2d6011bd6f6086b3409f85c6dd0ec61b90091a04",
+                "reference": "2d6011bd6f6086b3409f85c6dd0ec61b90091a04",
                 "shasum": ""
             },
             "require": {
@@ -2628,7 +2629,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-07 15:19:41"
+            "time": "2016-08-16 16:09:30"
         },
         {
             "name": "symfony/translation",
@@ -2897,7 +2898,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-15 14:34:58"
+            "time": "2016-08-22 04:29:34"
         },
         {
             "name": "xepan/atk4",
@@ -2977,7 +2978,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-12 10:07:33"
+            "time": "2016-08-19 12:45:33"
         },
         {
             "name": "xepan/blog",
@@ -3164,7 +3165,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-15 14:37:06"
+            "time": "2016-08-22 11:48:37"
         },
         {
             "name": "xepan/communication",
@@ -3211,7 +3212,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-08-03 07:26:12"
+            "time": "2016-08-24 18:21:05"
         },
         {
             "name": "xepan/crm",
@@ -3302,7 +3303,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-15 14:38:54"
+            "time": "2016-08-24 18:35:59"
         },
         {
             "name": "xepan/filestore",
@@ -3421,7 +3422,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-04 14:14:55"
+            "time": "2016-08-19 10:46:26"
         },
         {
             "name": "xepan/mail",
@@ -3817,7 +3818,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-07-28 11:57:09"
+            "time": "2016-08-24 20:34:53"
         },
         {
             "name": "xepan/xepanwallet",
@@ -3937,12 +3938,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "04fabc960b478700e287ec496819ae9b41ff50fa"
+                "reference": "07057426000a42e3128c8ec2bfbc1d2ecd6b426d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/04fabc960b478700e287ec496819ae9b41ff50fa",
-                "reference": "04fabc960b478700e287ec496819ae9b41ff50fa",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/07057426000a42e3128c8ec2bfbc1d2ecd6b426d",
+                "reference": "07057426000a42e3128c8ec2bfbc1d2ecd6b426d",
                 "shasum": ""
             },
             "require": {
@@ -4020,7 +4021,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2016-08-15 13:35:49"
+            "time": "2016-08-23 21:18:06"
         },
         {
             "name": "doctrine/instantiator",
@@ -4378,12 +4379,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "5f3f7e736d6319d5f1fc402aff8b026da26709a3"
+                "reference": "bb1c920291e2db3d3e50b77aded8bbfc351d3ff5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/5f3f7e736d6319d5f1fc402aff8b026da26709a3",
-                "reference": "5f3f7e736d6319d5f1fc402aff8b026da26709a3",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/bb1c920291e2db3d3e50b77aded8bbfc351d3ff5",
+                "reference": "bb1c920291e2db3d3e50b77aded8bbfc351d3ff5",
                 "shasum": ""
             },
             "require": {
@@ -4433,7 +4434,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-07-26 14:39:29"
+            "time": "2016-08-19 13:51:08"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -4622,12 +4623,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "421ad3c3aaddf5ae071c9423dc59e0efb3d91426"
+                "reference": "cf857251227c06e23697b0dd6f9e16eeebd60316"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/421ad3c3aaddf5ae071c9423dc59e0efb3d91426",
-                "reference": "421ad3c3aaddf5ae071c9423dc59e0efb3d91426",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/cf857251227c06e23697b0dd6f9e16eeebd60316",
+                "reference": "cf857251227c06e23697b0dd6f9e16eeebd60316",
                 "shasum": ""
             },
             "require": {
@@ -4692,7 +4693,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-08-10 05:00:37"
+            "time": "2016-08-19 06:22:01"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -4700,12 +4701,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "363392d7d849dc05902d88cc1d7046805b6b5f2d"
+                "reference": "db55f4b7c1c54ca6553acd0223ff52b5254895dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/363392d7d849dc05902d88cc1d7046805b6b5f2d",
-                "reference": "363392d7d849dc05902d88cc1d7046805b6b5f2d",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/db55f4b7c1c54ca6553acd0223ff52b5254895dc",
+                "reference": "db55f4b7c1c54ca6553acd0223ff52b5254895dc",
                 "shasum": ""
             },
             "require": {
@@ -4751,7 +4752,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-07-02 15:30:03"
+            "time": "2016-08-24 07:28:55"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -4920,12 +4921,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "a13903bf5fd0239748fe322dfbdd5f5720ab20e6"
+                "reference": "b429478521ee551c5622fec271a2b3bf99de1619"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/a13903bf5fd0239748fe322dfbdd5f5720ab20e6",
-                "reference": "a13903bf5fd0239748fe322dfbdd5f5720ab20e6",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/b429478521ee551c5622fec271a2b3bf99de1619",
+                "reference": "b429478521ee551c5622fec271a2b3bf99de1619",
                 "shasum": ""
             },
             "require": {
@@ -4962,7 +4963,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-06-11 08:54:23"
+            "time": "2016-08-18 05:48:30"
         },
         {
             "name": "sebastian/exporter",
@@ -5329,12 +5330,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "f82f4744a58cf6846decbdbe29d3d8a1e6bf5d6a"
+                "reference": "b5044f6c999c0555fd2e7c889e8dc3f0246876de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/f82f4744a58cf6846decbdbe29d3d8a1e6bf5d6a",
-                "reference": "f82f4744a58cf6846decbdbe29d3d8a1e6bf5d6a",
+                "url": "https://api.github.com/repos/symfony/console/zipball/b5044f6c999c0555fd2e7c889e8dc3f0246876de",
+                "reference": "b5044f6c999c0555fd2e7c889e8dc3f0246876de",
                 "shasum": ""
             },
             "require": {
@@ -5383,7 +5384,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-10 07:06:11"
+            "time": "2016-08-19 06:48:55"
         },
         {
             "name": "symfony/css-selector",
@@ -5604,16 +5605,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "61e225b1e1084b7a0e5a51ad8eafd4c0bf16307a"
+                "reference": "8444f2ac9f86342665cdae47b6d3ea6e07794456"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/61e225b1e1084b7a0e5a51ad8eafd4c0bf16307a",
-                "reference": "61e225b1e1084b7a0e5a51ad8eafd4c0bf16307a",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/8444f2ac9f86342665cdae47b6d3ea6e07794456",
+                "reference": "8444f2ac9f86342665cdae47b6d3ea6e07794456",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.3|^7.0"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.6",
@@ -5646,7 +5647,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-08-11 10:52:21"
+            "time": "2016-08-18 09:30:53"
         }
     ],
     "aliases": [],
