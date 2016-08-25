@@ -11,9 +11,9 @@ matrix:
   allow_failures:
     - php: hhvm
 
-branches:
-  only:
-    - develop
+# branches:
+#   only:
+#     - develop
 
 
 cache:
