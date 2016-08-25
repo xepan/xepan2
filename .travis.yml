@@ -15,8 +15,6 @@ branches:
   only:
     - develop
 
-addons:
-  mariadb: '10.1'
 
 cache:
   directories:
@@ -26,7 +24,9 @@ git:
   depth: 1
 
 addons:
+  mariadb: '10.1'
   hosts:
+  - localhost
   - xepan-local.org
   - demo.xepan-local.org
 
