@@ -76,12 +76,8 @@ before_script:
   - mysql -e 'create database demo;'
   - mysql -uroot xepan2 < tests/_data/websitedata.sql
   - mysql -uroot demo < tests/_data/data.sql
-#   - php vendor/codeception/codeception/codecept build
-  - wget http://xepan-local.org
-  - cat index.html
-  - wget http://demo.xepan-local.org
-  - cat index.html.1
+  - php vendor/codeception/codeception/codecept build
   
-# script:
-#   - php vendor/codeception/codeception/codecept run website --env travis --steps
+script:
+  - php vendor/codeception/codeception/codecept run website --env travis --steps
 #   # - php vendor/codeception/codeception/codecept run erp --env travis --steps
