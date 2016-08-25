@@ -40,7 +40,7 @@ env:
         modules:
             config:
                 WebDriver:
-                    url: 'http://localhost'
+                    url: 'http://xepan-local.org'
                     browser: 'firefox'
             enabled:
                 - Db:
