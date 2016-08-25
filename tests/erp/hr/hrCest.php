@@ -151,19 +151,16 @@ class hrCest
         $i->select2Option("department_id",['text'=>'Company']);
         $i->click('Add');
         $i->see('management');
-        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(6) button']);
-        $i->waitForText('Deactivate');
-        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(6) a']);
-        $i->waitPageLoad();
+        $i->clickActionForRow(2,'Deactivate');
         $i->dontSee('management');
         $i->click('InActive');
-        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(6) button']);
-        $i->cancelPopup();
+        $i->click(['css'=>'table tbody tr:nth-child(1) td:nth-child(6) button']);
         $i->cancelPopup();
         $i->waitForText('Active');
-        $i->click(['css'=>'table tbody tr:nth-child td:nth-child(6) a']);
-        $i->see('No matching records found');
+        $i->click(['css'=>'table tbody tr:nth-child(1) td:nth-child(6) a']);
         $i->click('Active');
+        $i->waitForPageLoad();
+        $i->see('No matching records found');
         $i->see('management');
         $i->wait(5);
     }

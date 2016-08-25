@@ -99,11 +99,20 @@ class SuperUser extends \Codeception\Actor
     }
 
     function waitForAjaxError($error){
+      $i = $this;
       $i->waitForElement('.field-error-text');
       $i->see($error);
     }
 
     function select2Option($selector,$value,$time_out=1){
       $this->selectOptionForSelect2("[data-shortname=$selector]",$value,$time_out);
+    }
+
+    function clickActionForRow($row,$actionName){
+      $i = $this;
+      $i->click(['css'=>'table tbody tr:nth-child('.$row.') td button.dropdown-toggle']);
+      $i->waitForText($actionName);
+      $i->click(['link'=>$actionName]);
+      $i->waitPageLoad();
     }
 }
