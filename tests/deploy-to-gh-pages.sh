@@ -11,5 +11,4 @@ git config --global user.name "Gowrav Vishwakarma"
 git init
 git add .
 git commit -m "Travis Report"
-git remote add report "https://${GITHUB_TOKEN}@github.com/xavoctechnocratspvtltd/xepan2.git"
-git push --force --quiet report gh-pages 
+git push --force --quiet "https://${GITHUB_TOKEN}@$github.com/${GITHUB_REPO}.git" master:gh-pages > /dev/null 2>&1
