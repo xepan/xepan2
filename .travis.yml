@@ -66,7 +66,7 @@ before_script:
   - mkdir assets 
   - mkdir upload 
   - echo "<?php $config['dsn']='mysql://root:@localhost/demo';$config['test_mode']=true;" >> config.php
-  - cp ../../vendor/xepan/cms/templates/defaultlayout/www .
+  - cp -r ../../vendor/xepan/cms/templates/defaultlayout/www .
   - cd ../..
   #
   - mysql -e 'create database xepan2;'
