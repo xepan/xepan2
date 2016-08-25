@@ -16,7 +16,7 @@ branches:
     - develop
 
 addons:
-  mariadb: '10.0'
+  mariadb: '10.1'
 
 cache:
   directories:
