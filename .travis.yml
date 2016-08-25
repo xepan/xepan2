@@ -78,7 +78,9 @@ before_script:
   - mysql -uroot demo < tests/_data/data.sql
 #   - php vendor/codeception/codeception/codecept build
   - wget http://xepan-local.org
+  - cat index.html
   - wget http://demo.xepan-local.org
+  - cat index.html.1
   
 # script:
 #   - php vendor/codeception/codeception/codecept run website --env travis --steps
