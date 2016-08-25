@@ -11,9 +11,9 @@ matrix:
   allow_failures:
     - php: hhvm
 
-branches:
-  only:
-    - develop
+# branches:
+#   only:
+#     - develop
 
 
 cache:
@@ -29,6 +29,9 @@ addons:
   hosts:
   - xepan-local.org
   - demo.xepan-local.org
+
+before_install:
+  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 
 install:
   - echo "Extracting firefox and setting PATH variable..."
@@ -58,20 +61,20 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
-  # - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+#   # - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - java -jar selenium-server-standalone-2.53.1.jar -port 4444 > /dev/null &
   - sleep 5
   - mkdir websites && cd websites
-  - mkdir www && cd www && mkdir assets && mkdir upload && echo "<?php $config['dsn']='mysql://root:@localhost/xepan2';$config['test_mode']=true;" >> config.php && git clone https://github.com/xepan/epanwebsite.git www
+  - mkdir www && cd www && mkdir assets && mkdir upload && echo "<?php \$config['dsn']='mysql://root:@localhost/xepan2'; \$config['test_mode']=true;" >> config.php && git clone https://github.com/xepan/epanwebsite.git www
   - cd ..
   - mkdir demo 
   - cd demo 
   - mkdir assets 
   - mkdir upload 
-  - echo "<?php $config['dsn']='mysql://root:@localhost/demo';$config['test_mode']=true;" >> config.php
+  - echo "<?php \$config['dsn']='mysql://root:@localhost/demo'; \$config['test_mode']=true;" >> config.php
   - cp -r ../../vendor/xepan/cms/templates/defaultlayout/www .
   - cd ../..
-  #
+#   #
   - mysql -e 'create database xepan2;'
   - mysql -e 'create database demo;'
   - mysql -uroot xepan2 < tests/_data/websitedata.sql
@@ -79,5 +82,11 @@ before_script:
   - php vendor/codeception/codeception/codecept build
   
 script:
-  - php vendor/codeception/codeception/codecept run website --env travis --steps
-  # - php vendor/codeception/codeception/codecept run erp --env travis --steps
+  - php vendor/codeception/codeception/codecept run website --env travis --html website.html
+  - php vendor/codeception/codeception/codecept run erp --env travis --html erp.html
+  - bash ./tests/deploy-to-gh-pages.sh
+env:
+  global:
+    - GITHUB_REPO: "xavoctechnocratspvtltd/xepan2"
+    - secure: "G3FibRbYYihZamDgBPq9TrmruwTyYOqwfdRMOQhcnF27R0/9Fz5jmvXozE9Y3Sc/PUTxbPxcDnAx8H/SR5PxGCVzY9Viz8wRmmCLqG7ohEoexT+HlIpAFVZpVbggJJiT8ZrvMTjxFyB5WQtx9jyv+PUpojoqKDTFB45EM7fcnduVOwZ2MRFSUj7L3vUtNq28jvSy8ZAh1IZo4R0rfgIsaYsCAmp/PJoDpAT3LpFaP6Ekk1WcvL69KMXv9TGBwborvAfnu4TGVGPltDuljwWOKGxk5HNy7JepxeC0oCgtOixPzIUMx9fTQBBEihf13NPr+gzWGSyJ6tYesY0i2fauBgqkNzoKiIIKc+shrJgAk0aWI18ovv4Xt7jG770SNZrFl9+pRYTfA4qvgMB6sFyTjuvyIW1zyKl4Bs7JAsd4Z+eVtq9Phuwwg2VMnUqgLdfZDBxGqEHO8DRmeAXKM2uVfOkPjCrRNgzsiceUhH4cgKeQ136WQy5Y7Y+Xhw6hCi3gpLe0VGrl8rA/LR1YhNi7GiLdO3qaaNwbijZdUvrt7b70gisOYHAb6rb7bacMkTb83Vdj0W5E3JgNETRoVA4m9VxJbOVm/gVPEhPWnTG81UgtS3E93H/wbMsJmYSul8N/Jq5Rk1LK+Rw2w9yZzPaeiCq/3FhAI7CIR/0rABJ4vaw="
+

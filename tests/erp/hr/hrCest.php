@@ -151,21 +151,13 @@ class hrCest
         $i->select2Option("department_id",['text'=>'Company']);
         $i->click('Add');
         $i->see('management');
-        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(6) button']);
-        $i->waitForText('Deactivate');
-        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(6) a']);
-        $i->waitPageLoad();
+        $i->clickActionForRow(2,'Deactivate');
         $i->dontSee('management');
         $i->click('InActive');
-        $i->click(['css'=>'table tbody tr:nth-child(2) td:nth-child(6) button']);
-        $i->cancelPopup();
-        $i->cancelPopup();
-        $i->waitForText('Active');
-        $i->click(['css'=>'table tbody tr:nth-child td:nth-child(6) a']);
-        $i->see('No matching records found');
-        $i->click('Active');
+        $i->waitForPageLoad();
         $i->see('management');
-        $i->wait(5);
+        $i->clickActionForRow(1,'Activate');
+        $i->see('No matching records found');
     }
     function testEmployee(SuperUser $i){
         $i->login('management@xavoc.com');

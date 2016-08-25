@@ -12,5 +12,6 @@ settings:
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
+        - Codeception\Extension\Recorder
 coverage:
     enabled: true
