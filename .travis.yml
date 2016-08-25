@@ -51,7 +51,7 @@ install:
 #   - wget -P ~/Downloads https://github.com/mozilla/geckodriver/releases/download/v0.10.0/geckodriver-v0.10.0-linux64.tar.gz
 #   - tar -xf ~/Downloads/geckodriver-v0.10.0-linux64.tar.gz -C ~/Downloads
 #   - composer self-update
-  # - composer install --prefer-source
+  - composer install --prefer-source
 #   - ulimit -c unlimited || true
 
 before_script:
@@ -62,26 +62,25 @@ before_script:
 #   - java -jar selenium-server-standalone-2.53.1.jar -port 4444 > /dev/null &
 #   - sleep 5
   - mkdir websites && cd websites
-  - mkdir www && cd www && mkdir assets && mkdir upload && echo "<?php $config['dsn']='mysql://root:@localhost/xepan2';$config['test_mode']=true;" >> config.php && git clone https://github.com/xepan/epanwebsite.git www
-  - cat config.php
-  # - cd ..
-  # - mkdir demo 
-  # - cd demo 
-  # - mkdir assets 
-  # - mkdir upload 
-  # - echo "<?php $config['dsn']='mysql://root:@localhost/demo'; $config['test_mode']=true;" >> config.php
-  # - cp -r ../../vendor/xepan/cms/templates/defaultlayout/www .
-  # - cd ../..
+  - mkdir www && cd www && mkdir assets && mkdir upload && echo "<?php \$config['dsn']='mysql://root:@localhost/xepan2'; \$config['test_mode']=true;" >> config.php && git clone https://github.com/xepan/epanwebsite.git www
+  - cd ..
+  - mkdir demo 
+  - cd demo 
+  - mkdir assets 
+  - mkdir upload 
+  - echo "<?php \$config['dsn']='mysql://root:@localhost/demo'; \$config['test_mode']=true;" >> config.php
+  - cp -r ../../vendor/xepan/cms/templates/defaultlayout/www .
+  - cd ../..
 #   #
-  # - mysql -e 'create database xepan2;'
-  # - mysql -e 'create database demo;'
-  # - mysql -uroot xepan2 < tests/_data/websitedata.sql
-  # - mysql -uroot demo < tests/_data/data.sql
+  - mysql -e 'create database xepan2;'
+  - mysql -e 'create database demo;'
+  - mysql -uroot xepan2 < tests/_data/websitedata.sql
+  - mysql -uroot demo < tests/_data/data.sql
 #   - php vendor/codeception/codeception/codecept build
-  # - wget http://xepan-local.org
-  # - cat index.html
-  # - wget http://demo.xepan-local.org
-  # - cat index.html.1 
+  - wget http://xepan-local.org
+  - cat index.html
+  - wget http://demo.xepan-local.org
+  - cat index.html.1
   
 # script:
 #   - php vendor/codeception/codeception/codecept run website --env travis --steps
