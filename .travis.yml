@@ -79,5 +79,5 @@ before_script:
   - php vendor/codeception/codeception/codecept build
   
 script:
-  - php vendor/codeception/codeception/codecept run website --env travis --steps
-#   # - php vendor/codeception/codeception/codecept run erp --env travis --steps
+  - php vendor/codeception/codeception/codecept run website --env travis --steps --verbose 1
+  - php vendor/codeception/codeception/codecept run erp --env travis --steps --verbose 1
