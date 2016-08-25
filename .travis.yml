@@ -61,8 +61,14 @@ before_script:
   - mkdir websites && cd websites
   - mkdir www && cd www && mkdir assets && mkdir upload && echo "<?php $config['dsn']='mysql://root:@localhost/xepan2';$config['test_mode']=true;" >> config.php && git clone https://github.com/xepan/epanwebsite.git www
   - cd ..
-  - mkdir demo && cd demo && mkdir assets && mkdir upload && echo "<?php $config['dsn']='mysql://root:@localhost/demo';$config['test_mode']=true;" >> config.php && cp vendor/xepan/cms/templates/defaultlayout/www .
+  - mkdir demo 
+  - cd demo 
+  - mkdir assets 
+  - mkdir upload 
+  - echo "<?php $config['dsn']='mysql://root:@localhost/demo';$config['test_mode']=true;" >> config.php
+  - cp ../../vendor/xepan/cms/templates/defaultlayout/www .
   - cd ../..
+  #
   - mysql -e 'create database xepan2;'
   - mysql -e 'create database demo;'
   - mysql -uroot xepan2 < tests/_data/websitedata.sql
