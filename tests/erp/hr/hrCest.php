@@ -154,15 +154,10 @@ class hrCest
         $i->clickActionForRow(2,'Deactivate');
         $i->dontSee('management');
         $i->click('InActive');
-        $i->click(['css'=>'table tbody tr:nth-child(1) td:nth-child(6) button']);
-        $i->cancelPopup();
-        $i->waitForText('Active');
-        $i->click(['css'=>'table tbody tr:nth-child(1) td:nth-child(6) a']);
-        $i->click('Active');
         $i->waitForPageLoad();
-        $i->see('No matching records found');
         $i->see('management');
-        $i->wait(5);
+        $i->clickActionForRow(1,'Activate');
+        $i->see('No matching records found');
     }
     function testEmployee(SuperUser $i){
         $i->login('management@xavoc.com');
