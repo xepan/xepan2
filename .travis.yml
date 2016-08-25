@@ -82,8 +82,8 @@ before_script:
   - php vendor/codeception/codeception/codecept build
   
 script:
-  - php vendor/codeception/codeception/codecept run website --env travis --html
-  - php vendor/codeception/codeception/codecept run erp --env travis --html
+  - php vendor/codeception/codeception/codecept run website --env travis --html website.html
+  - php vendor/codeception/codeception/codecept run erp --env travis --html erp.html
   - bash ./tests/deploy-to-gh-pages.sh
 env:
   global:
