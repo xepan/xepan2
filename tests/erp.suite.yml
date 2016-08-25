@@ -34,7 +34,7 @@ env:
         modules:
             config:
                 WebDriver:
-                    url: 'http://demo.xepan-local.org:8080'
+                    url: 'http://demo.xepan-local.org'
                     browser: 'firefox'
             enabled:
                 - Db:
