@@ -40,6 +40,7 @@ env:
                 - Db:
                     dsn: 'mysql:host=localhost;dbname=demo'
                     user: 'root'
+                    password: ''
                     # dump: tests/_data/xepan2.sql
                     # populate: true
                     # cleanup: false
