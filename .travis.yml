@@ -25,6 +25,11 @@ cache:
 git:
   depth: 1
 
+addons:
+  hosts:
+  - xepan-local.org
+  - demo.xepan-local.org
+
 install:
   - wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
   - composer self-update
@@ -47,5 +52,5 @@ before_script:
   - php vendor/codeception/codeception/codecept build
   
 script:
-  - php vendor/codeception/codeception/codecept run  # self tests
-  - php vendor/codeception/codeception/codecept run website
+  - php vendor/codeception/codeception/codecept run website --env travis
+  - php vendor/codeception/codeception/codecept run erp --env travis

@@ -36,6 +36,19 @@ env:
                     # dump: tests/_data/xepan2.sql
                     # populate: true
                     # cleanup: false
+    travis:
+        modules:
+            config:
+                WebDriver:
+                    url: 'http://xepan-local.org'
+                    browser: 'firefox'
+            enabled:
+                - Db:
+                    dsn: 'mysql:host=localhost;dbname=xepan2'
+                    user: 'root'
+                    # dump: tests/_data/xepan2.sql
+                    # populate: true
+                    # cleanup: false
     remote:
         modules:
             config:
