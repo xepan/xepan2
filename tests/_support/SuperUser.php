@@ -30,6 +30,7 @@ class SuperUser extends \Codeception\Actor
       $i=$this;
       
       if ($i->loadSessionSnapshot('login')) {
+            $i->waitPageLoad();
             return;
       }
 
@@ -114,5 +115,20 @@ class SuperUser extends \Codeception\Actor
       $i->waitForText($actionName);
       $i->click(['link'=>$actionName]);
       $i->waitPageLoad();
+    }
+
+    function closeDialog(){
+      $i = $this;
+      $i->executeJs('$.univ().closeDialog()');
+    }
+
+    function checkCheckBox($checkbox_name){
+      $i= $this;
+      $i->checkOption('form input[data-shortname='.$checkbox_name.']');
+    }
+
+    function unCheckCheckBox($checkbox_name){
+      $i= $this;
+      $i->uncheckOption('form input[data-shortname='.$checkbox_name.']');
     }
 }
