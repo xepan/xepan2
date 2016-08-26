@@ -40,6 +40,11 @@ install:
   - echo "Using firefox version `firefox --version`"  
   - sudo apt-get update
   - sudo apt-get install apache2 libapache2-mod-fastcgi
+
+# Install codecept globally
+  - sudo curl -LsS http://codeception.com/codecept.phar -o /usr/local/bin/codecept
+  - sudo chmod a+x /usr/local/bin/codecept
+
   # enable php-fpm
   - "if [[ ${TRAVIS_PHP_VERSION:0:3} == \"7.0\" ]]; then sudo cp tests/php7-pool.conf ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.d/; fi"
   - "cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf"
@@ -54,7 +59,7 @@ install:
   - wget -P ~/Downloads https://github.com/mozilla/geckodriver/releases/download/v0.10.0/geckodriver-v0.10.0-linux64.tar.gz
   - tar -xf ~/Downloads/geckodriver-v0.10.0-linux64.tar.gz -C ~/Downloads
   - composer self-update
-  - composer install --prefer-dist
+  - composer install --prefer-source --no-dev
   - ulimit -c unlimited || true
 
 before_script:
@@ -79,11 +84,11 @@ before_script:
   - mysql -e 'create database demo;'
   - mysql -uroot xepan2 < tests/_data/websitedata.sql
   - mysql -uroot demo < tests/_data/data.sql
-  - php vendor/codeception/codeception/codecept build
+  - codecept build
   
 script:
-  - php vendor/codeception/codeception/codecept run website --env travis --html website.html
-  - php vendor/codeception/codeception/codecept run erp --env travis --html erp.html
+  - codecept run website --env travis --html website.html
+  - codecept run erp --env travis --html index.html
   - bash ./tests/deploy-to-gh-pages.sh
 env:
   global:

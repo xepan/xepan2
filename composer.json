@@ -44,8 +44,5 @@
             "document-root": "frontend/public",
             "index-document": "index.php"
         }
-    },
-  "require-dev": {
-    "codeception/codeception": "^2.1"
-  }
+    }
 }
