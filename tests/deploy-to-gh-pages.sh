@@ -7,6 +7,7 @@ cd tests/_output
 git config --global user.email "gowravvishwakarma@gmail.com"
 git config --global user.name "Gowrav Vishwakarma"
 
+mkdir ~/temp
 mv * ~/temp
 
 mkdir "${REPORT_FOLDER}"
