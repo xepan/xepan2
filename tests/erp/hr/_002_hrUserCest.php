@@ -4,7 +4,7 @@ namespace hr;
 use \SuperUser;
 use \Codeception\Util\Locator;
 
-class hrUserCest
+class _002_hrUserCest
 {
     public function _before(SuperUser $I)
     {
