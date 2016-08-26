@@ -47,9 +47,7 @@ class hrCest
 
     function test_add_department(SuperUser $i){
         $i->login('management@xavoc.com');
-        $i->waitPageLoad();
         $i->clickMenu('HR->Department');
-        $i->waitPageLoad();
         $i->click('Add Department');
 
         $i->fillAtkField('name','Company');
@@ -120,7 +118,8 @@ class hrCest
     function testPost(SuperUser $i){
         $i->login('management@xavoc.com');
         $i->clickMenu('HR->Post');
-        $i->see('CEO');
+        $i->wait(2);
+        $i->waitForText('CEO');
         $i->click(['css'=>'table tbody tr td:nth-child(4) a.emails-accesible']);
         // $i->acceptPopup();
         $i->see('Permitted Emails');
@@ -129,7 +128,9 @@ class hrCest
         $i->click(['css'=>'table tbody tr td:nth-child(5) a.do-view-post-employees']);
         $i->see('Post Employees');
         $i->wait(2);
-        $i->click(['css'=>' button.ui-dialog-titlebar-close']);
+        $i->closeDialog();
+        $i->dontSee('Post Employees');
+        // $i->click(['css'=>' button.ui-dialog-titlebar-close']);
         // $i->click(['css'=>'table tbody tr td:nth-child(1) a.do-view-employee']);
         // $i->see('Employee Details');
         // $i->wait(2);
@@ -140,7 +141,6 @@ class hrCest
     function test_add_post(SuperUser $i){
         $i->login('management@xavoc.com');
         $i->clickMenu('HR->Post');
-        // $i->waitPageLoad();
         $i->waitForText('Add Post');
         $i->click('Add Post');
 
@@ -170,7 +170,9 @@ class hrCest
         $i->wait(2);
         $i->click('Documents');
         $i->waitForText('No document found');
-        $i->click(['css'=>' button.ui-dialog-titlebar-close']);
+        // $i->click(['css'=>' button.ui-dialog-titlebar-close']);
+        $i->closeDialog();
+        $i->dontSee('Employee Details');
     }
     function test_add_employee(SuperUser $i){
         $i->login('management@xavoc.com');
@@ -216,8 +218,8 @@ class hrCest
         $i->click('Add');
         $i->waitForText('Value must not be empty');
         $i->fillAtkField('value','vijay.mali552@gmail.com');
-        // $i->click('is Active');
-        // $i->click('is Valid');
+        $i->unCheckCheckBox('is_active');
+        $i->unCheckCheckBox('is_valid');
         $i->click('Add');
         $i->waitForText('vijay.mali552@gmail.com');
     }
@@ -340,8 +342,8 @@ class hrCest
         $i->click('Add');
         $i->waitForText('Value must not be empty');
         $i->fillAtkField('value','vijay.mali552@gmail.com');
-        // $i->click('is Active');
-        // $i->click('is Valid');
+        $i->unCheckCheckBox('is_active');
+        $i->unCheckCheckBox('is_valid');
         $i->click('Add');
         $i->waitForText('vijay.mali552@gmail.com');
     }
