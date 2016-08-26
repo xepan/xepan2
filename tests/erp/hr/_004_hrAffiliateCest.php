@@ -4,7 +4,7 @@ namespace hr;
 use \SuperUser;
 use \Codeception\Util\Locator;
 
-class hrAffiliateCest
+class _004_hrAffiliateCest
 {
     public function _before(SuperUser $I)
     {
