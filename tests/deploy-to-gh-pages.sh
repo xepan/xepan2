@@ -8,7 +8,7 @@ git config --global user.email "gowravvishwakarma@gmail.com"
 git config --global user.name "Gowrav Vishwakarma"
 
 mkdir ${GITHUB_REPO}
-mv !(${GITHUB_REPO}) ${GITHUB_REPO}
+mv !("${GITHUB_REPO}") "${GITHUB_REPO}"
 
 git init
 git remote add origin https://github.com/xavoctechnocratspvtltd/xepan2.git
