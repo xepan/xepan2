@@ -11,8 +11,8 @@ mkdir ${GITHUB_REPO}
 mv !(${GITHUB_REPO}) ${GITHUB_REPO}
 
 git init
-git add -A .
-git commit -m "Travis Report"
 git remote add origin https://github.com/xavoctechnocratspvtltd/xepan2.git
 git pull origin gh-pages
+git add -A .
+git commit -m "Travis Report"
 git push --force --quiet "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git" master:gh-pages
