@@ -14,7 +14,7 @@ mkdir "${REPORT_FOLDER}"
 mv ~/temp/* ./"${REPORT_FOLDER}"
 
 git init
-git remote add origin https://github.com/xavoctechnocratspvtltd/xepan2.git
+git remote add origin --depth=1 https://github.com/xavoctechnocratspvtltd/xepan2.git
 git pull origin gh-pages
 git add -A .
 git commit -m "Travis Report"
