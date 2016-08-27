@@ -26,6 +26,7 @@ assets/*
 *.mwb
 /upload/*
 tests/_output/*
+tests/*
 .tmb
 xepantemplates/*
 websites/*

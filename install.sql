@@ -1114,8 +1114,8 @@ CREATE TABLE `invoice_transaction_association` (
 -- ----------------------------
 --  Table structure for `IP2LOCATION-LITE-DB11`
 -- ----------------------------
-DROP TABLE IF EXISTS `IP2LOCATION-LITE-DB11`;
-CREATE TABLE `IP2LOCATION-LITE-DB11` (
+DROP TABLE IF EXISTS `ip2location-lite-db11`;
+CREATE TABLE `ip2location-lite-db11` (
   `ip_from` int(11) DEFAULT NULL,
   `ip_to` int(11) DEFAULT NULL,
   `country_code` varchar(5) DEFAULT NULL,
