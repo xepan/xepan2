@@ -140,4 +140,9 @@ class SuperUser extends \Codeception\Actor
       $i = $this;
       $i->executeJs("$('.checkbox-nice input[data-shortname=".$selector."]').attr('checked',false)");
     }
+
+    function selectorClick($selector){
+      $i = $this;
+      $i->executeJs("$('".$selector."').click()");
+    }
 }
