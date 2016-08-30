@@ -30,6 +30,21 @@ env:
                     password: 'winserver'
                     dump: tests/_data/data.sql
                     cleanup: false
+    travis:
+        modules:
+            config:
+                WebDriver:
+                    url: 'http://demo.xepan-local.org'
+                    browser: 'firefox'
+            enabled:
+                - Db:
+                    dsn: 'mysql:host=localhost;dbname=demo'
+                    user: 'root'
+                    password: ''
+                    # dump: tests/_data/xepan2.sql
+                    # populate: true
+                    # cleanup: false
+
     remote:
         modules:
             config:

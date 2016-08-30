@@ -30,6 +30,7 @@ class SuperUser extends \Codeception\Actor
       $i=$this;
       
       if ($i->loadSessionSnapshot('login')) {
+            $i->waitPageLoad();
             return;
       }
 
@@ -99,11 +100,35 @@ class SuperUser extends \Codeception\Actor
     }
 
     function waitForAjaxError($error){
+      $i = $this;
       $i->waitForElement('.field-error-text');
       $i->see($error);
     }
 
     function select2Option($selector,$value,$time_out=1){
       $this->selectOptionForSelect2("[data-shortname=$selector]",$value,$time_out);
+    }
+
+    function clickActionForRow($row,$actionName){
+      $i = $this;
+      $i->click(['css'=>'table tbody tr:nth-child('.$row.') td button.dropdown-toggle']);
+      $i->waitForText($actionName);
+      $i->click(['link'=>$actionName]);
+      $i->waitPageLoad();
+    }
+
+    function closeDialog(){
+      $i = $this;
+      $i->executeJs('$.univ().closeDialog()');
+    }
+
+    function checkCheckBox($checkbox_name){
+      $i= $this;
+      $i->checkOption('form input[data-shortname='.$checkbox_name.']');
+    }
+
+    function unCheckCheckBox($checkbox_name){
+      $i= $this;
+      $i->uncheckOption('form input[data-shortname='.$checkbox_name.']');
     }
 }
