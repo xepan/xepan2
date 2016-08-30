@@ -131,4 +131,18 @@ class SuperUser extends \Codeception\Actor
       $i= $this;
       $i->uncheckOption('form input[data-shortname='.$checkbox_name.']');
     }
+
+    function checkNiceCheckbox($selector){
+      $i = $this;
+      $i->executeJs("$('.checkbox-nice input[data-shortname=".$selector."]').attr('checked',true)");
+    }
+    function unCheckNiceCheckBox($selector){
+      $i = $this;
+      $i->executeJs("$('.checkbox-nice input[data-shortname=".$selector."]').attr('checked',false)");
+    }
+
+    function selectorClick($selector){
+      $i = $this;
+      $i->executeJs("$('".$selector."').click()");
+    }
 }
