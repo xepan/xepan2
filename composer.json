@@ -33,7 +33,8 @@
     "guzzlehttp/guzzle": "^6.2",
     "cron/cron": "^1.0",
     "abraham/twitteroauth": "^0.6.4",
-    "seostats/seostats": "^2.5"
+    "seostats/seostats": "^2.5",
+    "webit/eval-math": "^1.0"
   },
   "autoload":{
     "psr-0":{

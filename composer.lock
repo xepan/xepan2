@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d72976ffa0947b981ec94d68f737e77c",
-    "content-hash": "a867acf0cebb24773886a4000eaaccdc",
+    "hash": "8ae0648f9c065ed8644096583c26c04a",
+    "content-hash": "6725a3724ba94ba39e1e250337a8e950",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -119,97 +119,6 @@
                 "parser"
             ],
             "time": "2016-06-25 11:38:01"
-        },
-        {
-            "name": "codeception/codeception",
-            "version": "2.2.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "8d3a3bd706ac0c6d18a67a6dbd82dcafbc8f824a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/8d3a3bd706ac0c6d18a67a6dbd82dcafbc8f824a",
-                "reference": "8d3a3bd706ac0c6d18a67a6dbd82dcafbc8f824a",
-                "shasum": ""
-            },
-            "require": {
-                "behat/gherkin": "~4.4.0",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "facebook/webdriver": ">=1.0.1 <2.0",
-                "guzzlehttp/guzzle": ">=4.1.4 <7.0",
-                "guzzlehttp/psr7": "~1.0",
-                "php": ">=5.4.0 <8.0",
-                "phpunit/php-code-coverage": ">=2.1.3 <5.0",
-                "phpunit/phpunit": ">4.8.20 <6.0",
-                "sebastian/comparator": "~1.1",
-                "sebastian/diff": "^1.4",
-                "symfony/browser-kit": ">=2.7 <4.0",
-                "symfony/console": ">=2.7 <4.0",
-                "symfony/css-selector": ">=2.7 <4.0",
-                "symfony/dom-crawler": ">=2.7 <4.0",
-                "symfony/event-dispatcher": ">=2.7 <4.0",
-                "symfony/finder": ">=2.7 <4.0",
-                "symfony/yaml": ">=2.7 <4.0"
-            },
-            "require-dev": {
-                "codeception/specify": "~0.3",
-                "facebook/php-sdk-v4": "~5.0",
-                "flow/jsonpath": "~0.2",
-                "league/factory-muffin": "^3.0",
-                "league/factory-muffin-faker": "^1.0",
-                "mongodb/mongodb": "^1.0",
-                "monolog/monolog": "~1.8",
-                "pda/pheanstalk": "~3.0",
-                "php-amqplib/php-amqplib": "~2.4",
-                "predis/predis": "^1.0",
-                "squizlabs/php_codesniffer": "~2.0"
-            },
-            "suggest": {
-                "codeception/specify": "BDD-style code blocks",
-                "codeception/verify": "BDD-style assertions",
-                "flow/jsonpath": "For using JSONPath in REST module",
-                "league/factory-muffin": "For DataFactory module",
-                "league/factory-muffin-faker": "For Faker support in DataFactory module",
-                "phpseclib/phpseclib": "for SFTP option in FTP Module",
-                "symfony/phpunit-bridge": "For phpunit-bridge support"
-            },
-            "bin": [
-                "codecept"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": []
-            },
-            "autoload": {
-                "psr-4": {
-                    "Codeception\\": "src\\Codeception",
-                    "Codeception\\Extension\\": "ext"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Bodnarchuk",
-                    "email": "davert@mail.ua",
-                    "homepage": "http://codegyre.com"
-                }
-            ],
-            "description": "BDD-style testing framework",
-            "homepage": "http://codeception.com/",
-            "keywords": [
-                "BDD",
-                "TDD",
-                "acceptance testing",
-                "functional testing",
-                "unit testing"
-            ],
-            "time": "2016-08-27 21:14:31"
         },
         {
             "name": "cron/cron",
@@ -586,7 +495,6 @@
                 "rest",
                 "web service"
             ],
-            "abandoned": "guzzlehttp/guzzle",
             "time": "2015-04-29 17:06:53"
         },
         {
@@ -1310,12 +1218,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/omnipay-common.git",
-                "reference": "82d6f01e66c919f24468df6c7103bce6042e639e"
+                "reference": "8217d0e8b80a97f0d1fab0e1763200636daf1c00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay-common/zipball/82d6f01e66c919f24468df6c7103bce6042e639e",
-                "reference": "82d6f01e66c919f24468df6c7103bce6042e639e",
+                "url": "https://api.github.com/repos/thephpleague/omnipay-common/zipball/8217d0e8b80a97f0d1fab0e1763200636daf1c00",
+                "reference": "8217d0e8b80a97f0d1fab0e1763200636daf1c00",
                 "shasum": ""
             },
             "require": {
@@ -1400,7 +1308,7 @@
                 "payment",
                 "purchase"
             ],
-            "time": "2016-08-19 08:49:55"
+            "time": "2016-08-31 09:04:51"
         },
         {
             "name": "omnipay/dummy",
@@ -4222,12 +4130,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "f1e825ebf8947be664ecfd4b3c8dfd927104a5ea"
+                "reference": "d7b31206638f0d9492679e5a525e4f2abf7a990b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/f1e825ebf8947be664ecfd4b3c8dfd927104a5ea",
-                "reference": "f1e825ebf8947be664ecfd4b3c8dfd927104a5ea",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/d7b31206638f0d9492679e5a525e4f2abf7a990b",
+                "reference": "d7b31206638f0d9492679e5a525e4f2abf7a990b",
                 "shasum": ""
             },
             "require": {
@@ -4267,7 +4175,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-22 12:11:39"
+            "time": "2016-09-06 11:07:23"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -4334,12 +4242,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "2d6011bd6f6086b3409f85c6dd0ec61b90091a04"
+                "reference": "7f20312aa0c870e583db353cc2e9759edbdc3873"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/2d6011bd6f6086b3409f85c6dd0ec61b90091a04",
-                "reference": "2d6011bd6f6086b3409f85c6dd0ec61b90091a04",
+                "url": "https://api.github.com/repos/symfony/process/zipball/7f20312aa0c870e583db353cc2e9759edbdc3873",
+                "reference": "7f20312aa0c870e583db353cc2e9759edbdc3873",
                 "shasum": ""
             },
             "require": {
@@ -4375,7 +4283,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-16 16:09:30"
+            "time": "2016-09-06 11:07:23"
         },
         {
             "name": "symfony/translation",
@@ -4537,7 +4445,7 @@
                 {
                     "name": "Todd Burry",
                     "email": "todd@vanillaforums.com",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "A jQuery like html dom parser written in php.",
@@ -4663,12 +4571,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "8c9a0b50a1dbd69dc7c73a492d8825cccc147c7f"
+                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/8c9a0b50a1dbd69dc7c73a492d8825cccc147c7f",
-                "reference": "8c9a0b50a1dbd69dc7c73a492d8825cccc147c7f",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
                 "shasum": ""
             },
             "require": {
@@ -4705,7 +4613,45 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-06-14 16:39:40"
+            "time": "2016-09-01 10:05:43"
+        },
+        {
+            "name": "webit/eval-math",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dbojdo/eval-math.git",
+                "reference": "0e7c3a1e0f536b826f04553726c112996b52ded6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dbojdo/eval-math/zipball/0e7c3a1e0f536b826f04553726c112996b52ded6",
+                "reference": "0e7c3a1e0f536b826f04553726c112996b52ded6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webit\\Util\\EvalMath\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "EvalMath",
+            "keywords": [
+                "EvalMath"
+            ],
+            "time": "2016-02-15 09:34:24"
         },
         {
             "name": "webmozart/assert",
@@ -4799,7 +4745,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-30 17:44:46"
+            "time": "2016-08-22 04:29:34"
         },
         {
             "name": "xepan/atk4",
@@ -4879,7 +4825,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-27 05:35:02"
+            "time": "2016-09-02 10:06:29"
         },
         {
             "name": "xepan/blog",
@@ -4922,7 +4868,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-07-28 10:35:44"
+            "time": "2016-06-30 13:12:04"
         },
         {
             "name": "xepan/ccavenue",
@@ -5066,7 +5012,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-30 06:44:52"
+            "time": "2016-09-02 07:41:30"
         },
         {
             "name": "xepan/communication",
@@ -5113,7 +5059,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-08-30 11:48:10"
+            "time": "2016-09-02 11:31:05"
         },
         {
             "name": "xepan/crm",
@@ -5204,7 +5150,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-30 07:09:07"
+            "time": "2016-08-26 17:21:09"
         },
         {
             "name": "xepan/filestore",
@@ -5323,7 +5269,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-30 08:45:14"
+            "time": "2016-09-01 14:06:19"
         },
         {
             "name": "xepan/mail",
