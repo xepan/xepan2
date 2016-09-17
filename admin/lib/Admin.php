@@ -42,7 +42,7 @@ class Admin extends App_Frontend {
 
     function defaultTemplate(){
         
-        $this->readConfig("websites/www/config.php");
+        $epan_domain_array = $this->recall('epan_domain_array',[]);
 
         $url = "{$_SERVER['HTTP_HOST']}";
         $domain = str_replace('www.','',$this->extract_domain($url))?:'www';
@@ -55,13 +55,17 @@ class Admin extends App_Frontend {
             $epan = $sub_domain;
         }
 
-        $this->dbConnect();
-        $epan = $this->db->dsql()->table('epan')->where($this->db->dsql()->orExpr()->where('name',$epan)->where('aliases','like','"%'.$epan.'%"'))->getHash();
-
+        if(!isset($epan_domain_array[$epan])){            
+            $this->readConfig("websites/www/config.php");
+            $this->dbConnect();
+            $epan_hash = $this->db->dsql()->table('epan')->where($this->db->dsql()->orExpr()->where('name',$epan)->where('aliases','like','"%'.$epan.'%"'))->getHash();
+            $epan_domain_array[$epan] = $epan_hash['name'];
+            $this->memorize('epan_domain_array',$epan_domain_array);
+        }
         // die(print_r($epan,true));
         // die($epan['name']);
 
-        $current_website = $this->current_website_name = $epan['name'];
+        $current_website = $this->current_website_name = $epan;
         $this->readConfig("websites/$this->current_website_name/config.php");
 
         $this->addLocation(array(
