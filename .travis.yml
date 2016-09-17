@@ -87,7 +87,7 @@ before_script:
   - codecept build
   
 script:
-  - codecept run website --env travis --html website.html
+  - codecept run acceptance --env travis --html website.html
   - codecept run erp --env travis --html index.html
   - bash ./tests/deploy-to-gh-pages.sh
 env:

@@ -113,11 +113,9 @@ class Frontend extends ApiFrontend {
         }elseif($this->pathfinder->locate('template','layout/default.html','path',false)){            
             return ['layout/default'];
         }elseif(!$this->layout){
-            throw new \Exception("No Website content found or No Template in Website default for ". $this->current_website_name, 1);
-            
+            throw new \Exception("No Website content found or No Template in Website for ". $this->current_website_name, 1);
         }else{
-            throw new \Exception("Error Processing Request", 1);
-            
+            throw new \Exception("Error Processing Request", 1);            
         }  
     }
 
