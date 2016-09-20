@@ -11,7 +11,7 @@
  Target Server Version : 100114
  File Encoding         : utf-8
 
- Date: 09/19/2016 16:18:31 PM
+ Date: 09/20/2016 11:27:19 AM
 */
 
 SET NAMES utf8;
@@ -1977,6 +1977,7 @@ CREATE TABLE `store_transaction_row` (
   `epan_id` int(11) DEFAULT NULL,
   `store_transaction_id` int(11) DEFAULT NULL,
   `qsp_detail_id` int(11) DEFAULT NULL,
+  `item_id` int(11) DEFAULT NULL,
   `quantity` double(8,4) DEFAULT NULL,
   `jobcard_detail_id` int(11) DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL,
