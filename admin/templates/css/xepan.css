@@ -935,3 +935,39 @@ textarea {width: 100%;}
     width:100%!important;
     height:auto!important;
   }
+
+.compose-email-view-popup  {
+    min-width: 350px;
+    position: fixed;
+    bottom: 0px;
+    right: 10px;
+    width: 35%;
+    z-index: 300;
+    
+  }
+  /*--------------------Compose Email View Popup CSS---------------------------*/
+  
+  .compose-email-view-popup .compose-email-inner{
+    overflow-x:hidden;
+    overflow-y: scroll;
+    height: 520px;
+    padding: 10px;
+    border: 2px solid gray;
+    background-color: white;
+  }
+
+  .compose-email-view-popup .header {
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+  }  
+  .compose-email-view-popup .header i {
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .compose-email-resize-toggle{
+    width: 80%;
+    right: auto;
+    left: auto;
+  }
