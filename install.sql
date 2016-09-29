@@ -11,7 +11,7 @@
  Target Server Version : 100114
  File Encoding         : utf-8
 
- Date: 09/20/2016 11:27:19 AM
+ Date: 09/29/2016 19:55:59 PM
 */
 
 SET NAMES utf8;
@@ -134,7 +134,7 @@ CREATE TABLE `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=260 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=280 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `activity`
@@ -157,7 +157,7 @@ CREATE TABLE `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2325 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2329 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `affiliate`
@@ -195,21 +195,6 @@ CREATE TABLE `attachment` (
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `file_id` (`file_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Table structure for `bar_code_reader`
--- ----------------------------
-DROP TABLE IF EXISTS `bar_code_reader`;
-CREATE TABLE `bar_code_reader` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `is_used` tinyint(4) DEFAULT NULL,
-  `related_document_id` int(11) DEFAULT NULL,
-  `related_document_type` varchar(255) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
-  `type` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `blog_comment`
@@ -426,7 +411,7 @@ CREATE TABLE `communication` (
   KEY `to_id` (`to_id`) USING BTREE,
   KEY `from_id` (`from_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=5015 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5016 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `communication_attachment`
@@ -456,6 +441,7 @@ CREATE TABLE `communication_sms_setting` (
   `sm_message_qs_param` varchar(255) DEFAULT NULL,
   `sms_prefix` varchar(255) DEFAULT NULL,
   `sms_postfix` varchar(255) DEFAULT NULL,
+  `created_by_id` varchar(255) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
@@ -470,6 +456,7 @@ CREATE TABLE `contact` (
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
+  `code` varchar(255) NOT NULL,
   `status` varchar(255) DEFAULT NULL,
   `address` text,
   `city` varchar(255) DEFAULT NULL,
@@ -833,6 +820,19 @@ CREATE TABLE `discount_voucher_used` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
+--  Table structure for `dispatch_barcode`
+-- ----------------------------
+DROP TABLE IF EXISTS `dispatch_barcode`;
+CREATE TABLE `dispatch_barcode` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `is_used` tinyint(4) DEFAULT NULL,
+  `related_document_id` int(11) DEFAULT NULL,
+  `related_document_type` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
 --  Table structure for `document`
 -- ----------------------------
 DROP TABLE IF EXISTS `document`;
@@ -872,6 +872,7 @@ DROP TABLE IF EXISTS `emailsetting`;
 CREATE TABLE `emailsetting` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
+  `created_by_id` varchar(255) NOT NULL,
   `email_transport` varchar(255) DEFAULT NULL,
   `encryption` varchar(255) DEFAULT NULL,
   `email_host` varchar(255) DEFAULT NULL,
@@ -955,6 +956,23 @@ CREATE TABLE `employee_documents` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Table structure for `employee_leave_allow`
+-- ----------------------------
+DROP TABLE IF EXISTS `employee_leave_allow`;
+CREATE TABLE `employee_leave_allow` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `employee_id` int(11) DEFAULT NULL,
+  `leave_id` int(11) DEFAULT NULL,
+  `is_yearly_carried_forward` tinyint(4) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `is_unit_carried_forward` tinyint(4) DEFAULT NULL,
+  `unit` varchar(255) DEFAULT NULL,
+  `allow_over_quota` tinyint(4) DEFAULT NULL,
+  `no_of_leave` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
 --  Table structure for `employee_movement`
 -- ----------------------------
 DROP TABLE IF EXISTS `employee_movement`;
@@ -968,7 +986,20 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=482 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=488 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `employee_salary`
+-- ----------------------------
+DROP TABLE IF EXISTS `employee_salary`;
+CREATE TABLE `employee_salary` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `employee_id` int(11) DEFAULT NULL,
+  `salary_id` int(11) DEFAULT NULL,
+  `amount` decimal(10,0) DEFAULT NULL,
+  `unit` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `epan`
@@ -1015,7 +1046,7 @@ CREATE TABLE `epan_config` (
   `application` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `experience`
@@ -1184,7 +1215,7 @@ CREATE TABLE `item` (
   `meta_description` text,
   `tags` text,
   `is_designable` tinyint(1) DEFAULT NULL,
-  `designs` text,
+  `designs` longtext CHARACTER SET utf8,
   `is_party_publish` tinyint(1) DEFAULT NULL,
   `minimum_order_qty` int(11) DEFAULT NULL,
   `maximum_order_qty` int(11) DEFAULT NULL,
@@ -1291,7 +1322,7 @@ CREATE TABLE `item_template_design` (
   `item_id` int(11) DEFAULT NULL,
   `last_modified` date DEFAULT NULL,
   `is_ordered` tinyint(4) DEFAULT NULL,
-  `designs` text,
+  `designs` longtext,
   `contact_id` int(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`) USING BTREE,
@@ -1383,6 +1414,49 @@ CREATE TABLE `lead_category_association` (
 ) ENGINE=InnoDB AUTO_INCREMENT=536 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Table structure for `leave_template`
+-- ----------------------------
+DROP TABLE IF EXISTS `leave_template`;
+CREATE TABLE `leave_template` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+--  Table structure for `leave_template_detail`
+-- ----------------------------
+DROP TABLE IF EXISTS `leave_template_detail`;
+CREATE TABLE `leave_template_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `leave_template_id` int(11) DEFAULT NULL,
+  `leave_id` int(11) DEFAULT NULL,
+  `is_yearly_carried_forward` tinyint(4) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `is_unit_carried_forward` tinyint(4) DEFAULT NULL,
+  `unit` varchar(255) DEFAULT NULL,
+  `allow_over_quota` tinyint(4) DEFAULT NULL,
+  `no_of_leave` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+--  Table structure for `leaves`
+-- ----------------------------
+DROP TABLE IF EXISTS `leaves`;
+CREATE TABLE `leaves` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `is_yearly_carried_forward` tinyint(4) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `is_unit_carried_forward` tinyint(4) DEFAULT NULL,
+  `no_of_leave` decimal(10,0) DEFAULT NULL,
+  `unit` varchar(255) DEFAULT NULL,
+  `allow_over_quota` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
 --  Table structure for `ledger`
 -- ----------------------------
 DROP TABLE IF EXISTS `ledger`;
@@ -1407,7 +1481,7 @@ CREATE TABLE `ledger` (
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_id` (`related_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`name`,`ledger_type`,`LedgerDisplayName`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `lodgement`
@@ -1636,6 +1710,8 @@ CREATE TABLE `post` (
   `parent_post_id` int(11) DEFAULT NULL,
   `in_time` time NOT NULL,
   `out_time` time NOT NULL,
+  `salary_template_id` int(11) DEFAULT NULL,
+  `leave_template_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_post_department1_idx` (`department_id`),
   KEY `parent_post_id` (`parent_post_id`) USING BTREE,
@@ -1847,6 +1923,41 @@ CREATE TABLE `rules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+--  Table structure for `salary`
+-- ----------------------------
+DROP TABLE IF EXISTS `salary`;
+CREATE TABLE `salary` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `add_deducat` varchar(255) DEFAULT NULL,
+  `unit` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+--  Table structure for `salary_template`
+-- ----------------------------
+DROP TABLE IF EXISTS `salary_template`;
+CREATE TABLE `salary_template` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+--  Table structure for `salary_template_details`
+-- ----------------------------
+DROP TABLE IF EXISTS `salary_template_details`;
+CREATE TABLE `salary_template_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `salary_template_id` int(11) DEFAULT NULL,
+  `salary_id` int(11) DEFAULT NULL,
+  `amount` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `schedule`
@@ -2074,7 +2185,7 @@ CREATE TABLE `task` (
   `is_reminder` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `task_title_full_text` (`task_name`,`description`,`status`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=392 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=395 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `task_attachment`
@@ -2184,7 +2295,7 @@ CREATE TABLE `timesheet` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `tnc`
