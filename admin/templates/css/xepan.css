@@ -936,6 +936,8 @@ textarea {width: 100%;}
     height:auto!important;
   }
 
+  /*--------------------Compose Email View Popup CSS---------------------------*/
+  
 .compose-email-view-popup  {
     min-width: 350px;
     position: fixed;
@@ -945,8 +947,6 @@ textarea {width: 100%;}
     z-index: 300;
     
   }
-  /*--------------------Compose Email View Popup CSS---------------------------*/
-  
   .compose-email-view-popup .compose-email-inner{
     overflow-x:hidden;
     overflow-y: scroll;
@@ -970,4 +970,56 @@ textarea {width: 100%;}
     width: 80%;
     right: auto;
     left: auto;
+  }
+  
+  /*--------------------CRM Reply Email Popup CSS---------------------------*/
+
+  .xepan-crm-reply-tool{
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
+    /*padding: 15px;*/
+    min-width: 350px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 35%;
+    z-index: 300; 
+  }
+  
+  /*.xepan-crm-communication-reply-view .xepan-crm-form-inner{*/
+  .xepan-crm-communication-reply-view .xepan-crm-form-inner{
+    overflow-x:hidden;
+    overflow-y: scroll;
+    height: 520px;
+    padding: 10px;
+    border: 2px solid gray;
+    background-color: white;
+  }
+  
+
+  .xepan-crm-communication-reply-view .header {
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+  }
+  .xepan-crm-communication-reply-view .header i {
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .xepan-crm-reply-tool-cog{
+    /*background: #fff none repeat scroll 0 0 padding-box;*/
+    border-radius: 3px 0px 0 3px;
+    box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    right: 476px;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    top: 210px;
+    transition: all 0.1s ease-in-out 0s;
+    width: 50px;
+  }
+  .xepan-crm-reply-tool-closed{
+    right: -474px;
   }
