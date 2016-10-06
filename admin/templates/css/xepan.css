@@ -905,11 +905,9 @@ textarea {width: 100%;}
 
   .xepan-crm-reply-tool{
     min-width: auto!important;
-    position: fixed;
     top:55px!important;
     bottom: auto!important;
     width: 95%!important;
-    z-index: 30000; 
   }
   
   /*.xepan-crm-communication-reply-view .xepan-crm-form-inner{*/
@@ -983,7 +981,7 @@ textarea {width: 100%;}
     bottom: 0px;
     right: 10px;
     width: 35%;
-    z-index: 30000;
+    z-index: 3000;
     
   }
   .compose-email-view-popup .compose-email-inner{
@@ -1022,7 +1020,7 @@ textarea {width: 100%;}
     bottom: 0px;
     right: 0px;
     width: 35%;
-    z-index: 30000; 
+    z-index: 3000; 
   }
   
   /*.xepan-crm-communication-reply-view .xepan-crm-form-inner{*/
