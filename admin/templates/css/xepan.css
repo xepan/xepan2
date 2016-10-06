@@ -884,7 +884,6 @@ textarea {width: 100%;}
   
   .compose-email-view-popup  {
     margin: auto !important;
-
     min-width: auto !important;
     right: auto!important;
     bottom: auto!important;
@@ -901,11 +900,22 @@ textarea {width: 100%;}
     line-height: 1px!important
   }
 
-  .compose-email-view-popup .header {
-    color: white;
-    padding: 10px;
-    border-radius: 5px 5px 0 0;
-  }  
+
+  /*--------------------CRM Reply Email Popup CSS---------------------------*/
+
+  .xepan-crm-reply-tool{
+    min-width: auto!important;
+    position: fixed;
+    top:55px!important;
+    bottom: auto!important;
+    width: 95%!important;
+    z-index: 30000; 
+  }
+  
+  /*.xepan-crm-communication-reply-view .xepan-crm-form-inner{*/
+  .xepan-crm-communication-reply-view .xepan-crm-form-inner{
+    height: 380px!important;
+  }
   
 
 }  
