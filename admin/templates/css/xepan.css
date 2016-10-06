@@ -879,6 +879,35 @@ textarea {width: 100%;}
   .conversation-wrapper{
     padding-bottom: 0px!important;
   }
+
+    /*--------------------Compose Email View Popup Mobile CSS---------------------------*/
+  
+  .compose-email-view-popup  {
+    margin: auto !important;
+
+    min-width: auto !important;
+    right: auto!important;
+    bottom: auto!important;
+    top:60px!important;
+    width: 100% !important;
+  }
+  .compose-email-view-popup .email-new-nano-content{
+    width:85%!important;
+    margin: auto!important;
+    height: 420px;
+  }
+  .compose-email-view-popup .compose-email-inner{
+    height: 380px!important;
+    line-height: 1px!important
+  }
+
+  .compose-email-view-popup .header {
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+  }  
+  
+
 }  
 
 .dialogelfinder {
