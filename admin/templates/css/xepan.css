@@ -970,9 +970,11 @@ textarea {width: 100%;}
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
 
 }
-
+#email-detail-attachments #email-attachments-content ul li{
+    width:20%!important;
+}
 #email-detail-attachments #email-attachments-content ul li .img{
-    min-height:87px;
+    min-height:75px;
     min-width:130px;
     width:100%!important;
     height:auto!important;
