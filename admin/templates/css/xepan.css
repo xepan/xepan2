@@ -920,7 +920,9 @@ textarea {width: 100%;}
     left: -35px!important;
   }
   
-
+  #email-detail-attachments #email-attachments-content ul li{
+      width:100%!important;
+  }
 }  
 
 .dialogelfinder {
