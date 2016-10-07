@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8ae0648f9c065ed8644096583c26c04a",
-    "content-hash": "6725a3724ba94ba39e1e250337a8e950",
+    "hash": "656e08b6132a2d96381c339ec3bcd5c8",
+    "content-hash": "918c71884adae23b5e2ae878b241a898",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -495,6 +495,7 @@
                 "rest",
                 "web service"
             ],
+            "abandoned": "guzzlehttp/guzzle",
             "time": "2015-04-29 17:06:53"
         },
         {
@@ -4445,7 +4446,7 @@
                 {
                     "name": "Todd Burry",
                     "email": "todd@vanillaforums.com",
-                    "role": "Developer"
+                    "role": "developer"
                 }
             ],
             "description": "A jQuery like html dom parser written in php.",
@@ -4745,7 +4746,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-22 04:29:34"
+            "time": "2016-08-30 17:44:46"
         },
         {
             "name": "xepan/atk4",
@@ -4868,7 +4869,50 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-06-30 13:12:04"
+            "time": "2016-07-28 10:35:44"
+        },
+        {
+            "name": "xepan/captcha",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:xepan/x_captcha.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/x_captcha/zipball/origin/master",
+                "reference": "origin/master",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "xepan/atk4": "4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "autocomplete": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "ATK filestore modified for xEpan Platform",
+            "homepage": "https://github.com/xepan/x_captcha",
+            "keywords": [
+                "captcha",
+                "saas",
+                "xepan"
+            ],
+            "time": "2016-10-07 10:35:39"
         },
         {
             "name": "xepan/ccavenue",
@@ -4965,7 +5009,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-12 12:50:45"
+            "time": "2016-08-29 13:08:49"
         },
         {
             "name": "xepan/commerce",
@@ -5012,7 +5056,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-09-02 07:41:30"
+            "time": "2016-08-31 13:03:35"
         },
         {
             "name": "xepan/communication",
@@ -5059,7 +5103,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-09-02 11:31:05"
+            "time": "2016-09-02 10:47:23"
         },
         {
             "name": "xepan/crm",
@@ -5150,7 +5194,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-26 17:21:09"
+            "time": "2016-09-01 17:58:45"
         },
         {
             "name": "xepan/filestore",
@@ -5375,7 +5419,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-15 13:55:42"
+            "time": "2016-09-02 12:26:48"
         },
         {
             "name": "xepan/omnipay",
@@ -5665,7 +5709,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-08-24 20:34:53"
+            "time": "2016-09-01 12:27:45"
         },
         {
             "name": "xepan/xepanwallet",
@@ -5739,7 +5783,8 @@
         "xepan/epanservices": 20,
         "xepan/filestore": 20,
         "xepan/blog": 20,
-        "nlp-tools/nlp-tools": 20
+        "nlp-tools/nlp-tools": 20,
+        "xepan/captcha": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
