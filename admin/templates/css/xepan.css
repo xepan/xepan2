@@ -907,12 +907,17 @@ textarea {width: 100%;}
     min-width: auto!important;
     top:55px!important;
     bottom: auto!important;
-    width: 95%!important;
+    width: 90%!important;
   }
   
   /*.xepan-crm-communication-reply-view .xepan-crm-form-inner{*/
   .xepan-crm-communication-reply-view .xepan-crm-form-inner{
     height: 380px!important;
+  }
+  .xepan-crm-reply-tool-cog{
+    width: 35px!important;
+    /*font-size: 12px!important; */
+    left: -35px!important;
   }
   
 
@@ -1011,13 +1016,21 @@ textarea {width: 100%;}
   
   /*--------------------CRM Reply Email Popup CSS---------------------------*/
 
+  .mobile-email-navigation-tool-options{
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+
+
+
   .xepan-crm-reply-tool{
     background: #fff none repeat scroll 0 0;
     box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
-    /*padding: 15px;*/
     min-width: 350px;
     position: fixed;
     bottom: 0px;
+    transition: all 0.2s ease-in-out 0s;
     right: 0px;
     width: 35%;
     z-index: 3000; 
@@ -1049,14 +1062,16 @@ textarea {width: 100%;}
     border-radius: 3px 0px 0 3px;
     box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    right: 476px;
+    left: -50px;
     padding: 5px;
     position: absolute;
     text-align: center;
     top: 210px;
+    /*top: 0;*/
     transition: all 0.1s ease-in-out 0s;
     width: 50px;
   }
   .xepan-crm-reply-tool-closed{
-    right: -474px;
+    width: 0px!important;
+    min-width: 0px!important;
   }
