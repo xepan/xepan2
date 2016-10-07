@@ -973,7 +973,7 @@ textarea {width: 100%;}
 
 }
 #email-detail-attachments #email-attachments-content ul li{
-    width:20%!important;
+    width:20%;
 }
 #email-detail-attachments #email-attachments-content ul li .img{
     min-height:75px;
