@@ -11,7 +11,7 @@
  Target Server Version : 100114
  File Encoding         : utf-8
 
- Date: 10/08/2016 12:47:00 PM
+ Date: 10/08/2016 22:09:52 PM
 */
 
 SET NAMES utf8;
@@ -157,7 +157,7 @@ CREATE TABLE `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8013 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8018 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `affiliate`
@@ -957,7 +957,7 @@ CREATE TABLE `employee_attandance` (
   `from_date` datetime DEFAULT NULL,
   `to_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1018,7 +1018,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=559 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=560 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_salary`
@@ -2228,7 +2228,7 @@ CREATE TABLE `task` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `task_title_full_text` (`task_name`,`description`,`status`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=426 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=427 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `task_attachment`
@@ -2338,7 +2338,7 @@ CREATE TABLE `timesheet` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=180 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `tnc`
