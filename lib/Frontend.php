@@ -51,7 +51,7 @@ class Frontend extends ApiFrontend {
 
     function defaultTemplate(){
 
-        $this->readConfig("websites/www/config.php");
+        $epan_domain_array = $this->recall('epan_domain_array',[]);
 
         $url = "{$_SERVER['HTTP_HOST']}";
         $domain = str_replace('www.','',$this->extract_domain($url))?:'www';
@@ -63,14 +63,19 @@ class Frontend extends ApiFrontend {
         }else{
             $epan = $sub_domain;
         }
-        
-        $this->dbConnect();
-        $epan = $this->db->dsql()->table('epan')->where($this->db->dsql()->orExpr()->where('name',$epan)->where('aliases','like','"%'.$epan.'%"'))->getHash();
 
+        if(!isset($epan_domain_array[$epan])){            
+            $this->readConfig("websites/www/config.php");
+            $this->dbConnect();
+            $epan_hash = $this->db->dsql()->table('epan')->where($this->db->dsql()->orExpr()->where('name',$epan)->where('aliases','like','"%'.$epan.'%"'))->getHash();
+            $epan_domain_array[$epan] = $epan_hash['name'];
+            $this->memorize('epan_domain_array',$epan_domain_array);
+        }
         // die(print_r($epan,true));
         // die($epan['name']);
 
-        $current_website = $this->current_website_name = $epan['name'];
+        $current_website = $this->current_website_name = $epan;
+
         $this->readConfig("websites/$this->current_website_name/config.php");
         
         if($tmpt = $this->recall('xepan-template-preview',$_GET['xepan-template-preview'])){
@@ -108,11 +113,9 @@ class Frontend extends ApiFrontend {
         }elseif($this->pathfinder->locate('template','layout/default.html','path',false)){            
             return ['layout/default'];
         }elseif(!$this->layout){
-            throw new \Exception("No Website content found or No Template in Website default for ". $this->current_website_name, 1);
-            
+            throw new \Exception("No Website content found or No Template in Website for ". $this->current_website_name, 1);
         }else{
-            throw new \Exception("Error Processing Request", 1);
-            
+            throw new \Exception("Error Processing Request", 1);            
         }  
     }
 
