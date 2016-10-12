@@ -1485,7 +1485,7 @@
         },
         {
             "name": "xepan/accounts",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/accounts.git",
@@ -1500,7 +1500,7 @@
             "require": {
                 "php": ">=5.3",
                 "webit/eval-math": "^1.0",
-                "xepan/base": ">=0.2"
+                "xepan/base": "^0.2"
             },
             "type": "library",
             "autoload": {
@@ -1526,7 +1526,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 10:52:46"
+            "time": "2016-10-12 16:06:27"
         },
         {
             "name": "xepan/atk4",
@@ -1565,7 +1565,7 @@
         },
         {
             "name": "xepan/base",
-            "version": "0.2.5",
+            "version": "0.2.6",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/base.git",
@@ -1586,8 +1586,8 @@
                 "tecnickcom/tcpdf": "^6.2",
                 "tinymce/tinymce": "^4.3",
                 "xepan/atk4": "4.3",
-                "xepan/captcha": "1.0.0",
-                "xepan/filestore": "1.0.0"
+                "xepan/captcha": "^1.0",
+                "xepan/filestore": "^1.0"
             },
             "type": "library",
             "autoload": {
@@ -1612,11 +1612,11 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 12:54:23"
+            "time": "2016-10-12 16:09:36"
         },
         {
             "name": "xepan/blog",
-            "version": "0.2",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/blog.git",
@@ -1629,7 +1629,7 @@
                 "shasum": ""
             },
             "require": {
-                "xepan/cms": ">=0.2"
+                "xepan/cms": "^0.2"
             },
             "type": "library",
             "autoload": {
@@ -1655,7 +1655,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-10 12:06:57"
+            "time": "2016-10-12 16:11:56"
         },
         {
             "name": "xepan/captcha",
@@ -1702,7 +1702,7 @@
         },
         {
             "name": "xepan/cms",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/cms.git",
@@ -1717,7 +1717,7 @@
             "require": {
                 "php": ">=5.3",
                 "tburry/pquery": ">=0.2",
-                "xepan/base": ">=0.2"
+                "xepan/base": "^0.2"
             },
             "type": "library",
             "autoload": {
@@ -1744,11 +1744,11 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 11:20:51"
+            "time": "2016-10-12 16:18:53"
         },
         {
             "name": "xepan/commerce",
-            "version": "0.2.3",
+            "version": "0.2.5",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/commerce.git",
@@ -1762,7 +1762,7 @@
             },
             "require": {
                 "php": ">=5.3",
-                "xepan/base": ">=0.2",
+                "xepan/base": "^0.2",
                 "xepan/omnipay": "1.0.0"
             },
             "type": "library",
@@ -1792,11 +1792,11 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 10:44:56"
+            "time": "2016-10-12 16:43:30"
         },
         {
             "name": "xepan/communication",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/communication.git",
@@ -1810,7 +1810,7 @@
             },
             "require": {
                 "php": ">=5.3",
-                "xepan/base": ">=0.2",
+                "xepan/base": "^0.2",
                 "xepan/mail": "^2.3"
             },
             "type": "library",
@@ -1840,11 +1840,11 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-10-12 10:44:55"
+            "time": "2016-10-12 16:26:01"
         },
         {
             "name": "xepan/crm",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/crm.git",
@@ -1858,7 +1858,7 @@
             },
             "require": {
                 "php": ">=5.3",
-                "xepan/base": ">=0.2"
+                "xepan/base": "^0.2"
             },
             "type": "library",
             "autoload": {
@@ -1887,11 +1887,11 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 10:53:16"
+            "time": "2016-10-12 16:27:47"
         },
         {
             "name": "xepan/epanservices",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/epanservices.git",
@@ -1904,7 +1904,7 @@
                 "shasum": ""
             },
             "require": {
-                "xepan/hr": ">=0.2"
+                "xepan/hr": "^0.2"
             },
             "type": "library",
             "autoload": {
@@ -1931,7 +1931,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 11:58:17"
+            "time": "2016-10-12 16:29:31"
         },
         {
             "name": "xepan/filestore",
@@ -1978,7 +1978,7 @@
         },
         {
             "name": "xepan/hr",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/hr.git",
@@ -1992,7 +1992,7 @@
             },
             "require": {
                 "php": ">=5.3",
-                "xepan/base": ">=0.2"
+                "xepan/base": "^0.2"
             },
             "type": "library",
             "autoload": {
@@ -2019,7 +2019,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 11:03:29"
+            "time": "2016-10-12 16:31:25"
         },
         {
             "name": "xepan/mail",
@@ -2078,7 +2078,7 @@
         },
         {
             "name": "xepan/marketing",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/marketing.git",
@@ -2096,7 +2096,7 @@
                 "guzzlehttp/guzzle": "^6.2",
                 "linkedinapi/linkedin": "^1.1",
                 "php": ">=5.3",
-                "xepan/base": ">=0.2",
+                "xepan/base": "^0.2",
                 "xepan/mail": "^2.3"
             },
             "type": "library",
@@ -2124,7 +2124,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 10:52:31"
+            "time": "2016-10-12 16:33:13"
         },
         {
             "name": "xepan/omnipay",
@@ -2201,7 +2201,7 @@
         },
         {
             "name": "xepan/production",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/production.git",
@@ -2215,7 +2215,7 @@
             },
             "require": {
                 "php": ">=5.3",
-                "xepan/base": ">=0.2"
+                "xepan/base": "^0.2"
             },
             "type": "library",
             "autoload": {
@@ -2242,11 +2242,11 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 11:07:02"
+            "time": "2016-10-12 16:34:57"
         },
         {
             "name": "xepan/projects",
-            "version": "0.2.4",
+            "version": "0.2.5",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/projects.git",
@@ -2260,7 +2260,7 @@
             },
             "require": {
                 "php": ">=5.3",
-                "xepan/base": ">=0.2"
+                "xepan/base": "^0.2"
             },
             "type": "library",
             "autoload": {
@@ -2287,7 +2287,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 13:44:45"
+            "time": "2016-10-12 16:36:33"
         }
     ],
     "packages-dev": [],
