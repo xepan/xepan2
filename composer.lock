@@ -1485,7 +1485,7 @@
         },
         {
             "name": "xepan/accounts",
-            "version": "0.2.1",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/accounts.git",
@@ -1526,7 +1526,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 10:52:46"
+            "time": "2016-10-10 12:01:01"
         },
         {
             "name": "xepan/atk4",
@@ -1565,7 +1565,7 @@
         },
         {
             "name": "xepan/base",
-            "version": "0.2.4",
+            "version": "0.2.5",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/base.git",
@@ -1612,7 +1612,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 11:00:00"
+            "time": "2016-10-12 12:54:23"
         },
         {
             "name": "xepan/blog",
@@ -1748,7 +1748,7 @@
         },
         {
             "name": "xepan/commerce",
-            "version": "0.2.3",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/commerce.git",
@@ -1792,11 +1792,11 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 10:44:56"
+            "time": "2016-10-10 14:23:48"
         },
         {
             "name": "xepan/communication",
-            "version": "0.2.1",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/communication.git",
@@ -1840,11 +1840,11 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-10-12 10:44:55"
+            "time": "2016-10-10 12:11:29"
         },
         {
             "name": "xepan/crm",
-            "version": "0.2.1",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/crm.git",
@@ -1887,7 +1887,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 10:53:16"
+            "time": "2016-10-10 12:12:56"
         },
         {
             "name": "xepan/epanservices",
@@ -1978,7 +1978,7 @@
         },
         {
             "name": "xepan/hr",
-            "version": "0.2.1",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/hr.git",
@@ -2019,7 +2019,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 11:03:29"
+            "time": "2016-10-10 12:17:58"
         },
         {
             "name": "xepan/mail",
@@ -2078,7 +2078,7 @@
         },
         {
             "name": "xepan/marketing",
-            "version": "0.2.1",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/marketing.git",
@@ -2124,7 +2124,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 10:52:31"
+            "time": "2016-10-10 12:22:48"
         },
         {
             "name": "xepan/omnipay",
@@ -2201,7 +2201,7 @@
         },
         {
             "name": "xepan/production",
-            "version": "0.2.1",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/production.git",
@@ -2242,11 +2242,11 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 11:07:02"
+            "time": "2016-10-10 12:21:16"
         },
         {
             "name": "xepan/projects",
-            "version": "0.2.2",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:xepan/projects.git",
@@ -2287,7 +2287,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-12 10:44:56"
+            "time": "2016-10-10 14:56:42"
         }
     ],
     "packages-dev": [],
