@@ -11,10 +11,11 @@ class page_index extends \xepan\base\Page {
 
     function init() {
         parent::init();
-					
+
+        $this->app->hook('epan_dashboard_page',[$this]);
     }
 
-    function defaultTemplate(){
-    	return ['page\dashboard'];
-    }
+    // function defaultTemplate(){
+    // 	return ['page\dashboard'];
+    // }
 }
