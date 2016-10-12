@@ -9,29 +9,7 @@ input[type=checkbox]{
 
 input:focus{background-color:rgba(254,254,254,0);border-top:none; border-left:none; border-right:none; border-bottom-color: grey; border-bottom-width: 1px; outline: none !important}
 textarea {width: 100%;}
-/*.xepan-grid .xepan-actions button{
-	border-radius:3px solid #2980b9;
-	border-color:#2980b9;
-	background-color:#03a9f4;
-	color:#FFF;
-	font-weight:normal;
-	line-height:1.42857;
-	text-align:center;
-	vertical-align:middle;
-	margin-left:5px;
-    background-clip: padding-box;
-    /*border-color: -moz-use-text-color;*/
-    /*border-image: none;*/
-    /*border-radius: 3px;
-    border-style: none none solid;
-    border-width: medium medium 2px;
-    outline: medium none;
-    padding: 6px 12px;
-    transition: border-color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s;
-    font-size:14px;
-	border-bottom:2px solid #216897;
-}*/
-/*.xepan-grid .xepan-actions button:hover{background-color:#017fb5;color:#FFF}*/
+
 
 /*remove border from all input*/
 .form-control{
@@ -980,7 +958,7 @@ textarea {width: 100%;}
     min-width:130px;
     width:100%!important;
     height:auto!important;
-  }
+}
 
   /*--------------------Compose Email View Popup CSS---------------------------*/
   
@@ -992,90 +970,90 @@ textarea {width: 100%;}
     width: 35%;
     z-index: 3000;
     
-  }
-  .compose-email-view-popup .compose-email-inner{
-    overflow-x:hidden;
-    overflow-y: scroll;
-    height: 520px;
-    padding: 10px;
-    border: 2px solid gray;
-    background-color: white;
-  }
+}
+.compose-email-view-popup .compose-email-inner{
+  overflow-x:hidden;
+  overflow-y: scroll;
+  height: 520px;
+  padding: 10px;
+  border: 2px solid gray;
+  background-color: white;
+}
 
-  .compose-email-view-popup .header {
-    color: white;
-    padding: 10px;
-    border-radius: 5px 5px 0 0;
-  }  
-  .compose-email-view-popup .header i {
-    cursor: pointer;
-    padding: 5px;
-  }
+.compose-email-view-popup .header {
+  color: white;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}  
+.compose-email-view-popup .header i {
+  cursor: pointer;
+  padding: 5px;
+}
 
-  .compose-email-resize-toggle{
-    width: 80%;
-    right: auto;
-    left: auto;
-  }
-  
-  /*--------------------CRM Reply Email Popup CSS---------------------------*/
+.compose-email-resize-toggle{
+  width: 80%;
+  right: auto;
+  left: auto;
+}
 
-  .mobile-email-navigation-tool-options{
-    background: #fff none repeat scroll 0 0;
-    box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-  }
+/*--------------------CRM Reply Email Popup CSS---------------------------*/
+
+.mobile-email-navigation-tool-options{
+  background: #fff none repeat scroll 0 0;
+  box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
 
 
 
-  .xepan-crm-reply-tool{
-    background: #fff none repeat scroll 0 0;
-    box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
-    min-width: 350px;
-    position: fixed;
-    bottom: 0px;
-    transition: all 0.2s ease-in-out 0s;
-    right: 0px;
-    width: 35%;
-    z-index: 3000; 
-  }
-  
-  /*.xepan-crm-communication-reply-view .xepan-crm-form-inner{*/
-  .xepan-crm-communication-reply-view .xepan-crm-form-inner{
-    overflow-x:hidden;
-    overflow-y: scroll;
-    height: 520px;
-    padding: 10px;
-    border: 2px solid gray;
-    background-color: white;
-  }
-  
+.xepan-crm-reply-tool{
+  background: #fff none repeat scroll 0 0;
+  box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
+  min-width: 350px;
+  position: fixed;
+  bottom: 0px;
+  transition: all 0.2s ease-in-out 0s;
+  right: 0px;
+  width: 35%;
+  z-index: 3000; 
+}
 
-  .xepan-crm-communication-reply-view .header {
-    color: white;
-    padding: 10px;
-    border-radius: 5px 5px 0 0;
-  }
-  .xepan-crm-communication-reply-view .header i {
-    cursor: pointer;
-    padding: 5px;
-  }
+/*.xepan-crm-communication-reply-view .xepan-crm-form-inner{*/
+.xepan-crm-communication-reply-view .xepan-crm-form-inner{
+  overflow-x:hidden;
+  overflow-y: scroll;
+  height: 520px;
+  padding: 10px;
+  border: 2px solid gray;
+  background-color: white;
+}
 
-  .xepan-crm-reply-tool-cog{
-    /*background: #fff none repeat scroll 0 0 padding-box;*/
-    border-radius: 3px 0px 0 3px;
-    box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    left: -50px;
-    padding: 5px;
-    position: absolute;
-    text-align: center;
-    top: 210px;
-    /*top: 0;*/
-    transition: all 0.1s ease-in-out 0s;
-    width: 50px;
-  }
-  .xepan-crm-reply-tool-closed{
-    width: 0px!important;
-    min-width: 0px!important;
-  }
+
+.xepan-crm-communication-reply-view .header {
+  color: white;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+.xepan-crm-communication-reply-view .header i {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.xepan-crm-reply-tool-cog{
+  /*background: #fff none repeat scroll 0 0 padding-box;*/
+  border-radius: 3px 0px 0 3px;
+  box-shadow: 8px 3px 3px -2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  left: -50px;
+  padding: 5px;
+  position: absolute;
+  text-align: center;
+  top: 210px;
+  /*top: 0;*/
+  transition: all 0.1s ease-in-out 0s;
+  width: 50px;
+}
+.xepan-crm-reply-tool-closed{
+  width: 0px!important;
+  min-width: 0px!important;
+}
