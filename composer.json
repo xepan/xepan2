@@ -1,19 +1,20 @@
 {
   "type":"project",
+  "minimum-stability" :"dev",
   "require":{
     "educoder\/pest":"1.0.0",
-    "xepan/base": "~0.2",
-    "xepan/hr": "~0.2",
-    "xepan/marketing": "~0.2",
-    "xepan/commerce": "~0.2",
-    "xepan/production": "~0.2",
-    "xepan/communication": "~0.2",
-    "xepan/crm": "~0.2",
-    "xepan/cms": "~0.2",
-    "xepan/accounts": "~0.2",
-    "xepan/projects": "~0.2",
-    "xepan/blog": "~0.2",
-    "xepan/epanservices": "~0.2"
+    "xepan/base": "dev-develop",
+    "xepan/hr": "dev-develop",
+    "xepan/marketing": "dev-develop",
+    "xepan/commerce": "dev-develop",
+    "xepan/production": "dev-develop",
+    "xepan/communication": "dev-develop",
+    "xepan/crm": "dev-develop",
+    "xepan/cms": "dev-develop",
+    "xepan/accounts": "dev-develop",
+    "xepan/projects": "dev-develop",
+    "xepan/blog": "dev-develop",
+    "xepan/epanservices": "dev-develop"
   },
   "autoload":{
     "psr-0":{
