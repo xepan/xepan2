@@ -3,18 +3,18 @@
   "minimum-stability" :"dev",
   "require":{
     "educoder\/pest":"1.0.0",
-    "xepan/base": "dev-develop",
-    "xepan/hr": "dev-develop",
-    "xepan/marketing": "dev-develop",
-    "xepan/commerce": "dev-develop",
-    "xepan/production": "dev-develop",
-    "xepan/communication": "dev-develop",
-    "xepan/crm": "dev-develop",
-    "xepan/cms": "dev-develop",
-    "xepan/accounts": "dev-develop",
-    "xepan/projects": "dev-develop",
-    "xepan/blog": "dev-develop",
-    "xepan/epanservices": "dev-develop"
+    "xepan/base": "dev-master",
+    "xepan/hr": "dev-master",
+    "xepan/marketing": "dev-master",
+    "xepan/commerce": "dev-master",
+    "xepan/production": "dev-master",
+    "xepan/communication": "dev-master",
+    "xepan/crm": "dev-master",
+    "xepan/cms": "dev-master",
+    "xepan/accounts": "dev-master",
+    "xepan/projects": "dev-master",
+    "xepan/blog": "dev-master",
+    "xepan/epanservices": "dev-master"
   },
   "autoload":{
     "psr-0":{
