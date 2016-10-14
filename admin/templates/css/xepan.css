@@ -1057,3 +1057,7 @@ textarea {width: 100%;}
   width: 0px!important;
   min-width: 0px!important;
 }
+
+.bootstrap-timepicker-widget{
+  z-index: 2500!important;
+}
