@@ -1067,3 +1067,7 @@ textarea {width: 100%;}
   max-height: 500px!important;
   overflow-y: scroll;
 }
+
+.bootstrap-timepicker-widget{
+  z-index: 2500!important;
+}
