@@ -1058,6 +1058,12 @@ textarea {width: 100%;}
   min-width: 0px!important;
 }
 
-.bootstrap-timepicker-widget{
-  z-index: 2500!important;
+.popover.editable-container.editable-popup.fade.top.in{
+  top: -15px!important;
+}
+
+.editable-checklist{
+  height: auto;
+  max-height: 500px!important;
+  overflow-y: scroll;
 }
