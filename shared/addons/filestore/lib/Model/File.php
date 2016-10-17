@@ -15,7 +15,7 @@ class Model_File extends \SQL_Model
 
     // set this to true, will allow to upload all file types
     // and will automatically create the type record for it
-    public $policy_add_new_type = false;
+    public $policy_add_new_type = true;
     
     // set this to true, if you want to enable "soft delete", then only field
     // filestore_file.deleted will be set to true and files will not be
