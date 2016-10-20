@@ -901,6 +901,12 @@ textarea {width: 100%;}
   #email-detail-attachments #email-attachments-content ul li{
       width:100%!important;
   }
+
+  /*Reminder button css*/
+  .myButton{
+    padding: 5px 10px!important;
+  }
+
 }  
 
 .dialogelfinder {
