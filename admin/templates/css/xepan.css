@@ -905,6 +905,7 @@ textarea {width: 100%;}
   /*Reminder button css*/
   .myButton{
     padding: 5px 10px!important;
+    font-size: 11px!important;
   }
 
 }  
