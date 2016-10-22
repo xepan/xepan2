@@ -1078,3 +1078,9 @@ textarea {width: 100%;}
 .bootstrap-timepicker-widget{
   z-index: 2500!important;
 }
+.xepan-communication-action{
+  color:white!important;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;  
+}
