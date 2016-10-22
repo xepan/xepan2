@@ -152,24 +152,24 @@ class Form_Field_DateRangePicker extends Form_Field_Line {
     }
 
     function setStartDate($date){
-        $this->start_date = date('d-m-Y',strtotime($date));
+        $this->start_date = date('d-m-Y'.($this->show_time?' H:i:s':''),strtotime($date));
         return $this;
     }
 
     function setEndDate($date){
-        $this->end_date = date('d-m-Y',strtotime($date));
+        $this->end_date = date('d-m-Y'.($this->show_time?' H:i:s':''),strtotime($date));
         return $this;
     }
 
     function getStartDate(){
         $dates = explode($this->separator, $this->value);
-        return date('Y-m-d',strtotime($dates[0]));
+        return date('Y-m-d'.($this->show_time?' H:i:s':''),strtotime($dates[0]));
     }
 
     function getEndDate(){
 
         $dates = explode($this->separator, $this->value);
-        return date('Y-m-d',strtotime($dates[1]));   
+        return date('Y-m-d'.($this->show_time?' H:i:s':''),strtotime($dates[1]));   
     }
 
     function getBackDatesSet($get=true){
