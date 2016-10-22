@@ -14,18 +14,20 @@ class Admin extends App_Frontend {
     function init() {
         parent::init();
 
+        $this->api->pathfinder
+            ->addLocation(array(
+                'addons' => array('vendor','shared/addons2','shared/addons'),
+            ))
+            ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
+
+        $this->app->profiler = $this->app->add('xepan/base/Controller_Profiler');
+
         $this->dbConnect();
         $this->add('jUI');
 
         // Move to SandBOX Part Start
         $this->add($this->layout_class,null,'Layout');
 
-
-        $this->api->pathfinder
-            ->addLocation(array(
-                'addons' => array('vendor','shared/addons2','shared/addons'),
-            ))
-            ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
         
         
         // Should come from any local DB store
@@ -34,9 +36,11 @@ class Admin extends App_Frontend {
 
         $this->xepan_app_initiators = $app_initiators=[];
 
+        $this->app->profiler->mark('before_initiators_setup_admin');
         foreach ($addons as $addon) {
             $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator")->setup_admin();    
         }
+        $this->app->profiler->mark('after_initiators_setup_admin');
     }
 
     function defaultTemplate(){

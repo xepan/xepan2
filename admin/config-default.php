@@ -18,3 +18,5 @@ $config['form']['layout']['inputonly']=false; // true will hide all hints etc
 $config['filestore']['chmod'] = 0755;
 
 $config['accounts']['round'] = 2;
+
+$config['profiler'] = false; // true for all falase for none or string of current_epan name for specific
