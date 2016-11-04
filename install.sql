@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 11/02/2016 10:27:02 AM
+ Date: 11/04/2016 15:09:37 PM
 */
 
 SET NAMES utf8;
@@ -411,7 +411,7 @@ CREATE TABLE `communication` (
   KEY `to_id` (`to_id`) USING BTREE,
   KEY `from_id` (`from_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=12421 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12418 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `communication_attachment`
@@ -1005,7 +1005,7 @@ CREATE TABLE `employee_attandance` (
   `from_date` datetime DEFAULT NULL,
   `to_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=264 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=266 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1066,7 +1066,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1357 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1359 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_salary`
@@ -2300,7 +2300,7 @@ CREATE TABLE `task` (
   `epan_id` int(11) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL,
-  `type` varchar(5) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `priority` varchar(255) DEFAULT NULL,
   `estimate_time` varchar(255) DEFAULT NULL,
@@ -2315,6 +2315,7 @@ CREATE TABLE `task` (
   `is_reminder_only` tinyint(4) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `reminder_time_compare_with` varchar(255) DEFAULT NULL,
+  `related_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `task_title_full_text` (`task_name`,`description`,`status`,`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=790 DEFAULT CHARSET=utf8;
