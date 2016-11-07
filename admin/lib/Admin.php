@@ -58,12 +58,18 @@ class Admin extends App_Frontend {
             $epan = $sub_domain;
         }
 
-        if(!isset($epan_domain_array[$epan])){            
+        if(!isset($epan_domain_array[$epan])){    
             $this->readConfig("websites/www/config.php");
             $this->dbConnect();
             $epan_hash = $this->db->dsql()->table('epan')->where($this->db->dsql()->orExpr()->where('name',$epan)->where('aliases','like','"%'.$epan.'%"'))->getHash();
             $epan_domain_array[$epan] = $epan_hash['name'];
+            if(!$epan_hash['name'])
+                throw new \Exception("Required epan name does not found [searched in db/table www >> epan]");
+                
             $this->memorize('epan_domain_array',$epan_domain_array);
+            
+            $extra_info_array  = json_decode($epan_hash['extra_info'],true);
+            $this->memorize('epan_extra_info_array',$extra_info_array);
         }
         // die(print_r($epan,true));
         // die($epan['name']);

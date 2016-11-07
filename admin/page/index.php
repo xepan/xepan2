@@ -15,7 +15,7 @@ class page_index extends \xepan\base\Page {
         $this->app->hook('epan_dashboard_page',[$this]);
     }
 
-    // function defaultTemplate(){
-    // 	return ['page\dashboard'];
-    // }
+    function defaultTemplate(){
+    	return ['page\dashboard'];
+    }
 }
