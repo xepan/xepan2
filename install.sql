@@ -11,15 +11,10 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-<<<<<<< HEAD
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-=======
- Date: 11/07/2016 15:24:31 PM
-*/
->>>>>>> 0783205732f62a3f70f63f2278fb1122f626a698
 
 --
 -- Database: `xepan2`
@@ -1122,13 +1117,9 @@ CREATE TABLE IF NOT EXISTS `employee_attandance` (
   `from_date` datetime DEFAULT NULL,
   `to_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=670 ;
 
 -- --------------------------------------------------------
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=267 DEFAULT CHARSET=utf8mb4;
->>>>>>> 0783205732f62a3f70f63f2278fb1122f626a698
 
 --
 -- Table structure for table `employee_documents`
@@ -1195,13 +1186,9 @@ CREATE TABLE IF NOT EXISTS `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2689 ;
 
 -- --------------------------------------------------------
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=1360 DEFAULT CHARSET=utf8;
->>>>>>> 0783205732f62a3f70f63f2278fb1122f626a698
 
 --
 -- Table structure for table `employee_salary`
