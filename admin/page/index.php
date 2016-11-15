@@ -36,7 +36,7 @@ class page_index extends \xepan\base\Page {
         
         $this->filter_form = $this->add('Form',null,'filter_form');
 
-        $rpt = $this->add('xepan\base\Model_GraphicalReport')->tryLoadBy('name',$post['permission_level']); 
+        $rpt = $this->add('xepan\base\Model_GraphicalReport')->tryLoadBy('name',$post['permission_level']?:'Individual'); 
         if(!$rpt->loaded()){
             $this->add('View')->set('Sorry! No Dashboard Found');            
             return;
