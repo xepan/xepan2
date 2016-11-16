@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 11/12/2016 16:54:01 PM
+ Date: 11/16/2016 17:41:27 PM
 */
 
 SET NAMES utf8;
@@ -134,7 +134,7 @@ CREATE TABLE `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=464 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=465 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `activity`
@@ -157,7 +157,7 @@ CREATE TABLE `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9940 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9941 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `affiliate`
@@ -991,6 +991,7 @@ CREATE TABLE `employee` (
   `in_time` time DEFAULT NULL,
   `out_time` time DEFAULT NULL,
   `remark` longtext,
+  `graphical_report_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_employee_contact1_idx` (`contact_id`),
   KEY `fk_employee_post1_idx` (`post_id`),
@@ -1007,7 +1008,7 @@ CREATE TABLE `employee_attandance` (
   `from_date` datetime DEFAULT NULL,
   `to_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=271 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=274 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1068,7 +1069,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1366 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1374 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_salary`
@@ -1225,8 +1226,12 @@ DROP TABLE IF EXISTS `graphical_report`;
 CREATE TABLE `graphical_report` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
+  `permitted_post` varchar(255) DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
+  `description` text,
+  `is_system` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `graphical_report_widget`
@@ -1237,8 +1242,11 @@ CREATE TABLE `graphical_report_widget` (
   `graphical_report_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `class_path` varchar(255) DEFAULT NULL,
+  `col_width` int(11) DEFAULT NULL,
+  `order` int(11) DEFAULT NULL,
+  `is_active` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `installed_application`
@@ -1588,7 +1596,7 @@ CREATE TABLE `ledger` (
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_id` (`related_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`name`,`ledger_type`,`LedgerDisplayName`)
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `lodgement`
@@ -1835,6 +1843,7 @@ CREATE TABLE `post` (
   `out_time` time NOT NULL,
   `salary_template_id` int(11) DEFAULT NULL,
   `leave_template_id` int(11) DEFAULT NULL,
+  `permission_level` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_post_department1_idx` (`department_id`),
   KEY `parent_post_id` (`parent_post_id`) USING BTREE,
@@ -2226,6 +2235,7 @@ CREATE TABLE `store_transaction` (
   `shipping_charge` double(8,4) DEFAULT NULL,
   `narration` text,
   `tracking_code` text,
+  `related_transaction_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_doc_id` (`related_document_id`) USING BTREE,
@@ -2342,6 +2352,11 @@ CREATE TABLE `task` (
   `updated_at` datetime DEFAULT NULL,
   `reminder_time_compare_with` varchar(255) DEFAULT NULL,
   `related_id` int(11) DEFAULT NULL,
+  `rejected_at` datetime DEFAULT NULL,
+  `received_at` datetime DEFAULT NULL,
+  `submitted_at` datetime DEFAULT NULL,
+  `reopened_at` datetime DEFAULT NULL,
+  `completed_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `task_title_full_text` (`task_name`,`description`,`status`,`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=790 DEFAULT CHARSET=utf8;
