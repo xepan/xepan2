@@ -371,6 +371,12 @@ textarea {width: 100%;}
   padding-bottom: 0;
 }
 
+/* Margin */
+.xepan-margin-top-small {
+  margin-top: 0.75rem;
+}
+/* Margin */
+
 .xepan-hover-hand span{
   cursor:pointer;
   cursor: hand;
@@ -906,6 +912,19 @@ textarea {width: 100%;}
   .myButton{
     padding: 5px 10px!important;
     font-size: 11px!important;
+  }
+
+  .compose-message-view-popup {
+    border-top: 1px solid #999999!important;
+    border-top-left-radius: 10px!important;
+    border-top-right-radius: 10px!important;
+    /*bottom: -500px;*/
+    display: block!important;
+    font-size: 15px!important;
+    height: 320px!important;
+    margin-right: auto;
+    overflow: scroll!important;
+    width: 90%!important;
   }
 
 }  
