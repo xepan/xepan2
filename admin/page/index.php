@@ -30,8 +30,10 @@ class page_index extends \xepan\base\Page {
         $report_id = $this->api->stickyGET('report_id');
 
         foreach ($_GET as $get=>$value) {
-            if($value)
+            if($value){
+                $this->api->stickyGET($get);
                 $this->$get = $value;
+            }
         }
         
         $this->filter_form = $this->add('Form',null,'filter_form');
