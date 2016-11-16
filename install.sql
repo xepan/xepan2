@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 11/16/2016 15:52:13 PM
+ Date: 11/16/2016 17:41:27 PM
 */
 
 SET NAMES utf8;
@@ -991,6 +991,7 @@ CREATE TABLE `employee` (
   `in_time` time DEFAULT NULL,
   `out_time` time DEFAULT NULL,
   `remark` longtext,
+  `graphical_report_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_employee_contact1_idx` (`contact_id`),
   KEY `fk_employee_post1_idx` (`post_id`),
@@ -1842,7 +1843,7 @@ CREATE TABLE `post` (
   `out_time` time NOT NULL,
   `salary_template_id` int(11) DEFAULT NULL,
   `leave_template_id` int(11) DEFAULT NULL,
-  `permission_level` varchar(255) NOT NULL,
+  `permission_level` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_post_department1_idx` (`department_id`),
   KEY `parent_post_id` (`parent_post_id`) USING BTREE,
