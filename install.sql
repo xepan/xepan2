@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 11/16/2016 17:41:27 PM
+ Date: 11/22/2016 18:07:08 PM
 */
 
 SET NAMES utf8;
@@ -412,7 +412,7 @@ CREATE TABLE `communication` (
   KEY `to_id` (`to_id`) USING BTREE,
   KEY `from_id` (`from_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=12418 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12419 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `communication_attachment`
@@ -498,7 +498,8 @@ CREATE TABLE `contact_info` (
   `type` varchar(45) DEFAULT NULL,
   `contact_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `epan_id` (`epan_id`) USING BTREE
+  KEY `epan_id` (`epan_id`) USING BTREE,
+  KEY `contact_id` (`contact_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=3610 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -1008,7 +1009,7 @@ CREATE TABLE `employee_attandance` (
   `from_date` datetime DEFAULT NULL,
   `to_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=274 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=275 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1069,7 +1070,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1374 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1376 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_salary`
