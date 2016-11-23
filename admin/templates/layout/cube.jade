@@ -25,6 +25,11 @@
                 span.fa.fa-bars
               #header-nav.nav-no-collapse.pull-right
                 ul.nav.navbar-nav
+                  li.dropdown.hidden-xs.hidden-sm#messageid
+                    a.xepan-comm-message
+                      i.fa.fa-envelope
+                      span.count
+                        {message_count}0{/}
                   li.dropdown#notificationid {$notification_view}
                   li.mobile-search
                     a.btn(data-toggle="modal", href="#myModal")
