@@ -2,10 +2,15 @@
 
 require_once'./vendor/autoload.php';
 
+include '../admin/config-default.php';
+
+if(file_exists('../admin/config.php'))
+	include '../admin/config.php';
+
 	$clients=[];
 
 	$websocket = new Hoa\Websocket\Server(
-	    new Hoa\Socket\Server('ws://127.0.0.1:8889')
+	    new Hoa\Socket\Server($config['websocket-server'])
 	);
 	$websocket->on('open', function (Hoa\Event\Bucket $bucket) {
 	    echo 'new connection', "\n";
