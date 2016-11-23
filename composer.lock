@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e89f9a4eb9a92d45686d9e5be6900596",
-    "content-hash": "1eaebc37a556381019b4d4a1d59605ed",
+    "hash": "aeb8f4d2252f2a753cd6c205901eb05b",
+    "content-hash": "98aa82eeb75b4f577d6b29c114b9d1ff",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -381,6 +381,500 @@
                 "url"
             ],
             "time": "2016-08-03 09:33:34"
+        },
+        {
+            "name": "hoa/consistency",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hoaproject/Consistency.git",
+                "reference": "3731954ff7c02a5a0a64b48b9772ea8fa4febb6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hoaproject/Consistency/zipball/3731954ff7c02a5a0a64b48b9772ea8fa4febb6c",
+                "reference": "3731954ff7c02a5a0a64b48b9772ea8fa4febb6c",
+                "shasum": ""
+            },
+            "require": {
+                "hoa/exception": "~1.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "hoa/stream": "~1.0",
+                "hoa/test": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hoa\\Consistency\\": "."
+                },
+                "files": [
+                    "Prelude.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Enderlin",
+                    "email": "ivan.enderlin@hoa-project.net"
+                },
+                {
+                    "name": "Hoa community",
+                    "homepage": "https://hoa-project.net/"
+                }
+            ],
+            "description": "The Hoa\\Consistency library.",
+            "homepage": "https://hoa-project.net/",
+            "keywords": [
+                "autoloader",
+                "callable",
+                "consistency",
+                "entity",
+                "flex",
+                "keyword",
+                "library"
+            ],
+            "time": "2016-10-19 14:27:31"
+        },
+        {
+            "name": "hoa/event",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hoaproject/Event.git",
+                "reference": "a2cea8dc46a133517ec322520c3a8bf015ac0cbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hoaproject/Event/zipball/a2cea8dc46a133517ec322520c3a8bf015ac0cbb",
+                "reference": "a2cea8dc46a133517ec322520c3a8bf015ac0cbb",
+                "shasum": ""
+            },
+            "require": {
+                "hoa/consistency": "~1.0",
+                "hoa/exception": "~1.0"
+            },
+            "require-dev": {
+                "hoa/test": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hoa\\Event\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Enderlin",
+                    "email": "ivan.enderlin@hoa-project.net"
+                },
+                {
+                    "name": "Hoa community",
+                    "homepage": "https://hoa-project.net/"
+                }
+            ],
+            "description": "The Hoa\\Event library.",
+            "homepage": "https://hoa-project.net/",
+            "keywords": [
+                "event",
+                "library",
+                "listener",
+                "observer"
+            ],
+            "time": "2016-11-19 18:56:37"
+        },
+        {
+            "name": "hoa/exception",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hoaproject/Exception.git",
+                "reference": "8c961c0e50b57ae6696ef2aea2b161b18f13b201"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hoaproject/Exception/zipball/8c961c0e50b57ae6696ef2aea2b161b18f13b201",
+                "reference": "8c961c0e50b57ae6696ef2aea2b161b18f13b201",
+                "shasum": ""
+            },
+            "require": {
+                "hoa/consistency": "~1.0",
+                "hoa/event": "~1.0"
+            },
+            "require-dev": {
+                "hoa/test": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hoa\\Exception\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Enderlin",
+                    "email": "ivan.enderlin@hoa-project.net"
+                },
+                {
+                    "name": "Hoa community",
+                    "homepage": "https://hoa-project.net/"
+                }
+            ],
+            "description": "The Hoa\\Exception library.",
+            "homepage": "https://hoa-project.net/",
+            "keywords": [
+                "exception",
+                "library"
+            ],
+            "time": "2016-11-08 13:18:12"
+        },
+        {
+            "name": "hoa/http",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hoaproject/Http.git",
+                "reference": "9b8248a5219c1a98b0133e47829effbda8a5fbe1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hoaproject/Http/zipball/9b8248a5219c1a98b0133e47829effbda8a5fbe1",
+                "reference": "9b8248a5219c1a98b0133e47829effbda8a5fbe1",
+                "shasum": ""
+            },
+            "require": {
+                "hoa/consistency": "~1.0",
+                "hoa/exception": "~1.0",
+                "hoa/stream": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hoa\\Http\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Enderlin",
+                    "email": "ivan.enderlin@hoa-project.net"
+                },
+                {
+                    "name": "Hoa community",
+                    "homepage": "https://hoa-project.net/"
+                }
+            ],
+            "description": "The Hoa\\Http library.",
+            "homepage": "https://hoa-project.net/",
+            "keywords": [
+                "http",
+                "library",
+                "request",
+                "response",
+                "rfc2295",
+                "rfc2324",
+                "rfc2518",
+                "rfc2774",
+                "rfc3229",
+                "rfc4918",
+                "rfc5842",
+                "rfc6585",
+                "rfc7231",
+                "rfc7232",
+                "rfc7233",
+                "rfc7235",
+                "rfc7237",
+                "runtime"
+            ],
+            "time": "2016-10-07 05:58:33"
+        },
+        {
+            "name": "hoa/protocol",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hoaproject/Protocol.git",
+                "reference": "08d87b9c1056594b67528aabdbd18e7398fa4061"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hoaproject/Protocol/zipball/08d87b9c1056594b67528aabdbd18e7398fa4061",
+                "reference": "08d87b9c1056594b67528aabdbd18e7398fa4061",
+                "shasum": ""
+            },
+            "require": {
+                "hoa/consistency": "~1.0",
+                "hoa/exception": "~1.0"
+            },
+            "require-dev": {
+                "hoa/test": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hoa\\Protocol\\": "."
+                },
+                "files": [
+                    "Wrapper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Enderlin",
+                    "email": "ivan.enderlin@hoa-project.net"
+                },
+                {
+                    "name": "Hoa community",
+                    "homepage": "https://hoa-project.net/"
+                }
+            ],
+            "description": "The Hoa\\Protocol library.",
+            "homepage": "https://hoa-project.net/",
+            "keywords": [
+                "library",
+                "protocol",
+                "resource",
+                "stream",
+                "wrapper"
+            ],
+            "time": "2016-10-21 14:58:11"
+        },
+        {
+            "name": "hoa/socket",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hoaproject/Socket.git",
+                "reference": "b88ebbc2cf32d94ca5171857ea424706dd676cc3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hoaproject/Socket/zipball/b88ebbc2cf32d94ca5171857ea424706dd676cc3",
+                "reference": "b88ebbc2cf32d94ca5171857ea424706dd676cc3",
+                "shasum": ""
+            },
+            "require": {
+                "hoa/consistency": "~1.0",
+                "hoa/exception": "~1.0",
+                "hoa/stream": "~1.0"
+            },
+            "require-dev": {
+                "hoa/test": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hoa\\Socket\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Enderlin",
+                    "email": "ivan.enderlin@hoa-project.net"
+                },
+                {
+                    "name": "Hoa community",
+                    "homepage": "https://hoa-project.net/"
+                }
+            ],
+            "description": "The Hoa\\Socket library.",
+            "homepage": "https://hoa-project.net/",
+            "keywords": [
+                "Socket",
+                "client",
+                "library",
+                "node",
+                "server",
+                "tcp",
+                "udp"
+            ],
+            "time": "2016-10-18 13:48:29"
+        },
+        {
+            "name": "hoa/stream",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hoaproject/Stream.git",
+                "reference": "3c29ffee2cf70b6f219c29ee6ed676a1b06c1308"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hoaproject/Stream/zipball/3c29ffee2cf70b6f219c29ee6ed676a1b06c1308",
+                "reference": "3c29ffee2cf70b6f219c29ee6ed676a1b06c1308",
+                "shasum": ""
+            },
+            "require": {
+                "hoa/consistency": "~1.0",
+                "hoa/event": "~1.0",
+                "hoa/exception": "~1.0",
+                "hoa/protocol": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hoa\\Stream\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Enderlin",
+                    "email": "ivan.enderlin@hoa-project.net"
+                },
+                {
+                    "name": "Hoa community",
+                    "homepage": "https://hoa-project.net/"
+                }
+            ],
+            "description": "The Hoa\\Stream library.",
+            "homepage": "https://hoa-project.net/",
+            "keywords": [
+                "Context",
+                "bucket",
+                "composite",
+                "filter",
+                "in",
+                "library",
+                "out",
+                "protocol",
+                "stream",
+                "wrapper"
+            ],
+            "time": "2016-11-08 13:09:12"
+        },
+        {
+            "name": "hoa/websocket",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hoaproject/Websocket.git",
+                "reference": "8a20a9fe1c8530f6937c7312e2fc40b60d0a18a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hoaproject/Websocket/zipball/8a20a9fe1c8530f6937c7312e2fc40b60d0a18a6",
+                "reference": "8a20a9fe1c8530f6937c7312e2fc40b60d0a18a6",
+                "shasum": ""
+            },
+            "require": {
+                "hoa/consistency": "~1.0",
+                "hoa/event": "~1.0",
+                "hoa/exception": "~1.0",
+                "hoa/http": "~1.0",
+                "hoa/socket": "~1.0"
+            },
+            "require-dev": {
+                "ext-iconv": "*",
+                "hoa/test": "~2.0"
+            },
+            "suggest": {
+                "ext-openssl": "To get a better security when exchanging messages."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hoa\\Websocket\\": "."
+                },
+                "files": [
+                    "Socket.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Enderlin",
+                    "email": "ivan.enderlin@hoa-project.net"
+                },
+                {
+                    "name": "Hoa community",
+                    "homepage": "https://hoa-project.net/"
+                }
+            ],
+            "description": "The Hoa\\Websocket library.",
+            "homepage": "https://hoa-project.net/",
+            "keywords": [
+                "Socket",
+                "client",
+                "hybi",
+                "library",
+                "realtime",
+                "rfc3629",
+                "rfc3986",
+                "rfc6455",
+                "server",
+                "websocket"
+            ],
+            "time": "2016-10-25 06:01:35"
         },
         {
             "name": "linkedinapi/linkedin",
@@ -1112,7 +1606,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-17 05:43:01"
+            "time": "2016-11-23 07:28:30"
         },
         {
             "name": "xepan/atk4",
@@ -1198,7 +1692,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-18 19:07:54"
+            "time": "2016-11-22 13:29:52"
         },
         {
             "name": "xepan/blog",
@@ -1377,7 +1871,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-17 11:35:38"
+            "time": "2016-11-23 06:44:36"
         },
         {
             "name": "xepan/communication",
@@ -1424,7 +1918,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-10-18 13:54:45"
+            "time": "2016-11-03 14:26:27"
         },
         {
             "name": "xepan/crm",
@@ -1471,7 +1965,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-13 17:39:19"
+            "time": "2016-10-27 04:22:40"
         },
         {
             "name": "xepan/epanservices",
@@ -1515,7 +2009,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-17 13:57:42"
+            "time": "2016-11-16 17:44:14"
         },
         {
             "name": "xepan/filestore",
@@ -1603,7 +2097,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-18 09:38:51"
+            "time": "2016-11-16 04:32:11"
         },
         {
             "name": "xepan/mail",
@@ -1714,7 +2208,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-14 06:53:15"
+            "time": "2016-11-17 04:18:05"
         },
         {
             "name": "xepan/production",
@@ -1759,7 +2253,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-13 17:58:27"
+            "time": "2016-10-20 08:55:23"
         },
         {
             "name": "xepan/projects",
@@ -1804,7 +2298,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-18 12:32:17"
+            "time": "2016-11-15 14:15:01"
         }
     ],
     "packages-dev": [],
