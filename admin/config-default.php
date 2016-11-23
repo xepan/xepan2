@@ -21,6 +21,6 @@ $config['accounts']['round'] = 2;
 
 $config['profiler'] = false; // true for all falase for none or string of current_epan name for specific
 
-$config['websocket-notifications'] =  true;
+$config['websocket-notifications'] =  false;
 
 $config['websocket-server']='ws://127.0.0.1:8889';
