@@ -35,3 +35,4 @@ websites/*
 /stats
 *.codekit
 cube1/
+wsserver/vendor
