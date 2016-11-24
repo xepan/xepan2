@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 11/22/2016 18:07:08 PM
+ Date: 11/24/2016 17:13:19 PM
 */
 
 SET NAMES utf8;
@@ -80,6 +80,17 @@ CREATE TABLE `account_transaction` (
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `transaction_type_id` (`transaction_type_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=401 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `account_transaction_attachment`
+-- ----------------------------
+DROP TABLE IF EXISTS `account_transaction_attachment`;
+CREATE TABLE `account_transaction_attachment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_transaction_id` int(11) DEFAULT NULL,
+  `file_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `account_transaction_row`
@@ -157,7 +168,7 @@ CREATE TABLE `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9941 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9969 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `affiliate`
@@ -412,7 +423,7 @@ CREATE TABLE `communication` (
   KEY `to_id` (`to_id`) USING BTREE,
   KEY `from_id` (`from_id`) USING BTREE,
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=12419 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12421 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `communication_attachment`
@@ -476,6 +487,7 @@ CREATE TABLE `contact` (
   `search_string` text,
   `source` varchar(255) DEFAULT NULL,
   `remark` text,
+  `freelancer_type` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_epan_id` (`epan_id`),
   KEY `user_id` (`user_id`) USING BTREE,
@@ -1009,7 +1021,7 @@ CREATE TABLE `employee_attandance` (
   `from_date` datetime DEFAULT NULL,
   `to_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=275 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1070,7 +1082,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1376 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1384 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_salary`
@@ -1164,7 +1176,7 @@ CREATE TABLE `filestore_file` (
   PRIMARY KEY (`id`),
   KEY `fk_filestore_file_filestore_type1_idx` (`filestore_type_id`),
   KEY `fk_filestore_file_filestore_volume1_idx` (`filestore_volume_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=952 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=955 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `filestore_image`
@@ -1177,7 +1189,7 @@ CREATE TABLE `filestore_image` (
   PRIMARY KEY (`id`),
   KEY `fk_filestore_image_filestore_file1_idx` (`original_file_id`),
   KEY `fk_filestore_image_filestore_file2_idx` (`thumb_file_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=190 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `filestore_type`
@@ -1608,11 +1620,11 @@ CREATE TABLE `lodgement` (
   `amount` decimal(10,0) DEFAULT NULL,
   `currency` decimal(10,0) DEFAULT NULL,
   `exchange_rate` decimal(10,0) DEFAULT NULL,
-  `salesinvoice_id` int(11) DEFAULT NULL,
+  `invoice_id` int(11) DEFAULT NULL,
   `account_transaction_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `account_transaction_id` (`account_transaction_id`) USING BTREE,
-  KEY `salesinvoice_id` (`salesinvoice_id`) USING BTREE
+  KEY `salesinvoice_id` (`invoice_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -2360,7 +2372,7 @@ CREATE TABLE `task` (
   `completed_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `task_title_full_text` (`task_name`,`description`,`status`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=790 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=809 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `task_attachment`
