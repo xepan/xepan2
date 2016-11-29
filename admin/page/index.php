@@ -25,12 +25,10 @@ class page_index extends \xepan\base\Page {
         $post = $this->add('xepan\hr\Model_Post');
         $post->load($this->app->employee['post_id']);
            
-        
-        
         $report_id = $this->api->stickyGET('report_id');
 
         foreach ($_GET as $get=>$value) {
-            if($value){
+            if($value AND $get != 'page'){
                 $this->api->stickyGET($get);
                 $this->$get = $value;
             }
