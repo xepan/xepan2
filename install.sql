@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 11/24/2016 17:13:19 PM
+ Date: 12/01/2016 18:35:08 PM
 */
 
 SET NAMES utf8;
@@ -404,6 +404,7 @@ CREATE TABLE `communication` (
   `communication_type` varchar(45) DEFAULT NULL,
   `flags` varchar(255) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL,
+  `sub_type` varchar(255) DEFAULT NULL,
   `direction` varchar(255) DEFAULT NULL,
   `uuid` varchar(255) DEFAULT NULL,
   `reply_to` varchar(255) DEFAULT NULL,
@@ -433,6 +434,7 @@ CREATE TABLE `communication_attachment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `communication_id` int(11) NOT NULL,
   `file_id` int(11) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `communication_id` (`communication_id`) USING BTREE,
   KEY `file_id` (`file_id`) USING BTREE
@@ -919,7 +921,29 @@ CREATE TABLE `document` (
   PRIMARY KEY (`id`),
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`)
-) ENGINE=InnoDB AUTO_INCREMENT=2677 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2687 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `document_share`
+-- ----------------------------
+DROP TABLE IF EXISTS `document_share`;
+CREATE TABLE `document_share` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `folder_id` int(11) DEFAULT NULL,
+  `file_id` int(11) DEFAULT NULL,
+  `shared_by_id` int(11) NOT NULL,
+  `shared_to_id` int(11) DEFAULT NULL,
+  `department_id` int(11) DEFAULT NULL,
+  `shared_type` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `can_edit` tinyint(4) DEFAULT NULL,
+  `can_delete` tinyint(4) DEFAULT NULL,
+  `can_share` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `Folder id` (`folder_id`) USING BTREE,
+  KEY `File id` (`file_id`) USING BTREE,
+  KEY `department` (`department_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `emails`
@@ -1021,7 +1045,7 @@ CREATE TABLE `employee_attandance` (
   `from_date` datetime DEFAULT NULL,
   `to_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=283 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1082,7 +1106,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1384 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1393 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_salary`
@@ -1162,6 +1186,21 @@ CREATE TABLE `experience` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Table structure for `file`
+-- ----------------------------
+DROP TABLE IF EXISTS `file`;
+CREATE TABLE `file` (
+  `document_id` int(11) NOT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `content` longtext,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `Folder id` (`parent_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
 --  Table structure for `filestore_file`
 -- ----------------------------
 DROP TABLE IF EXISTS `filestore_file`;
@@ -1220,6 +1259,18 @@ CREATE TABLE `filestore_volume` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
+--  Table structure for `folder`
+-- ----------------------------
+DROP TABLE IF EXISTS `folder`;
+CREATE TABLE `folder` (
+  `document_id` int(11) NOT NULL,
+  `parent_folder_id` int(11) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
 --  Table structure for `follower_task_association`
 -- ----------------------------
 DROP TABLE IF EXISTS `follower_task_association`;
@@ -1233,6 +1284,28 @@ CREATE TABLE `follower_task_association` (
 ) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Table structure for `freelancer_cat_customer_asso`
+-- ----------------------------
+DROP TABLE IF EXISTS `freelancer_cat_customer_asso`;
+CREATE TABLE `freelancer_cat_customer_asso` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) DEFAULT NULL,
+  `freelancer_category_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+--  Table structure for `freelancer_category`
+-- ----------------------------
+DROP TABLE IF EXISTS `freelancer_category`;
+CREATE TABLE `freelancer_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
 --  Table structure for `graphical_report`
 -- ----------------------------
 DROP TABLE IF EXISTS `graphical_report`;
@@ -1244,7 +1317,7 @@ CREATE TABLE `graphical_report` (
   `description` text,
   `is_system` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `graphical_report_widget`
@@ -1259,7 +1332,7 @@ CREATE TABLE `graphical_report_widget` (
   `order` int(11) DEFAULT NULL,
   `is_active` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `installed_application`
@@ -1538,7 +1611,7 @@ CREATE TABLE `lead_category_association` (
   PRIMARY KEY (`id`),
   KEY `lead_id` (`lead_id`) USING BTREE,
   KEY `marketing_category_id` (`marketing_category_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1555 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1556 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `leave_template`
