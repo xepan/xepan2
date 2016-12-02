@@ -38,7 +38,7 @@ class page_index extends \xepan\base\Page {
 
         $rpt = $this->add('xepan\base\Model_GraphicalReport');
         if($rpt_id = $this->app->employee['graphical_report_id']){                        
-            $rpt->load($rpt_id); 
+            $rpt->tryLoadBy('id',$rpt_id); 
         }else{
             $rpt->tryLoadBy('name',$post['permission_level']?:'Individual'); 
         }
