@@ -50,7 +50,7 @@ class page_index extends \xepan\base\Page {
 
         $this->title = $rpt['name'];
 
-        foreach ($rpt->ref('xepan\base\GraphicalReport_Widget')->setOrder('order','desc') as $widget) {
+        foreach ($rpt->ref('xepan\base\GraphicalReport_Widget')->setOrder('order','asc') as $widget) {
             $w = $this->add('xepan\base\Widget_Wrapper');
             $w->addClass('widget');
             $w->addClass('col-md-'.$widget['col_width']);
