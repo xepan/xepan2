@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aeb8f4d2252f2a753cd6c205901eb05b",
-    "content-hash": "98aa82eeb75b4f577d6b29c114b9d1ff",
+    "hash": "a70a2ce8f96bfbf56da77a44d4ff04c5",
+    "content-hash": "c6e6d363cb55721b96970400603edd53",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -60,6 +60,161 @@
                 "twitter"
             ],
             "time": "2016-10-10 14:20:30"
+        },
+        {
+            "name": "atk4/core",
+            "version": "1.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/atk4/core.git",
+                "reference": "f457a5c80eb93d4776fc67ab9437eb8280f443d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/atk4/core/zipball/f457a5c80eb93d4776fc67ab9437eb8280f443d6",
+                "reference": "f457a5c80eb93d4776fc67ab9437eb8280f443d6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "atk4\\core\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Romans Malinovskis",
+                    "email": "romans@agiletoolkit.org",
+                    "homepage": "https://nearly.guru/"
+                }
+            ],
+            "description": "Agile Core - collection of PHP Traits for designing object-oriented frameworks",
+            "homepage": "https://github.com/atk4/core",
+            "keywords": [
+                "Agile Toolkit",
+                "framework",
+                "php",
+                "trains"
+            ],
+            "time": "2016-10-26 08:22:28"
+        },
+        {
+            "name": "atk4/data",
+            "version": "1.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/atk4/data.git",
+                "reference": "b06c666abb1a659e25d42852a2a20b37bd513403"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/atk4/data/zipball/b06c666abb1a659e25d42852a2a20b37bd513403",
+                "reference": "b06c666abb1a659e25d42852a2a20b37bd513403",
+                "shasum": ""
+            },
+            "require": {
+                "atk4/core": "~1.1.4",
+                "atk4/dsql": "~1.0.9",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "atk4/schema": "*",
+                "codeclimate/php-test-reporter": "*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "atk4\\data\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Romans Malinovskis",
+                    "email": "romans@agiletoolkit.org",
+                    "homepage": "https://nearly.guru/"
+                }
+            ],
+            "description": "Agile Data - Database access abstraction framework",
+            "homepage": "https://github.com/atk4/data",
+            "keywords": [
+                "Active Record",
+                "builder",
+                "framework",
+                "mongodb",
+                "mysql",
+                "nosql",
+                "orm",
+                "postgresql",
+                "query",
+                "sql"
+            ],
+            "time": "2016-11-22 08:51:17"
+        },
+        {
+            "name": "atk4/dsql",
+            "version": "1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/atk4/dsql.git",
+                "reference": "e8b2f8019ab8d7806e90d32975bb5172a864dfc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/atk4/dsql/zipball/e8b2f8019ab8d7806e90d32975bb5172a864dfc9",
+                "reference": "e8b2f8019ab8d7806e90d32975bb5172a864dfc9",
+                "shasum": ""
+            },
+            "require": {
+                "atk4/core": "~1.1.3",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "*",
+                "phpunit/dbunit": ">=1.2",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "atk4\\dsql\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Romans Malinovskis",
+                    "email": "romans@agiletoolkit.org",
+                    "homepage": "https://nearly.guru/"
+                }
+            ],
+            "description": "Dynamic SQL Builder in PHP",
+            "homepage": "http://agiletoolkit.org/dsql/",
+            "keywords": [
+                "builder",
+                "framework",
+                "orm",
+                "sql"
+            ],
+            "time": "2016-09-22 04:57:57"
         },
         {
             "name": "cron/cron",
@@ -3356,7 +3511,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 07:32:18"
+            "time": "2016-12-02 07:24:57"
         },
         {
             "name": "xepan/atk4",
@@ -3442,7 +3597,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 13:51:08"
+            "time": "2016-12-02 08:42:03"
         },
         {
             "name": "xepan/blog",
@@ -3673,7 +3828,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 12:46:12"
+            "time": "2016-11-25 10:05:01"
         },
         {
             "name": "xepan/communication",
@@ -3721,7 +3876,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-11-23 07:05:48"
+            "time": "2016-11-24 14:44:26"
         },
         {
             "name": "xepan/crm",
@@ -3900,7 +4055,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-24 04:36:51"
+            "time": "2016-12-02 11:53:59"
         },
         {
             "name": "xepan/mail",
@@ -4011,7 +4166,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 06:12:51"
+            "time": "2016-11-30 04:48:36"
         },
         {
             "name": "xepan/omnipay",
@@ -4211,7 +4366,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-19 06:59:47"
+            "time": "2016-11-25 12:07:13"
         },
         {
             "name": "xepan/projects",
@@ -4256,7 +4411,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 06:15:21"
+            "time": "2016-11-24 07:53:19"
         }
     ],
     "packages-dev": [],

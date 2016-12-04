@@ -15,7 +15,8 @@
     "xepan/projects": "dev-master",
     "xepan/blog": "dev-master",
     "xepan/epanservices": "dev-master",
-    "hoa/websocket": "~3.0"
+    "hoa/websocket": "~3.0",
+    "atk4/data": "^1.1"
   },
   "autoload":{
     "psr-0":{

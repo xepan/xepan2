@@ -23,6 +23,11 @@ class Admin extends App_Frontend {
         $this->app->profiler = $this->app->add('xepan/base/Controller_Profiler');
 
         $this->dbConnect();
+        $conn = new \atk4\dsql\Connection();
+        $this->ad_db = new \atk4\data\Persistence_SQL($conn->connect($this->db->dbh));
+        $this->ad_db->owner = $this;
+        $this->ad_db->app = $this;
+
         $this->add('jUI');
 
         // Move to SandBOX Part Start
@@ -108,3 +113,11 @@ class Admin extends App_Frontend {
     }
 
 }
+
+
+// class AD extends atk\data\Model {
+//     function init(){
+//         parent::init();
+//             $this->app->ad_db->add($this);
+//     }
+// }
