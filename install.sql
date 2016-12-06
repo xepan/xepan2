@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 12/01/2016 18:35:08 PM
+ Date: 12/06/2016 17:00:25 PM
 */
 
 SET NAMES utf8;
@@ -490,6 +490,7 @@ CREATE TABLE `contact` (
   `source` varchar(255) DEFAULT NULL,
   `remark` text,
   `freelancer_type` varchar(255) NOT NULL,
+  `score` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_epan_id` (`epan_id`),
   KEY `user_id` (`user_id`) USING BTREE,
@@ -943,7 +944,30 @@ CREATE TABLE `document_share` (
   KEY `Folder id` (`folder_id`) USING BTREE,
   KEY `File id` (`file_id`) USING BTREE,
   KEY `department` (`department_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+--  Table structure for `elfinder_file`
+-- ----------------------------
+DROP TABLE IF EXISTS `elfinder_file`;
+CREATE TABLE `elfinder_file` (
+  `id` int(7) unsigned NOT NULL AUTO_INCREMENT,
+  `parent_id` int(7) unsigned NOT NULL,
+  `name` varchar(256) NOT NULL,
+  `content` longblob NOT NULL,
+  `size` int(10) unsigned NOT NULL DEFAULT '0',
+  `mtime` int(10) unsigned NOT NULL,
+  `mime` varchar(256) NOT NULL DEFAULT 'unknown',
+  `read` enum('1','0') NOT NULL DEFAULT '1',
+  `write` enum('1','0') NOT NULL DEFAULT '1',
+  `locked` enum('1','0') NOT NULL DEFAULT '0',
+  `hidden` enum('1','0') NOT NULL DEFAULT '0',
+  `width` int(5) NOT NULL,
+  `height` int(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `parent_name` (`parent_id`,`name`),
+  KEY `parent_id` (`parent_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `emails`
@@ -1044,8 +1068,9 @@ CREATE TABLE `employee_attandance` (
   `employee_id` int(11) DEFAULT NULL,
   `from_date` datetime DEFAULT NULL,
   `to_date` datetime DEFAULT NULL,
+  `is_holiday` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=283 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=289 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1106,7 +1131,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1393 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1416 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_salary`
@@ -1191,14 +1216,20 @@ CREATE TABLE `experience` (
 DROP TABLE IF EXISTS `file`;
 CREATE TABLE `file` (
   `document_id` int(11) NOT NULL,
-  `parent_id` int(11) DEFAULT NULL,
+  `folder_id` int(11) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `content` longtext,
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(20) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `file_id` int(11) DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
+  `mime` varchar(255) DEFAULT NULL,
+  `width` int(11) DEFAULT NULL,
+  `height` int(11) DEFAULT NULL,
+  `size` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `Folder id` (`parent_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+  KEY `Folder id` (`folder_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `filestore_file`
@@ -1215,7 +1246,7 @@ CREATE TABLE `filestore_file` (
   PRIMARY KEY (`id`),
   KEY `fk_filestore_file_filestore_type1_idx` (`filestore_type_id`),
   KEY `fk_filestore_file_filestore_volume1_idx` (`filestore_volume_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=955 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=965 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `filestore_image`
@@ -1257,18 +1288,6 @@ CREATE TABLE `filestore_volume` (
   `enabled` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Volume enabled?',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-
--- ----------------------------
---  Table structure for `folder`
--- ----------------------------
-DROP TABLE IF EXISTS `folder`;
-CREATE TABLE `folder` (
-  `document_id` int(11) NOT NULL,
-  `parent_folder_id` int(11) DEFAULT NULL,
-  `name` varchar(255) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `follower_task_association`
@@ -1455,6 +1474,8 @@ CREATE TABLE `item` (
   `remind_to` varchar(255) DEFAULT NULL,
   `renewable_value` int(11) DEFAULT NULL,
   `renewable_unit` varchar(255) DEFAULT NULL,
+  `is_teller_made_item` tinyint(4) DEFAULT NULL,
+  `minimum_stock_limit` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `duplicate_from_item_id` (`duplicate_from_item_id`) USING BTREE,
@@ -1491,6 +1512,22 @@ CREATE TABLE `item_department_consumption` (
   KEY `composition_item_id` (`composition_item_id`) USING BTREE,
   KEY `item_department_association_id` (`item_department_association_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `item_department_consumptionconstraint`
+-- ----------------------------
+DROP TABLE IF EXISTS `item_department_consumptionconstraint`;
+CREATE TABLE `item_department_consumptionconstraint` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_department_consumption_id` int(11) NOT NULL,
+  `item_customfield_asso_id` int(11) NOT NULL,
+  `item_customfield_value_id` int(11) NOT NULL,
+  `item_customfield_id` int(11) NOT NULL,
+  `item_customfield_name` varchar(255) NOT NULL,
+  `item_customfield_value_name` varchar(255) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `item_image`
@@ -1554,7 +1591,7 @@ CREATE TABLE `jobcard` (
 DROP TABLE IF EXISTS `jobcard_detail`;
 CREATE TABLE `jobcard_detail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `quantity` varchar(255) DEFAULT NULL,
+  `quantity` decimal(10,4) DEFAULT NULL,
   `parent_detail_id` int(11) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `jobcard_id` int(11) DEFAULT NULL,
@@ -2322,6 +2359,7 @@ CREATE TABLE `store_transaction` (
   `narration` text,
   `tracking_code` text,
   `related_transaction_id` int(11) DEFAULT NULL,
+  `department_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_doc_id` (`related_document_id`) USING BTREE,
@@ -2343,6 +2381,7 @@ CREATE TABLE `store_transaction_row` (
   `quantity` double(8,4) DEFAULT NULL,
   `jobcard_detail_id` int(11) DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL,
+  `extra_info` longtext,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `store_transaction_id` (`store_transaction_id`) USING BTREE,
