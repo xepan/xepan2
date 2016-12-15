@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 12/15/2016 15:31:57 PM
+ Date: 12/15/2016 16:50:09 PM
 */
 
 SET NAMES utf8;
@@ -1132,7 +1132,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5720 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5721 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -1351,7 +1351,7 @@ CREATE TABLE `graphical_report` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `permitted_post` varchar(255) DEFAULT NULL,
-  `created_by_id` int(11) NOT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
   `is_system` tinyint(4) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id`)
@@ -2260,6 +2260,7 @@ CREATE TABLE `salary_abstract` (
   `type` varchar(255) NOT NULL,
   `month` varchar(255) NOT NULL,
   `year` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
