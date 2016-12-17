@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 12/15/2016 16:50:09 PM
+ Date: 12/17/2016 14:43:30 PM
 */
 
 SET NAMES utf8;
@@ -145,7 +145,7 @@ CREATE TABLE `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=631 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=633 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `activity`
@@ -168,7 +168,7 @@ CREATE TABLE `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=10020 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10022 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `affiliate`
@@ -708,6 +708,7 @@ CREATE TABLE `customer` (
   `pan_no` varchar(255) DEFAULT '',
   `currency_id` int(11) DEFAULT NULL,
   `same_as_billing_address` tinyint(4) DEFAULT NULL,
+  `is_designer` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`),
   KEY `currency_id` (`currency_id`) USING BTREE
@@ -1070,7 +1071,7 @@ CREATE TABLE `employee_attandance` (
   `to_date` datetime DEFAULT NULL,
   `is_holiday` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1655 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1656 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1132,7 +1133,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5721 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5722 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -1576,7 +1577,7 @@ CREATE TABLE `item_template_design` (
   `name` varchar(255) DEFAULT NULL,
   `item_id` int(11) DEFAULT NULL,
   `last_modified` date DEFAULT NULL,
-  `is_ordered` tinyint(4) DEFAULT NULL,
+  `order_id` int(11) DEFAULT NULL,
   `designs` longtext,
   `contact_id` int(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
