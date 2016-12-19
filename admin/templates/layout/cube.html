@@ -12,9 +12,9 @@
     {$Side_Menu}
   </div>
   <div class="pusher">{breadcrumb}
-    <ol class="breadcrumb">{rows}{row}
-      <li class="{$active}"><a href="{$url}">{title}Home{/title}</a></li>{/row}{/rows}
-    </ol>{/breadcrumb}
+    <div class="ui breadcrumb">{rows}{row}<a href="{$url}" class="{$active} section">{title}Home{/title}</a>
+      <div class="divider">/</div>{/row}{/rows}
+    </div>{/breadcrumb}
     <h1>{page_title}Page_Title{/}</h1>
     <div>{$Content}</div>
   </div>

@@ -12,10 +12,10 @@
     {$Side_Menu}
   .pusher
     {breadcrumb}
-    ol.breadcrumb
+    .ui.breadcrumb
       {rows}{row}
-      li(class="{$active}")
-        a(href='{$url}') {title}Home{/title}
+      a(href='{$url}' class="{$active} section") {title}Home{/title}
+      .divider /
       {/row}{/rows}
     {/breadcrumb}
     h1 {page_title}Page_Title{/}
