@@ -47,9 +47,8 @@ html(lang="{lang}en{/}")
             {$document_ready}
         });
         $(function(){
-            $('.ui.dropdown')
-              .dropdown()
-            ;
+            $('.ui.dropdown').dropdown();
+            $('.menu .item').tab();
         });
 
   body(class="{$pagename}"){Layout}{/Layout}{$Content}
