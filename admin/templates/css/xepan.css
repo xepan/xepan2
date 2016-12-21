@@ -663,6 +663,9 @@ textarea {width: 100%;}
     overflow: hidden;
     width: 40px
   }
+  .filter-block button.qps_pos_btn {
+    width: auto;
+  }
   .filter-block button.btn i{
     padding-right: 18px;
   }
