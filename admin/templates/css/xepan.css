@@ -690,6 +690,11 @@ textarea {width: 100%;}
     width: auto!important;
     line-height: 1;
   }
+  ul#email-nav-labels{
+    min-height:50px;
+    max-height:100px!important;
+    overflow-y:scroll;
+  }
 
   #email-list li .message{
     overflow: hidden;
