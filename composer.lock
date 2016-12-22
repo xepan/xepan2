@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aeb8f4d2252f2a753cd6c205901eb05b",
-    "content-hash": "98aa82eeb75b4f577d6b29c114b9d1ff",
+    "hash": "0d8aaf3b0a70623603901e86d78b3b05",
+    "content-hash": "0df49853dde815d8c105c38fdb2d415b",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -3356,7 +3356,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 07:32:18"
+            "time": "2016-12-08 05:05:53"
         },
         {
             "name": "xepan/atk4",
@@ -3442,7 +3442,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 13:51:08"
+            "time": "2016-12-15 09:42:30"
         },
         {
             "name": "xepan/blog",
@@ -3485,7 +3485,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-17 06:06:22"
+            "time": "2016-12-15 13:24:42"
         },
         {
             "name": "xepan/captcha",
@@ -3673,7 +3673,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 12:46:12"
+            "time": "2016-12-20 13:29:01"
         },
         {
             "name": "xepan/communication",
@@ -3721,7 +3721,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-11-23 07:05:48"
+            "time": "2016-12-20 06:06:38"
         },
         {
             "name": "xepan/crm",
@@ -3768,7 +3768,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 06:09:41"
+            "time": "2016-12-20 06:05:02"
         },
         {
             "name": "xepan/epanservices",
@@ -3812,7 +3812,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 13:17:49"
+            "time": "2016-12-17 09:49:17"
         },
         {
             "name": "xepan/filestore",
@@ -3900,7 +3900,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-24 04:36:51"
+            "time": "2016-12-21 05:23:36"
         },
         {
             "name": "xepan/mail",
@@ -4011,7 +4011,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 06:12:51"
+            "time": "2016-12-21 05:13:21"
         },
         {
             "name": "xepan/omnipay",
@@ -4211,7 +4211,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-19 06:59:47"
+            "time": "2016-12-09 09:49:49"
         },
         {
             "name": "xepan/projects",
@@ -4256,7 +4256,54 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-23 06:15:21"
+            "time": "2016-12-07 07:10:59"
+        },
+        {
+            "name": "xepan/webwidgets",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:xepan/webwidgets.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/webwidgets/zipball/origin/master",
+                "reference": "origin/master",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "tburry/pquery": ">=0.2",
+                "xepan/cms": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "autocomplete": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "Official xEpan CMS Web Widgets",
+            "homepage": "https://github.com/xepan/webwidgets",
+            "keywords": [
+                "ERP",
+                "cms",
+                "drag and drop",
+                "saas",
+                "widgets",
+                "xepan"
+            ],
+            "time": "2016-12-22 13:39:59"
         }
     ],
     "packages-dev": [],
@@ -4274,7 +4321,8 @@
         "xepan/accounts": 20,
         "xepan/projects": 20,
         "xepan/blog": 20,
-        "xepan/epanservices": 20
+        "xepan/epanservices": 20,
+        "xepan/webwidgets": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
