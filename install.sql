@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 12/21/2016 16:16:55 PM
+ Date: 12/24/2016 20:02:30 PM
 */
 
 SET NAMES utf8;
@@ -792,6 +792,7 @@ CREATE TABLE `department` (
   `is_system` tinyint(4) DEFAULT '0',
   `is_outsourced` tinyint(4) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `simultaneous_no_process_allowed` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
@@ -1071,7 +1072,7 @@ CREATE TABLE `employee_attandance` (
   `to_date` datetime DEFAULT NULL,
   `is_holiday` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1659 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1660 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1133,7 +1134,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5726 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5727 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -2145,6 +2146,17 @@ CREATE TABLE `qsp_master` (
 ) ENGINE=InnoDB AUTO_INCREMENT=448 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Table structure for `qsp_sales_person`
+-- ----------------------------
+DROP TABLE IF EXISTS `qsp_sales_person`;
+CREATE TABLE `qsp_sales_person` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `contact_id` int(11) DEFAULT NULL,
+  `qsp_master_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
 --  Table structure for `qualification`
 -- ----------------------------
 DROP TABLE IF EXISTS `qualification`;
@@ -2285,6 +2297,7 @@ CREATE TABLE `salary_ledger_association` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ledger_id` int(11) NOT NULL,
   `salary_id` int(11) NOT NULL,
+  `code` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
