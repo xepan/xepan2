@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 01/09/2017 19:58:12 PM
+ Date: 01/14/2017 17:50:19 PM
 */
 
 SET NAMES utf8;
@@ -727,6 +727,8 @@ CREATE TABLE `customer` (
   `currency_id` int(11) DEFAULT NULL,
   `same_as_billing_address` tinyint(4) DEFAULT NULL,
   `is_designer` tinyint(4) DEFAULT NULL,
+  `billing_name` varchar(255) DEFAULT NULL,
+  `shipping_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`),
   KEY `currency_id` (`currency_id`) USING BTREE
@@ -1067,7 +1069,7 @@ CREATE TABLE `employee_attandance` (
   `to_date` datetime DEFAULT NULL,
   `is_holiday` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2194 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2195 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1129,7 +1131,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6827 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6828 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -2157,6 +2159,8 @@ CREATE TABLE `qsp_master` (
   `outsource_party_id` int(11) DEFAULT NULL,
   `from` varchar(255) DEFAULT NULL,
   `round_amount` decimal(14,2) DEFAULT NULL,
+  `billing_name` varchar(255) DEFAULT NULL,
+  `shipping_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document` (`document_id`),
   KEY `contact_id` (`contact_id`) USING BTREE,
@@ -2722,7 +2726,7 @@ CREATE TABLE `unit` (
   `unit_group_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `unit_conversion`
@@ -2734,7 +2738,7 @@ CREATE TABLE `unit_conversion` (
   `multiply_with` decimal(10,0) DEFAULT NULL,
   `to_become_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `unit_group`
@@ -2744,7 +2748,7 @@ CREATE TABLE `unit_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `unsubscribe`
