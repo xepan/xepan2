@@ -37,8 +37,8 @@ class Admin extends App_Frontend {
         $this->xepan_app_initiators = $app_initiators=[];
 
         $this->app->profiler->mark('before_initiators_setup_admin');
-        foreach ($addons as $addon) {
-            $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator")->setup_admin();    
+        foreach ($addons as $addon) {            
+            $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator")->setup_admin();
         }
         $this->app->profiler->mark('after_initiators_setup_admin');
     }
