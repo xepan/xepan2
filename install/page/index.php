@@ -76,15 +76,19 @@ class page_index extends Page {
 			$new_epan['extra_info'] = $json;
 			$new_epan['epan_dbversion'] = (int)$db_model->max_count;
 			$new_epan->save();
-        	$user->set('username',$f['admin_username'])
+			
+			$user1 = $this->add('xepan\base\Model_User')->tryLoadAny();
+			$this->app->auth->addEncryptionHook($user1);
+        	$user1->set('username',$f['admin_username'])
 	            ->set('password',$f['admin_password'])
 				->save();
+					
 			// check if folder websites/www exists
-			// $new_epan->createFolder($new_epan);
-			// chmod('./websites/'.$this->app->epan['name'], $this->api->getConfig('filestore/chmod', 0755));
+			$new_epan->createFolder($new_epan);
+			chmod('./websites/'.$this->app->epan['name'], $this->api->getConfig('filestore/chmod', 0755));
 
-			// $config_file = "<?php \n\n\t\$config['dsn'] = '".$dsn."';\n\n";
-			// file_put_contents(realpath($this->app->pathfinder->base_location->base_path.'/websites/'.$this->app->epan['name']).'/config.php',$config_file);
+			$config_file = "<?php \n\n\t\$config['dsn'] = '".$dsn."';\n\n";
+			file_put_contents(realpath($this->app->pathfinder->base_location->base_path.'/websites/'.$this->app->epan['name']).'/config.php',$config_file);
 			
 
 			// $f->js(null,$f->js()->univ()->successMessage("Installed Successfully"))->univ()->redirect($this->api->url(null,array('step'=>2)))->execute();	
