@@ -11,6 +11,7 @@ class Frontend extends ApiFrontend {
     public $is_admin= false;
     public $isEditing = false;
     public $current_website_name=null;
+    public $current_template_name=null;
 
     public $page_class='xepan\cms\page_cms';
 
@@ -108,9 +109,21 @@ class Frontend extends ApiFrontend {
             ))->setParent($this->pathfinder->base_location);
         }
 
+        // if using['empty'] as page template and page as current app layout
+        if($this->api->stickyGET('xepan-template-edit')){
+            return [str_replace("_", "/",$this->page)];
+        }
+
+        // if using html as layout and page layout file as page
+        // if($this->api->stickyGET('xepan-template-edit')){
+        //     return ['html'];
+        // }
+
         if($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
+            $this->current_template_name = 'layout/'.$this->page;
             return ['layout/'.$this->page];
         }elseif($this->pathfinder->locate('template','layout/default.html','path',false)){            
+            $this->current_template_name = 'layout/default';
             return ['layout/default'];
         }elseif(!$this->layout){
             throw new \Exception("No Website content found or No Template in Website for ". $this->current_website_name, 1);
@@ -121,6 +134,12 @@ class Frontend extends ApiFrontend {
 
     protected function loadStaticPage($page){
         $layout = $this->layout ?: $this;
+
+        // IF we are trating template page as page and ['emty'] as template
+        if($_GET['xepan-template-edit']){
+            return $this->page_object=$layout->add($this->page_class,['name'=>$page,'page_requested'=>$page],'Content',['empty']);
+        }
+
         try{
             $t='page/'.str_replace('_','/',strtolower($page));
             $this->template->findTemplate($t);
@@ -136,7 +155,7 @@ class Frontend extends ApiFrontend {
                     $original_page=null;
                     if(!file_exists(getcwd().'/websites/'.$this->current_website_name.'/www/'.str_replace("_", "/",$page).".html")){
                         $page='404';
-	                    $original_page=$page;
+                        $original_page=$page;
                     }
                     $this->page_object=$layout->add($this->page_class,['name'=>$page,'page_requested'=>$original_page],'Content',[str_replace("_", "/",$page)]);
                 }catch(\PathFinder_Exception $e4){
