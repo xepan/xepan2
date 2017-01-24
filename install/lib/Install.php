@@ -6,6 +6,7 @@ class Install extends App_Frontend {
 
     public $is_frontend= false;
     public $is_admin= false;
+    public $is_install= true;
 
     function init() {
         parent::init();
