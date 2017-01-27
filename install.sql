@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 01/19/2017 11:44:06 AM
+ Date: 01/27/2017 16:30:19 PM
 */
 
 SET NAMES utf8;
@@ -145,7 +145,7 @@ CREATE TABLE `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=673 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=674 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `activity`
@@ -437,6 +437,7 @@ CREATE TABLE `communication` (
   KEY `related_id` (`related_id`) USING BTREE,
   KEY `to_id` (`to_id`) USING BTREE,
   KEY `from_id` (`from_id`) USING BTREE,
+  KEY `mailbox` (`mailbox`),
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=44422 DEFAULT CHARSET=utf8;
 
@@ -1069,7 +1070,7 @@ CREATE TABLE `employee_attandance` (
   `to_date` datetime DEFAULT NULL,
   `is_holiday` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2197 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2203 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1131,7 +1132,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6830 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6838 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -1209,7 +1210,7 @@ CREATE TABLE `epan_config` (
   `application` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `experience`
@@ -2676,6 +2677,17 @@ CREATE TABLE `team_project_association` (
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Table structure for `temp`
+-- ----------------------------
+DROP TABLE IF EXISTS `temp`;
+CREATE TABLE `temp` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `extra_info` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
 --  Table structure for `ticket_attachment`
 -- ----------------------------
 DROP TABLE IF EXISTS `ticket_attachment`;
@@ -2785,6 +2797,20 @@ CREATE TABLE `user` (
   FULLTEXT KEY `search_string` (`username`,`type`,`scope`),
   CONSTRAINT `fk_user_epan1` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `webpage`
+-- ----------------------------
+DROP TABLE IF EXISTS `webpage`;
+CREATE TABLE `webpage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  `template_id` int(11) DEFAULT NULL,
+  `is_template` tinyint(4) DEFAULT NULL,
+  `is_muted` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `xepan_template`
