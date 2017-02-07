@@ -1,0 +1,57 @@
+.check
+  h1 My Shopping Bag (2)
+  .col-md-9.cart-items
+    script.
+      $(document).ready(function(c) {
+      $('.close1').on('click', function(c){
+      $('.cart-header').fadeOut('slow', function(c){
+      $('.cart-header').remove();
+      });
+      });
+      });
+    .cart-header
+      .close1  
+      .cart-sec.simpleCart_shelfItem
+        .cart-item.cyc
+          img.img-responsive(src='images/pic1.jpg', alt='')
+        .cart-item-info
+          h3
+            a(href='#') Mountain Hopper(XS R034)
+            span Model No: 3578
+          ul.qty
+            li
+              p Size : 5
+            li
+              p Qty : 1
+          .delivery
+            p Service Charges : Rs.100.00
+            span Delivered in 2-3 business days
+            .clearfix
+        .clearfix
+  .col-md-3.cart-total
+    a.continue(href='#') Continue to basket
+    .price-details
+      h3 Price Details
+      span Total
+      span.total1 6200.00
+      span Discount
+      span.total1 ---
+      span Delivery Charges
+      span.total1 150.00
+      .clearfix
+    ul.total_price
+      li.last_price
+        h4 TOTAL
+      li.last_price
+        span 6350.00
+      .clearfix  
+    .clearfix
+    a.order(href='#') Place Order
+    .total-item
+      h3 OPTIONS
+      h4 COUPONS
+      a.cpns(href='#') Apply Coupons
+      p
+        a(href='#') Log In
+        |  to use accounts - linked coupons
+  .clearfix  

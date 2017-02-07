@@ -1,0 +1,24 @@
+div(id="{$_name}")
+  h3 Activate your Account
+  div
+  h4
+    | Enter activation code
+  form
+    div
+      .atk-form-row.atk-form-field
+        .xepan-form-field{$email}
+    div
+      .atk-form-row.atk-form-field
+        .xepan-form-field{$activation_code}
+    input(type='submit', value='Verify')
+  .panel-footer
+    {login_wrapper}
+    a.forgot-link.back-login.xepan-login-panl-loadview(style="cursor:pointer; cursor: hand;" data-showview="login_view") Back to login    
+    {/}
+    {resend_wrapper}
+    a.forgot-link.back-login.xepan-login-panl-loadview.pull-right(style="cursor:pointer; cursor: hand;" data-showview="verify_again") Resend verification
+    {/}
+  style.
+      #{$_name} input{
+        width:100%;
+      }

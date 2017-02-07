@@ -1,0 +1,27 @@
+
+<div id="{$_name}">
+  <h3>Activate your Account</h3>
+  <div></div>
+  <h4>Enter activation code</h4>
+  <form>
+    <div>
+      <div class="atk-form-row atk-form-field">
+        <div class="xepan-form-field">{$email}</div>
+      </div>
+    </div>
+    <div>
+      <div class="atk-form-row atk-form-field">
+        <div class="xepan-form-field">{$activation_code}</div>
+      </div>
+    </div>
+    <input type="submit" value="Verify"/>
+  </form>
+  <div class="panel-footer">{login_wrapper}<a style="cursor:pointer; cursor: hand;" data-showview="login_view" class="forgot-link back-login xepan-login-panl-loadview">Back to login    </a>{/}
+    {resend_wrapper}<a style="cursor:pointer; cursor: hand;" data-showview="verify_again" class="forgot-link back-login xepan-login-panl-loadview pull-right">Resend verification</a>{/}
+  </div>
+  <style>
+     input{
+      width:100%;
+    }
+  </style>
+</div>

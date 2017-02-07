@@ -1,0 +1,31 @@
+<div id="{$_name}" class="row  {$class}" style="{$style}" >
+{category_list}
+  <ul class="sky-mega-menu sky-mega-menu-anim-scale sky-mega-menu-response-to-switcher">
+    <li class="switcher">
+        <a href="#"> <i style="color: white" class="glyphicon glyphicon-th-list"></i></a>
+    </li>
+    {rows}{row}
+    <li class="xshop-category" aria-haspopup="true" data-id='{$id}'>
+<a href="{$url}">
+            {$name}
+        </a>
+            {nested_category_wrapper}
+            <div class="grid-container3">
+                {$nested_category}
+            </div>
+            {/}
+    </li>        
+    {/}{/}
+</ul>
+{/category_list}
+</div>
+<style type="text/css">
+    li ul li.switcher{
+        display: none!important;
+    }
+</style>
+<script type="text/javascript">
+     $(document).ready(function() {
+        $(".grid-container3 > ul").removeClass("sky-mega-menu sky-mega-menu-anim-scale sky-mega-menu-response-to-switcher");
+     });
+</script>

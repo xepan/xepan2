@@ -1,0 +1,16 @@
+{login_wrapper}
+i.fa.fa-sign-in(aria-hidden='true')
+a(href="{$login_url}") Login
+{/}
+
+{logout_wrapper}
+.dropdown(style="color: #455265;")
+	.dropdown-toggle(data-toggle='dropdown')
+		| Welcome 
+		label {$username}
+		span.caret
+	ul.dropdown-menu.dropdown-menu-right
+		li
+			i.fa.fa-sign-out(aria-hidden='true') 
+				a(href="{$logout_url}")  &nbsp;&nbsp;Logout
+{/}

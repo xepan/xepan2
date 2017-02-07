@@ -1,0 +1,32 @@
+div(id="{$_name}")
+  h3.animated.wow.zoomIn(data-wow-delay='.5s') Register Here
+  form
+    div
+      .xepan-form-field{$first_name}
+      .xepan-form-field{$last_name}
+      span User Name
+      .atk-form-row.atk-form-field
+        .xepan-form-field{$username}
+      .atk-form-row.atk-form-field
+        .xepan-form-field{$password}
+      .atk-form-row.atk-form-field
+        .xepan-form-field{$retype_password}
+      {tnc_wrapper}
+      a.news-letter(href = "{$tnc_page_url}" target='_blank')
+        label.checkbox
+          {$tnc}
+          i
+          | I accept Terms and conditions of usage
+      {/}
+      div
+        input(type='submit', value='Register')
+      .panel-footer.text-center
+        {login_wrapper}
+        a.back-login.xepan-login-panl-loadview(style="cursor:pointer; cursor: hand;" href="index.php" data-showview="login_view")  Back To Login 
+         #login-box-footer
+        {/}
+  div.text-center.text-primary {$message}        
+    style.
+        #{$_name} input{
+          width:100%;
+        }

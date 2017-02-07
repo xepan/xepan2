@@ -1,0 +1,25 @@
+.form-control form{
+padding:1em 0 0 !important;
+}
+.form-control input[type="text"],.form-control input[type="submit"] {
+  width: 100% !important;
+  padding: 0.5em !important;
+  outline: none !important;
+  color: #000 !important;
+  font-size: 1em !important;
+  background: #fff !important;
+  border: none !important;
+ }
+ .form-control input[type="submit"] {
+  width: 36% !important;
+  color: #FFF !important;
+  font-size: 1em !important;
+  background:#8ce78a !important;
+  border: none !important;
+  outline:none !important;
+  padding: 0.5em !important;
+}
+.form-control input[type="submit"]:hover {
+background: #fff !important;
+color:#8ce78a !important;
+}

@@ -1,0 +1,81 @@
+
+<div id="{$_name}" class="xepan-commerce-tool-cart check {$class}">
+  {$Content}
+  {Pannel}
+  {$grid_buttons} 
+  {/Pannel}
+  {lister}
+  <h1>My Shopping Bag ({$total_count})</h1>
+  <div class="col-md-9 cart-items">
+    <div class="cart-header">
+      {header}
+      {cols}{col}
+      {/}{/}
+      {/}
+      {$subheader}
+      {rows}{row}
+      <tr data-id="{$id}" class="{$odd_even} xepan-commerce-tool-cart-item-row rem1">{cols}
+        <td class="invert-image"><a href="single"><img alt="{image}{/}" src="{$image_url}" onerror="this.src='vendor/xepan/commerce/templates/view/tool/cart/images/not-found.png'" class="img-responsiveimg"/></a></td>
+        <td class="invert">
+          {qty_wrapper}
+          {qty_form}
+          {$qty}
+          {/}{/}
+        </td>
+        <td class="invert"> 
+          <div class="text-muted">Code : <span class="text-sucess">{$item_code} </span></div>
+          <div style="width:75%" class="text-warning xepan-name">{$name}</div>{design_edit_wrapper}
+          {design_edit}<a href="{$design_edit_url}"><small>Edit Design</small></a>{/}
+          {/}<small>{custom_fields_wrapper}</small><small>{custom_field}</small>
+          <div> <small>
+               
+              {$id}: {$name}</small></div>{/}{/}
+        </td>
+        <td class="invert"> 
+          <table class="timetable_sub">
+            <tbody>
+              <tr>
+                <td style="border: 0px solid #cdcdcd;">
+                  <div class="text-left">Unit Price</div>
+                  <div class="text-left">Shipping Charge </div>
+                </td>
+                <td style="border: 0px solid #cdcdcd;">
+                  <div class="text-right xepan-commerce-tool-total">{unit_price}{/}</div>
+                  <div class="text-right">
+                     
+                    {$shipping_charge_amount}<br/>
+                  </div>{$shipping_duration_text}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td class="invert">{$amount_including_tax}</td>{cart_item_remove_button_wrapper}
+        <td class="invert">
+          <div class="rem">
+            <button data-cartid="{$id}" style="margin-left: auto; margin-right: auto; position: initial;" class="close1 xepan-commerce-cart-item-delete"></button>
+          </div>
+        </td>{/}
+        {/}
+      </tr>{/}{/}
+    </div>
+  </div>{/lister}
+  {not_found}
+  <div class="xepan-cart-empty">{$not_found_message}</div>{/}
+  {footer}
+  <div class="col-md-3 cart-total"><a href="index" class="continue">Continue to basket</a>
+    <div class="price-details">
+      <h3>Price Details</h3><span>Total Amount </span><span class="total1">{$total_amount} </span><span>Shipping Amount </span><span class="total1">{$total_shipping_amount} </span><span>Gross Amount </span><span class="total1">{$gross_amount}</span>{discount_voucher_wrapper} <span>Apply Coupon </span><span class="total1">{$discount_voucher}</span><span>Discount Amount</span><span class="total1">{$discount_amount}</span>{/}
+      {express_shipping_wrapper}<span>Express Shipping</span><span class="total1 xepan-cart-express-shipping-checkout">{$express_shipping_checkbox}</span>{/}
+    </div>
+    <ul class="total_price">
+      <li class="last_price">
+        <h4>Net Amount </h4>
+      </li>
+      <li class="last_price">{$net_amount}</li>
+      <div class="clearfix"></div>
+    </ul>
+    <div class="clearfix"></div>{proceed_to_next_button_wrapper}<a href="#" class="order xepan-cart-proceed-to-next-btn">Proceed To Checkout</a>{/}<a href="index" class="order">Continue Shopping</a>
+  </div>
+  <div class="clearfix"> </div>{/footer}
+</div>

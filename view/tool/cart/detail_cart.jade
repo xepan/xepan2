@@ -1,0 +1,124 @@
+.xepan-commerce-tool-cart.xepan-grid.main-box.clearfix.atk-table.atk-table-zebra.atk-table-bordered(id="{$_name}" class="{$class}")
+    {$Content}
+    {Pannel}
+    {$grid_buttons} 
+    {/Pannel}
+    {lister}
+    {$total_count}
+    .checkout-right.animated.wow.slideInUp(data-wow-delay='.5s')
+      table.timetable_sub
+        {header}
+        thead
+          tr
+            {cols}{col}
+            th Product Image
+            th Quantity
+            th Product Name
+            th Amount
+            th Total
+            th Remove
+            {/}{/}
+        {/}
+        {$subheader}
+        {rows}{row}
+        tr(class="{$odd_even} xepan-commerce-tool-cart-item-row" data-id="{$id}").rem1
+          {cols}
+          td.invert-image
+            a(href='single')
+              img.img-responsiveimg(alt='{image}{/}' src='{$image_url}' onerror="this.src='vendor/xepan/commerce/templates/view/tool/cart/images/not-found.png'")
+          td.invert
+            {qty_wrapper}
+            {qty_form}
+            {$qty}
+            {/}{/}
+          td.invert 
+            .text-muted Code : 
+                span.text-sucess {$item_code} 
+            div.text-warning.xepan-name(style="width:75%") {$name}
+            {design_edit_wrapper}
+            {design_edit}
+            a(href="{$design_edit_url}")
+                small Edit Design
+            {/}
+            {/}
+            small {custom_fields_wrapper}
+            small {custom_field}
+            div 
+                small 
+                    {$id}: {$name}
+            {/}{/}
+
+          td.invert 
+            table.timetable_sub
+                tbody
+                    tr
+                        td(style='border: 0px solid #cdcdcd;')
+                            div.text-left Unit Price
+                            div.text-left Shipping Charge 
+                        td(style='border: 0px solid #cdcdcd;')
+                            div.text-right.xepan-commerce-tool-total {unit_price}{/}
+                            div.text-right 
+                                {$shipping_charge_amount}<br/>
+                            {$shipping_duration_text}
+          td.invert {$amount_including_tax}
+          {cart_item_remove_button_wrapper}
+          td.invert
+            .rem
+                button.close1.xepan-commerce-cart-item-delete(data-cartid='{$id}' style='margin-left: auto; margin-right: auto; position: initial;')
+          {/}
+          {/}
+        {/}{/}
+    {/lister}
+    {not_found}
+    .xepan-cart-empty
+      {$not_found_message}
+    {/}
+    {footer}
+    .checkout-left
+      .checkout-left-basket.animated.wow.slideInLeft(data-wow-delay='.5s')
+        h4 Continue to basket
+        ul
+          li
+            | Total Amount 
+            i -
+            span {$total_amount} 
+          li
+            | Shipping Amount 
+            i -
+            span {$total_shipping_amount} 
+          li
+            | Gross Amount 
+            i -
+            span {$gross_amount}
+          {discount_voucher_wrapper} 
+          li
+            | Apply Coupon 
+            i -
+            span {$discount_voucher}
+          li
+            | Discount Amount
+            i -
+            span {$discount_amount}
+          {/}
+          {express_shipping_wrapper}
+          li
+            | Express Shipping
+            i -
+            span.xepan-cart-express-shipping-checkout {$express_shipping_checkbox}
+          {/}
+          li
+            | Net Amount 
+            i -
+            span {$net_amount}
+      .checkout-right-basket.animated.wow.slideInRight(data-wow-delay='.5s')
+        {proceed_to_next_button_wrapper}
+        a.xepan-cart-proceed-to-next-btn(href='#')
+          span.glyphicon.glyphicon-menu-right(aria-hidden='true')
+          | Proceed To Checkout
+        {/}
+      .checkout-right-basket.animated.wow.slideInRight(data-wow-delay='.5s')
+        a(href='index' style='margin-right: 2px;')
+          span.glyphicon.glyphicon-menu-left(aria-hidden='true')
+          | Continue Shopping
+      .clearfix  
+    {/footer}
