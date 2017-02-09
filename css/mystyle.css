@@ -146,6 +146,9 @@ color:#8ce78a !important;
 .xepan-checkout-proceed-to-payment{
   margin-left: 2%;
 }
+.short-cart{
+  margin-left: 0 !important;
+}
 .xepan-cart-proceed-next{
   margin-right: 6%;
 }
