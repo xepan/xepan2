@@ -96,3 +96,60 @@ color:#8ce78a !important;
   margin: 0.5em 0;
   vertical-align: middle;
 }
+
+
+#front_checkout_xepan_commerce_tool_checkout_view .container span{
+  font-size:1em;
+  display: block;
+  padding: 0 0 0.5em;
+  color:#A09F9F;
+}
+#front_checkout_xepan_commerce_tool_checkout_view .container div{
+  padding:0.5em 0;
+}
+#front_checkout_xepan_commerce_tool_checkout_view .container input[type="text"],
+#front_checkout_xepan_commerce_tool_checkout_view .container textarea,#front_checkout_xepan_commerce_tool_checkout_view .container input[type="password"]{
+  padding:1em;
+  width:100%;
+  background:none;
+  border: 1px solid #A09F9F;  
+  outline:none;
+  
+  font-size:1em;  
+}
+
+#front_checkout_xepan_commerce_tool_checkout_view .container textarea{
+  resize:none;
+  height:60px;    
+}
+#front_checkout_xepan_commerce_tool_checkout_view .container input[type="submit"]{
+  outline:none;
+  padding:7px 20px;
+  color:#FFF;
+  cursor:pointer;
+  background:#8ce78a;
+  border:none;
+  width:20%;
+   margin:1em auto 0;
+   transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all; 
+  font-size: 1.2em;
+}
+#front_checkout_xepan_commerce_tool_checkout_view .container input[type="submit"]:hover{
+  background:#000;
+}
+
+.xepan-cart-proceed-to-next-btn,
+.xepan-checkout-proceed-to-payment{
+  margin-left: 2%;
+}
+.xepan-cart-proceed-next{
+  margin-right: 6%;
+}
+
+.margin-class{
+  margin-left: 6%;
+}
