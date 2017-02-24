@@ -1115,3 +1115,21 @@ textarea {width: 100%;}
 .close-compose-message-popup{
   cursor: pointer;
 }
+
+[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > .btn input[type="checkbox"], [data-toggle="buttons"] > .btn-group > .btn input[type="radio"], [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+    clip: rect(0px, 0px, 0px, 0px);
+    pointer-events: none;
+    position: absolute;
+}
+
+.xepan-radio-btn-form-field-clear{
+  clear: both;
+}
+.xepan-radio-btn-form-field{
+  float: left;
+  padding-right: 1%;
+}
+
+.xepan-radio-btn-form-field div label span {
+    font-size: 15px;
+}
