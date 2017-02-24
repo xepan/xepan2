@@ -42,14 +42,14 @@ ExpiresDefault "access 1 month"
     </filesmatch>
     # css and js should use private for proxy caching https://developers.google.com/speed/docs/best-practices/caching#LeverageProxyCaching
     <filesmatch "\.(css)$">
-        Header set Cache-Control "max-age=31536000, public"
+        Header set Cache-Control "max-age=31536000, private"
     </filesmatch>
     <filesmatch "\.(js)$">
-        Header set Cache-Control "max-age=1209600, public"
+        Header set Cache-Control "max-age=1209600, private"
     </filesmatch>
-    <filesMatch "\.(x?html?|php)$">
-        Header set Cache-Control "max-age=1, private, must-revalidate"
-      </filesMatch>
+    #<filesMatch "\.(x?html?|php)$">
+    #    Header set Cache-Control "max-age=1, private, must-revalidate"
+    #</filesMatch>
 </IfModule>
 
 RewriteEngine On
