@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 02/23/2017 11:27:04 AM
+ Date: 03/16/2017 16:37:06 PM
 */
 
 SET NAMES utf8;
@@ -156,7 +156,7 @@ CREATE TABLE `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1082 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1085 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `activity`
@@ -174,12 +174,13 @@ CREATE TABLE `activity` (
   `notify_to` varchar(255) DEFAULT NULL,
   `notification` varchar(255) DEFAULT NULL,
   `document_url` varchar(255) DEFAULT NULL,
+  `score` decimal(14,6) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=207143 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=207147 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `affiliate`
@@ -343,6 +344,40 @@ CREATE TABLE `campaign_socialuser_association` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Table structure for `carouselcategory`
+-- ----------------------------
+DROP TABLE IF EXISTS `carouselcategory`;
+CREATE TABLE `carouselcategory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_by_id` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+--  Table structure for `carouselimage`
+-- ----------------------------
+DROP TABLE IF EXISTS `carouselimage`;
+CREATE TABLE `carouselimage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `carousel_category_id` int(11) DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
+  `file_id` int(11) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `text_to_display` text,
+  `alt_text` varchar(255) DEFAULT NULL,
+  `order` int(11) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
 --  Table structure for `category`
 -- ----------------------------
 DROP TABLE IF EXISTS `category`;
@@ -444,15 +479,17 @@ CREATE TABLE `communication` (
   `type` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   `communication_channel_id` int(11) DEFAULT NULL,
+  `score` int(11) DEFAULT NULL,
+  `emailsetting_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `to_id_2` (`to_id`,`related_id`,`related_document_id`),
   KEY `related_document_id` (`related_document_id`) USING BTREE,
   KEY `related_id` (`related_id`) USING BTREE,
   KEY `to_id` (`to_id`) USING BTREE,
   KEY `from_id` (`from_id`) USING BTREE,
-  KEY `mailbox` (`mailbox`),
   KEY `created_at` (`created_at`),
   KEY `communication_type` (`communication_type`),
+  KEY `emailsetting_id` (`emailsetting_id`),
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=217739 DEFAULT CHARSET=utf8;
 
@@ -481,8 +518,10 @@ CREATE TABLE `communication_read_emails` (
   `is_read` tinyint(4) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `row` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16425 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  KEY `contact_id` (`contact_id`) USING BTREE,
+  KEY `communicaiton_id` (`communication_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `communication_sms_setting`
@@ -734,6 +773,7 @@ CREATE TABLE `custom_form_submission` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_form_id` int(11) NOT NULL,
   `value` text NOT NULL,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
@@ -825,11 +865,11 @@ DROP TABLE IF EXISTS `deduction`;
 CREATE TABLE `deduction` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `created_by_id` int(11) DEFAULT NULL,
+  `document_id` int(11) DEFAULT NULL,
   `employee_id` int(11) DEFAULT NULL,
   `amount` decimal(14,6) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
   `narration` text,
+  `received_amount` decimal(14,6) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1101,7 +1141,7 @@ CREATE TABLE `employee_app_associations` (
   `installed_app_id` int(11) DEFAULT NULL,
   `post_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_attandance`
@@ -1114,7 +1154,7 @@ CREATE TABLE `employee_attandance` (
   `to_date` datetime DEFAULT NULL,
   `is_holiday` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3366 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3371 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1176,7 +1216,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9894 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9902 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -1254,7 +1294,7 @@ CREATE TABLE `epan_config` (
   `application` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `experience`
@@ -1539,6 +1579,7 @@ CREATE TABLE `item` (
   `renewable_unit` varchar(255) DEFAULT NULL,
   `is_teller_made_item` tinyint(4) DEFAULT NULL,
   `minimum_stock_limit` int(11) DEFAULT NULL,
+  `is_serializable` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `duplicate_from_item_id` (`duplicate_from_item_id`) USING BTREE,
@@ -1610,6 +1651,33 @@ CREATE TABLE `item_image` (
   KEY `item_id` (`item_id`) USING BTREE,
   KEY `custom_field_value_id` (`customfield_value_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `item_serial`
+-- ----------------------------
+DROP TABLE IF EXISTS `item_serial`;
+CREATE TABLE `item_serial` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_id` int(11) DEFAULT NULL,
+  `serial_no` varchar(255) DEFAULT NULL,
+  `is_return` tinyint(4) DEFAULT NULL,
+  `purchase_order_id` int(11) DEFAULT NULL,
+  `purchase_invoice_id` int(11) DEFAULT NULL,
+  `sale_order_id` int(11) DEFAULT NULL,
+  `sale_invoice_id` int(11) DEFAULT NULL,
+  `dispatch_id` int(11) DEFAULT NULL,
+  `transaction_id` int(11) DEFAULT NULL,
+  `is_available` tinyint(4) DEFAULT NULL,
+  `narration` text,
+  `qsp_detail_id` int(11) DEFAULT NULL,
+  `purchase_order_detail_id` int(11) DEFAULT NULL,
+  `purchase_invoice_detail_id` int(11) DEFAULT NULL,
+  `sale_order_detail_id` int(11) DEFAULT NULL,
+  `sale_invoice_detail_id` int(11) DEFAULT NULL,
+  `transaction_row_id` int(11) DEFAULT NULL,
+  `dispatch_row_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `item_template_design`
@@ -2299,8 +2367,31 @@ CREATE TABLE `reimbursement_detail` (
   `amount` decimal(14,6) DEFAULT NULL,
   `reimbursement_id` int(11) DEFAULT NULL,
   `narration` text,
+  `paid_amount` decimal(14,6) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+--  Table structure for `report_executor`
+-- ----------------------------
+DROP TABLE IF EXISTS `report_executor`;
+CREATE TABLE `report_executor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `employee` varchar(255) DEFAULT NULL,
+  `post` varchar(255) DEFAULT NULL,
+  `department` varchar(255) DEFAULT NULL,
+  `widget` varchar(255) DEFAULT NULL,
+  `starting_from_date` date DEFAULT NULL,
+  `financial_month_start` varchar(255) DEFAULT NULL,
+  `time_span` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `schedule_date` date DEFAULT NULL,
+  `data_range` varchar(255) DEFAULT NULL,
+  `data_from_date` date DEFAULT NULL,
+  `data_to_date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `report_function`
@@ -2351,6 +2442,8 @@ CREATE TABLE `salary` (
   `add_deduction` varchar(255) DEFAULT NULL,
   `default_value` varchar(255) DEFAULT NULL,
   `order` int(11) DEFAULT NULL,
+  `is_reimbursement` tinyint(1) DEFAULT NULL,
+  `is_deduction` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
@@ -2431,6 +2524,7 @@ CREATE TABLE `schedule` (
   `document_id` int(11) NOT NULL,
   `client_event_id` varchar(255) NOT NULL,
   `posted_on` datetime DEFAULT NULL,
+  `last_communicated_lead_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `campaign_id` (`campaign_id`) USING BTREE,
   KEY `document_id` (`document_id`) USING BTREE
