@@ -16,7 +16,7 @@ class Admin extends App_Frontend {
 
         $this->api->pathfinder
             ->addLocation(array(
-                'addons' => array('vendor','shared/addons2','shared/addons'),
+                'addons' => array('vendor','shared/addons2','shared/addons','shared/apps'),
             ))
             ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
 
