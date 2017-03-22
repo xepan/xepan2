@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 03/16/2017 16:37:06 PM
+ Date: 03/22/2017 17:32:30 PM
 */
 
 SET NAMES utf8;
@@ -90,7 +90,7 @@ CREATE TABLE `account_transaction` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `transaction_type_id` (`transaction_type_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2072 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2078 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `account_transaction_attachment`
@@ -180,7 +180,7 @@ CREATE TABLE `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=207147 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=207150 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `affiliate`
@@ -1016,7 +1016,7 @@ CREATE TABLE `document` (
   PRIMARY KEY (`id`),
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`)
-) ENGINE=InnoDB AUTO_INCREMENT=5564 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5570 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `document_share`
@@ -1125,6 +1125,7 @@ CREATE TABLE `employee` (
   `finacial_permit_limit` int(11) DEFAULT NULL,
   `remark` longtext,
   `graphical_report_id` int(11) DEFAULT NULL,
+  `salary_payment_type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_employee_contact1_idx` (`contact_id`),
   KEY `fk_employee_post1_idx` (`post_id`),
@@ -1153,8 +1154,10 @@ CREATE TABLE `employee_attandance` (
   `from_date` datetime DEFAULT NULL,
   `to_date` datetime DEFAULT NULL,
   `is_holiday` tinyint(4) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3371 DEFAULT CHARSET=utf8mb4;
+  `working_unit_count` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `employee_id_index` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3372 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1216,7 +1219,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9902 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9903 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -1270,7 +1273,7 @@ CREATE TABLE `epan` (
   PRIMARY KEY (`id`),
   KEY `fk_epan_category_id` (`epan_category_id`),
   CONSTRAINT `fk_epan_category_id` FOREIGN KEY (`epan_category_id`) REFERENCES `epan_category` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `epan_category`
@@ -2226,7 +2229,7 @@ CREATE TABLE `qsp_detail` (
   KEY `qsp_master_id` (`qsp_master_id`),
   KEY `item_id` (`item_id`),
   KEY `taxation_id` (`taxation_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=56699 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=56705 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `qsp_detail_attachment`
@@ -2288,7 +2291,7 @@ CREATE TABLE `qsp_master` (
   KEY `related_qsp_master_id` (`related_qsp_master_id`) USING BTREE,
   KEY `nominal_id` (`nominal_id`) USING BTREE,
   CONSTRAINT `document` FOREIGN KEY (`document_id`) REFERENCES `document` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=470 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=476 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `qsp_sales_person`
