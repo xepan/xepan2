@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 03/22/2017 17:32:30 PM
+ Date: 03/29/2017 12:10:38 PM
 */
 
 SET NAMES utf8;
@@ -90,7 +90,7 @@ CREATE TABLE `account_transaction` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `transaction_type_id` (`transaction_type_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2078 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2080 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `account_transaction_attachment`
@@ -491,7 +491,7 @@ CREATE TABLE `communication` (
   KEY `communication_type` (`communication_type`),
   KEY `emailsetting_id` (`emailsetting_id`),
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=217739 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=217740 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `communication_attachment`
@@ -1016,7 +1016,7 @@ CREATE TABLE `document` (
   PRIMARY KEY (`id`),
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`)
-) ENGINE=InnoDB AUTO_INCREMENT=5570 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5572 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `document_share`
@@ -1156,8 +1156,9 @@ CREATE TABLE `employee_attandance` (
   `is_holiday` tinyint(4) DEFAULT NULL,
   `working_unit_count` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_index` (`employee_id`,`from_date`),
   KEY `employee_id_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3372 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3374 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1219,7 +1220,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9903 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9905 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -1273,7 +1274,7 @@ CREATE TABLE `epan` (
   PRIMARY KEY (`id`),
   KEY `fk_epan_category_id` (`epan_category_id`),
   CONSTRAINT `fk_epan_category_id` FOREIGN KEY (`epan_category_id`) REFERENCES `epan_category` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `epan_category`
@@ -2015,6 +2016,7 @@ CREATE TABLE `official_holiday` (
   `to_date` date NOT NULL,
   `type` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
+  `status` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -2229,7 +2231,7 @@ CREATE TABLE `qsp_detail` (
   KEY `qsp_master_id` (`qsp_master_id`),
   KEY `item_id` (`item_id`),
   KEY `taxation_id` (`taxation_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=56705 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=56707 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `qsp_detail_attachment`
@@ -2291,7 +2293,7 @@ CREATE TABLE `qsp_master` (
   KEY `related_qsp_master_id` (`related_qsp_master_id`) USING BTREE,
   KEY `nominal_id` (`nominal_id`) USING BTREE,
   CONSTRAINT `document` FOREIGN KEY (`document_id`) REFERENCES `document` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=476 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=478 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `qsp_sales_person`
