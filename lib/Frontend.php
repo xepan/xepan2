@@ -16,26 +16,9 @@ class Frontend extends ApiFrontend {
     public $page_class='xepan\cms\page_cms';
 
     function init() {
-        parent::init();        
-
-        //DB Connect not default added by rakesh
-        $this->dbConnect();
+        parent::init();
         
-        // Might come handy when multi-timezone base networks integrates
-        $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
-        $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
-
-        $this->api_public_path = dirname(@$_SERVER['SCRIPT_FILENAME']);
-        $this->api_base_path = dirname(dirname(@$_SERVER['SCRIPT_FILENAME']));
-
         $this->add('jUI');
-        
-
-        $this->api->pathfinder
-            ->addLocation(array(
-                'addons' => array('vendor','shared/addons2','shared/addons','shared/apps'),
-            ))
-            ->setBasePath($this->pathfinder->base_location->getPath() );
         
         // Should come from any local DB store
         $this->xepan_addons = $addons = ['xepan\\base'];
@@ -78,17 +61,23 @@ class Frontend extends ApiFrontend {
         $current_website = $this->current_website_name = $epan;
 
         $this->readConfig("websites/$this->current_website_name/config.php");
+
+        //  Moved from Init to here
         
-        if($tmpt = $this->recall('xepan-template-preview',$_GET['xepan-template-preview'])){
-            $this->memorize('xepan-template-preview',$tmpt);
-            $this->addLocation(array(
-                'page'=>array("xepantemplates/$tmpt"),
-                'js'=>array("xepantemplates/$tmpt/js"),
-                'css'=>array("xepantemplates/$tmpt","xepantemplates/$tmpt/css"),
-                'template'=>["xepantemplates/$tmpt"],
-                'addons'=> ['xepantemplates/'.$tmpt]
-            ))->setParent($this->pathfinder->base_location);
-        }
+        $this->dbConnect();
+
+        // Might come handy when multi-timezone base networks integrates
+        $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
+        $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
+
+        $this->api_public_path = dirname(@$_SERVER['SCRIPT_FILENAME']);
+        $this->api_base_path = dirname(dirname(@$_SERVER['SCRIPT_FILENAME']));
+
+        $this->api->pathfinder
+            ->addLocation(array(
+                'addons' => array('vendor','shared/addons2','shared/addons','shared/apps'),
+            ))
+            ->setBasePath($this->pathfinder->base_location->getPath() );
 
         $this->addLocation(array(
             'page'=>array("websites/$current_website/www"),
@@ -99,14 +88,11 @@ class Frontend extends ApiFrontend {
         ))->setParent($this->pathfinder->base_location);
 
 
-        if($tmpt = $this->getConfig('xepan-template',false)){
-            $this->addLocation(array(
-                'page'=>array("xepantemplates/$tmpt"),
-                'js'=>array("xepantemplates/$tmpt/js"),
-                'css'=>array("xepantemplates/$tmpt","xepantemplates/$tmpt/css"),
-                'template'=>["xepantemplates/$tmpt"],
-                'addons'=> ['xepantemplates/'.$tmpt]
-            ))->setParent($this->pathfinder->base_location);
+        $this->addLocation(array('template'=>'templates','js'=>'templates/js','css'=>['templates/css','templates/js']))
+            ->setBaseURL('../vendor/xepan/cms/');
+
+        if(!$this->add('xepan\base\Model_Epan_InstalledApplication')->tryLoadBy('application_namespace','xepan\cms')->loaded()){
+            die('Forntend requires xepan\CMS');
         }
 
         // if using['empty'] as page template and page as current app layout
@@ -114,12 +100,11 @@ class Frontend extends ApiFrontend {
             return [str_replace("_", "/",$this->page)];
         }
 
-        // if using html as layout and page layout file as page
-        // if($this->api->stickyGET('xepan-template-edit')){
-        //     return ['html'];
-        // }
+        $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',str_replace("_", "/",$this->page).'.html');
 
-        if($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
+        if($page_m->loaded()){
+            return [$page_m['template_path']];
+        }elseif($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
             $this->current_template_name = 'layout/'.$this->page;
             return ['layout/'.$this->page];
         }elseif($this->pathfinder->locate('template','layout/default.html','path',false)){            
