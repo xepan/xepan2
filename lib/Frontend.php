@@ -100,10 +100,13 @@ class Frontend extends ApiFrontend {
             return [str_replace("_", "/",$this->page)];
         }
 
-        $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',str_replace("_", "/",$this->page).'.html');
+        $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',str_replace("_", "/",$this->page.'.html'));
+            
+        $this->xepan_cms_page = ['name'=>$this->page,'path'=>$this->page];
 
-        if($page_m->loaded()){
-            return [$page_m['template_path']];
+        if($page_m->loaded() && $page_m['template_path']){
+            $this->xepan_cms_page = $page_m;
+            return ['layout/'.str_replace(".html", "", $page_m['template_path'])];
         }elseif($this->pathfinder->locate('template',$t='layout/'.$this->page.'.html','path',false)){
             $this->current_template_name = 'layout/'.$this->page;
             return ['layout/'.$this->page];
