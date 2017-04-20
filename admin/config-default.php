@@ -24,3 +24,36 @@ $config['profiler'] = false; // true for all falase for none or string of curren
 $config['websocket-notifications'] =  false;
 
 $config['websocket-server']='ws://127.0.0.1:8889';
+
+
+
+
+// to be overridden by config.php
+$config['hidden_xepan_communication']= false;
+$config['hidden_my_menu']= true;
+$config['only_my_menu']= true;
+
+$config['required_hr_only']= false;
+$config['hidden_xepan_hr']= false;
+$config['only_xepan_hr']= false;
+
+$config['hidden_xepan_projects']= false;
+$config['only_xepan_projects']= false;
+
+$config['hidden_xepan_marketing']= false;
+$config['only_xepan_marketing']= false;
+
+$config['hidden_xepan_accounts']= false;
+$config['only_xepan_accounts']= false;
+
+$config['hidden_xepan_commerce']= false;
+$config['only_xepan_commerce']= false;
+
+$config['hidden_xepan_production']= false;
+$config['only_xepan_production']= false;
+
+$config['hidden_xepan_crm']= false;
+$config['only_xepan_crm']= false;
+
+$config['hidden_xepan_cms']= false;
+$config['only_xepan_cms']= false;
