@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 05/24/2017 17:07:24 PM
+ Date: 06/10/2017 13:42:51 PM
 */
 
 SET NAMES utf8;
@@ -446,6 +446,18 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2993 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Table structure for `commerce_package_item_association`
+-- ----------------------------
+DROP TABLE IF EXISTS `commerce_package_item_association`;
+CREATE TABLE `commerce_package_item_association` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `package_item_id` int(11) DEFAULT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
 --  Table structure for `communication`
 -- ----------------------------
 DROP TABLE IF EXISTS `communication`;
@@ -585,7 +597,7 @@ CREATE TABLE `contact` (
   KEY `country_id` (`country_id`),
   FULLTEXT KEY `search_string` (`search_string`),
   CONSTRAINT `fk_epan_id` FOREIGN KEY (`epan_id`) REFERENCES `epan` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=143803 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=143988 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `contact_info`
@@ -606,7 +618,7 @@ CREATE TABLE `contact_info` (
   KEY `type` (`type`),
   KEY `value` (`value`),
   KEY `head` (`head`)
-) ENGINE=InnoDB AUTO_INCREMENT=148944 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=149129 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `content`
@@ -1018,7 +1030,7 @@ CREATE TABLE `document` (
   PRIMARY KEY (`id`),
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`)
-) ENGINE=InnoDB AUTO_INCREMENT=6126 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6127 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `document_share`
@@ -1160,7 +1172,7 @@ CREATE TABLE `employee_attandance` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_index` (`employee_id`,`from_date`),
   KEY `employee_id_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3807 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3811 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1222,7 +1234,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11014 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11018 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -1587,6 +1599,7 @@ CREATE TABLE `item` (
   `minimum_stock_limit` int(11) DEFAULT NULL,
   `is_serializable` tinyint(4) DEFAULT NULL,
   `nominal_id` int(11) DEFAULT NULL,
+  `is_package` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `duplicate_from_item_id` (`duplicate_from_item_id`) USING BTREE,
@@ -1789,7 +1802,7 @@ CREATE TABLE `lead_category_association` (
   KEY `lead_id` (`lead_id`),
   KEY `marketing_category_id` (`marketing_category_id`),
   KEY `created_at` (`created_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=1915355 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=1915554 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `lead_category_association_1`
@@ -1993,7 +2006,7 @@ CREATE TABLE `marketingcategory` (
   `system` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=614 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=615 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `marketingcategory_1`
@@ -2762,12 +2775,17 @@ CREATE TABLE `task` (
   `completed_at` datetime DEFAULT NULL,
   `snooze_duration` int(11) DEFAULT NULL,
   `reminder_time` datetime DEFAULT NULL,
+  `last_comment_time` datetime DEFAULT NULL,
+  `comment_count` int(11) DEFAULT NULL,
+  `creator_unseen_comment_count` int(11) DEFAULT NULL,
+  `assignee_unseen_comment_count` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `assigned_to_id` (`assign_to_id`),
   KEY `created_by_id` (`created_by_id`),
   KEY `starting_date` (`starting_date`),
   KEY `deadline` (`deadline`),
   KEY `status` (`status`),
+  KEY `related_id` (`related_id`),
   FULLTEXT KEY `task_title_full_text` (`task_name`,`description`,`status`,`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4092 DEFAULT CHARSET=utf8;
 
