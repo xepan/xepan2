@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 07/14/2017 11:01:24 AM
+ Date: 07/24/2017 19:21:39 PM
 */
 
 SET NAMES utf8;
@@ -454,6 +454,7 @@ CREATE TABLE `commerce_package_item_association` (
   `package_item_id` int(11) DEFAULT NULL,
   `item_id` int(11) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
+  `extra_info` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1175,7 +1176,7 @@ CREATE TABLE `employee_attandance` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_index` (`employee_id`,`from_date`),
   KEY `employee_id_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3815 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3816 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1237,7 +1238,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11021 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11022 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -1278,16 +1279,16 @@ CREATE TABLE `epan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_category_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `status` varchar(10) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
-  `type` varchar(5) DEFAULT NULL,
-  `xepan_template_id` int(11) DEFAULT NULL,
-  `valid_till` datetime DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `xepan_template_id` varchar(255) DEFAULT NULL,
   `is_published` varchar(255) DEFAULT NULL,
   `extra_info` text,
   `aliases` text,
   `epan_dbversion` varchar(255) DEFAULT NULL,
+  `is_template` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_epan_category_id` (`epan_category_id`),
   CONSTRAINT `fk_epan_category_id` FOREIGN KEY (`epan_category_id`) REFERENCES `epan_category` (`id`)
@@ -2306,6 +2307,7 @@ CREATE TABLE `qsp_master` (
   `round_amount` decimal(14,2) DEFAULT NULL,
   `billing_name` varchar(255) DEFAULT NULL,
   `shipping_name` varchar(255) DEFAULT NULL,
+  `serial` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document` (`document_id`),
   KEY `contact_id` (`contact_id`) USING BTREE,
@@ -2654,6 +2656,7 @@ CREATE TABLE `store_transaction` (
   `tracking_code` text,
   `related_transaction_id` int(11) DEFAULT NULL,
   `department_id` int(11) DEFAULT NULL,
+  `subtype` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_doc_id` (`related_document_id`) USING BTREE,
