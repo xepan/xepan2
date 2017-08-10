@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 07/28/2017 09:40:22 AM
+ Date: 08/10/2017 22:16:28 PM
 */
 
 SET NAMES utf8;
@@ -192,6 +192,19 @@ CREATE TABLE `affiliate` (
   `contact_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `agency`
+-- ----------------------------
+DROP TABLE IF EXISTS `agency`;
+CREATE TABLE `agency` (
+  `contact_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `is_channelpartner` tinyint(4) DEFAULT NULL,
+  `channelpartner_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `contact_id` (`contact_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `application`
@@ -761,6 +774,9 @@ CREATE TABLE `custom_form` (
   `created_by_id` int(11) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
+  `is_create_lead` tinyint(4) DEFAULT '0',
+  `is_associate_lead` tinyint(4) DEFAULT '0',
+  `lead_category_ids` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
@@ -778,6 +794,7 @@ CREATE TABLE `custom_form_field` (
   `name` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `auto_reply` tinyint(4) DEFAULT NULL,
+  `save_into_field_of_lead` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=latin1;
 
@@ -1176,7 +1193,7 @@ CREATE TABLE `employee_attandance` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_index` (`employee_id`,`from_date`),
   KEY `employee_id_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3816 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3818 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1238,7 +1255,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11022 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11025 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
