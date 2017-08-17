@@ -29,6 +29,11 @@ $config['websocket-server']='ws://127.0.0.1:8889';
 
 
 // to be overridden by config.php
+
+$config['hidden_report_menu'] = false;
+$config['hidden_user_menu'] = false;
+
+
 $config['hidden_xepan_communication']= false;
 $config['hidden_my_menu']= true;
 $config['only_my_menu']= true;
