@@ -13,6 +13,8 @@ class Frontend extends ApiFrontend {
     public $current_website_name=null;
     public $current_template_name=null;
 
+    public $app_router=null;
+
     public $page_class='xepan\cms\page_cms';
 
     function init() {
@@ -24,12 +26,15 @@ class Frontend extends ApiFrontend {
         $this->xepan_addons = $addons = ['xepan\\base'];
         $this->xepan_app_initiators = $app_initiators=[];
 
+        $this->app_router = $this->add("Controller_PatternRouter");
+        // ->addRule("(news\/.*)", "news_item", array("u"))
 
         $app_initiators=[];
         foreach ($addons as $addon) {
             $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator")->setup_frontend();
         }
 
+        $this->app_router->route();
 
     }
 
@@ -147,8 +152,9 @@ class Frontend extends ApiFrontend {
                 try{
                     $original_page=null;
                     if(!file_exists(getcwd().'/websites/'.$this->current_website_name.'/www/'.str_replace("_", "/",$page).".html")){
-                        $page='404';
                         $original_page=$page;
+                        $page='404';
+                        var_dump($_GET);
                     }
                     $this->page_object=$layout->add($this->page_class,['name'=>$page,'page_requested'=>$original_page],'Content',[str_replace("_", "/",$page)]);
                 }catch(\PathFinder_Exception $e4){
