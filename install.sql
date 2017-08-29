@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 08/22/2017 09:46:10 AM
+ Date: 08/29/2017 15:37:10 PM
 */
 
 SET NAMES utf8;
@@ -180,7 +180,7 @@ CREATE TABLE `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=207175 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=207178 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `affiliate`
@@ -227,6 +227,9 @@ CREATE TABLE `attachment` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `document_id` int(11) DEFAULT NULL,
   `file_id` int(11) DEFAULT NULL,
+  `contact_id` int(11) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `description` text,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `file_id` (`file_id`) USING BTREE
@@ -548,7 +551,7 @@ CREATE TABLE `communication_read_emails` (
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `communicaiton_id` (`communication_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `communication_sms_setting`
@@ -603,6 +606,7 @@ CREATE TABLE `contact` (
   `score` int(11) DEFAULT NULL,
   `related_with` varchar(255) DEFAULT NULL,
   `related_id` int(11) DEFAULT NULL,
+  `assign_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_epan_id` (`epan_id`),
   KEY `user_id` (`user_id`) USING BTREE,
@@ -1198,7 +1202,7 @@ CREATE TABLE `employee_attandance` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_index` (`employee_id`,`from_date`),
   KEY `employee_id_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3821 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3824 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1260,7 +1264,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11028 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11031 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -2732,6 +2736,10 @@ CREATE TABLE `supplier` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pan_no` varchar(255) NOT NULL,
   `currency_id` int(11) NOT NULL,
+  `bank_name` varchar(255) DEFAULT NULL,
+  `bank_ifsc_code` varchar(255) DEFAULT NULL,
+  `account_no` varchar(255) DEFAULT NULL,
+  `account_type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`),
   KEY `currency_id` (`currency_id`) USING BTREE
