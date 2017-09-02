@@ -1308,6 +1308,7 @@ CREATE TABLE `epan` (
   `status` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
+  `expiry_date` datetime DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `xepan_template_id` varchar(255) DEFAULT NULL,
   `is_published` varchar(255) DEFAULT NULL,
