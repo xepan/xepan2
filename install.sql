@@ -3015,6 +3015,8 @@ CREATE TABLE `user` (
   `scope` varchar(45) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL,
   `hash` varchar(255) DEFAULT NULL,
+  `access_token` varchar(255) DEFAULT NULL,
+  `access_token_expiry` datetime DEFAULT NULL,
   `last_login_date` datetime DEFAULT NULL,
   `created_by_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
