@@ -140,6 +140,10 @@ $.widget("ui.atk4_uploader", {
                 var f=$(this).data('thumb_field');
                 $(this).attr('src',f?f:row['thumb_url']);
 			})
+			tpl.find('.original-img-preview').each(function(){
+                var url = $(this).closest('div').attr('data-url');
+                $(this).attr('src',url);
+			})
 			tpl.find('.image_preview').each(function(){
 				$(this).attr('src',act+'&view=true&'+
 					self.element.attr('name')+'_save_action='+
