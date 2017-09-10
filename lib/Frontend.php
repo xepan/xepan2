@@ -99,13 +99,17 @@ class Frontend extends ApiFrontend {
             die('Forntend requires xepan\CMS');
         }
 
-        $this->xepan_cms_page = ['name'=>$this->page,'path'=>$this->page];
-        $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',str_replace("_", "/",$this->page.'.html'));
+        // $this->xepan_cms_page = ['name'=>$this->page,'path'=>$this->page];
+        // $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',str_replace("_", "/",$this->page.'.html'));
         
         // if using['empty'] as page template and page as current app layout
         $this->xepan_cms_page = ['name'=>$this->page,'path'=>$this->page];
         $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',str_replace("_", "/",$this->page.'.html'));
         
+        if($page_m->loaded()){
+            $page_m->mergeFromTemplate();
+        }
+
         if($this->api->stickyGET('xepan-template-edit')){
             if($page_m->loaded() && $page_m['template_path'])
                 $this->xepan_cms_page = $page_m;
