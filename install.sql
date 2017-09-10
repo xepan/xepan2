@@ -3040,6 +3040,10 @@ CREATE TABLE `webpage` (
   `is_active` tinyint(4) DEFAULT NULL,
   `parent_page_id` int(11) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
+  `page_title` text,
+  `meta_kewords` text,
+  `meta_description` text,
+  `after_body_code` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
