@@ -2494,7 +2494,7 @@ CREATE TABLE `salary` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
-  `unit` varchar(255) NOT NULL,
+  `unit` varchar(255) DEFAULT NULL,
   `add_deduction` varchar(255) DEFAULT NULL,
   `default_value` varchar(255) DEFAULT NULL,
   `order` int(11) DEFAULT NULL,
