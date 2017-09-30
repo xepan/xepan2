@@ -2564,7 +2564,7 @@ CREATE TABLE `salary_template_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `salary_template_id` int(11) DEFAULT NULL,
   `salary_id` int(11) DEFAULT NULL,
-  `amount` decimal(10,0) DEFAULT NULL,
+  `amount` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
