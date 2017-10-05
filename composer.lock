@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0d8aaf3b0a70623603901e86d78b3b05",
-    "content-hash": "0df49853dde815d8c105c38fdb2d415b",
+    "hash": "bc0d70cd53eedbcfc357007b4e7ab262",
+    "content-hash": "c671aa6b4036576e0447dc7f261d4657",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -2772,6 +2772,70 @@
             "time": "2016-08-06 14:39:51"
         },
         {
+            "name": "rah/danpu",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gocom/danpu.git",
+                "reference": "15a942807ceb311f763a881da9007cfa090064f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gocom/danpu/zipball/15a942807ceb311f763a881da9007cfa090064f9",
+                "reference": "15a942807ceb311f763a881da9007cfa090064f9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.5.*"
+            },
+            "suggest": {
+                "ext-zlib": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Rah\\Danpu\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jukka Svahn",
+                    "homepage": "https://github.com/gocom",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Zero-dependency MySQL dump library for easily exporting and importing databases",
+            "homepage": "https://github.com/gocom/danpu",
+            "keywords": [
+                "backup",
+                "database",
+                "db",
+                "dump",
+                "export",
+                "import",
+                "library",
+                "mysql",
+                "mysqldump",
+                "restore",
+                "sql"
+            ],
+            "time": "2013-12-16 14:39:54"
+        },
+        {
             "name": "studio-42/elfinder",
             "version": "2.1.x-dev",
             "source": {
@@ -3356,7 +3420,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-12-08 05:05:53"
+            "time": "2017-05-22 03:41:03"
         },
         {
             "name": "xepan/atk4",
@@ -3442,7 +3506,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-12-15 09:42:30"
+            "time": "2017-09-29 08:35:31"
         },
         {
             "name": "xepan/blog",
@@ -3485,7 +3549,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-12-15 13:24:42"
+            "time": "2017-10-05 05:31:27"
         },
         {
             "name": "xepan/captcha",
@@ -3625,7 +3689,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-11-19 13:24:53"
+            "time": "2017-10-04 12:48:18"
         },
         {
             "name": "xepan/commerce",
@@ -3673,7 +3737,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-12-20 13:29:01"
+            "time": "2017-09-14 07:25:43"
         },
         {
             "name": "xepan/communication",
@@ -3721,7 +3785,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2016-12-20 06:06:38"
+            "time": "2017-09-02 04:23:43"
         },
         {
             "name": "xepan/crm",
@@ -3768,7 +3832,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-12-20 06:05:02"
+            "time": "2017-08-11 06:34:41"
         },
         {
             "name": "xepan/epanservices",
@@ -3812,7 +3876,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-12-17 09:49:17"
+            "time": "2017-10-04 10:06:32"
         },
         {
             "name": "xepan/filestore",
@@ -3900,7 +3964,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-12-21 05:23:36"
+            "time": "2017-10-02 14:18:01"
         },
         {
             "name": "xepan/mail",
@@ -4011,7 +4075,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-12-21 05:13:21"
+            "time": "2017-09-27 12:42:57"
         },
         {
             "name": "xepan/omnipay",
@@ -4211,7 +4275,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-12-09 09:49:49"
+            "time": "2017-03-04 08:20:47"
         },
         {
             "name": "xepan/projects",
@@ -4256,7 +4320,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-12-07 07:10:59"
+            "time": "2017-10-03 07:01:40"
         },
         {
             "name": "xepan/webwidgets",
@@ -4303,7 +4367,7 @@
                 "widgets",
                 "xepan"
             ],
-            "time": "2016-12-22 13:39:59"
+            "time": "2017-01-06 05:16:00"
         }
     ],
     "packages-dev": [],

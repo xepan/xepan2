@@ -16,7 +16,8 @@
     "xepan/blog": "dev-master",
     "xepan/epanservices": "dev-master",
     "hoa/websocket": "~3.0",
-    "xepan/webwidgets": "dev-master"
+    "xepan/webwidgets": "dev-master",
+    "rah/danpu": "2.6"
   },
   "autoload":{
     "psr-0":{
