@@ -1145,3 +1145,11 @@ textarea {width: 100%;}
     /* symbol for "collapsed" panels */
     content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
+
+.height-60{
+  height: 60px;
+}
+
+.remove-grid-header .main-box-header{
+  display:none;
+}
