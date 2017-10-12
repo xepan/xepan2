@@ -1145,3 +1145,11 @@ textarea {width: 100%;}
     /* symbol for "collapsed" panels */
     content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
+
+.modal.modal-full .modal-dialog {
+  width:95% !important;
+}
+
+.select2-container {
+    width: 100% !important;
+}
