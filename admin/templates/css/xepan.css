@@ -1254,3 +1254,11 @@ textarea {width: 100%;}
 .timeline .panel-outline .panel-footer {
     display: none;
 }
+
+.bg-gray{
+  background-color: #777 !important;
+}
+
+.text-bold{
+  font-weight: bold;
+}
