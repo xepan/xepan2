@@ -1147,10 +1147,10 @@ textarea {width: 100%;}
 }
 
 .modal.modal-full .modal-dialog {
-  width:95% !important;
+  width:70% !important;
 }
 
-.select2-container {
+.select2-full .select2-container {
     width: 100% !important;
 }
 
