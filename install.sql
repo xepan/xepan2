@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 10/23/2017 12:43:24 PM
+ Date: 10/26/2017 19:02:40 PM
 */
 
 SET NAMES utf8;
@@ -180,7 +180,7 @@ CREATE TABLE `activity` (
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `related_contact_id` (`related_contact_id`) USING BTREE,
   KEY `related_document_id` (`related_document_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=305541 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=305544 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `affiliate`
@@ -383,7 +383,7 @@ CREATE TABLE `carouselimage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `carousel_category_id` int(11) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
-  `file_id` int(11) DEFAULT NULL,
+  `file_id` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `text_to_display` text,
   `alt_text` varchar(255) DEFAULT NULL,
@@ -524,7 +524,7 @@ CREATE TABLE `communication` (
   KEY `created_at` (`created_at`),
   KEY `communication_type` (`communication_type`),
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=641422 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=641425 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `communication_attachment`
@@ -1160,7 +1160,7 @@ CREATE TABLE `emailsetting` (
   `last_email_fetched_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `employee`
@@ -1220,7 +1220,7 @@ CREATE TABLE `employee_attandance` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_index` (`employee_id`,`from_date`),
   KEY `employee_id_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4299 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4302 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1282,7 +1282,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11924 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11930 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -3103,7 +3103,7 @@ CREATE TABLE `xepan_cms_image_gallery_images` (
   `name` varchar(255) DEFAULT NULL,
   `description` longtext,
   `gallery_cat_id` int(11) DEFAULT NULL,
-  `image_id` int(11) DEFAULT NULL,
+  `image_id` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
