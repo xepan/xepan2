@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 11/05/2017 12:52:17 PM
+ Date: 11/17/2017 09:29:41 AM
 */
 
 SET NAMES utf8;
@@ -156,7 +156,7 @@ CREATE TABLE `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1232 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1233 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `activity`
@@ -522,8 +522,7 @@ CREATE TABLE `communication` (
   KEY `from_id` (`from_id`) USING BTREE,
   KEY `mailbox` (`mailbox`),
   KEY `created_at` (`created_at`),
-  KEY `communication_type` (`communication_type`),
-  FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
+  KEY `communication_type` (`communication_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=641425 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -1220,7 +1219,7 @@ CREATE TABLE `employee_attandance` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_index` (`employee_id`,`from_date`),
   KEY `employee_id_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4305 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4310 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1248,6 +1247,7 @@ CREATE TABLE `employee_leave` (
   `to_date` date DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `employee_id` int(11) DEFAULT NULL,
+  `narration` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
@@ -1282,7 +1282,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11938 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11943 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -2968,7 +2968,7 @@ CREATE TABLE `timesheet` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=695 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=696 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `tnc`
