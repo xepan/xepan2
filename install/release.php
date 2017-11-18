@@ -93,6 +93,8 @@ if($_GET['v']){
 	$version='-'.$_GET['v'];
 }
 
+if(file_exists('xepan2'.$version.'.zip')) unlink('xepan2'.$version.'.zip');
+
 $zip_cmd= "zip -r xepan2".$version.".zip . --exclude *.svn* --exclude *.git* --exclude *.DS_Store* --exclude *.zip*";
 echo '<b>'.$zip_cmd.'</b><br/>';
 $output = shell_exec($zip_cmd);
