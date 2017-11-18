@@ -112,6 +112,10 @@ unlink('vendor/xepan/epanservices/lib/Model/MyTemplates.php');
 unlink('vendor/xepan/epanservices/composer.json');
 
 
+// remove hostedserver specific config
+unlink('config.php');
+
+
 $version="";
 if($_GET['v']){
 	$version='-'.$_GET['v'];
