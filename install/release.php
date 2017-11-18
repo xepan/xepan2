@@ -44,7 +44,7 @@ if(file_exists('xepantemplates')){
 
 // remove api folder for now
 if(file_exists('../api')){
-	rmdir('../api');
+	rrmdir('../api');
 }
 
 // remove websites folder and creating empty one
@@ -78,6 +78,11 @@ foreach ($apps as $app) {
 }
 
 chdir($root);
+
+$version="";
+if($_GET['v']){
+	$version='-'.$_GET['v'];
+}
 
 $zip_cmd= "zip -r xepan2".$version.".zip . --exclude *.svn* --exclude *.git* --exclude *.DS_Store* --exclude *.zip*";
 echo '<b>'.$zip_cmd.'</b><br/>';
