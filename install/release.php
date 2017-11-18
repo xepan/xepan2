@@ -121,6 +121,11 @@ if($_GET['v']){
 	$version='-'.$_GET['v'];
 }
 
+// update version in file
+if($version){
+	file_put_contents('version', $version);
+}
+
 if(file_exists('xepan2'.$version.'.zip')) unlink('xepan2'.$version.'.zip');
 
 $zip_cmd= "zip -r xepan2".$version.".zip . --exclude *.svn* --exclude *.git* --exclude *.DS_Store* --exclude *.zip*";
