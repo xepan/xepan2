@@ -32,6 +32,10 @@ class page_index extends Page {
 				// or throw error, could not connect
 				$f->displayError('database_host','Couldn\'t connect with database');
 			}
+
+			$epan_row = $this->add('xepan\base\Model_Epan')->tryLoadAny();
+			if($epan_row->loaded())
+				$form->displayError('database','Epan Already Created');
 			
 			$this->app->db->dsql()->expr(file_get_contents(getcwd().'/../install.sql'))->execute();
 			$this->app->db->dsql()->expr('SET FOREIGN_KEY_CHECKS = 0;')->execute();
