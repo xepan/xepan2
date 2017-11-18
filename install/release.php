@@ -81,6 +81,10 @@ foreach ($apps as $app) {
 	$output= shell_exec('git checkout origin master');
 	echo "output:<br/> <pre>$output</pre>";
 
+	echo 'resetting to origin/master <br/>';
+	$output= shell_exec('git reset --hard origin/master');
+	echo "output:<br/> <pre>$output</pre>";
+
 	echo 'Pulling origin master <br/>';
 	$output=shell_exec('git pull origin master');
 	echo "output:<br/> <pre>$output</pre>";
