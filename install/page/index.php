@@ -114,7 +114,7 @@ class page_index extends Page {
 									->each(function($i){
 										$i->delete();
 									});
-					file_put_contents('../admin/config.php', str_replace('$config[\'hidden_xepan_hr\']= false;','$config[\'hidden_xepan_hr\']= true;', file_get_contents('../admin/config.php')));
+					// file_put_contents('../admin/config.php', str_replace('$config[\'hidden_xepan_hr\']= false;','$config[\'hidden_xepan_hr\']= true;', file_get_contents('../admin/config.php')));
 
 					$custom_field_array['specification']['Projects']='No';
 					$custom_field_array['specification']['Marketing']='No';
