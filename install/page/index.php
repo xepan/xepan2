@@ -5,7 +5,11 @@ class page_index extends Page {
 
 	function init(){
 		parent::init();
-		$this->app->auth = $this->app->add('BasicAuth');        
+		$this->app->auth = $this->app->add('BasicAuth');    
+
+		if(file_exists('websites/www')){
+			header('Location: ../admin');
+		}
 	
 		date_default_timezone_set('UTC');
         $this->app->today = date('Y-m-d');
