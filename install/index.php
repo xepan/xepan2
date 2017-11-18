@@ -4,7 +4,7 @@
 /*
 in root 
 	atk4 -> vendor/xepan/atk4/public/atk4
-in admin/install
+in admin/install/api
 	atk4 -> vendor/xepan/atk4/public/atk4
 	vendor -> ../vendor
 	websites -> ../websites

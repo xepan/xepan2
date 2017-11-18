@@ -2,11 +2,13 @@
 
 set_time_limit(0);
 
+// remove root symlink
 if(file_exists('../atk4')){
 	unlink('../atk4');
 }
 
 
+// remove admin symlink
 if(file_exists('../admin/atk4')){
 	unlink('../admin/atk4');
 }
@@ -23,7 +25,7 @@ if(file_exists('../admin/xepantemplates')){
 	unlink('../admin/xepantemplates');
 }
 
-
+// remove install symlinks
 if(file_exists('atk4')){
 	unlink('atk4');
 }
@@ -40,7 +42,12 @@ if(file_exists('xepantemplates')){
 	unlink('xepantemplates');
 }
 
+// remove api folder for now
+if(file_exists('../api')){
+	rmdir('../api');
+}
 
+// remove websites folder and creating empty one
 if(file_exists('../websites')){
 	rrmdir('../websites');
 	mkdir('../websites');
