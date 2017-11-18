@@ -124,7 +124,7 @@ class page_index extends Page {
 			}
 
 			$this->app->db->dsql()->expr('SET FOREIGN_KEY_CHECKS = 1;')->execute();
-			$new_epan = $this->add('xepan\epanservices\Model_Epan');
+			$new_epan = $this->add('xepan\base\Model_Epan');
 			$new_epan->load($this->app->epan->id);
 			$db_model=$this->add('xepan/epanservices/Model_DbVersion',array('dir'=>'dbversion','namespace'=>'xepan\epanservices'));	
 
