@@ -66,9 +66,9 @@ if(file_exists('../websites')){
 chdir('..');
 echo 'In Dir <b>'. getcwd() .'</b><br/>';
 
-echo 'resetting to origin/master <br/>';
-$output= shell_exec('git reset --hard origin/master');
-echo "output:<br/> <pre>$output</pre>";
+// echo 'resetting to origin/master <br/>';
+// $output= shell_exec('git reset --hard origin/master');
+// echo "output:<br/> <pre>$output</pre>";
 
 echo 'Pulling origin master <br/>';
 $output= shell_exec('git pull origin master');
