@@ -101,7 +101,7 @@ rrmdir('vendor/xepan/epanservices/templates');
 unlink('vendor/xepan/epanservices/lib/Model/Agency.php');
 unlink('vendor/xepan/epanservices/lib/Model/ChannelPartner.php');
 unlink('vendor/xepan/epanservices/lib/Model/DomainDetails.php');
-unlink('vendor/xepan/epanservices/lib/Model/Epan.php');
+// unlink('vendor/xepan/epanservices/lib/Model/Epan.php');
 unlink('vendor/xepan/epanservices/lib/Model/MyTemplates.php');
 // unlink('vendor/xepan/epanservices/lib/Initiator.php');
 unlink('vendor/xepan/epanservices/composer.json');
