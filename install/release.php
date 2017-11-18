@@ -113,7 +113,7 @@ unlink('vendor/xepan/epanservices/composer.json');
 
 
 // remove hostedserver specific config
-unlink('config.php');
+if(file_exists('config.php')) unlink('config.php');
 
 
 $version="";
