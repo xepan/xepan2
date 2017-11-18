@@ -69,7 +69,7 @@ echo 'Pulling origin master <br/>';
 $output= shell_exec('git pull origin master');
 echo "output:<br/> <pre>$output</pre>";
 
-$apps = ['accounts','base','blog','cms','commerce','communication','crm','hr','marketing','production','projects'];
+$apps = ['accounts','base','blog','cms','commerce','communication','crm','hr','marketing','production','projects','epanservices'];
 
 $root=getcwd();
 foreach ($apps as $app) {
