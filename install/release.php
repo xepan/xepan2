@@ -47,6 +47,15 @@ if(file_exists('../api')){
 	rrmdir('../api');
 }
 
+// remove some other unused folders
+$to_remove=['../tests','../shared/apps/xavoc','../shared/apps/xepan','../snippet'];
+foreach ($to_remove as $fld) {
+	if(file_exists($fld)){
+		rrmdir($fld);
+	}
+}
+
+
 // remove websites folder and creating empty one
 if(file_exists('../websites')){
 	rrmdir('../websites');
