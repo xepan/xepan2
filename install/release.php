@@ -92,6 +92,19 @@ foreach ($apps as $app) {
 
 chdir($root);
 
+// remove epanservices
+rrmdir('vendor/xepan/epanservices/lib/Controller');
+rrmdir('vendor/xepan/epanservices/lib/Tool');
+rrmdir('vendor/xepan/epanservices/lib/View');
+rrmdir('vendor/xepan/epanservices/page');
+rrmdir('vendor/xepan/epanservices/templates');
+unlink('vendor/xepan/epanservices/lib/Model/Agency.php');
+unlink('vendor/xepan/epanservices/lib/Model/ChannelPartner.php');
+unlink('vendor/xepan/epanservices/lib/Model/DomainDetails.php');
+unlink('vendor/xepan/epanservices/lib/Model/Epan.php');
+unlink('vendor/xepan/epanservices/lib/Model/myTemplates.php');
+
+
 $version="";
 if($_GET['v']){
 	$version='-'.$_GET['v'];
