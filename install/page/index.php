@@ -7,9 +7,9 @@ class page_index extends Page {
 		parent::init();
 		$this->app->auth = $this->app->add('BasicAuth');    
 
-		// if(file_exists('websites/www')){
-		// 	header('Location: ../admin');
-		// }
+		if(file_exists('websites/www')){
+			header('Location: ../admin');
+		}
 	
 		date_default_timezone_set('UTC');
         $this->app->today = date('Y-m-d');
@@ -38,10 +38,6 @@ class page_index extends Page {
 				// or throw error, could not connect
 				$f->displayError('database_host','Couldn\'t connect with database');
 			}
-
-			$epan_row = $this->add('xepan\base\Model_Epan')->tryLoadAny();
-			if($epan_row->loaded())
-				$form->displayError('database','Epan Already Created');
 			
 			$this->app->db->dsql()->expr(file_get_contents(getcwd().'/../install.sql'))->execute();
 			$this->app->db->dsql()->expr('SET FOREIGN_KEY_CHECKS = 0;')->execute();
@@ -65,7 +61,7 @@ class page_index extends Page {
 								      'HR' => 'Yes','Communication' => 'Yes','Projects' =>  'Yes','Marketing' => 'Yes','Accounts' => 'Yes','Commerce' => 'Yes' ,
 								      'Production' => 'Yes','CRM' => 'Yes' ,'CMS' => 'Yes' ,'Blog' => 'Yes','employee' => 0,'email' => 0, 'threshold' => 0,'storage' => 0, 
 								     ],
-				  'valid_till' => date('Y-m-d',strtotime(date('Y-m-d').' +1 year'));
+				  'valid_till' => date('Y-m-d',strtotime(date('Y-m-d').' +1 year'))];
 
 			switch ($f['install_as']) {
 				case 'web':
@@ -95,6 +91,38 @@ class page_index extends Page {
 			foreach ($addons as $addon) {
 				$this->add($addon."\Initiator")->resetDB();
 			}
+
+			switch ($f['install_as']) {
+				case 'web':
+					$installed_app =$this->add('xepan\base\Model_Epan_InstalledApplication')
+									->addCondition('application',['projects','marketing','accounts','commerce','production','crm'])
+									->each(function($i){
+										$i->delete();
+									});
+					file_put_contents('../admin/config.php', str_replace('$config[\'hidden_xepan_hr\']= false;','$config[\'hidden_xepan_hr\']= true;', file_get_contents('../admin/config.php')));
+					$custom_field_array['specification']['Projects']='No';
+					$custom_field_array['specification']['Marketing']='No';
+					$custom_field_array['specification']['Accounts']='No';
+					$custom_field_array['specification']['Commerce']='No';
+					$custom_field_array['specification']['Production']='No';
+					$custom_field_array['specification']['CRM']='No';
+					break;
+				case 'ecomm':
+
+					$installed_app =$this->add('xepan\base\Model_Epan_InstalledApplication')
+									->addCondition('application',['projects','marketing','production'])
+									->each(function($i){
+										$i->delete();
+									});
+					file_put_contents('../admin/config.php', str_replace('$config[\'hidden_xepan_hr\']= false;','$config[\'hidden_xepan_hr\']= true;', file_get_contents('../admin/config.php')));
+
+					$custom_field_array['specification']['Projects']='No';
+					$custom_field_array['specification']['Marketing']='No';
+					$custom_field_array['specification']['Production']='No';
+					// $custom_field_array['specification']['CRM']='No';
+					break;
+			}
+
 			$this->app->db->dsql()->expr('SET FOREIGN_KEY_CHECKS = 1;')->execute();
 			$new_epan = $this->add('xepan\epanservices\Model_Epan');
 			$new_epan->load($this->app->epan->id);
