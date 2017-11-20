@@ -12,45 +12,51 @@ in admin/install/api
 
 */
 
-set_time_limit(0);
 
-// create symlink in root
-if(!file_exists('../atk4')){
-	symlink(realpath(getcwd().'/../vendor/xepan/atk4/public/atk4'), '../atk4');
-}
+if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
 
-// create symlink in admin
-if(!file_exists('../admin/atk4')){
-	symlink(realpath(getcwd().'/../vendor/xepan/atk4/public/atk4'), '../admin/atk4');
-}
 
-if(!file_exists('../admin/vendor')){
-	symlink(realpath(getcwd().'/../vendor'), '../admin/vendor');
-}
 
-if(!file_exists('../admin/websites')){
-	symlink(realpath(getcwd().'/../websites'), '../admin/websites');
-}
+}else{
 
-if(!file_exists('../admin/xepantemplates')){
-	symlink(realpath(getcwd().'/../xepantemplates'), '../admin/xepantemplates');
-}
+	// create symlink in root
+	if(!file_exists('../atk4')){
+		symlink(realpath(getcwd().'/../vendor/xepan/atk4/public/atk4'), '../atk4');
+	}
 
-// create symlink in install (this)
-if(!file_exists('atk4')){
-	symlink(realpath(getcwd().'/../vendor/xepan/atk4/public/atk4'), 'atk4');
-}
+	// create symlink in admin
+	if(!file_exists('../admin/atk4')){
+		symlink(realpath(getcwd().'/../vendor/xepan/atk4/public/atk4'), '../admin/atk4');
+	}
 
-if(!file_exists('vendor')){
-	symlink(realpath(getcwd().'/../vendor'), 'vendor');
-}
+	if(!file_exists('../admin/vendor')){
+		symlink(realpath(getcwd().'/../vendor'), '../admin/vendor');
+	}
 
-if(!file_exists('websites')){
-	symlink(realpath(getcwd().'/../websites'), 'websites');
-}
+	if(!file_exists('../admin/websites')){
+		symlink(realpath(getcwd().'/../websites'), '../admin/websites');
+	}
 
-if(!file_exists('xepantemplates')){
-	symlink(realpath(getcwd().'/../xepantemplates'), 'xepantemplates');
+	if(!file_exists('../admin/xepantemplates')){
+		symlink(realpath(getcwd().'/../xepantemplates'), '../admin/xepantemplates');
+	}
+
+	// create symlink in install (this)
+	if(!file_exists('atk4')){
+		symlink(realpath(getcwd().'/../vendor/xepan/atk4/public/atk4'), 'atk4');
+	}
+
+	if(!file_exists('vendor')){
+		symlink(realpath(getcwd().'/../vendor'), 'vendor');
+	}
+
+	if(!file_exists('websites')){
+		symlink(realpath(getcwd().'/../websites'), 'websites');
+	}
+
+	if(!file_exists('xepantemplates')){
+		symlink(realpath(getcwd().'/../xepantemplates'), 'xepantemplates');
+	}
 }
 
 // actual installer

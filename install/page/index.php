@@ -10,6 +10,11 @@ class page_index extends Page {
 		if(file_exists('websites/www')){
 			header('Location: ../admin');
 		}
+
+		if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' && !file_exists('../atk4')){
+			$this->add('View')->addClass('alert alert-danger')->setStyle('width','100%')
+				->setHTML('Windows user must follow the following steps before continue-<ul><li>Run windows.bat file in your xepan extracted copy ('.str_replace('\install','',getcwd()).')</li><li>If it gives some error, run this file as Administrator</li></ul>');
+		}
 	
 		date_default_timezone_set('UTC');
         $this->app->today = date('Y-m-d');
@@ -29,6 +34,11 @@ class page_index extends Page {
 		$f->addField('license_key')->setFieldHint('Leave blank for standard edition');
 		
 		if($f->isSubmitted()){
+
+			if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' && !file_exists('../atk4')){
+				$this->js()->univ()->alert('Please run windows.bat file first as given in top message')->execute();
+			}
+
 			$dsn = "mysql://".$f['database_user'].":".$f['database_password']."@".$f['database_host']."/".$f['database'];
 			$this->app->setConfig('dsn',$dsn);
 			try{
