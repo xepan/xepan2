@@ -23,9 +23,14 @@ class page_index extends \xepan\base\Page {
             }
             
             $runner_view = $this->add('xepan\hr\View_GraphicalReport_Runner',['report_id'=>$rpt->id]); 
+            
+            // updates
+            $updates = file_get_contents($this->app->getConfig('epan_api_base_path')."/updates");
+            $this->app->layout->add('View',null,'page_top_center')->setHtml($updates);
         }
         catch(\Exception $e){
             
         }
+
     }
 }
