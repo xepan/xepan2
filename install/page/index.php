@@ -5,7 +5,11 @@ class page_index extends Page {
 
 	function init(){
 		parent::init();
-		$this->app->auth = $this->app->add('BasicAuth');        
+		$this->app->auth = $this->app->add('BasicAuth');    
+
+		if(file_exists('websites/www')){
+			header('Location: ../admin');
+		}
 	
 		date_default_timezone_set('UTC');
         $this->app->today = date('Y-m-d');
@@ -19,9 +23,11 @@ class page_index extends Page {
 		$f->addField('database_user');
 		$f->addField('Password','database_password');
 
-		$f->addField('admin_username')->setFieldHint('Must be an email id');
+		$f->addField('admin_username',null,'(must be Email)')->setFieldHint('Must be an email id');
 		$f->addField('admin_password');
+		$f->addField('xepan\base\DropDownNormal','install_as')->setEmptyText("Please Select")->setValueList(['web'=>'Website','ecomm'=>'E-Commerce','erp'=>'CRM/ERP'])->validate('required');
 		$f->addField('license_key')->setFieldHint('Leave blank for standard edition');
+		
 		if($f->isSubmitted()){
 			$dsn = "mysql://".$f['database_user'].":".$f['database_password']."@".$f['database_host']."/".$f['database'];
 			$this->app->setConfig('dsn',$dsn);
@@ -55,7 +61,24 @@ class page_index extends Page {
 								      'HR' => 'Yes','Communication' => 'Yes','Projects' =>  'Yes','Marketing' => 'Yes','Accounts' => 'Yes','Commerce' => 'Yes' ,
 								      'Production' => 'Yes','CRM' => 'Yes' ,'CMS' => 'Yes' ,'Blog' => 'Yes','employee' => 0,'email' => 0, 'threshold' => 0,'storage' => 0, 
 								     ],
-				  'valid_till' => '2017-02-02 12:02:37'];
+				  'valid_till' => date('Y-m-d',strtotime(date('Y-m-d').' +1 year'))];
+
+			switch ($f['install_as']) {
+				case 'web':
+					$custom_field_array['specification']['Projects']='No';
+					$custom_field_array['specification']['Marketing']='No';
+					$custom_field_array['specification']['Accounts']='No';
+					$custom_field_array['specification']['Commerce']='No';
+					$custom_field_array['specification']['Production']='No';
+					$custom_field_array['specification']['CRM']='No';
+					break;
+				case 'ecomm':
+					$custom_field_array['specification']['Projects']='No';
+					$custom_field_array['specification']['Marketing']='No';
+					$custom_field_array['specification']['Production']='No';
+					$custom_field_array['specification']['CRM']='No';
+					break;
+			}
 			
 			$json = json_encode($custom_field_array,true);
 			
@@ -68,8 +91,40 @@ class page_index extends Page {
 			foreach ($addons as $addon) {
 				$this->add($addon."\Initiator")->resetDB();
 			}
+
+			switch ($f['install_as']) {
+				case 'web':
+					$installed_app =$this->add('xepan\base\Model_Epan_InstalledApplication')
+									->addCondition('application',['projects','marketing','accounts','commerce','production','crm'])
+									->each(function($i){
+										$i->delete();
+									});
+					file_put_contents('../admin/config.php', str_replace('$config[\'hidden_xepan_hr\']= false;','$config[\'hidden_xepan_hr\']= true;', file_get_contents('../admin/config.php')));
+					$custom_field_array['specification']['Projects']='No';
+					$custom_field_array['specification']['Marketing']='No';
+					$custom_field_array['specification']['Accounts']='No';
+					$custom_field_array['specification']['Commerce']='No';
+					$custom_field_array['specification']['Production']='No';
+					$custom_field_array['specification']['CRM']='No';
+					break;
+				case 'ecomm':
+
+					$installed_app =$this->add('xepan\base\Model_Epan_InstalledApplication')
+									->addCondition('application',['projects','marketing','production'])
+									->each(function($i){
+										$i->delete();
+									});
+					// file_put_contents('../admin/config.php', str_replace('$config[\'hidden_xepan_hr\']= false;','$config[\'hidden_xepan_hr\']= true;', file_get_contents('../admin/config.php')));
+
+					$custom_field_array['specification']['Projects']='No';
+					$custom_field_array['specification']['Marketing']='No';
+					$custom_field_array['specification']['Production']='No';
+					// $custom_field_array['specification']['CRM']='No';
+					break;
+			}
+
 			$this->app->db->dsql()->expr('SET FOREIGN_KEY_CHECKS = 1;')->execute();
-			$new_epan = $this->add('xepan\epanservices\Model_Epan');
+			$new_epan = $this->add('xepan\base\Model_Epan');
 			$new_epan->load($this->app->epan->id);
 			$db_model=$this->add('xepan/epanservices/Model_DbVersion',array('dir'=>'dbversion','namespace'=>'xepan\epanservices'));	
 
