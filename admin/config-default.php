@@ -64,4 +64,4 @@ $config['hidden_xepan_cms']= false;
 $config['only_xepan_cms']= false;
 
 
-$config['epan_api_base_path'] = "http://xepan-local.org/xepan2/api/v1";
+$config['epan_api_base_path'] = "http://epan.in/api/v1";
