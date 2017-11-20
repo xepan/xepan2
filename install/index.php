@@ -12,6 +12,8 @@ in admin/install/api
 
 */
 
+set_time_limit(0);
+
 // create symlink in root
 if(!file_exists('../atk4')){
 	symlink(realpath(getcwd().'/../vendor/xepan/atk4/public/atk4'), '../atk4');
