@@ -12,8 +12,8 @@ class page_index extends Page {
 		}
 
 		if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' && !file_exists('../atk4')){
-			$this->add('View')->addClass('alert alert-danger')->setStyle('width','100%')
-				->setHTML('Windows user must follow the following steps before continue-<ul><li>Run windows.bat file in your xepan extracted copy ('.str_replace('\install','',getcwd()).')</li><li>If it gives some error, run this file as Administrator</li></ul>');
+			$this->add('View')->addClass('alert alert-danger')
+				->setHTML('Windows user must run windows.bat file in your xepan extracted copy ('.str_replace('\install','',getcwd()).') [Run this file As Administrator, (Right Click and click Run as Administrator)]');
 		}
 	
 		date_default_timezone_set('UTC');
