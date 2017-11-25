@@ -113,6 +113,11 @@ unlink('vendor/xepan/epanservices/lib/Controller/DomainAPI.php');
 unlink('vendor/xepan/epanservices/composer.json');
 
 
+// remove xprint related files
+rrmdir('vendor/xepan/commerce/templates/js/tool/designer');
+rrmdir('vendor/xepan/commerce/page/designer');
+
+
 // remove hostedserver specific config
 if(file_exists('config.php')) unlink('config.php');
 
