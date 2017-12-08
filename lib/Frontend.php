@@ -100,13 +100,20 @@ class Frontend extends ApiFrontend {
             die('Forntend requires xepan\CMS');
         }
 
+
+        // if using['empty'] as page template and page as current app layout
+
+        // Original lines but since SEF is working and filtering later SEF, url are assuming complete lines
+        // like "blog-item/bla-bla-bla" and system is reading this into this->page as "blog-item_bla-bla-bla"
+        // and this was causing wrong page to be asked from database -> so not found -> and wrong things got up
+
         // $this->xepan_cms_page = ['name'=>$this->page,'path'=>$this->page];
         // $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',str_replace("_", "/",$this->page.'.html'));
+        // ==== As a work around, changed the lines as below 
         
-        // if using['empty'] as page template and page as current app layout
-        $this->xepan_cms_page = ['name'=>$this->page,'path'=>$this->page];
-        $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',str_replace("_", "/",$this->page.'.html'));
-        
+        $this->xepan_cms_page = ['name'=>$this->page,'path'=>explode("_", $this->page)[0]];
+        $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',explode("_", $this->page)[0] .'.html');
+
         if($page_m->loaded()){
             $page_m->mergeFromTemplate();
         }
