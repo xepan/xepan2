@@ -15,13 +15,22 @@ in admin/install/api
 
 if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
 
-
+	if(
+		!file_exists('../atk4') || !file_exists('../admin/atk4') ||!file_exists('../admin/vendor') ||
+		!file_exists('../admin/websites') || !file_exists('../admin/xepantemplates')
+	)
+	{
+		die('Please run windows.bat file in administrator mode first to create symlinks');
+	}
 
 }else{
 
 	// create symlink in root
 	if(!file_exists('../atk4')){
-		symlink(realpath(getcwd().'/../vendor/xepan/atk4/public/atk4'), '../atk4');
+		$done = symlink(realpath(getcwd().'/../vendor/xepan/atk4/public/atk4'), '../atk4');
+		if(!$done){
+			die('Could not create symlink, looks like permission issue');
+		}
 	}
 
 	// create symlink in admin
