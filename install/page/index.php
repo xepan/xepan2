@@ -21,6 +21,9 @@ class page_index extends Page {
         $this->app->now   = date('Y-m-d H:i:s');
         $this->app->current_website_name='www';
 
+        $this->create_trial_vp = $this->add('VirtualPage');
+		$this->create_trial_vp->set([$this,'create_trial_vp']);
+
 		$f = $this->add('Form');
 		$f->setLayout('view/form/installer');
 		$f->addField('database')->setFieldHint('Pre created database');
@@ -39,26 +42,57 @@ class page_index extends Page {
 				$this->js()->univ()->alert('Please run windows.bat file first as given in top message')->execute();
 			}
 
+			$f->js()->univ()->frameURL('Installing, please wait ...',$this->app->url($this->create_trial_vp->getURL(),$f->get()))->execute();
+
+			
+		}
+	}
+
+	function create_trial_vp($page){
+
+		$this->app->stickyGET('database');
+		$this->app->stickyGET('database_host');
+		$this->app->stickyGET('database_user');
+		$this->app->stickyGET('database_password');
+		$this->app->stickyGET('admin_username');
+		$this->app->stickyGET('admin_password');
+		$this->app->stickyGET('install_as');
+		$this->app->stickyGET('license_key');
+
+		$page->add('View_Console')->set(function($c){
+			
+			$f = $_GET;
+			$c->out('Connecting database');
+
 			$dsn = "mysql://".$f['database_user'].":".$f['database_password']."@".$f['database_host']."/".$f['database'];
 			$this->app->setConfig('dsn',$dsn);
 			try{
 				// check if database connection is possible
 				$this->app->dbConnect();
+				$c->out(' - Connection done');
 			}catch(\Exception $e){
 				// or throw error, could not connect
-				$f->displayError('database_host','Couldn\'t connect with database');
+				$c->err('Couldn\'t connect with database with provided settings');
+				$c->err($e->getMessage());
+				$c->err($dsn);
+				return;
+				// $f->displayError('database_host','Couldn\'t connect with database');
 			}
 			
+			$c->out('Importing database');
 			$this->app->db->dsql()->expr(file_get_contents(getcwd().'/../install.sql'))->execute();
+			
 			$this->app->db->dsql()->expr('SET FOREIGN_KEY_CHECKS = 0;')->execute();
 			
+			$c->out(' - Importing database done');
+			
 			$epan_category = $this->add('xepan\base\Model_Epan_Category')
-            ->set('name','default')
-            ->save();
+	        ->set('name','default')
+	        ->save();
 	        $epan = $this->add('xepan\base\Model_Epan')
-                    ->set('epan_category_id',$epan_category->id)
-                    ->set('name','www')
-                    ->save();
+	                ->set('epan_category_id',$epan_category->id)
+	                ->set('name','www')
+	                ->save();
 	        $this->app->epan = $epan;
 
 	        $this->app->employee = $this->add('xepan\hr\Model_Employee');//->tryLoadBy('user_id',$this->app->auth->model->id);
@@ -91,16 +125,21 @@ class page_index extends Page {
 			}
 			
 			$json = json_encode($custom_field_array,true);
-			
+
 			$addons = ['xepan\\base','xepan\\communication','xepan\\hr','xepan\\projects','xepan\\marketing','xepan\\accounts','xepan\\commerce','xepan\\production','xepan\\crm','xepan\\cms','xepan\\blog','xepan\\epanservices'];
 			$user = $this->add('xepan\base\Model_User')->tryLoadAny();
-       		$this->app->auth->usePasswordEncryption('md5');
+	   		$this->app->auth->usePasswordEncryption('md5');
 			$this->app->auth->addEncryptionHook($user);
 			$this->app->auth->setModel($user,'username','password');	
 			
+			$c->out('Resetting all applications');
 			foreach ($addons as $addon) {
 				$this->add($addon."\Initiator")->resetDB();
 			}
+
+			$c->out(' - Resetting all applications done');
+
+			$c->out('Removing un-required applications');
 
 			switch ($f['install_as']) {
 				case 'web':
@@ -132,6 +171,9 @@ class page_index extends Page {
 					// $custom_field_array['specification']['CRM']='No';
 					break;
 			}
+			$c->out(' - Removing un-required applications done');
+			
+			$c->out('Saving Epan entry');
 
 			$this->app->db->dsql()->expr('SET FOREIGN_KEY_CHECKS = 1;')->execute();
 			$new_epan = $this->add('xepan\base\Model_Epan');
@@ -141,26 +183,38 @@ class page_index extends Page {
 			$new_epan['extra_info'] = $json;
 			$new_epan['epan_dbversion'] = (int)$db_model->max_count;
 			$new_epan->save();
+
+			$c->out(' - Saving Epan entry done');
+
+			$c->out('Creating default user');
 			
 			$user1 = $this->add('xepan\base\Model_User')->tryLoadAny();
 			$this->app->auth->addEncryptionHook($user1);
-        	$user1->set('username',$f['admin_username'])
+	    	$user1->set('username',$f['admin_username'])
 	            ->set('password',$f['admin_password'])
 				->save();
+
+			$c->out(' - Creating default user done');
 					
 			// check if folder websites/www exists
+			$c->out('Creating folders');
 			$new_epan->createFolder($new_epan);
 			chmod('./websites/'.$this->app->epan['name'], $this->api->getConfig('filestore/chmod', 0755));
+			$c->out('- Folders created');
 
+			$c->out('Writing config file');
 			$config_file = "<?php \n\n\t\$config['dsn'] = '".$dsn."';\n\n";
 			file_put_contents(realpath($this->app->pathfinder->base_location->base_path.'/websites/'.$this->app->epan['name']).'/config.php',$config_file);
-			
+			$c->out(' - Writing config file done');
 
 			// $f->js(null,$f->js()->univ()->successMessage("Installed Successfully"))->univ()->redirect($this->api->url(null,array('step'=>2)))->execute();	
-			$f->js()->univ()->redirect(
+			$c->jsEval($this->js()->univ()->redirect(
 				$this->api->url(
 					$this->app->pm->base_url.$this->app->pm->base_path."../admin")
-					)->execute();
-		}
+					))
+			;
+
+		});
+
 	}
 }
