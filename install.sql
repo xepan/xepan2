@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 12/22/2017 19:23:46 PM
+ Date: 12/22/2017 19:57:56 PM
 */
 
 SET NAMES utf8;
@@ -156,7 +156,7 @@ CREATE TABLE `acl` (
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1238 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1239 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `activity`
@@ -388,6 +388,8 @@ CREATE TABLE `carouselcategory` (
   `orientation` varchar(255) DEFAULT NULL,
   `thumbnails_position` varchar(255) DEFAULT NULL,
   `thumbnail_arrows` tinyint(4) DEFAULT NULL,
+  `width` int(11) DEFAULT NULL,
+  `height` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
@@ -401,13 +403,14 @@ CREATE TABLE `carouselimage` (
   `created_by_id` int(11) DEFAULT NULL,
   `file_id` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `text_to_display` text,
+  `text_to_display` varchar(255) DEFAULT NULL,
   `alt_text` varchar(255) DEFAULT NULL,
-  `order` int(11) DEFAULT NULL,
+  `order` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
+  `slide_type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
