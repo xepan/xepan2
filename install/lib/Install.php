@@ -11,6 +11,8 @@ class Install extends App_Frontend {
     function init() {
         parent::init();
 
+        $this->initializeSession();
+
         $this->api->pathfinder
             ->addLocation(array(
                 'addons' => array('vendor','shared/addons2','shared/addons'),

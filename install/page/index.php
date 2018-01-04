@@ -134,6 +134,7 @@ class page_index extends Page {
 			
 			$c->out('Resetting all applications');
 			foreach ($addons as $addon) {
+				$c->out($addon);
 				$this->add($addon."\Initiator")->resetDB();
 			}
 
