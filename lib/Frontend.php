@@ -107,12 +107,16 @@ class Frontend extends ApiFrontend {
         // like "blog-item/bla-bla-bla" and system is reading this into this->page as "blog-item_bla-bla-bla"
         // and this was causing wrong page to be asked from database -> so not found -> and wrong things got up
 
-        // $this->xepan_cms_page = ['name'=>$this->page,'path'=>$this->page];
-        // $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',str_replace("_", "/",$this->page.'.html'));
+        $this->xepan_cms_page = ['name'=>$this->page,'path'=>$this->page];
+        $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',str_replace("_", "/",$this->page.'.html'));
         // ==== As a work around, changed the lines as below 
         
-        $this->xepan_cms_page = ['name'=>$this->page,'path'=>explode("_", $this->page)[0]];
-        $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',explode("_", $this->page)[0] .'.html');
+        if(!$page_m->loaded()){
+            $this->xepan_cms_page = ['name'=>$this->page,'path'=>explode("_", $this->page)[0]];
+            $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',explode("_", $this->page)[0] .'.html');
+        }
+        // $page_m = $this->add('xepan\cms\Model_Page')->tryLoadBy('path',$this->page.'.html');
+        // die($this->page);
 
         if($page_m->loaded()){
             $page_m->mergeFromTemplate();
