@@ -19,6 +19,12 @@ class Frontend extends ApiFrontend {
 
     function init() {
         parent::init();
+
+         $this->api->pathfinder
+            ->addLocation(array(
+                'addons' => array('vendor','shared/addons2','shared/addons','shared/apps'),
+            ))
+            ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
         
         $this->add('jUI');
         
@@ -168,19 +174,23 @@ class Frontend extends ApiFrontend {
                 try{
                     $original_page=null;
                     if(!file_exists(getcwd().'/websites/'.$this->current_website_name.'/www/'.str_replace("_", "/",$page).".html")){
-                        $original_page=$page;
-                        $page='404';
-                        var_dump($_GET);
+                        throw $e3;
                     }
                     $this->page_object=$layout->add($this->page_class,['name'=>$page,'page_requested'=>$original_page],'Content',[str_replace("_", "/",$page)]);
                 }catch(\PathFinder_Exception $e4){
-                    $this->app->redirect('404');
+                    throw $e4;
                 }
             }
         }
 
         return $this->page_object;
     }
+
+    function pageNotFound($e) {
+        $this->app->redirect('404');
+    }
+
+
 
     function extract_domain($domain)
     {
