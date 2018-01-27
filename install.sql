@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 01/08/2018 10:19:11 AM
+ Date: 01/27/2018 12:10:00 PM
 */
 
 SET NAMES utf8;
@@ -569,7 +569,9 @@ CREATE TABLE `communication_read_emails` (
   `is_read` tinyint(4) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `row` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `contact_communication` (`contact_id`,`communication_id`) USING BTREE,
+  KEY `is_read` (`is_read`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=20788 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -1238,7 +1240,7 @@ CREATE TABLE `employee_attandance` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_index` (`employee_id`,`from_date`),
   KEY `employee_id_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4330 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4333 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `employee_documents`
@@ -1301,7 +1303,7 @@ CREATE TABLE `employee_movement` (
   `narration` text,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11990 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11993 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `employee_row`
@@ -1356,7 +1358,7 @@ CREATE TABLE `epan` (
   PRIMARY KEY (`id`),
   KEY `fk_epan_category_id` (`epan_category_id`),
   CONSTRAINT `fk_epan_category_id` FOREIGN KEY (`epan_category_id`) REFERENCES `epan_category` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `epan_category`
@@ -1885,7 +1887,7 @@ CREATE TABLE `lead_category_association` (
   KEY `lead_id` (`lead_id`),
   KEY `marketing_category_id` (`marketing_category_id`),
   KEY `created_at` (`created_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=1916206 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=1916207 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `lead_category_association_1`
