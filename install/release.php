@@ -95,6 +95,8 @@ foreach ($apps as $app) {
 	echo "output:<br/> <pre>$output</pre>";
 }
 
+chdir($root);
+chdir('vendor/xepan/atk4');
 echo "Updating xepan/atk 4.3<br/>";
 $output=shell_exec('git pull origin 4.3');
 echo "output:<br/> <pre>$output</pre>";
