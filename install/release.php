@@ -118,6 +118,11 @@ rrmdir('vendor/xepan/commerce/templates/js/tool/designer');
 rrmdir('vendor/xepan/commerce/page/designer');
 
 
+// remove ACL by substituting with Controller ACtion
+
+$content = "<?php \n\n namespace xepan\hr; \n\n class Controller_ACL extends Controller_Action { } ";
+file_put_contents('vendor/xepan/hr/lib/Controller/ACL.php', $content);
+
 // remove hostedserver specific config
 if(file_exists('config.php')) unlink('config.php');
 
