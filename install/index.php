@@ -12,6 +12,7 @@ in admin/install/api
 
 */
 
+ini_set('max_execution_time', 0);
 
 if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
 
