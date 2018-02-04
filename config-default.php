@@ -1,6 +1,7 @@
 <?php
 $config['url_prefix']='?page=';
 $config['url_postfix']='';
+$config['xepan-mysql-host']='127.0.0.1';
 
 $config['locale']['date_js'] = 'dd/mm/yyyy';
 
