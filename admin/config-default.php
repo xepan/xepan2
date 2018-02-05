@@ -27,7 +27,7 @@ $config['websocket-notifications'] =  false;
 
 $config['websocket-server']='ws://127.0.0.1:8889';
 
-$config['keep_alive_time'] = 120000;
+$config['keep_alive_time'] = false;// 120000 for 2 minutes;
 
 
 
