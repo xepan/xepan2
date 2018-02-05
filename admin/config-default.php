@@ -65,3 +65,4 @@ $config['only_xepan_cms']= false;
 
 
 $config['epan_api_base_path'] = "http://www.epan.in/api/v1";
+$config['keep_alive_time'] = 120000;
