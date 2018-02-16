@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 02/02/2018 11:29:46 AM
+ Date: 02/16/2018 11:03:52 AM
 */
 
 SET NAMES utf8;
@@ -403,7 +403,7 @@ CREATE TABLE `carouselimage` (
   `created_by_id` int(11) DEFAULT NULL,
   `file_id` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `text_to_display` varchar(255) DEFAULT NULL,
+  `text_to_display` text,
   `alt_text` varchar(255) DEFAULT NULL,
   `order` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
@@ -1977,6 +1977,64 @@ CREATE TABLE `ledger` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Table structure for `list`
+-- ----------------------------
+DROP TABLE IF EXISTS `list`;
+CREATE TABLE `list` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `list_category`
+-- ----------------------------
+DROP TABLE IF EXISTS `list_category`;
+CREATE TABLE `list_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_category_id` int(11) DEFAULT NULL,
+  `list_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `display_sequence` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `description` text,
+  `custom_link` varchar(255) DEFAULT NULL,
+  `is_website_display` tinyint(1) DEFAULT NULL,
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` varchar(255) DEFAULT NULL,
+  `slug_url` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_parent_category_id` (`parent_category_id`),
+  KEY `fk_list_id` (`list_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `list_fields`
+-- ----------------------------
+DROP TABLE IF EXISTS `list_fields`;
+CREATE TABLE `list_fields` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `list_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `field_type` varchar(255) DEFAULT NULL,
+  `default_value` varchar(255) DEFAULT NULL,
+  `placeholder` varchar(255) DEFAULT NULL,
+  `hint` varchar(255) DEFAULT NULL,
+  `is_mandatory` tinyint(1) DEFAULT NULL,
+  `is_moderate` tinyint(1) DEFAULT NULL,
+  `is_changable` tinyint(1) DEFAULT NULL,
+  `is_filterable` tinyint(1) DEFAULT NULL,
+  `is_public` tinyint(1) DEFAULT NULL,
+  `is_private` tinyint(1) DEFAULT NULL,
+  `is_premium` tinyint(1) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_list_id` (`list_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
 --  Table structure for `lodgement`
 -- ----------------------------
 DROP TABLE IF EXISTS `lodgement`;
@@ -2105,6 +2163,17 @@ CREATE TABLE `marketingcategory_1` (
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `menu_group`
+-- ----------------------------
+DROP TABLE IF EXISTS `menu_group`;
+CREATE TABLE `menu_group` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `pages` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `official_holiday`
@@ -2823,6 +2892,10 @@ CREATE TABLE `support_ticket` (
   `priority` varchar(255) DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `task_id` int(11) DEFAULT NULL,
+  `pending_at` datetime DEFAULT NULL,
+  `assigned_at` datetime DEFAULT NULL,
+  `closed_at` datetime DEFAULT NULL,
+  `rejected_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `contact_id` (`contact_id`) USING BTREE,
@@ -2989,7 +3062,9 @@ CREATE TABLE `timesheet` (
   `remark` text,
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
-  KEY `employee_id` (`employee_id`) USING BTREE
+  KEY `employee_id` (`employee_id`) USING BTREE,
+  KEY `starttime` (`starttime`),
+  KEY `endtime` (`endtime`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
