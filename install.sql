@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 02/24/2018 11:32:20 AM
+ Date: 02/26/2018 10:35:05 AM
 */
 
 SET NAMES utf8;
@@ -2343,8 +2343,9 @@ CREATE TABLE `list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
+  `list_data_status` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `list_category`
@@ -2352,22 +2353,20 @@ CREATE TABLE `list` (
 DROP TABLE IF EXISTS `list_category`;
 CREATE TABLE `list_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `parent_category_id` int(11) DEFAULT NULL,
-  `list_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `display_sequence` int(11) DEFAULT NULL,
+  `display_sequence` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `description` text,
   `custom_link` varchar(255) DEFAULT NULL,
-  `is_website_display` tinyint(1) DEFAULT NULL,
   `meta_title` varchar(255) DEFAULT NULL,
   `meta_description` varchar(255) DEFAULT NULL,
+  `is_website_display` tinyint(1) DEFAULT NULL,
   `slug_url` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_parent_category_id` (`parent_category_id`),
-  KEY `fk_list_id` (`list_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `parent_category_id` int(11) DEFAULT NULL,
+  `list_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `list_fields`
@@ -2385,13 +2384,13 @@ CREATE TABLE `list_fields` (
   `is_moderate` tinyint(1) DEFAULT NULL,
   `is_changable` tinyint(1) DEFAULT NULL,
   `is_filterable` tinyint(1) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `is_public` tinyint(1) DEFAULT NULL,
   `is_private` tinyint(1) DEFAULT NULL,
   `is_premium` tinyint(1) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_list_id` (`list_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `lodgement`
@@ -3580,6 +3579,19 @@ CREATE TABLE `xepan_cms_image_gallery_images` (
   `sequence_order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+--  Table structure for `xepan_listing_list_data_form_layout`
+-- ----------------------------
+DROP TABLE IF EXISTS `xepan_listing_list_data_form_layout`;
+CREATE TABLE `xepan_listing_list_data_form_layout` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `layout` text,
+  `list_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_list_id` (`list_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `xepan_template`
