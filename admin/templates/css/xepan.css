@@ -1298,3 +1298,7 @@ textarea {width: 100%;}
 .floatThead-container {
   background-color: white;
 }
+
+.table-responsive {
+  overflow: unset;
+}
