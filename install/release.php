@@ -115,7 +115,6 @@ unlink('vendor/xepan/epanservices/lib/Model/DomainDetails.php');
 unlink('vendor/xepan/epanservices/lib/Model/Epan.php');
 unlink('vendor/xepan/epanservices/lib/Model/MyTemplates.php');
 unlink('vendor/xepan/epanservices/lib/Controller/DomainAPI.php');
-unlink('vendor/xepan/epanservices/page/licensegenerator.php');
 // unlink('vendor/xepan/epanservices/lib/Initiator.php');
 unlink('vendor/xepan/epanservices/composer.json');
 
