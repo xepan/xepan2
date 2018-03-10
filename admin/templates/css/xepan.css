@@ -1302,3 +1302,16 @@ textarea {width: 100%;}
 .table-responsive {
   overflow: unset;
 }
+
+
+
+/*salary sheet edit row css*/
+input[data-add_deduction=deduction]{
+  outline:2px solid red;
+}
+
+input[data-add_deduction=add]{
+  outline:2px solid green;
+}
+
+/*end of salary sheet edit css*/
