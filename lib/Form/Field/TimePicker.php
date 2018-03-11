@@ -1,5 +1,18 @@
 <?php
 
+/*
+
+https://jdewit.github.io/bootstrap-timepicker/
+
+// $from_time_field->set(date("H:i:s",strtotime($in_time)));
+// 			$from_time_field
+// 				->setOption('showMeridian',false)  // for 24 hours format etc 
+// 				->setOption('defaultTime',0)
+// 				->setOption('minuteStep',1)
+// 				->setOption('showSeconds',true)
+// 				;
+
+*/
 
 class Form_Field_TimePicker extends Form_Field_Line {
 	public $options =[];
