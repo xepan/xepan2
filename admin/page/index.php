@@ -6,7 +6,7 @@ class page_index extends \xepan\base\Page {
     public $widget_list = [];
     public $entity_list = [];
     public $filter_form;
-    public $breadcrumb=['Dashboard'=>'/','Wizard' => 'xepan_base_wizard' ];
+    public $breadcrumb=['Dashboard'=>'/','Quick Setup' => 'xepan_base_wizard' ];
 
     function init() {
         parent::init();
