@@ -15,3 +15,4 @@ $config['all_rights_to_superuser'] = true;
 $config['status_icon'] = [];
 
 $config['filestore']['chmod'] = 0755;
+$config['paymentgateways'] = ['Instamojo','CCAvenue'];
