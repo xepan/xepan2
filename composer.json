@@ -17,7 +17,9 @@
     "xepan/epanservices": "dev-master",
     "hoa/websocket": "~3.0",
     "xepan/webwidgets": "dev-master",
-    "rah/danpu": "2.6"
+    "rah/danpu": "2.6",
+    "xepan/omnipay-instamojo": "dev-master",
+    "xepan/digitalocean-v2": "2.2.x-dev"
   },
   "autoload":{
     "psr-0":{

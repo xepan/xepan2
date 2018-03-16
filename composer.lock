@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bc0d70cd53eedbcfc357007b4e7ab262",
-    "content-hash": "c671aa6b4036576e0447dc7f261d4657",
+    "hash": "83ab8b625b73ed3c75500c8ba56b7662",
+    "content-hash": "97a688de0c1917ce447328e355631e3e",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -3420,7 +3420,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-05-22 03:41:03"
+            "time": "2018-03-14 06:01:17"
         },
         {
             "name": "xepan/atk4",
@@ -3506,7 +3506,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-09-29 08:35:31"
+            "time": "2018-03-14 06:33:31"
         },
         {
             "name": "xepan/blog",
@@ -3549,7 +3549,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-10-05 05:31:27"
+            "time": "2018-03-06 07:25:04"
         },
         {
             "name": "xepan/captcha",
@@ -3689,7 +3689,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-10-04 12:48:18"
+            "time": "2018-03-14 06:15:51"
         },
         {
             "name": "xepan/commerce",
@@ -3737,7 +3737,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-09-14 07:25:43"
+            "time": "2018-03-13 17:13:34"
         },
         {
             "name": "xepan/communication",
@@ -3785,7 +3785,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2017-09-02 04:23:43"
+            "time": "2018-03-14 06:06:21"
         },
         {
             "name": "xepan/crm",
@@ -3832,7 +3832,77 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-08-11 06:34:41"
+            "time": "2018-02-24 10:04:12"
+        },
+        {
+            "name": "xepan/digitalocean-v2",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xepan/DigitalOceanV2.git",
+                "reference": "f8c5e576c2a8a12d83c2726f6570d10d7fc24079"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/DigitalOceanV2/zipball/f8c5e576c2a8a12d83c2726f6570d10d7fc24079",
+                "reference": "f8c5e576c2a8a12d83c2726f6570d10d7fc24079",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~1.11",
+                "guzzle/guzzle": "~3.7",
+                "guzzlehttp/guzzle": "~5.0|~6.0",
+                "kriswallsmith/buzz": "~0.10",
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phpspec/phpspec": "~2.4"
+            },
+            "suggest": {
+                "guzzle/guzzle": "To use GuzzleAdapter, require guzzle/guzzle:~3.7.",
+                "guzzlehttp/guzzle": "To use GuzzleHttpAdapter, require guzzlehttp/guzzle:~5.0|~6.0.",
+                "kriswallsmith/buzz": "To use BuzzAdapter, require kriswallsmith/buzz:~0.10."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DigitalOceanV2\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antoine Corcy",
+                    "email": "contact@sbin.dk",
+                    "homepage": "http://sbin.dk",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Yassir Hannnoun",
+                    "email": "yassir.hannoun@gmail.com",
+                    "homepage": "https://yassirh.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "DigitalOcean API v2 PHP 5.4+ library curtsy: toin0u/digitalocean-v2",
+            "homepage": "https://github.com/toin0u/DigitalOceanV2",
+            "keywords": [
+                "Cloud Hosting",
+                "SSD",
+                "api",
+                "digitalocean",
+                "vps"
+            ],
+            "time": "2018-03-15 18:13:08"
         },
         {
             "name": "xepan/epanservices",
@@ -3876,7 +3946,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-10-04 10:06:32"
+            "time": "2018-03-14 07:31:22"
         },
         {
             "name": "xepan/filestore",
@@ -3964,7 +4034,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-10-02 14:18:01"
+            "time": "2018-03-15 11:44:47"
         },
         {
             "name": "xepan/mail",
@@ -4075,7 +4145,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-09-27 12:42:57"
+            "time": "2018-01-30 05:33:25"
         },
         {
             "name": "xepan/omnipay",
@@ -4233,6 +4303,55 @@
             "time": "2016-10-12 18:24:59"
         },
         {
+            "name": "xepan/omnipay-instamojo",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xepan/omnipay-instamojo.git",
+                "reference": "bed0ac6e99b33999167e08e658b61e3b10e317d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/omnipay-instamojo/zipball/bed0ac6e99b33999167e08e658b61e3b10e317d2",
+                "reference": "bed0ac6e99b33999167e08e658b61e3b10e317d2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "omnipay/tests": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Omnipay\\Instamojo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeni Nurkov",
+                    "email": "evgeni.nurkov@gmail.com"
+                }
+            ],
+            "description": "Instamojo API v1.1 driver for the Omnipay PHP payment processing library: credit : gentor/omnipay-instamojo",
+            "homepage": "https://github.com/xepan/omnipay-instamojo",
+            "keywords": [
+                "gateway",
+                "instamojo",
+                "merchant",
+                "omnipay",
+                "pay",
+                "payment",
+                "purchase"
+            ],
+            "time": "2018-03-13 13:01:38"
+        },
+        {
             "name": "xepan/production",
             "version": "dev-master",
             "source": {
@@ -4275,7 +4394,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-03-04 08:20:47"
+            "time": "2017-12-22 14:06:59"
         },
         {
             "name": "xepan/projects",
@@ -4320,7 +4439,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2017-10-03 07:01:40"
+            "time": "2018-03-01 12:55:22"
         },
         {
             "name": "xepan/webwidgets",
@@ -4386,7 +4505,9 @@
         "xepan/projects": 20,
         "xepan/blog": 20,
         "xepan/epanservices": 20,
-        "xepan/webwidgets": 20
+        "xepan/webwidgets": 20,
+        "xepan/omnipay-instamojo": 20,
+        "xepan/digitalocean-v2": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
