@@ -64,9 +64,9 @@ if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
 		symlink(realpath(getcwd().'/../websites'), 'websites');
 	}
 
-	if(!file_exists('xepantemplates')){
-		symlink(realpath(getcwd().'/../xepantemplates'), 'xepantemplates');
-	}
+	// if(!file_exists('xepantemplates')){
+	// 	symlink(realpath(getcwd().'/../xepantemplates'), 'xepantemplates');
+	// }
 }
 
 // actual installer
