@@ -126,7 +126,7 @@ class page_index extends Page {
 			
 			$json = json_encode($custom_field_array,true);
 
-			$addons = $this->app->getConfig('xepan_available_addons',['xepan\\base','xepan\\communication','xepan\\hr','xepan\\projects','xepan\\marketing','xepan\\accounts','xepan\\commerce','xepan\\production','xepan\\crm','xepan\\cms','xepan\\blog','xepan\\epanservices']);
+			$addons = $this->app->getConfig('xepan_available_addons',['xepan\\base','xepan\\communication','xepan\\hr','xepan\\projects','xepan\\marketing','xepan\\accounts','xepan\\commerce','xepan\\production','xepan\\crm','xepan\\cms','xepan\\blog','xepan\\listing']);
 			$user = $this->add('xepan\base\Model_User')->tryLoadAny();
 	   		$this->app->auth->usePasswordEncryption('md5');
 			$this->app->auth->addEncryptionHook($user);
