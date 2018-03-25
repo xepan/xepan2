@@ -60,7 +60,7 @@ cd /var/www/html/vendor/xepan/accounts
 git branch -f master HEAD && git checkout master
 git pull origin master
 
-cd /var/www/html/vendor/xepan/atk
+cd /var/www/html/vendor/xepan/atk4
 git branch -f master HEAD && git checkout 4.3
 git pull origin 4.3
 
@@ -100,7 +100,7 @@ cd /var/www/html/vendor/xepan/marketing
 git branch -f master HEAD && git checkout master
 git pull origin master
 
-cd /var/www/html/vendor/xepan/pmnipay-instalmojo
+cd /var/www/html/vendor/xepan/omnipay-instalmojo
 git branch -f master HEAD && git checkout master
 git pull origin master
 
