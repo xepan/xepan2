@@ -46,6 +46,7 @@ rm index.html
 git init
 git remote add origin https://github.com/xepan/xepan2.git
 git branch -f master HEAD && git checkout master
+git pull origin master
 
 composer install
 
