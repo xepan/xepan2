@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "83ab8b625b73ed3c75500c8ba56b7662",
-    "content-hash": "97a688de0c1917ce447328e355631e3e",
+    "hash": "064a7476d8d5083913e728b2b2bf9b9b",
+    "content-hash": "f980ead79f4773be66213e717c4682c6",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -3420,7 +3420,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-14 06:01:17"
+            "time": "2018-03-23 09:10:54"
         },
         {
             "name": "xepan/atk4",
@@ -3506,7 +3506,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-14 06:33:31"
+            "time": "2018-03-23 09:10:14"
         },
         {
             "name": "xepan/blog",
@@ -3689,7 +3689,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-14 06:15:51"
+            "time": "2018-03-24 07:23:31"
         },
         {
             "name": "xepan/commerce",
@@ -3737,7 +3737,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-13 17:13:34"
+            "time": "2018-03-19 09:11:39"
         },
         {
             "name": "xepan/communication",
@@ -4035,6 +4035,50 @@
                 "xepan"
             ],
             "time": "2018-03-15 11:44:47"
+        },
+        {
+            "name": "xepan/listing",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xepan/listing.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/listing/zipball/origin/master",
+                "reference": "origin/master",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "xepan/base": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "autocomplete": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "Listing Application for xEpan Platform",
+            "homepage": "https://github.com/xepan/listing",
+            "keywords": [
+                "ERP",
+                "listing",
+                "saas",
+                "xepan"
+            ],
+            "time": "2018-03-25 04:07:51"
         },
         {
             "name": "xepan/mail",
@@ -4507,7 +4551,8 @@
         "xepan/epanservices": 20,
         "xepan/webwidgets": 20,
         "xepan/omnipay-instamojo": 20,
-        "xepan/digitalocean-v2": 20
+        "xepan/digitalocean-v2": 20,
+        "xepan/listing": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
