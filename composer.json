@@ -14,7 +14,6 @@
     "xepan/accounts": "dev-master",
     "xepan/projects": "dev-master",
     "xepan/blog": "dev-master",
-    "xepan/epanservices": "dev-master",
     "hoa/websocket": "~3.0",
     "xepan/webwidgets": "dev-master",
     "rah/danpu": "2.6",
