@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 03/28/2018 13:21:55 PM
+ Date: 03/29/2018 21:52:23 PM
 */
 
 SET NAMES utf8;
@@ -673,6 +673,7 @@ CREATE TABLE `contact` (
   `related_with` varchar(255) DEFAULT NULL,
   `related_id` int(11) DEFAULT NULL,
   `assign_at` datetime DEFAULT NULL,
+  `last_communication_before_days` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_epan_id` (`epan_id`),
   KEY `user_id` (`user_id`) USING BTREE,
