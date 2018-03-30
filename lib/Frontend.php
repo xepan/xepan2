@@ -165,12 +165,14 @@ class Frontend extends ApiFrontend {
 
         try{
             $t='page/'.str_replace('_','/',strtolower($page));
-            $this->template->findTemplate($t);
+            $this->locatePath('template',$t);
+            // $this->template->findTemplate($t);
             $this->page_object=$layout->add($page,$page,'Content',array($t));
         }catch(\PathFinder_Exception $e2){
             try{
                 $t='page/'.strtolower($page);
-                $this->template->findTemplate($t);
+                // $this->template->findTemplate($t);
+                $this->locatePath('template',$t);
                 $this->page_object=$layout->add($page,$page,'Content',array($t));
             }catch(\PathFinder_Exception $e3){
                 $t=strtolower($page);
