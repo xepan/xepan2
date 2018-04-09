@@ -6,6 +6,8 @@ $config['xepan-mysql-host']='127.0.0.1';
 
 $config['locale']['date_js'] = 'dd/mm/yyyy';
 // $config['locale']['date'] = 'd/m/Y';
+$config['locale']['datetime'] = 'd M Y \<\b\\r\> [H:i:s]';
+$config['locale']['date'] = 'd M Y';
 
 $config['tmail']['transport'] = 'Echo';
 // $config['js']['versions']['jqueryui']='1.11.master';
