@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 03/29/2018 21:52:23 PM
+ Date: 04/13/2018 12:47:56 PM
 */
 
 SET NAMES utf8;
@@ -1731,6 +1731,7 @@ CREATE TABLE `item` (
   `is_package` int(11) DEFAULT NULL,
   `hsn_sac` varchar(255) DEFAULT NULL,
   `slug_url` varchar(255) DEFAULT NULL,
+  `treat_sale_price_as_amount` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `duplicate_from_item_id` (`duplicate_from_item_id`) USING BTREE,
@@ -1827,8 +1828,10 @@ CREATE TABLE `item_serial` (
   `sale_invoice_detail_id` int(11) DEFAULT NULL,
   `transaction_row_id` int(11) DEFAULT NULL,
   `dispatch_row_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `contact_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `contact_id` (`contact_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `item_template_design`
@@ -2558,6 +2561,7 @@ CREATE TABLE `qsp_detail` (
   `qty_unit_id` int(11) DEFAULT NULL,
   `discount` double(8,4) DEFAULT NULL,
   `recurring_qsp_detail_id` int(11) DEFAULT NULL,
+  `treat_sale_price_as_amount` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `qsp_master_id` (`qsp_master_id`),
   KEY `item_id` (`item_id`),
@@ -2677,6 +2681,7 @@ CREATE TABLE `quantity_set` (
   `price` double DEFAULT NULL,
   `old_price` double DEFAULT NULL,
   `is_default` tinyint(4) DEFAULT NULL,
+  `is_direct_amount` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
@@ -2989,6 +2994,7 @@ CREATE TABLE `store_transaction_row` (
   `extra_info` longtext,
   `related_transaction_row_id` int(11) DEFAULT NULL,
   `narration` text,
+  `serial_nos` text,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `store_transaction_id` (`store_transaction_id`) USING BTREE,
