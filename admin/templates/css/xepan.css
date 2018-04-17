@@ -1304,6 +1304,9 @@ textarea {width: 100%;}
 }
 
 
+.overflow-auto{
+  overflow: auto !important;
+}
 
 /*salary sheet edit row css*/
 input[data-add_deduction=deduction]{
