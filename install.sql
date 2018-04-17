@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 04/17/2018 19:12:20 PM
+ Date: 04/17/2018 19:28:31 PM
 */
 
 SET NAMES utf8;
@@ -3358,6 +3358,25 @@ CREATE TABLE `webpage_snapshot` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `xepan_auditlog`
+-- ----------------------------
+DROP TABLE IF EXISTS `xepan_auditlog`;
+CREATE TABLE `xepan_auditlog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `contact_id` int(11) DEFAULT NULL,
+  `model_class` varchar(255) DEFAULT NULL,
+  `pk_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `name` text,
+  `type` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `contact_id` (`contact_id`),
+  KEY `created_at` (`created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `xepan_cms_image_gallery_categories`
