@@ -62,9 +62,10 @@ class Frontend extends ApiFrontend {
             $this->readConfig("websites/www/config.php");
             $this->dbConnect();
             $epan_hash = $this->db->dsql()->table('epan')->where($this->db->dsql()->orExpr()->where('name',$epan)->where('aliases','like','%"'.$epan.'"%'))->getHash();
-            if($service_host && !in_array($epan_hash['status'],['Trial','Paid'])){
+            if($service_host && (strtotime($epan_hash['expiry_date']) < strtotime(date('Y-m-d H:i:s')))) {
                 $this->redirect('http://'.$service_host.'/expired-info');
             }
+
             $this->memorize('epan_from_root',$epan_hash);
             $epan_domain_array[$epan] = $epan_hash['name'];
             $this->memorize('epan_domain_array',$epan_domain_array);
