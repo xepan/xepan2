@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 05/02/2018 13:49:37 PM
+ Date: 05/02/2018 14:21:07 PM
 */
 
 SET NAMES utf8;
@@ -400,7 +400,7 @@ CREATE TABLE `carouselcategory` (
   `thumbnails_position` varchar(255) DEFAULT NULL,
   `thumbnail_arrows` tinyint(4) DEFAULT NULL,
   `width` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `height` varchar(255) DEFAULT NULL,
+  `height` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
@@ -450,7 +450,7 @@ CREATE TABLE `carousellayer` (
   `layer_class` varchar(255) DEFAULT NULL,
   `position` varchar(255) DEFAULT NULL,
   `width` varchar(255) DEFAULT NULL,
-  `height` int(11) DEFAULT NULL,
+  `height` varchar(255) DEFAULT NULL,
   `depth` int(11) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
