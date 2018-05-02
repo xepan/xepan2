@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 05/02/2018 14:21:07 PM
+ Date: 05/02/2018 21:58:53 PM
 */
 
 SET NAMES utf8;
@@ -3435,6 +3435,8 @@ CREATE TABLE `task` (
   `comment_count` int(11) DEFAULT NULL,
   `creator_unseen_comment_count` int(11) DEFAULT NULL,
   `assignee_unseen_comment_count` int(11) DEFAULT NULL,
+  `is_regular_work` tinyint(4) DEFAULT '0',
+  `describe_on_end` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `assigned_to_id` (`assign_to_id`),
   KEY `created_by_id` (`created_by_id`),
