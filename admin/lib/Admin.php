@@ -66,7 +66,7 @@ class Admin extends App_Frontend {
             if(!$epan_hash['name'])
                 throw new \Exception("Required epan name does not found [searched in db/table www >> epan]");
             
-            if($service_host && !in_array($epan_hash['status'],['Trial','Paid'])){
+            if($service_host && !in_array($epan_hash['status'],['Trial','Paid','Grace'])){
                 $this->redirect('http://'.$service_host.'/expired-info');
             }
 
