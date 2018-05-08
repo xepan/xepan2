@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 05/02/2018 21:58:53 PM
+ Date: 05/08/2018 19:14:57 PM
 */
 
 SET NAMES utf8;
@@ -2772,6 +2772,10 @@ CREATE TABLE `point_system` (
   `landing_campaign_id` int(11) DEFAULT NULL,
   `landing_content_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
+  `timesheet_id` int(11) DEFAULT '0',
+  `created_by_id` int(11) DEFAULT '0',
+  `qty` int(11) DEFAULT '0',
+  `remarks` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `landing_campaign_id` (`landing_campaign_id`) USING BTREE,
@@ -2886,7 +2890,7 @@ CREATE TABLE `qsp_detail` (
   `express_shipping_duration` text,
   `item_template_design_id` int(11) DEFAULT NULL,
   `qty_unit_id` int(11) DEFAULT NULL,
-  `discount` double(8,4) DEFAULT NULL,
+  `discount` decimal(14,4) DEFAULT '0.0000',
   `recurring_qsp_detail_id` int(11) DEFAULT NULL,
   `treat_sale_price_as_amount` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`),
@@ -3080,14 +3084,27 @@ CREATE TABLE `report_function` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
---  Table structure for `rule-options`
+--  Table structure for `rule_group`
 -- ----------------------------
-DROP TABLE IF EXISTS `rule-options`;
-CREATE TABLE `rule-options` (
+DROP TABLE IF EXISTS `rule_group`;
+CREATE TABLE `rule_group` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+--  Table structure for `rule_options`
+-- ----------------------------
+DROP TABLE IF EXISTS `rule_options`;
+CREATE TABLE `rule_options` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rule_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `description` text,
+  `score_per_qty` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `rules`
@@ -3095,8 +3112,11 @@ CREATE TABLE `rule-options` (
 DROP TABLE IF EXISTS `rules`;
 CREATE TABLE `rules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT '0',
+  `status` varchar(10) DEFAULT '0',
+  `rulegroup_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `salary`
@@ -3437,6 +3457,8 @@ CREATE TABLE `task` (
   `assignee_unseen_comment_count` int(11) DEFAULT NULL,
   `is_regular_work` tinyint(4) DEFAULT '0',
   `describe_on_end` tinyint(4) DEFAULT '0',
+  `applied_rules` varchar(255) DEFAULT NULL,
+  `manage_points` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `assigned_to_id` (`assign_to_id`),
   KEY `created_by_id` (`created_by_id`),
