@@ -15,14 +15,8 @@ class Api extends App_REST {
         $this->dbConnect();
         $this->epan = $this->add('xepan\base\Model_Epan')->tryLoadBy('name',$this->app->current_website_name);
         $this->epan->config = $this->app->epan->ref('Configurations');
-        $misc_m = $this->add('xepan\base\Model_ConfigJsonModel',
-            [
-                'fields'=>[
-                            'time_zone'=>'DropDown'
-                            ],
-                    'config_key'=>'Miscellaneous_Technical_Settings',
-                    'application'=>'base'
-            ]);
+        $misc_m = $this->add('xepan\base\Model_Config_Misc');
+            
         $misc_m->tryLoadAny();
 
         date_default_timezone_set($misc_m['time_zone']?:'UTC');
