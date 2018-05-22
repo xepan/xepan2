@@ -106,7 +106,9 @@ class Frontend extends ApiFrontend {
         $this->addLocation(array('template'=>'templates','js'=>'templates/js','css'=>['templates/css','templates/js']))
             ->setBaseURL('../vendor/xepan/cms/');
 
-        if(!$this->add('xepan\base\Model_Epan_InstalledApplication')->tryLoadBy('application_namespace','xepan\cms')->loaded()){
+        $x= $this->db->dsql()->table('installed_application')->join('application','application_id')->where('namespace','xepan\cms')->where('is_active',1)->get();
+
+        if(count($x)==0){
             die('Forntend requires xepan\CMS');
         }
 

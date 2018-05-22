@@ -3,15 +3,15 @@
 
  Source Server         : localhost
  Source Server Type    : MariaDB
- Source Server Version : 100118
+ Source Server Version : 100214
  Source Host           : localhost
  Source Database       : xepan2
 
  Target Server Type    : MariaDB
- Target Server Version : 100118
+ Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 05/11/2018 09:08:15 AM
+ Date: 05/22/2018 18:18:46 PM
 */
 
 SET NAMES utf8;
@@ -47,7 +47,7 @@ CREATE TABLE `account_group` (
   `created_at` date DEFAULT NULL,
   `parent_group_id` int(11) DEFAULT NULL,
   `root_group_id` int(11) DEFAULT NULL,
-  `path` text,
+  `path` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `balance_sheet_id` (`balance_sheet_id`) USING BTREE,
@@ -63,7 +63,7 @@ DROP TABLE IF EXISTS `account_report_layout`;
 CREATE TABLE `account_report_layout` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `layout` longtext,
+  `layout` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
@@ -76,7 +76,7 @@ CREATE TABLE `account_transaction` (
   `epan_id` int(11) DEFAULT NULL,
   `transaction_type_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `Narration` text,
+  `Narration` text DEFAULT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
   `currency_id` int(11) DEFAULT NULL,
@@ -118,7 +118,7 @@ CREATE TABLE `account_transaction_row` (
   `accounts_in_side` int(11) DEFAULT NULL,
   `currency_id` int(11) DEFAULT NULL,
   `exchange_rate` double DEFAULT NULL,
-  `remark` text,
+  `remark` text DEFAULT NULL,
   `code` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
@@ -150,7 +150,7 @@ CREATE TABLE `acl` (
   `epan_id` int(11) DEFAULT NULL,
   `post_id` int(11) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL,
-  `action_allowed` text,
+  `action_allowed` text DEFAULT NULL,
   `allow_add` tinyint(4) DEFAULT NULL,
   `namespace` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -169,7 +169,7 @@ CREATE TABLE `activity` (
   `related_contact_id` int(11) DEFAULT NULL,
   `related_document_id` int(11) DEFAULT NULL,
   `activity` varchar(255) DEFAULT NULL,
-  `details` text,
+  `details` text DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `notify_to` varchar(255) DEFAULT NULL,
   `notification` varchar(255) DEFAULT NULL,
@@ -188,7 +188,7 @@ CREATE TABLE `activity` (
 DROP TABLE IF EXISTS `affiliate`;
 CREATE TABLE `affiliate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `narration` text,
+  `narration` text DEFAULT NULL,
   `contact_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
@@ -214,7 +214,7 @@ CREATE TABLE `application` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `namespace` varchar(255) DEFAULT '',
-  `user_installable` tinyint(4) DEFAULT '1',
+  `user_installable` tinyint(4) DEFAULT 1,
   `default_currency_price` double(8,4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
@@ -229,7 +229,7 @@ CREATE TABLE `attachment` (
   `file_id` int(11) DEFAULT NULL,
   `contact_id` int(11) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `file_id` (`file_id`) USING BTREE
@@ -242,7 +242,7 @@ DROP TABLE IF EXISTS `blog_category_group`;
 CREATE TABLE `blog_category_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `categories` text,
+  `categories` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -414,7 +414,7 @@ CREATE TABLE `carouselimage` (
   `created_by_id` int(11) DEFAULT NULL,
   `file_id` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `text_to_display` text,
+  `text_to_display` text DEFAULT NULL,
   `alt_text` varchar(255) DEFAULT NULL,
   `order` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
@@ -521,7 +521,7 @@ CREATE TABLE `comments` (
   `created_by_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `communication_id` (`communication_id`) USING BTREE,
@@ -537,7 +537,7 @@ CREATE TABLE `commerce_package_item_association` (
   `package_item_id` int(11) DEFAULT NULL,
   `item_id` int(11) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  `extra_info` text,
+  `extra_info` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -552,12 +552,12 @@ CREATE TABLE `communication` (
   `from_id` int(11) DEFAULT NULL,
   `to_id` int(11) DEFAULT NULL,
   `related_document_id` int(11) DEFAULT NULL,
-  `from_raw` text,
-  `to_raw` text,
-  `cc_raw` text,
-  `bcc_raw` text,
+  `from_raw` text DEFAULT NULL,
+  `to_raw` text DEFAULT NULL,
+  `cc_raw` text DEFAULT NULL,
+  `bcc_raw` text DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `communication_type` varchar(45) DEFAULT NULL,
   `flags` varchar(255) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL,
@@ -571,7 +571,7 @@ CREATE TABLE `communication` (
   `sent_on` date DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
-  `extra_info` text,
+  `extra_info` text DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   `communication_channel_id` int(11) DEFAULT NULL,
@@ -652,7 +652,7 @@ CREATE TABLE `contact` (
   `type` varchar(255) DEFAULT NULL,
   `code` varchar(255) NOT NULL,
   `status` varchar(255) DEFAULT NULL,
-  `address` text,
+  `address` text DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `state_id` int(11) DEFAULT NULL,
   `country_id` int(11) DEFAULT NULL,
@@ -665,9 +665,9 @@ CREATE TABLE `contact` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `created_by_id` int(11) NOT NULL,
-  `search_string` text,
+  `search_string` text DEFAULT NULL,
   `source` varchar(255) DEFAULT NULL,
-  `remark` text,
+  `remark` text DEFAULT NULL,
   `freelancer_type` varchar(255) NOT NULL,
   `score` int(11) DEFAULT NULL,
   `related_with` varchar(255) DEFAULT NULL,
@@ -694,8 +694,8 @@ CREATE TABLE `contact_info` (
   `epan_id` int(11) DEFAULT NULL,
   `head` varchar(45) DEFAULT NULL,
   `value` varchar(255) DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT '1',
-  `is_valid` tinyint(4) DEFAULT '1',
+  `is_active` tinyint(1) DEFAULT 1,
+  `is_valid` tinyint(4) DEFAULT 1,
   `type` varchar(45) DEFAULT NULL,
   `contact_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -782,7 +782,7 @@ DROP TABLE IF EXISTS `custom_account_entries_templates`;
 CREATE TABLE `custom_account_entries_templates` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `detail` text,
+  `detail` text DEFAULT NULL,
   `is_favourite_menu_lister` tinyint(4) DEFAULT NULL,
   `is_merge_transaction` tinyint(4) DEFAULT NULL,
   `unique_trnasaction_template_code` varchar(255) DEFAULT NULL,
@@ -838,16 +838,16 @@ CREATE TABLE `custom_form` (
   `recieve_email` tinyint(4) DEFAULT NULL,
   `recipient_email` varchar(255) DEFAULT NULL,
   `auto_reply` tinyint(4) DEFAULT NULL,
-  `message_body` text,
-  `email_subject` text,
+  `message_body` text DEFAULT NULL,
+  `email_subject` text DEFAULT NULL,
   `emailsetting_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
-  `is_create_lead` tinyint(4) DEFAULT '0',
-  `is_associate_lead` tinyint(4) DEFAULT '0',
-  `lead_category_ids` text,
+  `is_create_lead` tinyint(4) DEFAULT 0,
+  `is_associate_lead` tinyint(4) DEFAULT 0,
+  `lead_category_ids` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
@@ -858,10 +858,10 @@ DROP TABLE IF EXISTS `custom_form_field`;
 CREATE TABLE `custom_form_field` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_form_id` int(11) DEFAULT NULL,
-  `value` text,
+  `value` text DEFAULT NULL,
   `is_mandatory` tinyint(4) DEFAULT NULL,
-  `hint` text,
-  `placeholder` text,
+  `hint` text DEFAULT NULL,
+  `placeholder` text DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `auto_reply` tinyint(4) DEFAULT NULL,
@@ -974,7 +974,7 @@ CREATE TABLE `deduction` (
   `document_id` int(11) DEFAULT NULL,
   `employee_id` int(11) DEFAULT NULL,
   `amount` decimal(14,6) DEFAULT NULL,
-  `narration` text,
+  `narration` text DEFAULT NULL,
   `received_amount` decimal(14,6) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -987,7 +987,7 @@ CREATE TABLE `department` (
   `document_id` int(11) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
   `production_level` int(11) DEFAULT NULL,
-  `is_system` tinyint(4) DEFAULT '0',
+  `is_system` tinyint(4) DEFAULT 0,
   `is_outsourced` tinyint(4) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `simultaneous_no_process_allowed` int(11) DEFAULT NULL,
@@ -1034,7 +1034,7 @@ CREATE TABLE `designer_images` (
   `designer_category_id` int(11) DEFAULT NULL,
   `image_id` int(11) DEFAULT NULL,
   `epan_id` int(11) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `designer_category_id` (`designer_category_id`) USING BTREE,
   KEY `epan_id` (`epan_id`) USING BTREE
@@ -1110,7 +1110,7 @@ CREATE TABLE `dispatch_barcode` (
 DROP TABLE IF EXISTS `document`;
 CREATE TABLE `document` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `epan_id` int(11) NOT NULL,
+  `epan_id` int(11) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL,
   `sub_type` varchar(45) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
@@ -1118,7 +1118,7 @@ CREATE TABLE `document` (
   `updated_by_id` int(11) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
-  `search_string` text,
+  `search_string` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`)
@@ -1155,7 +1155,7 @@ CREATE TABLE `domain_detail` (
   `created_by_id` int(11) NOT NULL,
   `park_for_epan_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `registration_detail` text,
+  `registration_detail` text DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `last_renew_at` datetime DEFAULT NULL,
   `expire_date` datetime DEFAULT NULL,
@@ -1214,14 +1214,14 @@ CREATE TABLE `emailsetting` (
   `imap_flags` varchar(255) DEFAULT NULL,
   `auto_reply` tinyint(4) DEFAULT NULL,
   `email_subject` varchar(255) DEFAULT NULL,
-  `email_body` longtext,
+  `email_body` longtext DEFAULT NULL,
   `denied_email_subject` varchar(255) DEFAULT NULL,
-  `denied_email_body` text,
-  `footer` text,
+  `denied_email_body` text DEFAULT NULL,
+  `footer` text DEFAULT NULL,
   `is_imap_enabled` tinyint(4) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `mass_mail` tinyint(4) unsigned DEFAULT NULL,
-  `signature` text,
+  `signature` text DEFAULT NULL,
   `email_threshold_per_month` int(11) DEFAULT NULL,
   `last_email_fetched_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -1236,7 +1236,7 @@ CREATE TABLE `employee` (
   `contact_id` int(11) NOT NULL,
   `post_id` int(11) DEFAULT NULL,
   `department_id` int(11) DEFAULT NULL,
-  `notified_till` int(11) DEFAULT '0',
+  `notified_till` int(11) DEFAULT 0,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `offer_date` date DEFAULT NULL,
   `doj` date DEFAULT NULL,
@@ -1246,7 +1246,7 @@ CREATE TABLE `employee` (
   `in_time` time DEFAULT NULL,
   `out_time` time DEFAULT NULL,
   `finacial_permit_limit` int(11) DEFAULT NULL,
-  `remark` longtext,
+  `remark` longtext DEFAULT NULL,
   `graphical_report_id` int(11) DEFAULT NULL,
   `salary_payment_type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -1278,11 +1278,11 @@ CREATE TABLE `employee_attandance` (
   `to_date` datetime DEFAULT NULL,
   `is_holiday` tinyint(4) DEFAULT NULL,
   `working_unit_count` varchar(255) DEFAULT NULL,
-  `late_coming` int(11) DEFAULT '0',
-  `early_leave` int(11) DEFAULT '0',
-  `total_work_in_mintues` int(11) DEFAULT '0',
-  `total_movement_in` int(11) DEFAULT '0',
-  `total_movement_out` int(11) DEFAULT '0',
+  `late_coming` int(11) DEFAULT 0,
+  `early_leave` int(11) DEFAULT 0,
+  `total_work_in_mintues` int(11) DEFAULT 0,
+  `total_movement_in` int(11) DEFAULT 0,
+  `total_movement_out` int(11) DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_index` (`employee_id`,`from_date`),
   KEY `employee_id_index` (`id`)
@@ -1314,7 +1314,7 @@ CREATE TABLE `employee_leave` (
   `to_date` date DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `employee_id` int(11) DEFAULT NULL,
-  `narration` text,
+  `narration` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
 
@@ -1346,7 +1346,7 @@ CREATE TABLE `employee_movement` (
   `type` varchar(255) DEFAULT NULL,
   `direction` varchar(255) DEFAULT NULL,
   `reason` varchar(255) DEFAULT NULL,
-  `narration` text,
+  `narration` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
@@ -1396,8 +1396,8 @@ CREATE TABLE `epan` (
   `type` varchar(255) DEFAULT NULL,
   `xepan_template_id` varchar(255) DEFAULT NULL,
   `is_published` varchar(255) DEFAULT NULL,
-  `extra_info` text,
-  `aliases` text,
+  `extra_info` text DEFAULT NULL,
+  `aliases` text DEFAULT NULL,
   `epan_dbversion` varchar(255) DEFAULT NULL,
   `is_template` tinyint(1) DEFAULT NULL,
   `expiry_date` datetime DEFAULT NULL,
@@ -1436,7 +1436,7 @@ CREATE TABLE `epan_config` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `epan_id` int(11) DEFAULT NULL,
   `head` varchar(255) DEFAULT NULL,
-  `value` longtext,
+  `value` longtext DEFAULT NULL,
   `application` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
@@ -1467,7 +1467,7 @@ CREATE TABLE `file` (
   `document_id` int(11) NOT NULL,
   `folder_id` int(11) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
-  `content` longtext,
+  `content` longtext DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) DEFAULT NULL,
   `file_id` int(11) DEFAULT NULL,
@@ -1486,12 +1486,12 @@ CREATE TABLE `file` (
 DROP TABLE IF EXISTS `filestore_file`;
 CREATE TABLE `filestore_file` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `filestore_type_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'File type',
-  `filestore_volume_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Volume',
+  `filestore_type_id` int(10) unsigned NOT NULL DEFAULT 0 COMMENT 'File type',
+  `filestore_volume_id` int(10) unsigned NOT NULL DEFAULT 0 COMMENT 'Volume',
   `original_filename` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Original Name',
   `filename` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Internal Name',
-  `filesize` int(11) NOT NULL DEFAULT '0' COMMENT 'File size',
-  `deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Deleted file',
+  `filesize` int(11) NOT NULL DEFAULT 0 COMMENT 'File size',
+  `deleted` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'Deleted file',
   PRIMARY KEY (`id`),
   KEY `fk_filestore_file_filestore_type1_idx` (`filestore_type_id`),
   KEY `fk_filestore_file_filestore_volume1_idx` (`filestore_volume_id`)
@@ -1503,7 +1503,7 @@ CREATE TABLE `filestore_file` (
 DROP TABLE IF EXISTS `filestore_image`;
 CREATE TABLE `filestore_image` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `original_file_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Original File',
+  `original_file_id` int(10) unsigned NOT NULL DEFAULT 0 COMMENT 'Original File',
   `thumb_file_id` int(10) unsigned DEFAULT NULL COMMENT 'Thumbnail file',
   PRIMARY KEY (`id`),
   KEY `fk_filestore_image_filestore_file1_idx` (`original_file_id`),
@@ -1519,7 +1519,7 @@ CREATE TABLE `filestore_type` (
   `name` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Name',
   `mime_type` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'MIME type',
   `extension` varchar(5) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Filename extension',
-  `allow` tinyint(1) NOT NULL DEFAULT '1',
+  `allow` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
@@ -1531,10 +1531,10 @@ CREATE TABLE `filestore_volume` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(128) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Volume name',
   `dirname` varchar(128) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Folder name',
-  `total_space` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'Total space (not implemented)',
-  `used_space` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'Used space (not implemented)',
-  `stored_files_cnt` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Approximate count of stored files',
-  `enabled` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Volume enabled?',
+  `total_space` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT 'Total space (not implemented)',
+  `used_space` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT 'Used space (not implemented)',
+  `stored_files_cnt` int(10) unsigned NOT NULL DEFAULT 0 COMMENT 'Approximate count of stored files',
+  `enabled` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'Volume enabled?',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
@@ -1584,7 +1584,7 @@ CREATE TABLE `graphical_report` (
   `permitted_post` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   `is_system` tinyint(4) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
@@ -1609,14 +1609,13 @@ CREATE TABLE `graphical_report_widget` (
 DROP TABLE IF EXISTS `installed_application`;
 CREATE TABLE `installed_application` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `epan_id` int(11) DEFAULT NULL,
-  `application_id` int(11) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
+  `application_id` int(11) unsigned DEFAULT NULL,
   `installed_on` datetime DEFAULT NULL,
   `valid_till` datetime DEFAULT NULL,
-  `is_active` tinyint(4) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
+  `is_hidden` tinyint(1) DEFAULT NULL,
+  `epan_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `application_id` (`application_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
@@ -1655,331 +1654,6 @@ CREATE TABLE `ip2location-lite-db11` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
---  Table structure for `isp_city`
--- ----------------------------
-DROP TABLE IF EXISTS `isp_city`;
-CREATE TABLE `isp_city` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `state_id` int(11) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_state_id` (`state_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `isp_condition`
--- ----------------------------
-DROP TABLE IF EXISTS `isp_condition`;
-CREATE TABLE `isp_condition` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `plan_id` int(11) DEFAULT NULL,
-  `remark` varchar(255) DEFAULT NULL,
-  `data_limit` bigint(20) DEFAULT NULL,
-  `time_limit` bigint(20) DEFAULT NULL,
-  `download_limit` bigint(20) DEFAULT NULL,
-  `upload_limit` bigint(20) DEFAULT NULL,
-  `fup_download_limit` bigint(20) DEFAULT NULL,
-  `fup_upload_limit` bigint(20) DEFAULT NULL,
-  `burst_dl_limit` bigint(20) DEFAULT NULL,
-  `burst_ul_limit` bigint(20) DEFAULT NULL,
-  `burst_threshold_dl_limit` bigint(20) DEFAULT NULL,
-  `burst_threshold_ul_limit` bigint(20) DEFAULT NULL,
-  `burst_dl_time` bigint(20) DEFAULT NULL,
-  `burst_ul_time` bigint(20) DEFAULT NULL,
-  `priority` int(11) DEFAULT NULL,
-  `accounting_download_ratio` int(11) DEFAULT NULL,
-  `accounting_upload_ratio` int(11) DEFAULT NULL,
-  `is_data_carry_forward` varchar(255) DEFAULT NULL,
-  `start_time` time DEFAULT NULL,
-  `end_time` time DEFAULT NULL,
-  `sun` tinyint(1) DEFAULT NULL,
-  `mon` tinyint(1) DEFAULT NULL,
-  `tue` tinyint(1) DEFAULT NULL,
-  `wed` tinyint(1) DEFAULT NULL,
-  `thu` tinyint(1) DEFAULT NULL,
-  `fri` tinyint(1) DEFAULT NULL,
-  `sat` tinyint(1) DEFAULT NULL,
-  `d01` tinyint(1) DEFAULT NULL,
-  `d02` tinyint(1) DEFAULT NULL,
-  `d03` tinyint(1) DEFAULT NULL,
-  `d04` tinyint(1) DEFAULT NULL,
-  `d05` tinyint(1) DEFAULT NULL,
-  `d06` tinyint(1) DEFAULT NULL,
-  `d07` tinyint(1) DEFAULT NULL,
-  `d08` tinyint(1) DEFAULT NULL,
-  `d09` tinyint(1) DEFAULT NULL,
-  `d10` tinyint(1) DEFAULT NULL,
-  `d11` tinyint(1) DEFAULT NULL,
-  `d12` tinyint(1) DEFAULT NULL,
-  `d13` tinyint(1) DEFAULT NULL,
-  `d14` tinyint(1) DEFAULT NULL,
-  `d15` tinyint(1) DEFAULT NULL,
-  `d16` tinyint(1) DEFAULT NULL,
-  `d17` tinyint(1) DEFAULT NULL,
-  `d18` tinyint(1) DEFAULT NULL,
-  `d19` tinyint(1) DEFAULT NULL,
-  `d20` tinyint(1) DEFAULT NULL,
-  `d21` tinyint(1) DEFAULT NULL,
-  `d22` tinyint(1) DEFAULT NULL,
-  `d23` tinyint(1) DEFAULT NULL,
-  `d24` tinyint(1) DEFAULT NULL,
-  `d25` tinyint(1) DEFAULT NULL,
-  `d26` tinyint(1) DEFAULT NULL,
-  `d27` tinyint(1) DEFAULT NULL,
-  `d28` tinyint(1) DEFAULT NULL,
-  `d29` tinyint(1) DEFAULT NULL,
-  `d30` tinyint(1) DEFAULT NULL,
-  `d31` tinyint(1) DEFAULT NULL,
-  `data_reset_value` varchar(255) DEFAULT NULL,
-  `data_reset_mode` varchar(255) DEFAULT NULL,
-  `treat_fup_as_dl_for_last_limit_row` tinyint(1) DEFAULT NULL,
-  `is_pro_data_affected` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_plan_id` (`plan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Table structure for `isp_country`
--- ----------------------------
-DROP TABLE IF EXISTS `isp_country`;
-CREATE TABLE `isp_country` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `isp_payment_transactions`
--- ----------------------------
-DROP TABLE IF EXISTS `isp_payment_transactions`;
-CREATE TABLE `isp_payment_transactions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `customer_id` int(11) DEFAULT NULL,
-  `employee_id` int(11) DEFAULT NULL,
-  `invoice_id` int(11) DEFAULT NULL,
-  `created_at` date DEFAULT NULL,
-  `payment_mode` varchar(255) DEFAULT NULL,
-  `cheque_no` varchar(255) DEFAULT NULL,
-  `cheque_date` date DEFAULT NULL,
-  `dd_no` varchar(255) DEFAULT NULL,
-  `dd_date` date DEFAULT NULL,
-  `bank_detail` text,
-  `amount` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `isp_plan`
--- ----------------------------
-DROP TABLE IF EXISTS `isp_plan`;
-CREATE TABLE `isp_plan` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `status` varchar(255) DEFAULT NULL,
-  `created_by_id` int(11) DEFAULT NULL,
-  `updated_by_id` int(11) DEFAULT NULL,
-  `type` varchar(255) DEFAULT NULL,
-  `sub_type` varchar(255) DEFAULT NULL,
-  `search_string` text,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
-  `available_in_user_control_panel` tinyint(1) DEFAULT NULL,
-  `document_id` int(11) NOT NULL,
-  `is_topup` tinyint(4) DEFAULT NULL,
-  `maintain_data_limit` tinyint(4) DEFAULT NULL,
-  `is_auto_renew` tinyint(4) DEFAULT NULL,
-  `item_id` int(11) NOT NULL,
-  `tax_id` int(11) DEFAULT NULL,
-  `plan_validity_value` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_created_by_id` (`created_by_id`),
-  KEY `fk_updated_by_id` (`updated_by_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `isp_policy`
--- ----------------------------
-DROP TABLE IF EXISTS `isp_policy`;
-CREATE TABLE `isp_policy` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `plan_id` int(11) DEFAULT NULL,
-  `data_dl` varchar(255) DEFAULT NULL,
-  `data_ul` varchar(255) DEFAULT NULL,
-  `data_accounting_dl` varchar(255) DEFAULT NULL,
-  `data_accounting_ul` varchar(255) DEFAULT NULL,
-  `reject` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_plan_id` (`plan_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `isp_state`
--- ----------------------------
-DROP TABLE IF EXISTS `isp_state`;
-CREATE TABLE `isp_state` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `country_id` int(11) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_country_id` (`country_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `isp_user`
--- ----------------------------
-DROP TABLE IF EXISTS `isp_user`;
-CREATE TABLE `isp_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `radius_username` varchar(255) DEFAULT NULL,
-  `radius_password` varchar(255) DEFAULT NULL,
-  `mac_address_cm` varchar(255) DEFAULT NULL,
-  `cm_ip_pool` varchar(255) DEFAULT NULL,
-  `cm_static_ip` varchar(255) DEFAULT NULL,
-  `mac_address_cpe` varchar(255) DEFAULT NULL,
-  `allow_mac_address_cpe_only` tinyint(1) DEFAULT NULL,
-  `ip_address_mode_cpe` varchar(255) DEFAULT NULL,
-  `simultaneous_use` varchar(255) DEFAULT NULL,
-  `first_name` varchar(255) DEFAULT NULL,
-  `last_name` varchar(255) DEFAULT NULL,
-  `company_name` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `city` varchar(255) DEFAULT NULL,
-  `zip` varchar(255) DEFAULT NULL,
-  `country` varchar(255) DEFAULT NULL,
-  `state` varchar(255) DEFAULT NULL,
-  `contact_number` varchar(255) DEFAULT NULL,
-  `email_id` varchar(255) DEFAULT NULL,
-  `vat_id` varchar(255) DEFAULT NULL,
-  `narration` text,
-  `custom_radius_attributes` text,
-  `otp_verified` tinyint(1) DEFAULT NULL,
-  `verified_by` varchar(255) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `ip_address_mode_cm` varchar(255) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
-  `plan_id` int(11) DEFAULT NULL,
-  `grace_period_in_days` varchar(255) DEFAULT NULL,
-  `customer_id` int(11) NOT NULL,
-  `create_invoice` tinyint(4) DEFAULT NULL,
-  `include_pro_data_basis` varchar(255) DEFAULT NULL,
-  `mac_address` varchar(255) DEFAULT NULL,
-  `is_invoice_date_first_to_first` tinyint(4) DEFAULT NULL,
-  `last_dl_limit` bigint(20) DEFAULT NULL,
-  `last_ul_limit` bigint(20) DEFAULT NULL,
-  `last_accounting_dl_ratio` int(11) DEFAULT NULL,
-  `last_accounting_ul_ratio` int(11) DEFAULT NULL,
-  `otp_send_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_plan_id` (`plan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `isp_user_plan_and_topup`
--- ----------------------------
-DROP TABLE IF EXISTS `isp_user_plan_and_topup`;
-CREATE TABLE `isp_user_plan_and_topup` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `plan_id` int(11) DEFAULT NULL,
-  `condition_id` int(11) DEFAULT NULL,
-  `remark` varchar(255) DEFAULT NULL,
-  `is_topup` tinyint(1) DEFAULT NULL,
-  `data_limit` bigint(20) DEFAULT NULL,
-  `time_limit` bigint(20) DEFAULT NULL,
-  `download_limit` bigint(20) DEFAULT NULL,
-  `upload_limit` bigint(20) DEFAULT NULL,
-  `fup_download_limit` bigint(20) DEFAULT NULL,
-  `fup_upload_limit` bigint(20) DEFAULT NULL,
-  `burst_dl_limit` bigint(20) DEFAULT NULL,
-  `burst_ul_limit` bigint(20) DEFAULT NULL,
-  `burst_threshold_dl_limit` bigint(20) DEFAULT NULL,
-  `burst_threshold_ul_limit` bigint(20) DEFAULT NULL,
-  `burst_dl_time` bigint(20) DEFAULT NULL,
-  `burst_ul_time` bigint(20) DEFAULT NULL,
-  `priority` int(11) DEFAULT NULL,
-  `accounting_download_ratio` int(11) DEFAULT NULL,
-  `accounting_upload_ratio` int(11) DEFAULT NULL,
-  `start_date` datetime DEFAULT NULL,
-  `end_date` datetime DEFAULT NULL,
-  `expire_date` datetime DEFAULT NULL,
-  `is_expired` tinyint(1) DEFAULT NULL,
-  `is_recurring` tinyint(1) DEFAULT NULL,
-  `is_effective` tinyint(1) DEFAULT NULL,
-  `download_data_consumed` bigint(20) DEFAULT NULL,
-  `upload_data_consumed` bigint(20) DEFAULT NULL,
-  `time_consumed` bigint(20) DEFAULT NULL,
-  `session_download_data_consumed` bigint(20) DEFAULT '0',
-  `session_upload_data_consumed` bigint(20) DEFAULT '0',
-  `session_time_consumed` bigint(20) DEFAULT '0',
-  `data_limit_row` varchar(255) DEFAULT NULL,
-  `duplicated_from_record_id` int(11) DEFAULT NULL,
-  `is_data_carry_forward` varchar(255) DEFAULT NULL,
-  `carry_data` bigint(20) DEFAULT '0',
-  `start_time` time DEFAULT NULL,
-  `end_time` time DEFAULT NULL,
-  `sun` tinyint(1) DEFAULT NULL,
-  `mon` tinyint(1) DEFAULT NULL,
-  `tue` tinyint(1) DEFAULT NULL,
-  `wed` tinyint(1) DEFAULT NULL,
-  `thu` tinyint(1) DEFAULT NULL,
-  `fri` tinyint(1) DEFAULT NULL,
-  `sat` tinyint(1) DEFAULT NULL,
-  `d10` tinyint(1) DEFAULT NULL,
-  `d11` tinyint(1) DEFAULT NULL,
-  `d12` tinyint(1) DEFAULT NULL,
-  `d13` tinyint(1) DEFAULT NULL,
-  `d14` tinyint(1) DEFAULT NULL,
-  `d15` tinyint(1) DEFAULT NULL,
-  `d16` tinyint(1) DEFAULT NULL,
-  `d17` tinyint(1) DEFAULT NULL,
-  `d18` tinyint(1) DEFAULT NULL,
-  `d19` tinyint(1) DEFAULT NULL,
-  `d20` tinyint(1) DEFAULT NULL,
-  `d21` tinyint(1) DEFAULT NULL,
-  `d22` tinyint(1) DEFAULT NULL,
-  `d23` tinyint(1) DEFAULT NULL,
-  `d24` tinyint(1) DEFAULT NULL,
-  `d25` tinyint(1) DEFAULT NULL,
-  `d26` tinyint(1) DEFAULT NULL,
-  `d27` tinyint(1) DEFAULT NULL,
-  `d28` tinyint(1) DEFAULT NULL,
-  `d29` tinyint(1) DEFAULT NULL,
-  `d30` tinyint(1) DEFAULT NULL,
-  `d31` tinyint(1) DEFAULT NULL,
-  `reset_date` datetime DEFAULT NULL,
-  `data_reset_mode` varchar(255) DEFAULT NULL,
-  `data_reset_value` varchar(255) DEFAULT NULL,
-  `d01` tinyint(1) DEFAULT NULL,
-  `d02` tinyint(1) DEFAULT NULL,
-  `d03` tinyint(1) DEFAULT NULL,
-  `d04` tinyint(1) DEFAULT NULL,
-  `d05` tinyint(1) DEFAULT NULL,
-  `d06` tinyint(1) DEFAULT NULL,
-  `d07` tinyint(1) DEFAULT NULL,
-  `d08` tinyint(1) DEFAULT NULL,
-  `d09` tinyint(1) DEFAULT NULL,
-  `treat_fup_as_dl_for_last_limit_row` tinyint(1) DEFAULT NULL,
-  `is_pro_data_affected` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_user_id` (`user_id`),
-  KEY `fk_plan_id` (`plan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `isp_user_topup`
--- ----------------------------
-DROP TABLE IF EXISTS `isp_user_topup`;
-CREATE TABLE `isp_user_topup` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `topup_id` int(11) DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_user_id` (`user_id`),
-  KEY `fk_topup_id` (`topup_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
 --  Table structure for `item`
 -- ----------------------------
 DROP TABLE IF EXISTS `item`;
@@ -1990,7 +1664,7 @@ CREATE TABLE `item` (
   `original_price` decimal(14,2) DEFAULT NULL,
   `sale_price` decimal(14,2) DEFAULT NULL,
   `expiry_date` date DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `stock_availability` tinyint(4) DEFAULT NULL,
   `show_detail` tinyint(1) DEFAULT NULL,
   `show_price` tinyint(1) DEFAULT NULL,
@@ -2004,10 +1678,10 @@ CREATE TABLE `item` (
   `add_custom_button` tinyint(1) DEFAULT NULL,
   `custom_button_url` varchar(255) DEFAULT NULL,
   `meta_title` varchar(255) DEFAULT NULL,
-  `meta_description` text,
-  `tags` text,
+  `meta_description` text DEFAULT NULL,
+  `tags` text DEFAULT NULL,
   `is_designable` tinyint(1) DEFAULT NULL,
-  `designs` longtext CHARACTER SET utf8,
+  `designs` longtext CHARACTER SET utf8 DEFAULT NULL,
   `is_party_publish` tinyint(1) DEFAULT NULL,
   `minimum_order_qty` int(11) DEFAULT NULL,
   `maximum_order_qty` int(11) DEFAULT NULL,
@@ -2032,15 +1706,15 @@ CREATE TABLE `item` (
   `allow_negative_stock` tinyint(1) DEFAULT NULL,
   `is_productionable` tinyint(1) DEFAULT NULL,
   `warranty_days` int(11) DEFAULT NULL,
-  `terms_and_conditions` text,
+  `terms_and_conditions` text DEFAULT NULL,
   `watermark_text` varchar(255) DEFAULT NULL,
   `duplicate_from_item_id` varchar(255) DEFAULT NULL,
   `is_allowuploadable` tinyint(1) DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `designer_id` int(11) DEFAULT NULL,
   `is_dispatchable` tinyint(1) DEFAULT NULL,
-  `item_specific_upload_hint` text,
-  `upload_file_label` text,
+  `item_specific_upload_hint` text DEFAULT NULL,
+  `upload_file_label` text DEFAULT NULL,
   `to_customer_id` int(11) DEFAULT NULL,
   `weight` decimal(10,0) DEFAULT NULL,
   `quantity_group` varchar(255) DEFAULT NULL,
@@ -2056,7 +1730,7 @@ CREATE TABLE `item` (
   `is_package` int(11) DEFAULT NULL,
   `hsn_sac` varchar(255) DEFAULT NULL,
   `slug_url` varchar(255) DEFAULT NULL,
-  `treat_sale_price_as_amount` tinyint(4) DEFAULT '0',
+  `treat_sale_price_as_amount` tinyint(4) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `duplicate_from_item_id` (`duplicate_from_item_id`) USING BTREE,
@@ -2087,7 +1761,7 @@ CREATE TABLE `item_department_consumption` (
   `composition_item_id` int(11) DEFAULT NULL,
   `quantity` float DEFAULT NULL,
   `unit` varchar(255) DEFAULT NULL,
-  `custom_fields` longtext,
+  `custom_fields` longtext DEFAULT NULL,
   `item_department_association_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `composition_item_id` (`composition_item_id`) USING BTREE,
@@ -2119,8 +1793,8 @@ CREATE TABLE `item_image` (
   `file_id` int(11) DEFAULT NULL,
   `item_id` int(11) DEFAULT NULL,
   `customfield_value_id` int(11) DEFAULT NULL,
-  `title` text,
-  `alt_text` text,
+  `title` text DEFAULT NULL,
+  `alt_text` text DEFAULT NULL,
   `auto_generated` tinyint(4) DEFAULT NULL,
   `sequence_no` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -2145,7 +1819,7 @@ CREATE TABLE `item_serial` (
   `dispatch_id` int(11) DEFAULT NULL,
   `transaction_id` int(11) DEFAULT NULL,
   `is_available` tinyint(4) DEFAULT NULL,
-  `narration` text,
+  `narration` text DEFAULT NULL,
   `qsp_detail_id` int(11) DEFAULT NULL,
   `purchase_order_detail_id` int(11) DEFAULT NULL,
   `purchase_invoice_detail_id` int(11) DEFAULT NULL,
@@ -2168,7 +1842,7 @@ CREATE TABLE `item_template_design` (
   `item_id` int(11) DEFAULT NULL,
   `last_modified` date DEFAULT NULL,
   `order_id` int(11) DEFAULT NULL,
-  `designs` longtext,
+  `designs` longtext DEFAULT NULL,
   `contact_id` int(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`) USING BTREE,
@@ -2358,10 +2032,10 @@ CREATE TABLE `list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
-  `list_data_status` text,
-  `list_data_download_layout` text,
-  `list_data_print_layout` text,
-  `related_list_data_print_layout` text,
+  `list_data_status` text DEFAULT NULL,
+  `list_data_download_layout` text DEFAULT NULL,
+  `list_data_print_layout` text DEFAULT NULL,
+  `related_list_data_print_layout` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -2376,7 +2050,7 @@ CREATE TABLE `list_category` (
   `name` varchar(255) DEFAULT NULL,
   `display_sequence` int(11) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `custom_link` varchar(255) DEFAULT NULL,
   `is_website_display` tinyint(1) DEFAULT NULL,
   `meta_title` varchar(255) DEFAULT NULL,
@@ -2447,7 +2121,7 @@ CREATE TABLE `list_filter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `list_id` int(11) DEFAULT NULL,
-  `layout` text,
+  `layout` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_list_id` (`list_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
@@ -2463,7 +2137,7 @@ CREATE TABLE `list_filter_fields` (
   `field_type` varchar(255) DEFAULT NULL,
   `placeholder` varchar(255) DEFAULT NULL,
   `hint` varchar(255) DEFAULT NULL,
-  `default_value` text,
+  `default_value` text DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `populate_values_from_field_id` int(11) DEFAULT NULL,
   `filter_effected_field_id` int(11) DEFAULT NULL,
@@ -2510,15 +2184,16 @@ CREATE TABLE `listing_status_activity` (
   `list_id` int(11) DEFAULT NULL,
   `on_status` varchar(255) DEFAULT NULL,
   `email_subject` varchar(255) DEFAULT NULL,
-  `email_body` text,
-  `sms_content` text,
+  `email_body` text DEFAULT NULL,
+  `sms_content` text DEFAULT NULL,
   `email_send_to_creator` tinyint(1) DEFAULT NULL,
   `email_send_to_list_data_fields` varchar(255) DEFAULT NULL,
-  `email_send_to_custom_email_ids` text,
+  `email_send_to_custom_email_ids` text DEFAULT NULL,
   `sms_send_to_creator` tinyint(1) DEFAULT NULL,
   `sms_send_to_list_data_fields` varchar(255) DEFAULT NULL,
-  `sms_send_to_custom_phone_numbers` text,
+  `sms_send_to_custom_phone_numbers` text DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
+  `list_dataset_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_list_id` (`list_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
@@ -2547,8 +2222,8 @@ CREATE TABLE `marketingcampaign_socialconfig` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `social_app` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `appId` text,
-  `secret` text,
+  `appId` text DEFAULT NULL,
+  `secret` text DEFAULT NULL,
   `post_in_groups` tinyint(1) DEFAULT NULL,
   `filter_repeated_posts` tinyint(1) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
@@ -2612,13 +2287,13 @@ CREATE TABLE `marketingcampaign_socialusers` (
   `name` varchar(255) DEFAULT NULL,
   `userid` varchar(255) DEFAULT NULL,
   `userid_returned` varchar(255) DEFAULT NULL,
-  `access_token` text,
-  `access_token_secret` text,
+  `access_token` text DEFAULT NULL,
+  `access_token_secret` text DEFAULT NULL,
   `access_token_expiry` datetime DEFAULT NULL,
   `is_access_token_valid` tinyint(1) DEFAULT NULL,
   `epan_id` int(11) DEFAULT NULL,
   `config_id` int(11) DEFAULT NULL,
-  `extra` longtext,
+  `extra` longtext DEFAULT NULL,
   `post_on_pages` tinyint(4) DEFAULT NULL,
   `is_active` tinyint(4) DEFAULT NULL,
   `post_on_timeline` tinyint(4) DEFAULT NULL,
@@ -2660,7 +2335,7 @@ DROP TABLE IF EXISTS `menu_group`;
 CREATE TABLE `menu_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `pages` text,
+  `pages` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -2688,13 +2363,13 @@ CREATE TABLE `opportunity` (
   `title` varchar(45) NOT NULL,
   `duration` varchar(45) DEFAULT NULL,
   `lead_id` int(11) NOT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `assign_to_id` int(11) DEFAULT NULL,
   `fund` decimal(14,0) NOT NULL,
   `discount_percentage` int(11) DEFAULT NULL,
   `closing_date` datetime NOT NULL,
-  `narration` text,
+  `narration` text DEFAULT NULL,
   `previous_status` varchar(255) NOT NULL,
   `probability_percentage` decimal(14,0) NOT NULL,
   PRIMARY KEY (`id`),
@@ -2750,8 +2425,8 @@ DROP TABLE IF EXISTS `payment_gateway`;
 CREATE TABLE `payment_gateway` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `default_parameters` text,
-  `parameters` text,
+  `default_parameters` text DEFAULT NULL,
+  `parameters` text DEFAULT NULL,
   `processing` varchar(255) DEFAULT NULL,
   `is_active` tinyint(4) DEFAULT NULL,
   `gateway_image_id` int(11) DEFAULT NULL,
@@ -2772,9 +2447,9 @@ CREATE TABLE `point_system` (
   `landing_campaign_id` int(11) DEFAULT NULL,
   `landing_content_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
-  `timesheet_id` int(11) DEFAULT '0',
-  `created_by_id` int(11) DEFAULT '0',
-  `qty` int(11) DEFAULT '0',
+  `timesheet_id` int(11) DEFAULT 0,
+  `created_by_id` int(11) DEFAULT 0,
+  `qty` int(11) DEFAULT 0,
   `remarks` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`) USING BTREE,
@@ -2825,7 +2500,7 @@ DROP TABLE IF EXISTS `project`;
 CREATE TABLE `project` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
@@ -2844,7 +2519,7 @@ DROP TABLE IF EXISTS `projectcomment`;
 CREATE TABLE `projectcomment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `task_id` int(11) DEFAULT NULL,
-  `comment` text,
+  `comment` text DEFAULT NULL,
   `employee_id` varchar(255) DEFAULT NULL,
   `action` varchar(255) DEFAULT NULL,
   `on_action` int(11) DEFAULT NULL,
@@ -2879,20 +2554,20 @@ CREATE TABLE `qsp_detail` (
   `price` decimal(14,4) NOT NULL,
   `quantity` decimal(14,2) NOT NULL,
   `tax_percentage` decimal(14,4) NOT NULL,
-  `narration` text,
-  `extra_info` text,
+  `narration` text DEFAULT NULL,
+  `extra_info` text DEFAULT NULL,
   `shipping_charge` float DEFAULT NULL,
   `taxation_id` int(11) DEFAULT NULL,
   `sale_amount` decimal(14,4) DEFAULT NULL,
   `original_amount` decimal(14,4) DEFAULT NULL,
-  `shipping_duration` text,
+  `shipping_duration` text DEFAULT NULL,
   `express_shipping_charge` decimal(14,4) DEFAULT NULL,
-  `express_shipping_duration` text,
+  `express_shipping_duration` text DEFAULT NULL,
   `item_template_design_id` int(11) DEFAULT NULL,
   `qty_unit_id` int(11) DEFAULT NULL,
-  `discount` decimal(14,4) DEFAULT '0.0000',
+  `discount` decimal(14,4) DEFAULT 0.0000,
   `recurring_qsp_detail_id` int(11) DEFAULT NULL,
-  `treat_sale_price_as_amount` tinyint(4) DEFAULT '0',
+  `treat_sale_price_as_amount` tinyint(4) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `qsp_master_id` (`qsp_master_id`),
   KEY `item_id` (`item_id`),
@@ -2919,14 +2594,14 @@ CREATE TABLE `qsp_master` (
   `document_id` int(11) NOT NULL,
   `contact_id` int(11) NOT NULL,
   `document_no` varchar(45) NOT NULL DEFAULT '',
-  `billing_address` text,
+  `billing_address` text DEFAULT NULL,
   `billing_city` varchar(255) DEFAULT NULL,
   `billing_state_id` int(11) NOT NULL,
   `billing_country_id` int(11) NOT NULL,
   `billing_pincode` varchar(255) DEFAULT NULL,
   `is_shipping_inclusive_tax` tinyint(4) DEFAULT NULL,
   `is_express_shipping` tinyint(4) DEFAULT NULL,
-  `shipping_address` text,
+  `shipping_address` text DEFAULT NULL,
   `shipping_city` varchar(255) DEFAULT NULL,
   `shipping_state_id` int(11) DEFAULT NULL,
   `shipping_country_id` int(11) DEFAULT NULL,
@@ -2934,13 +2609,13 @@ CREATE TABLE `qsp_master` (
   `currency_id` varchar(255) DEFAULT NULL,
   `discount_amount` varchar(255) DEFAULT NULL,
   `transaction_reference` varchar(255) DEFAULT NULL,
-  `transaction_response_data` text,
-  `narration` text,
+  `transaction_response_data` text DEFAULT NULL,
+  `narration` text DEFAULT NULL,
   `priority_id` int(11) DEFAULT NULL,
   `due_date` datetime DEFAULT NULL,
   `exchange_rate` decimal(14,6) DEFAULT NULL,
   `tnc_id` int(11) DEFAULT NULL,
-  `tnc_text` text,
+  `tnc_text` text DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `paymentgateway_id` int(11) DEFAULT NULL,
   `related_qsp_master_id` int(11) DEFAULT NULL,
@@ -3038,7 +2713,7 @@ CREATE TABLE `reimbursement_detail` (
   `date` date DEFAULT NULL,
   `amount` decimal(14,6) DEFAULT NULL,
   `reimbursement_id` int(11) DEFAULT NULL,
-  `narration` text,
+  `narration` text DEFAULT NULL,
   `paid_amount` decimal(14,6) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
@@ -3073,9 +2748,9 @@ CREATE TABLE `report_function` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
-  `group_id` text,
-  `head_id` text,
-  `ledger_id` text,
+  `group_id` text DEFAULT NULL,
+  `head_id` text DEFAULT NULL,
+  `ledger_id` text DEFAULT NULL,
   `start_date` varchar(255) DEFAULT NULL,
   `end_date` varchar(255) DEFAULT NULL,
   `list_of` varchar(255) DEFAULT NULL,
@@ -3101,7 +2776,7 @@ CREATE TABLE `rule_options` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rule_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `score_per_qty` decimal(10,4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
@@ -3258,8 +2933,8 @@ CREATE TABLE `shipping_rule_row` (
   `shipping_charge` decimal(10,0) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `express_shipping_charge` decimal(10,0) DEFAULT NULL,
-  `shipping_duration` text,
-  `express_shipping_duration` text,
+  `shipping_duration` text DEFAULT NULL,
+  `express_shipping_duration` text DEFAULT NULL,
   `shipping_duration_days` tinyint(4) DEFAULT NULL,
   `express_shipping_duration_days` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -3309,10 +2984,10 @@ CREATE TABLE `store_transaction` (
   `type` varchar(255) DEFAULT NULL,
   `delivery_via` varchar(255) DEFAULT NULL,
   `delivery_reference` varchar(255) DEFAULT NULL,
-  `shipping_address` text,
+  `shipping_address` text DEFAULT NULL,
   `shipping_charge` double(8,4) DEFAULT NULL,
-  `narration` text,
-  `tracking_code` text,
+  `narration` text DEFAULT NULL,
+  `tracking_code` text DEFAULT NULL,
   `related_transaction_id` int(11) DEFAULT NULL,
   `department_id` int(11) DEFAULT NULL,
   `subtype` varchar(255) DEFAULT NULL,
@@ -3337,10 +3012,10 @@ CREATE TABLE `store_transaction_row` (
   `quantity` double(8,4) DEFAULT NULL,
   `jobcard_detail_id` int(11) DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL,
-  `extra_info` longtext,
+  `extra_info` longtext DEFAULT NULL,
   `related_transaction_row_id` int(11) DEFAULT NULL,
-  `narration` text,
-  `serial_nos` text,
+  `narration` text DEFAULT NULL,
+  `serial_nos` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `store_transaction_id` (`store_transaction_id`) USING BTREE,
@@ -3391,15 +3066,15 @@ CREATE TABLE `support_ticket` (
   `name` varchar(255) DEFAULT NULL,
   `uid` int(11) DEFAULT NULL,
   `from_id` int(11) DEFAULT NULL,
-  `from_raw` text,
+  `from_raw` text DEFAULT NULL,
   `from_email` varchar(255) DEFAULT NULL,
   `from_name` varchar(255) DEFAULT NULL,
   `to_id` int(11) DEFAULT NULL,
-  `to_raw` text,
-  `cc_raw` text,
-  `bcc_raw` text,
+  `to_raw` text DEFAULT NULL,
+  `cc_raw` text DEFAULT NULL,
+  `bcc_raw` text DEFAULT NULL,
   `subject` varchar(255) DEFAULT NULL,
-  `message` longtext,
+  `message` longtext DEFAULT NULL,
   `priority` varchar(255) DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `task_id` int(11) DEFAULT NULL,
@@ -3423,7 +3098,7 @@ CREATE TABLE `task` (
   `task_name` varchar(255) DEFAULT NULL,
   `deadline` datetime DEFAULT NULL,
   `assign_to_id` int(11) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `starting_date` datetime DEFAULT NULL,
   `epan_id` int(11) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
@@ -3455,10 +3130,10 @@ CREATE TABLE `task` (
   `comment_count` int(11) DEFAULT NULL,
   `creator_unseen_comment_count` int(11) DEFAULT NULL,
   `assignee_unseen_comment_count` int(11) DEFAULT NULL,
-  `is_regular_work` tinyint(4) DEFAULT '0',
-  `describe_on_end` tinyint(4) DEFAULT '0',
+  `is_regular_work` tinyint(4) DEFAULT 0,
+  `describe_on_end` tinyint(4) DEFAULT 0,
   `applied_rules` varchar(255) DEFAULT NULL,
-  `manage_points` tinyint(4) DEFAULT '0',
+  `manage_points` tinyint(4) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `assigned_to_id` (`assign_to_id`),
   KEY `created_by_id` (`created_by_id`),
@@ -3492,7 +3167,7 @@ CREATE TABLE `taxation` (
   `percentage` decimal(14,2) NOT NULL,
   `type` varchar(255) NOT NULL,
   `created_by_id` int(11) DEFAULT NULL,
-  `sub_tax` text,
+  `sub_tax` text DEFAULT NULL,
   `show_in_qsp` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `created_by_id` (`created_by_id`) USING BTREE,
@@ -3574,7 +3249,7 @@ CREATE TABLE `timesheet` (
   `employee_id` int(11) DEFAULT NULL,
   `starttime` datetime DEFAULT NULL,
   `endtime` datetime DEFAULT NULL,
-  `remark` text,
+  `remark` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`) USING BTREE,
   KEY `employee_id` (`employee_id`) USING BTREE
@@ -3586,7 +3261,7 @@ CREATE TABLE `timesheet` (
 DROP TABLE IF EXISTS `tnc`;
 CREATE TABLE `tnc` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text CHARACTER SET latin1 COLLATE latin1_general_cs,
+  `content` text CHARACTER SET latin1 COLLATE latin1_general_cs DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `document_id` int(11) NOT NULL,
   `is_default_for_quotation` tinyint(4) DEFAULT NULL,
@@ -3636,7 +3311,7 @@ CREATE TABLE `unit_group` (
 DROP TABLE IF EXISTS `unsubscribe`;
 CREATE TABLE `unsubscribe` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `reason` text,
+  `reason` text DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `contact_id` int(11) DEFAULT NULL,
   `document_id` int(11) DEFAULT NULL,
@@ -3657,7 +3332,7 @@ CREATE TABLE `user` (
   `type` varchar(45) DEFAULT NULL,
   `hash` varchar(255) DEFAULT NULL,
   `last_login_date` datetime DEFAULT NULL,
-  `created_by_id` int(11) NOT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
   `access_token_expiry` datetime DEFAULT NULL,
   `access_token` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -3681,13 +3356,13 @@ CREATE TABLE `webpage` (
   `is_active` tinyint(4) DEFAULT NULL,
   `parent_page_id` int(11) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
-  `page_title` text,
-  `meta_kewords` text,
-  `meta_description` text,
-  `after_body_code` text,
+  `page_title` text DEFAULT NULL,
+  `meta_kewords` text DEFAULT NULL,
+  `meta_description` text DEFAULT NULL,
+  `after_body_code` text DEFAULT NULL,
   `order` int(11) DEFAULT NULL,
   `icon_class` varchar(255) DEFAULT NULL,
-  `is_secure` tinyint(4) DEFAULT '0',
+  `is_secure` tinyint(4) DEFAULT 0,
   `secure_only_for` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
@@ -3701,7 +3376,7 @@ CREATE TABLE `webpage_snapshot` (
   `page_id` int(11) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
-  `content` longtext,
+  `content` longtext DEFAULT NULL,
   `page_url` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -3731,7 +3406,7 @@ CREATE TABLE `xepan_auditlog` (
   `model_class` varchar(255) DEFAULT NULL,
   `pk_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
-  `name` text,
+  `name` text DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
@@ -3760,7 +3435,7 @@ DROP TABLE IF EXISTS `xepan_cms_image_gallery_images`;
 CREATE TABLE `xepan_cms_image_gallery_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `description` longtext,
+  `description` longtext DEFAULT NULL,
   `gallery_cat_id` int(11) DEFAULT NULL,
   `image_id` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
@@ -3769,7 +3444,7 @@ CREATE TABLE `xepan_cms_image_gallery_images` (
   `created_at` datetime DEFAULT NULL,
   `custom_link` varchar(255) DEFAULT NULL,
   `sequence_order` int(11) DEFAULT NULL,
-  `video_embedded_code` text,
+  `video_embedded_code` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
 
@@ -3800,7 +3475,7 @@ CREATE TABLE `xepan_listing_list_data_form_layout` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `list_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `layout` text,
+  `layout` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_list_id` (`list_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -3827,8 +3502,8 @@ DROP TABLE IF EXISTS `xepan_template`;
 CREATE TABLE `xepan_template` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `tags` text,
-  `description` text,
+  `tags` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
   `is_active` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -3846,9 +3521,9 @@ CREATE TABLE `xmarketingcampaign_googlebloggerconfig` (
   `userid` varchar(255) DEFAULT NULL,
   `userid_returned` varchar(255) DEFAULT NULL,
   `blogid` varchar(255) DEFAULT NULL,
-  `access_token` text,
-  `access_token_secret` text,
-  `refresh_token` text,
+  `access_token` text DEFAULT NULL,
+  `access_token_secret` text DEFAULT NULL,
+  `refresh_token` text DEFAULT NULL,
   `is_access_token_valid` tinyint(1) DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
