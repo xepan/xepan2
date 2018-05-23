@@ -44,7 +44,7 @@ class Api extends App_REST {
         $sub_domain = str_replace('www.','',$this->extract_subdomains($url))?:'www';
 
         $service_host = $this->getConfig('xepan-service-host',false);
-        if($service_host && $service_host!==$domain){
+        if($service_host && !in_array($domain,$service_host)){
             $epan = $domain;
         }else{
             $epan = $sub_domain;
