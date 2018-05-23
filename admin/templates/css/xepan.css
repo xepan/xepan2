@@ -37,6 +37,12 @@ textarea {width: 100%;}
   padding-right:0px!important;
 }
 
+#header-navbar .nav  li  a {
+  font-size: 0.775em !important;
+  padding-left: none  !important;
+  padding-right: none  !important;
+}
+
 .xepan-filter-form span.icon-cancel{
 	padding:5px;
 	display:inline-block;
@@ -645,6 +651,8 @@ textarea {width: 100%;}
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
   }
+
+
   .navbar-ex1-collapse .nav .open .fa-caret-down{
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
