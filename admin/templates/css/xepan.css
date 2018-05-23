@@ -43,6 +43,11 @@ textarea {width: 100%;}
   padding-right: none  !important;
 }
 
+#content-header .btn-group .btn {
+  border-bottom: none !important;
+  float: none;
+}
+
 .xepan-filter-form span.icon-cancel{
 	padding:5px;
 	display:inline-block;
