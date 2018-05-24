@@ -21,7 +21,7 @@ class page_index extends \xepan\base\Page {
 
             $report_field->js('change',$form->js()->submit());
 
-            $this->app->page_top_right_button_set->add('Order')->move($form,'first')->now();
+            // $this->app->page_top_right_button_set->add('Order')->move($form,'first')->now();
 
             $rpt = $this->add('xepan\base\Model_GraphicalReport');
 
