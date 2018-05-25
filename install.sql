@@ -1715,7 +1715,7 @@ CREATE TABLE `item` (
   `is_dispatchable` tinyint(1) DEFAULT NULL,
   `item_specific_upload_hint` text DEFAULT NULL,
   `upload_file_label` text DEFAULT NULL,
-  `to_customer_id` int(11) DEFAULT NULL,
+  `to_customer_id` int(11) DEFAULT 0,
   `weight` decimal(10,0) DEFAULT NULL,
   `quantity_group` varchar(255) DEFAULT NULL,
   `upload_file_group` varchar(255) DEFAULT NULL,
