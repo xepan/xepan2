@@ -9,6 +9,7 @@ $config['js']['versions']['jqueryui']='1.11.master';
 
 $config['tmail']['transport'] = 'Echo';
 
+$config['epan_base_path'] = "http://www.xavoc.com";
 
 $config['developer_mode'] = true;
 $config['all_rights_to_superuser'] = true;

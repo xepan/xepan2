@@ -69,5 +69,6 @@ $config['hidden_xepan_cms']= false;
 $config['only_xepan_cms']= false;
 
 
+$config['epan_base_path'] = "http://www.xavoc.com";
 $config['epan_api_base_path'] = "http://www.epan.in/api/v1";
 $config['paymentgateways'] = ['Instamojo','CCAvenue'];
