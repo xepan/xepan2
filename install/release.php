@@ -128,7 +128,7 @@ if($version){
 	file_put_contents('version', $version);
 }
 
-if(file_exists('xepan2'.$version.'.zip')) unlink('xepan2'.$version.'.zip');
+if(file_exists('xepan2.zip')) unlink('xepan2'.$version.'.zip');
 
 $zip_cmd= "zip -r xepan2.zip . --exclude *.svn* --exclude *.git* --exclude *.DS_Store* --exclude *.zip*";
 echo '<b>'.$zip_cmd.'</b><br/>';
