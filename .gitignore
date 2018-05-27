@@ -38,3 +38,4 @@ websites/*
 *.codekit
 cube1/
 wsserver/vendor
+release_files
