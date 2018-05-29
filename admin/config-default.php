@@ -28,6 +28,9 @@ $config['profiler'] = false; // true for all falase for none or string of curren
 $config['websocket-notifications'] =  false;
 
 $config['websocket-server']='ws://127.0.0.1:8889';
+if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') { //HTTPS 
+	$config['websocket-server']='wss://127.0.0.1:8889';
+} 
 
 $config['keep_alive_time'] = false;// 120000 for 2 minutes;
 
