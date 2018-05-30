@@ -27,7 +27,7 @@ $config['profiler'] = false; // true for all falase for none or string of curren
 
 // browers runs websocket if set true
 $config['websocket-notifications'] =  false;
-// Websocket server selects wss to run if set true
+// Websocket server selects ssl-websocket-server to run if set true
 $config['ssl-websocket-notifications'] =  true;
 
 // for Websocket server
@@ -39,6 +39,8 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') { //HTTPS
 	$config['websocket-server']='wss://127.0.0.1:8890';
 } 
 
+
+// periodically send ajax request to server to keep alive, must be smaller then server session timeout
 $config['keep_alive_time'] = false;// 120000 for 2 minutes;
 
 
