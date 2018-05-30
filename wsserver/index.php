@@ -9,8 +9,22 @@ if(file_exists('../admin/config.php'))
 
 	$clients=[];
 
+	if(isset($config['ssl-websocket-notifications']) && $config['ssl-websocket-notifications']){
+		$Context = \Hoa\Stream\Context::getInstance('EpanTLS');
+		$Context->setOptions([
+		    'ssl' => [
+		        'local_cert' => './cert/wss.pem',
+		    ]
+		]);
+		$ssl_config='EpanTLS';
+		$server_config ='ssl-websocket-server';
+	}else{
+		$server_config ='websocket-server';
+		$ssl_config=null;
+	}
+
 	$websocket = new Hoa\Websocket\Server(
-	    new Hoa\Socket\Server($config['websocket-server'])
+	    new Hoa\Socket\Server($config[$server_config],30,-1,$ssl_config)
 	);
 	$websocket->on('open', function (Hoa\Event\Bucket $bucket) {
 	    echo 'new connection', "\n";

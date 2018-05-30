@@ -25,11 +25,18 @@ $config['accounts']['round'] = 2;
 
 $config['profiler'] = false; // true for all falase for none or string of current_epan name for specific
 
+// browers runs websocket if set true
 $config['websocket-notifications'] =  false;
+// Websocket server selects wss to run if set true
+$config['ssl-websocket-notifications'] =  true;
 
+// for Websocket server
 $config['websocket-server']='ws://127.0.0.1:8889';
+$config['ssl-websocket-server']='wss://127.0.0.1:8890';
+
 if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') { //HTTPS 
-	$config['websocket-server']='wss://127.0.0.1:8889';
+	// for web browser target variable
+	$config['websocket-server']='wss://127.0.0.1:8890';
 } 
 
 $config['keep_alive_time'] = false;// 120000 for 2 minutes;
