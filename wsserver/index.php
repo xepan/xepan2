@@ -13,21 +13,24 @@ if(file_exists('../admin/config.php'))
 		$Context = \Hoa\Stream\Context::getInstance('EpanTLS');
 		$Context->setOptions([
 		    'ssl' => [
-		        'local_cert' => './cert/wss.pem',
+		        'local_cert' => $config['ssl-certificate-pem-path'],
+		        'verify_peer'=>false,
+		        'allow_self_signed'=>true,
 		    ]
 		]);
 		$ssl_config='EpanTLS';
-		$server_config ='ssl-websocket-server';
 	}else{
-		$server_config ='websocket-server';
 		$ssl_config=null;
 	}
 
+	echo "Running at ".$config['websocket-server']."\n";
+
 	$websocket = new Hoa\Websocket\Server(
-	    new Hoa\Socket\Server($config[$server_config],30,-1,$ssl_config)
+	    new Hoa\Socket\Server($config['websocket-server'],30,-1,$ssl_config)
 	);
+
 	$websocket->on('open', function (Hoa\Event\Bucket $bucket) {
-	    echo 'new connection', "\n";
+	    echo 'new connection '. $bucket, "\n";
 	    return;
 	});
 
@@ -41,7 +44,7 @@ if(file_exists('../admin/config.php'))
 	    		case 'register':
 	    			$clients[$message['uu_id']] = $bucket->getSource()->getConnection()->getCurrentNode();
 	    			$response  = "Client ".$message['uu_id']." registred \n";
-	    			$response  = "";
+	    			// $response  = "";
 	    			break;
 	    		
 	    		case "notification":
