@@ -26,15 +26,16 @@ $config['accounts']['round'] = 2;
 $config['profiler'] = false; // true for all falase for none or string of current_epan name for specific
 
 // browers runs websocket if set true
-$config['websocket-notifications'] =  true;
+$ip = '127.0.0.1';
+$config['websocket-notifications'] =  false;
 // Websocket server selects ssl-websocket-server to run if set true
 $config['ssl-websocket-notifications'] =  true;
 
-$config['websocket-server']='ws://127.0.0.1:8889';
+$config['websocket-server']='ws://'.$ip.':8889';
 
 if ($config['ssl-websocket-notifications']) { //HTTPS 
 	// for web browser target variable
-	$config['websocket-server']='wss://127.0.0.1:8890';
+	$config['websocket-server']='wss://'.$ip.':8890';
 	$config['ssl-certificate-pem-path']='./cert/wss_lets.pem';
 }
 
