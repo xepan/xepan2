@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 06/03/2018 13:57:36 PM
+ Date: 06/07/2018 10:09:40 AM
 */
 
 SET NAMES utf8;
@@ -1124,6 +1124,24 @@ CREATE TABLE `document` (
   PRIMARY KEY (`id`),
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `document_info`
+-- ----------------------------
+DROP TABLE IF EXISTS `document_info`;
+CREATE TABLE `document_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `document_id` int(11) DEFAULT NULL,
+  `head` varchar(255) DEFAULT NULL,
+  `value` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `is_active` tinyint(4) DEFAULT NULL,
+  `is_valid` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `document_id` (`document_id`),
+  KEY `head` (`head`),
+  KEY `value` (`value`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
