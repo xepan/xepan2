@@ -15,7 +15,8 @@ if(file_exists('../admin/config.php'))
 		    'ssl' => [
 		        'local_cert' => $config['ssl-certificate-pem-path'],
 		        'verify_peer'=>false,
-		        'allow_self_signed'=>true,
+		        'allow_self_signed'=>false,
+			'cafile'=>'/xavoc.com-ssl-cert/xavoc.com/ca.cer'
 		    ]
 		]);
 		$ssl_config='EpanTLS';
@@ -30,7 +31,7 @@ if(file_exists('../admin/config.php'))
 	);
 
 	$websocket->on('open', function (Hoa\Event\Bucket $bucket) {
-	    echo 'new connection '. $bucket, "\n";
+	    echo 'new connection '."\n";
 	    return;
 	});
 
@@ -44,7 +45,7 @@ if(file_exists('../admin/config.php'))
 	    		case 'register':
 	    			$clients[$message['uu_id']] = $bucket->getSource()->getConnection()->getCurrentNode();
 	    			$response  = "Client ".$message['uu_id']." registred \n";
-	    			// $response  = "";
+	    			$response  = "";
 	    			break;
 	    		
 	    		case "notification":

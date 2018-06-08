@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "109f290f0c0f23b2a0368be7ce441e80",
     "content-hash": "2af306302ef99e3477c38b11e066ca94",
     "packages": [
         {
@@ -59,7 +58,7 @@
                 "social",
                 "twitter"
             ],
-            "time": "2016-10-10 14:20:30"
+            "time": "2016-10-10T14:20:30+00:00"
         },
         {
             "name": "cron/cron",
@@ -104,7 +103,7 @@
                 }
             ],
             "description": "Cronjobs",
-            "time": "2016-05-24 14:05:53"
+            "time": "2016-05-24T14:05:53+00:00"
         },
         {
             "name": "educoder/pest",
@@ -146,25 +145,24 @@
             ],
             "description": "A proper REST client for PHP.",
             "homepage": "https://github.com/educoder/pest",
-            "time": "2013-11-17 12:58:01"
+            "time": "2013-11-17T12:58:01+00:00"
         },
         {
             "name": "facebook/php-sdk-v4",
-            "version": "dev-master",
+            "version": "5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/php-graph-sdk.git",
-                "reference": "877e97749fc45a871a3f522b257bf66491e087e8"
+                "reference": "6eb970d5906dc61a96324b92ee673f177a83cf20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/877e97749fc45a871a3f522b257bf66491e087e8",
-                "reference": "877e97749fc45a871a3f522b257bf66491e087e8",
+                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/6eb970d5906dc61a96324b92ee673f177a83cf20",
+                "reference": "6eb970d5906dc61a96324b92ee673f177a83cf20",
                 "shasum": ""
             },
             "require": {
-                "paragonie/random_compat": "^2.0",
-                "php": "^5.6|^7.0"
+                "php": "^5.4|^7.0"
             },
             "require-dev": {
                 "guzzlehttp/guzzle": "~5.0",
@@ -172,7 +170,8 @@
                 "phpunit/phpunit": "~4.0"
             },
             "suggest": {
-                "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+                "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client",
+                "paragonie/random_compat": "Provides a better CSPRNG option in PHP 5"
             },
             "type": "library",
             "extra": {
@@ -183,7 +182,10 @@
             "autoload": {
                 "psr-4": {
                     "Facebook\\": "src/Facebook/"
-                }
+                },
+                "files": [
+                    "src/Facebook/polyfills.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -202,7 +204,7 @@
                 "sdk"
             ],
             "abandoned": "facebook/graph-sdk",
-            "time": "2016-10-18 12:19:47"
+            "time": "2017-12-06T20:21:26+00:00"
         },
         {
             "name": "guzzle/guzzle",
@@ -298,7 +300,7 @@
                 "web service"
             ],
             "abandoned": "guzzlehttp/guzzle",
-            "time": "2016-10-26 18:22:07"
+            "time": "2016-10-26T18:22:07+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -360,7 +362,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2016-11-15 18:22:40"
+            "time": "2016-11-15T18:22:40+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -411,7 +413,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-11-18 17:47:58"
+            "time": "2016-11-18T17:47:58+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -476,7 +478,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-11-02 14:11:11"
+            "time": "2016-11-02T14:11:11+00:00"
         },
         {
             "name": "hoa/consistency",
@@ -539,7 +541,7 @@
                 "keyword",
                 "library"
             ],
-            "time": "2016-10-19 14:27:31"
+            "time": "2016-10-19T14:27:31+00:00"
         },
         {
             "name": "hoa/event",
@@ -595,7 +597,7 @@
                 "listener",
                 "observer"
             ],
-            "time": "2016-11-19 18:56:37"
+            "time": "2016-11-19T18:56:37+00:00"
         },
         {
             "name": "hoa/exception",
@@ -649,7 +651,7 @@
                 "exception",
                 "library"
             ],
-            "time": "2016-11-08 13:18:12"
+            "time": "2016-11-08T13:18:12+00:00"
         },
         {
             "name": "hoa/http",
@@ -717,7 +719,7 @@
                 "rfc7237",
                 "runtime"
             ],
-            "time": "2016-10-07 05:58:33"
+            "time": "2016-10-07T05:58:33+00:00"
         },
         {
             "name": "hoa/protocol",
@@ -777,7 +779,7 @@
                 "stream",
                 "wrapper"
             ],
-            "time": "2016-10-21 14:58:11"
+            "time": "2016-10-21T14:58:11+00:00"
         },
         {
             "name": "hoa/socket",
@@ -837,7 +839,7 @@
                 "tcp",
                 "udp"
             ],
-            "time": "2016-10-18 13:48:29"
+            "time": "2016-10-18T13:48:29+00:00"
         },
         {
             "name": "hoa/stream",
@@ -898,7 +900,7 @@
                 "stream",
                 "wrapper"
             ],
-            "time": "2016-11-08 13:09:12"
+            "time": "2016-11-08T13:09:12+00:00"
         },
         {
             "name": "hoa/websocket",
@@ -970,7 +972,7 @@
                 "server",
                 "websocket"
             ],
-            "time": "2016-10-25 06:01:35"
+            "time": "2016-10-25T06:01:35+00:00"
         },
         {
             "name": "linkedinapi/linkedin",
@@ -1014,7 +1016,7 @@
                 "linkedin",
                 "rest"
             ],
-            "time": "2014-03-03 15:16:50"
+            "time": "2014-03-03T15:16:50+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -1067,7 +1069,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2016-07-22 14:20:35"
+            "time": "2016-07-22T14:20:35+00:00"
         },
         {
             "name": "nette/utils",
@@ -1130,7 +1132,7 @@
             ],
             "description": "Nette Utility Classes",
             "homepage": "https://nette.org",
-            "time": "2016-11-24 00:55:47"
+            "time": "2016-11-24T00:55:47+00:00"
         },
         {
             "name": "omnipay/2checkout",
@@ -1189,7 +1191,7 @@
                 "payment",
                 "twocheckout"
             ],
-            "time": "2014-09-17 00:35:37"
+            "time": "2014-09-17T00:35:37+00:00"
         },
         {
             "name": "omnipay/authorizenet",
@@ -1248,7 +1250,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2016-07-16 21:00:00"
+            "time": "2016-07-16T21:00:00+00:00"
         },
         {
             "name": "omnipay/buckaroo",
@@ -1305,7 +1307,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2016-08-10 04:41:17"
+            "time": "2016-08-10T04:41:17+00:00"
         },
         {
             "name": "omnipay/cardsave",
@@ -1363,7 +1365,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2014-09-21 02:27:16"
+            "time": "2014-09-21T02:27:16+00:00"
         },
         {
             "name": "omnipay/coinbase",
@@ -1420,7 +1422,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2015-03-06 05:35:39"
+            "time": "2015-03-06T05:35:39+00:00"
         },
         {
             "name": "omnipay/common",
@@ -1518,7 +1520,7 @@
                 "payment",
                 "purchase"
             ],
-            "time": "2016-11-07 06:10:23"
+            "time": "2016-11-07T06:10:23+00:00"
         },
         {
             "name": "omnipay/dummy",
@@ -1575,7 +1577,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2016-07-30 04:18:49"
+            "time": "2016-07-30T04:18:49+00:00"
         },
         {
             "name": "omnipay/eway",
@@ -1632,7 +1634,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2016-03-22 01:11:02"
+            "time": "2016-03-22T01:11:02+00:00"
         },
         {
             "name": "omnipay/firstdata",
@@ -1690,7 +1692,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2016-01-14 06:24:28"
+            "time": "2016-01-14T06:24:28+00:00"
         },
         {
             "name": "omnipay/gocardless",
@@ -1748,7 +1750,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2015-09-24 14:44:29"
+            "time": "2015-09-24T14:44:29+00:00"
         },
         {
             "name": "omnipay/manual",
@@ -1805,7 +1807,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2016-03-29 17:52:49"
+            "time": "2016-03-29T17:52:49+00:00"
         },
         {
             "name": "omnipay/migs",
@@ -1863,7 +1865,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2016-09-22 01:58:30"
+            "time": "2016-09-22T01:58:30+00:00"
         },
         {
             "name": "omnipay/mollie",
@@ -1920,7 +1922,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2016-09-14 09:25:40"
+            "time": "2016-09-14T09:25:40+00:00"
         },
         {
             "name": "omnipay/multisafepay",
@@ -1978,7 +1980,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2016-03-21 02:10:38"
+            "time": "2016-03-21T02:10:38+00:00"
         },
         {
             "name": "omnipay/netaxept",
@@ -2035,7 +2037,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2015-05-08 15:13:17"
+            "time": "2015-05-08T15:13:17+00:00"
         },
         {
             "name": "omnipay/netbanx",
@@ -2092,7 +2094,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2016-09-21 10:52:03"
+            "time": "2016-09-21T10:52:03+00:00"
         },
         {
             "name": "omnipay/payfast",
@@ -2149,7 +2151,7 @@
                 "payfast",
                 "payment"
             ],
-            "time": "2014-09-29 01:07:03"
+            "time": "2014-09-29T01:07:03+00:00"
         },
         {
             "name": "omnipay/payflow",
@@ -2206,7 +2208,7 @@
                 "payflow",
                 "payment"
             ],
-            "time": "2016-07-30 08:33:58"
+            "time": "2016-07-30T08:33:58+00:00"
         },
         {
             "name": "omnipay/paymentexpress",
@@ -2269,7 +2271,7 @@
                 "pxpay",
                 "pxpost"
             ],
-            "time": "2016-05-02 13:46:54"
+            "time": "2016-05-02T13:46:54+00:00"
         },
         {
             "name": "omnipay/paypal",
@@ -2327,7 +2329,7 @@
                 "paypal",
                 "purchase"
             ],
-            "time": "2016-10-18 01:32:46"
+            "time": "2016-10-18T01:32:46+00:00"
         },
         {
             "name": "omnipay/pin",
@@ -2384,7 +2386,7 @@
                 "payment",
                 "pin"
             ],
-            "time": "2016-03-25 18:06:33"
+            "time": "2016-03-25T18:06:33+00:00"
         },
         {
             "name": "omnipay/sagepay",
@@ -2443,7 +2445,7 @@
                 "sage pay",
                 "sagepay"
             ],
-            "time": "2016-02-07 13:25:23"
+            "time": "2016-02-07T13:25:23+00:00"
         },
         {
             "name": "omnipay/securepay",
@@ -2500,7 +2502,7 @@
                 "payment",
                 "securepay"
             ],
-            "time": "2016-11-09 04:52:42"
+            "time": "2016-11-09T04:52:42+00:00"
         },
         {
             "name": "omnipay/stripe",
@@ -2557,7 +2559,7 @@
                 "payment",
                 "stripe"
             ],
-            "time": "2016-09-14 09:11:40"
+            "time": "2016-09-14T09:11:40+00:00"
         },
         {
             "name": "omnipay/targetpay",
@@ -2614,7 +2616,7 @@
                 "payment",
                 "targetpay"
             ],
-            "time": "2014-09-17 00:38:39"
+            "time": "2014-09-17T00:38:39+00:00"
         },
         {
             "name": "omnipay/worldpay",
@@ -2671,7 +2673,7 @@
                 "payment",
                 "worldpay"
             ],
-            "time": "2016-01-28 12:55:58"
+            "time": "2016-01-28T12:55:58+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -2719,7 +2721,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-11-07 23:38:38"
+            "time": "2016-11-07T23:38:38+00:00"
         },
         {
             "name": "psr/http-message",
@@ -2769,7 +2771,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "rah/danpu",
@@ -2833,7 +2835,7 @@
                 "restore",
                 "sql"
             ],
-            "time": "2013-12-16 14:39:54"
+            "time": "2013-12-16T14:39:54+00:00"
         },
         {
             "name": "studio-42/elfinder",
@@ -2891,7 +2893,7 @@
             ],
             "description": "File manager for web",
             "homepage": "http://elfinder.org",
-            "time": "2016-11-23 14:39:47"
+            "time": "2016-11-23T14:39:47+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -2951,7 +2953,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-13 01:43:15"
+            "time": "2016-10-13T01:43:15+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -3004,7 +3006,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-24 00:46:49"
+            "time": "2016-11-24T00:46:49+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -3063,7 +3065,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/process",
@@ -3112,7 +3114,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-24 00:46:49"
+            "time": "2016-11-24T00:46:49+00:00"
         },
         {
             "name": "symfony/translation",
@@ -3176,7 +3178,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-19 20:35:20"
+            "time": "2016-11-19T20:35:20+00:00"
         },
         {
             "name": "tburry/pquery",
@@ -3228,7 +3230,7 @@
                 "ganon",
                 "php"
             ],
-            "time": "2016-03-23 18:57:26"
+            "time": "2016-03-23T18:57:26+00:00"
         },
         {
             "name": "tecnickcom/tcpdf",
@@ -3291,7 +3293,7 @@
                 "pdf417",
                 "qrcode"
             ],
-            "time": "2015-09-12 10:08:34"
+            "time": "2015-09-12T10:08:34+00:00"
         },
         {
             "name": "tinymce/tinymce",
@@ -3337,7 +3339,7 @@
                 "tinymce",
                 "wysiwyg"
             ],
-            "time": "2016-11-23 13:00:08"
+            "time": "2016-11-23T13:00:08+00:00"
         },
         {
             "name": "webit/eval-math",
@@ -3375,7 +3377,7 @@
             "keywords": [
                 "EvalMath"
             ],
-            "time": "2016-02-15 09:34:24"
+            "time": "2016-02-15T09:34:24+00:00"
         },
         {
             "name": "xepan/accounts",
@@ -3420,7 +3422,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-25 05:08:09"
+            "time": "2018-04-09T05:52:58+00:00"
         },
         {
             "name": "xepan/atk4",
@@ -3455,7 +3457,7 @@
                 "atk4",
                 "framework"
             ],
-            "time": "2016-05-28 04:40:31"
+            "time": "2016-05-28T04:40:31+00:00"
         },
         {
             "name": "xepan/base",
@@ -3506,7 +3508,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-25 05:10:05"
+            "time": "2018-05-31T10:55:41+00:00"
         },
         {
             "name": "xepan/blog",
@@ -3549,7 +3551,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-25 05:10:47"
+            "time": "2018-05-29T15:38:26+00:00"
         },
         {
             "name": "xepan/captcha",
@@ -3592,7 +3594,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-07 10:35:39"
+            "time": "2016-10-07T10:35:39+00:00"
         },
         {
             "name": "xepan/ccavenue",
@@ -3643,7 +3645,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-04-09 17:11:53"
+            "time": "2016-04-09T17:11:53+00:00"
         },
         {
             "name": "xepan/cms",
@@ -3689,7 +3691,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-25 05:11:55"
+            "time": "2018-05-29T16:34:10+00:00"
         },
         {
             "name": "xepan/commerce",
@@ -3737,7 +3739,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-25 05:12:29"
+            "time": "2018-06-02T13:23:26+00:00"
         },
         {
             "name": "xepan/communication",
@@ -3785,7 +3787,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2018-03-25 05:13:32"
+            "time": "2018-05-31T11:28:56+00:00"
         },
         {
             "name": "xepan/crm",
@@ -3832,7 +3834,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-25 05:13:49"
+            "time": "2018-05-24T05:06:57+00:00"
         },
         {
             "name": "xepan/digitalocean-v2",
@@ -3902,7 +3904,7 @@
                 "digitalocean",
                 "vps"
             ],
-            "time": "2018-03-15 18:13:08"
+            "time": "2018-03-15T18:13:08+00:00"
         },
         {
             "name": "xepan/filestore",
@@ -3945,7 +3947,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2016-10-22 14:08:19"
+            "time": "2016-10-22T14:08:19+00:00"
         },
         {
             "name": "xepan/hr",
@@ -3990,7 +3992,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-25 05:16:23"
+            "time": "2018-06-02T13:18:09+00:00"
         },
         {
             "name": "xepan/listing",
@@ -4034,7 +4036,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-25 05:35:39"
+            "time": "2018-05-29T09:51:22+00:00"
         },
         {
             "name": "xepan/mail",
@@ -4095,7 +4097,7 @@
             ],
             "description": "Nette Mail: Sending E-mails",
             "homepage": "https://nette.org",
-            "time": "2016-04-15 05:54:19"
+            "time": "2016-04-15T05:54:19+00:00"
         },
         {
             "name": "xepan/marketing",
@@ -4145,7 +4147,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-01-30 05:33:25"
+            "time": "2018-06-02T13:54:10+00:00"
         },
         {
             "name": "xepan/omnipay",
@@ -4300,7 +4302,7 @@
                 "worldpay",
                 "xepanwallet"
             ],
-            "time": "2016-10-12 18:24:59"
+            "time": "2016-10-12T18:24:59+00:00"
         },
         {
             "name": "xepan/omnipay-instamojo",
@@ -4349,7 +4351,7 @@
                 "payment",
                 "purchase"
             ],
-            "time": "2018-03-13 13:01:38"
+            "time": "2018-03-13T13:01:38+00:00"
         },
         {
             "name": "xepan/production",
@@ -4394,7 +4396,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-25 05:18:46"
+            "time": "2018-05-24T04:44:40+00:00"
         },
         {
             "name": "xepan/projects",
@@ -4439,7 +4441,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-03-25 05:19:07"
+            "time": "2018-06-02T13:41:07+00:00"
         },
         {
             "name": "xepan/webwidgets",
@@ -4486,7 +4488,7 @@
                 "widgets",
                 "xepan"
             ],
-            "time": "2017-01-06 05:16:00"
+            "time": "2017-01-06T05:16:00+00:00"
         }
     ],
     "packages-dev": [],
