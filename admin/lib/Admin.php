@@ -11,6 +11,8 @@ class Admin extends App_Frontend {
 
     public $current_website_name='default';
 
+    public $inConfigurationMode = false;
+
     function init() {
         parent::init();
 

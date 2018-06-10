@@ -1331,3 +1331,8 @@ input[data-add_deduction=add]{
 }
 
 /*end of salary sheet edit css*/
+
+#header-navbar.configuration_mode, #header-navbar.configuration_mode .navbar>.container .navbar-brand {
+  border-color: #090909 !important;
+  background: #222 !important;
+}
