@@ -8,9 +8,9 @@ class_name: SuperUser
 modules:
     enabled:
         - WebDriver:
-            url: 'http://demo.xepan-local.org/xepan2'
-            browser: 'firefox'
-            webdriver.chrome.driver: "~/Downloads/geckodriver"
+            url: 'http://xepan2.loc'
+            browser: 'chrome'
+            webdriver.chrome.driver: "~/Downloads/selenium/chromedriver"
             capabilities:
                 unexpectedAlertBehaviour: 'accept'
         - \Helper\Acceptance
@@ -23,14 +23,14 @@ env:
         modules:
             config:
                 WebDriver:
-                    url: 'http://demo.xepan-local.org/xepan2'
+                    url: 'http://demo.xepan2.loc'
                     browser: 'firefox'
             enabled:
                 - Db:
                     dsn: 'mysql:host=localhost;dbname=demo'
                     user: 'root'
                     password: 'winserver'
-                    dump: tests/_data/data.sql
+                    # dump: tests/_data/data.sql
                     cleanup: false
     travis:
         modules:

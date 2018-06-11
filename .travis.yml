@@ -56,8 +56,8 @@ install:
   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
   - sudo service apache2 restart
   - wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
-  - wget -P ~/Downloads https://github.com/mozilla/geckodriver/releases/download/v0.10.0/geckodriver-v0.10.0-linux64.tar.gz
-  - tar -xf ~/Downloads/geckodriver-v0.10.0-linux64.tar.gz -C ~/Downloads
+  - wget -P ~/Downloads/selenium https://github.com/mozilla/geckodriver/releases/download/v0.10.0/geckodriver-v0.10.0-linux64.tar.gz
+  - tar -xf ~/Downloads/selenium/geckodriver-v0.10.0-linux64.tar.gz -C ~/Downloads/selenium
   - composer self-update
   - composer install --prefer-dist --no-dev
   - ulimit -c unlimited || true

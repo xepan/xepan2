@@ -19,7 +19,8 @@
     "rah/danpu": "2.6",
     "xepan/omnipay-instamojo": "dev-master",
     "xepan/digitalocean-v2": "2.2.x-dev",
-    "xepan/listing": "dev-master"
+    "xepan/listing": "dev-master",
+    "xepan/atk4": "4.3"
   },
   "autoload":{
     "psr-0":{
