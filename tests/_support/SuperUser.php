@@ -25,6 +25,26 @@ class SuperUser extends \Codeception\Actor
     */
    
 
+    public function install($admin_username='management@xavoc.com',$admin_password='admin',$install_as='erp',$database_host='localhost',$database_user='root',$database_password='',$database='xepan2'){
+      $i=$this;
+      
+      $i->amOnPage('/install');
+      $i->fillField('[data-shortname=database]',$database);
+      $i->fillField('[data-shortname=database_host]',$database_host);
+      $i->fillField('[data-shortname=database_user]',$database_user);
+      $i->fillField('[data-shortname=database_password]',$database_password);
+      $i->fillField('[data-shortname=admin_username]',$admin_username);
+      $i->fillField('[data-shortname=admin_password]',$admin_password);
+      $i->fillField('[data-shortname=install_as]',$install_as);
+
+      $i->click('form button[type=submit]');
+      $i->waitAjaxLoad(5);
+      $i->see('Installing, please wait ...');
+      $i->waitForText('Importing database');
+      $i->waitForText('Writing config file done');
+
+    }
+
    
     public function login($username='management@xavoc.com',$password='admin'){
       $i=$this;
@@ -34,7 +54,7 @@ class SuperUser extends \Codeception\Actor
             return;
       }
 
-   		$i->amOnPage('/admin');
+      $i->amOnPage('/admin');
       $i->waitPageLoad();
    		$i->fillField('[data-shortname=username]',$username);
    		$i->fillField('[data-shortname=password]',$password);
