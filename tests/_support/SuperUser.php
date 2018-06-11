@@ -35,14 +35,14 @@ class SuperUser extends \Codeception\Actor
       $i->fillField('[data-shortname=database_password]',$database_password);
       $i->fillField('[data-shortname=admin_username]',$admin_username);
       $i->fillField('[data-shortname=admin_password]',$admin_password);
-      $i->fillField('[data-shortname=install_as]',$install_as);
+      $i->selectOption('[data-shortname=install_as]',$install_as);
 
       $i->click('form button[type=submit]');
       $i->waitAjaxLoad(5);
       $i->see('Installing, please wait ...');
       $i->waitForText('Importing database',10);
-      $i->waitForText('Writing config file done',60);
-      $i->waitForText('DONE',2);
+      // $i->waitForText('Writing config file done',60);
+      // $i->waitForText('DONE',2);
 
     }
 
