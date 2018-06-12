@@ -25,10 +25,20 @@ class SuperUser extends \Codeception\Actor
     */
    
 
-    public function install($admin_username='management@xavoc.com',$admin_password='admin',$install_as='erp',$database_host='localhost',$database_user='root',$database_password='',$database='testdb'){
+    public function install($admin_username='testsuper@xavoc.com',$admin_password='admin',$install_as='erp',$database_host='localhost',$database_user='root',$database_password='',$database='testdb'){
       $i=$this;
       
       $i->amOnPage('/install');
+      try{
+        $i->see('Install');
+      }catch(\Exception $e){
+        try{
+          $i->canSeeInCurrentUrl('/admin');
+        }catch(\Exception $e){
+          throw $e;
+        }
+        return true;
+      }
       $i->fillField('[data-shortname=database]',$database);
       $i->fillField('[data-shortname=database_host]',$database_host);
       $i->fillField('[data-shortname=database_user]',$database_user);
@@ -50,7 +60,7 @@ class SuperUser extends \Codeception\Actor
     }
 
    
-    public function login($username='management@xavoc.com',$password='admin'){
+    public function login($username='testsuper@xavoc.com',$password='admin'){
       $i=$this;
       
       if ($i->loadSessionSnapshot('login')) {
