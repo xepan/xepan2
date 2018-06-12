@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 06/07/2018 10:09:40 AM
+ Date: 06/12/2018 12:05:02 PM
 */
 
 SET NAMES utf8;
@@ -2647,6 +2647,8 @@ CREATE TABLE `qsp_master` (
   `billing_name` varchar(255) DEFAULT NULL,
   `shipping_name` varchar(255) DEFAULT NULL,
   `serial` varchar(255) DEFAULT NULL,
+  `cancel_reason` varchar(255) DEFAULT NULL,
+  `cancel_narration` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `document` (`document_id`),
   KEY `contact_id` (`contact_id`) USING BTREE,
