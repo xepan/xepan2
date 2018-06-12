@@ -40,7 +40,7 @@ class SuperUser extends \Codeception\Actor
       $i->click('form button[type=submit]');
       $i->waitAjaxLoad(5);
       $i->see('Installing, please wait ...');
-      $i->wait();
+      // $i->wait();
       $i->waitForPageLoad();
       $i->canSeeInCurrentUrl('/admin');
       // $i->waitForText('Importing database',60);
