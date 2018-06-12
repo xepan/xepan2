@@ -25,7 +25,7 @@ class SuperUser extends \Codeception\Actor
     */
    
 
-    public function install($admin_username='management@xavoc.com',$admin_password='admin',$install_as='erp',$database_host='localhost',$database_user='root',$database_password='',$database='xepan2'){
+    public function install($admin_username='management@xavoc.com',$admin_password='admin',$install_as='erp',$database_host='localhost',$database_user='root',$database_password='',$database='testdb'){
       $i=$this;
       
       $i->amOnPage('/install');
