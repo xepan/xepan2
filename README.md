@@ -42,6 +42,7 @@ Master Build status
 [![Build Status](https://travis-ci.org/xepan/projects.svg?branch=master)](https://travis-ci.org/xepan/projects)
 
 [Last build travis output code](https://github.com/xavoctechnocratspvtltd/_xepan2/tree/gh-pages)
-[Last build travis output html](https://xavoctecnocratspvtltd.github.com/_xepan2/)
+
+[Last build travis output html](https://xavoctechnocratspvtltd.github.io/_xepan2/)
 
 [![Join the chat at https://gitter.im/xavoctechnocratspvtltd/xepan2](https://badges.gitter.im/xavoctechnocratspvtltd/xepan2.svg)](https://gitter.im/xavoctechnocratspvtltd/xepan2?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
