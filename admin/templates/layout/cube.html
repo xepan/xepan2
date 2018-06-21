@@ -1,22 +1,4 @@
-
-<div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-        <h4 class="modal-title">Quick Search</h4>
-      </div>
-      <div class="modal-body">
-        {$quick_search_form}
-        {$quick_search_result}
-      </div>
-      <div class="modal-footer">
-        <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="theme-wrapper" class="atk-layout">
+<div id="theme-wrapper" class="atk-layout" {$attributes}>
   <header id="header-navbar" class="navbar {configuration_mode}{/}">
     <div class="container"><a id="logo" href="index.php" class="navbar-brand"><img src="img/logo3.png" alt="" class="normal-logo logo-white"/><img src="img/logo3-black.png" alt="" class="normal-logo logo-black"/><img src="img/logo.png" alt="" class="small-logo hidden-xs hidden-sm hidden"/></a>
       <div class="clearfix">
@@ -138,5 +120,24 @@
       <li><a data-skin="theme-red" data-toggle="tooltip" title="Red" style="background-color: #e74c3c;" class="skin-changer"></a></li>
       <li><a data-skin="theme-whbl" data-toggle="tooltip" title="White/Blue" style="background-color: #3498db;" class="skin-changer"></a></li>
     </ul>
+  </div>
+</div>
+</div>
+
+<div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+        <h4 class="modal-title">Quick Search</h4>
+      </div>
+      <div class="modal-body">
+        {$quick_search_form}
+        {$quick_search_result}
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+      </div>
+    </div>
   </div>
 </div>
