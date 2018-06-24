@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2af306302ef99e3477c38b11e066ca94",
+    "content-hash": "4686ed133c4fa5f187ada91457808726",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -3419,7 +3419,46 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T09:55:50+00:00"
+            "time": "2018-06-12T18:11:09+00:00"
+        },
+        {
+            "name": "xepan/ai",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xepan/ai.git",
+                "reference": "origin/master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepan/ai/zipball/origin/master",
+                "reference": "origin/master",
+                "shasum": ""
+            },
+            "require": {
+                "xepan/base": "dev-master"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Xavoc Technocrats Pvt. Ltd.",
+                    "email": "info@xavoc.com"
+                }
+            ],
+            "description": "AI and Business Inteligence for Xavoc ERP / CRM (XEC) Previously known as xEpan",
+            "homepage": "https://github.com/xepan/ai",
+            "keywords": [
+                "ERP",
+                "ai",
+                "business intelligence",
+                "saas",
+                "xepan"
+            ],
+            "time": "2018-06-24T09:47:26+00:00"
         },
         {
             "name": "xepan/atk4",
@@ -3505,7 +3544,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T18:03:14+00:00"
+            "time": "2018-06-24T10:24:53+00:00"
         },
         {
             "name": "xepan/blog",
@@ -3548,7 +3587,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T10:03:25+00:00"
+            "time": "2018-06-18T20:03:26+00:00"
         },
         {
             "name": "xepan/captcha",
@@ -3688,7 +3727,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T10:27:43+00:00"
+            "time": "2018-06-18T20:02:11+00:00"
         },
         {
             "name": "xepan/commerce",
@@ -3736,7 +3775,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T10:26:36+00:00"
+            "time": "2018-06-20T10:17:38+00:00"
         },
         {
             "name": "xepan/communication",
@@ -3784,7 +3823,7 @@
                 "sms",
                 "xepan"
             ],
-            "time": "2018-06-12T10:29:01+00:00"
+            "time": "2018-06-15T11:49:25+00:00"
         },
         {
             "name": "xepan/crm",
@@ -3831,7 +3870,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T10:40:57+00:00"
+            "time": "2018-06-14T13:11:49+00:00"
         },
         {
             "name": "xepan/digitalocean-v2",
@@ -3989,7 +4028,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T04:45:45+00:00"
+            "time": "2018-06-22T06:05:18+00:00"
         },
         {
             "name": "xepan/listing",
@@ -4033,7 +4072,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T10:59:46+00:00"
+            "time": "2018-06-15T07:38:54+00:00"
         },
         {
             "name": "xepan/mail",
@@ -4144,7 +4183,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T10:45:57+00:00"
+            "time": "2018-06-12T18:15:26+00:00"
         },
         {
             "name": "xepan/omnipay",
@@ -4393,7 +4432,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T10:47:53+00:00"
+            "time": "2018-06-12T18:15:52+00:00"
         },
         {
             "name": "xepan/projects",
@@ -4438,7 +4477,7 @@
                 "saas",
                 "xepan"
             ],
-            "time": "2018-06-12T10:49:07+00:00"
+            "time": "2018-06-12T18:16:19+00:00"
         },
         {
             "name": "xepan/webwidgets",
@@ -4506,7 +4545,8 @@
         "xepan/webwidgets": 20,
         "xepan/omnipay-instamojo": 20,
         "xepan/digitalocean-v2": 20,
-        "xepan/listing": 20
+        "xepan/listing": 20,
+        "xepan/ai": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
