@@ -23,10 +23,10 @@
  * @license See http://agiletoolkit.org/about/license
  *
 **/
-class View_Info extends View_Box {
+class View_Success extends View_Box {
     function init(){
         parent::init();
-        $this->addClass('alert alert-info');
-        $this->addIcon(' fa fa-info');
+        $this->addClass('alert alert-success');
+        $this->addIcon(' fa fa-thumbs-o-up');
     }
 }
