@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 06/21/2018 23:05:14 PM
+ Date: 06/26/2018 12:09:19 PM
 */
 
 SET NAMES utf8;
@@ -838,7 +838,7 @@ CREATE TABLE `custom_form` (
   `name` varchar(255) DEFAULT NULL,
   `submit_button_name` varchar(255) DEFAULT NULL,
   `form_layout` varchar(255) DEFAULT NULL,
-  `custom_form_layout_path` varchar(255) DEFAULT NULL,
+  `custom_form_layout_path` text CHARACTER SET utf8 DEFAULT NULL,
   `recieve_email` tinyint(4) DEFAULT NULL,
   `recipient_email` varchar(255) DEFAULT NULL,
   `auto_reply` tinyint(4) DEFAULT NULL,
@@ -1753,6 +1753,7 @@ CREATE TABLE `item` (
   `hsn_sac` varchar(255) DEFAULT NULL,
   `slug_url` varchar(255) DEFAULT NULL,
   `treat_sale_price_as_amount` tinyint(4) DEFAULT 0,
+  `is_production_phases_fixed` tinyint(4) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `duplicate_from_item_id` (`duplicate_from_item_id`) USING BTREE,
