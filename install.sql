@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 06/27/2018 12:18:15 PM
+ Date: 06/27/2018 17:51:41 PM
 */
 
 SET NAMES utf8;
@@ -621,6 +621,17 @@ CREATE TABLE `communication_read_emails` (
   KEY `contact_communication` (`contact_id`,`communication_id`) USING BTREE,
   KEY `is_read` (`is_read`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+--  Table structure for `communication_related_employee`
+-- ----------------------------
+DROP TABLE IF EXISTS `communication_related_employee`;
+CREATE TABLE `communication_related_employee` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `communication_id` int(11) DEFAULT NULL,
+  `employee_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `communication_sms_setting`
