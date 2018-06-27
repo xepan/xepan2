@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 06/26/2018 12:09:19 PM
+ Date: 06/27/2018 12:18:15 PM
 */
 
 SET NAMES utf8;
@@ -1271,6 +1271,7 @@ CREATE TABLE `employee` (
   `remark` longtext DEFAULT NULL,
   `graphical_report_id` int(11) DEFAULT NULL,
   `salary_payment_type` varchar(255) DEFAULT NULL,
+  `allow_login_from_anywhere` tinyint(4) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `fk_employee_contact1_idx` (`contact_id`),
   KEY `fk_employee_post1_idx` (`post_id`),
