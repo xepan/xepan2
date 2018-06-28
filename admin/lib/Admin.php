@@ -13,6 +13,8 @@ class Admin extends App_Frontend {
 
     public $inConfigurationMode = false;
 
+    public $config_files = array('config-default','config-documentation','config');
+
     function init() {
         parent::init();
 
