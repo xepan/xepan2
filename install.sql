@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 06/29/2018 15:06:19 PM
+ Date: 06/29/2018 15:45:55 PM
 */
 
 SET NAMES utf8;
@@ -171,7 +171,7 @@ CREATE TABLE `activity` (
   `activity` varchar(255) DEFAULT NULL,
   `details` text DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
-  `notify_to` text DEFAULT 'NULL',
+  `notify_to` text DEFAULT NULL,
   `notification` varchar(255) DEFAULT NULL,
   `document_url` varchar(255) DEFAULT NULL,
   `score` decimal(14,6) NOT NULL,
