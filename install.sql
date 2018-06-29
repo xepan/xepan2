@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 06/27/2018 17:51:41 PM
+ Date: 06/29/2018 15:06:19 PM
 */
 
 SET NAMES utf8;
@@ -171,7 +171,7 @@ CREATE TABLE `activity` (
   `activity` varchar(255) DEFAULT NULL,
   `details` text DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
-  `notify_to` varchar(255) DEFAULT NULL,
+  `notify_to` text DEFAULT 'NULL',
   `notification` varchar(255) DEFAULT NULL,
   `document_url` varchar(255) DEFAULT NULL,
   `score` decimal(14,6) NOT NULL,
@@ -579,6 +579,7 @@ CREATE TABLE `communication` (
   `score` decimal(14,6) NOT NULL,
   `calling_status` varchar(255) DEFAULT NULL,
   `related_contact_id` int(11) DEFAULT NULL,
+  `sub_type_3` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `to_id_2` (`to_id`,`related_id`,`related_document_id`),
   KEY `related_document_id` (`related_document_id`) USING BTREE,
