@@ -2893,3 +2893,7 @@ input[data-add_deduction=add]{
   border-color: #090909 !important;
   background: #222 !important;
 }
+
+.atk-form-field.atk-form-row .select2.select2-container{
+  width:100% !important;
+}

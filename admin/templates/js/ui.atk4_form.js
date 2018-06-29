@@ -58,7 +58,7 @@ jQuery.widget("ui.atk4_form", {
 			});
 		}
 
-		console.log('created with url=',this.form.attr('action'));
+		// console.log('created with url=',this.form.attr('action'));
 
 		this.form.prepend('<input name="ajax_submit" id="ajax_submit" value="1" type="hidden"/>');
 		this.form.addClass('atk4_form');
@@ -196,7 +196,7 @@ jQuery.widget("ui.atk4_form", {
 		}
 		url=$.atk4.addArgument(url,this.id+'_cut_field',field_id);
 		var f=$("#"+field_id);
-		console.log('Field found: ',field_id,'->',f);
+		// console.log('Field found: ',field_id,'->',f);
 
 		if(!notrigger)f.trigger('reload_field');
 

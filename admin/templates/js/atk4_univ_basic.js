@@ -84,7 +84,7 @@ $.each({
         if(!confirm(msg))this.ignore=true;
     },
     displayFormError: function(form,field,message){
-        console.log(form,field,message);
+        // console.log(form,field,message);
         if(!message){
             message=field;
             field=form;
@@ -137,7 +137,7 @@ $.each({
                         w.document.write(response_text);
                         w.document.write('<center><input type=button onclick="window.close()" value="Close"></center>');
                     }else{
-                        console.log(response_text, e);
+                        // console.log(response_text, e);
                         showMessage("Error in AJAX response: "+e+"\n"+response_text);
                     }
                     try{
@@ -303,7 +303,7 @@ $.each({
         region=this.jquery;
 
         if(region.data('ajaxec_loading')){
-            console.log(region);
+            // console.log(region);
             console.log('Ajax loading, please wait');
             return;
             return this.successMessage('Please Wait');
@@ -347,7 +347,7 @@ $.each({
                     w.document.write(ret);
                     w.document.write('<center><input type=button onclick="window.close()" value="Close"></center>');
                 }else{
-                    console.log("Error in ajaxec response", e,ret);
+                    // console.log("Error in ajaxec response", e,ret);
                     showMessage("Error in AJAXec response: "+e+"\n"+ret);
                 }
             }
@@ -496,7 +496,7 @@ $.each({
                 }
             }
 
-            console.log(exact_match);
+            // console.log(exact_match);
 
             if(exact_match && exact_match.length){
                 if(exact_match instanceof Array){
