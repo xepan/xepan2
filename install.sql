@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 06/29/2018 15:45:55 PM
+ Date: 06/30/2018 18:19:04 PM
 */
 
 SET NAMES utf8;
@@ -3197,6 +3197,7 @@ CREATE TABLE `task` (
   `describe_on_end` tinyint(4) DEFAULT 0,
   `applied_rules` varchar(255) DEFAULT NULL,
   `manage_points` tinyint(4) DEFAULT 0,
+  `sub_type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `assigned_to_id` (`assign_to_id`),
   KEY `created_by_id` (`created_by_id`),
