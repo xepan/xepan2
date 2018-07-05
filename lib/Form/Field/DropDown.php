@@ -43,6 +43,12 @@ class Form_Field_DropDown extends Form_Field_ValueList {
         $output.=$this->getTag('/select');
         return $output;
     }
+    
+    function enableMultiSelect(){
+        $this->setAttr('multiple',true);
+        return $this;
+    }
+
     function getOption($value){
         $selected = false;
         if($this->value===null || $this->value===''){
