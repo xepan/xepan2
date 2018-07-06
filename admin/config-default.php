@@ -39,6 +39,8 @@ if ($config['ssl-websocket-notifications']) { //HTTPS
 	$config['ssl-certificate-pem-path']='./cert/wss_lets.pem';
 }
 
+$config['allowed_menu_based_acl_check'] = false;
+
 // periodically send ajax request to server to keep alive, must be smaller then server session timeout
 $config['keep_alive_time'] = false;// 120000 for 2 minutes;
 

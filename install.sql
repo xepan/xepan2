@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 06/30/2018 18:19:04 PM
+ Date: 07/06/2018 15:20:53 PM
 */
 
 SET NAMES utf8;
@@ -2511,6 +2511,7 @@ CREATE TABLE `post` (
   `permission_level` varchar(255) DEFAULT NULL,
   `finacial_permit_limit` int(11) DEFAULT NULL,
   `order` int(11) DEFAULT NULL,
+  `allowed_menus` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_post_department1_idx` (`department_id`),
   KEY `parent_post_id` (`parent_post_id`) USING BTREE,
