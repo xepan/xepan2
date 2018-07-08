@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 07/06/2018 15:20:53 PM
+ Date: 07/08/2018 18:57:59 PM
 */
 
 SET NAMES utf8;
@@ -590,6 +590,9 @@ CREATE TABLE `communication` (
   KEY `created_at` (`created_at`),
   KEY `communication_type` (`communication_type`),
   KEY `related_contact_id` (`related_contact_id`),
+  KEY `sub_type` (`sub_type`),
+  KEY `calling_status` (`calling_status`),
+  KEY `sub_type_3` (`sub_type_3`),
   FULLTEXT KEY `search_string` (`title`,`description`,`communication_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
