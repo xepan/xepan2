@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 07/08/2018 18:57:59 PM
+ Date: 07/17/2018 11:49:18 AM
 */
 
 SET NAMES utf8;
@@ -2832,6 +2832,7 @@ DROP TABLE IF EXISTS `rule_group`;
 CREATE TABLE `rule_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
@@ -2857,6 +2858,7 @@ CREATE TABLE `rules` (
   `name` varchar(255) DEFAULT '0',
   `status` varchar(10) DEFAULT '0',
   `rulegroup_id` int(11) DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
