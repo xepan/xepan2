@@ -102,7 +102,7 @@ class page_index extends Page {
 			$custom_field_array=[
 				  'qsp_detail_id' =>'56689','item_id' =>'2482',
 				  'specification' => [
-								      'HR' => 'Yes','Communication' => 'Yes','Projects' =>  'Yes','Marketing' => 'Yes','Accounts' => 'Yes','Commerce' => 'Yes' ,
+								      'HR' => 'Yes','Communication' => 'Yes','Projects' =>  'Yes','Marketing' => 'Yes','Accounts' => 'Yes','Commerce' => 'Yes' ,'IndiaMart CRM Integration'=>'Yes',
 								      'Production' => 'Yes','CRM' => 'Yes' ,'CMS' => 'Yes' ,'Blog' => 'Yes','employee' => 0,'email' => 0, 'threshold' => 0,'storage' => 0, 
 								     ],
 				  'valid_till' => date('Y-m-d',strtotime(date('Y-m-d').' +1 year'))];
