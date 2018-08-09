@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 07/17/2018 11:49:18 AM
+ Date: 08/09/2018 21:33:30 PM
 */
 
 SET NAMES utf8;
@@ -87,6 +87,7 @@ CREATE TABLE `account_transaction` (
   `related_transaction_id` int(11) DEFAULT NULL,
   `transaction_template_id` int(11) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
+  `branch_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `transaction_type_id` (`transaction_type_id`) USING BTREE
@@ -153,6 +154,7 @@ CREATE TABLE `acl` (
   `action_allowed` text DEFAULT NULL,
   `allow_add` tinyint(4) DEFAULT NULL,
   `namespace` varchar(45) DEFAULT NULL,
+  `is_branch_restricted` tinyint(4) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `post_id` (`post_id`) USING BTREE
@@ -314,6 +316,18 @@ CREATE TABLE `blog_post_category_association` (
   `blog_post_category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+--  Table structure for `branch`
+-- ----------------------------
+DROP TABLE IF EXISTS `branch`;
+CREATE TABLE `branch` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `campaign`
@@ -693,6 +707,7 @@ CREATE TABLE `contact` (
   `assign_at` datetime DEFAULT NULL,
   `last_communication_before_days` int(11) DEFAULT NULL,
   `tag` text DEFAULT NULL,
+  `branch_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_epan_id` (`epan_id`),
   KEY `user_id` (`user_id`) USING BTREE,
@@ -1138,6 +1153,7 @@ CREATE TABLE `document` (
   `updated_at` datetime DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
   `search_string` text DEFAULT NULL,
+  `branch_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_document_epan1_idx` (`epan_id`),
   FULLTEXT KEY `search_string` (`search_string`)
@@ -1502,7 +1518,7 @@ CREATE TABLE `experience` (
 -- ----------------------------
 DROP TABLE IF EXISTS `file`;
 CREATE TABLE `file` (
-  `document_id` int(11) NOT NULL,
+  `document_id` int(11) DEFAULT NULL,
   `folder_id` int(11) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `content` longtext DEFAULT NULL,
@@ -2055,6 +2071,7 @@ CREATE TABLE `ledger` (
   `epan_id` int(11) DEFAULT NULL,
   `related_id` int(11) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
+  `branch_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `contact_id` (`contact_id`) USING BTREE,
   KEY `group_id` (`group_id`) USING BTREE,
@@ -2549,6 +2566,7 @@ CREATE TABLE `project` (
   `starting_date` date DEFAULT NULL,
   `ending_date` date DEFAULT NULL,
   `actual_completion_date` date DEFAULT NULL,
+  `branch_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `created_by_id` (`created_by_id`) USING BTREE,
   FULLTEXT KEY `quick_search` (`name`,`description`,`type`)
@@ -3060,6 +3078,7 @@ CREATE TABLE `store_transaction` (
   `related_transaction_id` int(11) DEFAULT NULL,
   `department_id` int(11) DEFAULT NULL,
   `subtype` varchar(255) DEFAULT NULL,
+  `branch_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `related_doc_id` (`related_document_id`) USING BTREE,
