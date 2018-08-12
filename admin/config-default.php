@@ -44,7 +44,9 @@ $config['allowed_menu_based_acl_check'] = false;
 // periodically send ajax request to server to keep alive, must be smaller then server session timeout
 $config['keep_alive_time'] = false;// 120000 for 2 minutes;
 
-
+// Custome Application vendor path
+$config['custom_app_path'] = false; // ['array of path','like','websites/'.$this->app->current_website_name.'/assets/xepan_vendor'];
+$config['custom_app_list']=[];// ['xepan\iec','any_folder\namespace'];
 
 // to be overridden by config.php
 

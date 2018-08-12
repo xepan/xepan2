@@ -17,3 +17,6 @@ $config['status_icon'] = [];
 
 $config['filestore']['chmod'] = 0755;
 $config['paymentgateways'] = ['Instamojo','CCAvenue'];
+
+$config['custom_app_path'] = false; // ['array of path','like','websites/'.$this->app->current_website_name.'/assets/xepan_vendor'];
+$config['custom_app_list']=[];// ['xepan\iec','any_folder\namespace'];

@@ -20,9 +20,14 @@ class Frontend extends ApiFrontend {
     function init() {
         parent::init();
 
+        $app_paths = array('vendor','shared/addons2','shared/addons','shared/apps');
+        if($c_app_path = $this->getConfig('custom_app_path',false)){
+            $app_paths = array_merge($c_app_path,$app_paths);
+        }
+
          $this->api->pathfinder
             ->addLocation(array(
-                'addons' => array('vendor','shared/addons2','shared/addons','shared/apps'),
+                'addons' => $app_paths,
             ))
             ->setBasePath($this->pathfinder->base_location->getPath() . '/..');
         
@@ -38,6 +43,12 @@ class Frontend extends ApiFrontend {
         $app_initiators=[];
         foreach ($addons as $addon) {
             $this->xepan_app_initiators[$addon] = $app_initiators[$addon] = $this->add("$addon\Initiator")->setup_frontend();
+        }
+
+        if($c_app_path){
+            foreach ($this->getConfig('custom_app_list') as $custom_apps) {
+                $this->xepan_app_initiators[$custom_apps] = $app_initiators[$custom_apps] = $this->add("$custom_apps\Initiator")->setup_frontend();
+            }
         }
 
         $this->app_router->route();
