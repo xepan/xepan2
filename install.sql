@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 08/09/2018 21:33:30 PM
+ Date: 08/13/2018 13:00:15 PM
 */
 
 SET NAMES utf8;
@@ -31,6 +31,7 @@ CREATE TABLE `account_balance_sheet` (
   `subtract_from` varchar(255) DEFAULT NULL,
   `order` varchar(255) DEFAULT NULL,
   `created_at` date DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
@@ -48,6 +49,7 @@ CREATE TABLE `account_group` (
   `parent_group_id` int(11) DEFAULT NULL,
   `root_group_id` int(11) DEFAULT NULL,
   `path` text DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `epan_id` (`epan_id`) USING BTREE,
   KEY `balance_sheet_id` (`balance_sheet_id`) USING BTREE,
@@ -245,6 +247,7 @@ CREATE TABLE `blog_category_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `categories` text DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
