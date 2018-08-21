@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 08/13/2018 13:00:15 PM
+ Date: 08/21/2018 18:33:00 PM
 */
 
 SET NAMES utf8;
@@ -1789,6 +1789,7 @@ CREATE TABLE `item` (
   `slug_url` varchar(255) DEFAULT NULL,
   `treat_sale_price_as_amount` tinyint(4) DEFAULT 0,
   `is_production_phases_fixed` tinyint(4) DEFAULT 0,
+  `purchase_nominal_id` int(11) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `document_id` (`document_id`) USING BTREE,
   KEY `duplicate_from_item_id` (`duplicate_from_item_id`) USING BTREE,
@@ -2096,7 +2097,7 @@ CREATE TABLE `list` (
   `list_data_print_layout` text DEFAULT NULL,
   `related_list_data_print_layout` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `list_category`
@@ -2157,7 +2158,7 @@ CREATE TABLE `list_fields` (
   `list_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `field_type` varchar(255) DEFAULT NULL,
-  `default_value` varchar(255) DEFAULT NULL,
+  `default_value` text DEFAULT NULL,
   `placeholder` varchar(255) DEFAULT NULL,
   `hint` varchar(255) DEFAULT NULL,
   `is_mandatory` tinyint(1) DEFAULT NULL,
@@ -2170,7 +2171,7 @@ CREATE TABLE `list_fields` (
   `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_list_id` (`list_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `list_filter`
@@ -2232,7 +2233,7 @@ CREATE TABLE `listing_category_list_data_association` (
   PRIMARY KEY (`id`),
   KEY `fk_list_id` (`list_id`),
   KEY `fk_list_category_id` (`list_category_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Table structure for `listing_status_activity`
@@ -3578,6 +3579,19 @@ CREATE TABLE `xepan_cms_image_gallery_images` (
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
+--  Table structure for `xepan_listing_b`
+-- ----------------------------
+DROP TABLE IF EXISTS `xepan_listing_b`;
+CREATE TABLE `xepan_listing_b` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
 --  Table structure for `xepan_listing_contact_plan_association`
 -- ----------------------------
 DROP TABLE IF EXISTS `xepan_listing_contact_plan_association`;
@@ -3623,6 +3637,20 @@ CREATE TABLE `xepan_listing_plan` (
   PRIMARY KEY (`id`),
   KEY `fk_list_id` (`list_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+--  Table structure for `xepan_listing_test`
+-- ----------------------------
+DROP TABLE IF EXISTS `xepan_listing_test`;
+CREATE TABLE `xepan_listing_test` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `a` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `xepan_template`
