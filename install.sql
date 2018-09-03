@@ -288,7 +288,7 @@ CREATE TABLE `blog_post` (
   `order` int(11) NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `slug_url` varchar(255) DEFAULT NULL,
-  `short_description` int(11) DEFAULT NULL,
+  `short_description` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `search_string` (`title`,`description`,`tag`,`meta_title`,`meta_description`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
