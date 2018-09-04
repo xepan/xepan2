@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 09/03/2018 22:40:22 PM
+ Date: 09/04/2018 19:55:46 PM
 */
 
 SET NAMES utf8;
@@ -1310,6 +1310,7 @@ CREATE TABLE `employee` (
   `last_latitude` varchar(50) DEFAULT '0',
   `last_longitude` varchar(50) DEFAULT '0',
   `last_geolocation_update` datetime DEFAULT NULL,
+  `last_location` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_employee_contact1_idx` (`contact_id`),
   KEY `fk_employee_post1_idx` (`post_id`),
