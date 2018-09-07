@@ -25,7 +25,7 @@ $config['geolocationtrack']=[
 	'location_mode'=>'payload', //payload or GET or POST
 	'longitude_field'=>'longitude',
 	'latitude_field'=>'latitude',
-	'time_field'=>'time',
+	'time_field'=>false,
 
 	'employee_mode'=>'GET', // payload or GET or POST
 	'employee_field'=>'emp'
