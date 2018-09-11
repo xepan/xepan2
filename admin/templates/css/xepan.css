@@ -2911,3 +2911,7 @@ input[data-add_deduction=add]{
 #banner-loader .atk-cell.atk-align-center.atk-valign-middle{
   margin-top: 5%;
 }
+
+input[disabled]{
+  background: #eee;
+}
