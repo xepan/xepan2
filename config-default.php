@@ -20,3 +20,13 @@ $config['paymentgateways'] = ['Instamojo','CCAvenue'];
 
 $config['custom_app_path'] = false; // ['array of path','like','websites/'.$this->app->current_website_name.'/assets/xepan_vendor'];
 $config['custom_app_list']=[];// ['xepan\iec','any_folder\namespace'];
+
+$config['geolocationtrack']=[
+	'location_mode'=>'payload', //payload or GET or POST
+	'longitude_field'=>'longitude',
+	'latitude_field'=>'latitude',
+	'time_field'=>false,
+
+	'employee_mode'=>'GET', // payload or GET or POST
+	'employee_field'=>'emp'
+];

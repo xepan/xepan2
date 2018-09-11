@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 08/21/2018 18:33:00 PM
+ Date: 09/04/2018 19:55:46 PM
 */
 
 SET NAMES utf8;
@@ -288,7 +288,7 @@ CREATE TABLE `blog_post` (
   `order` int(11) NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `slug_url` varchar(255) DEFAULT NULL,
-  `short_description` int(11) DEFAULT NULL,
+  `short_description` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `search_string` (`title`,`description`,`tag`,`meta_title`,`meta_description`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
@@ -1306,6 +1306,11 @@ CREATE TABLE `employee` (
   `graphical_report_id` int(11) DEFAULT NULL,
   `salary_payment_type` varchar(255) DEFAULT NULL,
   `allow_login_from_anywhere` tinyint(4) DEFAULT 0,
+  `track_geolocation` tinyint(4) DEFAULT 0,
+  `last_latitude` varchar(50) DEFAULT '0',
+  `last_longitude` varchar(50) DEFAULT '0',
+  `last_geolocation_update` datetime DEFAULT NULL,
+  `last_location` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_employee_contact1_idx` (`contact_id`),
   KEY `fk_employee_post1_idx` (`post_id`),
