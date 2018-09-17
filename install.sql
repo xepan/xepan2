@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 09/04/2018 19:55:46 PM
+ Date: 09/17/2018 15:04:44 PM
 */
 
 SET NAMES utf8;
@@ -1394,6 +1394,8 @@ CREATE TABLE `employee_leave_allow` (
   `unit` varchar(255) DEFAULT NULL,
   `allow_over_quota` tinyint(4) DEFAULT NULL,
   `no_of_leave` varchar(255) DEFAULT NULL,
+  `effective_date` date DEFAULT NULL,
+  `previously_carried_leaves` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
 
