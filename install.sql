@@ -11,7 +11,7 @@
  Target Server Version : 100214
  File Encoding         : utf-8
 
- Date: 09/17/2018 15:04:44 PM
+ Date: 09/18/2018 16:43:34 PM
 */
 
 SET NAMES utf8;
@@ -1430,6 +1430,11 @@ CREATE TABLE `employee_row` (
   `absents` int(11) DEFAULT NULL,
   `paiddays` int(11) DEFAULT NULL,
   `total_working_days` int(11) DEFAULT NULL,
+  `officialholidays` int(11) DEFAULT 0,
+  `extraworkingdays` int(11) DEFAULT 0,
+  `extraworkinghours` int(11) DEFAULT 0,
+  `paidleavesonholiday` int(11) DEFAULT 0,
+  `unpaidleavesonholiday` int(11) DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
