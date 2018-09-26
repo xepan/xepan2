@@ -82,8 +82,9 @@ class Admin extends App_Frontend {
             if(!$epan_hash['name'])
                 throw new \Exception("Required epan name does not found [searched in db/table www >> epan]");
             
-            if($service_host && !in_array($epan_hash['status'],['Trial','Paid','Grace'])){
-                $this->redirect('http://'.$service_host.'/expired-info');
+            if($service_host && ($epan_hash['status'] == 'Expired' || (strtotime($epan_hash['expiry_date']) < strtotime(date('Y-m-d H:i:s'))) && $epan_hash['status'] !=='Paid') ) {
+                if(!is_array($service_host)) $service_host=[$service_host];
+                $this->redirect('http://'.$service_host[0].'/expired-info');
             }
 
             $this->memorize('epan_domain_array',$epan_domain_array);
