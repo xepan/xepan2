@@ -2915,3 +2915,28 @@ input[data-add_deduction=add]{
 input[disabled]{
   background: #eee;
 }
+
+.xepan-filter-form form .atk-cells.atk-input-combo > div{
+  float: right;
+  height: 34px;
+  margin-right:3px; 
+}
+.xepan-filter-form form .atk-cells.atk-input-combo > div.atk-cell a{
+  height: 34px;
+}
+
+.xepan-filter-form form input{
+  height: 34px;
+}
+.xepan-filter-form form .atk-cells.atk-input-combo > div.atk-cell a > span.icon-cancel,
+.xepan-filter-form form .atk-cells.atk-input-combo > div.atk-cell a > span.fa.fa-search{
+  height: 34px;
+  padding: 8px;
+}
+
+.xepan-filter-form form .atk-cells.atk-input-combo > div.atk-cell a > span.fa.fa-search{
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: #fff;
+  border-radius: 5px;
+}
